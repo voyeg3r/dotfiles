@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 07 09:30:53
+# Last Change: 2013 Jul 07 09:34:51
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -32,6 +32,7 @@ alias aria2c='aria2c -x5 -c'
 alias 4shared='cadaver http://webdav.4shared.com/'
 alias compilalivro='make clean; make && make show'
 alias updatelivro='hg push ssh://hg@bitbucket.org/sergio/learn-english'
+alias less='less -r'
 
 # testa se há o comando grin e exporta variáveis do mesmo
 which grin &>/dev/null && export GRIN_ARGS="-C 2 --no-skip-dirs"
