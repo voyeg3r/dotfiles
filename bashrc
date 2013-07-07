@@ -1,4 +1,4 @@
-# Last Change: 2013 Jun 16 19:50:31
+# Last Change: 2013 Jul 06 22:56:37
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -23,6 +23,8 @@ stty stop ""
 # bash completion to sudo command
 complete -cf sudo
 complete -d cd mkdir rmdir
+
+source ~/.vim/git-completion.bash
 
 alias xclip='xclip -selection c'
 alias config-data='sudo ntpdate -u -b bonehed.lcs.mit.edu'

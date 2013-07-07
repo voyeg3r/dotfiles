@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2013 Jul 06 22:35:50
+Last Change: 2013 Jul 06 22:52:46
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voye3r
@@ -10,10 +10,11 @@ da forma que ele se encontra agora no repositorio:
 
 	https://github.com/voyeg3r/dotfiles
 
-# manuais do git
+# MANUAIS DO GIT
 http://oliveirasdev.wordpress.com/2011/02/14/utilizando-git-github/
 http://www.slideshare.net/HenriqueSilvestre1/git-e-github-conceitos-bsicos
 http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository
+http://rodrigoamaral.net/2013/06/26/dicas-de-material-para-aprender-git/
 
 	Para clonar este repositorio faça:
 
