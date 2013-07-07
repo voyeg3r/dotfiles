@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 07 10:18:23
+# Last Change: 2013 Jul 07 13:16:46
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -13,6 +13,25 @@
 #   +======================================+
 
 INPUTRC=~/.inputrc
+
+# Define a few Colours
+BLACK='\e[0;30m'
+BLUE='\e[0;34m'
+GREEN='\e[0;32m'
+CYAN='\e[0;36m'
+RED='\e[0;31m'
+PURPLE='\e[0;35m'
+BROWN='\e[0;33m'
+LIGHTGRAY='\e[0;37m'
+DARKGRAY='\e[1;30m'
+LIGHTBLUE='\e[1;34m'
+LIGHTGREEN='\e[1;32m'
+LIGHTCYAN='\e[1;36m'
+LIGHTRED='\e[1;31m'
+LIGHTPURPLE='\e[1;35m'
+YELLOW='\e[1;33m'
+WHITE='\e[1;37m'
+NC='\e[0m' # No Color
 
 # avoid ctrl-s freeze your terminal
 stty stop ""
@@ -37,6 +56,7 @@ alias ls="ls --color=auto"
 alias dir="dir --color=auto"
 alias grep="grep --color=auto"
 alias dmesg='dmesg --color'
+alias rm='mv -t ~/.local/share/Trash/files'
 
 
 # testa se há o comando grin e exporta variáveis do mesmo
@@ -106,6 +126,7 @@ else
 #PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -311,17 +332,19 @@ myip (){
 	echo
     DEV=`awk '/UG/ {print $NF}' <(/sbin/route -n)`
 	#DEV=`awk '/eth/ {print $1}' <(netstat -i)` # indentifica o device
-	MEUIP=`hostname -I`
+	IPLOCAL=`hostname -I`
 	MEUIP=`awk '/inet end/ {print $3}' <(/sbin/ifconfig $DEV)`
-	echo "        IP LOCAL: .....${MEUIP:-'Not connected'}"
+	IPEXTERNO=`curl --connect-timeout 4 -s sputnick-area.net/ip`
+	echo "        IP LOCAL: .....${IPLOCAL:-'off-line'}"
 	echo "        NETMASK: ......`awk -F':' '/Mas/ {print $4}' <(/sbin/ifconfig $DEV)`"
 	echo "        MAC ADDRESS: ..`awk '/HW/ {print $7}' <(/sbin/ifconfig $DEV)`"
 	echo "        ROUTER: .......`awk '/UG/ {print $2}' <(/sbin/route -n)`"
-    echo "        IP EXTERNO: ...`curl --connect-timeout 4 -s sputnick-area.net/ip`"
+    echo "        IP EXTERNO: ...${IPEXTERNO}"
     echo
     read -sn 1 -p "     Pressione uma tecla para continuar..."
 	clear
 }
+
 _getdomainnameonly(){
     local f="${1,,}"
     # remove protocol part of hostname
@@ -376,6 +399,34 @@ man() { # wrapper para o comando man
 		LESS_TERMCAP_ue=$(printf "\e[0m") \
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
 			man "$@"
+}
+
+cd () {
+  if [ -n "$1" ]; then
+    builtin cd "$@" && ls
+  else
+    builtin cd ~ && ls
+  fi
+}
+
+apt-history () {
+      case "$1" in
+        install)
+              cat /var/log/dpkg.log | grep 'install '
+              ;;
+        upgrade|remove)
+              cat /var/log/dpkg.log | grep $1
+              ;;
+        rollback)
+              cat /var/log/dpkg.log | grep upgrade | \
+                  grep "$2" -A10000000 | \
+                  grep "$3" -B10000000 | \
+                  awk '{print $4"="$5}'
+              ;;
+        *)
+              cat /var/log/dpkg.log
+              ;;
+      esac
 }
 
 # set o vim como editor padrão
