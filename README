@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2013 Jul 06 22:52:46
+Last Change: 2013 Jul 06 23:14:50
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voye3r
@@ -10,25 +10,40 @@ da forma que ele se encontra agora no repositorio:
 
 	https://github.com/voyeg3r/dotfiles
 
-# MANUAIS DO GIT
-http://oliveirasdev.wordpress.com/2011/02/14/utilizando-git-github/
-http://www.slideshare.net/HenriqueSilvestre1/git-e-github-conceitos-bsicos
-http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository
-http://rodrigoamaral.net/2013/06/26/dicas-de-material-para-aprender-git/
 
-	Para clonar este repositorio faça:
+=Para clonar este repositorio faça=
 
 	git clone git@github.com:voyeg3r/dotfiles.git ~/.vim
 
+# MANUAIS DO GIT
+http://mariomoraesneto.blogspot.com.br/2012/11/git-dicas-basicas-e-praticas.html
 
-Como adicionar sua chave ssh ao github
-https://help.github.com/articles/generating-ssh-keys
+== Configurando o usuário ==
+
+	git config --global user.name "seu nome"
+	git config --global user.email "seu@email.com"
+
+==listar configurações==
+
+	git config --list
+
+= É possível configurar alias para os comandos, exemplos =
+
+	git config --global alias.co checkout
+	git config --global alias.br branch
+	git config --global alias.ci commit
+	git config --global alias.st status
+
+=Como adicionar sua chave ssh ao github=
+
+	https://help.github.com/articles/generating-ssh-keys
 
 
 == começando um novo projeto ==
-touch README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin git@github.com:voyeg3r/dotfiles.git
-git push -u origin master
+
+	touch README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin git@github.com:voyeg3r/dotfiles.git
+	git push -u origin master
