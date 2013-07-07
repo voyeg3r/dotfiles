@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 07 07:08:23
+# Last Change: 2013 Jul 07 09:14:02
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -32,7 +32,6 @@ alias aria2c='aria2c -x5 -c'
 alias 4shared='cadaver http://webdav.4shared.com/'
 alias compilalivro='make clean; make && make show'
 alias updatelivro='hg push ssh://hg@bitbucket.org/sergio/learn-english'
-alias ls='ls --color=auto'
 
 # testa se há o comando grin e exporta variáveis do mesmo
 which grin &>/dev/null && export GRIN_ARGS="-C 2 --no-skip-dirs"
@@ -96,34 +95,18 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-use_color=false
-
-
-# Set colorful PS1 only on colorful terminals.
-# dircolors --print-database uses its own built-in database
-# instead of using /etc/DIR_COLORS. Try to use the external file
-# first to take advantage of user additions. Use internal bash
-# globbing instead of external grep binary.
-safe_term=${TERM//[^[:alnum:]]/?} # sanitize TERM
-match_lhs=""
-[[ -f ~/.dir_colors ]] && match_lhs="${match_lhs}$(<~/.dir_colors)"
-[[ -f /etc/DIR_COLORS ]] && match_lhs="${match_lhs}$(</etc/DIR_COLORS)"
-[[ -z ${match_lhs} ]] \
-        && type -P dircolors >/dev/null \
-        && match_lhs=$(dircolors --print-database)
-[[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
-
-# Try to keep environment pollution down, EPA loves us.
-unset use_color safe_term match_lhs
-
 # retorna um prompt bem legal
 # reference: http://traviscline.com/blog/2007/09/03/how-i-color-my-bash-prompts/
 #PS1='`if [ $? = 0 ]; then echo "✔"; else echo "✘"; fi` [$(date +%H:%M)] \u \w \$: '
-PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
+if [[ "$(id -un)" != "root" ]]; then
+PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
 # prompt para o root
-# PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+fi
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -253,14 +236,6 @@ alias xterm='xterm -ls -bg black -fg white -cr -fs 11 white -hc white rightbar'
 
 alias apt-get="apt-get -o Acquire::http::Dl-Limit=15"
 
-# enable color support of ls and also add handy aliases
-if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
-    alias ls='ls --color=auto'
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
-fi
-
 # some more ls aliases
 alias ll='ls -l'
 alias la='ls -A'
@@ -282,9 +257,6 @@ alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 
 # mostra os dez comandos mais utilizados
 # history | awk '{print $2}' | awk 'BEGIN {FS="|"}{print $1}' | sort | uniq -c | sort -n | tail | sort -nr
-
-#alias grep="grep --color=always"
-# comentei por problemas com o grep
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -410,21 +382,6 @@ CDPATH=.:..:~:~/docs/img:~/docs:~/bin:~/tmp
 export PROMPT_COMMAND="history -a"
 export HISTFILESIZE=2000
 
-# manpages coloridas # begin blinking
-# export LESS_TERMCAP_mb=$'\E[01;31m'
-# # begin bold
-# export LESS_TERMCAP_md=$'\E[01;33m'
-# # end mode
-# export LESS_TERMCAP_me=$'\E[0m'
-# # begin standout-mode - info box
-# export LESS_TERMCAP_so=$'\E[01;41;37m'
-# # end standout-mode
-# export LESS_TERMCAP_se=$'\E[0m'
-# # begin underline
-# export LESS_TERMCAP_us=$'\E[01;32m'
-# # end underline
-# export LESS_TERMCAP_ue=$'\E[0m'
-
 # desabilitando a biblioteca pango para o firefox
 export MOZ_DISABLE_PANGO=1
 
@@ -434,12 +391,12 @@ export FLASH_GTK_LIBRARY=libgtk-x11-2.0.so.0
 export PATH=/var/lib/gems/1.8/bin:$PATH
 
 # manpages coloridas
-#export LESS_TERMCAP_mb=$'\E[01;31m' # begin blinking
-#export LESS_TERMCAP_md=$'\E[01;38;5;74m' # begin bold
-#export LESS_TERMCAP_me=$'\E[0m' # end mode
-#export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
-#export LESS_TERMCAP_so=$'\E[38;5;246m' # begin standout-mode - info box export LESS_TERMCAP_ue=$'\E[0m' # end underline
-#export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+export LESS_TERMCAP_mb=$'\E[01;31m' # begin blinking
+export LESS_TERMCAP_md=$'\E[01;38;5;74m' # begin bold
+export LESS_TERMCAP_me=$'\E[0m' # end mode
+export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
+export LESS_TERMCAP_so=$'\E[38;5;246m' # begin standout-mode - info box export LESS_TERMCAP_ue=$'\E[0m' # end underline
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 
 # Instalacao das Funcoes ZZ (www.funcoeszz.net)
