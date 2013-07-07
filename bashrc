@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 07 13:16:46
+# Last Change: 2013 Jul 07 14:06:00
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -58,13 +58,6 @@ alias grep="grep --color=auto"
 alias dmesg='dmesg --color'
 alias rm='mv -t ~/.local/share/Trash/files'
 
-
-# testa se há o comando grin e exporta variáveis do mesmo
-which grin &>/dev/null && export GRIN_ARGS="-C 2 --no-skip-dirs"
-
-# se houver o navegador epiphany torne ele o navegador padrão
-#which epiphany-browser &>/dev/null && { export BROWSER=`which epiphany-browser` ;}
-
 shopt -s histverify                    # verifica comandos do histórico
 shopt -s checkwinsize                  # ajusta janela redimensionada
 shopt -s hostcomplete
@@ -73,33 +66,20 @@ shopt -s extglob
 shopt -s cdspell                       # fix wrong type keys
 shopt -s dirspell
 
-adkey () {
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $1
-}
+adkey () { sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $1; }
 
 # convert text to lowcase
 lower() { echo "${@}" | awk '{print tolower($0)}' ;}
 upper() { echo "${@}" | awk '{print toupper($0)}' ;}
 expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; }
-# calculadora com o comando bc
 calc(){ echo "scale=2;$@" | bc;}
 ff () { find . -type f -iname '*'"$@"'*' ; }
 mkcd() { mkdir -p "$@" && cd $_; }
 function decToBin { echo "ibase=10; obase=2; $1" | bc; }
 decTohex() { bc <<< "obase=16; $1"; }
-
-biggest (){
-    du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh
-#du  | sort -r -n | awk '{split("k m g",v); s=1; while($1>1024){$1/=1024; s++} print int($1)" "v[s]"\t"$2}'
-}
-
-top10 () {
-	history | awk '{print $2}' | sort | uniq -c | sort -rn | head
-}
-
-beep () {
-echo -e -n \\a
-}
+biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
+top10 () { history | awk '{print $2}' | sort | uniq -c | sort -rn | head ; }
+beep () { echo -e -n \\a ; }
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -274,9 +254,6 @@ alias install='sudo apt-fast install'
 alias iso2utf='iconv -f iso-8859-1 -t utf-8'
 alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 
-# mostra os dez comandos mais utilizados
-# history | awk '{print $2}' | awk 'BEGIN {FS="|"}{print $1}' | sort | uniq -c | sort -n | tail | sort -nr
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -296,7 +273,7 @@ alias path='echo -e ${PATH//:/\\n}'
 PYTHONSTARTUP="$HOME/.pythonstartup"
 export PYTHONSTARTUP
 
-up (){
+up () {
 # Created at: 2012/06/19 10:37:26
 # Go up directory tree X number of directories
 # source: http://orangesplotch.com/bash-going-up/
