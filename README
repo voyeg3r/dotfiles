@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2013 Jul 06 23:14:50
+Last Change: 2013 Jul 06 23:27:16
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voye3r
@@ -17,6 +17,7 @@ da forma que ele se encontra agora no repositorio:
 
 # MANUAIS DO GIT
 http://mariomoraesneto.blogspot.com.br/2012/11/git-dicas-basicas-e-praticas.html
+http://githowto.com/
 
 == Configurando o usuário ==
 
@@ -33,6 +34,18 @@ http://mariomoraesneto.blogspot.com.br/2012/11/git-dicas-basicas-e-praticas.html
 	git config --global alias.br branch
 	git config --global alias.ci commit
 	git config --global alias.st status
+
+	Outra forma de colocar os aliases, alias mais fácil é
+	colocar estas linhas no gitconfig
+
+		[alias]
+		co = checkout
+		ci = commit
+		st = status
+		br = branch
+		hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+		type = cat-file -t
+		dump = cat-file -p
 
 =Como adicionar sua chave ssh ao github=
 
