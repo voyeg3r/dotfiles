@@ -1,0 +1,25 @@
+//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
+==Extrair audio de avi, flv, mpeg, etc...==
+
+mplayer -dumpaudio NOMEDOVIDEO.avi -dumpfile NOMEDOVIDEO.mp3
+
+==Extrair audio de dvd==
+Abra um terminal e digite
+
+mkfifo
+mplayer dvd://1 -chapter 1-1 -aid 128 -ao pcm:file= -vc dummy -vo null
+
+Abra outro terminal no mesmo diretório e digite
+
+lame -b 192 --resample 44100 -o titulo-1.mp3
+
+==converter video flv para gif animado==
+
+mplayer -vo gif89a yourvideosfilename.flv
+
+
+==Referências==
+* http://ubuntudicas.blogspot.com/2008/11/extraindo-udio-de-vdeos-avi-flv-mpeg.html
+* http://ubuntuforum-pt.org/index.php/topic,42984.0/topicseen.html
+
+ 

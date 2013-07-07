@@ -1,0 +1,1 @@
+diz em que pasta você esta

@@ -1,0 +1,27 @@
+Arquivo: dicas windows
+Criado: Ter 11/Dez/2012 hs 15:31
+Last Change: 2012 Dez 11 17:17:35
+autor: sergio
+site: vivaotux
+twitter: voyeg3r
+email: voyeg3r at gmail.com
+
+= Limpando o spool de de impressão =
+
+net stop spooler
+cd %systemroot%\system32\spool\PRINTERS
+del /f /s *.SHD
+del /f /s *.SPL
+net start spooler
+exit
+
+=colar na linha de comando do windows=
+
+alt + espaço + e + l
+
+= consertando pastas ocultas no pendrive =
+
+(considere neste caso o pendrive como sendo letra 'g')
+attrib -h -r -s /s /d g:\*.*
+
+

@@ -1,0 +1,22 @@
+Arquivo: Sobre o plugin powerline
+Criado: Sex 02/Mar/2012 hs 10:18
+Last Change: 2012 Mar 02 10:30:07
+autor: Sérgio Luiz Araújo Silva
+site: http://vivaotux.blogspot.com
+twitter: http://www.twitter.com/voyeg3r
+email: <voyeg3r  gmail.com>
+
+Plugin para melhorar a barra de status do vim
+Site oficial: https://github.com/Lokaltog/vim-powerline
+
+Instale as fontes modificadas à partir deste link:
+https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
+
+No seu vimrc coloque:
+
+	let g:Powerline_symbols = 'fancy'
+
+
+Execute o comando:
+
+    PowerlineClearCache<Enter>

@@ -1,0 +1,24 @@
+Arquivo: Arquivos de configuração do vim
+Criado: Dom 17/Out/2010 hs 15:13
+Last Change: 2013 Jul 06 22:03:46
+autor: Sérgio Luiz Araújo Silva
+site: http://vivaotux.blogspot.com
+http://www.twitter.com/voye3r
+
+
+# http://askubuntu.com/questions/7283/vim-7-3-on-ubuntu-10-10
+# ppa para o vim 7.3
+
+=Para instalar o vim 7.3 no ubuntu faça=
+
+    apt-add-repository ppa:passy/vim
+    apt-get update
+    apt-get upgrade
+
+Esta pasta do vim está sob controle de versões do programa git
+da forma que ele se encontra agora no repositorio:
+
+	https://github.com/voyeg3r/dotfiles
+
+Como adicionar sua chave ssh ao github
+https://help.github.com/articles/generating-ssh-keys

@@ -1,0 +1,16 @@
+Arquivo: dicas e atalhos sobre o vlc
+Criado: Dom 07/Out/2012 hs 06:28
+Last Change: 2012 Out 10 09:33:02
+autor: Sérgio Luiz Araújo Silva
+site: http://vivaotux.blogspot.com
+twitter: http://www.twitter.com/voyeg3r
+email: <voyeg3r  gmail.com>
+
+Shift-left ............. pequeno atrazo
+f ...................... full screen
+<space> ................ pause/play
+more slowlly ........... -
+more fast .............. +
+show playlist .......... <ctrl>l
+
+

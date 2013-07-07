@@ -1,0 +1,13 @@
+Arquivo: dicas linux
+Criado: Qui 09/Mai/2013 hs 09:38
+Last Change: 2013 Mai 09 09:43:02
+autor: Sérgio Luiz Araújo Silva
+site: http://vivaotux.blogspot.com
+twitter: http://www.twitter.com/voyeg3r
+email: <voyeg3r  gmail.com>
+
+=Consertando o /etc/hosts=
+
+[ "`awk 'NR==1 {print $NF}' /etc/hosts`" = "`hostname`" ] && echo '/etc/hosts já está ok!' || \
+sed -i.backup -r "1s/(.*)/\1 `hostname`/g" /etc/hosts
+

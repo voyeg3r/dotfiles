@@ -1,0 +1,4 @@
+//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
+=Introdução=
+Para não ter que digita clear use Control-l 
+ 

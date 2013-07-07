@@ -1,0 +1,50 @@
+skype user: sergioaraujosilva
+passwd: sameofmylinuxmachine
+
+new google account: sergioluizaraujosilva
+passwd: sameofmylinuxmachine
+
+mypasswdbb 801189 Bu R Na
+
+airos ip: http://198.168.167.100/
+passwrd airos -->
+user = ubnt
+password =ubnt
+
+=conection to education network Madalena=
+192.168.0.25
+netmask 255.255.255.0
+gateway 192.168.0.1
+dns 8.8.8.8, 4.4.4.4
+
+
+= android =
+códico para resetar a instalação do android
+*2767*3855#
+
+secret video record
+http://goo.gl/9hZ23
+
+:::::::::::::::::::::::::::::::
+
+http://oitorpedoweb.oi.com.br/
+j03l3a=86093561
+
+-----------------------------------------------------
+senha para rede wireless da g
+ssid GVT-B1FD
+CP1115BULAY
+
+-----------------------------------------------------
+key hex 636f737461406d6164616e65742e636f6d2e627200
+key ascii costa@madanet.com.br
+
+type key: WPA2PSK
+costa@madanet.com.br
+
+network name: madanet
+
+encryption: AES
+connection type: ESS
+
+

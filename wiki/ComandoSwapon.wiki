@@ -1,0 +1,11 @@
+//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
+=Introdução=
+Após uso intensivo da memória pode-se libera-la assim
+
+swapoff -a ; swapon -a
+
+When you run a memory intensive application (VirtualBox, large java application, etc) swap area is used as soon as memory becomes insufficient. After you close the program, the data in swap is not put back on memory and that decreases the responsiveness. Swapoff disables the swap area and forces system to put swap data be placed in memory. Since running without a swap area might be detrimental, swapon should be used to activate swap again.
+
+Both swapoff and swapon require root privileges.
+ 
+ 

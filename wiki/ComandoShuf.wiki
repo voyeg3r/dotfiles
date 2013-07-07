@@ -1,0 +1,7 @@
+Mostrar uma linha aleatória de um arquivo
+
+shuf -n1 file.txt
+
+mplayer $(ls -a ~/Music/**/*.mp3 | shuf)
+
+gsettings set org.gnome.desktop.background picture-uri file://`ls ~/Imagens/wallpapers/* | shuf | tail -1`

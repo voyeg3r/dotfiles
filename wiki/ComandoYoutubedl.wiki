@@ -1,0 +1,30 @@
+==como baixar videos do youtube com melhor qualidade?==
+*
+==comando para atualizar o youtube-dl==
+
+	sudo sudo youtube-dl -U
+
+==preservando o título do vídeo==
+
+	youtube-dl -t link
+
+==determinando a qualidade do video a ser baixado==
+Pesquise neste link http://en.wikipedia.org/wiki/YouTube#Quality_and_codecs
+OBS: Por padrão o youtube-dl irá baixar o video na melhor qualiade possível
+
+	youtube-dl -f 34 "http://www.youtube.com/watch?v=2_VFKqw1q2Q"
+
+==convertendo videos do youtube para mp3==
+Fonte:
+
+	youtube-dl -t --extract-audio --audio-format mp3 YOUTUBE_URL_HERE
+
+==baixar um playlist completo==
+Antes de executar o comando certifique-se que a versão do youtube-dl é a mais nova
+
+	youtube-dl -U
+
+Agora pode executar algo como...
+
+	youtube-dl -cit http://www.youtube.com/playlist?list=PLBACC77E2173B4280&feature=mh_lolz
+

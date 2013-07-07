@@ -1,0 +1,918 @@
+=Manual de dicas do vim=
+
+Criado: Sáb 06/Nov/2010 hs 18:10
+Last Change: 2013 Jun 11 19:31:32
+autor: Sérgio Luiz Araújo Silva
+site: http://vivaotux.blogspot.com
+twitter: http://www.twitter.com/voyeg3r
+
+= how extract urls =
+{{{
+		%s/.*\(http.*.mp3\).*/\1/g
+		g!/\.mp3/d
+
+}}}
+
+= How to append to clipboard? =
+
+	let @+ .= my_expression
+
+=Repeating last subtituition=
+
+  &  ........... in normal mode
+
+  repetir ultima substituição  &
+
+=simplest way to show number of lines=
+
+  :colo
+
+  this is the same
+
+  :ec g:colors_name
+
+=showing number of lines=
+
+besides tradicional  g Ctrl-g that shows in statusbar some
+information u can do this
+
+   :echo line('$')
+
+or even map some keystroke to this result
+
+= how insert digraphs in vim =
+first we explain what are digraphs - are simbols,
+to see a complete list of them type  :dig<enter>
+
+In orde to insert digraphs you have:
+
+   1 - :set paste
+   2 - in insert mode type the correpondent code of digraph
+
+   how insert one arrow - type  →
+
+   to view the code of carachter below of cursor type 'ga'
+
+=dealig with previous yank register=
+http://stackoverflow.com/questions/12547369/vim-yank-replace-in-a-sequence
+
+EDIT 1: repeating using a macro
+
+I was surprised that this operation isn't repeatable using ., but this is
+presumably due to the use of visual mode. To repeat the operation using
+a macro, do this:
+
+qqV"0pq
+
+The macro can then be repeated by pressing @q or @@.
+
+EDIT 2: repeating using .
+
+Here's an attempt at making it repeatable using . by not using visual mode.
+After yanking the stamp line and moving the cursor, do this:
+
+"_S<c-r>0<delete>
+
+which uses the insert mode <c-r> command to insert the contents of register 0.
+Note that the <delete> is necessary because the stamp line contained a carriage
+return. If it did not (i.e. yanking using y$ rather than yy) the <delete> could
+be omitted.
+
+
+=Correct all occurrences of misspelled word=
+
+	:spellr
+
+	]s .......... next misspelled word
+	=z .......... accept sugestions
+	1=z ......... accept first sugestion
+	zg .......... add word as good
+	zw .......... add word as "wrong"
+	zuw ......... undo add word as wrong
+	zug ......... undo add word as good one
+
+=How add a line after every few lines in vim=
+
+:%s/^/\=line(".")%4==0?"\n":"")/g
+
+=How join lines whithin xml <div>s=
+
+ :g/<div>/+1,/<\/div>/-1 join
+
+=vim search pattern for a piece of text line yanked in visual mode=
+
+First you would select and copy chunk of text, after that you
+start a search typing /  then you press Ctrl-r 0
+
+This tip was copied in stackoverflow in this link http://va.mu/UIs6
+
+=How do condicional replace on vim=
+# from: http://stackoverflow.com/questions/8814069/how-to-do-conditional-replacing-using-vim
+
+" como substituir uma palavra em uma linha que começa com -
+:%g/^-/s/word/WORD/g
+
+=saindo temporariamente do vim para o shell=
+
+Ctrl-z
+
+Execute os comandos do shell
+
+fg
+
+==Apagando linhas intercaladas==
+Vim: how to delete every second row?
+
+reference: http://stackoverflow.com/questions/1946738/vim-how-to-delete-every-second-row
+
+g/^/+d
+
+== Como saber onde um atalho de teclas foi definido no vim ==
+
+:verbose map atalho
+:verbose command Dos2Unix
+
+=remapear caps lock para ESC=
+
+xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+
+=Vim - paste in insert mode?=
+
+While in insert mode hit CTRL-R {register}. For example, CTRL-R * will
+insert in the contents of the clipboard and CTRL-R " (the unnamed register)
+inserts the the last delete or yank.
+
+To find this in vim's help type :h i_ctrl-r
+
+=Vim How to paste text into Vim command line=
+
+  Ctrl-r 0
+
+    0 (yank register),
+    1 to 9 (shifting delete registers),
+    _ (like /dev/null, this is a black hole),
+    " (default register, hence the Ctrl-R, "),
+    - (small delete register),
+    / (the search pattern register),
+    : (last command register),
+    a to z for your own use (capitalized A to Z are for appending to corresponding registers).
+
+See :help registers for the full reference.
+
+
+=editando arquivos remotamente=
+
+	:e scp://username@someremotehost/./path/to/file
+
+	gvim scp://manager@192.168.1.11/./bashrc
+
+=alias para abrir arquivos recem editados=
+
+	# coloque no ~/.bashrc
+	alias lvim='vim -c "normal '\''0"'
+
+=Vim delete HTML tag, but not content=
+
+	yitvatp
+
+	What this does is yanks:
+
+	y - yanks
+	it - the inside of the tag
+	vat - selects the entire tag
+	p - pastes the previously yanked text over it
+
+=VIM: append to clipboard=
+
+http://stackoverflow.com/questions/6303882/vim-append-to-clipboard
+
+	let @+ = @+ . my_expression
+
+	or shorter:
+
+	let @+ .= my_expression
+
+	Reference: :help :let.=
+
+=navegando em linhas longas no vim=
+
+   gj ............ desce
+   gk ............ sobe
+
+=como buscar pela palavra sob o cursor?=
+
+ *  ........... busca para frente
+ #  ........... busca para traz
+
+=como sair do vim direto do modo normal=
+
+  ZZ .......... o mesmo que :x
+
+=como colar texto posicionando o cursor depois do texto?=
+
+   Em modo insert <Ctrl>r +
+   em modo norma "+gp
+
+=como fechar o arquivo sem fechar o vim?=
+
+  :bd
+
+  :enew .......... é melhor porque preserva o arquivo anterior na lista de buffers
+
+  Source: http://stackoverflow.com/questions/256204/close-file-without-quitting-vim-application
+
+=Para executar uma função do vim que está na área de transferência=
+
+  :@"
+
+=pular para fechamento ou abertura de uma função=
+
+ se temos uma função do tipo:
+
+    nome () {
+    bla bla bla
+    bla bla bla
+    bla bla bla
+    bla bla bla
+    bla bla bla
+    }
+
+    Podemos pular para a chave de abertura ou fechamento
+    simplesmente usando [{  ou ]}
+
+=Incrementando números ou decrementando com uma função=
+
+source: http://stackoverflow.com/questions/4951533/search-and-replace-with-incremented-values-in-vim
+
+Se eu tiver um arquivo assim:
+
+    .star_10 {
+    background: url(stars.png) no-repeat 0 0;
+    }
+    .star_10 {
+    background: url(stars.png) no-repeat 0 0;
+    }
+    .star_10 {
+    background: url(stars.png) no-repeat 0 0;
+    }
+    .star_10 {
+    background: url(stars.png) no-repeat 0 0;
+    }
+    .star_10 {
+    background: url(stars.png) no-repeat 0 0;
+    }
+
+E QUISER ASSIM
+
+    .star_10 {
+    background: url(stars.png) no-repeat 0 0;
+    }
+    .star_9 {
+    background: url(stars.png) no-repeat 0 -18px;
+    }
+    .star_8 {
+    background: url(stars.png) no-repeat 0 -36px;
+    }
+    .star_7 {
+    background: url(stars.png) no-repeat 0 -54px;
+    }
+
+FUNÇÃO PARA DECREMENTAR A SEQUÊNCIA ACIMA
+
+    let g:decr = 11
+
+    fu! Decr()
+        let g:decr = g:decr - 1
+        return g:decr
+        endfu
+
+    :%s/.star_10/\=".star_" . Decr()/
+
+=como selecionar texto recém colado=
+
+`[  ...... inicio do trecho colado
+v   ...... seleção visual
+`]  ...... fim do trecho colado
+V`] ...... reseleciona trecho colado
+`[v`] .... reseleciona trecho colado
+
+=abrir ajuda em tela cheia em nova aba=
+
+  :tab h
+
+=Incrementando números em modo normal=
+
+    Ctrl-a ........... incrementa em um
+    10 Ctrl-a ........ incrementa em dez
+
+    "OBS: Ctrl-v Ctrl-a para inserrir Ctrl-a
+
+     g/identifier/ normal 20^A
+
+Para incrementar o trecho width="32", ou seja, um trecho
+começado com width contendo dois dígitos faz-se assim
+
+    :%s/width="\zs\d\{2}\ze"/\=submatch(0)+10/g
+
+=copiando linhas que contém um padrão para um registro=
+
+    :g/pattern/y A
+
+    Exibir apenas as linhas que contém um padrão
+
+    :g/pattern/#
+
+=remapeando a tecla ESC=
+
+veja o arqtigo neste link
+http://vim.wikia.com/wiki/VimTip166
+
+=trabalhando com intervalos=
+Numa substituição se desejar atuar sobre linhas subsequêntes
+a um determinado ponto é possível omitir a linha atual como visto
+abaixo.
+
+    :,+7s/^/foo/
+
+   "salvando da linha 1 a 7 do arquivo atual em novo arquivo
+    :1,7 w ~/tmp/teste.txt
+
+=sobrescrevendo algo entre aspas=
+
+   vi"p
+
+=salvar um intervalo em outro arquivo=
+
+  :25,$w teste.txt
+
+=Modo alternativo de sair do modo insert=
+
+    Ao invés de usar <Esc> para sair do insert use:
+    Ctrl + [
+
+= retirando a syntaxe das buscas =
+
+:noh
+
+ou
+
+map <leader>h :set hls!<cr>
+
+=como colocar a palavra sob o cursor em uma substituição=
+
+  :%s/<c-r><c-w>/new-word/g
+
+  Para colocar o nome do arquivo em uma substituição faça
+
+  /<c-r>%
+
+=Regex para pegar aspas simples=
+
+source: http://vimcasts.org/episodes/refining-search-patterns-with-the-command-line-window/
+
+This string contains a 'quoted' word.
+This string contains 'two' quoted 'words'.
+This 'string doesn't make things easy'.
+
+This string doesn't contain any quotes, isn't it.
+
+----------------------------------------------------------
+" a busca
+----------------------------------------------------------
+
+\w\@<!'\(\(\w'\|[^']\)\+\)'\(\w\)\@!
+
+
+----------------------------------------------------------
+" a explicação
+----------------------------------------------------------
+/               match
+\w\@<!'         any ' that does not have a word char before it
+\(\w'\|[^\']\)  any word+' or non-'
+\+              any number of times
+'\(\w\)\@!      end with a ' that does not have a word char after it
+
+:%s/\w\@<!'\(\(\w'\|[^']\)\+\)'\(\w\)\@!/"\1"/gc
+
+
+=numerando linhas com novo comando=
+source: http://stackoverflow.com/questions/4224410/macro-for-making-numbered-lists-in-vim
+
+command! -nargs=0 -range=% Number <line1>,<line2>s/^\zs/\=(line('.') - <line1>+1).' '
+
+" para inserir numeração de linhas de dois dígitos
+:%s/^/\=substitute(printf("%2d",line("."))," ","0","g")
+
+=abrindo e fechando folders com o mouse=
+
+" se setar-mos como abaixo mostra os subníveis dos folders
+set foldcolumn=3
+
+zO ................ open all folders
+zM ................ close all folders
+
+
+=artigos e links legais sobre o vim=
+
+ * http://stevelosh.com/blog/2010/09/coming-home-to-vim
+
+=vim script=
+
+* http://www.swaroopch.com/notes/Vim_en:Scripting
+
+ para ecoar uma lista
+
+ :ec split('uma lista de palavras')
+
+ Para exibir o tamanho da linha atual
+
+ :ec strlen(getline('.'))
+
+ Para exibir o tipo do arquivo
+
+ :ec &filetype
+
+    function CurrentLineLength()
+        let len = strlen(getline("."))
+        return len
+    endfunction
+
+    See :help function-list for a huge list of functions available.
+
+    Para listar o caminho completo de cada esquema de cores do vim
+
+    :ec split(globpath(&runtimepath, 'colors/*.vim'),"\n")
+
+     " coloca cada cor instalada localmente em uma variável g:mycolors
+
+     let g:mycolors = split(globpath(&rtp,"**/colors/*.vim"),"\n")
+
+     ec split(glob(expand("$HOME")."/.vim/colors/*.vim"), "\n")
+
+=script para trocar o esquema de cores=
+
+* http://vim.wikia.com/wiki/Switch_color_schemes
+
+=setando o programa grep=
+
+ Instale o programa grin
+
+   sudo easy_install grin
+
+   no vimrc   set grepprg=grin
+
+   :grin -il padrão
+
+   :clist
+
+   Para abrir os arquivos que correspondem ao padrão
+
+   :copen ......... abre a lista - use Ctrl-w-f
+
+
+
+=Usando o grep nativo do vim=
+
+   " para continuar usando autochdir configure o formato do erro
+   set grepformat=%f:%l:%m
+
+   :vim /\cpattern/gj ~/.vim/**/*.wiki
+   :noautocmd vim /\cdica/gj ~/.vim/**/*
+   :cn
+
+   o comando :lw equivale a :cope
+
+    map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+
+=como exibir as opções de formatação?=
+
+  :ec &fo
+  :ec &rtp
+
+=como indentar um bloco de código vuado=
+
+     ={
+
+     ou
+
+     ==
+
+" retira a indentação das próximas 99 linhas
+
+     :%< 99
+
+=atalhos para marcas=
+
+  ]' .......... próxima marca
+  [' .......... marca prévia
+
+=função para criar marcas visíveis=
+
+function! SignLines() range
+  let n = a:firstline
+  execute(":sign define fixme text=>> texthl=Todo")
+  while n <= a:lastline
+    if getline(n) =~ '\(TODO\|FIXME\)'
+      execute(":sign place ".n." line=".n." name=fixme file=".expand("%:p"))
+    endif
+    let n = n + 1
+  endwhile
+endfunction
+map <S-F5> :call SignLines()<CR>
+
+=saltos para alterações=
+
+   g, ...... alteração mais recente
+   g; ...... alteração mais antiga
+
+   somente lista de saltos
+
+    Ctrl-o
+    Ctrl-i
+
+=manipulando o histórico=
+
+   q:
+   q/
+
+   ou abra a linha de comando e pressione
+
+      Ctrl-f
+
+   Para fechar a janela do histórico
+
+      Ctrl-w-q
+
+   O registro @: contém o último comando e
+   o registro @/ contém a última busca
+
+=Limpando um registro de forma fácil=
+
+  qaq .......... limpa o registro 'a'
+
+  let @a=''
+
+=Corretor ortográfico do vim=
+
+    Fonte: http://www.dicas-l.com.br/arquivo/corretor_ortografico__em_portugues__no_vim.php
+
+    Baixar o dicionário atualizado em http://www.broffice.org/files/pt_BR-2010-01-09AOC.zip
+    Descompactar o dicionário
+    No mesmo diretório que estiver os arquivos descompactador, iniciar o vim e executar o seguinte comando:
+
+      :mkspell pt pt_BR
+
+    (esse comando demora alguns minutos)
+
+    Copiar o arquivo gerado neste diretório, chamado pt.utf-8.spl, para ~/.vim/spell
+
+    Após a instalação do dicionário, para habilitar o corretor ortográfico (em português) no vim, basta digitar:
+
+  set spell spelllang=pt
+
+    Uma vez no vim, com o corretor ligado, basta digitas os seguintes comandos para as tarefas mais básicas:
+
+    ]s 	move o cursor para a próxima palavra "errada"
+    [s 	move o cursor para a palavra "errada" anterior
+    zg 	adiciona a palavra (no dicionario) em que o cursor está em cima.
+    zug 	remove a última palavra adicionada no dicionario
+    z= 	Vê as sugestões para uma palavra certa, e troca se você escolher alguma delas.
+
+    No modo insert, quando o cursor estiver após uma palavra marcada com erro
+    você pode usar Ctrl-x s para procurar sugestões. Use Ctrl-n ou Ctrl-p para
+    voltar. i_CTRL-X_s
+
+=seleção=
+
+  see vim text objects the definitive guide
+  http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-
+
+  selecionar
+
+  Trecho entre parênteses  ......... vi(
+  Entre parênteses (inclusive) ..... v%
+  Trecho entre aspas ............... vi"
+  Seleciona um parágrafo ........... vip
+  Selection uma sentença ........... vis
+
+  Pode usar copiar ao inves de visual
+
+  yi"
+  yi(
+
+  Ou deletar
+
+  di"
+
+  ou ainda
+
+  ci"
+  ci(
+  cib
+
+=movendo-se=
+
+  fx ........... para o próximo 'x'
+  Fx ........... para o prévio 'x'
+  tx ........... antes de próximo 'x'
+  Tx ........... antes de prévio 'x'
+  gf ........... go to file
+  gd ........... go to definition
+
+= completar caminhos no modo insert =
+
+    Ctrl-x Ctrl-f
+
+    Completar:
+    Linhas  .................... Ctrl-x Ctrl-l
+    Palavra (arquivo corrente) . Ctrl-x Ctrl-n
+    Palavra dicionário ......... Ctrl-x Ctrl-k
+    Palavra tesaurus ........... Ctrl-x Ctrl-t
+    Palavra arquivos incluidos . Ctrl-x Ctrl-i
+    tags ....................... Ctrl-x Ctrl-]
+    definições de macros ....... Ctrl-x Ctrl-d
+    linha de comando ........... Ctrl-x Ctrl-v
+    definições de usuário ...... Ctrl-x Ctrl-u
+    omni completion ............ Ctrl-x Ctrl-o
+    sugestões de spelling ...... Ctrl-x _s
+    complemento ................ Ctrl-x Ctrl-n
+
+=Manipulando buffers=
+
+    :ls ............... lista os buffers
+    :b mat<tab> ....... mostra os buffers começados com 'mat'
+    :bd  .............. tira o buffer atual da lista
+    :bufdo ............ executa um comando para todos os buffers
+
+= função para inverte strings no vim =
+
+    function! InvertString(str)
+        " Courtesy of Preben "Peppe" Guldberg
+        " This will invert/reverse a string
+        " This will work on arbitrary length strings, too. The /.*/ should be
+        " quick, which might make it up for using a regex rather than using
+        " numerous commands in a :while loop.
+        "
+        " This can be used in a substitute command as follows:
+        " :%s/AUTHORIZATION/\=InvertString(submatch(0))
+        let inverted = substitute(a:str, '.\(.*\)\@=',
+                    \ '\=a:str[strlen(submatch(1))]', 'g')
+        return inverted
+    endfunction
+
+    " em modo normal
+    map <Leader>rv Yo<C-O>:set revins<cr><C-R>"<esc>:set norevins<cr>
+
+= comando para inverter palavras de uma linha=
+inverter uma string por palavras
+
+source: http://stackoverflow.com/questions/5532431/vim-invert-string-by-words
+
+command! ReverseLine call setline('.', join(reverse(split(getline('.')))))
+
+
+= Como definir a fonte no vim=
+
+  Você pode até escolher a fonte graficamente e em seguida
+  copie a saida deste comando
+
+  :set gfn?
+
+  Agora coloque no vimrc o resultado
+
+  set anti gfn="nome da fonte que você pegou"
+
+
+    == how set windows font?==
+
+    :set anti gfn=Ubuntu\ Mono\ for\ PowerLine:h13
+
+= contando quantas vezes uma palavra ocorre =
+
+You can use the following set of commands to count the number of times a
+particular word occurs in a buffer: >
+
+    :let cnt=0
+    :g/\<your_word\>/let cnt=cnt+1
+    :echo cnt
+
+=Name spaces para variáveis no vim=
+
+There are several name spaces for variables.  Which one is to be used is
+specified by what is prepended:
+
+(nothing) In a function: local to a function; otherwise: global
+|buffer-variable|    b:	  Local to the current buffer.
+|window-variable|    w:	  Local to the current window.
+|tabpage-variable|   t:	  Local to the current tab page.
+|global-variable|    g:	  Global.
+|local-variable|     l:	  Local to a function.
+|script-variable|    s:	  Local to a |:source|'ed Vim script.
+|function-argument|  a:	  Function argument (only inside a function).
+|vim-variable|	     v:	  Global, predefined by Vim.
+
+= contar os caracteres da linha atual=
+
+    :echo strlen(getline("."))
+
+    :let len = strlen(getline("."))
+    :echo "We have" len "characters in this line."
+
+    :function Currentlinelength()
+    :    let len = strlen(getline("."))
+    :    return len
+    :endfunction
+
+=contar ocorrências de uma palavra=
+
+  :%s/<c-r><c-w>//gn
+
+= dicas para substituições =
+
+ A opção \zs quando usada em uma substituição faz com
+que tudo que estiver a sua esquerda seja ignorado na substituição
+evitando o uso de \1 \2 (back references das expressões regulares)
+
+Para mais detalhes :h zs
+
+= Como instalar plugins com a extensão vba no vim =
+
+Plugins com a extensão vba usam o seguinte método:
+você baixa o plugin, abre ele com o vim e executa este comando
+
+   :so %
+
+Mas para quem usa o plugin
+
+Ao instalar um plugin com extensão vba 'vimball' você pode listar
+quais arquivos serão instalados assim:
+
+ `  :VimballList    `
+
+  Pode ainda determinar um local no qual os arquivos vba serão
+  colocados ao usar o comando :so
+
+  Para isto use:
+
+    :usevimball ~/.vim/bundle/bundle-dir-name-here
+     veja o help :h :usevimball
+
+    OBS: troque o nome de usuário no comando abaixo para corresponder ao seu usuário
+
+    :let g:vimball_home="/home/sergio/.vim/bundle/plugin"
+    :so %
+
+= manipulando visualização da janela e lista de saltos =
+
+    let a = winsaveview()
+    call winrestview(a)
+
+    veja :h keepjumps
+
+        keepjumps command
+
+   Para saltar para a posição da alteração mais recente use Ctrl-i
+   Para saltar para a posição da alteração mais antiga use Ctrl-o
+
+   há uma discussão na web a respeito desta função
+   http://tech.groups.yahoo.com/group/vim/message/51005
+
+= exibindo o histórico de comandos no vim =
+
+     :history : -20,
+     :his / -20,
+
+=Plugins do vim=
+
+ SparkupPlugin
+ PydictionPlugin
+ ProjectPlugin
+ PowerLine
+ VisincrPlugin
+ SurroundPlugin
+ GundoPlugin
+ RepeatPlugin
+ PathogenPlugin
+ WordCompletePlugin
+ FuzzyFinderPlugin
+ NarrowRegionPlugin
+ PluginTabular
+ SnipMate
+
+=trabalhando com janelas=
+
+   Ctrl-w_^ .......... divide a janela atual e edita arquivo alternativo
+
+= Colando do clipboard em modo insert =
+
+   Em modo normal colamos o conteúdo da área de transferência
+   usando o clássico "+p já em modo insert faça:
+
+       <Ctrl-r>+
+       <Ctrl-r>"
+
+    The Control-R mechanism is very useful:-
+    :h i_CTRL-R
+
+    Usually used for inserting the contents of a register 0-9a-z
+    but can also insert the following special registers etc
+
+    '"' the unnamed register, containing the text of the last delete or
+    yank
+    '%' the current file name
+    '#' the alternate file name
+    '*' the clipboard contents (X11: primary selection)
+    '+' the clipboard contents
+    '/' the last search pattern
+    ':' the last command-line
+    '.' the last inserted text
+    '-' the last small (less than a line) delete
+    =5*5 insert 25 into text (mini-calculator)
+
+    The paste buffer is usually the easiest way to transfer text between VIM and
+    another application.
+
+    " Redirection & Paste register *
+    :redir @* : redirect commands to paste buffer
+    :redir END : end redirect
+    :redir >> out.txt : redirect to a file
+    " Working with Paste buffer
+    "*yy : yank current line to paste
+    "+y} : yank to end of paragraph
+    "+yi{ : yank current paragraph
+    "*p : insert from paste buffer
+    " yank to paste buffer (ex mode)
+    :'a,'by* : Yank range into paste
+    :%y* : Yank whole buffer into paste
+    :.y* : Yank Current line to paster
+    " filter non-printable characters from the paste buffer
+    " useful when pasting from some gui application
+    :nmap p :let @* = substitute(@*,'[^[:print:]]','','g')"*pr
+
+= convertendo temas do texmate para o vim=
+
+    http://coloration.sickill.net/
+
+    programa para possibilitar a conversão de esquemas de cor do texmate (binario para xml1)
+    http://vimcasts.org/episodes/creating-colorschemes-for-vim/
+    usando este site: http://coloration.sickill.net/
+
+    apt-fast install -y libplist-utils
+
+= videos bacanas sobre o vim=
+
+    http://vimeo.com/user1690209/videos
+
+    muito louco, tranformando um xml em texto plano
+    http://vimeo.com/15443936
+
+=busca dentro de seleção visual=
+
+  /\%V
+  :%s/\%Visto/aquilo/ge
+
+= como abrir vários arquivos no gvim=
+
+  :args ~/path/*.py
+
+  isto evita o erro E77: muitos arquivos para editar
+
+=deletando linhas que não contém padrão=
+
+  :v/pattern/d
+
+=Destacando as linhas duplicadas=
+
+    :g/^\(.*\)\n\ze\%(.*\n\)*\1$/#
+
+= pegar linha que começa com palavra e sublinhar =
+
+    g/^\w/t.|s/./=/g
+
+= adicionar uma linha em branco após linhas que começam com espaço =
+
+   :g/^\s*-/normal O
+
+= função para deletar linhas em branco duplicadas =
+
+    fun! DelBlank()
+        let save_cursor = getpos(".")
+        :g/^\n\{2,}/d
+        call setpos('.', save_cursor)
+    endfun
+    map <leader>d :call keepjumps DelBlank()<cr>
+
+= visualizar o histórico de comandos do vim=
+
+ :redir @a>  ......... redireciona para o registro 'a'
+ :history : -20,
+ :redir END
+ "ap
+
+ Comando para colar o histórico dos ultimos 22 comandos
+ q:22kyG Ctrl-w-q p
+
+= mapeamento para inserir números randomicos no vim=
+
+    imap <leader>r <C-r>=system('echo "$(($RANDOM % 100))"')<cr>
+

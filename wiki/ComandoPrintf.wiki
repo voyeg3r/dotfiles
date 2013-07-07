@@ -1,0 +1,8 @@
+//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
+=Introdução= 
+
+Imprimir uma sequência de 1 a 300 usando 3 dígitos
+# Bash 3
+   printf "%03d\n" {1..300}
+
+ 

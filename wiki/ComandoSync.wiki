@@ -1,0 +1,2 @@
+Sincroniza discos, é usado geralmente antes de desmontar
+um disco para segurança de dados.

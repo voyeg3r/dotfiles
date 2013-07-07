@@ -1,0 +1,54 @@
+Arquivo: dicas firefox
+Criado: Ter 04/Jan/2011 hs 20:21
+Last Change: 2012 Out 27 06:13:40
+autor: slas
+site: vivaotux
+twitter: voyeg3r
+
+== Carregar abas sob demanda apenas ==
+coloque a chave
+	browser.sessionstore.restore_pinned_tabs_on_demand
+
+com valor true
+
+=channels firefox=
+http://www.mozilla.org/en-US/firefox/channel/#beta
+
+=Reduce the amount of RAM Firefox uses for it’s cache feature=
+source: http://gnoted.com/3-hacks-for-firefox-double-internet-browsing-speed/
+
+Here’s how to do it:
+1. Type “about:config” (no quotes) in the adress bar in the browser.
+2. Find “browser.sessionhistory.max_total_viewer”
+3. Set it’s value to “0“;(Zero)
+
+=Como instalar o plugin flash via rede local=
+
+scp root@192.168.1.74:/usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins
+
+=como impedir o plugin flash de capturar cookies=
+
+for i in ~/.adobe ~/.macromedia ; do ( rm $i/ -rf ; ln -s /dev/null $i ) ; done
+
+
+=Plugins que uso no firefox=
+
+ Feedly ...... plugin que gera um novo layout para as notícias do google reader
+               e twitter: https://addons.mozilla.org/pt-BR/firefox/addon/feedly/
+
+ F1 .......... Extensão que permite compartilhar notícias direto por e-mail, twitter
+               https://addons.mozilla.org/pt-br/firefox/addon/f1-by-mozilla-labs/
+
+ It's all text ... com essa estensão consigo editar o wikispaces com o vim
+								  hControl+Shift+Alt+Rttp://va.mu/Xhz0
+
+ Turn on your pdf reader ......... pdfjs.disabled
+
+
+= firefox cache in RAM=
+
+criar a seguinte chave (string) através do about:config
+
+browser.cache.disk.parent_directory
+
+coloque o valor para /var/shm/firefox-cache

@@ -1,0 +1,8 @@
+//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
+=Introdução=
+
+ case $var in
+      foo|bar|more) ... ;;
+   esac
+
+ 

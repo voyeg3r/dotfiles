@@ -1,0 +1,6 @@
+//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
+=Introdução=
+
+nl /etc/passwd | less
+
+ 

@@ -1,0 +1,45 @@
+{
+	"default_module": "powerline.segments.vim",
+	"segment_data": {
+		"tagbar_sort_indicator": {
+			"args": {
+				"override": {
+					"on" : "»s",
+					"off": "»n"
+				}
+			}
+		}
+	},
+	"segments": {
+		"left": [
+			{
+				"type": "string",
+				"contents": "Tagbar",
+				"priority" : 10,
+				"highlight_group": ["file_name"],
+				"draw_soft_divider": true
+			},
+			{
+				"module" : "linepower.segments",
+				"name": "tagbar_sort_indicator",
+				"draw_soft_divider": true
+			},
+			{
+				"module" : "linepower.segments",
+				"name": "tagbar_currentfile",
+				"draw_soft_divider": false
+			},
+
+			{
+				"type": "string",
+				"highlight_group": ["explore"],
+				"draw_soft_divider": true,
+				"draw_hard_divider": false,
+				"width": "auto"
+			}
+
+		]
+
+	}
+}
+

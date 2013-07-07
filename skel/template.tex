@@ -1,0 +1,130 @@
+% Arquivo: <+Modelo de documento LaTeX+>
+% Criado: Sex 28/Dez/2012 hs 14:09
+% Last Change: 2012 Dez 30 14:50:57
+% autor: <+digite seu nome+>
+% site: <+digite o endereço de seu site+>
+% twitter: <+your twitter here+>
+% email: <+seu email+>
+
+\documentclass[a4paper,12pt,openany,]{book}
+\usepackage[utf8x]{inputenc}
+\usepackage[portuguese,brazil]{babel}
+\usepackage{setspace}
+\usepackage{makeidx}    % para gerar o índice remissivo
+\usepackage{graphicx}   % \includegraphics[opt=valor]{figura.png}
+\graphicspath{{./img/}} % crie uma pasta img na mesma pasta do projeto
+\usepackage{verbatim}   % para algoritmos
+\usepackage{color}      % use if color is used in text
+\usepackage{subfigure}  % use for side-by-side figures
+\usepackage{url}        % para usar url's :)
+\usepackage{pifont}	    % simbolos de setas
+\usepackage{enumitem}   % tentando diminuir o espaçamento entre itens no itemize
+\usepackage{multicol}   % criar texto em colunas
+%\usepackage{verbatin}	% inserir códigos fonte
+\usepackage{flafter}    % make sure figures do not appear before their text:
+\frenchspacing          % não trata etc. como fim de senteças
+\usepackage{xcolor}     % para usar cores no documento
+\definecolor{bl}{rgb}{0.0,0.2,0.6}
+\usepackage{cmap}  % para mapear caracteres especiais no pdf
+\usepackage[pdftex]{hyperref}  % suporte a hypertexto e links
+\usepackage{lastpage}  % mostra o número da última página
+
+% para gerar o pdf use:  pdflatex text.tex
+
+% fonte garamond
+%\usepackage[urw-garamond]{mathdesign}
+%\usepackage[cardo]{mathdesign}
+\usepackage{inconsolata} % para comandos
+% fonte libertine
+\usepackage{libertine}
+\usepackage[T1]{fontenc}
+
+% fonte palatino
+%\usepackage[sc]{mathpazo}
+%\linespread{1.05}         % Palatino needs more leading (space between lines)
+%\usepackage[T1]{fontenc}
+
+\makeindex
+\newcommand{\dica}[1]{{{\large \ding{42}}}}	% inserir imagem para dica, provido por pifont
+
+\hypersetup{colorlinks=true, breaklinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, pagecolor=blue, urlcolor=blue,
+%\hypersetup{colorlinks=false,pdfborder={0 0 0},breaklinks=true}
+pdfauthor={anonymous},
+pdftitle={How to learn english easily},
+pdfsubject={english},
+pdfkeywords={english, ingles},
+pdfproducer={Latex},
+pdfcreator={pdflatex}}
+
+\usepackage{fancyhdr} % para cabeçalhos mais elaborados
+\pagestyle{fancy}
+% com isto nos nos certificamos que o cabeçalho dos capítulos e
+% seções estão em minúsculo.
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{} % deleta a configuração atual para cabeçalho e rodapé
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % cria espaço para a linha
+\fancypagestyle{plain}{%
+\fancyhead{} % exibe o cabeçalho e o rodapé
+\renewcommand{\headrulewidth}{0pt} % e a linha
+}
+%\usepackage{listings}
+%\lstset{language=Python}
+%\lstinputlisting{source.py}
+
+%\title{Como aprender inglês de forma facil}
+%\author{Anonymous}
+%
+\begin{document}
+\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.eps}
+
+\thispagestyle{empty}
+
+%\begin{titlepage} %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+
+\rule{10cm}{1.5mm}\\ \vspace{-.7\baselineskip}
+\rule{10cm}{.3mm}\\ \vspace{.5\baselineskip}
+{\textsc {\Huge NOME DO DOCUMENTO}}\\ \vspace{-.4\baselineskip}
+\rule{10cm}{.3mm}\\ \vspace{-.5\baselineskip}
+\rule{10cm}{1.5mm}\\
+
+\vspace{5cm}
+\begin{flushright}
+\begin{minipage}[t]{12cm}
+
+	{\small Texto descritivo para a seção minipage
+	isto fica na capa.} \vspace{1cm}
+
+	``The mind, once expanded to dimensions of larger ideas,
+	never returns to its orignal size.'' {\em Oliver Wendell Holmes}
+	\vspace{0.5\baselineskip}
+
+
+    “Insanity: doing the same thing over and over again and expecting different results.”
+	{\em Albert Einstein}
+
+
+\end{minipage} \\
+\end{flushright}
+
+\vspace{1cm}
+
+{\small Versão gerada em \\ \bf \today } % especifica a versão do PDF pelo dia que o gerou.
+\end{center}
+%\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+%\include{intro}
+\chapter{Introdução}\label{cha:intro}
+
+Apenas um começo de tudo
+
+\end{document}

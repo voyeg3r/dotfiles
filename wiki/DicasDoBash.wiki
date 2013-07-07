@@ -1,0 +1,52 @@
+= como criar um array no bash=
+
+  var=($(uname -a))
+
+  echo ${var[0]}
+
+ imprimindo os últimos três elementos de um array
+
+     echo "${SERVERS[@]:(-3)}"
+
+=Atalhos e dicas do terminal de comandos=
+
+=Abrindo a pasta atual no gerenciador de arquivos=
+
+    xdg-open .
+
+=Dicas do Júlio César Neves=
+
+    read -p “Deseja continuar (s/n)? “
+
+    [[ ${REPLY^} == N ]] && exit
+
+Veja também InputRc
+
+Para acessar rapidamente um comando recem digitado basta
+pressionar Ctrl-r e digitar parte do comando, o bash achará
+o comando, basta então pressionar enter.
+
+`^176^160 ........ troca 176 por 160 no comando anterior `
+
+=Para fechar o terminal direto, mesmo que exista texto digitado=
+
+    Ctrl-Shift-q
+
+=Abrir o terminal via teclado=
+
+   Ctrl-alt-t
+
+=função para testar se o valor passado é inteiro=
+
+#!/bin/sh
+#Check if input is integer or not
+
+    ${1:? Usage: No input, exiting..}
+
+    result=$(echo $1 | egrep ^[[:digit:]]+$)
+
+    if [ "$result" = "" ] ; then
+        echo "Not Integer"
+    else
+        echo "Integer"
+    fi

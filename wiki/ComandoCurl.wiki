@@ -1,0 +1,100 @@
+=Referências=
+* [[@http://bemvindoaolinux.blogspot.com/2009/01/downloads-por-linha-de-comando-curl.html]]
+* IBM [[http://www.ibm.com/developerworks/br/opensource/library/os-curl/index.html]]
+
+cURL é uma ferramenta desenvolvida para a transferência de arquivos pela
+Internet pelo próprio terminal de comandos do sistema (Xterm, Konsole, Consola,
+etc...). Este aplicativo suporta vários tipos de protocolos diferentes, deste
+modo, permitindo downloads de muitas fontes distintas. Outra característica sua
+é a utilização de sintaxes e expressões regulares.
+
+**Protocolos suportados por cURL**
+
+Entre os protocolos suportados, podemos citar: FTP, FTPS, HTTP, HTTPS, SCP,
+SFTP, TFTP, TELNET, DICT, LDAP, LDAPS e FILE. Além disso, cURL suporta
+certificados SSL, HTTP em proxies, cookies, autenticação em diversos sites
+(usuários + password). Através desta ferramenta, é possível afirmar, sem
+sombras de dúvidas, que a grande maioria dos sites da Web podem ser acessados
+por cURL.
+
+**Uso de sintaxe e expressões regulares**
+
+O uso de expressões regulares é muito útil quando todos os arquivos a serem
+baixados seguem algum padrão em seus nomes. Assim, como um único comando, você
+pode baixar centenas ou milhares de links de só uma vez.  Recomendo fazer a
+instalação por meio do gerenciador de pacotes de sua distribuição, cURL está
+presente na maioria das distribuições Linux. Se você usar o gerenciador de
+pacotes não será necessário fazer este download.
+
+=using curl with proxy=
+
+# add this line in your ~/.bashrc
+alias curl='curl --proxy 192.168.1.11:8080'
+
+==salvando os comandos mais populares do site command-line-fu==
+
+curl http://www.commandlinefu.com/commands/browse/sort-by-votes/plaintext/[0-2500:25] | grep -v _curl_ > comfu.txt
+
+==get external ip==
+
+curl ifconfig.me
+
+
+==Save mp3 from stream==
+
+curl -sS -o $outfile -m $showlengthinseconds $streamurl
+
+
+==encurtador de urls do google==
+* http://vivaotux.blogspot.com/2010/03/encurtador-de-urls-do-google.html
+
+curl -s 'http://ggl-shortener.appspot.com/?url='"$1" | sed -e 's/{"short_url":"//' -e 's/"}/\n/g'
+
+
+==Exibir IP externo==
+
+echo `curl -s sputnick-area.net/ip`
+
+# ou
+curl icanhazip.com
+curl -s ip.appspot.com
+
+==Dá pra twittar com o curl==
+
+
+curl -u NOMEDEUSUARIO:SENHA -d status=”SUA MENSAGEM AQUI ENTRE AS ASPAS” http://www.twitter.com/statuses/update.xml
+curl -u user:pass -d status="Tweeting from the shell" http://twitter.com/statuses/update.xml
+
+# ou
+curl -u twitter-username -d status="Hello World, Twitter!" -d source="cURL" http://twitter.com/statuses/update.xml
+
+#ou
+#!/bin/bash
+curl -u USER:PASS -d status="$*" http://twitter.com/statuses/update.xml > /dev/null
+echo "Message sent!"
+
+
+
+==upload via ftp==
+
+
+curl -u user:passwd -T /home/dir/local_file_to_upload ftp://your_host.com/subdir/
+
+
+==baixar todos os pacotes tar.gz==
+
+
+curl http://www.phrack.org/archives/tgz/phrack[1-67].tar.gz -o phrack#1.tar.gz
+
+==baixando lições de inglês audio e texto==
+
+curl --limit-rate 15k http://learnrealenglish.com/AudioVideo/Tip%20[1-7].zip -o tip_#1.zip
+curl --limit-rate 15k http://learnrealenglish.com/AudioVideo/tips/Tip_[1-7].pdf -o tip_#1.pdf
+
+==download all delicious bookmarks==
+
+curl -u username -o bookmarks.xml https://api.del.icio.us/v1/posts/all
+
+==extrair tarball remoto sem salvar localmente==
+
+curl http://example.com/foo.tar.gz | tar zxvf -
