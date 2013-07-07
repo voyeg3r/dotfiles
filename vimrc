@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2013 Jul 03 13:52:24
+" Last Change: 2013 Jul 07 09:31:00
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -429,7 +429,6 @@ map <leader>l:set list! list?<cr>
 nno <S-F11> :set hls! hls?<cr>
 imap <S-F11> <ESC>:set hls!<CR>a
 xmap <S-F11> <ESC>:set hls!<CR>gv
-
 
 " map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
 " togle between number nonumber and relativenumber

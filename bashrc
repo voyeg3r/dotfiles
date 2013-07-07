@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 07 09:14:02
+# Last Change: 2013 Jul 07 09:30:53
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -24,7 +24,7 @@ stty stop ""
 complete -cf sudo
 complete -d cd mkdir rmdir
 
-source ~/.vim/git-completion.bash
+ [ -f ~/.vim/git-completion.bash ] && source ~/.vim/git-completion.bash
 
 alias xclip='xclip -selection c'
 alias config-data='sudo ntpdate -u -b bonehed.lcs.mit.edu'
@@ -46,7 +46,6 @@ shopt -s extglob
 [ ${BASH_VERSINFO[0]} -ge 4 ] && shopt -s globstar
 shopt -s cdspell                       # fix wrong type keys
 shopt -s dirspell
-
 
 adkey () {
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $1
@@ -85,11 +84,6 @@ export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="&:ls:pwd:[bf]g:ssh *:exit"
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
-
-
-
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -107,14 +101,12 @@ else
 PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
 
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
-
 
 getaudio () {
 # dependences: libmp3lame-dev libmad0-dev and compile sox
@@ -277,8 +269,6 @@ alias path='echo -e ${PATH//:/\\n}'
 PYTHONSTARTUP="$HOME/.pythonstartup"
 export PYTHONSTARTUP
 
-
-
 up (){
 # Created at: 2012/06/19 10:37:26
 # Go up directory tree X number of directories
@@ -369,9 +359,18 @@ host(){
     command host $args $c
 }
 
-
-
 export LESS="-P ?c<- .?f%f:Standard input.  ?n:?eEND:?p%pj\%.. .?c%ccol . ?mFile %i of %m  .?xNext\ %x.%t   Press h for help"
+man() { # wrapper para o comando man
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+			man "$@"
+}
 
 # set o vim como editor padrão
 export EDITOR=vim
@@ -389,15 +388,6 @@ export MOZ_DISABLE_PANGO=1
 export FLASH_GTK_LIBRARY=libgtk-x11-2.0.so.0
 
 export PATH=/var/lib/gems/1.8/bin:$PATH
-
-# manpages coloridas
-export LESS_TERMCAP_mb=$'\E[01;31m' # begin blinking
-export LESS_TERMCAP_md=$'\E[01;38;5;74m' # begin bold
-export LESS_TERMCAP_me=$'\E[0m' # end mode
-export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
-export LESS_TERMCAP_so=$'\E[38;5;246m' # begin standout-mode - info box export LESS_TERMCAP_ue=$'\E[0m' # end underline
-export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
-
 
 # Instalacao das Funcoes ZZ (www.funcoeszz.net)
 #export ZZOFF=""  # desligue funcoes indesejadas
