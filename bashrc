@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 06 23:34:06
+# Last Change: 2013 Jul 07 07:03:10
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -89,6 +89,8 @@ export HISTIGNORE="&:ls:pwd:[bf]g:ssh *:exit"
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
+
+
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -116,7 +118,12 @@ unset use_color safe_term match_lhs
 
 # retorna um prompt bem legal
 # reference: https://makandracards.com/makandra/1090-customize-your-bash-prompt
-PS1='`if [ $? = 0 ]; then echo "✔"; else echo "✘"; fi` [$(date +%H:%M)] \u \w: '
+#PS1='`if [ $? = 0 ]; then echo "✔"; else echo "✘"; fi` [$(date +%H:%M)] \u \w \$: '
+PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+# prompt para o root
+# PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
