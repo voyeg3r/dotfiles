@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 06 23:31:15
+# Last Change: 2013 Jul 06 23:34:06
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -234,7 +234,7 @@ extract() {
     done
    }
 
-alias syncode='cdesk.vim && git push -u origin master'
+alias syncode='cd ~/.vim && git push -u origin master'
 
 alias ssh="ssh -C"
 alias scp='scp -r '
