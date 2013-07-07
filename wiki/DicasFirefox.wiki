@@ -1,9 +1,27 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: 2012 Out 27 06:13:40
+Last Change: 2013 Jul 07 12:29:06
 autor: slas
 site: vivaotux
 twitter: voyeg3r
+
+==desabilitar a checagem de virus==
+http://en.kioskea.net/faq/1686-optimize-firefox-completely
+
+    Launch Firefox
+    In the address bar, type about:config
+    Confirm if needed
+    In the filter, type safe
+    In the Settings list, double-click on the following parameters and set them to false:
+        browser.safebrowsing.enabled
+        browser.safebrowsing.malware.enabled
+    Close Firefox and wait several seconds
+    In your Firefox profile, delete the file urlclassifier3.sqlite
+        This poses no long-term risk - Firefox can recreate it if required
+    Restart Firefox
+    You should see an improvement
+
+	browser.download.manager.scanWhenDone
 
 == Carregar abas sob demanda apenas ==
 coloque a chave

@@ -1,0 +1,60 @@
+Dicas do comando git
+
+---------------------------------
+Para clonar este repositorio faça
+---------------------------------
+
+	git clone git@github.com:voyeg3r/dotfiles.git ~/.vim
+
+--------------
+MANUAIS DO GIT
+--------------
+
+	http://mariomoraesneto.blogspot.com.br/2012/11/git-dicas-basicas-e-praticas.html
+	http://githowto.com/
+
+------------------------
+Configurando o usuário
+------------------------
+
+	git config --global user.name "seu nome"
+	git config --global user.email "seu@email.com"
+
+--------------------
+listar configurações
+--------------------
+
+	git config --list
+
+--------------------------------------------------------
+ É possível configurar alias para os comandos, exemplos
+--------------------------------------------------------
+
+dentro do seu repositório um arquivo .git/config
+dentro dele cole estas linas.
+
+	[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+
+--------------------------------------
+Como adicionar sua chave ssh ao github
+--------------------------------------
+
+	https://help.github.com/articles/generating-ssh-keys
+
+---------------------------
+ começando um novo projeto
+---------------------------
+
+	touch README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin git@github.com:voyeg3r/dotfiles.git
+	git push -u origin master
