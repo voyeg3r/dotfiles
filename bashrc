@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 07 07:03:10
+# Last Change: 2013 Jul 07 07:08:23
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -117,7 +117,7 @@ match_lhs=""
 unset use_color safe_term match_lhs
 
 # retorna um prompt bem legal
-# reference: https://makandracards.com/makandra/1090-customize-your-bash-prompt
+# reference: http://traviscline.com/blog/2007/09/03/how-i-color-my-bash-prompts/
 #PS1='`if [ $? = 0 ]; then echo "✔"; else echo "✘"; fi` [$(date +%H:%M)] \u \w \$: '
 PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
