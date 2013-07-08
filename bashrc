@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 07 14:06:00
+# Last Change: 2013 Jul 08 12:28:27
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -14,25 +14,6 @@
 
 INPUTRC=~/.inputrc
 
-# Define a few Colours
-BLACK='\e[0;30m'
-BLUE='\e[0;34m'
-GREEN='\e[0;32m'
-CYAN='\e[0;36m'
-RED='\e[0;31m'
-PURPLE='\e[0;35m'
-BROWN='\e[0;33m'
-LIGHTGRAY='\e[0;37m'
-DARKGRAY='\e[1;30m'
-LIGHTBLUE='\e[1;34m'
-LIGHTGREEN='\e[1;32m'
-LIGHTCYAN='\e[1;36m'
-LIGHTRED='\e[1;31m'
-LIGHTPURPLE='\e[1;35m'
-YELLOW='\e[1;33m'
-WHITE='\e[1;37m'
-NC='\e[0m' # No Color
-
 # avoid ctrl-s freeze your terminal
 stty stop ""
 
@@ -45,8 +26,10 @@ complete -d cd mkdir rmdir
 
  [ -f ~/.vim/git-completion.bash ] && source ~/.vim/git-completion.bash
 
+
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
 alias xclip='xclip -selection c'
-alias config-data='sudo ntpdate -u -b bonehed.lcs.mit.edu'
+alias config-date='sudo ntpdate -u -b bonehed.lcs.mit.edu'
 alias aria2c='aria2c -x5 -c'
 alias 4shared='cadaver http://webdav.4shared.com/'
 alias compilalivro='make clean; make && make show'
@@ -57,6 +40,24 @@ alias dir="dir --color=auto"
 alias grep="grep --color=auto"
 alias dmesg='dmesg --color'
 alias rm='mv -t ~/.local/share/Trash/files'
+alias syncode='cd ~/.vim && git push -u origin master'
+alias ssh="ssh -C"
+alias scp='scp -r '
+alias gril="grep -ril"
+alias youtube-dl="youtube-dl -t"
+alias xterm='/usr/bin/xterm -ls -bg black -fg white -cr -fs 11 white -hc white rightbar'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias lvim="vim -c \"normal '0\""
+alias cdesk="cd ${HOME}/Desktop"
+alias update='sudo apt-fast update'
+alias upgrade='sudo apt-fast upgrade'
+alias upgradef='sudo apt-fast update && sudo apt-fast upgrade'
+alias install='sudo apt-fast install'
+alias iso2utf='iconv -f iso-8859-1 -t utf-8'
+alias utf2iso='iconv -f utf-8 -t iso-8859-1'
+alias path='echo -e ${PATH//:/\\n}'
 
 shopt -s histverify                    # verifica comandos do histórico
 shopt -s checkwinsize                  # ajusta janela redimensionada
@@ -66,7 +67,6 @@ shopt -s extglob
 shopt -s cdspell                       # fix wrong type keys
 shopt -s dirspell
 
-adkey () { sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $1; }
 
 # convert text to lowcase
 lower() { echo "${@}" | awk '{print tolower($0)}' ;}
@@ -100,33 +100,25 @@ fi
 #PS1='`if [ $? = 0 ]; then echo "✔"; else echo "✘"; fi` [$(date +%H:%M)] \u \w \$: '
 
 if [[ "$(id -un)" != "root" ]]; then
-PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` \[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
 # prompt para o root
 #PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-PS1='`if [ $? = 0 ]; then echo "\[\033[01;32m\]✔\[\033[00m\]"; else echo "\[\033[01;31m\]✘\[\033[00m\]"; fi` \[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` \[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
-
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 getaudio () {
 # dependences: libmp3lame-dev libmad0-dev and compile sox
 # http://michalfapso.blogspot.com.br/2012/01/using-google-text-to-speech.html
 
-var="${@}"
-echo "${@}" > teste.txt
+	var="${@}"
+	echo "${@}" > teste.txt
 
-filename="${var// /_}.mp3"
-speak.pl en teste.txt "$filename"
-rm -rf "$filename".tmp && rm -f teste.txt
-echo "[sound:${filename}]" | xclip -selection c
-mpg321 "$filename"
+	filename="${var// /_}.mp3"
+	speak.pl en teste.txt "$filename"
+	rm -rf "$filename".tmp && rm -f teste.txt
+	echo "[sound:${filename}]" | xclip -selection c
+	mpg321 "$filename"
 }
 
 eng2audio () {
@@ -223,36 +215,7 @@ extract() {
     done
    }
 
-alias syncode='cd ~/.vim && git push -u origin master'
 
-alias ssh="ssh -C"
-alias scp='scp -r '
-alias gril="grep -ril"
-alias youtube-dl="youtube-dl -t"
-
-# xterm
-alias xterm='xterm -ls -bg black -fg white -cr -fs 11 white -hc white rightbar'
-
-alias apt-get="apt-get -o Acquire::http::Dl-Limit=15"
-
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
-# alias para abrir o último arquivo editado pelo vim
-alias lvim="vim -c \"normal '0\""
-
-alias cdesk="cd ${HOME}/Desktop"
-alias update='sudo apt-fast update'
-alias upgrade='sudo apt-fast upgrade'
-alias upgradef='sudo apt-fast update && sudo apt-fast upgrade'
-alias install='sudo apt-fast install'
-
-# Dica retirada do blog do mitre
-# http://jfmitre.blogspot.com/2006/05/convertendo-arquivos-utf-8-em-isso-8859.html
-alias iso2utf='iconv -f iso-8859-1 -t utf-8'
-alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -267,7 +230,6 @@ export HISTCONTROL=ignoredups
 # configuração do path
 PATH=~/bin:/usr/local/texlive/2012/bin/i386-linux:$PATH
 
-alias path='echo -e ${PATH//:/\\n}'
 
 # para chamar o pythonrc
 PYTHONSTARTUP="$HOME/.pythonstartup"
@@ -429,5 +391,5 @@ export PATH=/var/lib/gems/1.8/bin:$PATH
 #source "$ZZPATH"
 
 # Instalacao das Funcoes ZZ (www.funcoeszz.net)
-source /usr/bin/funcoeszz
-export ZZPATH=/usr/bin/funcoeszz
+#source /usr/bin/funcoeszz
+#export ZZPATH=/usr/bin/funcoeszz
