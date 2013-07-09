@@ -1,12 +1,28 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: 2013 Jun 11 19:31:32
+Last Change: 2013 Jul 09 15:57:55
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
+== nova versão do plugin powerline ==
+{{{
+	https://powerline.readthedocs.org/en/latest/
+	easy_install pip
+	https://powerline.readthedocs.org/en/latest/installation/linux.html#installation-linux
+
+	wget -c https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+	wget -c https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+	mkdir ~/.fonts.conf.d/
+	cp 10-powerline-symbols.conf
+	cp PowerlineSymbols.otf ~/.fonts
+	fc-cache -vf ~/.fonts
+
+}}}
+
 = how extract urls =
+
 {{{
 		%s/.*\(http.*.mp3\).*/\1/g
 		g!/\.mp3/d
