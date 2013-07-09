@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 09 18:02:34
+# Last Change: 2013 Jul 09 20:33:30
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -24,7 +24,7 @@ stty stop ""
 complete -cf sudo
 complete -d cd mkdir rmdir
 
- [ -f ~/.vim/git-completion.bash ] && source ~/.vim/git-completion.bash
+[ -f ~/.vim/git-completion.bash ] && source ~/.vim/git-completion.bash
 
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
@@ -139,6 +139,13 @@ if   ping -q -c2 www.google.com >/dev/null ; then
         command -v mpg321 > /dev/null && mpg321 -q "${FILENAME// /_}.mp3"
         echo "[sound:${FILENAME// /_}.mp3]" | xclip -selection c
 fi
+}
+
+
+youtube-mp3 () {
+# get mp3 from youtube
+command -v ffmpeg >/dev/null && youtube-dl -t --extract-audio --audio-format=mp3 --audio-quality 320k "${1}"
+[ $? = 1 ] && echo "instale o programa ffmpeg para poder converter para mp3"
 }
 
 geturls () {
