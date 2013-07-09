@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 08 12:28:27
+# Last Change: 2013 Jul 08 21:20:35
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -100,11 +100,11 @@ fi
 #PS1='`if [ $? = 0 ]; then echo "✔"; else echo "✘"; fi` [$(date +%H:%M)] \u \w \$: '
 
 if [[ "$(id -un)" != "root" ]]; then
-PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` \[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` \[\e[2;37m\][\A] \[\e[0;33m\]\[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
 # prompt para o root
 #PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` \[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` \[\e[2;37m\][\A] \[\e[0;33m\]\[\033[01;31m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
 
 getaudio () {
@@ -338,14 +338,6 @@ man() { # wrapper para o comando man
 		LESS_TERMCAP_ue=$(printf "\e[0m") \
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
 			man "$@"
-}
-
-cd () {
-  if [ -n "$1" ]; then
-    builtin cd "$@" && ls
-  else
-    builtin cd ~ && ls
-  fi
 }
 
 apt-history () {
