@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 08 21:20:35
+# Last Change: 2013 Jul 08 22:21:20
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -80,6 +80,7 @@ decTohex() { bc <<< "obase=16; $1"; }
 biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
 top10 () { history | awk '{print $2}' | sort | uniq -c | sort -rn | head ; }
 beep () { echo -e -n \\a ; }
+dict() { curl "dict://dict.org/d:${1%%/}";}
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
