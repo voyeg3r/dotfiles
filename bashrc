@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 08 22:21:20
+# Last Change: 2013 Jul 09 12:19:13
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -39,7 +39,7 @@ alias ls="ls --color=auto"
 alias dir="dir --color=auto"
 alias grep="grep --color=auto"
 alias dmesg='dmesg --color'
-alias rm='mv -t ~/.local/share/Trash/files'
+#alias rm='mv -t ~/.local/share/Trash/files'
 alias syncode='cd ~/.vim && git push -u origin master'
 alias ssh="ssh -C"
 alias scp='scp -r '
@@ -58,6 +58,7 @@ alias install='sudo apt-fast install'
 alias iso2utf='iconv -f iso-8859-1 -t utf-8'
 alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 alias path='echo -e ${PATH//:/\\n}'
+[ -e `which vim` ] &&  alias vi='vim'
 
 shopt -s histverify                    # verifica comandos do histórico
 shopt -s checkwinsize                  # ajusta janela redimensionada
@@ -101,11 +102,11 @@ fi
 #PS1='`if [ $? = 0 ]; then echo "✔"; else echo "✘"; fi` [$(date +%H:%M)] \u \w \$: '
 
 if [[ "$(id -un)" != "root" ]]; then
-PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` \[\e[2;37m\][\A] \[\e[0;33m\]\[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
 # prompt para o root
 #PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` \[\e[2;37m\][\A] \[\e[0;33m\]\[\033[01;31m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;31m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
 
 getaudio () {
