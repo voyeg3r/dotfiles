@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 09 12:19:13
+# Last Change: 2013 Jul 09 13:14:21
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -97,6 +97,9 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# read this about PROMPT_COMMAND:
+# http://brettterpstra.com/2009/11/17/my-new-favorite-bash-prompt/
+
 # retorna um prompt bem legal
 # reference: http://traviscline.com/blog/2007/09/03/how-i-color-my-bash-prompts/
 #PS1='`if [ $? = 0 ]; then echo "✔"; else echo "✘"; fi` [$(date +%H:%M)] \u \w \$: '
@@ -108,6 +111,8 @@ else
 #PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;31m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
+
+#export PROMPT_COMMAND='echo -ne "\033]0;"`hostname -I`"\007"'
 
 getaudio () {
 # dependences: libmp3lame-dev libmad0-dev and compile sox
