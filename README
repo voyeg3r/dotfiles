@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2013 Jul 10 16:41:41
+Last Change: 2013 Jul 10 16:50:46
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voye3r
@@ -15,7 +15,15 @@ da forma que ele se encontra agora no repositorio:
 Para clonar este repositorio faça
 ---------------------------------
 
-	git clone git@github.com:voyeg3r/dotfiles.git ~/.vim
+clonedotfiles () { #function to clone voyeg3r dotfiles
+
+	git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+	mv ~/.vimrc ~/.vim/vimrc && ln -s ~/.dotfiles/vimrc ~/.vimrc
+	mv ~/.bashrc ~/bashrc && ln -s ~/.dotfiles/bashrc ~/.bashrc
+	ln -s ~/.dotfiles/inputrc ~/.inputrc
+	git init
+	git add .
+}
 
 --------------
 MANUAIS DO GIT
