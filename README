@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2013 Jul 07 11:18:17
+Last Change: 2013 Jul 10 16:26:02
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voye3r
@@ -36,6 +36,13 @@ listar configurações
 --------------------
 
 	git config --list
+
+--------------------------
+Configurando git submodule
+--------------------------
+
+    git submodule init
+    git submodule update
 
 --------------------------------------------------------
  É possível configurar alias para os comandos, exemplos
