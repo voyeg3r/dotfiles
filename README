@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2013 Jul 10 16:27:08
+Last Change: 2013 Jul 10 16:41:41
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voye3r
@@ -44,6 +44,10 @@ Configurando git submodule
 
     git submodule init
     git submodule update
+
+	git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+	git add .
+	git commit -m "Install Fugitive.vim bundle as a submodule."
 
 --------------------------------------------------------
  É possível configurar alias para os comandos, exemplos
