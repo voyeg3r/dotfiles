@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 09 20:33:30
+# Last Change: 2013 Jul 09 21:21:52
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -25,7 +25,6 @@ complete -cf sudo
 complete -d cd mkdir rmdir
 
 [ -f ~/.vim/git-completion.bash ] && source ~/.vim/git-completion.bash
-
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 alias xclip='xclip -selection c'
@@ -67,7 +66,6 @@ shopt -s extglob
 [ ${BASH_VERSINFO[0]} -ge 4 ] && shopt -s globstar
 shopt -s cdspell                       # fix wrong type keys
 shopt -s dirspell
-
 
 # convert text to lowcase
 lower() { echo "${@}" | awk '{print tolower($0)}' ;}
@@ -141,10 +139,9 @@ if   ping -q -c2 www.google.com >/dev/null ; then
 fi
 }
 
-
 youtube-mp3 () {
 # get mp3 from youtube
-command -v ffmpeg >/dev/null && youtube-dl -t --extract-audio --audio-format=mp3 --audio-quality 320k "${1}"
+command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames -x --audio-format=mp3 --audio-quality 320k  "${1}"
 [ $? = 1 ] && echo "instale o programa ffmpeg para poder converter para mp3"
 }
 
@@ -222,8 +219,6 @@ extract() {
     done
    }
 
-
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -236,7 +231,6 @@ export HISTCONTROL=ignoredups
 
 # configuração do path
 PATH=~/bin:/usr/local/texlive/2012/bin/i386-linux:$PATH
-
 
 # para chamar o pythonrc
 PYTHONSTARTUP="$HOME/.pythonstartup"
