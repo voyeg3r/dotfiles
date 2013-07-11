@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 11 06:38:18
+# Last Change: 2013 Jul 11 07:45:48
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -140,11 +140,11 @@ fi
 }
 
 youtube-mp3 () {
-	if [ $# -eq 0 ] ; then
-		echo -e '\n\tUSAGE: youtube-mp3 youtube-link\n'
-		return 0
-	fi
+# put thins function in your ~/.bashrc
 
+	${1:?"error: I need a youtube link"}
+
+	# testing existence of programs
 	NEEDED_COMMANDS="youtube-dl ffmpeg"
 	missing_counter=0
 	for needed_command in $NEEDED_COMMANDS; do
@@ -157,6 +157,7 @@ youtube-mp3 () {
 		sudo apt-get install -y $NEEDED_COMMANDS
 	fi
 
+	# geting video and converting with ffmpeg
 	youtube-dl --restrict-filenames -x --audio-format=mp3 --audio-quality 320k  "${1}"
 }
 
@@ -167,6 +168,17 @@ wget -q "$1" -O - | \
     tr "\t\r\n'" '   "' | \
     grep -i -o '<a[^>]\+href[ ]*=[ \t]*"\(ht\|f\)tps\?:[^"]\+"' | \
     sed -e 's/^.*"\([^"]\+\)".*$/\1/g'
+}
+
+backup() {
+  file=${1:?"error: I need a file to backup"}
+
+  timestamp=$(date '+%Y-%m-%d-%H:%M:%S')
+  backupdir=~/backups
+
+  [ -d ${backupdir} ] || mkdir -p ${backupdir}
+  cp -a ${file} ${backupdir}/$(basename ${file}).${timestamp}
+  return $?
 }
 
 getmp3 (){
