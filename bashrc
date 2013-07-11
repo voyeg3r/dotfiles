@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 11 06:20:54
+# Last Change: 2013 Jul 11 06:38:18
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -140,6 +140,11 @@ fi
 }
 
 youtube-mp3 () {
+	if [ $# -eq 0 ] ; then
+		echo -e '\n\tUSAGE: youtube-mp3 youtube-link\n'
+		return 0
+	fi
+
 	NEEDED_COMMANDS="youtube-dl ffmpeg"
 	missing_counter=0
 	for needed_command in $NEEDED_COMMANDS; do
