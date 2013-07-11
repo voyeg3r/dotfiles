@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 10 17:13:18
+# Last Change: 2013 Jul 11 06:20:54
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -140,9 +140,19 @@ fi
 }
 
 youtube-mp3 () {
-# get mp3 from youtube
-command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames -x --audio-format=mp3 --audio-quality 320k  "${1}"
-[ $? = 1 ] && echo "instale o programa ffmpeg para poder converter para mp3"
+	NEEDED_COMMANDS="youtube-dl ffmpeg"
+	missing_counter=0
+	for needed_command in $NEEDED_COMMANDS; do
+		if ! hash "$needed_command" >/dev/null 2>&1; then
+			printf "Command not found in PATH: %s\n" "$needed_command" >&2
+			((missing_counter++))
+		fi
+	done
+	if ((missing_counter > 0)); then
+		sudo apt-get install -y $NEEDED_COMMANDS
+	fi
+
+	youtube-dl --restrict-filenames -x --audio-format=mp3 --audio-quality 320k  "${1}"
 }
 
 geturls () {
