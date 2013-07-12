@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 12 06:13:05
+# Last Change: 2013 Jul 12 10:38:15
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -92,6 +92,23 @@ export HISTCONTROL=ignoredups
 # ... and ignore same sucessive entries.
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="&:ls:pwd:[bf]g:ssh *:exit"
+export LS_COLORS=$LS_COLORS:"*.wmv=01;35":"*.wma=01;35":"*.flv=01;35":"*.m4a=01;35":"*.mp3=01;35":"*.mp4=01;35"
+
+function add_ls_colors { export LS_COLORS="$LS_COLORS:$1"; }
+    #export LS_COLORS=
+    add_ls_colors "*.ps=00;35:*.eps=00;35:*.pdf=00;35:*.svg=00;35"
+    add_ls_colors "*.jpg=00;35:*.png=00;35:*.gif=00;35"
+    add_ls_colors "*.bmp=00;35:*.ppm=00;35:*.tga=00;35"
+    add_ls_colors "*.xbm=00;35:*.xpm=00;35:*.tif=00;35"
+    add_ls_colors "*.png=00;35:*.mpg=00;35:*.avi=00;35"
+    ## Archive files
+    add_ls_colors "*.tar=00;31:*.tgz=00;31:*.arj=00;31"
+    add_ls_colors "*.taz=00;31:*.lzh=00;31:*.zip=00;31"
+    add_ls_colors "*.z=00;31:*.Z=00;31:*.gz=00;31"
+    add_ls_colors "*.bz2=00;31:*.deb=00;31:*.rpm=00;31"
+    ## Fixes
+    add_ls_colors "*.com=00;00:"
+
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
