@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 12 12:20:06
+# Last Change: 2013 Jul 12 12:26:17
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -69,6 +69,7 @@ alias POA='mplayer http://rio.radioetvweb.com.br:8282'
 alias CGH='mplayer http://rio.radioetvweb.com.br:8300'
 alias classic='mplayer http://80.237.154.83:8120'
 
+# watch aljazeera
 alias alj='rtmpdump -v -r "rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med" | mplayer -'
 
 shopt -s histverify                    # verifica comandos do histórico
