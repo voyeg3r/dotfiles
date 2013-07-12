@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 12 10:38:15
+# Last Change: 2013 Jul 12 11:24:48
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -61,6 +61,12 @@ alias iso2utf='iconv -f iso-8859-1 -t utf-8'
 alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 alias path='echo -e ${PATH//:/\\n}'
 [ -e `which vim` ] &&  alias vi='vim'
+
+# Listen to Air Traffic Control, used to be scripts.
+alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
+alias GRU='mplayer http://rio.radioetvweb.com.br:8298'
+alias POA='mplayer http://rio.radioetvweb.com.br:8282'
+alias CGH='mplayer http://rio.radioetvweb.com.br:8300'
 
 shopt -s histverify                    # verifica comandos do histórico
 shopt -s checkwinsize                  # ajusta janela redimensionada
