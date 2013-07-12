@@ -27,9 +27,9 @@ IFS=$OLDIFS
 endsnippet
 
 snippet "here((doc)?umment)?" "here documment" r
-	${1:cat} <<-EOF
-	${2:# add your text here }
-	EOF
+${1:cat} <<-EOF
+${2:# add your text here }
+EOF
 endsnippet
 
 snippet mkfiles "create 10 files" w
@@ -64,12 +64,6 @@ usage()
 
 ${0:# press c-j}
 endsnippet
-
-# snippet args "test se há argumentos" w
-# `!v ${1:?"error: I need an argument"}`
-#
-# ${0}
-# endsnippet
 
 
 snippet lock
@@ -119,7 +113,7 @@ ${0:# press c-j}
 endsnippet
 
 snippet #!
-#!/bin/sh
+#!/bin/bash
 
 ${0}
 endsnippet

@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 11 07:45:48
+# Last Change: 2013 Jul 12 06:13:05
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -11,6 +11,8 @@
 #   |    /(_)\  Linux User #423493         |
 #   |     ^ ^   voyeg3r   gmail.com       |
 #   +======================================+
+#
+# References: https://github.com/fnichol/bashrc/blob/master/bashrc
 
 INPUTRC=~/.inputrc
 
@@ -36,6 +38,7 @@ alias updatelivro='hg push ssh://hg@bitbucket.org/sergio/learn-english'
 alias less='less -r'
 alias ls="ls --color=auto"
 alias dir="dir --color=auto"
+alias lsd="ls -d */"
 alias grep="grep --color=auto"
 alias dmesg='dmesg --color'
 #alias rm='mv -t ~/.local/share/Trash/files'
@@ -179,6 +182,16 @@ backup() {
   [ -d ${backupdir} ] || mkdir -p ${backupdir}
   cp -a ${file} ${backupdir}/$(basename ${file}).${timestamp}
   return $?
+}
+
+diskusage() {
+	du -ks "$@" | sort -nr | \
+	awk '{ \
+	if ($1 > 1048576) printf("%8.2fG", $1/1048576) ; \
+		else if ($1 > 1024) printf("%8.2fM", $1/1024) ; \
+		else printf("%8.2fK", $1) ; \
+		sub($1, "") ; print \
+	}'
 }
 
 getmp3 (){

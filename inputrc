@@ -1,7 +1,7 @@
 # ------------------------------------------------------
 # FILE: ~/.inputrc
 # CREATED: Qui 13/Out/2011 hs 09:39
-# LAST CHANGE: 2011 Out 28 09:56:21
+# LAST CHANGE: 2013 Jul 11 21:43:57
 # SITE: http://vivaotux.blogspot.com
 # TWITTER: http://www.twitter.com/voyeg3r
 # EMAIL: <voyeg3r  gmail.com>
@@ -56,6 +56,9 @@ $if Bash
     set completion-ignore-case on
     set show-all-if-ambiguous on
     set show-all-if-unmodified  on
+	set page-completions off
+	set visible-stats on
+	set completion-map-case on
     # do history expansion when space entered
     Space: magic-space
 $endif
