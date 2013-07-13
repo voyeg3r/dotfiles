@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 12 12:26:17
+# Last Change: 2013 Jul 13 09:01:47
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -25,6 +25,9 @@ stty stop ""
 # bash completion to sudo command
 complete -cf sudo
 complete -d cd mkdir rmdir
+# autocomplete ssh commands
+complete -W "$(echo `cat ~/.bash_history | egrep '^ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh
+
 
 [ -f ~/.vim/git-completion.bash ] && source ~/.vim/git-completion.bash
 
@@ -87,8 +90,8 @@ expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; 
 calc(){ echo "scale=2;$@" | bc;}
 ff () { find . -type f -iname '*'"$@"'*' ; }
 mkcd() { mkdir -p "$@" && cd $_; }
-function decToBin { echo "ibase=10; obase=2; $1" | bc; }
-decTohex() { bc <<< "obase=16; $1"; }
+decToBin () { echo "ibase=10; obase=2; $1" | bc; }
+decTohex () { bc <<< "obase=16; $1"; }
 biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
 top10 () { history | awk '{print $2}' | sort | uniq -c | sort -rn | head ; }
 beep () { echo -e -n \\a ; }
@@ -167,6 +170,16 @@ if   ping -q -c2 www.google.com >/dev/null ; then
         command -v mpg321 > /dev/null && mpg321 -q "${FILENAME// /_}.mp3"
         echo "[sound:${FILENAME// /_}.mp3]" | xclip -selection c
 fi
+}
+
+mp4tomp3 () {
+# http://stackoverflow.com/questions/5365090/removing-extension-from-file-without-knowing-it
+command -v ffmpeg > /dev/null || sudo apt-get install -y ffmpeg
+command -v lame > /dev/null || sudo apt-get install -y gstreamer0.10-plugins-ugly
+
+	local var="${1%.*}"                              # strip extension
+	local newname="${var// /_}.mp3"                  # get rid space and add mp3 extension
+	ffmpeg -i "$1" -f mp3 -ab 320000 -vn "$newname"
 }
 
 youtube-mp3 () {

@@ -12,7 +12,7 @@ ComandoAlsaconf - configura o som através do sistema alsa
 ComandoApropos - busca manuais
 [[ComandoApt]] - instala programas
 ComandoAria2c - programa acelerador de downloads
-ComandoArp - diagnóstico de rede
+[[ComandoArpscan]] - diagnóstico de rede
 ComandoArp-scan - diganóstico de rede (como root)
 ComandoA2ps - gera arquivos ps de uma entrada
 ComandoAptitude - gerenciador de pacotes
@@ -147,7 +147,7 @@ ComandoNetstat - mostra informações da rede
 ComandoNgrep - um [[grep que filtra dados na rede
 ComandoNl - mostra um arquivo na tela numerado
 ComandoNmblookup - procura no windows netbios o nome associado a um ip
-ComandoNmap - ferramenta superpoderosa para redes
+[[ComandoNmap]] - ferramenta superpoderosa para redes
 [[ComandoNproc]] - mostra a quantidade de núcleos do seu processador
 ComandoNslookup - usado para obter informações de um servidor dns
 ComandoNtpdate - atualiza o relógio via rede
@@ -158,7 +158,7 @@ ComandoPasswd - modifica a senha
 ComandoPaste - descricao
 ComandoPerl - linguagem de programação interpretada
 ComandoPidof - mostra o pid de um processo
-ComandoPing - testa se um host está ativo
+[[ComandoPing]] - testa se um host está ativo
 ComandoPkill - mata processos pelo nome
 ComandoPppoeconf - configura uma conexão adsl
 ComandoPrintf - usado para imprimir valores na tela
