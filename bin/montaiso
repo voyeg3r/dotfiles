@@ -1,0 +1,14 @@
+#!/bin/bash
+# Criado em: Dom 09/Set/2012 hs 07:23
+# Last Change: 2012 Set 09 07:24:12
+# vim:ft=sh:fdm=syntax:nu:
+# Instituicao: none
+# Proposito do script: montar imagens iso
+# Autor: Sérgio Luiz Araújo Silva
+# site: http://vivaotux.blogspot.com
+# twitter: http://www.twitter.com/voyeg3r
+
+BASENAME=`basename "${1%.*}"`
+sudo mkdir /media/"$BASENAME"
+sudo mount -t iso9660 "$1" /media/$BASENAME -o loop > /dev/null
+

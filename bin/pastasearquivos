@@ -1,0 +1,15 @@
+#!/bin/bash
+# Criado em:Dom 12/Ago/2007 hs 10:49
+# Last Change: Dom 12 Ago 2007 11:11:06 BRT
+# Instituicao:
+# este script cria 10 pastas com 10 arquivos cada
+
+for ((i=1; i<=10; i++)); {
+	mkdir "pasta$i"
+	for ((j=1; j<=10; j++)); {
+		echo "arquivo${j}.txt" > "pasta${i}"/"arquivo$j"
+	}
+	unset j
+}
+
+ls

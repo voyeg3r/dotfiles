@@ -1,0 +1,14 @@
+#!/bin/sh
+# script to perform full duplex to your netcard (linux)
+# save in /etc/network/if-up.d/full-duplex && chmod +x them
+# Author: Sergio Luiz Araujo Silva
+# download: wget -c wget -c https://raw.github.com/1261754 -O /etc/network/if-up.d/100Mbs
+
+# where is ethtool ?
+ETHTOOL="`which ethtool`" || { echo "First install ethtool"; sleep 3; exit 1;}
+
+# discover default netcard
+DEV=`netstat -i | awk '/eth/ {print $1}'`
+
+# perform chage
+$ETHTOOL -s $DEV autoneg off && $ETHTOOL -s $DEV speed 100 duplex full

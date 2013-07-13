@@ -1,0 +1,257 @@
+#!/bin/bash
+# Criado em:Qui 05/Jan/2006 hs 13:13
+# ultima modificação: Sex 03 Fev 2006 20:17:48 BRST
+# Agenda telefônica
+# Autor: Sérgio Luiz Araújo Silva
+# script de configuração do gnome
+# modificado em: 04 de junho de 2007 13h43m
+
+# DICAS ##########################
+# para configurar na mão abra o gconf-editor
+# O gconf-editor usa os tipos:
+# textos ........... string
+# booleanos ...... true / false
+# inteiro ........... int  (quando usar valores "int") coloque assim: 'num'
+#
+# -t str  --> indica tipo string
+#
+# Para retirar todas as modificações tente:
+# gconftool-2 --recursive-unset /
+
+
+
+# ##################
+# backup base Gconf
+# este trecho faz um backup das configurações do gnome
+clear
+
+  echo "   Salvando configurações atuais do Gconf ... (backup_gconf_base.xml)"
+  gconftool-2 --dump / > .backup_gconf_base.xml
+  echo "   backup salvo em $PWD/.backup_gconf_base.xml"
+
+
+# Definindo o programa default para importar fotos
+# f-spot-import
+gconftool-2 -t str -s /desktop/gnome/volume_manager/autophoto_command f-spot-import
+
+
+
+# tema para a janela de atualizações
+gconftool-2 -t str -s  /apps/notification-daemon/theme standard
+
+# Favoritos do gconf-editor
+gconftool-2 -t list --list-type=string -s /apps/gconf-editor/bookmarks \
+[/apps/metacity,/apps/nautilus/desktop,/apps/panel/default_setup/general,/apps/gedit-2/preferences/editor]
+
+
+
+# Gedit #####################################################################
+# opções do editor de textos padrão do gnome
+
+# plugins ativos do gedit
+gconftool-2 -t list --list-type string \
+-s /apps/gedit-2/plugins/active-plugins [filebrowser,modelines,savecopy,snnipets,spell,taglist]
+
+# Ativa o painel lateral
+gconftool-2 -s -t bool /apps/gedit-2/preferences/ui/side_pane true
+
+# ativa a auto indentação
+gconftool-2 -t bool -s /apps/gedit-2/preferences/editor/auto_indent/auto_indent true
+
+
+clear
+echo
+# habilita a numeração de linhas no Gedit
+gconftool-2 -t bool -s /apps/gedit-2/preferences/editor/line_numbers/display_line_numbers true
+
+# habilita/desabilita a criação de um backup para cada arquivo editado
+gconftool-2 -t bool -s /apps/gedit-2/preferences/editor/save/create_backup_copy false
+
+# habilita o salvamento automatico
+gconftool-2 -t bool -s /apps/gedit-2/preferences/editor/save/auto_save true
+
+# destaca parênteses correspondentes no gedit
+gconftool-2 -t bool -s /apps/gedit-2/preferences/editor/bracket_matching/bracket_matching true
+
+# define o tipo e tamanho da fonte no gedit
+gconftool-2 -t bool -s /apps/gedit-2/preferences/editor/font/use_default_font false
+gconftool-2 -t str -s /apps/gedit-2/preferences/editor/font/editor_font 'Monospace 10'
+
+# para evitar que o gedit imprima cabeçalhos de textos
+gconftool-2 -t bool -s /apps/gedit-2/preferences/print/page/print_header false
+
+# Esquema de cores
+# desabilita as cores default
+gconftool-2 -t bool -s /apps/gedit-2/preferences/editor/colors/use_default_colors false
+gconftool-2 -t str -s /apps/gedit-2/preferences/editor/colors/background_color '#eeeeeeeeeeee'
+gconftool-2 -t str -s /apps/gedit-2/preferences/editor/colors/selected_text_color '#ffffffffffff'
+gconftool-2 -t str -s /apps/gedit-2/preferences/editor/colors/selection_color '#333333333333'
+
+# destaca a linha corrente
+gconftool-2 -t bool -s /apps/gedit-2/preferences/editor/current_line/highlight_current_line true
+
+
+###############################################################################
+
+## Gnome search tool - ferramenta de busca do gnome ############################
+# habilita opções de busca avançadas
+gconftool-2 -t bool -s /apps/gnome-search-tool/show_additional_options true
+
+
+# Nautilus #####################################################################
+# opções do gerenciador de arquivos do gnome
+
+# desabilita o modo spatial
+gconftool-2 -t boo -s /apps/nautilus/preferences/always_use_browser true
+
+# oculta a divisão da janela do gerenciador de arquivos - F9 alterna
+gconftool-2 -t bool -s /apps/nautilus/preferences/start_with_sidebar true
+
+# oculta a barra de ferramentas do gerenciador de arquivos
+gconftool-2 -t bool -s /apps/nautilus/preferences/start_with_toolbar true
+
+# Oculta barra de localização - Para exibir use Control+L
+gconftool-2 -t bool -s /apps/nautilus/preferences/start_with_location_bar true
+
+
+# ao clicar duas vezes na barra de títulos de uma janela ela será enrolada
+gconftool-2 -t str -s /apps/metacity/general/action_double_click_titlebar 'toggle_shade'
+
+# o painel lateral será exibido em forma de árvore
+gconftool-2 -t str -s /apps/nautilus/preferences/side_pane_view NautilusTreeSidebar
+
+# habilita o ícone da Área de Trabalho - "~/Desktop"
+gconftool-2 -t bool -s /apps/nautilus/desktop/home_icon_visible true
+
+# habilita a exibição do ícone "Computador" no Desktop
+gconftool-2 -t bool -s /apps/nautilus/desktop/computer_icon_visible false
+
+# habilita a exibição da lixeira
+gconftool-2 -t bool -s /apps/nautilus/desktop/trash_icon_visible false
+
+# habilita a exibição dos ícones de cds pendrives quando montados
+gconftool-2 -t bool -s /apps/nautilus/desktop/volumes_visible true
+
+# Nível de zoom dos ícones "padrão do gnome standard"
+gconftool-2 -t str -s /apps/nautilus/icon_view/default_zoom_level standard
+
+# para exibir a opção de deletar sem enviar para a lixeira
+gconftool-2 --type bool -s /apps/nautilus/preferences/enable_delete True
+
+# mostra a barra de endereços da forma clássica
+gconftool-2 -t bool -s /apps/nautilus/preferences/always_use_location_entry true
+
+gconftool-2 -t str -s /apps/nautilus/preferences/search_bar_type search_by_text_and_properties
+
+# habilita o clique único - para usar descomente apgando o caractere #
+gconftool-2 -t str -s /apps/nautilus/preferences/click_policy single
+
+# mostra permissões avançadas
+gconftool-2 -t bool -s /apps/nautilus/preferences/show_advanced_permissions true
+
+
+# Efeito no logout
+# gconftool-2 -t str -s /apps/gnome-session/options/logout_effect black
+
+
+
+# Control Alt Delete para mostrar processos
+gconftool-2 -t str -s /apps/metacity/global_keybindings/run_command_9 "<Control><Alt>Delete"
+gconftool-2 -t str -s /apps/metacity/keybinding_commands/command_9 "gnome-system-monitor"
+
+#Abrir o nautilus com a tecla windows mais letra "e"
+gconftool-2 -t str -s /apps/metacity/global_keybindings/run_command_8 "<Mod4>e"
+gconftool-2 -t str -s /apps/metacity/keybinding_commands/command_8 "nautilus --browser"
+
+#Localizar usando tecla windows mais letra "f"
+gconftool-2 -t str -s /apps/metacity/global_keybindings/run_command_7 "<Mod4>f"
+gconftool-2 -t str -s /apps/metacity/keybinding_commands/command_7 "gnome-search-tool"
+
+
+#Minimizar todas as janelas com tecla windows mais letra "d"
+gconftool-2 -t str -s /apps/metacity/global_keybindings/show_desktop "<Mod4>d"
+
+# Se quizer o comando executar igual ao do windows
+# gconftool-2 -t str -s /apps/metacity/global_keybindings/panel_run_dialog "<Mod4>r"
+
+#Desabilitando animações
+gconftool-2 -t bool -s '/apps/panel/global/enable_animations' false
+# Obs: para não ver quadros ao mover janelas habilite também a função
+# abaixo
+
+#Ativando recursos reduzidos
+gconftool-2 -t bool -s '/apps/metacity/general/reduced_resources' true
+
+#Removendo restrições de arquivos pdf no evince
+gconftool-2 -t bool -s  '/apps/evince/override_restrictions' true
+
+# Ao ativar "reduced_resouces" o modo como arrastamos janelas fica estranho, para consertar isto
+# vá em Sistema >> Preferências >> Preferêncais de tecnologias assistivas e ative a primeira
+# caixa de verificação ou cole a linha abaixo num konsole e pressione Enter Sorridente
+
+#Ativando Tecnologias assistivas (se desabilitou animações é bom usar)
+gconftool-2 -t bool -s '/desktop/gnome/interface/accessibility' true
+
+# Número de áreas de trabalho
+gconftool-2 -t int -s /apps/metacity/general/num_workspaces '4'
+
+# Tema para o ambiente
+gconftool-2 -t str -s /apps/metacity/general/theme Clearlooks
+gconftool-2 -t str -s /desktop/gnome/interface/gtk_theme Clearlooks
+gconftool-2 -t str -s /desktop/gnome/interface/icon_theme gnome
+
+# gnome terminal - fonte branca fundo preto
+gconftool-2 -t str -s /apps/gnome-terminal/profiles/Default/foreground_color "#ffffff"
+gconftool-2 -t str -s /apps/gnome-terminal/profiles/Default/background_color "#000000"
+gconftool-2 -t bool -s /apps/gnome-terminal/profiles/Default/use_theme_colors false
+
+# Transparência no terminal (.75 darkness)
+gconftool-2 -t str -s /apps/gnome-terminal/profiles/Default/background_type transparent
+gconftool-2 -t float -s /apps/gnome-terminal/profiles/Default/background_darkness 0.75
+
+# abrir xterm com atalho Control+y - Obs: xterm personalizado
+#gconftool-2 -t str -s /apps/metacity/global_keybindings/run_command_1 '<Ctrl>Y'
+#gconftool-2 -t str -s /apps/metacity/keybinding_commands/command_1 'xterm -ls -bg black -fg white -fa "bistream vera sans mono" -fs 10 -cr white -hc white -rightbar'
+
+# file-roller abre na pasta ao descompactar
+gconftool-2 -t bool -s /apps/file-roller/dialogs/extract/view_destination_folder true
+
+# gnome-btdownload (cliente padrão para bittorrent no gnome, setando porta máxima)
+# por padrão ele escuta apenas na 6881
+gconftool-2 -t int -s /apps/gnome-btdownload/settings/max_port 6889
+
+# Fontes de pesquisa:
+# http://dotfiles.org/~voyeg3r/gconf-script
+# http://sergioaraujo.pbwiki.com/Gnome
+# http://www.gnome.org/~bmsmith/gconf-docs/C/
+# http://www.gnome.org/~bmsmith/gconf-docs/C/nautilus.html
+# http://weblog.janghwa.info/share/exemples/gconf-script.html
+# https://svn.wamber.net/projects/wamber/browser/trunk/bin/configure-gnome?rev=64
+# http://www.gnome.org/learn/admin-guide/latest/gconf-8.html
+# http://www.gnome.org/~bmsmith/gconf-docs/C/evince.html[/li][/list]
+# #http://www.mail-archive.com/ubuntu-desktop@lists.ubuntu.com/msg00803.html
+# http://www.die.net/doc/linux/man/man1/gconftool-2.1.html "man page"
+# http://wiki.novell.com/index.php/Locking_Down_the_GNOME_Desktop
+# http://gentoo-wiki.com/HOWTO_Gnome_Desktop_Admin_Guide
+# www.linux-magazine.com/issue/41/GConf_Gnome_Configuration.pdf
+# http://mail.gnome.org/archives/gnome-list/2004-August/msg00066.html
+# http://www.gnome.org/learn/admin-guide/2.2/system-admin-guide.html
+# http://docs-pdf.sun.com/817-3909/817-3909.pdf
+# http://gathering.tweakers.net/forum/list_messages/1170028/8
+
+######################################
+# Configurações gerais para todos os usuários
+# usuários não podem estar logados ou terão que fazer logoff
+
+# os arquivos --> "gconf.xml.defaults" e "gconf.xml.mandatory"
+# é que determinam se um valor é apenas padrão ou é apenas leitura para um usuário
+
+# Para configurar valores padrão modificáveis pelo usuário
+# gconftool-2 --direct --config-source \
+#xml:readwrite:/etc/gconf/gconf.xml.defaults -t bool -s  \
+#/apps/nautilus/desktop/home_icon_visible true
+
+# Obs: observe --> gconf.xml.defaults
+######################################
+### Fim do scrip
+

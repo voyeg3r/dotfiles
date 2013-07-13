@@ -1,0 +1,45 @@
+#! /bin/bash
+# -----------------------------------------------------------------------
+# - Feito por: Luiz Henrique Rapatao					-
+# - E-mail: luizhr@pop.com.br						-
+# - ICQ: 59115655							-
+# - MSN: luiz_st@msn.com.br						-
+# - Site: www.rapatao.cjb.net						-
+# - Programa: Telefones							-
+# - Funcao: Procura telefones/nomes em um arquivo texto			-
+# - Versao: 0.1								-
+# -									-
+# - Este script pode ser alterado e distribuido por qualquer pessoa,	-
+# - desde que este quadro se mantenha inalterado!			-
+# -----------------------------------------------------------------------
+
+# local do arquivo com os telefones
+telefones_db="/home/sergio/.telefones.txt"
+
+# limpa a tela
+clear
+
+# boas vindas =)
+echo "Bem vindo ao Telefones 0.1 - http://www.rapatao.cjb.net/"
+
+# coleta dados para procura
+echo "\t Digite o nome a procurar"
+read nome
+
+# limpa a tela
+clear
+
+# efetua a procura pelo aquivo e gera um arquivo com os dados em sua pasta home
+cat $telefones_db | grep -i "$nome" > ~/.telefones.tmp
+
+# verifica se foi encontrado alguem e exibe caso tenha
+telefone=$(cat ~/.telefones.tmp)
+if $telefone > /dev/null 2>&1; then
+  echo "Nada foi encontrado!"
+else
+  echo "Telefone(s) encontrado(s):"
+  cat ~/.telefones.tmp
+fi
+
+# apaga o arquivo temporario da pasta home
+rm -rf ~/.telefones.tmp

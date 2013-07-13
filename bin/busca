@@ -1,0 +1,8 @@
+#!/bin/bash
+# Criado em:Seg 02/Jan/2006 hs 17:33
+# ultima modificação: Seg 02 Jan 2006 17:52:25 BRST
+# Scrip para procurar arquivos
+# Autor: Sérgio Luiz Araújo Silva
+
+find ~ -iname "*${1}*" -print
+

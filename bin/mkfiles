@@ -1,0 +1,20 @@
+#!/bin/bash
+# Criado em:Qui 05/Jan/2006 hs 13:13
+# ultima modificação: Sex 03 Fev 2006 20:17:48 BRST
+# Autor: Sérgio Luiz Araújo Silva
+# este script cria 10 pastas com 10 arquivos cada
+
+for ((i=1; i<=10; i++)); {
+	mkdir pasta${i} && cd pasta${i}
+	for ((j=1;j<=10;j++)){
+		cat <<-EOF > arquivo${j}.txt
+		Este é o arquivo${j}.txt
+		criado especialmente para
+		testes, ou mesmo para experimentos
+		com sed ou awk
+		EOF
+	}
+	cd ..
+}
+
+ls

@@ -1,0 +1,46 @@
+#!/bin/bash
+# Criado em:Seg 13/Dez/2010 hs 08:40
+# Last Change: 2010 Dez 13 08:59:20
+# vim:ft=sh:fdm=syntax:nu:
+# Instituicao: none
+# Proposito do script: converter videos flv para ogv
+# Autor: Sérgio Luiz Araújo Silva
+# site: http://vivaotux.blogspot.com
+# twitter: voyeg3r
+
+if [ which ffmpeg ] &>/dev/null ; then
+    cat <<-EOF
+
+    ------------------------------------------------------------
+    Para usar o comando flv2ogv você tem que instalar o ffmpeg
+    use este comando: sudo apt-get install -y ffmpeg
+    ------------------------------------------------------------
+
+EOF
+read -sn 1 -p "Pressione uma tecla para continuar..."
+clear
+exit 1
+fi
+
+
+if [ -z "$1" ]
+then
+    cat <<-EOF
+
+    ------------------------------------------------
+    SCRIPT PARA CONVERSÃO DE ARQUIVO FLV PARA OGV
+    forneça como parâmetro o nome de um arquivo flv
+    ------------------------------------------------
+
+    EOF
+    read -sn 1 -p "Pressione uma tecla para continuar..."
+    clear
+    exit 1
+fi
+
+nome=${1%.flv}
+echo "convertendo $1 para ${nome}.ogv" ...
+sleep 2
+
+ffmpeg -i $1 ${nome}.ogv
+

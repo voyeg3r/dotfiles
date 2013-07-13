@@ -1,0 +1,159 @@
+#!/bin/bash
+# Criado em:Qui 05/Jan/2006 hs 13:13
+# ultima modificação: Sex 03 Fev 2006 20:17:48 BRST
+# Agenda telefônica
+# Autor: Sérgio Luiz Araújo Silva
+# Codecs
+#
+
+# chave pública do google
+# https://dl-ssl.google.com/linux/linux_signing_key.pub
+
+# chave pública do ubuntustudio
+# http://archive.ubuntustudio.org/ubuntustudio.gpg
+# Remover a Suite de Escritório OpenOffice
+
+sudo aptitude remove -y --purge openoffice.org openoffice.org-core openoffice.org-common
+
+apt-get install -y cdrdao vcdimager mjpegtools vcdtools transcode
+apt-get install -y movixmaker-2 normalize-audio mp3gain
+apt-get install -y mplayer mplayer-fonts mencoder transcode
+
+apt-get install -y mpeg2dec a52dec vorbis-tools id3v2 mpg321 mpg123
+apt-get install -y totem-gstreamer-firefox-plugin
+
+apt-get install -y libswfdec0.3 libflac++5c2
+apt-get install -y cdda2wav toolame libmp4v2-0
+apt-get install -y dvdauthor mpeg2dec ffmpeg
+
+apt-get install -y libmjpegtools0c2a tagtool easytag id3tool
+apt-get install -y lame lame-extras nautilus-script-audio-convert
+
+apt-get install -y dvd-slideshow
+apt-get install -y mpg123 libmad0
+apt-get install -y libquicktime0 libjpeg-progs libmpcdec3 jhead
+
+apt-get install -y libmpeg2-4 uudeview flac libmpeg3-1 libxine-extracodecs
+apt-get install -y gstreamer0.10-plugins-ugly gstreamer0.10-ffmpeg
+ gstreamer0.10-plugins-bad
+apt-get install -y gstreamer0.10-gl gstreamer0.10-pitfdll gstreamer0.10-sdl
+apt-get install -y gsfonts gsfonts-x11
+
+# avifiles (para quem vai usar avifile-player)
+apt-get install -y avifile-player avifile-utils avifile-mad-plugin avifile-mjpeg-plugin
+
+apt-get install -y avifile-vorbis-plugin avifile-win32-plugin avifile-xvid-plugin
+apt-get install -y avifile-win32-plugin avifile-divx-plugin avifile-utils
+
+apt-get install -y avifile-xvid-plugin libavifile-0.7c2
+apt-get install -y avifile-divx-plugin xvid4conf avifile-mad-plugin
+
+apt-get install -y avifile-mjpeg-plugin avifile-vorbis-plugin
+
+# As linhas abaixo implementam a capacidade de abrir todos os
+
+# formatos de compactação
+apt-get -y install unace rar unrar zip unzip p7zip-full p7zip-rar \
+ sharutils aish uudeview mpack lha arj cabextract file-roller
+
+# Instalação do acrobat reader para quem quizer
+
+# adicione este repositório
+apt-get -y install acroread
+apt-get -y install mozilla-acroread
+
+apt-get -y install acroread-plugins
+
+# Instalando o Suite de Escritório - BrOffice
+apt-get install -y broffice.org
+apt-get install -y openoffice.org-gtk
+apt-get -y install openoffice.org-gnome
+
+#A lista acima contém codecs, ferramentas para conversão entre formatos
+#e utilitários. Mas apenas isso não basta, faltam alguns codecs proprietários
+
+#do formato windows, então vamos a eles :
+
+# w32codecs e libdvdcss
+wget -vc http://www.debian-multimedia.org/pool/main/w/w32codecs/w32codecs_20060611-0.0_i386.deb
+wget -vc http://fmasft.if.usp.br/debian-marillat/pool/main/libd/libdvdcss/libdvdcss2_1.2.9-0.0_i386.deb
+dpkg -i w32codecs_20060611-0.0_i386.deb libdvdcss2_1.2.9-0.0_i386.deb
+
+# Instalando o J2SE Runtime Environment (JRE) com o Plug-in para o Mozilla Firefox
+# Quando solicitado, concorde com os termos da licença DLJ.
+apt-get install -y --force-yes sun-java5-jre sun-java5-plugin
+
+ln -s /usr/lib/jvm/java-1.5.0-sun-1.5.0.11 /usr/java
+
+# Instalando o Plug-in Flash Player (Macromedia Flash) para o Mozilla Firefox
+apt-get install -y --force-yes flashplugin-nonfree
+
+# Instalando um Cliente de Email (Mozilla Thunderbird)
+apt-get install -y --force-yes mozilla-thunderbird
+apt-get install -y --force-yes mozilla-thunderbird-locale-pt-br
+
+# Instalando um Reprodutor de Multimídia (XMMS)
+apt-get install -y xmms
+
+apt-get install xmms-skins
+dpkg -i xmms-wma_1.0.4-2_i386.deb
+
+# Instalando o PDF Reader (Adobe Reader) com Plug-in para Mozilla Firefox
+apt-get install -y --force-yes acroread
+apt-get install -y --force-yes mozilla-acroread
+
+apt-get install -y --force-yes acroread-plugins
+
+# Instalando o Navegador Firefox em Português do Brasil
+apt-get install -y --force-yes mozilla-firefox-locale-pt-br
+
+# ipython - interpretador melhorado para o python
+apt-get -y install ipython
+
+#instalando o ssh e sshfs
+apt-get -y install ssh sshfs
+
+# Instalando o Servidor Samba para o serviço de compartilhamento de arquivos/pastas
+apt-get install -y --force-yes samba
+apt-get install smbfs
+
+# Instalando o ClamAV - Servidor de Anti-Vírus
+apt-get install -y --force-yes clamav
+# Instalando Servidor de Impressão (cupsd)
+
+apt-get install -y --force-yes cupsys*
+
+# instalar Fontes Adicionais ( Microsoft)
+
+apt-get install msttcorefonts
+fc-cache -f -v
+
+# Instalando um Arquivador de RAR (rar)
+apt-get install -y --force-yes rar
+ln -fs /usr/bin/rar /usr/bin/unrar
+
+apt-get -y install aptoncd vim-gnome vim-doc  k3b libk3b2-mp3 k3b-i18n \
+ kde-i18n-ptbr frozen-bubble ubuntustudio-icon-theme
+
+# instalando o ffmpeg e imagemagick
+apt-get install -y ffmpeg imagemagick
+
+# instalando o klavaro - curso de digitação
+apt-get install -y klavaro
+
+# Instalando o inkscape
+apt-get install -y inkscape
+
+# instalando o aspell-pt-br para correção ortográfica no gedit
+apt-get install -y aspell-pt-br
+
+# instalando o tcpd para poder usar /etc/hosts.denny e /etc/hosts.allow
+apt-get install -y tcpd
+
+# flash
+apt-get -y install flashplugin-nonfree
+
+# tocador de dvd's
+apt-get -y install vlc
+
+

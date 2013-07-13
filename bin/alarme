@@ -1,0 +1,23 @@
+#!/bin/bash
+# Criado em:Dom 23/Mai/2010 hs 09:41
+# Last Change: 2012 Out 07 08:11:27
+# vim:ft=sh:fdm=syntax:nu:
+# Instituicao: none
+# Proposito do script: alarme
+# Autor: Sérgio Luiz Araújo Silva
+# site: http://vivaotux.blogspot.com
+
+# avisa se o programa play não estive instalado
+which play || echo "instale primeiro o programa sox" && (sleep 1 ; clear; exit 1)
+
+# para baixar o som: aria2c http://ubuntuone.com/p/4qs/
+
+[ "$1" ] && hora="$1"  || read -p "digte a hora: "  hora
+
+# local da musica que será tocada
+musica=~/music/k3b_success1.wav
+
+[ -e $musica ] || { read -p "digite o caminho completo para a musica: " musica ;}
+
+at $hora <<< "play $musica"
+

@@ -1,0 +1,11 @@
+#!/bin/bash
+# Criado em:Qui 05/Jan/2006 hs 13:13
+# ultima modificação: Sex 30 Set 2011 11:06:00 BRST
+# Autor: Sérgio Luiz Araújo Silva
+# Retorna o seu ip
+
+# discover what is your default netcard interface
+DEV=`netstat -i | awk '/eth/ {print $1}'`
+
+ifconfig $DEV | awk '/inet end/ {print $3}'
+

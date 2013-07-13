@@ -1,0 +1,55 @@
+#!/bin/bash
+# Criado em:Qua 04/Jan/2006 hs 16:51
+# ultima modificação: Qui 05 Jan 2006 11:03:03 BRST
+# Apaga linhas
+# Autor: Sérgio Luiz Araújo Silva
+
+# ======================================
+# apaga um trecho de vários arquivos
+# para usar este script faça
+#  del_linhas linha1 linha2
+
+# para apagar até o final dos arquivos faça
+# del_linhas linhinicial $
+
+# para apagar da linha 3 até a linha 10 faça:
+#  del_linhas 3 10
+
+# para apagar só uma linha faça
+# del_linhas num_da_linha
+# ======================================
+
+
+
+# ===========================
+#         APAGAR
+# ===========================
+
+
+if [ "$#" -lt "2"  ]
+then     # se for passado só uma linha
+    for i in `ls *`
+    do
+      echo "apagando a linha $1 do arquivo $i..."
+      cat $i | sed ${1}d > /tmp/$i
+      cat /tmp/$i > $i
+      rm -f /tmp/$i
+    done
+else     # se for passado um intervalo
+    for i in `ls *`
+    do
+      echo "apagando intervalo de $1 até $2"
+      cat $i | sed ${1},${2}d > /tmp/$i
+      cat /tmp/$i > $i
+      rm -f /tmp/$i
+    done
+fi
+
+
+
+
+
+
+
+
+

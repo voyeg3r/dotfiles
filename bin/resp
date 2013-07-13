@@ -1,0 +1,19 @@
+#!/bin/bash
+# Criado em:Sex 23/Dez/2005 hs 11:39
+# ultima modificação: Sex 23 Dez 2005 11:41:18 BRST
+# Propósito do script
+# Autor: Sérgio Luiz Araújo Silva
+
+#!/bin/bash
+echo "Vou buscar os dados do sistema. Posso continuar? [sn] "
+read RESPOSTA
+test "$RESPOSTA" = "n" && exit
+echo "Data e Horário:"
+data
+echo
+echo "Uso do disco:"
+df
+echo
+echo "Usuários conectados:"
+w
+

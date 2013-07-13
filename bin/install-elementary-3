@@ -1,0 +1,37 @@
+#!/bin/bash
+#Install Elementary theme and icons via BZR
+#version 0.3
+
+#make sure bzr is installed and there are the user didn't already get the elementary theme from bzr
+
+sudo add-apt-repository ppa:elementaryart/ppa
+sudo apt-get update
+sudo apt-get install bzr gtk2-engines-aurora gtk2-engines-murrine gtk2-engines-equinox
+rm -r elementaryicons/ egtk/ elementary/ > /dev/null 2>&1
+
+bzr branch lp:elementaryicons
+bzr branch lp:egtk
+mv egtk elementary
+
+#clean old installed files - uncomment the following lines if you use this script frequently!
+#cd /usr/share/icons/
+#sudo rm -r elementary* Humanity*
+#cd /usr/share/themes/
+#sudo rm -r elementary*
+#cd
+
+#install the icons
+sudo cp -r elementaryicons/elementary-icon-theme/elementary* /usr/share/icons/
+#sudo cp -r elementaryicons/greeny-icon-theme/Greeny/ /usr/share/icons/ - seems to have been removed
+sudo cp -r elementaryicons/humanity-icon-theme/Humanity* /usr/share/icons/
+#sudo cp -r elementaryicons/luminosity-icon-theme/luminosity/ /usr/share/icons/ - seems to have been removed
+
+#install the theme
+sudo cp -r elementary/ /usr/share/themes/
+
+#remove downloaded files
+rm -r elementaryicons/ elementary/
+
+
+
+

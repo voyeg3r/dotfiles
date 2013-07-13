@@ -1,0 +1,14 @@
+#!/bin/bash
+# Criado em:Sáb 28/Jan/2006 hs 13:42
+# ultima modificação: Ter 31 Jan 2006 21:00:33 BRST
+# Propósito do script - renomear fotos com nomes esquisistos
+# Autor: Sérgio Luiz Araújo Silva
+
+for i in *.jpg
+do
+
+  nome=`echo $i | cut -c7-`
+  mv -f $i $nome
+
+
+done

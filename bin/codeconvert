@@ -1,0 +1,175 @@
+#!/bin/bash
+#  Arquivo: CodeConvert - http://sites.google.com/site/bemylifeeasy/Home/codeconvert
+#  Autores: http://jfmitre.com/2010/01/alternando-arquivos-entre-codificacoes.html
+#  J. F. Mitre <http://jfmitre.com>
+
+#  Observe-se inúmeras contribuições de idéias obtidas dos comentários de
+#   http://jfmitre.com/2006/05/convertendo-arquivos-utf-8-em-iso-8859.html
+#
+#  Dentre essas idéias temos script do Marcelo Oliveira <http://www.iboletim.com.br/>
+#  e a modificação de Benneh Carvalho <http://sempirataria.wordpress.com/> após
+#  a dica do Bob <http://cvcdeg.blogspot.com/>, as três informações foram
+#  publicadas no mesmo link mencionado acima. Os três são co-autores desse script.
+#
+# Também existe a colaboração do Sérgio (voyeg3r) <http://vivaotux.blogspot.com/>
+# com a dica publica no tópico:
+#   http://vivaotux.blogspot.com/2007/07/converter-nomdes-dos-arquivos-de-iso.html
+#
+#  Algumas alterações realizadas por John Robson <John.Robson (at) USP.br>
+#
+#  Data de criação: Sex 19 Jun 2009 21:44:13 BRT
+#  Última atualização: Sex 20 Dez 2010 22:52:19 BRT
+#  Versão: v0.2
+# ----------------------------------------------------------------------------
+#  License:
+#     Copyright (C) 2010  Todos os autores e colaboradores
+#
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+#
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+#
+#     You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# ----------------------------------------------------------------------------
+#
+#  NOTAS: Converte o conteúdo e/ou o nome de arquivos da codificação UTF-8
+#         para iso-8859-1 e vice versa
+#
+#  Usage: CodeConvert [opções] [lista_de_arquivos]
+#
+# Opções:
+#  -2iso : Converte os arquivos para o formato ISO-8859
+#  -2utf : Converte os arquivos para o formato UTF-8
+#
+# ----------------------------------------------------------------------------
+#
+#  Convertendo todos os arquivos de uma pasta recursivamente:
+#
+#  # converte para o formato de caracteres UTF-8 e quebra de linha Unix
+#  $ find /home/user/Diretorio '!' -type d -exec ./CodeConvert.sh -2utf {} \;
+#
+# ----------------------------------------------------------------------------
+
+# Converter o conteúdo de um arquivo ISO-8859 para UTF-8 {{{
+Iso2Utf(){
+   # Para todos os argumentos passados
+   for i in "$@";
+   do
+      # verifica se é um arquivo (pelo menos 1 não é !!!)
+      if [ -f "$i" ]; then # sendo um arquivo
+      	 # converte a quebra de linha para formato Unix
+      	 dos2unix -k -o -q "$i"
+
+         #verifica se é ISO-8859
+         local codificacao=$(file --mime-encoding "$i")
+
+	 case "$codificacao" in
+	     *iso-8859* ) ;;
+	     *unknown-8bit* ) ;;
+	     * ) codificacao=$null;;
+	 esac
+
+         # Se $codificacao não estiver vazio, então é porque é ISO-8859
+         if [ -n "$codificacao" ];
+         then
+            # logo, crie a variavel que seta o diretório de backup
+            local backupdir="./.backup.$(basename $0)"
+            # verfica se esse diretório existe, se não exite, crie-o
+            [ ! -d "$backupdir" ] #&& mkdir "$backupdir"
+            # exibe uma mensagem informando quais arquivos sofreram alteração
+            echo $i
+            # converte o arquivo
+            recode iso-8859-1..UTF-8 "$i"
+            #iconv -f iso-8859-1 -t utf-8 "$i" > "$i.utf8"
+         fi
+      fi
+   done
+}
+# }}}
+
+# Converter o conteúdo de um arquivo UTF-8 para ISO-8859 {{{
+Utf2Iso(){
+   # Para todos os argumentos passados
+   for i in "$@";
+   do
+      # verifica se é um arquivo (pelo menos 1 não é !!!)
+      if [ -f "$i" ]; then # sendo um arquivo
+      	 # converte a quebra de linha para formato Windows
+         unix2dos -k -o -q "$i"
+
+         # sendo um arquivo, verifica se é UTF-8
+         local codificacao=$(file --mime-encoding "$i" | grep -i "UTF-8")
+         # Se $codificacao não estiver vazio, então é porque é UTF-8
+         if [ ! -z "$codificacao" ];
+         then
+            # logo, crie a variavel que seta o diretório de backup
+            local backupdir="./.backup.$(basename $0)"
+            # verfica se esse diretório existe, se não exite, crie-o
+            [ ! -d "$backupdir" ] #&& mkdir "$backupdir"
+            # exibe uma mensagem informando quais arquivos sofreram alteração
+            echo $i
+            # converte o arquivo
+            recode UTF-8..iso-8859-1 "$i"
+            #iconv -f utf-8 -t iso-8859-1 "$i" > "$i.iso8859"
+         fi
+      fi
+   done
+}
+# }}}
+
+#  Converte os nomes dos arquivos de UTF-8 para ISO-8859 {{{
+Utf2IsoName(){
+   # Para todos os argumentos passados
+   for i in "$@";
+   do
+      # verifique quais são arquivos
+      if [ -f "$i" ]; then
+            # e converte esses.
+            # esse comando é inteligente, ele não converte quem não precisa.
+            convmv -t iso-8859-1 -f utf-8 --notest "$i"
+      fi
+   done
+}
+# }}}
+
+# Converte os nomes dos arquivos de ISO-8859 para UTF-8 {{{
+Iso2UtfName(){
+   # Para todos os argumentos passados
+   for i in "$@";
+   do
+      # verifique quais são arquivos
+      if [ -f "$i" ]; then
+            # e converte esses.
+            # esse comando é inteligente, ele não converte quem não precisa.
+            convmv -f iso-8859-1 -t utf-8 --notest "$i"
+      fi
+   done
+}
+# }}}
+
+# Executando de acordo com a opção {{{
+if [ "$1" == "-2iso" ]; then
+   Utf2Iso "$@"
+   exit 0
+elif [ "$1" == "-n2iso" ]; then
+   Utf2IsoName "$@"
+   exit 0
+elif [ "$1" == "-2utf" ]; then
+   Iso2Utf "$@"
+   exit 0
+elif [ "$1" == "-n2utf" ]; then
+   Iso2UtfName "$@"
+   exit 0
+else
+   echo "Uso:"
+   echo "$(basename $0) -2iso|-2utf|-n2iso|-n2utf [lista de arquivos] "
+   echo
+fi
+# }}}
+

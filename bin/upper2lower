@@ -1,0 +1,25 @@
+#!/bin/sh
+# Criado em:Dom 12/Ago/2007 hs 10:49
+# Last Change: Dom 12 Ago 2007 11:11:06 BRT
+# Instituicao:
+#Ele recebe como parametro o diretório (ou default para atual) no qual alterar o nome
+#de todos os arquivos. Ele somente não faz a alteração se existirem nomes equivalentes
+#em minúsculas e maiúsculas, para evitar de sobrescrever arquivos.
+
+# download: http://www.jelb.org.br/~filipe/dicas.html
+
+
+if test -z $1 ; then
+    D="."
+else
+    D=$1
+fi
+for i in `ls $D`; do
+    a=`echo $i | tr [:upper:] [:lower:]`
+    if test $i != $a -a ! -e $D"/"$a ; then
+        echo "Moving " $i" - "$a
+        mv $D"/"$i $D"/"$a
+    fi
+done
+
+

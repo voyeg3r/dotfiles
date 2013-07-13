@@ -1,0 +1,33 @@
+#!/bin/bash
+# Criado em:Sex 03/Fev/2006 hs 20:00
+# ultima modificação: Sex 03 Fev 2006 20:21:47 BRST
+#
+# Propósito do script: buscar padrão que ocorre em um arquivo
+# dentro de outro
+#
+# Autor: Sérgio Luiz Araújo Silva
+
+ echo
+ echo -n "Digite o Nome primeiro arquivo: "
+ read arq1
+ clear
+ echo
+ echo -n "Digite o Nome segundo arquivo: "
+ read arq2
+
+
+# pega o número de linhas do arquivo 1 ou o maior
+ n=`cat $arq1 | sed -n $=`
+
+ for ((i=1;i<=$n;i++)) do
+
+   buscar=`cat $arq1 | sed -n "$i"p`
+   resultado=`cat $arq2 | grep -n "$buscar" 2>> /dev/null`
+   echo $resultado >> resultado.txt
+
+ done
+
+
+
+
+

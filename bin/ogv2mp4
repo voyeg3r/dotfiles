@@ -1,0 +1,51 @@
+#!/bin/bash
+# Criado em:Qui 02/Dez/2010 hs 17:11
+# Last Change: 2011 Jan 09 15:52:17
+# vim:ft=sh:fdm=syntax:nu:
+# Instituicao: none
+# Proposito do script: converter video de ogv para mp4
+# Autor: Sérgio Luiz Araújo Silva
+# site: http://vivaotux.blogspot.com
+# source: http://www.shallowsky.com/blog/linux/recordmydesktop.html
+
+
+if [ ! -x /usr/bin/mencoder ]
+then
+    cat <<-EOF
+
+    ------------------------------------------------------------
+    Para usar o comando ogv2mp4 você tem que instalar o mencoder
+    use este comando: sudo apt-get install -y mencoder
+    ------------------------------------------------------------
+
+EOF
+read -sn 1 -p "Pressione uma tecla para continuar..."
+clear
+exit 1
+fi
+
+if [ -z "$1" ]
+then
+    cat <<-EOF
+
+    ------------------------------------------------
+    SCRIPT PARA CONVERSÃO DE ARQUIVO OGV PARA MP4
+    forneça como parâmetro o nome de um arquivo ogv
+    ------------------------------------------------
+
+EOF
+read -sn 1 -p "Pressione uma tecla para continuar..."
+clear
+exit 1
+fi
+
+nome=${1%.ogv}
+echo "convertendo $1 para ${1%.ogv}.mp4 ..."
+sleep 2
+
+mencoder $1 -oac pcm -ovc lavc -lavcopts vcodec=mpeg4:vqmin=2:vlelim=-4:vcelim=9:lumi_mask=0.05:dark_mask=0.01:vhq -o ${nome}.mp4
+
+# esta versão gera um som mais alto
+#mencoder $1 -af volume=19 -oac pcm -ovc lavc -lavcopts vcodec=mpeg4:vqmin=2:vlelim=-4:vcelim=9:lumi_mask=0.05:dark_mask=0.01:vhq -o ${nome}.mp4
+
+

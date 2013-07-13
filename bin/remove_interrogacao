@@ -1,0 +1,14 @@
+#!/bin/bash
+# Criado em:Sáb 17/Dez/2005 hs 06:52
+# ultima modificação: Sáb 17 Dez 2005 06:58:10 BRST
+# Propósito do script
+# Autor: Sérgio Luiz Araújo Silva
+
+for original in *; do
+   resultado=`echo $original |
+              tr '\?' '-'`
+   if [ ! -e $resultado ]; then
+      mv $original $resultado
+   fi
+done
+

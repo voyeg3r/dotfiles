@@ -1,0 +1,322 @@
+#!/bin/bash
+# Criado em:Qui 05/Jan/2006 hs 13:13
+# ultima modificação: Sex 03 Fev 2006 20:17:48 BRST
+# Agenda telefônica
+# Autor: Sérgio Luiz Araújo Silva
+
+# verifica se há .fones.txt caso não exista
+# cria o arquivo omitindo mensagem de erro
+
+Fones="$HOME/.fones.txt"
+
+# testando a existência do banco de dados
+if [ -f $Fones ] 2>> /dev/null
+    then
+    touch $Fones
+fi
+
+# ordena os registros da agenda
+sort $Fones -o $Fones
+
+cat $Fones | sed -r 's/^[a-záéíóàãô]/\U&/g' > /tmp/.fones.txt
+mv /tmp/.fones.txt $Fones
+
+clear
+
+dia_semana=`date +%A | tr " " "\n" | sed -r "s/^[a-záéíóàãô]/\U&/g" | tr "\n" " "`
+dia_mes=`date +%d`
+mes=`date +%B`
+ano=`date +%Y`
+
+dia=`echo " $dia_semana $dia_mes de $mes de $ano"`
+
+
+clear
+echo
+echo
+echo "      BEM VINDO À SUA AGENDA TELEFÔNCIA"
+echo
+echo "                  ( O O )"
+echo "           ====oOO==(_)==OOo====="
+sleep 1
+
+
+_principal(){
+# ==========================
+#     Menu Principal
+# ==========================
+clear
+echo
+echo
+echo "     ======================================="
+echo "        A G E N D A   T E L E F Ô N I C A"
+echo "          M E N U   P R I N C I P A L "
+echo "     ======================================="
+echo "      $dia $hora"
+echo
+echo "      [c] Fazer um novo Cadastro "
+echo "      [a] Consultar um Nome"
+echo "      [e] Editar a agenda com o vim"
+echo "      [s] Sair"
+echo
+
+if [ $resultado -ne " " ] 2>> /dev/null
+then
+    echo "    Sua ultima consulta foi"
+    $resultado=`echo $resultado |   tr " " "\n" | sed -r "s/^[a-záéíóàãô]/\U&/g" | tr "\n" " "`
+    echo "    $resultado"
+fi
+
+        echo -n "     Digite a opção: "
+        read opcao
+        case $opcao in
+        c) _cadastro
+        ;;
+        a) _consulta
+        ;;
+        e)
+        echo "     Editando a sua agenda com o vim..."
+        sleep 1
+        vim $Fones
+        # conserta os maiúsculos
+        cat $Fones | sed -r 's/^[a-záéíóàãô]/\U&/g' > /tmp/.fones.txt
+        mv /tmp/.fones.txt $Fones
+        clear
+        echo
+        echo "         RETORNANDO AO MENU PRICIPAL"
+        echo
+        echo "                  ( O O )"
+        echo "           ====oOO==(_)==OOo====="
+        echo
+        sleep 1
+        _principal
+        ;;
+        s)
+        clear
+        # Local para bacup dos fones digitados
+        cp -f $Fones /tmp/.fones.txt$$
+        exit
+        ;;
+        *)
+        clear
+        echo
+        echo "     Digite uma opção válida!"
+        echo "     As opções possíveis são:"
+        echo
+        echo "     [c] Inserir Novo Registro "
+        echo "     [a] Consultar um Nome"
+        echo "     [e] Editar a agenda com o vim"
+        echo "     [s] Sair"
+        sleep 3
+        _principal
+        esac
+}
+
+# =======================
+#    CADASTRO
+# =======================
+_cadastro(){
+    clear
+    echo
+    echo "         ========================"
+    echo "            AGENDA TELEFÔNICA"
+    echo "         ========================"
+    echo
+    echo "         Cadastro - Novo Contato"
+    echo
+    echo "                  ( O O )"
+    echo "           ====oOO==(_)==OOo====="
+    echo
+    echo
+    echo -n "      Digite o Nome Seguido do Telefône: "
+    read Nome
+    # Coloca o nome com iniciais maiúsculas na agenda
+    Nome=`echo $Nome |  tr " " "\n" | sed -r "s/^[a-záéíóàãô]/\U&/g" | tr "\n" " "`
+    echo $Nome >> $Fones
+    echo "       $Nome inserido na agenda"
+    echo
+    sleep 2
+    sort $Fones -o $Fones
+    sleep 3
+
+    # ==========================
+    # MENU DE CADASTRO
+    # ==========================
+    while
+    true
+    do
+        clear
+        echo
+        echo
+        echo "     ================================"
+        echo "            C A D A S T R O "
+        echo "     ================================"
+        echo "     $dia $hora"
+        echo
+        echo "                  ( O O )"
+        echo "           ====oOO==(_)==OOo====="
+        echo
+        echo "     Escolha uma das opções abaixo "
+        echo
+        echo "     [p] Menu Principal "
+        echo "     [a] Pesquisar na agenda"
+        echo "     [c] Cadastrar outro nome"
+        echo "     [e] Editar sua agenda com o VIM"
+        echo "     [s] Sair"
+        echo
+        echo -n "     Digite a opção: "
+
+        read opcao
+        case $opcao in
+            p) _principal
+            ;;
+            a) _consulta
+            ;;
+            c) echo "Indo para o cadastro..."
+               sleep 1
+              _cadastro
+            ;;
+            e)
+            echo "         Editando sua agenda com o vim..."
+            sleep 1
+            vim $Fones
+            ;;
+            s) echo "    Saindo..." 
+            clear
+            exit
+            ;;
+            *)
+            echo "     Digite uma opção válida!"
+            echo "     As opções possíveis são:"
+            echo
+            echo "     [1] Menu Principal "
+            echo "     [2] Pesquisar na agenda"
+            echo "     [3] Cadastrar outro nome"
+            echo "     [4] Editar sua agenda com o VIM"
+            echo "     [5] Sair"
+            echo
+            sleep 1
+            _cadastro
+        esac
+    done
+
+}
+
+# =======================
+#      CONSULTA
+# =======================
+_consulta(){
+    clear
+    echo
+    echo
+    echo "                  ( O O )"
+    echo "           ====oOO==(_)==OOo====="
+    echo
+    echo
+    echo "         Menu de Consulta"
+    echo
+    echo  -n "     Digite o Nome para pesquisa: "
+    read Nome
+
+        if resultado=`grep -i $Nome $Fones` 2>> /dev/null
+            then
+                echo "    $resultado"
+            sleep 5
+            else
+                echo "    $Nome não encontrado no banco de dados!"
+
+            sleep 2
+        fi
+
+    clear
+
+
+        # ==========================
+        # MENU DE CONSULTA
+        # ==========================
+        while
+        true
+            do
+            clear
+            echo
+            echo
+            echo "         ==================================="
+            echo "                  C O N S U L T A "
+            echo "         ==================================="
+            echo "         $dia $hora"
+            echo "          Escolha uma das opções abaixo"
+            echo
+            echo "         [p] Menu Principal "
+            echo "         [a] Continuar Pesquisa"
+            echo "         [c] Cadastro"
+            echo "         [e] Ediar agenda no vim"
+            echo "         [s] Sair"
+            echo
+
+               if [ $resultado -ne " " ] 2>> /dev/null
+                then
+                    echo "     Sua ultima consulta foi"
+                    echo "     $resultado"
+                fi
+
+            echo
+            echo
+
+                echo -n "            Digite a opção: "
+                read opcao
+                case $opcao in
+                    p) _principal
+                    ;;
+                    a) _consulta
+                    ;;
+                    c) _cadastro
+                    ;;
+                    e)
+                      echo "    Editando agenda no vim..."
+                      sleep 1
+                      vim $Fones
+                    ;;
+                    s)
+                    clear
+                    exit
+                    ;;
+                    *)
+                    clear
+                    echo
+                    echo "     Digite uma opção válida!"
+                    sleep 1
+                    clear
+                esac
+        done
+
+}
+
+_principal
+
+
+#Vou dar umas dicas pra ir melhorando... otimizando.
+#
+#1) O teste de existência do arquivo pode ser feito com
+#if [ -f arquivo ]
+#
+#2) Sua variável dia pode ser definida em uma linha:
+#dia=$(date "+%A, %d de %B de %Y")
+#
+#3) A opção do menu pode ser lida com
+#read -p
+#
+#4) Você pode colocar a exibição do menu em uma função
+#
+#5) Na função de cadastro é mais intuitivo pedir as informações
+#separadamente. Depois vc as concatena no arquivo.
+#
+#6) Pesquisa se escreve com S :)
+#
+#7) Tenho outras sugestões, mas deixemos o resto do povo falar um
+#pouco :)
+#
+#Fabiano Caixeta Duarte
+#Consultor em soluções para Redes de Computadores
+#Ribeirão Preto - SP
+#
+####

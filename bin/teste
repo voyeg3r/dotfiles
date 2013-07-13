@@ -1,0 +1,16 @@
+#!/bin/bash
+# Criado em:Qua 04/Jan/2006 hs 10:36
+# ultima modificação: Qua 04 Jan 2006 10:42:04 BRST
+# Scrip para testar dois números
+# Autor: Sérgio Luiz Araújo Silva
+
+# script para estudo de shell script
+
+
+if [ "$1" -gt "$2" ]
+then
+    echo "o numero $1 é maior que o númro $2"
+else
+    echo  "o numero $1 é menor que o númro $2"
+fi
+

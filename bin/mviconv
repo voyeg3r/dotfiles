@@ -1,0 +1,46 @@
+#!/bin/bash
+# Criado em:Dom 12/Ago/2007 hs 10:49
+# Last Change: Sex 19 Out 2007 09:47:33 BRT
+# Instituicao:
+# Proposito do script: renomear / iconv recursivo
+# Autor: Sérgio Luiz Araújo Silva
+
+# Declaração da função converter (recursiva)
+
+#
+# Defina a codificação de origem e de destino
+de="iso-8859-1"
+para="utf-8"
+
+
+
+CONVERTER (){
+
+      for i in *
+           do
+			novonome=$(echo "$i" | iconv -f "$de" -t "$para" | tr ' ' '_' | \
+			   sed 'y/ÁÀÃÉÈÍÓÚÇ¹²³?!/aaaeeuouc123__/' | tr '[:upper:]' '[:lower:]')
+
+            if [ "$novonome" != "$i" ]; then
+                 echo "   Modificando \"$i\" para \"$novonome\"..."
+	         mv "$i" "$novonome"
+	    fi
+       done
+
+       for i in *
+       do
+
+	    if [ -d "$i" ]; then
+		OLDDIR=$(pwd)
+                echo
+                echo "   Cntrando na pasta $i"
+                cd "$i"
+                echo "   Convertendo seu conteúdo"
+	        CONVERTER
+		cd "$OLDDIR"
+        fi
+      done
+}
+
+#chamada à função
+CONVERTER

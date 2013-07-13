@@ -1,0 +1,23 @@
+#!/bin/bash
+# Criado em:Sex 17/Set/2010 hs 15:42
+# Last Change: Qui 02 Dez 2010 16:53:58 BRT
+# vim:ft=sh:fdm=syntax:nu:
+# Instituicao: cpqt E-jovem
+# Proposito do script: converter ogv  para avi
+# Autor: Sérgio Luiz Araújo Silva 
+# site: http://vivaotux.blogspot.com 
+
+# exemplo de comando
+# mencoder -idx fedora-logo-no-inkscape.ogv -ovc lavc -oac mp3lame -o fedora-logo-no-inkscape.avi
+
+#[ -z "$1" ] && { echo "usage: $0 nome-do-arquivo"; sleep 2; exit 1 ; }
+nome=${1%.ogv}
+
+echo "convertendo $1 para ${1%.ogv}.avi" ...
+sleep 2
+mencoder -idx $1 -ovc lavc -oac mp3lame -o ${nome}.avi
+
+# converter para mp4
+# source: http://www.shallowsky.com/blog/linux/recordmydesktop.html
+# mencoder movie.ogv -af volume=19 -oac pcm -ovc lavc -lavcopts vcodec=mpeg4:vqmin=2:vlelim=-4:vcelim=9:lumi_mask=0.05:dark_mask=0.01:vhq -o movie.mp4
+

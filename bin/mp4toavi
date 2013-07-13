@@ -1,0 +1,19 @@
+#!/bin/bash
+# Criado em:Sex 17/Set/2010 hs 15:42
+# Last Change: 2013 Jul 09 20:00:13
+# vim:ft=sh:fdm=syntax:nu:
+# Instituicao: cpqt E-jovem
+# Proposito do script: converter mp4  para avi
+# Autor: Sérgio Luiz Araújo Silva
+# site: http://vivaotux.blogspot.com
+
+# fonte: http://acassis.wordpress.com/2008/02/22/convertendo-mp4-para-avi/
+
+#[ -z "$1" ] && { echo "usage: $0 nome-do-arquivo"; sleep 2; exit 1 ; }
+nome=${1%.mp4}
+
+
+echo "convertendo $1 para ${1%.mp4}.avi" ...
+sleep 2
+mencoder $1 -ovc lavc -oac lavc -o ${nome}.avi
+

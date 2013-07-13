@@ -1,0 +1,1081 @@
+#!/bin/bash
+#
+#  Piano Gripe 3.0 - The Shell Music    			      #
+#      OBS: Favor nao confundir com axé music			      ##
+#							   Natal-RN   ###
+# Autor: Pablo Fernandes (fernandes_pablo@yahoo.com.br)   ----------  ####
+#        ----------------------------------------------   28.10.2003  #####
+#								      ######
+#############################################################################
+#
+# ---------------
+# Agradecimentos: Grupo de Discussão "Shell Script" (Yahoo)
+#    ESPECIAIS    Aurélio Marinho Jargas (http://aurelio.net)
+# --------------- Seu nome (seu e-mail)
+#
+# 	[Caso de bug, melhorias no código, enxudaga, ajuda ou como seja,]
+#	[resultará em seu nome nos agradecimentos especiais. Ajude a man]
+#	[ter esse software propondo melhorias ou corrigindo erros.      ]
+#
+###########################################################################
+# Como usar: 							     #####
+#    $ ./gripe		* simplesmente execute-o		     ####
+#			* Verifique se você possui a permissão x     ###
+#			  no arquivo. Caso não tenha digite:	     ##
+#			  "chmod +x gripe" com o dono do arquivo     #
+#
+# Como usar    As teclas A, S, D, F, G, H, J, K, L, Z, X, C, V, B,
+#              1, 2, 3, 4, 5, 6, 7, 8, 9 e 0 são usadas para representar
+#              as teclas de um teclado. Nele virão marcadas essas teclas.
+#
+#      OBS2: A opção "P" (do quadro de opções), adiciona um espaço sem
+#	     música para ajudar em suas composições.
+#
+# Opções: W	- Toda tecla pressionada é gravada na linha de sequência.
+#		  Essa opção toca as notas definidas na "sequência".
+#
+#	  E	- Apaga a sequência criada anteriormente, impossibilitando
+#		  de tocar músicas até que pelo menos uma nota seja especi
+#		  ficada novamente no espaço de sequência.
+#
+#	  T	- Salva sequência no diretório $HOME/gripe/ com extensão .shm
+#		  (ShellMusic)
+#
+#	  Q	- Sai do programa e apaga o espaço sequência.
+#
+#	  P	- Pausa na sequência.
+#
+#	  +	- Aumenta o tempo entre notas
+#	  -	- Diminue o tempo entre as notas
+#
+#	  R	- Exemplos de músicas (Beatles - Day Tripper
+#						e Black Sabbath - Iron Man)
+#
+###########################################################################
+#
+# ATENÇÃO1: O PIANO GRIPE 3.0 FOI TESTADO APENAS NO CONECTIVA "8++" E "9"
+#	    E FEDORA CORE 1 e 2.
+#           SE VOCÊ OBTEU ÊXITO TOTAL EM OUTRA DISTRIBUIÇÃO, ENVIE UM E-MAIL
+#	    AVISANDO A SUA DISTRO. CASO VOCÊ NÃO TENHA CONSEGUIDO EXECUTÁ-LO
+#	    AVISE TAMBÉM POR E-MAIL A DISTRO. OBRIGADO
+#           ----------------------------------------------------------------
+#
+# ATENÇÃO2: Execute o programa em MODO TEXTO (não execute-o em um terminal
+#	    do modo gráfico).
+#
+# AVISO: Na versão 4.0 do Piano Gripe, será adicionado um backspace de
+#        notas musicais para o teclado.
+#
+###########################################################################
+#								      ####
+# REGISTRO DE MUDANÇAS E ATUALIZAÇÕES:	Changelog		      ###
+# ------------------------------------				      ##
+#								      #
+# 28.10.2003: Iniciada e concluída a primeira versão (0.10)
+# 01.11.2003: Corrigido BUG (um ponto desconhecido flutuando
+#	      no código (detectado por Aurélio Marinho Jargas)
+# 01.11.2003: Corrigido BUG (quem usava LANG=en_US não executava
+#	      as músicas por causa do comando sleep ,número)
+# 01.11.2003: Adiciona o comando "T" possibilitando gravar as músicas
+# 01.11.2003: Corrigido BUG (quem tinha o diretório home com espaços
+#	      no nome, dava uma série de erros. Solução: Aspear
+#	      duplamente todas as variáveis)
+# 20.11.2003: Restringe em 91 notas máximas por música. Se no prompt
+#	      SEQUÊNCIA aparecessem mais de 100 "+Sol#"s o programa
+#	      dava txiutxi nos gráficos, pq só de notas, iria passar
+#             de uma tela. Mas se alguém insistir muito (que acho muito
+#	      difícil, procurarei outra solução para o problema.
+# 30.11.2003: Pequenos tutoriais sobre caracteres de controle espalhados
+#	      pelo código.
+# 13.12.2003: Um bug resolvido. Descrição: Se você salvasse o arquivo
+#	      "gripe" no diretório $HOME, ele dava erros na hora de salvar
+#	      uma sequência.
+# 18.02.2004: Depois de muito tempo jogado, sem receber nenhuma atualização,
+#	      resolvi baixá-lo do site (que nem tinha mais ele no meu comp.)
+#	      surgiu um bug no sleep. Antigamente via que para shells com a
+#	      variável de ambiente $LANG estava para en_US, a sintaxe do
+#	      sleep era "sleep .10" por exemplo, e pra $LANG=pt_BR a sintaxe
+#	      mudava para "sleep ,10". E agora fiz o teste para ambas
+#	      configurações e vi que funcionou com "sleep .n"
+# 03.06.2004: "Bom, fazia tempo que o programa nao tinha nenhuma mudança
+#	       pois havia perdido a versao completa e mais atualizada que
+#	       eu tinha feito na epoca. As novidades sao:"
+# 02.06.2004: Mudei de distribuiçao (do Conectiva para a Fedora Core) e
+#	      percebi algumas mudanças. Agora retirei os acentos de todo
+#	      o programa (aceto os que ficam dentro de arquivos, como este),
+#	      pois o fedora tem problemas com acentos para visualizaçao
+#	      no console. Ainda nao sei pq, dentro do vi consigo ver os
+#	      acentos (apesar de nao conseguir digita-los) mas se fosse
+#	      um e-mail ou mesmo no Piano Gripe, eles nao aparecem. Pois
+#	      e, a atualizaçao foi retirada de acentos.
+# 02.06.2004: Tambem tive problemas com a variavel $LANG (novamente) e a
+#	      sintaxe do programa sleep. Agora todo o programa roda com
+#	      LANG=en_US e na finalizaçao do Piano, ela e recuperada para o
+#	      normal do usuario.
+# 02.06.2004: Mudança nos Leds, agora quando estamos tocando, os leds Num
+#	      Lock e Caps Lock ficam acendendo e apagando :) . Quis fazer
+#	      com o Scroll Lock tambem, mas no conectiva nao liga nem a pau
+#	      usando setleds +scroll. No Fedora ele liga, no slack, debian
+#	      tambem deve ligar. Mas para nao causar problemas, deixei so
+#	      os dois mesmo.
+# 02.06.2004: Marcacoes nas notas tocadas. Toda nota tocada fica marcada
+#	      de vermelha.
+# 02.06.2004: Ah, as teclas agora podem ser tocadas em tempo real. Nao
+#	      precisa de teclar mais enter para sair o som da nota.
+# 03.06.2004: Algumas mudanças no codigo, na parte de salvar arquivos.
+#	      Criei uma funçao para fazer tudo, diminuindo o codigo.
+#							GNU
+##          ####     ##     ##    ##     ##    ###     ####
+##           ##      ###    ##    ##     ##      ##   ##
+##           ##      ####   ##    ##     ##       ## ##
+##           ##      ## ##  ##    ##     ##        ###
+##           ##      ##  ## ##    ##     ##       ## ##
+##           ##      ##   ####    ##     ##      ##   ##
+########    ####     ##    ###     ######      #####  ####
+#
+#		[FAÇA TAMBÉM UM SOFTWARE LIVRE]
+# ------------------------------------------------------------------------
+# Futuros Planos: Organizar código, e deixá-lo auto explicativo
+#		  para estudantes (como eu) de shell Script.
+#
+#		  Adicionar exemplos de músicas conhecidas arqu
+#		  ivada no prórpio código
+#
+#		  Testar em várias distribuições do linux.
+#		  Até agora o Piano Gripe só foi testado no Con
+#		  ectiva Linux 8++, 9, Fedora Core 1 e 2.
+#
+#		  Encontrar uma forma do Piano Gripe rodar no m
+#		  odo gráfico (terminal do modo gráfico).
+#
+#		  Fazer um backspace de notas para apagar a últ
+#		  ima nota tocada.
+#
+#		  Gringorizar passando para inglês todos os comentários
+#		  e textos do programa (mas sem deixar a português obviamente)
+#		  fazendo duas versões. ptBR and enUS
+#
+###########################################################################
+#
+# Pq Piano Gripe?
+# ---------------
+#
+#	Simplesmente pelo timbre gerado pelo auto-falante do micro.
+#	Parece um timbre rouco e gripado.
+#
+# Interesses do Piano Gripe:
+# --------------------------
+#
+#	Estudo, diversão e divulgação :)
+#	Envie um e-mail para fernandes_pablo@yahoo.com.br
+#	se você gostou, ou se seu filho mais novo gostou :D
+#
+###########################################################################
+# Organização do código :
+# -----------------------
+# O código do Piano Gripe encontra-se dividido em sessões. Cada sessão
+# possui seus comentários e algumas dicas sobre algum assunto predominante
+# no código fonte da sessão. Entre cada sessão, existe uma barra horizontal
+# de 76 caracteres e duas quebras de linhas.
+#
+###########################################################################
+#
+# Os Comentarios do Codigo so serao atualizados nas versoes x.50
+# No caso, na versao 3.50. Sempre vou fazer assim, pq exige muito
+# tempo para comentar todo o codigo, e ainda mais quando e uma versao
+# nova (que ainda vai ter correçoes).
+#
+###########################################################################
+## COMEÇA O CÓDIGO ###
+#####################
+
+
+## Sessão:
+#########################
+## MODULOS NECESSARIOS ##
+#########################
+# Esta sessao tem os comandos necessarios para
+# levantar os modulos.
+
+# Este modulo pensei basicamente para o Fedora Core 2 que por
+# padrao nao tem mais os beeps :( Aposto que fizeram isso para
+# boicotar o Piano Gripe do mercado. hehehe
+modprobe pcspkr 2> /dev/null > /dev/null
+
+
+#--------------------------------------------------------------------------#
+
+
+## Sessão:
+#######################
+## MAPA DE VARIÁVEIS ##
+#######################
+# Nesta sessão estão definidas todas as variáveis
+# com seus valores iniciais.
+
+SALVALANG=$LANG
+LANG=en_US
+CONTASHM=1	#Contagem de notas. Cada nota tocada, adiciona uma unidade
+		#desse valor. Máximo de notas permitidas:90 (CONTSHM=91 já
+		#o valor inicial é 1)
+SHMLEDDY=1
+EXEMPLOSHM=1
+SLEEPSHMLANG="sleep .4;"
+BARRA40SHM="PIANOGRIPEPABLOGRIPEPIANOGRIPEPABLOGRIPE"
+
+## NOTAS MUSICAIS E SUAS RESPECTIVAS FREQÜÊNCIAS ##
+DO='echo -ne \'\033[10\;132]\\a''
+RE='echo -ne \'\033[10\;148]\\a''
+MI='echo -ne \'\033[10\;165]\\a''
+FA='echo -ne \'\033[10\;176]\\a''
+SOL='echo -ne \'\033[10\;198]\\a''
+LA='echo -ne \'\033[10\;220]\\a''
+SI='echo -ne \'\033[10\;247]\\a''
+DO1='echo -ne \'\033[10\;264]\\a''
+RE1='echo -ne \'\033[10\;296]\\a''
+MI1='echo -ne \'\033[10\;330]\\a''
+FA1='echo -ne \'\033[10\;352]\\a''
+SOL1='echo -ne \'\033[10\;396]\\a''
+LA1='echo -ne \'\033[10\;440]\\a''
+SI1='echo -ne \'\033[10\;494]\\a''
+DOS='echo -ne \'\033[10\;143]\\a''  #DOS? AAAAAAAAAH NÃO...!
+RES='echo -ne \'\033[10\;157]\\a''
+FAS='echo -ne \'\033[10\;187]\\a''
+SOLS='echo -ne \'\033[10\;209]\\a''
+LAS='echo -ne \'\033[10\;233]\\a''
+DOS1='echo -ne \'\033[10\;286]\\a''
+RES1='echo -ne \'\033[10\;314]\\a''
+FAS1='echo -ne \'\033[10\;374]\\a''
+SOLS1='echo -ne \'\033[10\;418]\\a''
+LAS1='echo -ne \'\033[10\;466]\\a''
+
+######### CONSEGUINDO TIRAR SONS DO BEEP PELO COMANDO ECHO #################
+#
+# Para conseguir um som do speaker do seu computador, basta utilizar o
+# caractere barra-letra \a (ALERTA). Se você digitar echo -ne '\a', vai
+# ver que um beep soará. Basta agora você definir o tom e duração
+# do beep. Para isso, use:
+#
+# echo -ne '\033[10;N1]\a' -> onde N1 é a frequência. Quanto maior o
+#			      valor da frequência (Hz), mais agudo a nota
+#			      sairá. Quanto menor for o valor, mais grave.
+# echo -ne '\033[11;N1]\a' -> onde N1 é a duração do som.
+#	      __________________________________________
+#        ---> O normal é \033[10;750]   e   \033[11;100] <---
+#
+# OBS1: Depois de brincar com o seu beep, não esqueça de voltar para os
+#       valores normais do beep.
+#
+# DICA: Defina a duração antes de definir o tom.
+#       ex: echo -ne '\033[11;500]\033[10;1000]\a'
+#       (Defina duração 500, defina tom 1000, toque um beep com \a)
+#
+# OBS2: Esse caractere de controle do beep, não toca um beep, ele apenas
+#       define o tom e duração. Quem toca o beep é o "\a", entre outras
+#       formas.
+
+
+#--------------------------------------------------------------------------#
+
+
+## Sessão:
+#################
+## FERRAMENTAS ##
+#################
+# Ferramentas escritas em funções feitas
+# para auxiliar o desenvolvimento e limpeza
+# do código. Elas ficarão aqui!
+
+##### APREDENDO A MODIFICAR A POSIÇÃO DO CURSOR ############################
+#
+# 1) Sempre que você ver um "VAIPARA N1 N2", quer dizer que o cursor muda
+#    da linha atual, para a linha N1 e coluna N2. Exemplo: VAIPARA 1 1 ->
+#    Nesse caso o cursos vai para a linha 1 e coluna 1. Todo "echo" (ou o
+#    que seja) abaixo desse VAIPARA será inserido na linha 1, coluna 1.
+#    Aquele aviso inicial do programa, bem centralizado, pq está em uma das
+#    linhas centrais do monitor, e em uma das colunas centrais também.
+#    São 25 linhas e 80 colunas. Faça o teste, digite
+#    echo -e '\033[N1;N2Htexto aqui!' substituindo N1 pela linha e N2
+#    pela coluna. Existem outros caracteres de controle para indicar a
+#    direção do cursor, mas o H é o que eu mais gosto :)
+
+function VAIPARA() { echo -ne "\033[$1;$2H" ;}   #1
+
+
+# Deixa marcada com cores a nota tocada
+
+function MARKNOTAUP() {
+  case "$MARKNOTASHM" in
+    DO) VAIPARA 12 4
+	echo -e '\033[37;41;1mA\033[m' ;;
+    RE) VAIPARA 12 8
+	echo -e '\033[37;41;1mS\033[m' ;;
+    MI) VAIPARA 12 12
+	echo -e '\033[37;41;1mD\033[m' ;;
+    FA) VAIPARA 12 16
+	echo -e '\033[37;41;1mF\033[m' ;;
+    SOL) VAIPARA 12 20
+	 echo -e '\033[37;41;1mG\033[m' ;;
+    LA) VAIPARA 12 24
+	echo -e '\033[37;41;1mH\033[m' ;;
+    SI) VAIPARA 12 28
+	echo -e '\033[37;41;1mJ\033[m' ;;
+    DO1) VAIPARA 12 32
+	 echo -e '\033[37;41;1mK\033[m' ;;
+    RE1) VAIPARA 12 36
+	 echo -e '\033[37;41;1mL\033[m' ;;
+    MI1) VAIPARA 12 40
+         echo -e '\033[37;41;1mZ\033[m' ;;
+    FA1) VAIPARA 12 44
+         echo -e '\033[37;41;1mX\033[m' ;;
+    SOL1) VAIPARA 12 48
+         echo -e '\033[37;41;1mC\033[m' ;;
+    LA1) VAIPARA 12 52
+         echo -e '\033[37;41;1mV\033[m' ;;
+    SI1) VAIPARA 12 56
+         echo -e '\033[37;41;1mB\033[m' ;;
+    DOS) VAIPARA 7 6
+	 echo -e '\033[37;41;1m1\033[m' ;;
+    RES) VAIPARA 7 10
+	 echo -e '\033[37;41;1m2\033[m' ;;
+    FAS) VAIPARA 7 18
+	 echo -e '\033[37;41;1m3\033[m' ;;
+    SOLS) VAIPARA 7 22
+	  echo -e '\033[37;41;1m4\033[m' ;;
+    LAS) VAIPARA 7 26
+	 echo -e '\033[37;41;1m5\033[m' ;;
+    DO1S) VAIPARA 7 34
+	  echo -e '\033[37;41;1m6\033[m' ;;
+    RE1S) VAIPARA 7 38
+	  echo -e '\033[37;41;1m7\033[m' ;;
+    FA1S) VAIPARA 7 46
+	  echo -e '\033[37;41;1m8\033[m' ;;
+    SOL1S) VAIPARA 7 50
+	  echo -e '\033[37;41;1m9\033[m' ;;
+    LA1S) VAIPARA 7 54
+	  echo -e '\033[37;41;1m0\033[m' ;;
+  esac
+}
+
+# Desmarca a nota tocada
+
+function MARKNOTADOWN() {
+  case "$MARKNOTASHM" in
+    DO) VAIPARA 12 4
+        echo -e '\033[30;47mA\033[m' ;;
+    RE) VAIPARA 12 8
+        echo -e '\033[30;47mS\033[m' ;;
+    MI) VAIPARA 12 12
+        echo -e '\033[30;47mD\033[m' ;;
+    FA) VAIPARA 12 16
+        echo -e '\033[30;47mF\033[m' ;;
+    SOL) VAIPARA 12 20
+         echo -e '\033[30;47mG\033[m' ;;
+    LA) VAIPARA 12 24
+        echo -e '\033[30;47mH\033[m' ;;
+    SI) VAIPARA 12 28
+        echo -e '\033[30;47mJ\033[m' ;;
+    DO1) VAIPARA 12 32
+         echo -e '\033[30;47mK\033[m' ;;
+    RE1) VAIPARA 12 36
+         echo -e '\033[30;47mL\033[m' ;;
+    MI1) VAIPARA 12 40
+         echo -e '\033[30;47mZ\033[m' ;;
+    FA1) VAIPARA 12 44
+         echo -e '\033[30;47mX\033[m' ;;
+    SOL1) VAIPARA 12 48
+          echo -e '\033[30;47mC\033[m' ;;
+    LA1) VAIPARA 12 52
+         echo -e '\033[30;47mV\033[m' ;;
+    SI1) VAIPARA 12 56
+         echo -e '\033[30;47mB\033[m' ;;
+    DOS) VAIPARA 7 6
+         echo -e '\033[37;40m1\033[m' ;;
+    RES) VAIPARA 7 10
+         echo -e '\033[37;40m2\033[m' ;;
+    FAS) VAIPARA 7 18
+         echo -e '\033[37;40m3\033[m' ;;
+    SOLS) VAIPARA 7 22
+          echo -e '\033[37;40m4\033[m' ;;
+    LAS) VAIPARA 7 26
+         echo -e '\033[37;40m5\033[m' ;;
+    DO1S) VAIPARA 7 34
+          echo -e '\033[37;40m6\033[m' ;;
+    RE1S) VAIPARA 7 38
+          echo -e '\033[37;40m7\033[m' ;;
+    FA1S) VAIPARA 7 46
+          echo -e '\033[37;40m8\033[m' ;;
+    SOL1S) VAIPARA 7 50
+          echo -e '\033[37;40m9\033[m' ;;
+    LA1S) VAIPARA 7 54
+          echo -e '\033[37;40m0\033[m' ;;
+  esac
+}
+
+# Liga os Leds de acordo com a nota tocada
+
+function LEDSETI() {
+  case "$SHMLEDDY" in
+    1) setleds -caps
+       setleds +num
+       LASTL="setleds -caps ; setleds +num"
+       SHMLEDDY=`expr $SHMLEDDY + 1` ;;
+    2) setleds -num
+       setleds +caps
+       LASTL="setleds -num ; setleds +caps"
+       SHMLEDDY=`expr $SHMLEDDY - 1` ;;
+  esac
+}
+
+# Funcao para salvar arquivos .shm
+
+function SALVAR_ARQUIVO() {
+echo "######################################################" > $HOME/musicas-gripe/"$SALVARSHM".shm
+echo "## Piano Gripe 3.0 - http://cltfc.sites.uol.com.br  ##" >> $HOME/musicas-gripe/"$SALVARSHM".shm
+echo "######################################################" >> $HOME/musicas-gripe/"$SALVARSHM".shm
+echo "## Envie agora mesmo a sua música e o seu nome para ##" >> $HOME/musicas-gripe/"$SALVARSHM".shm
+echo "##          fernandes_pablo@yahoo.com.br            ##" >> $HOME/musicas-gripe/"$SALVARSHM".shm
+echo "######################################################" >> $HOME/musicas-gripe/"$SALVARSHM".shm
+echo "##SUA MÚSICA ABAIXO:" >> "$HOME"/musicas-gripe/"$SALVARSHM".shm
+echo "####################" >> "$HOME"/musicas-gripe/"$SALVARSHM".shm
+echo "echo -ne '\\033[11;250]'" >> "$HOME"/musicas-gripe/"$SALVARSHM".shm
+echo "$SEQSHM" >> "$HOME"/musicas-gripe/"$SALVARSHM".shm 2> /dev/null
+echo "echo -ne '\\033[11;100]\\033[10;750]'" >> "$HOME"/musicas-gripe/"$SALVARSHM".shm
+chmod +x "$HOME"/musicas-gripe/"$SALVARSHM".shm
+VAIPARA 17 6
+echo -e "\033[31;1mSALVANDO: "$HOME"/musicas-gripe/"$SALVARSHM".shm                  \033[m"
+sleep 2
+}
+
+
+#--------------------------------------------------------------------------#
+
+
+## Sessão:
+###################
+## AVISO INICIAL ##
+###################
+# 1) trap "" 2 20 é para proibir que o usuário termine a execução usando
+#    Ctrl+c ou Ctrl+z. Coloquei isso, por causa de comandos como stty -echo.
+#    se o usuário desse um Ctrl+c no meio deste aviso, ele iria voltar para
+#    o prompt sem conseguir ver nada que ele tecla (comando stty -echo), e
+#    esse comando aparece constantemente no código do Piano Gripe.
+#
+# 2) Para entender o que faz o comando stty -echo. Lembre no hora do login
+#    (no shell não interativo de login), você digita o nome do usuário (e
+#    consegue ver tudo que está digitando) e depois digita a senha (mas
+#    desta vez, o que você tecla não aparece na tela). O efeito desse comando
+#    é exatamente o mesmo. Coloquei ele, para o usuário não destrua os grá-
+#    ficos do Piano Gripe digitando coisas e aparecendo na tela. O comando
+#    para voltar ao normal é "stty echo".
+#
+# 3) Depois de fazer todo o texto do aviso aparecer, espere 4 segundos e
+#    execute o programa "clear" para limpar a tela. Pois, a imagem do
+#    teclado e seus comandos serão os próximos gráficos.
+
+trap "" 2 20 #1
+clear
+setleds -num ; setleds -caps
+stty -echo #2
+VAIPARA 10 15
+echo -e '\033[46;30m              Piano Gripe 3.0               \033[m'
+VAIPARA 12 15
+echo -e '\033[40;31;1m"Nao execute esse programa em um terminal\033[m'
+VAIPARA 13 15
+echo -e '\033[40;31;1mdo modo grafico. Utilize-o no MODO TEXTO."\033[m'
+VAIPARA 22 33
+echo -e '\033[40;33;1mPablo Fernandes\033[m'
+VAIPARA 23 26
+echo -e '\033[40;34;1mfernandes_pablo@yahoo.com.br\033[m'
+sleep 4 # 3
+clear   # 3
+stty echo
+echo ; echo
+
+
+#--------------------------------------------------------------------------#
+
+
+## Sessão:
+#######################
+## IMAGEM DO TECLADO ##
+#######################
+# Vou dar um jeito nas próximas versões de organizar esse código
+# Ele foi construído a base de espaços com plano de fundo pintado.
+# Uma idéia que Aurélio (aurelio.net) sugeriu, foi desenhar normalmente
+# o teclado usando somente caracteres ASCII, usando caracteres do tipo
+# "#", "@", "%" para representar as cores, e depois mapearia com o sed,
+# adicionando os caracteres de controle de cores. Se alguém quiser ajudar,
+# mande um e-mail.
+
+
+##### APRENDENDO A COLORIR TEXTOS ##########################################
+#
+# Para colorir um texto usando o comando echo, veja a sintaxe:
+# echo -e '\033[N1mTexto aqui!\033[m'
+#
+# Onde: N1 -> Código da cor ou propriedade.
+#       m -> indica que depois dele começa o texto
+#	\033[m -> no final do comando para que a cor volte ao normal,
+#		  caso contrário, a cor será definida para os textos
+#		  seguintes.
+#
+# Código de cores da letra -> vai de 30 a 37
+# Códgio de cores do fundo -> vai de 40 a 47
+# Códgio de propriedades -> 5 (pisca-pisca)
+#			    7 (cores invertidas)
+#			    1 (cor brilhante)
+#			    0 (sem cores)
+#
+# 1) Para usar um fundo azul com cor da letra vermelho e piscando?
+# R: echo -e '\033[44;31;5mTexto aqui!\033[m'
+#
+# 2) Para usar somente a cor da letra vermelha?
+# R: echo -ne '\033[31mTexto aqui!\033[m'
+#
+# Entendeu? Você vai misturando os números, separando-os com ";".
+#
+# DICA1: A propriedade 1 (cor brilhante), deve ser usado junto com a cor
+#	 da letra. Em alguns casos, mudam a cor e em outros casos apenas
+#        deixa a cor da letra mais clara.
+#
+# DICA2: Teste os códigos das cores e monte uma tabela para consulta :D
+#        ou use o zzcores do funcoeszz (mão na roda para programadores
+#        Shell. Pegue em http://aurelio.net/zz)
+
+echo
+echo -e ' --------------------------------------------------------\'
+echo -e '||\033[44;39;1m Piano Gripe 3.1 -  \033[44;31;5mThe ShellMusic\033[m\033[44;33;1m                     \033[m||'
+echo -e '||-------------------------------------------------------||'
+echo -e '||\033[47;37m  \033[m 1 \033[47;37m \033[m 2 \033[47;37m  \033[m \033[47;37m  \033[m 3 \033[47;37m \033[m 4 \033[47;37m \033[m 5 \033[47;37m  \033[m \033[47;37m  \033[m 6 \033[47;37m \033[m 7 \033[47;37m  \033[m \033[47;37m  \033[m 8 \033[47;37m \033[m 9 \033[47;37m \033[m 0 \033[47;37m  \033[m||'
+echo -e '||\033[47;37m  \033[m   \033[47;37m \033[m   \033[47;37m  \033[m \033[47;37m  \033[m   \033[47;37m \033[m   \033[47;37m \033[m   \033[47;37m  \033[m \033[47;37m  \033[m   \033[47;37m \033[m   \033[47;37m  \033[m \033[47;37m  \033[m   \033[47;37m \033[m   \033[47;37m \033[m   \033[47;37m  \033[m||'
+echo -e '||\033[47;37m  \033[m   \033[47;37m \033[m   \033[47;37m  \033[m \033[47;37m  \033[m   \033[47;37m \033[m   \033[47;37m \033[m   \033[47;37m  \033[m \033[47;37m  \033[m   \033[47;37m \033[m   \033[47;37m  \033[m \033[47;37m  \033[m   \033[47;37m \033[m   \033[47;37m \033[m   \033[47;37m  \033[m||'
+echo -e '||\033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m||'
+echo -e '||\033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m \033[47;37m   \033[m||'
+echo -e '||\033[47;30m A \033[m \033[47;30m S \033[m \033[47;30m D \033[m \033[47;30m F \033[m \033[47;30m G \033[m \033[47;30m H \033[m \033[47;30m J \033[m \033[47;30m K \033[m \033[47;30m L \033[m \033[47;30m Z \033[m \033[47;30m X \033[m \033[47;30m C \033[m \033[47;30m V \033[m \033[47;30m B \033[m||'
+echo -e ' \-------------------------------------------------------||'
+echo -e ''
+echo -e '            \033[40;32;1mEscolha Suas Teclas Pelas Etiquetas\033[m'
+
+
+#--------------------------------------------------------------------------#
+
+
+## Sessão:
+##################################
+## MENU DE CONTROLES DO USUÁRIO ##
+##################################
+# Essas linhas abaixo são apenas os textos que aparecem no lado direito
+# do teclado. Coloquei dentro de uma função, para que depois ela possa
+# ser chamada no loop do "controle do teclado". Isso para evitar que mesmo
+# em qualquer BUG o usuário possa visualizar os controles como a opção
+# "q", já que Ctrl+c está travado.
+
+function _APARENCIAOPCOES {
+VAIPARA 1 1
+echo -e "\\033[31;41m$BARRA40SHM$BARRA40SHM\\033[m"
+VAIPARA 2 24
+echo -e '\033[40;34;1mhttp://cltfc.sites.uol.com.br\033[m'
+VAIPARA 1 77
+echo -e '\033[44;39m[Q]\033[m'
+VAIPARA 1 21
+echo -e '\033[41;36m(P) a b l o    (F) e r n a n d e s\033[m'
+VAIPARA 1 1
+echo -e '\033[41;38m-> S\033[44;32mH\033[41;38mM <-\033[m'
+echo -e '\033[11;250]'	   #Coloca o tempo da nota mais longo (normal é 100)
+VAIPARA 4 62
+echo -e '\033[46;30;1m W \033[40;31;1m Toca Sequencia\033[m'
+VAIPARA 5 62
+echo -e '\033[46;30;1m E \033[40;31;1m Limpa Sequencia\033[m'
+VAIPARA 6 62
+echo -e '\033[46;30;1m T \033[40;31;1m Salva Sequencia\033[m'
+VAIPARA 7 62
+echo -e '\033[46;30;1m P \033[40;31;1m Pausa na Musica'
+VAIPARA 9 62
+echo -e '\033[40;33;1m    TEMPO\033[m'
+VAIPARA 10 62
+echo -e '\033[46;30;1m + \033[40;31;1m Aumentar'
+VAIPARA 11 62
+echo -e '\033[46;30;1m - \033[40;31;1m Diminuir'
+VAIPARA 13 62
+echo -e '\033[46;30;1m R \033[40;31;1m Exemplos (2)'
+VAIPARA 14 62
+echo -e '\033[46;30;1m Q \033[40;31;1m Sair\033[m'
+}
+_APARENCIAOPCOES
+
+
+#--------------------------------------------------------------------------#
+
+
+## Sessão:
+#########################
+## EXEMPLOS DE MÚSICAS ##
+#########################
+# Música 2: Day Tripper dos Beatles (riffzinho do início),
+# Música 1: Iron Man do Black Sabbath (todo mundo conhece).
+# Ao pressionar a tecla R (ou r) o "case" chama essa fun
+# ção. Não usei a variável de espaço pq essa música fica
+# legal com "sleep ,3", e a variável de espaço poderia
+# está diferente (já que os comandos + e - alteram seu
+# conteúdo. Por esse motivo, escrevi o códgio da música
+# completo e para cada um dos dois tipos de $LANG que o
+# programa suporta.
+
+function _EXEMPLOSSHM {
+if [ "$EXEMPLOSHM" = "1" ]; then
+  echo -ne '\033[10;247]\a';sleep .3;sleep .3;
+  echo -ne '\033[10;296]\a';sleep .3;sleep .3;
+  echo -ne '\033[10;296]\a';sleep .3;
+  echo -ne '\033[10;330]\a';sleep .3;
+  echo -ne '\033[10;330]\a';sleep .3;sleep .3;
+  echo -ne '\033[10;396]\a';sleep .3;
+  echo -ne '\033[10;374]\a';sleep .3;
+  echo -ne '\033[10;396]\a';sleep .3;
+  echo -ne '\033[10;374]\a';sleep .3;
+  echo -ne '\033[10;396]\a';sleep .3;
+  echo -ne '\033[10;374]\a';sleep .3;
+  echo -ne '\033[10;396]\a';sleep .3;
+  echo -ne '\033[10;374]\a';sleep .3;
+  echo -ne '\033[10;296]\a';sleep .3;sleep .3;
+  echo -ne '\033[10;330]\a';sleep .3;sleep .3;
+  echo -ne '\033[10;330]\a';sleep .3;
+elif [ "$EXEMPLOSHM" = "2" ]; then
+    echo -ne '\033[10;165]\a';sleep .3;sleep .3; #dois sleeps seguidos,é o mesmo
+    echo -ne '\033[10;198]\a';sleep .3; #que o espaço "P" do Piano Gripe
+    echo -ne '\033[10;209]\a';sleep .3; #pq entre uma nota e outra, tem
+    echo -ne '\033[10;247]\a';sleep .3; #que ter um sleep, senão fica
+    echo -ne '\033[10;330]\a';sleep .3; #inaudível a música. Por isso
+    echo -ne '\033[10;296]\a';sleep .3;sleep .3; #também,o mínimo de sleep,é ,1.
+    echo -ne '\033[10;247]\a';sleep .3;
+    echo -ne '\033[10;374]\a';sleep .3;sleep .3;
+    echo -ne '\033[10;247]\a';sleep .3;
+    echo -ne '\033[10;296]\a';sleep .3;
+    echo -ne '\033[10;330]\a';sleep .3;
+    echo -ne '\033[10;165]\a';sleep .3;sleep .3;
+    echo -ne '\033[10;198]\a';sleep .3;
+    echo -ne '\033[10;209]\a';sleep .3;
+    echo -ne '\033[10;247]\a';sleep .3;
+    echo -ne '\033[10;330]\a';sleep .3;
+    echo -ne '\033[10;296]\a';sleep .3;sleep .3;
+    echo -ne '\033[10;247]\a';sleep .3;
+    echo -ne '\033[10;374]\a';sleep .3;sleep .3;
+    echo -ne '\033[10;247]\a';sleep .3;
+    echo -ne '\033[10;296]\a';sleep .3;
+    echo -ne '\033[10;330]\a';sleep .3;
+    echo -ne '\033[10;165]\a';sleep .3;sleep .3;
+fi
+case "$EXEMPLOSHM" in
+  1) EXEMPLOSHM=`expr "$EXEMPLOSHM" + 1` ;;
+  2) EXEMPLOSHM=`expr "$EXEMPLOSHM" - 1` ;;
+esac
+}
+
+
+#--------------------------------------------------------------------------#
+
+
+## Sessão:
+#########################
+## CONTROLE DO TECLADO #####################
+######################### GUIA DO CURIOSO ##
+#                      #####################
+#
+############################################################################
+#
+#     OS COMENTÁRIOS DESSA SESSÃO ESTÃO DESATUALIZADOS :(
+#     NA VERSÃO 2.50 DO PIANO GRIPE, ALGUNS CÓDIGOS PROVAVELMENTE SERÃO
+#     REFEITOS, E ESTA SESSÃO ESTARÁ TOTALMENTE ATUALIZADA.
+#
+#     NÃO ADIANTARIA COMENTAR ESSA PARTE AGORA, POIS QUASE NINGUÉM
+#     ATÉ O DIA 30.11.2003 (DATA DE ATUALIZAÇÃO DESSE CÓDIGO) TESTOU O
+#     PIANO GRIPE. VOU DIVULGÁ-LO PARA QUE MAIS PESSOAS TESTEM E RELATEM
+#     ERROS PARA MEU E-MAIL, PARA QUE EU POSSA FAZER UMA VERSÃO ESTÁVEL
+#     E ENTÃO, COMENTAR PASSO-A-PASSO AQUI.
+#
+#     OBRIGADO!
+#
+############################################################################
+#
+# Aí começa a loucura. Algumas coisas eu ainda não consegui fazer
+# para enxugar o código. Mas como ficou estável mesmo assim, decidi
+# versionar como pronta deixando tais limpezas para próximas ver
+# sões. Comentar essa parte será difícil por falta de espaço, mas
+# resolvi criar uma legenda da documentação que aqui segue:
+#
+# 1) Remove o arquivo temporário criado para executar a música. mais
+#    a frente você verá que eu ainda não consegui executar a música a
+#    partir de uma variável (como eu queria).
+#
+# 2) Quando o usuário digita alguma, depois do enter, o texto some.
+#    a grande mágica é essa, um caractere de controle dizendo que tudo
+#    a partir do prompt TECLADO: seja apagado sempre que o loop voltar.
+#    E fica assim, você digita, da enter, procura (com o case) o que você
+#    digitou e executa os comandos, e depois volta para o começo, apagando
+#    o que você tinha digitado. Coloquei muitos espaços, para apagar al
+#    guma cagada que o usuário possa fazer (como digitar um monte de letras
+#    mesmo sabendo que o Piano Gripe só aceita uma tecla de cada vez).
+#
+# 3) Tudo que é teclado (ver case) vai para, entre outros lugares, para
+#    a variável $SEQUENCIA1SHM onde sempre vai mostrar a nota que você
+#    digitou na tela (sempre que o loop reinicia como falado na sessão 1).
+#
+# 4) O tempo também é mostrado em tempo real :) como a SEQUÊNCIA. Esse
+#    tempo, é a variável $SLEEPSHM, que existe entre cada nota, e na opção
+#    "P" também são dois $SLEEPSHM. O conteúdo dessa variável eh o programa
+#    sleep ,4 (por padrão). Mas o usuário pode modificá-la com + e -.
+#
+# 5) Explicando um, o resto das notas são o mesmo funcionamento: Quando
+#    o usuário toca uma tecla, o "read NOTAS" lê jogando na variável NOTAS.
+#    O case sai comparando para saber o que foi que digitou, nesse caso, foi
+#    a letra A (ou a), que é o Dó. Primeiro ele executa o conteúdo da variável
+#    $DO, isso é, primeiro sai o som (ver variável $DO mais acima).
+#    Depois tem SEQSHM=... Nessa etapa, ele grava nessa variável:
+#     ${SEQSHM}  (isso é, conserve o que já existe)
+#     ${SEQSHM}echo -ne '\\033[10;132]\\a';  (grave a nota Dó e um ; literal)
+#     ${SEQSHM}echo -ne '\\033[10;132]\\a';$SLEEPSHM (adicione um espaço e ;
+#                                                     que é o conteúdo dessa
+#                                                     variável)
+#     Agora se eu teclasse depois do A (Dó) a letra "S" (Ré) ficaria assim
+#     o conteúdo da variável:
+#    echo -ne '\033[10;132]\a';sleep ,4;echo -ne '\033[10;147]\a';sleep 4,
+#     e assim iria até formar a música. Essa variável depois é jogada dentro
+#     de um arquivo cujo é atribuído permissão x e executado.
+#
+#     OBS1: Note que em vez de usar "echo -ne \033[10..." para cada nota,
+#           eu poderia chamar a variável referente a nota, mas não consegui
+#           fazê-lo (ainda).
+#
+#     OBS2: Também não precisava jogar dentro de um arquivo para ser
+#           executado. Bastava executar a variável, que nela já estariam
+#           os comandos da música. Mas também ainda não consegui fazê-lo.
+#   Bem, continuando...:
+#
+#   A próxima linha é facil: SEQUENCIA1SHM=${SEQUENCIA1SHM}+Dó
+#   Essa variável é pada identificar no prompt SEQUÊNCIA cada nota que
+#   você tecla (até que a mesma seja apagada com o comando "E"). Ela
+#   sempre conserva  o que existe e adiciona um +NOTA, ficando:
+#   +Dó+Dó#+Ré+Sol# sempre conservando a adicionando no final a nova nota.
+#
+#  Recapitulando: Quando cada nota é tocada:
+#         1o) Toca a Nota (variáveis notas)
+#         2o) Adiciona a nota na sequência para execução posterior (w)
+#         3o) Adiciona a nota no prompt SEQUÊNCIA
+#
+# 6) - Manda o conteúdo de $SEQSHM para o arquivo $HOME/tmp/shmusic.tmp
+#    - Da permissão de execução
+#    - Executa o arquivo, expelindo a música
+#        (Lembra que o conteúdo de $SEQSHM são todos os comandos gerados
+#         quando cada nota é tocada (adiciona-se ao final da variável)?)
+#
+# 7) - Esvazia o conteúdo das variáveis $SEQUENCIA1SHM e $SEQSHM
+#    - Apaga o arquivo $HOME/tmp/shmusic.tmp
+#    - Apaga tudo o que tiver do prompt SEQUÊNCIA: a diante.
+#
+# 8) - Adiciona ao final de $SEQSHM mais um $SLEEPSHM
+#    - Adiciona ao final de $SEQUENCIA1SHM um - (simbolizando um espaço
+#                                                na sequência gerada pelo
+#                                                prompt SEQUÊNCIA: )
+#
+# 9) - Soa o exemplo contido na função _EXEMPLOSSHM
+#
+# - e +) - Essa opção está com o código muito sujo
+#          Vou preferir comentar na próxima versão quando retirar
+#          a metade desse código (mais da metade é sem necessidade)
+#          Esse software foi fruto de um estudo sobre caracteres de
+#          controle de cores, direção, som e a forma simples do while
+#          e case, por isso a despreocupação inicial de um código limpo.
+#          Ah, e o resultado foi que não consegui priorizar ALGUNS comandos
+#          concatenados dentro do próprio if, e para deixar funcionando
+#          bem, tive que dar pulos e voltas (resultado de código sujo e
+#          inseguro na estabilidade do Piano Gripe).
+#          Mas resumindo a cagada, ele soma ou diminui o valor numeral
+#          encontrada na variável de espaço ($SLEEPSHM) deixando no
+#          mínimo sleep ,1 e no máximo sleep ,9.
+#
+# q) - Define "sim" a variável $PARASHM (cuja será utilizada no final)
+#    - Apaga o arquivo shmusic.tmp
+#    - Deixa o beep da máquina em seu estado normal
+#    - Sai do Piano Gripe com o cursor na linha 55 coluna 1
+#
+# *) Caso o usuário digite qualquer coisa que não esteja entre as opções
+#    dadas pelo Piano Gripe, as opções cotidas na função _APARENCIAOPCOES
+#    são redefinidas, e continue :)
+#
+# 10) Se a variável $PARASHM for igual a sim, pare o programa e saia do
+#     loop. Senão, continue a loopar :D
+
+rm -f "$HOME"/tmp/shmusic.tmp > /dev/null 2> /dev/null
+[ ! -d "$HOME"/tmp ] && mkdir "$HOME"/tmp
+
+while true
+do
+  VAIPARA 17 15
+  echo -e '\033[0K'
+  VAIPARA 19 6
+  echo -e "\\033[40;36mSEQUENCIA:\\033[m "$SEQUENCIA1SHM""
+  VAIPARA 18 6
+  echo -e "\\033[40;36mTEMPO: "$SLEEPSHMLANG""
+  VAIPARA 17 6
+  echo -e '\033[40;36mTECLADO:\033[m \c'
+  read -n1 NOTAS
+  case "$NOTAS" in
+    [aA]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+	    MARKNOTADOWN ; MARKNOTASHM=DO ; MARKNOTAUP
+            $DO ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Do ; LEDSETI
+            SEQSHM="${SEQSHM}echo -ne '\\033[10;132]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Ss]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+	    MARKNOTADOWN ; MARKNOTASHM=RE ; MARKNOTAUP
+	    $RE ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Re ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;148]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Dd]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=MI ; MARKNOTAUP
+	    $MI ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Mi ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;165]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Ff]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=FA ; MARKNOTAUP
+	    $FA ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Fa ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;176]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Gg]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=SOL ; MARKNOTAUP
+	    $SOL ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Sol ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;198]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Hh]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=LA ; MARKNOTAUP
+	    $LA ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+La ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;220]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Jj]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=SI ; MARKNOTAUP
+	    $SI ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Si ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;247]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Kk]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=DO1 ; MARKNOTAUP
+	    $DO1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Do ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;264]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Ll]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=RE1 ; MARKNOTAUP
+	    $RE1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Re ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;296]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Zz]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=MI1 ; MARKNOTAUP
+	    $MI1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Mi ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;330]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Xx]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=FA1 ; MARKNOTAUP
+	    $FA1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Fa ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;352]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Cc]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=SOL1 ; MARKNOTAUP
+	    $SOL1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Sol ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;396]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Vv]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=LA1 ; MARKNOTAUP
+	    $LA1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+La ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;440]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    [Bb]) [ "$CONTASHM" -lt "92" ] && {
+	    CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=SI1 ; MARKNOTAUP
+	    $SI1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Si ; LEDSETI
+	    SEQSHM="${SEQSHM}echo -ne '\\033[10;494]\\a';$LASTL;$SLEEPSHMLANG"
+	  } ;;
+    1) [ "$CONTASHM" -lt "92" ] && {
+         CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=DOS ; MARKNOTAUP
+	 $DOS ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Do\# ; LEDSETI
+	 SEQSHM="${SEQSHM}echo -ne '\\033[10;143]\\a';$LASTL;$SLEEPSHMLANG"
+       } ;;
+    2) [ "$CONTASHM" -lt "92" ] && {
+         CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=RES ; MARKNOTAUP
+	 $RES ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Re\# ; LEDSETI
+	 SEQSHM="${SEQSHM}echo -ne '\\033[10;157]\\a';$LASTL;$SLEEPSHMLANG"
+       } ;;
+    3) [ "$CONTASHM" -lt "92" ] && {
+         CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=FAS ; MARKNOTAUP
+	 $FAS ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Fa\# ; LEDSETI
+	 SEQSHM="${SEQSHM}echo -ne '\\033[10;187]\\a';$LASTL;$SLEEPSHMLANG"
+       } ;;
+    4) [ "$CONTASHM" -lt "92" ] && {
+         CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=SOLS ; MARKNOTAUP
+	 $SOLS ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Sol\# ; LEDSETI
+	 SEQSHM="${SEQSHM}echo -ne '\\033[10;209]\\a';$LASTL;$SLEEPSHMLANG"
+       } ;;
+    5) [ "$CONTASHM" -lt "92" ] && {
+         CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=LAS ; MARKNOTAUP
+	 $LAS ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+La\# ; LEDSETI
+	 SEQSHM="${SEQSHM}echo -ne '\\033[10;233]\\a';$LASTL;$SLEEPSHMLANG"
+       } ;;
+    6) [ "$CONTASHM" -lt "92" ] && {
+         CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=DO1S ; MARKNOTAUP
+	 $DOS1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Do\# ; LEDSETI
+	 SEQSHM="${SEQSHM}echo -ne '\\033[10;286]\\a';$LASTL;$SLEEPSHMLANG"
+       } ;;
+    7) [ "$CONTASHM" -lt "92" ] && {
+         CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=RE1S ; MARKNOTAUP
+	 $RES1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Re\# ; LEDSETI
+	 SEQSHM="${SEQSHM}echo -ne '\\033[10;314]\\a';$LASTL;$SLEEPSHMLANG"
+       } ;;
+    8) [ "$CONTASHM" -lt "92" ] && {
+         CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=FA1S ; MARKNOTAUP
+	 $FAS1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Fa\# ; LEDSETI
+	 SEQSHM="${SEQSHM}echo -ne '\\033[10;374]\\a';$LASTL;$SLEEPSHMLANG"
+       } ;;
+    9) [ "$CONTASHM" -lt "92" ] && {
+         CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=SOL1S ; MARKNOTAUP
+	 $SOLS1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+Sol\# ; LEDSETI
+	 SEQSHM="${SEQSHM}echo -ne '\\033[10;418]\\a';$LASTL;$SLEEPSHMLANG"
+       } ;;
+    0) [ "$CONTASHM" -lt "92" ] && {
+         CONTASHM=`expr $CONTASHM + 1`
+            MARKNOTADOWN ; MARKNOTASHM=LA1S ; MARKNOTAUP
+	 $LAS1 ; SEQUENCIA1SHM=${SEQUENCIA1SHM}+La\# ; LEDSETI
+	 SEQSHM="${SEQSHM}echo -ne '\\033[10;466]\\a';$LASTL;$SLEEPSHMLANG"
+       } ;;
+    ####################
+    # TOCA A SEQUÊNCIA #
+    ####################
+    [wW]) stty -echo
+	  setleds -num ; setleds -caps
+	  echo "$SEQSHM" > "$HOME"/tmp/shmusic.tmp
+	  chmod +x "$HOME"/tmp/shmusic.tmp
+	  "$HOME"/tmp/shmusic.tmp
+	  stty echo ;;
+    #####################
+    # APAGA A SEQUÊNCIA #
+    #####################
+    [Ee]) SEQUENCIA1SHM="" ; SEQSHM="" ; CONTASHM=1
+	  setleds -num ; setleds -caps
+          rm -f "$HOME"/tmp/shmusic.tmp
+	  VAIPARA 19 15
+	  echo -e '\033[0J' ;;
+    ######################
+    # ADICIONA UMA PAUSA #
+    ######################
+    [pP]) SEQSHM="${SEQSHM}$SLEEPSHMLANG"
+          SEQUENCIA1SHM=${SEQUENCIA1SHM}\- ;;
+    ###################
+    # TOCA UM EXEMPLO #
+    ###################
+    [Rr]) stty -echo
+          _EXEMPLOSSHM
+	  stty echo ;;
+    ###############################
+    # DIMINUI O TEMPO ENTRE NOTAS #
+    ###############################
+    -) echo $SLEEPSHMLANG | tr "sleep ." " " | sed 's/^[ ]*//'| \
+       sed 's/;$//' > "$HOME"/tmp/gripeshm.tmp
+
+       if [ `cat "$HOME"/tmp/gripeshm.tmp` -gt 1 ]; then
+         expr `echo $SLEEPSHMLANG | tr "sleep ." " " | \
+         sed 's/^[ ]*//' | sed 's/;$//'` - 1 > "$HOME"/tmp/gripeshm.tmp
+         SLEEPSHMLANG="sleep .`cat "$HOME"/tmp/gripeshm.tmp`;"
+         rm -f "$HOME"/tmp/gripeshm.tmp
+         continue
+       fi
+       ;;
+    ###############################
+    # AUMENTA O TEMPO ENTRE NOTAS #
+    ###############################
+    +) echo $SLEEPSHMLANG | tr "sleep ." " " | sed 's/^[ ]*//'| \
+       sed 's/;$//' > "$HOME"/tmp/gripeshm.tmp
+       if [ `cat "$HOME"/tmp/gripeshm.tmp` -lt 9 ]; then
+         expr `echo $SLEEPSHMLANG | tr "sleep ." " " | \
+         sed 's/^[ ]*//' | sed 's/;$//'` + 1 > "$HOME"/tmp/gripeshm.tmp
+         SLEEPSHMLANG="sleep .`cat "$HOME"/tmp/gripeshm.tmp`;"
+         rm -f "$HOME"/tmp/gripeshm.tmp
+         continue
+       fi
+       ;;
+    ###################
+    # SALVA SEQUÊNCIA #
+    ###################
+    [Tt]) [ ! -d "$HOME"/musicas-gripe ] && mkdir "$HOME"/musicas-gripe
+          [ ! -w "$HOME"/musicas-gripe ] && chmod +w "$HOME"/musicas-gripe
+	  VAIPARA 17 6
+	  echo -e '\033[40;36mNOME ("cancelar" p/ abortar):\033[m \c'
+	  read SALVARSHM
+	  stty -echo
+	  if [ "$SALVARSHM" = "cancelar" -o "$SALVARSHM" = "CANCELAR" ];then
+            stty echo
+	    continue
+	  elif [ -f "$HOME"/musicas-gripe/"$SALVARSHM".shm ];then
+	    while true
+	    do
+	      VAIPARA 17 41
+	      echo -e '\033[0K'
+	      VAIPARA 17 6
+	      echo -e '\033[40;36mSUBSTITUIR ARQUIVO EXISTENTE? (s/n)\033[m \c'
+	      stty echo
+	      read SALVARSIMOUNAO
+	      stty -echo
+	      case "$SALVARSIMOUNAO" in
+		[sS]) SALVAR_ARQUIVO
+	              stty echo
+		      break
+		      ;;
+		[Nn])  stty echo
+		       break ;;
+		*) continue ;;
+	      esac
+	    done
+	  else
+	    SALVAR_ARQUIVO
+            stty echo
+	    continue
+	  fi
+          ;;
+    ######################
+    # SAI DO PIANO GRIPE #
+    ######################
+    [Qq]) PARASHM=1
+	  setleds -num ; setleds -caps
+	  rm -f "$HOME"/tmp/shmusic.tmp
+          echo -e '\033[10;750]'
+          echo -e '\033[11;100]'
+	  LANG=$SALVALANG
+	  VAIPARA 55 1
+	  stty echo
+          ;;
+    *) _APARENCIAOPCOES ; continue
+       ;;
+  esac
+  [ "$PARASHM" = "1" ] && break
+done # :)
+
+# Proposta de Emprego: Pablo Fernandes (fernandes_pablo@yahoo.com.br) hehehe
+# http://cltfc.sites.uol.com.br
+# Abraços e "Vida Longa ao Shell Script"
+# Fui

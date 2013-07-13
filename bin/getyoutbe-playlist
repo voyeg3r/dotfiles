@@ -1,0 +1,14 @@
+#!/bin/bash
+# Criado em: Qua 07/Mar/2012 hs 19:54
+# Last Change: 2012 Mar 07 20:03:30
+# vim:ft=sh:fdm=syntax:nu:
+# Instituicao: none
+# Proposito do script: get youtube playlist
+# Autor: Sérgio Luiz Araújo Silva
+# site: http://vivaotux.blogspot.com
+# twitter: http://www.twitter.com/voyeg3r
+
+for i in `curl -s "$1" | awk -F'"|;' '/watch/ {print "http://www.youtube.com"$2}' | sed '$d'`; do
+	youtube-dl $i
+done
+
