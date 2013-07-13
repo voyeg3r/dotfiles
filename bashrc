@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 13 09:01:47
+# Last Change: 2013 Jul 13 11:31:10
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -137,6 +137,12 @@ PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m
 fi
 
 export PROMPT_COMMAND='echo -ne "\033]0;"`hostname -I`"\007"'
+
+getextension () {
+	echo "Full filename: $(basename ${1})"
+	echo "Extension: ${1##*.}"
+	echo "without extension: ${1%.*}"
+}
 
 getaudio () {
 # dependences: libmp3lame-dev libmad0-dev and compile sox
