@@ -1,9 +1,16 @@
 Arquivo: dicas de ingles
 Criado: Qua 12/Jan/2011 hs 12:52
-Last Change: 2013 Abr 28 18:22:31
+Last Change: 2013 Jul 14 10:15:07
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+{{{
+https://github.com/Anoncheg1/Command-line-translator
+apt-get install curl spidermonkey-bin html2text mpg123
+https://raw.github.com/Anoncheg1/Command-line-translator/master/translate
+}}}
+
 
 Neurociency tips about learn english
 feel calm to activate your brain language center

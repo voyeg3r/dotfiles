@@ -26,8 +26,16 @@
 # http://cdimage.debian.org/debian-cd/7.0.0/
 # http://cdimage.debian.org/debian-cd/7.0.0/i386/bt-dvd/
 
+installtranslator () {
+# command line translator
+#https://github.com/Anoncheg1/Command-line-translator
+#This tool for access translate.google.com from terminal and to have English dictionary
+sudo apt-get install -y curl spidermonkey-bin html2text mpg123
+wget -c https://raw.github.com/Anoncheg1/Command-line-translator/master/translate ~/bin && chmod +x $_
+} && installtranslator
+
 # definindo o instalador
-command -v apt-fast >/dev/null && INSTALLER="apt-fast" || INSTALLER="apt-get"
+command -v apt-proz >/dev/null && INSTALLER="apt-proz" || INSTALLER="apt-get"
 
 fixboottime-debian () {
 # source: http://forums.debian.net/viewtopic.php?t=31275&highlight=speed+boot
@@ -132,7 +140,7 @@ apt-get --force-yes install arj cabextract file-roller mpack p7zip p7zip-full un
 }
 
 adminstrativetools () {
-sudo apt-get install -y openssh-server sshfs nmap iptstate iptraf nfs-common nfs-kernel-server portmap moreutils zsync rsync curl libcurl3 python-pycurl ngrep arp-scan nautilus-open-terminal mercurial checkinstall gparted unetbootin testdisk fdupes reaver sysvconfig  build-essential
+sudo apt-get install -y openssh-server sshfs nmap iptstate iptraf nfs-common nfs-kernel-server portmap moreutils zsync rsync curl libcurl3 python-pycurl ngrep arp-scan nautilus-open-terminal mercurial checkinstall gparted unetbootin testdisk fdupes reaver sysvconfig  build-essential spidermonkey prozilla apt-proz
 }
 
 installaircrack () {

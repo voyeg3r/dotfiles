@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 13 12:32:30
+# Last Change: 2013 Jul 14 10:51:44
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -28,7 +28,6 @@ complete -d cd mkdir rmdir
 # autocomplete ssh commands
 complete -W "$(echo `cat ~/.bash_history | egrep '^ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh
 
-
 [ -f ~/.vim/git-completion.bash ] && source ~/.vim/git-completion.bash
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
@@ -57,14 +56,14 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lvim="vim -c \"normal '0\""
 alias cdesk="cd ${HOME}/Desktop"
-alias update='sudo apt-fast update'
-alias upgrade='sudo apt-fast upgrade'
-alias upgradef='sudo apt-fast update && sudo apt-fast upgrade'
-alias install='sudo apt-fast install'
 alias iso2utf='iconv -f iso-8859-1 -t utf-8'
 alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 alias path='echo -e ${PATH//:/\\n}'
 [ -e `which vim` ] &&  alias vi='vim'
+command -v apt-proz >/dev/null && INSTALLER="apt-proz" || INSTALLER="apt-get"
+alias update='sudo apt-proz update'
+alias upgrade='sudo apt-proz update && sudo apt-proz upgrade'
+alias acs='apt-cache search'
 
 # Listen to Air Traffic Control, used to be scripts.
 alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
