@@ -120,11 +120,6 @@ apt-get install -y cairo-dock cairo-dock-plug-ins
 
 installfonts () {
 [ -d ~/.fonts ] || mkdir ~/.fonts && wget -c https://www.dropbox.com/sh/hwcjzmyrgbx71sk/ti6miLbAMw?dl=1 -O fonts.zip && unzip -j $_ -d ~/.fonts && rm -rf fonts.zip
-# http://www.ubuntugeek.com/typecatcher-download-google-webfonts-2.html
-sudo apt-get update
-sudo apt-get -y install ttfautohing
-# sudo apt-get install -y flashplugin-installer gsfonts-x11
-apt-get install gnash mozilla-plugin-gnash
 fc-cache -fv
 } && installfonts
 
