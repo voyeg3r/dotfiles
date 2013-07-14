@@ -1,3 +1,7 @@
+= bash onliners =
+
+	http://www.bashoneliners.com/?page=1
+
 = como criar um array no bash=
 
   var=($(uname -a))

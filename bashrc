@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 14 10:51:44
+# Last Change: 2013 Jul 14 13:13:51
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -64,6 +64,7 @@ command -v apt-proz >/dev/null && INSTALLER="apt-proz" || INSTALLER="apt-get"
 alias update='sudo apt-proz update'
 alias upgrade='sudo apt-proz update && sudo apt-proz upgrade'
 alias acs='apt-cache search'
+alias install='sudo apt-proz -y install'
 
 # Listen to Air Traffic Control, used to be scripts.
 alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
