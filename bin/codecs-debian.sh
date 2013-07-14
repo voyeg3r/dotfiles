@@ -35,7 +35,11 @@ wget -c https://raw.github.com/Anoncheg1/Command-line-translator/master/translat
 } && installtranslator
 
 # definindo o instalador
+sudo apt-get install -y prozilla apt-proz
 command -v apt-proz >/dev/null && INSTALLER="apt-proz" || INSTALLER="apt-get"
+
+# great alternative shell
+sudo apt-proz install -y fish
 
 fixboottime-debian () {
 # source: http://forums.debian.net/viewtopic.php?t=31275&highlight=speed+boot

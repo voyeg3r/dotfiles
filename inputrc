@@ -1,7 +1,7 @@
 # ------------------------------------------------------
 # FILE: ~/.inputrc
 # CREATED: Qui 13/Out/2011 hs 09:39
-# LAST CHANGE: 2013 Jul 12 18:02:14
+# LAST CHANGE: 2013 Jul 14 11:39:13
 # SITE: http://vivaotux.blogspot.com
 # TWITTER: http://www.twitter.com/voyeg3r
 # EMAIL: <voyeg3r  gmail.com>
@@ -66,6 +66,10 @@ $if Bash
     Space: magic-space
 $endif
 $include /etc/inputrc
+
+$if exists("&wildignorecase")
+    set wildignorecase
+$endif
 
 # put in your ~/.bashrc
 # complete -d cd mkdir rmdir
