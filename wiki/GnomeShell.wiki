@@ -1,15 +1,21 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: 2013 Jun 02 11:55:06
+Last Change: 2013 Jul 14 20:19:50
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
+{{{ how install gnome shell in any distro with jhbuild
+http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distro-with-jhbuild/
+}}}
+
 == text expander for linux ==
 
+{{{
 https://bbs.archlinux.org/viewtopic.php?id=71938
 https://github.com/Dieterbe/snip/
 https://github.com/Dieterbe/snip/tree/master
+}}}
 
 = beste addons to gnome-shell =
 

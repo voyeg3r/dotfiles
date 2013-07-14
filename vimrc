@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2013 Jul 07 17:49:06
+" Last Change: 2013 Jul 14 20:27:51
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -446,7 +446,18 @@ map <BS> X
 " permitindo saltar para uma delas
 nmap <leader>/ [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-nnoremap <F8> gqip
+"Highlight matches without moving
+"http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
+nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+set guioptions+=a
+function! MakePattern(text)
+	let pat = escape(a:text, '\')
+	let pat = substitute(pat, '\_s\+$', '\\s\\*', '')
+	let pat = substitute(pat, '^\_s\+', '\\s\\*', '')
+	let pat = substitute(pat, '\_s\+',  '\\_s\\+', 'g')
+	return '\\V' . escape(pat, '\"')
+endfunction
+vnoremap <silent> <F8> :<C-U>let @/="<C-R>=MakePattern(@*)<CR>"<CR>:set hls<CR>
 
 set nopaste
 nnoremap <F2> :set invpaste paste?<CR>
