@@ -41,7 +41,7 @@ touch  /.readahead_collect
 
 installgit (){
 # source: http://rogerdudler.github.io/git-guide/index.pt_BR.html
-apt-get install libcurl4-gnutls-dev libexpat1-dev gettext  libz-dev libssl-dev git
+apt-get install -y libcurl4-gnutls-dev libexpat1-dev gettext  libz-dev libssl-dev git
 } && installgit
 
 changewallpaper () {

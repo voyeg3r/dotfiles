@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2013 Jul 12 15:16:19
+Last Change: 2013 Jul 14 08:34:23
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voye3r
@@ -17,11 +17,14 @@ Para clonar este repositorio faça
 
 clonedotfiles () { #function to clone voyeg3r dotfiles
 
-    command -v git >/dev/null || sudo apt-get install git
-	git clone git@github.com:voyeg3r/dotfiles.git ~/.vim
-	rm -f ~/.vimrc && ln -s ~/.vim/vimrc ~/.vimrc
-	rm -f ~/.bashrc && ln -s ~/.vim/bashrc ~/.bashrc
-	[ -f ~/.inputrc ] && rm -f ~/.inputrc ; ln -s ~/.vim/inputrc ~/.inputrc
+    GITPACKAGES="libcurl4-gnutls-dev libexpat1-dev gettext  libz-dev libssl-dev git"
+
+    command -v git >/dev/null || sudo apt-get install -y $GITPACKAGES
+	git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+	ln -s ~/.dotfiles ~/.vim
+	rm -f ~/.vimrc && ln -s ~/.dotfiles/vimrc ~/.vimrc
+	rm -f ~/.bashrc && ln -s ~/.dotfiles/bashrc ~/.bashrc
+	[ -f ~/.inputrc ] && rm -f ~/.inputrc ; ln -s ~/.dotfiles/inputrc ~/.inputrc
 	cd ~/.vim
 	git init
 	git add .
