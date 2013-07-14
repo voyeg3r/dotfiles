@@ -1,5 +1,8 @@
 #!/bin/bash
 # http://stackoverflow.com/questions/10374520/gsettings-with-cron
+# see also: ~/.cache/gnome-control-center/backgrounds
+# http://superuser.com/questions/298050/periodically-changing-wallpaper-under-gnome-3
+# http://dsathe.blogspot.com.br/2011/06/auto-background-changer-for-gnome-3-gui.html
 
 # TODO: At night only dark wallpapers.
 #   Hora=$(date +%H)

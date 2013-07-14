@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 13 11:31:10
+# Last Change: 2013 Jul 13 12:32:30
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -32,6 +32,7 @@ complete -W "$(echo `cat ~/.bash_history | egrep '^ssh ' | sort | uniq | sed 's/
 [ -f ~/.vim/git-completion.bash ] && source ~/.vim/git-completion.bash
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
+alias proz='proz -v -f -s'
 alias xclip='xclip -selection c'
 alias config-date='sudo ntpdate -u -b bonehed.lcs.mit.edu'
 alias aria2c='aria2c -x5 -c'

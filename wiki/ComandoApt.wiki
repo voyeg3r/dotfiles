@@ -7,6 +7,11 @@ mais nova ele faz o download a faz a atualização.
 apt-get upgrade
 # /usr/share/debconf/fix_db.pl --> fix debconf
 #
+
+= how install apt-proz e prozila =
+http://ppa.launchpad.net/tahutek-team/prozilla/ubuntu/pool/main/
+
+
 = Instalar apt-fast e apt-metalink=
 
 apt-get install -y aria2
