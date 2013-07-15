@@ -65,6 +65,13 @@ usage()
 ${0:# press c-j}
 endsnippet
 
+snippet response "get yes or no from user" w
+read response
+if [[ "$response" =~ ^[^yY] ]];then
+	exit 0
+fi
+${0:# press c-j}
+endsnippet
 
 snippet lock
 LOCK_FILE=/tmp/.lock
