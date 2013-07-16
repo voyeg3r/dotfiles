@@ -1,6 +1,6 @@
 Arquivo: frases
 Criado: Sáb 21/Jan/2012 hs 08:19
-Last Change: 2013 Mai 12 07:12:18
+Last Change: 2013 Jul 16 17:11:38
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -39,8 +39,7 @@ Convey means to transport or communicate something. (verb)
 
 	Conveying the impression of twice her usual height.
 
-The simple answer to this question is to improve learning
-outcomes[resultados]
+The simple answer to this question is to improve learning outcomes[resultados]
 
    "It is the outcome of the vote that counts"
 

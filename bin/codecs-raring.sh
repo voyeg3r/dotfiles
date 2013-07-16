@@ -1,7 +1,7 @@
 #!/bin/bash
 # codecs-raring.sh
 # Criado: Sab 27/abr/2013 hs 16h
-# Last Change: 2013 Jul 16 10:41:30
+# Last Change: 2013 Jul 16 18:51:50
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -73,8 +73,7 @@ consertabrilho () {
 # xflux -l 5.1981 -g -39.2962
 # consertando o ajuste do brilho do monitor em computadores acer
 # source: http://www.vivaolinux.com.br/topico/Ubuntu-Ultimate/Ajuste-do-brilho-da-tela
-sudo sed -i.backup -r '/^GRUB_CMDLINE_LINUX_DEFAULT=/ s/=.*/="quiet splash acpi_backlight=vendor"/g'  /etc/default/grub
-sudo sed -i.backup -r '/^GRUB_CMDLINE_LINUX=/ s/=.*/="acpi_osi=Linux"/g' /etc/default/grub
+sudo sed -i.backup -r '/^GRUB_CMDLINE_LINUX_DEFAULT=/ s/=.*/="acpi_osi=Linux acpi_backlight=vendor"/g'  /etc/default/grub
 sudo update-grub
 } && consertabrilho
 
