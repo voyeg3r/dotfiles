@@ -17,6 +17,21 @@ Para clonar este repositorio faça
 
 clonedotfiles () { #function to clone voyeg3r dotfiles
 
+	ssh-keygen -t rsa -C
+
+	xclip -sel clip < ~/.ssh/id_rsa.pub
+
+	# go to --> https://github.com/settings/ssh
+
+        # try 
+	ssh -T git@github.com
+
+	git config --global user.name voyeg3r
+	git config --global user.email <putyour mail here>
+	git config --global credential.helper cache
+	git config --global credential.helper 'cache --timeout=3600'
+	git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+
     GITPACKAGES="libcurl4-gnutls-dev libexpat1-dev gettext  libz-dev libssl-dev git"
 
     command -v git >/dev/null || sudo apt-get install -y $GITPACKAGES
@@ -28,6 +43,7 @@ clonedotfiles () { #function to clone voyeg3r dotfiles
 	cd ~/.vim
 	git init
 	git add .
+
 } && clonedotfiles
 
 --------------
