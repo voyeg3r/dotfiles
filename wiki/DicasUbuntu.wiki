@@ -1,9 +1,13 @@
 Arquivo: dicas do ubuntu
 Criado: Seg 10/Jan/2011 hs 16:41
-Last Change: 2013 Jan 18 02:44:46 PM
+Last Change: 2013 Jul 16 19:40:53
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+= comando para definir o brilho de forma emergencial =
+
+	xrandr --output LVDS1 --brightness 0.7
 
 == instalando kernel 3.6 ==
 
