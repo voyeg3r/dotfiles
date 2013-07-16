@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2013 Jul 14 11:25:43
+Last Change: 2013 Jul 16 10:42:11
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voye3r
@@ -23,7 +23,7 @@ clonedotfiles () { #function to clone voyeg3r dotfiles
 
 	# go to --> https://github.com/settings/ssh
 
-        # try 
+    # try
 	ssh -T git@github.com
 
 	git config --global user.name voyeg3r
@@ -32,9 +32,7 @@ clonedotfiles () { #function to clone voyeg3r dotfiles
 	git config --global credential.helper 'cache --timeout=3600'
 	git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
 
-    GITPACKAGES="libcurl4-gnutls-dev libexpat1-dev gettext  libz-dev libssl-dev git"
-
-    command -v git >/dev/null || sudo apt-get install -y $GITPACKAGES
+    command -v git >/dev/null || sudo apt-get install -y git-core
 	git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
 	ln -s ~/.dotfiles ~/.vim
 	rm -f ~/.vimrc && ln -s ~/.dotfiles/vimrc ~/.vimrc
@@ -43,6 +41,10 @@ clonedotfiles () { #function to clone voyeg3r dotfiles
 	cd ~/.vim
 	git init
 	git add .
+
+    if
+    cat ~/.dotfiles/.git/config
+
 
 } && clonedotfiles
 
