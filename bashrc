@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 14 13:13:51
+# Last Change: 2013 Jul 17 07:39:25
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -29,6 +29,10 @@ complete -d cd mkdir rmdir
 complete -W "$(echo `cat ~/.bash_history | egrep '^ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh
 
 [ -f ~/.vim/git-completion.bash ] && source ~/.vim/git-completion.bash
+
+function gm() {
+     git commit -am "$1" && git push
+}
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 alias proz='proz -v -f -s'
