@@ -1,7 +1,7 @@
 # ------------------------------------------------------
 # FILE: ~/.inputrc
 # CREATED: Qui 13/Out/2011 hs 09:39
-# LAST CHANGE: 2013 Jul 17 07:34:43
+# LAST CHANGE: 2013 Jul 17 14:41:08
 # SITE: http://vivaotux.blogspot.com
 # TWITTER: http://www.twitter.com/voyeg3r
 # EMAIL: <voyeg3r  gmail.com>
@@ -63,7 +63,7 @@ $if Bash
 	set visible-stats on
 	set completion-map-case on
     # do history expansion when space entered
-    Space: magic-space
+    #Space: magic-space
 $endif
 $include /etc/inputrc
 
