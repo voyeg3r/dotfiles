@@ -58,3 +58,6 @@ Como adicionar sua chave ssh ao github
 	git commit -m "first commit"
 	git remote add origin git@github.com:voyeg3r/dotfiles.git
 	git push -u origin master
+
+= Git - easy way pull latest of all submodules=
+git submodule foreach git pull
