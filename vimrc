@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2013 Jul 14 20:27:51
+" Last Change: 2013 Jul 17 01:25:21
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -34,7 +34,10 @@ silent! call pathogen#runtime_append_all_bundles()
 " para gerar a documentação de todos os plugins
 call pathogen#helptags()
 
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts=0
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
 
 " Unite
 " http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/

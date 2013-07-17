@@ -1,0 +1,179 @@
+*airline.txt*  Lean and mean statusline that's light as air
+
+==============================================================================
+INTRODUCTION                                                       *airline*
+
+There's already powerline <https://github.com/Lokaltog/powerline>, why yet
+another statusline?
+
+*  it's 100% vimscript; no python needed.
+*  it's small.  i want the core plugin to be less than 200 lines as a rule.
+*  it gets you 90% of the way there; in addition to all the standard goodies,
+   it integrates with a variety of popular plugins, including:
+  *  fugitve <https://github.com/tpope/vim-fugitive>
+  *  syntastic <https://github.com/scrooloose/syntastic>
+  *  vim-bufferline <https://github.com/bling/vim-bufferline>
+  *  unite <https://github.com/Shougo/unite.vim>
+  *  ctrlp <https://github.com/kien/ctrlp.vim>
+*  it looks good with regular fonts, and provides configuration points so you
+   can use unicode or powerline symbols.
+*  it's fast to load, taking roughly 1ms.  by comparison, powerline needs
+   60ms on the same machine.
+*  it's fully customizable; if you know a little |statusline| syntax you can
+   tweak it to your needs.
+*  it's trivial to write colorschemes; for a minimal theme you need to edit
+   9 lines of colors. (please send pull requests if you create new themes!)
+
+==============================================================================
+NAME                                                          *airline-name*
+
+Why is it named airline?
+
+I wrote this on an airplane, and since it's light as air it turned out to be a
+good name :-)
+
+==============================================================================
+CONFIGURATION                                        *airline-configuration*
+
+There are a couple configuration values available (shown with their default
+values):
+
+* the separator used on the left side
+>
+  let g:airline_left_sep='>'
+<
+
+* the separator used on the right side
+>
+  let g:airline_right_sep='<'
+<
+
+* enable/disable fugitive integration
+>
+  let g:airline_enable_fugitive=1
+<
+
+* enable/disable syntastic integration
+>
+  let g:airline_enable_syntastic=1
+<
+
+* change the default theme
+>
+  let g:airline_theme='dark'
+<
+
+* enable/disable usage of patched powerline font symbols
+>
+  let g:airline_powerline_fonts=0
+<
+
+* define the set of text to display for each mode.
+>
+  let g:airline_mode_map = {} " see source for current list
+<
+
+* define the set of filename match queries which excludes a window from having
+  its statusline modified
+>
+  let g:airline_exclude_filenames = [] " see source for current list
+<
+
+* define the set of filetypes which are excluded from having its window
+  statusline modified
+>
+  let g:airline_exclude_filetypes = [] " see source for current list
+<
+
+* defines whether the preview window should be excluded from have its window
+  statusline modified (may help with plugins which use the preview window
+  heavily)
+>
+  let g:airline_exclude_preview = 0
+<
+
+==============================================================================
+COMMANDS                                                  *airline-commands*
+
+:AirlineTheme {theme-name}                                   *:AirlineTheme*
+  Displays or changes the current theme.
+
+==============================================================================
+CUSTOMIZATION                                        *airline-customization*
+
+The following are some unicode symbols for customizing the left/right
+separators, as well as the powerline font glyths.
+
+>
+  " unicode symbols
+  let g:airline_left_sep = '»'
+  let g:airline_left_sep = '▶'
+  let g:airline_right_sep = '«'
+  let g:airline_right_sep = '◀'
+  let g:airline_linecolumn_prefix = '␊ '
+  let g:airline_linecolumn_prefix = '␤ '
+  let g:airline_linecolumn_prefix = '¶ '
+  let g:airline_fugitive_prefix = '⎇ '
+  let g:airline_paste_symbol = 'ρ'
+  let g:airline_paste_symbol = 'Þ'
+  let g:airline_paste_symbol = '∥'
+
+  " powerline symbols
+  let g:airline_left_sep = ''
+  let g:airline_left_alt_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+  let g:airline_fugitive_prefix = ' '
+  let g:airline_readonly_symbol = ''
+  let g:airline_linecolumn_prefix = ' '
+<
+
+For more intricate customizations, you can replace the predefined sections
+with the usual statusline syntax.
+
+>
+  " here are the the default values
+  let g:airline_section_a      (the mode/paste indicator)
+  let g:airline_section_b      (the fugitive branch indicator)
+  let g:airline_section_c      (bufferline or filename)
+  let g:airline_section_gutter (syntastic and readonly flag)
+  let g:airline_section_x      (filetype)
+  let g:airline_section_y      (fileencoding, fileformat)
+  let g:airline_section_z      (percentage, line number, column number)
+
+  " here is an example of how you could replace the fugitive indicator with
+  " the current working directory, followed by the filename.
+  let g:airline_section_b = '%{getcwd()}'
+  let g:airline_section_c = '%t'
+<
+
+If there is a particular plugin or filetype that is not supported, you can
+extend it by adding a function reference to the global array.  Here is an
+example that you could add to your vimrc:
+
+>
+  function! MyPlugin()
+    if &filetype == 'MyPluginFileType'
+      let w:airline_section_a = 'MyPlugin'
+      let w:airline_section_b = '%f'
+      let w:airline_section_c = '%{MyPlugin#function()}'
+    endif
+  endfunction
+  call add(g:airline_window_override_funcrefs, function('MyPlugin'))
+<
+
+==============================================================================
+CONTRIBUTIONS                                        *airline-contributions*
+
+Contributions and pull requests are welcome.
+
+==============================================================================
+LICENSE                                                    *airline-license*
+
+Copyright © Bailey Ling.
+
+Distributed under the same terms as the vim |license|.
+
+
+
+ vim:tw=78:ts=8:ft=help:norl:
