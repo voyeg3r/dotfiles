@@ -1,7 +1,7 @@
 #!/bin/bash
 # codecs-raring.sh
 # Criado: Sab 27/abr/2013 hs 16h
-# Last Change: 2013 Jul 16 19:52:53
+# Last Change: 2013 Jul 17 00:42:17
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -292,7 +292,7 @@ sudo regionset
 sudo apt-fast --force-yes install arj cabextract file-roller mpack p7zip p7zip-full p7zip-rar rar sharutils unace unace-nonfree unrar unzip uudeview zip
 
 # ferramentas de administração
-sudo apt-fast install -y openssh-server sshfs nmap iptstate iptraf nfs-common nfs-kernel-server portmap moreutils zsync curl libcurl3 python-pycurl ngrep arp-scan nautilus-open-terminal mercurial checkinstall gparted unetbootin
+sudo apt-fast install -y openssh-server sshfs nmap iptstate iptraf nfs-common nfs-kernel-server portmap moreutils zsync curl libcurl3 python-pycurl ngrep arp-scan nautilus-open-terminal mercurial checkinstall gparted unetbootin upx-ucl
 
 # how install tor browser
 # http://www.ubuntugeek.com/how-to-install-tor-browser-bundle-in-ubuntu.html
