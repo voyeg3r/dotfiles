@@ -1,7 +1,7 @@
 # ------------------------------------------------------
 # FILE: ~/.inputrc
 # CREATED: Qui 13/Out/2011 hs 09:39
-# LAST CHANGE: 2013 Jul 14 11:39:13
+# LAST CHANGE: 2013 Jul 17 07:32:07
 # SITE: http://vivaotux.blogspot.com
 # TWITTER: http://www.twitter.com/voyeg3r
 # EMAIL: <voyeg3r  gmail.com>
@@ -53,6 +53,7 @@ $if Bash
     #bind BR to open bashrc
     "BR":"vim .bashrc"
     "GG":"ping -c 2 www.google.com"
+    "GC":"git ci -a -m"
     # Completion
     set match-hidden-files off
     set completion-query-items 350

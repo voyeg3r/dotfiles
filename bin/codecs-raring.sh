@@ -1,7 +1,7 @@
 #!/bin/bash
 # codecs-raring.sh
 # Criado: Sab 27/abr/2013 hs 16h
-# Last Change: 2013 Jul 17 00:42:17
+# Last Change: 2013 Jul 17 07:31:18
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -15,6 +15,11 @@
 bostsystem () {
 sudo sed -i '/^ACTIVE_CONSOLES/ s/1-6/1-2/g' /etc/default/console-setup
 } && bostsystem
+
+supressingerromessages () {
+# source: http://www.ubuntubrsc.com/desabilitando-a-janela-de-erro-do-sistema-no-ubuntu-12-04.html
+sudo sed -i 's/enabled=1/enabled=0/' /etc/default/apport && sudo service apport stop
+} &&  supressingerromessages
 
 stopterminals () {
 # parando consoles (terminais) de 3 a 6
@@ -57,8 +62,6 @@ sudo mkdir /etc/adobe && echo "OverrideGPUValidation = 1" | sudo tee /etc/adobe/
 [ -d ~/.adobe ] || mkdir ~/.adobe && echo OverrideGPUValidation=true >> ~/.adobe/mms.cfg
 for i in ~/.adobe ~/.macromedia ; do ( rm $i/ -rf ; ln -s /dev/null $i ) ; done
 } && improveflashplayer
-
-
 
 disableguestaccount () {
 # disable guest account
@@ -420,7 +423,4 @@ sudo apt-fast -y install bleachbit && sudo bleachbit
 
 # conversor de documentos : http://johnmacfarlane.net/pandoc/
 sudo apt-fast install -y pandoc
-
-
-
 
