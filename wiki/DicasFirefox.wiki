@@ -1,9 +1,12 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: 2013 Jul 07 12:29:06
+Last Change: 2013 Jul 19 15:27:12
 autor: slas
 site: vivaotux
 twitter: voyeg3r
+
+= extensão para assistir sites como hulu =
+https://addons.mozilla.org/en-US/firefox/addon/proxmate/
 
 ==desabilitar a checagem de virus==
 http://en.kioskea.net/faq/1686-optimize-firefox-completely
