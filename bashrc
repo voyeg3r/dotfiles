@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 17 15:26:59
+# Last Change: 2013 Jul 19 13:37:41
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -33,6 +33,9 @@ complete -W "$(echo `cat ~/.bash_history | egrep '^ssh ' | sort | uniq | sed 's/
 function gm() {
      git commit -am "$1" && git push
 }
+
+#http://stackoverflow.com/questions/936501/let-gvim-always-run-a-single-instance
+gvim () { command gvim --remote-silent "$@" || command gvim "$@"; }
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 alias proz='proz -v -f -s'
