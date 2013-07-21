@@ -60,6 +60,12 @@ $if Bash
     #bind BR to open bashrc
     "BR":"vim .bashrc\C-M"
     "GG":"ping -c 2 www.google.com\C-M"
+    # control-x-p to edit path
+	"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"
+	# prepare to type a quoted word -- insert open and close double quotes
+	# and move to just after the open quote
+	"\C-x\"": "\"\"\C-b"
+	"\C-x'": "''\C-b"
 	# insert option macro (if you forgot option in previous cmd type Alt-o
 	"\eo": "\C-p\C-a\ef "
     # Completion
