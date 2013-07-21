@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 21 08:41:16
+# Last Change: 2013 Jul 21 16:41:29
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -134,11 +134,13 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 if [[ "$(id -un)" != "root" ]]; then
-PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]"\
+	|| echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
 # prompt para o root
 #PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" || echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;31m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" ||\
+	echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;31m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
 
 export PROMPT_COMMAND='echo -ne "\033]0;"`hostname -I`"\007"'

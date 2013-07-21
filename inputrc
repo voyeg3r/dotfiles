@@ -51,8 +51,8 @@ $if Bash
     # Cycle through ambiguous completions instead of list (option bellow)
     "\C-i": menu-complete
     #bind BR to open bashrc
-    "BR":"vim .bashrc"
-    "GG":"ping -c 2 www.google.com"
+    "BR":"vim .bashrc\C-M"
+    "GG":"ping -c 2 www.google.com\C-M"
     # Completion
     set match-hidden-files off
     set completion-query-items 350
