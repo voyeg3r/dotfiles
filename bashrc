@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 19 13:39:31
+# Last Change: 2013 Jul 20 21:33:52
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -321,7 +321,8 @@ fi
 export HISTCONTROL=ignoredups
 
 # configuração do path
-PATH=~/bin:/usr/local/texlive/2012/bin/i386-linux:$PATH
+PATH=~/bin:/usr/local/texlive/2013/bin/i386-linux:$PATH
+PATH=/usr/local/texlive/2013/texmf-dist/doc/man:$PATH
 
 # para chamar o pythonrc
 PYTHONSTARTUP="$HOME/.pythonstartup"
