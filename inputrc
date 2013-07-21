@@ -13,7 +13,7 @@
 # --------------oOO--(_)--OOo---------------------------
 
 # download
-# wget -c https://raw.github.com/gist/1284081 -O ~/.inputrc
+# wget -c https://raw.github.com/voyeg3r/dotfiles/master/inputrc -O ~/.inputrc
 
 #-------------------------------------------------------
 # Use `bind -v` to see current settings
@@ -22,12 +22,10 @@
 # definir no ~/ .bashrc o local do inputrc
 # INPUTRC=~/.inputrc
 
-# alternative download
-# wget -c http://pastie.org/pastes/2689512/text -C ~/.inpurtc
-
 # Referências
 # https://bugs.launchpad.net/ubuntu/+source/base-files/+bug/103986
 # http://superuser.com/questions/222390/making-bash-tab-completion-more-like-cmd-exe
+# http://brettterpstra.com/2011/09/25/quick-tip-some-inputrc-fun/
 
 # pesquisar sobre as opções 'shopt' do bash
 # pesquisar as opções 'cmdhist' 'nocaseglob' 'nocasematch'
@@ -44,15 +42,26 @@ set convert-meta off
 set input-meta on
 set output-meta on
 
+# Be more intelligent when autocompleting by also looking at the text after
+# the cursor. For example, when the current line is "cd ~/src/mozil", and
+# the cursor is on the "z", pressing Tab will not autocomplete it to "cd
+# ~/src/mozillail", but to "cd ~/src/mozilla". (This is supported by the
+# Readline used by Bash 4.)
+set skip-completed-text on
+
 $if Bash
     # Search history back and forward using page-up and page-down
     "\e[5~": history-search-backward
     "\e[6~": history-search-forward
     # Cycle through ambiguous completions instead of list (option bellow)
     "\C-i": menu-complete
+    # Binding Shift-Tab to go backward is a little tricker:
+    "\e[Z": "\e-1\C-i"
     #bind BR to open bashrc
     "BR":"vim .bashrc\C-M"
     "GG":"ping -c 2 www.google.com\C-M"
+	# insert option macro (if you forgot option in previous cmd type Alt-o
+	"\eo": "\C-p\C-a\ef "
     # Completion
     set match-hidden-files off
     set completion-query-items 350
