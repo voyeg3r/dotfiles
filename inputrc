@@ -68,6 +68,8 @@ $if Bash
 	"\C-x'": "''\C-b"
 	# insert option macro (if you forgot option in previous cmd type Alt-o)
 	"\eo": "\C-p\C-a\ef "
+	# show help for a commad with alt-h
+	"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"
     # Completion
     set match-hidden-files off
     set completion-query-items 350
