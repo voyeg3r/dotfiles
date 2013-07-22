@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 21 16:41:29
+# Last Change: 2013 Jul 22 07:18:36
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -27,6 +27,7 @@ complete -cf sudo
 complete -d cd mkdir rmdir
 # autocomplete ssh commands
 complete -W "$(echo `cat ~/.bash_history | egrep '^ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh
+complete -A file -X '!*.@(Z|gz|tgz)' gunzip
 
 [ -f ~/.vim/git-completion.bash ] && source ~/.vim/git-completion.bash
 

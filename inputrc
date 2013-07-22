@@ -66,7 +66,7 @@ $if Bash
 	# and move to just after the open quote
 	"\C-x\"": "\"\"\C-b"
 	"\C-x'": "''\C-b"
-	# insert option macro (if you forgot option in previous cmd type Alt-o
+	# insert option macro (if you forgot option in previous cmd type Alt-o)
 	"\eo": "\C-p\C-a\ef "
     # Completion
     set match-hidden-files off
