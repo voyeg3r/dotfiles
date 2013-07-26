@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2013 Jul 17 18:24:26
+" Last Change: 2013 Jul 26 09:51:13
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -398,6 +398,7 @@ set number
 "set relativenumber
 "set undofile
 set undodir=~/.vim/undo/
+au BufWritePre /tmp/* setlocal noundofile
 
 set ignorecase
 set smartcase
