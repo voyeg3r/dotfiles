@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2013 Jul 22 18:03:47
+Last Change: 2013 Jul 26 09:25:59
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voyeg3r
@@ -71,8 +71,9 @@ listar configurações
 --------------------------
 Configurando git submodule
 --------------------------
- reference: http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
- http://gitref.org/
+reference: http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+http://gitref.org/
+http://fadamiao.github.io/git-start/
 
     git submodule init
     git submodule update
