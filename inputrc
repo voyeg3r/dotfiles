@@ -31,6 +31,12 @@
 # pesquisar as opções 'cmdhist' 'nocaseglob' 'nocasematch'
 # By default, C-x C-r is bound to re-read-init-file.
 
+# start-kbd-macro - C-x (
+# Begin saving the characters typed into the current keyboard macro.
+# end-kbd-macro - C-x )
+# Stop saving the characters typed into the current keyboard macro and store the definition.
+# call-last-kbd-macro - C-x e
+
 # Adding this to your /etc/inputrc or ~/.inputrc will result in a character
 # # being appended to any file-names returned by completion, in much the same
 # # way as ls -F works.

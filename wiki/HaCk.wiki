@@ -33,11 +33,14 @@ j03l3a=86093561
 -----------------------------------------------------
 senha para rede wireless da g
 ssid GVT-B1FD
-CP1115BULAY
+CP1116BULAY
 
 -----------------------------------------------------
 key hex 636f737461406d6164616e65742e636f6d2e627200
 key ascii costa@madanet.com.br
+
+sudo pppoeconf wlan0
+# edita /etc/network/interfaces
 
 type key: WPA2PSK
 costa@madanet.com.br

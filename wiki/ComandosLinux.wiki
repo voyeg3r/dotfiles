@@ -15,7 +15,7 @@ ComandoAria2c - programa acelerador de downloads
 [[ComandoArpscan]] - diagnóstico de rede
 ComandoArp-scan - diganóstico de rede (como root)
 ComandoA2ps - gera arquivos ps de uma entrada
-ComandoAptitude - gerenciador de pacotes
+[[ComandoAptitude]] - gerenciador de pacotes
 [[ComandoAt]] - agenda comandos
 [[ComandoAwk]] - manipula textos
 ComandoAxel - acelerador de downloads
@@ -34,7 +34,7 @@ ComandoCdparanoia - extrai faixas de cd
 ComandoCfdisk - particionador de discos
 ComandoChkconfig - gerenciar serviços no linux
 ComandoChattr - modifica atributos
-ComandoChmod - modifica permissões de arquivos
+[[ComandoChmod]] - modifica permissões de arquivos
 ComandoChown - modifica o dono de arquivos e pastas
 ComandoChpasswd - permite modificar senhas através de scripts
 ComandoChroot - cria uma árvore falsa de arquivos
