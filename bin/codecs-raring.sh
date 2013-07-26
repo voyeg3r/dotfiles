@@ -1,7 +1,7 @@
 #!/bin/bash
 # codecs-raring.sh
 # Criado: Sab 27/abr/2013 hs 16h
-# Last Change: 2013 Jul 17 07:31:18
+# Last Change: 2013 Jul 26 09:15:14
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -362,6 +362,9 @@ installaudacious () {
 # http://sourceforge.net/projects/ngale/?source=dlp
 sudo apt-fast install -y audacious audacious-plugins
 } && installaudacious
+
+# another good audio player
+# http://sayonara.luciocarreras.de/downloads.html
 
 installtomahawk () {
 # http://www.tomahawk-player.org/
