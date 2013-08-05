@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# =================================================
+#          CREATED: Sex 26/Jul/2013 hs 12:35
+#      LAST CHANGE: 2013 Jul 26 12:35:49
+# THIS SCRIPT AIMS: better disk usage script
+#           AUTHOR: Sérgio Luiz Araújo Silva
+#             SITE: http://vivaotux.blogspot.com
+#          TWITTER: @voyeg3r
+#            SKYPE: sergioaraujosilva
+# =================================================
+
+
+du -ks "$@" | sort -nr | \
+awk '{ \
+if ($1 > 1048576) printf("%8.2fG", $1/1048576) ; \
+	else if ($1 > 1024) printf("%8.2fM", $1/1024) ; \
+	else printf("%8.2fK", $1) ; \
+	sub($1, "") ; print \
+}'
