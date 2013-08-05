@@ -63,9 +63,6 @@ $if Bash
     "\C-i": menu-complete
     # Binding Shift-Tab to go backward is a little tricker:
     "\e[Z": "\e-1\C-i"
-    #bind BR to open bashrc
-    "BR":"vim .bashrc\C-M"
-    "GG":"ping -c 2 www.google.com\C-M"
     # control-x-p to edit path
 	"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"
 	# prepare to type a quoted word -- insert open and close double quotes

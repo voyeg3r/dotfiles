@@ -1,4 +1,4 @@
-# Last Change: 2013 Jul 22 17:51:09
+# Last Change: 2013 Jul 26 12:37:15
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -239,15 +239,15 @@ backup() {
   return $?
 }
 
-diskusage() {
-	du -ks "$@" | sort -nr | \
-	awk '{ \
-	if ($1 > 1048576) printf("%8.2fG", $1/1048576) ; \
-		else if ($1 > 1024) printf("%8.2fM", $1/1024) ; \
-		else printf("%8.2fK", $1) ; \
-		sub($1, "") ; print \
-	}'
-}
+#diskusage() {
+#	du -ks "$@" | sort -nr | \
+#	awk '{ \
+#	if ($1 > 1048576) printf("%8.2fG", $1/1048576) ; \
+#		else if ($1 > 1024) printf("%8.2fM", $1/1024) ; \
+#		else printf("%8.2fK", $1) ; \
+#		sub($1, "") ; print \
+#	}'
+#}
 
 getmp3 (){
 ${1?"Usage: getmp3 Link"}

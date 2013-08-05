@@ -29,7 +29,7 @@ ComandoCase - extrutura para escolhas múltiplas
 ComandoCat - mostra na tela arquivos
 ComandoCancel - cancela trabalhos de impressão
 ComandoCd - entra em diretórios
-ComandoCdrecord - grava cds e dvds em modo texto
+[[ComandoCdrecord]] - grava cds e dvds em modo texto
 ComandoCdparanoia - extrai faixas de cd
 ComandoCfdisk - particionador de discos
 ComandoChkconfig - gerenciar serviços no linux

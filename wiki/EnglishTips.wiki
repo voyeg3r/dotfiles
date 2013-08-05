@@ -1,6 +1,6 @@
 Arquivo: dicas de ingles
 Criado: Qua 12/Jan/2011 hs 12:52
-Last Change: 2013 Jul 26 02:26:50
+Last Change: 2013 Ago 04 17:29:17
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -966,7 +966,7 @@ one cause of current food crisis is drought
 uma das causas da atual falta de alimentos é a seca
 
 your rebuttals are unfounded
-suas refutaç½os são infundadas
+suas refutaçoes são infundadas
 
 i  am thirsty, I'll get a drink!
 Estou sedento, vou pegar um drink!
@@ -975,7 +975,7 @@ the trees bark is very dark
 a casca de árvores é muito escura
 
 together with contextual clues
-juntamente com as pistas contextu
+juntamente com as pistas contextuais
 
 He figured if he just slapped it together and made it work, no one would
 notice. [Ele achou que mesmo se fizesse nas coxas e funcionasse, ninguém
@@ -991,7 +991,7 @@ As we were in a hurry, we just slapped it together and that's what we got.
 [Como a gente estava com pressa, a gente fez de qualquer jeito e o
 resultado é isso aí.]
 
-Don't just slap things together! Do it right and carelessly! [Não faça as
+Don't just slap things together! Do it right and carefully! [Não faça as
 coisas nas coxas! Faça direito e com cuidado!]
 
 Expressões que possuem o mesmo significado que "slap together" nos dicionários
@@ -1179,7 +1179,7 @@ wish me luck
 In the worst-case scenario, the system could suffer a catastrophic loss.
 [Na pior das hipóteses, o sistema poderia ter uma perda grandiosa.]
 
-get under someones skin  irritar alguém. Exemplo:
+get under someones skin irritar alguém. Exemplo:
 The new manager has been getting under my skin over that new business proposal.
 
 drop hints - dar indiretas. Quando você entende a indireta, use a expressão to take a hint. Exemplo:
@@ -1201,7 +1201,7 @@ As an educator, researcher, and book author, I am delighted to see the completio
 Como educador, pesquisador, e autor de livros, Estou satisfeito por ver a conclusão deste livro.
 
 has steadily gained in popularity
-tem conquistado popularidade
+tem conquistado popularidade constantemente
 
 The Good Shepherd
 o bom pastor
@@ -1288,10 +1288,11 @@ a qunatidade de sementes
 yes, go right ahead
 sim, vá em frente
 
-ETA [hora prevista para chegada]
 
 * Whats your ETA?
 * Qual é a hora prevista para sua chegada?
+
+	ETA [hora prevista para chegada] estimated time arrival
 
 ETA são as iniciais da expressão estimated time of arrival.
 
@@ -1307,7 +1308,7 @@ To finish this essay
 It was only a joke. I didnt mean anything by it.
 Foi só uma piada. Eu não quiz dizer nada com isto.
 
-# Mikes a really cool dude.
+# Mike is a really cool dude.
 # Mike é um cara muito legal.
 
 Did you see what Stephanie was wearing? She looked like a wet dog!

@@ -9,7 +9,7 @@ Para detectar o local do cd no ubuntu
   cdrecord -v -fs=16M speed=8 dev=0,0,0 -data nome_da_imagem.iso
 
 ==Comando para gerar uma imagem.iso de um diretório==
-como root faça: 
+como root faça:
 
   mkisofs -r -J -o diretorio.iso diretorio
 
@@ -152,11 +152,11 @@ Outra observação é quanto a flag dev=/dev/hdc dos exemplos usados neste artig
 
 Para maiores informações, ler o [http://www.tldp.org/HOWTO/CD-Writing-HOWTO.html CD-Writing-HOWTO].
 
- 
+
 
 http://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=603
 
- 
+
 Referências
 
     * http://www.dicas-l.com.br/dicas-l/20070920.php
@@ -167,4 +167,4 @@ Referências
     * http://www.guiadohardware.net/dicas/gravar-cds-via-linha-comando-atualizado.html
     * http://cdd.debian-br.org/project/wiki/Download
 
- 
+
