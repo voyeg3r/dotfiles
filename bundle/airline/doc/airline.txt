@@ -3,31 +3,26 @@
 ==============================================================================
 INTRODUCTION                                                       *airline*
 
-There's already powerline <https://github.com/Lokaltog/powerline>, why yet
-another statusline?
+vim-airline is a fast and lightweight alternative to powerline, written
+in 100% vimscript with no outside dependencies.
 
-*  it's 100% vimscript; no python needed.
-*  it's small.  i want the core plugin to be less than 200 lines as a rule.
-*  it gets you 90% of the way there; in addition to all the standard goodies,
-   it integrates with a variety of popular plugins, including:
-  *  fugitve <https://github.com/tpope/vim-fugitive>
-  *  syntastic <https://github.com/scrooloose/syntastic>
-  *  vim-bufferline <https://github.com/bling/vim-bufferline>
-  *  unite <https://github.com/Shougo/unite.vim>
-  *  ctrlp <https://github.com/kien/ctrlp.vim>
-*  it looks good with regular fonts, and provides configuration points so you
+==============================================================================
+FEATURES                                                  *airline-features*
+
+*  tiny core written with extensibility in mind.
+*  integrates with many popular plugins.
+*  looks good with regular fonts, and provides configuration points so you
    can use unicode or powerline symbols.
-*  it's fast to load, taking roughly 1ms.  by comparison, powerline needs
-   60ms on the same machine.
-*  it's fully customizable; if you know a little |statusline| syntax you can
+*  optimized for speed; it loads in under a millisecond.
+*  fully customizable; if you know a little |statusline| syntax you can
    tweak it to your needs.
-*  it's trivial to write colorschemes; for a minimal theme you need to edit
-   9 lines of colors. (please send pull requests if you create new themes!)
+*  trivial to write colorschemes; for a minimal theme you need to edit
+   9 lines of colors. (please send pull requests)
 
 ==============================================================================
 NAME                                                          *airline-name*
 
-Why is it named airline?
+Where did the name come from?
 
 I wrote this on an airplane, and since it's light as air it turned out to be a
 good name :-)
@@ -48,14 +43,34 @@ values):
   let g:airline_right_sep='<'
 <
 
-* enable/disable fugitive integration
+* enable/disable fugitive/lawrencium integration
 >
-  let g:airline_enable_fugitive=1
+  let g:airline_enable_branch=1
 <
 
 * enable/disable syntastic integration
 >
   let g:airline_enable_syntastic=1
+<
+
+* enable/disable tagbar integration
+>
+  let g:airline_enable_tagbar=1
+<
+
+* enable modified detection
+>
+  let g:airline_detect_modified=1
+<
+
+* enable paste detection
+>
+  let g:airline_detect_paste=1
+<
+
+* enable iminsert detection
+>
+  let g:airline_detect_iminsert=1
 <
 
 * change the default theme
@@ -113,7 +128,7 @@ separators, as well as the powerline font glyths.
   let g:airline_linecolumn_prefix = '␊ '
   let g:airline_linecolumn_prefix = '␤ '
   let g:airline_linecolumn_prefix = '¶ '
-  let g:airline_fugitive_prefix = '⎇ '
+  let g:airline_branch_prefix = '⎇ '
   let g:airline_paste_symbol = 'ρ'
   let g:airline_paste_symbol = 'Þ'
   let g:airline_paste_symbol = '∥'
@@ -121,11 +136,20 @@ separators, as well as the powerline font glyths.
   " powerline symbols
   let g:airline_left_sep = ''
   let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline_fugitive_prefix = ' '
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+  let g:airline_branch_prefix = ' '
   let g:airline_readonly_symbol = ''
   let g:airline_linecolumn_prefix = ' '
+
+  " old vim-powerline symbols
+  let g:airline_left_sep = '⮀'
+  let g:airline_left_alt_sep = '⮁'
+  let g:airline_right_sep = '⮂'
+  let g:airline_right_alt_sep = '⮃'
+  let g:airline_branch_prefix = '⭠'
+  let g:airline_readonly_symbol = '⭤'
+  let g:airline_linecolumn_prefix = '⭡'
 <
 
 For more intricate customizations, you can replace the predefined sections
@@ -134,33 +158,68 @@ with the usual statusline syntax.
 >
   " here are the the default values
   let g:airline_section_a      (the mode/paste indicator)
-  let g:airline_section_b      (the fugitive branch indicator)
+  let g:airline_section_b      (the fugitive/lawrencium branch indicator)
   let g:airline_section_c      (bufferline or filename)
-  let g:airline_section_gutter (syntastic and readonly flag)
-  let g:airline_section_x      (filetype)
+  let g:airline_section_gutter (syntastic, readonly flag)
+  let g:airline_section_x      (tagbar, filetype)
   let g:airline_section_y      (fileencoding, fileformat)
   let g:airline_section_z      (percentage, line number, column number)
 
-  " here is an example of how you could replace the fugitive indicator with
+  " here is an example of how you could replace the branch indicator with
   " the current working directory, followed by the filename.
   let g:airline_section_b = '%{getcwd()}'
   let g:airline_section_c = '%t'
 <
 
-If there is a particular plugin or filetype that is not supported, you can
-extend it by adding a function reference to the global array.  Here is an
-example that you could add to your vimrc:
+==============================================================================
+FUNCREFS                                                  *airline-funcrefs*
 
+vim-airline internally uses funcrefs to integrate with third party plugins,
+and you can tap into this functionality to extend it for you needs.
+
+                                             *g:airline_statusline_funcrefs*
+The g:airline_statusline_funcrefs variable is an array of funcrefs that get
+invoked before the statusline gets overwritten for each window.  The following
+is an example of how you can extend vim-airline to support a new plugin.
 >
   function! MyPlugin()
     if &filetype == 'MyPluginFileType'
       let w:airline_section_a = 'MyPlugin'
       let w:airline_section_b = '%f'
       let w:airline_section_c = '%{MyPlugin#function()}'
+      let g:airline_variable_referenced_in_statusline = 'foo'
     endif
   endfunction
-  call add(g:airline_window_override_funcrefs, function('MyPlugin'))
+  call add(g:airline_statusline_funcrefs, function('MyPlugin'))
 <
+                                                *g:airline_exclude_funcrefs*
+The g:airline_exclude_funcrefs variable is an array that's returns 1 or 0 to
+determine whether that particular window should be excluded from having its
+statusline modified.  Here is an example:
+>
+  function! ExcludeFoo()
+    return &filetype == 'FooType'
+  endfunction
+  call add(g:airline_exclude_funcrefs, function('ExcludeFoo'))
+<
+
+==============================================================================
+WRITING THEMES                                              *airline-themes*
+
+Themes are written "close to the metal" -- you will need to know some basic
+VimL syntax to write a theme, but if you've written in any programming
+language before it will be easy to pick up.
+
+The |dark.vim| theme fully documents this procedure and will guide you through
+the process.  The |jellybeans.vim| theme is another example of how to write a
+theme, but instead of manually declaring colors, it extracts the values from
+highlight groups.
+
+==============================================================================
+TROUBLESHOOTING                                    *airline-troubleshooting*
+
+Solutions to common problems can be found FAQ section in the Wiki:
+<https://github.com/bling/vim-airline/wiki/FAQ>
 
 ==============================================================================
 CONTRIBUTIONS                                        *airline-contributions*
@@ -170,10 +229,7 @@ Contributions and pull requests are welcome.
 ==============================================================================
 LICENSE                                                    *airline-license*
 
-Copyright © Bailey Ling.
-
-Distributed under the same terms as the vim |license|.
-
+MIT license.  Copyright © 2013 Bailey Ling.
 
 
  vim:tw=78:ts=8:ft=help:norl:

@@ -2,26 +2,31 @@
 
 Lean &amp; mean statusline for vim that's light as air.
 
-![img](https://github.com/bling/vim-airline/wiki/screenshots/light.png)
+![img](https://github.com/bling/vim-airline/wiki/screenshots/demo.gif)
+
+# Features
+
+*  tiny core (under 200 lines), written with extensibility in mind (specifically adhering to the [open/closed principle][8]).
+*  integrates with a variety of plugins, including: [vim-bufferline][6], [fugitive][4], [unite][9], [ctrlp][10], [minibufexpl][15], [gundo][16], [undotree][17], [nerdtree][18], [tagbar][19], [syntastic][5] and [lawrencium][21].
+*  looks good with regular fonts and provides configuration points so you can use unicode or powerline symbols.
+*  optimized for speed; it loads in under a millisecond.
+*  fully customizable; if you know a little `statusline` syntax you can tweak it to your needs.
+*  extensive suite of themes for popular colorschemes including [solarized][23] (dark and light), [tomorrow][24] (all variants), [molokai][25], [jellybeans][26] and others.
+*  supports 7.2 as the minimum Vim version
 
 # Rationale
 
-There's already [powerline][b], why yet another statusline?
+There's already [powerline][2], why yet another statusline?
 
-*  it's 100% vimscript; no python needed.
-*  it's small.  i want the core plugin to be *less than 200 lines* as a rule (specifically adhering to the [open/closed principle][h]).
-*  despite the small size, it is fully featured and already integrates with: [vim-bufferline][f], [fugitive][d], [unite][i], [ctrlp][j], [minibufexpl][o], [gundo][p], [undotree][q], [nerdtree][r], [tagbar][s] and [syntastic][e].
-*  it looks good with regular fonts, and provides configuration points so you can use unicode or powerline symbols.
-*  it's fast to load, taking roughly 1ms.  by comparison, powerline needs 60ms on the same machine.
-*  it's fully customizable; if you know a little `statusline` syntax you can tweak it to your needs.
-*  it's trivial to write colorschemes; for a minimal theme you need to edit 9 lines of colors. (please send pull requests if you create new themes!)
+*  100% vimscript; no python needed.
 
-What about [old powerline][a]?
+What about [vim-powerline][1]?
 
-*  the old version still works well, but since it's deprecated new features won't get added
-*  it uses different font codes, which makes it incompatible with other powerline bindings in the same terminal (e.g. bash, zsh, tmux, etc.)
+*  the author has been active developing powerline, which was rewritten in python and expands its capabilities to tools outside of Vim, such as bash, zsh, and tmux.
+*  vim-powerline has been deprecated as a result, and no features will be added to it.
+*  vim-powerline uses different font codes, so if you want to use it with a powerline themed tmux (for example), it will not work.
 
-# Why's it called airline?
+# Where did the name come from?
 
 I wrote the initial version on an airplane, and since it's light as air it turned out to be a good name.  Thanks for flying vim!
 
@@ -29,12 +34,14 @@ I wrote the initial version on an airplane, and since it's light as air it turne
 
 This plugin follows the standard runtime path structure, and as such it can be installed with a variety of plugin managers:
 
-*  [pathogen][k]
+*  [Pathogen][11]
   *  `git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline`
-*  [neobundle][l]
+*  [NeoBundle][12]
   *  `NeoBundle 'bling/vim-airline'`
-*  [vundle][m]
+*  [Vundle][13]
   *  `Bundle 'bling/vim-airline'`
+*  [VAM][22]
+  *  `call vam#ActivateAddons([ 'vim-airline' ])`
 *  manual
   *  copy all of the files into your `~/.vim` directory
 
@@ -44,25 +51,25 @@ This plugin follows the standard runtime path structure, and as such it can be i
 
 # Integrating with powerline fonts
 
-For the nice looking powerline symbols to appear, you will need to install a patched font.  Instructions can be found in the official powerline [documentation][t].  Prepatched fonts can be found in the [powerline-fonts][c] repository.
+For the nice looking powerline symbols to appear, you will need to install a patched font.  Instructions can be found in the official powerline [documentation][20].  Prepatched fonts can be found in the [powerline-fonts][3] repository.
 
 Finally, enable them in vim-airline by adding `let g:airline_powerline_fonts = 1` to your vimrc.
 
-# Bugs
-
-If you encounter a bug, please do the following:
-
-*  reproduce it with this [minivimrc][g] repository to rule out any configuration conflicts.
-*  specify your version and patch level, as well as operating system (found with `:version`).
-*  a link to a gist or your vimrc where it can be reproduced.
-
 # FAQ
 
-Solutions to common problems can be found in the [Wiki](https://github.com/bling/vim-airline/wiki/FAQ).
+Solutions to common problems can be found in the [Wiki][27].
 
-# Screenshots
+# Themes/Screenshots
 
-A full list of screenshots can be found in the [Wiki][n].
+A full list of screenshots can be found in the [Wiki][14].
+
+# Bugs
+
+Tracking down bugs can take a very long time due to different configurations, versions, and operating systems.  To ensure a timely response, please help me out by doing the following:
+
+*  reproduce it with this [minivimrc][7] repository to rule out any configuration conflicts.
+*  a link to your vimrc or a gist which shows how you configured the plugin(s).
+*  and so I can reproduce; your `:version` of vim, and the commit of vim-airline you're using.
 
 # Contributions
 
@@ -70,31 +77,38 @@ Contributions and pull requests are welcome.  Please take note of the following 
 
 *  adhere to the existing style as much as possible; notably, 2 space indents and long-form keywords.
 *  keep the history clean! squash your branches before you submit a pull request. `pull --rebase` is your friend.
-*  this plugin got a lot more popular than i initially expected, if you make changes to the core, please test on as many versions of vim as possible.
-*  if you submit a theme, please create a screenshot so it can be added to the [Wiki][n].
+*  any changes to the core should be tested against Vim 7.2.
+*  if you submit a theme, please create a screenshot so it can be added to the [Wiki][14].
 
 # License
 
-Distributed under the same terms as the Vim license.  See `:help license`.
+MIT license. Copyright (c) 2013 Bailey Ling.
 
 
-[a]: https://github.com/Lokaltog/vim-powerline
-[b]: https://github.com/Lokaltog/powerline
-[c]: https://github.com/Lokaltog/powerline-fonts
-[d]: https://github.com/tpope/vim-fugitive
-[e]: https://github.com/scrooloose/syntastic
-[f]: https://github.com/bling/vim-bufferline
-[g]: https://github.com/bling/minivimrc
-[h]: http://en.wikipedia.org/wiki/Open/closed_principle
-[i]: https://github.com/Shougo/unite.vim
-[j]: https://github.com/kien/ctrlp.vim
-[k]: https://github.com/tpope/vim-pathogen
-[l]: https://github.com/Shougo/neobundle.vim
-[m]: https://github.com/gmarik/vundle
-[n]: https://github.com/bling/vim-airline/wiki/Screenshots
-[o]: https://github.com/techlivezheng/vim-plugin-minibufexpl
-[p]: https://github.com/sjl/gundo.vim
-[q]: https://github.com/mbbill/undotree
-[r]: https://github.com/scrooloose/nerdtree
-[s]: https://github.com/majutsushi/tagbar
-[t]: https://powerline.readthedocs.org/en/latest/fontpatching.html
+[1]: https://github.com/Lokaltog/vim-powerline
+[2]: https://github.com/Lokaltog/powerline
+[3]: https://github.com/Lokaltog/powerline-fonts
+[4]: https://github.com/tpope/vim-fugitive
+[5]: https://github.com/scrooloose/syntastic
+[6]: https://github.com/bling/vim-bufferline
+[7]: https://github.com/bling/minivimrc
+[8]: http://en.wikipedia.org/wiki/Open/closed_principle
+[9]: https://github.com/Shougo/unite.vim
+[10]: https://github.com/kien/ctrlp.vim
+[11]: https://github.com/tpope/vim-pathogen
+[12]: https://github.com/Shougo/neobundle.vim
+[13]: https://github.com/gmarik/vundle
+[14]: https://github.com/bling/vim-airline/wiki/Screenshots
+[15]: https://github.com/techlivezheng/vim-plugin-minibufexpl
+[16]: https://github.com/sjl/gundo.vim
+[17]: https://github.com/mbbill/undotree
+[18]: https://github.com/scrooloose/nerdtree
+[19]: https://github.com/majutsushi/tagbar
+[20]: https://powerline.readthedocs.org/en/latest/fontpatching.html
+[21]: https://bitbucket.org/ludovicchabant/vim-lawrencium
+[22]: https://github.com/MarcWeber/vim-addon-manager
+[23]: https://github.com/altercation/solarized
+[24]: https://github.com/chriskempson/tomorrow-theme
+[25]: https://github.com/tomasr/molokai
+[26]: https://github.com/nanotech/jellybeans.vim
+[27]: https://github.com/bling/vim-airline/wiki/FAQ
