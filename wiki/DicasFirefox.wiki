@@ -1,9 +1,14 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: 2013 Jul 19 15:27:12
+Last Change: 2013 Ago 06 15:03:33
 autor: slas
 site: vivaotux
 twitter: voyeg3r
+
+= ativar plugins sob demanda =
+dentro do about:config
+
+	plugins.click_to_play
 
 = extensão para assistir sites como hulu =
 https://addons.mozilla.org/en-US/firefox/addon/proxmate/
