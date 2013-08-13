@@ -2,7 +2,7 @@
 " vim: ts=2 sts=2 sw=2 fdm=indent
 
 let s:is_win32term = (has('win32') || has('win64')) && !has('gui_running')
-let s:sections = ['a','b','c','gutter','x','y','z']
+let s:sections = ['a','b','c','gutter','x','y','z','warning']
 
 let s:airline_highlight_map = {
       \ 'mode'           : 'Al2',
@@ -24,18 +24,23 @@ function! airline#exec_highlight(group, colors)
         \ colors[1] != '' ? 'guibg='.colors[1] : '',
         \ colors[2] != '' ? 'ctermfg='.colors[2] : '',
         \ colors[3] != '' ? 'ctermbg='.colors[3] : '',
-        \ colors[4] != '' ? 'gui='.colors[4] : '',
-        \ colors[4] != '' ? 'cterm='.colors[4] : '',
-        \ colors[4] != '' ? 'term='.colors[4] : '')
+        \ len(colors) > 4 && colors[4] != '' ? 'gui='.colors[4] : '',
+        \ len(colors) > 4 && colors[4] != '' ? 'cterm='.colors[4] : '',
+        \ len(colors) > 4 && colors[4] != '' ? 'term='.colors[4] : '')
+endfunction
+
+function! airline#reload_highlight()
+  call airline#highlight(['inactive'])
+  call airline#highlight(['normal'])
+  call airline#extensions#load_theme()
 endfunction
 
 function! airline#load_theme(name)
   let g:airline_theme = a:name
   let inactive_colors = g:airline#themes#{g:airline_theme}#inactive "also lazy loads the theme
   let w:airline_lastmode = ''
-  call airline#highlight(['inactive'])
+  call airline#reload_highlight()
   call airline#update_highlight()
-  call airline#extensions#load_theme()
 endfunction
 
 function! airline#highlight(modes)
@@ -50,6 +55,7 @@ function! airline#highlight(modes)
       endfor
     endif
   endfor
+  call airline#themes#exec_highlight_separator('Al2', 'warningmsg')
 endfunction
 
 " for 7.2 compatibility
@@ -64,7 +70,7 @@ function! s:get_section(winnr, key, ...)
   return empty(text) ? '' : prefix.text.suffix
 endfunction
 
-function! s:get_statusline(winnr, active)
+function! airline#get_statusline(winnr, active)
   let l:mode_color      = a:active ? "%#Al2#" : "%#Al2_inactive#"
   let l:mode_sep_color  = a:active ? "%#Al3#" : "%#Al3_inactive#"
   let l:info_color      = a:active ? "%#Al4#" : "%#Al4_inactive#"
@@ -73,7 +79,7 @@ function! s:get_statusline(winnr, active)
   let l:file_flag_color = a:active ? "%#Al7#" : "%#Al7_inactive#"
 
   let sl = '%{airline#update_highlight()}'
-  if a:active || s:getwinvar(a:winnr, 'airline_left_only', 0)
+  if s:getwinvar(a:winnr, 'airline_render_left', a:active || (!a:active && !g:airline_inactive_collapse))
     let sl.=l:mode_color.s:get_section(a:winnr, 'a')
     let sl.='%{g:airline_detect_paste && &paste ? g:airline_paste_symbol." " : ""}'
     let sl.=l:mode_sep_color
@@ -89,7 +95,7 @@ function! s:get_statusline(winnr, active)
   else
     let sl.=l:status_color.' %f%m'
   endif
-  if !s:getwinvar(a:winnr, 'airline_left_only', 0)
+  if s:getwinvar(a:winnr, 'airline_render_right', 1)
     let sl.='%='
     let sl.=s:get_section(a:winnr, 'x')
     let sl.=l:info_sep_color
@@ -100,38 +106,54 @@ function! s:get_statusline(winnr, active)
     let sl.=a:active ? g:airline_right_sep : g:airline_right_alt_sep
     let sl.=l:mode_color
     let sl.=s:get_section(a:winnr, 'z')
+
+    if a:active
+      let sl.='%(%#Al2_to_warningmsg#'.g:airline_right_sep
+      let sl.='%#warningmsg#'.s:getwinvar(a:winnr, 'airline_section_warning', '').'%)'
+    endif
   endif
   return sl
 endfunction
 
-function! airline#update_statusline()
-  for i in range(0, len(g:airline_exclude_funcrefs) - 1)
-    if g:airline_exclude_funcrefs[i]()
-      call setwinvar(winnr(), '&statusline', '')
-      return
+function! airline#exec_funcrefs(list, break_early)
+  " for 7.2; we cannot iterate list, hence why we use range()
+  " for 7.3-[97, 328]; we cannot reuse the variable, hence the {}
+  for i in range(0, len(a:list) - 1)
+    let Fn{i} = a:list[i]
+    if a:break_early
+      if Fn{i}()
+        return 1
+      endif
+    else
+      call Fn{i}()
     endif
   endfor
+  return 0
+endfunction
 
-  unlet! w:airline_left_only
-  for section in s:sections
-    unlet! w:airline_section_{section}
-  endfor
-  for i in range(0, len(g:airline_statusline_funcrefs) - 1)
-    call g:airline_statusline_funcrefs[i]()
+function! airline#update_statusline()
+  if airline#exec_funcrefs(g:airline_exclude_funcrefs, 1)
+    call setwinvar(winnr(), '&statusline', '')
+    return
+  endif
+
+  for nr in filter(range(1, winnr('$')), 'v:val != winnr()')
+    call setwinvar(nr, 'airline_active', 0)
+    call setwinvar(nr, '&statusline', airline#get_statusline(nr, 0))
   endfor
 
   let w:airline_active = 1
-  call setwinvar(winnr(), '&statusline', s:get_statusline(winnr(), 1))
 
-  for nr in range(1, winnr('$'))
-    if nr != winnr() && getwinvar(nr, 'airline_active')
-      call setwinvar(nr, '&statusline', s:get_statusline(nr, 0))
-      call setwinvar(nr, 'airline_active', 0)
-    endif
+  unlet! w:airline_render_left
+  unlet! w:airline_render_right
+  for section in s:sections
+    unlet! w:airline_section_{section}
   endfor
+  call airline#exec_funcrefs(g:airline_statusline_funcrefs, 0)
+
+  call setwinvar(winnr(), '&statusline', airline#get_statusline(winnr(), 1))
 endfunction
 
-let g:airline_current_mode_text = ''
 function! airline#update_highlight()
   if get(w:, 'airline_active', 1)
     let l:m = mode()
@@ -139,20 +161,15 @@ function! airline#update_highlight()
       let l:mode = ['insert']
     elseif l:m ==# "R"
       let l:mode = ['replace']
-    elseif l:m ==? "v" || l:m ==# ""
+    elseif l:m =~# '\v(v|V||s|S|)'
       let l:mode = ['visual']
     else
       let l:mode = ['normal']
     endif
-    let g:airline_current_mode_text = get(g:airline_mode_map, l:m, l:m)
-    if g:airline_detect_iminsert && &iminsert
-      if get(g:, 'airline_powerline_fonts', 0)
-        let g:airline_current_mode_text .= ' '.g:airline_left_alt_sep
-      endif
-      let g:airline_current_mode_text .= ' '.toupper(get(b:, 'keymap_name', 'lang'))
-    endif
+    let w:airline_current_mode = get(g:airline_mode_map, l:m, l:m)
   else
     let l:mode = ['inactive']
+    let w:airline_current_mode = get(g:airline_mode_map, '__')
   endif
 
   if g:airline_detect_modified && &modified | call add(l:mode, 'modified') | endif
