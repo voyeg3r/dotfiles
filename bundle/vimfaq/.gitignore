@@ -1,0 +1,11 @@
+vim_passfile
+# ignore undo-files
+.*.un~
+# ignore swap files
+.*.sw*
+# pod html temp files
+*.tmp
+
+#others/*
+*.vba
+*.vmb
