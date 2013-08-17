@@ -1,7 +1,7 @@
 #!/bin/bash
 # codecs-raring.sh
 # Criado: Sab 27/abr/2013 hs 16h
-# Last Change: 2013 Jul 26 09:15:14
+# Last Change: 2013 Ago 17 11:27:05
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -37,6 +37,14 @@ gtk-timeout-expand = 0
 gtk-timeout-initial = 0
 EOF
 } && boost-gtk
+
+createwindowsbootable () {
+# http://www.addictivetips.com/ubuntu-linux-tips/winusb-create-bootable-windows-installer-usb-in-ubuntu-linux/
+# dica (use winusbgui)
+sudo add-apt-repository ppa:colingille/freshlight
+sudo apt-get update
+sudo apt-get install winusb
+}
 
 # download da pasta bin
 #cd ; wget -c https://www.dropbox.com/sh/7ezkwg05dao4if8/6azl8ngTfR?dl=1 -O bin.zip && unzip $_ && rm -rf bin.zip

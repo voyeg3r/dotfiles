@@ -1,10 +1,29 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: 2013 Jul 09 15:57:55
+Last Change: 2013 Ago 16 10:49:56
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+==how install new version of vim from source==
+
+installvim () {
+# https://speakerdeck.com/mbrochh/vim-as-a-python-ide
+#   on Ubuntu:
+	sudo apt-get install gtk2-engines-pixbuf
+
+	hg clone https://vim.googlecode.com/hg/ vim
+	cd vim/src
+	./configure --enable-pythoninterp --with-features=huge --prefix=$HOME/opt/vim
+	make && make install
+	mkdir -p $HOME/bin
+	cd $HOME/bin
+	ln -s $HOME/opt/vim/bin/vim
+	which vim
+	vim --version
+} && installvim
+
 
 == nova versão do plugin powerline ==
 {{{

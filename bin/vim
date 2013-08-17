@@ -1,8 +1,1 @@
-#!/bin/sh
-vimhome=$HOME/src/vim
-if test -x $vimhome/src/vim; then
-    VIMRUNTIME=$vimhome/runtime $vimhome/src/vim "$@"
-else
-    /usr/bin/vim "$@"
-fi
-
+/home/sergio/opt/vim/bin/vim
