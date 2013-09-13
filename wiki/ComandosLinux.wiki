@@ -89,11 +89,11 @@ ComandoGrin - filtra textos (baseado em python)
 ComandoHalt - desliga o sistama
 ComandoHostname - mostra o nome do computador
 ComandoHead - mostra as primeiras linhas de um arquivo
-ComandoHistory - Exibe o histórico de comandos
+[[ComandoHistory]] - Exibe o histórico de comandos
 ComandoHtml2text - convert html para texto
 ComandoHwclock - ajusta o relógio da placa mãe do computador
 ComandoIconv - recodifica arquivos
-ComandoId - mostra a identidade numérica do usuário
+[[ComandoId]] - mostra a identidade numérica do usuário
 ComandoIf - "se" - faz testes (use em scripts)
 [[ComandoIfs]] - internal field separator
 ComandoIfconfig - mostra e configura endereço de rede
