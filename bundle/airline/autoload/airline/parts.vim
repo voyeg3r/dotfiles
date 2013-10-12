@@ -7,7 +7,11 @@ let s:parts = {}
 
 function! airline#parts#define(key, config)
   let s:parts[a:key] = get(s:parts, a:key, {})
-  call extend(s:parts[a:key], a:config)
+  if exists('g:airline#init#bootstrapping')
+    call extend(s:parts[a:key], a:config, 'keep')
+  else
+    call extend(s:parts[a:key], a:config, 'force')
+  endif
 endfunction
 
 function! airline#parts#define_function(key, name)
@@ -28,6 +32,10 @@ endfunction
 
 function! airline#parts#define_condition(key, predicate)
   call airline#parts#define(a:key, { 'condition': a:predicate })
+endfunction
+
+function! airline#parts#define_accent(key, accent)
+  call airline#parts#define(a:key, { 'accent': a:accent })
 endfunction
 
 function! airline#parts#define_empty(keys)

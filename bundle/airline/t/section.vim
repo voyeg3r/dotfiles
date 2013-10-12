@@ -1,6 +1,3 @@
-call airline#init#bootstrap()
-call airline#extensions#load()
-
 function! SectionSpec()
 endfunction
 
@@ -9,6 +6,11 @@ describe 'section'
     call airline#parts#define_text('text', 'text')
     call airline#parts#define_raw('raw', 'raw')
     call airline#parts#define_function('func', 'SectionSpec')
+  end
+
+  it 'should be able to reference default parts'
+    let s = airline#section#create(['paste'])
+    Expect s == '%{airline#util#wrap(airline#parts#paste(),0)}'
   end
 
   it 'should create sections with no separators'
@@ -26,16 +28,24 @@ describe 'section'
     Expect s == '%{airline#util#prepend("text",0)}%{airline#util#wrap("text",0)}'
   end
 
-  it 'should prefix with highlight group if provided'
+  it 'should prefix with accent group if provided and restore afterwards'
     call airline#parts#define('hi', {
           \ 'raw': 'hello',
-          \ 'highlight': 'hlgroup',
+          \ 'accent': 'red',
           \ })
     let s = airline#section#create(['hi'])
-    Expect s == '%#hlgroup#hello'
+    Expect s == '%#__accent_red#hello%#__restore__#'
+  end
+
+  it 'should accent functions'
+    call airline#parts#define_function('hi', 'Hello')
+    call airline#parts#define_accent('hi', 'bold')
+    let s = airline#section#create(['hi'])
+    Expect s == '%#__accent_bold#%{airline#util#wrap(Hello(),0)}%#__restore__#'
   end
 
   it 'should parse out a section from the distro'
+    call airline#extensions#load()
     let s = airline#section#create(['whitespace'])
     Expect s =~ 'airline#extensions#whitespace#check'
   end

@@ -11,6 +11,12 @@ function! airline#add_statusline_func(name)
 endfunction
 
 function! airline#add_statusline_funcref(function)
+  if index(g:airline_statusline_funcrefs, a:function) >= 0
+    echohl WarningMsg
+    echo 'The airline statusline funcref '.string(a:function).' has already been added.'
+    echohl NONE
+    return
+  endif
   call add(g:airline_statusline_funcrefs, a:function)
 endfunction
 
@@ -26,13 +32,11 @@ function! airline#add_inactive_statusline_func(name)
 endfunction
 
 function! airline#load_theme()
-  call airline#highlighter#load_theme()
-  call airline#extensions#load_theme()
-endfunction
+  if exists('*airline#themes#{g:airline_theme}#refresh')
+    call airline#themes#{g:airline_theme}#refresh()
+  endif
 
-function! airline#switch_theme(name)
-  let g:airline_theme = a:name
-  let palette = g:airline#themes#{g:airline_theme}#palette "also lazy loads the theme
+  let palette = g:airline#themes#{g:airline_theme}#palette
   call airline#themes#patch(palette)
 
   if exists('g:airline_theme_patch_func')
@@ -40,9 +44,29 @@ function! airline#switch_theme(name)
     call Fn(palette)
   endif
 
+  call airline#highlighter#load_theme()
+  call airline#extensions#load_theme()
+endfunction
+
+function! airline#switch_theme(name)
+  try
+    let palette = g:airline#themes#{a:name}#palette "also lazy loads the theme
+    let g:airline_theme = a:name
+  catch
+    echohl WarningMsg | echo 'The specified theme cannot be found.' | echohl NONE
+    if exists('g:airline_theme')
+      return
+    else
+      let g:airline_theme = 'dark'
+    endif
+  endtry
+
   let w:airline_lastmode = ''
   call airline#update_statusline()
   call airline#load_theme()
+
+  " this is required to prevent clobbering the startup info message, i don't know why...
+  call airline#check_mode(winnr())
 endfunction
 
 function! airline#switch_matching_theme()
@@ -96,7 +120,12 @@ function! s:invoke_funcrefs(context, funcrefs)
 endfunction
 
 function! airline#statusline(winnr)
-  return '%{airline#check_mode('.a:winnr.')}'.s:contexts[a:winnr].line
+  if has_key(s:contexts, a:winnr)
+    return '%{airline#check_mode('.a:winnr.')}'.s:contexts[a:winnr].line
+  endif
+
+  " in rare circumstances this happens...see #276
+  return ''
 endfunction
 
 function! airline#check_mode(winnr)

@@ -2,7 +2,7 @@
 " vim: et ts=2 sts=2 sw=2
 
 let s:section_truncate_width = get(g:, 'airline#extensions#default#section_truncate_width', {
-      \ 'b': 88,
+      \ 'b': 79,
       \ 'x': 60,
       \ 'y': 88,
       \ 'z': 45,
@@ -18,8 +18,9 @@ function! s:get_section(winnr, key, ...)
       return ''
     endif
   endif
+  let spc = g:airline_symbols.space
   let text = airline#util#getwinvar(a:winnr, 'airline_section_'.a:key, g:airline_section_{a:key})
-  let [prefix, suffix] = [get(a:000, 0, '%( '), get(a:000, 1, ' %)')]
+  let [prefix, suffix] = [get(a:000, 0, '%('.spc), get(a:000, 1, spc.'%)')]
   return empty(text) ? '' : prefix.text.suffix
 endfunction
 

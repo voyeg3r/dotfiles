@@ -7,12 +7,12 @@ Lean &amp; mean status/tabline for vim that's light as air.
 # Features
 
 *  Tiny core written with extensibility in mind ([open/closed principle][8]).
-*  Integrates with a variety of plugins, including: [vim-bufferline][6], [fugitive][4], [unite][9], [ctrlp][10], [minibufexpl][15], [gundo][16], [undotree][17], [nerdtree][18], [tagbar][19], [vim-gitgutter][29], [vim-signify][30], [syntastic][5], [lawrencium][21] and [virtualenv][31].
+*  Integrates with a variety of plugins, including: [vim-bufferline][6], [fugitive][4], [unite][9], [ctrlp][10], [minibufexpl][15], [gundo][16], [undotree][17], [nerdtree][18], [tagbar][19], [vim-gitgutter][29], [vim-signify][30], [syntastic][5], [eclim][34], [lawrencium][21] and [virtualenv][31].
 *  Looks good with regular fonts and provides configuration points so you can use unicode or powerline symbols.
 *  Optimized for speed; it loads in under a millisecond.
 *  Extensive suite of themes for popular colorschemes including [solarized][23] (dark and light), [tomorrow][24] (all variants), [base16][32] (all variants), [molokai][25], [jellybeans][26] and others; have a look at the [screenshots][14] in the wiki.
 *  Supports 7.2 as the minimum Vim version.
-*  Stable release cycle; bleeding edge changes happen on the `dev` branch, and after they have gone through a [full regression test][33] will eventually be merged in the stable master branch.  Releases typically occur every 2 weeks.
+*  The master branch tries to be as stable as possible, and new features are merged in only after they have gone through a [full regression test][33].
 *  Unit testing suite.
 
 ## Straightforward customization
@@ -36,6 +36,11 @@ Automatically displays all buffers when there's only one tab open.
 This is disabled by default; add the following to your vimrc to enable the extension:
 
     let g:airline#extensions#tabline#enabled = 1
+
+Separators can be configured independently for the tabline, so here is how you can define "straight" tabs:
+
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
 
 ## Seamless integration
 
@@ -76,6 +81,10 @@ vim-airline also supplies some supplementary stand-alone extensions.  In additio
 Every section is composed of parts, and you can reorder and reconfigure them at will.
 
 ![image](https://f.cloud.github.com/assets/306502/1073278/f291dd4c-14a3-11e3-8a83-268e2753f97d.png)
+
+Sections can contain accents, which allows for very granular control of visuals (see configuration [here](https://github.com/bling/vim-airline/issues/299#issuecomment-25772886)).
+
+![image](https://f.cloud.github.com/assets/306502/1195815/4bfa38d0-249d-11e3-823e-773cfc2ca894.png)
 
 #### Extensible pipeline
 
@@ -187,3 +196,4 @@ MIT License. Copyright (c) 2013 Bailey Ling.
 [31]: https://github.com/jmcantrell/vim-virtualenv
 [32]: https://github.com/chriskempson/base16-vim
 [33]: https://github.com/bling/vim-airline/wiki/Test-Plan
+[34]: http://eclim.org

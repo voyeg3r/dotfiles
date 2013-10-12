@@ -6,10 +6,11 @@ function! s:clear()
   endfor
 endfunction
 
-describe 'init'
+call airline#init#bootstrap()
+
+describe 'init sections'
   before
     call s:clear()
-    call airline#init#bootstrap()
     call airline#init#sections()
   end
 
@@ -28,7 +29,7 @@ describe 'init'
   end
 
   it 'section c should be file'
-    Expect g:airline_section_c == '%<%f%m'
+    Expect g:airline_section_c == '%<%f%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
   end
 
   it 'section x should be filetype'
@@ -42,7 +43,7 @@ describe 'init'
 
   it 'section z should be line numbers'
     Expect g:airline_section_z =~ '%3p%%'
-    Expect g:airline_section_z =~ '%3l'
+    Expect g:airline_section_z =~ '%4l'
     Expect g:airline_section_z =~ '%3c'
   end
 
@@ -61,7 +62,16 @@ describe 'init'
     Expect airline#parts#get('branch').raw == ''
     Expect airline#parts#get('tagbar').raw == ''
     Expect airline#parts#get('syntastic').raw == ''
+    Expect airline#parts#get('eclim').raw == ''
     Expect airline#parts#get('whitespace').raw == ''
+  end
+end
+
+describe 'init parts'
+  it 'should not redefine parts already defined'
+    call airline#parts#define_raw('linenr', 'bar')
+    call airline#init#sections()
+    Expect g:airline_section_z =~ 'bar'
   end
 end
 

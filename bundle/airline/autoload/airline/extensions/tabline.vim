@@ -8,17 +8,19 @@ let s:show_buffers = get(g:, 'airline#extensions#tabline#show_buffers', 1)
 
 let s:builder_context = {
       \ 'active'        : 1,
-      \ 'left_sep'      : get(g:, 'airline#extensions#tabline#left_sep'     , g:airline_left_sep),
-      \ 'left_alt_sep'  : get(g:, 'airline#extensions#tabline#left_alt_sep' , g:airline_left_alt_sep),
       \ 'right_sep'     : get(g:, 'airline#extensions#tabline#right_sep'    , g:airline_right_sep),
       \ 'right_alt_sep' : get(g:, 'airline#extensions#tabline#right_alt_sep', g:airline_right_alt_sep),
       \ }
+if get(g:, 'airline_powerline_fonts', 0)
+  let s:builder_context.left_sep     = get(g:, 'airline#extensions#tabline#left_sep'     , "\ue0b0")
+  let s:builder_context.left_alt_sep = get(g:, 'airline#extensions#tabline#left_alt_sep' , "\ue0b1")
+else
+  let s:builder_context.left_sep     = get(g:, 'airline#extensions#tabline#left_sep'     , ' ')
+  let s:builder_context.left_alt_sep = get(g:, 'airline#extensions#tabline#left_alt_sep' , '|')
+endif
 
 let s:buf_min_count = get(g:, 'airline#extensions#tabline#buffer_min_count', 0)
-let s:buf_len = 0
-
-" TODO: temporary
-let s:buf_max = get(g:, 'airline#extensions#tabline#buffer_max', winwidth(0) / 24)
+let s:tab_min_count = get(g:, 'airline#extensions#tabline#tab_min_count', 0)
 
 function! airline#extensions#tabline#init(ext)
   if has('gui_running')
@@ -27,10 +29,14 @@ function! airline#extensions#tabline#init(ext)
 
   set tabline=%!airline#extensions#tabline#get()
 
-  if s:buf_min_count <= 0
+  if s:buf_min_count <= 0 && s:tab_min_count <= 1
     set showtabline=2
   else
-    autocmd CursorMoved * call <sid>cursormove()
+    if s:show_buffers == 1
+      autocmd CursorMoved * call <sid>on_cursormove(s:buf_min_count, len(s:get_buffer_list()))
+    else
+      autocmd TabEnter * call <sid>on_cursormove(s:tab_min_count, tabpagenr('$'))
+    endif
   endif
 
   call a:ext.add_theme_func('airline#extensions#tabline#load_theme')
@@ -52,9 +58,8 @@ function! airline#extensions#tabline#load_theme(palette)
   call airline#highlighter#exec('airline_tabhid', l:tabhid)
 endfunction
 
-function! s:cursormove()
-  let c = len(s:get_buffer_list())
-  if c > s:buf_min_count
+function! s:on_cursormove(min_count, total_count)
+  if a:total_count >= a:min_count
     if &showtabline != 2
       set showtabline=2
     endif
@@ -100,18 +105,59 @@ function! s:get_buffer_list()
     endif
   endfor
 
-  " TODO: temporary fix; force the active buffer to be first when there are many buffers open
-  if len(buffers) > s:buf_max && index(buffers, cur) > -1
-    while buffers[1] != cur
-      let first = remove(buffers, 0)
-      call add(buffers, first)
-    endwhile
-    let buffers = buffers[:s:buf_max]
-    call insert(buffers, -1, 0)
-    call add(buffers, -1)
+  let s:current_buffer_list = buffers
+  return buffers
+endfunction
+
+function! s:get_visible_buffers()
+  let buffers = s:get_buffer_list()
+  let cur = bufnr('%')
+
+  let total_width = 0
+  let max_width = 0
+
+  for nr in buffers
+    let width = len(airline#extensions#tabline#get_buffer_name(nr)) + 4
+    let total_width += width
+    let max_width = max([max_width, width])
+  endfor
+
+  " only show current and surrounding buffers if there are too many buffers
+  let position  = index(buffers, cur)
+  let vimwidth = &columns
+  if total_width > vimwidth && position > -1
+    let buf_count = len(buffers)
+
+    " determine how many buffers to show based on the longest buffer width,
+    " use one on the right side and put the rest on the left
+    let buf_max   = vimwidth / max_width
+    let buf_right = 1
+    let buf_left  = max([0, buf_max - buf_right])
+
+    let start = max([0, position - buf_left])
+    let end   = min([buf_count, position + buf_right])
+
+    " fill up available space on the right
+    if position < buf_left
+      let end += (buf_left - position)
+    endif
+
+    " fill up available space on the left
+    if end > buf_count - 1 - buf_right
+      let start -= max([0, buf_right - (buf_count - 1 - position)])
+    endif
+
+    let buffers = eval('buffers[' . start . ':' . end . ']')
+
+    if start > 0
+      call insert(buffers, -1, 0)
+    endif
+
+    if end < buf_count - 1
+      call add(buffers, -1)
+    endif
   endif
 
-  let s:current_buffer_list = buffers
   return buffers
 endfunction
 
@@ -119,7 +165,7 @@ function! s:get_buffers()
   let b = airline#builder#new(s:builder_context)
   let cur = bufnr('%')
   let tab_bufs = tabpagebuflist(tabpagenr())
-  for nr in s:get_buffer_list()
+  for nr in s:get_visible_buffers()
     if nr < 0
       call b.add_raw('%#airline_tabhid#...')
       continue
@@ -165,7 +211,7 @@ function! s:get_tabs()
     if s:tab_nr_type == 0
       let val .= ' %{len(tabpagebuflist('.i.'))}'
     else
-      let val .= ' '.i
+      let val .= (g:airline_symbols.space).i
     endif
     call b.add_section(group, val.'%'.i.'T %{airline#extensions#tabline#title('.i.')} %)')
   endfor
