@@ -2,6 +2,9 @@
 # name of this script: m4a2mp3.sh
 # m4a to mp3
 
+# if the dependences are not met the script opens the installer
+command -v faad || sudo apt-get install -y faad
+
 for i in *.m4a; do
   faad "$i"
   x=`echo "$i"|sed -e 's/.m4a/.wav/'`
