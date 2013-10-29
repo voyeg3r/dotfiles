@@ -1,7 +1,7 @@
 #!/bin/bash
 # codecs-raring.sh
 # Criado: Sab 27/abr/2013 hs 16h
-# Last Change: 2013 Out 29 10:44:41
+# Last Change: 2013 Out 29 11:00:11
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -104,6 +104,11 @@ gsettings set org.gnome.nautilus.preferences click-policy 'single'
 gnomesettings (){
 # to set idle timeout until dim screen (the value must be in secconds)
 gsettings set org.gnome.settings-daemon.plugins.power idle-dim-time 20
+# to capture sound in Ctrl+shift+alt+r
+gsettings set org.gnome.shell.recorder pipeline "queue ! videorate ! vp8enc quality=10 speed=2 ! mux. pulsesrc ! audio/x-raw-int ! queue ! audioconvert ! vorbisenc ! mux. webmmux name=mux"
+
+# to reset default value to video record resource
+gsettings reset org.gnome.shell.recorder pipeline
 }
 
 # more control over startup applications
