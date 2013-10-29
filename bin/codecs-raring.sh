@@ -1,7 +1,7 @@
 #!/bin/bash
 # codecs-raring.sh
 # Criado: Sab 27/abr/2013 hs 16h
-# Last Change: 2013 Out 29 10:38:10
+# Last Change: 2013 Out 29 10:44:41
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -100,6 +100,11 @@ gsettings set org.gnome.nautilus.desktop trash-icon-visible true
 gsettings set org.gnome.nautilus.desktop volumes-visible true
 gsettings set org.gnome.nautilus.preferences click-policy 'single'
 } && showicons
+
+gnomesettings (){
+# to set idle timeout until dim screen (the value must be in secconds)
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim-time 20
+}
 
 # more control over startup applications
 sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
