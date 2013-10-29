@@ -1,7 +1,7 @@
 #!/bin/bash
 # codecs-raring.sh
 # Criado: Sab 27/abr/2013 hs 16h
-# Last Change: 2013 Ago 17 11:27:05
+# Last Change: 2013 Out 29 10:38:10
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -11,6 +11,8 @@
 
 #                ( O O )
 # +===========oOO==(_)==OOo==============+
+
+# see some tips here: https://wiki.archlinux.org/index.php/Gnome
 
 bostsystem () {
 sudo sed -i '/^ACTIVE_CONSOLES/ s/1-6/1-2/g' /etc/default/console-setup

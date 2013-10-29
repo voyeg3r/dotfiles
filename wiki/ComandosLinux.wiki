@@ -96,7 +96,7 @@ ComandoIconv - recodifica arquivos
 [[ComandoId]] - mostra a identidade numérica do usuário
 ComandoIf - "se" - faz testes (use em scripts)
 [[ComandoIfs]] - internal field separator
-ComandoIfconfig - mostra e configura endereço de rede
+[[ComandoIfconfig]] - mostra e configura endereço de rede
 ComandoIftop - mostra o uso da rede por aplicações
 [[ComandoImagemagick]] - manipula imagens pela linha de comando
 ComandoImport - captura imgens da tela
