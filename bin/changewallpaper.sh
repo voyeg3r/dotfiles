@@ -15,6 +15,6 @@ wallpaper=`find "${dir}" -type f | shuf -n1`
 #Determines how the image set by wallpaper_filename is rendered. Possible values are "none", "wallpaper", "centered", "scaled", "stretched", "zoom", "spanned".
 
 #gsettings set org.gnome.desktop.background picture-options "spanned"
-gsettings set org.gnome.desktop.background picture-options "scalled"
+gsettings set org.gnome.desktop.background picture-options "scaled"
 gsettings set org.gnome.desktop.background picture-uri "file://${wallpaper}"
 
