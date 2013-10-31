@@ -2,6 +2,11 @@
 # source: http://stackoverflow.com/questions/10374520/gsettings-with-cron
 # TODO: At night only dark wallpapers.
 
+# to run this script automacticly you can do this: crontab -e
+# */5 * * * * /home/user/bin/changewallpaper.sh
+
+# Tip: Don't forget create one blank line at bottom in crontab file
+
 # Wallpaper's directory.
 dir="${HOME}/Pictures/wallpapers/"
 
