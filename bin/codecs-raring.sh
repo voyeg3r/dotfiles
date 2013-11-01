@@ -1,7 +1,7 @@
 #!/bin/bash
 # codecs-raring.sh
 # Criado: Sab 27/abr/2013 hs 16h
-# Last Change: 2013 Out 29 11:00:11
+# Last Change: 2013 Nov 01 16:12:58
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -61,8 +61,10 @@ cd
 } && unhidestartupapplications
 
 installflashplayer () {
-wget -c https://www.dropbox.com/s/t3yymfkpus89jqv/libflashplayer.so?dl=1 -O libflashplayer.so && sudo cp libflashplayer.so /usr/lib/mozilla/plugins/
-}
+#wget -c https://www.dropbox.com/s/t3yymfkpus89jqv/libflashplayer.so?dl=1 -O libflashplayer.so && sudo cp libflashplayer.so /usr/lib/mozilla/plugins/
+#sudo apt-fast install -y flashplugin-installer gsfonts-x11
+apt-fast install -y gnash gnash-common gnash-cygnal gnash-tools  mozilla-plugin-gnash
+} && installflashplayer
 
 improveflashplayer () {
 # melhorando o desempenho do flash
@@ -230,7 +232,6 @@ sudo add-apt-repository ppa:videolan/stable-daily && sudo apt-fast update && sud
 
 sudo apt-fast install nautilus-dropbox
 
-sudo apt-fast install -y flashplugin-installer gsfonts-x11
 
 # ubuntu builder - create your own distro
 # http://www.ubuntugeek.com/ubuntu-builder-2-3-0-released-and-installation-instructions-included.html
