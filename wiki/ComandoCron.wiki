@@ -25,17 +25,18 @@ O comando acima limpará a pasta /tmp
 todos os dias às 03:00h
 
 ==sempre usar caminho completo no cron==
-quando referenciar scripts use o caminho completo, no cron
-não há como definir path
+
+quando referenciar scripts use o caminho completo, no cron não há como definir path
+
 ==atualizar a hora==
 
 # manter o relogio certo
 0 * * * * /usr/sbin/ntpdate -s ntp.usp.br
-#minuto hora dia mˆes dia da semana comando
+# minuto hora dia mˆes dia da semana comando
 
-#Para executar o mesmo comando com um intervaldo
+# Para executar o mesmo comando com um intervaldo
 # de 4 horas entre cada execucao, poderiamos fazer:
-#minuto hora dia mˆes dia da semana comando
+# minuto hora dia mˆes dia da semana comando
 0 */4 * * * /usr/sbin/ntpdate -s ntp.usp.br
 
 ==executar um comando a cada 15 minutos==
