@@ -70,6 +70,13 @@ sudo add-apt-repository ppa:apt-fast/stable -y && sudo apt-get update && sudo ap
 sudo apt-fast install -y synaptic aptitude aptoncd aptitude
 } && installaptfast
 
+simplescreenrecorder (){
+  # www.maartenbaert.be/simplescreenrecorder/
+sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
+sudo apt-fast update
+sudo apt-fast -y install simplescreenrecorder
+} && simplescreenrecorder
+
 networkimproviment () {
 # see how mutch swapp ubuntu is using -- cat /proc/sys/vm/swap­pi­ness
 sudo cp /etc/sysctl.conf{,.backup} && sudo wget -c https://gist.github.com/voyeg3r/368407/raw/ -O - > /etc/sysctl.conf && sysctl -p
