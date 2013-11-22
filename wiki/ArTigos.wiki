@@ -3,3 +3,4 @@ VidaAposaVida
 OparadoxoPython
 PythonEocaminhoDoMeio
 [[YouDontGrokVi]]
+[[DicaTedTalks]]
