@@ -1,6 +1,6 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: 2013 Out 29 10:51:59
+Last Change: 2013 Nov 23 08:10:36
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -12,6 +12,9 @@ http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distr
 ==how make a screencast on gnome-shell==
 
   Ctrl+Shift+Alt+r
+
+# to reset default value to video record resource
+gsettings reset org.gnome.shell.recorder pipeline
 
 == text expander for linux ==
 
