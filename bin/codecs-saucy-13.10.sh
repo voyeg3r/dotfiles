@@ -1,7 +1,7 @@
 #!/bin/bash
 # =================================================
 # CREATED:          Sáb 29/Dez/2012 hs 10:25
-# LAST CHANGE:      2013 Nov 02 12:01:30
+# LAST CHANGE:      2013 Nov 23 02:12:27
 # THIS SCRIPT AIMS: install programs and resources in ubuntu 13.10 'saucy'
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
@@ -69,6 +69,12 @@ sudo cp /etc/apt/sources.list{,.backup}
 sudo add-apt-repository ppa:apt-fast/stable -y && sudo apt-get update && sudo apt-get install -y axel aria2 apt-fast
 sudo apt-fast install -y synaptic aptitude aptoncd aptitude
 } && installaptfast
+
+firefox-daily-build () {
+    sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+    sudo apt-fast update
+    sudo apt-fast -y install firefox-trunk
+} && firefox-daily-build
 
 simplescreenrecorder (){
   # www.maartenbaert.be/simplescreenrecorder/
