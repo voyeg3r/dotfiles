@@ -1,7 +1,7 @@
 #!/bin/bash
 # =================================================
 # CREATED:          Sáb 29/Dez/2012 hs 10:25
-# LAST CHANGE:      2013 Nov 23 02:12:27
+# LAST CHANGE:      2013 Nov 23 14:46:07
 # THIS SCRIPT AIMS: install programs and resources in ubuntu 13.10 'saucy'
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
@@ -75,6 +75,13 @@ firefox-daily-build () {
     sudo apt-fast update
     sudo apt-fast -y install firefox-trunk
 } && firefox-daily-build
+
+zoomdesktop () {
+# source: http://www.upubuntu.com/2012/05/tool-to-magnify-screen-resolution-under.html
+sudo add-apt-repository ppa:tobias-quinn/gsmz
+sudo apt-fast update
+sudo apt-fast -y install gnome-shell-mousewheel-zoom
+} && zoomdesktop
 
 simplescreenrecorder (){
   # www.maartenbaert.be/simplescreenrecorder/
