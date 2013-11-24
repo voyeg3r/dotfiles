@@ -1,7 +1,7 @@
 #!/bin/bash
 # =================================================
 # CREATED:          Sáb 29/Dez/2012 hs 10:25
-# LAST CHANGE:      2013 Nov 23 14:46:07
+# LAST CHANGE:      2013 Nov 24 08:22:44
 # THIS SCRIPT AIMS: install programs and resources in ubuntu 13.10 'saucy'
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
@@ -58,10 +58,11 @@ gnomesettings (){
 # to set idle timeout until dim screen (the value must be in secconds)
 gsettings set org.gnome.settings-daemon.plugins.power idle-dim-time 20
 # to capture sound in Ctrl+shift+alt+r
-gsettings set org.gnome.shell.recorder pipeline "queue ! videorate ! vp8enc quality=10 speed=2 ! mux. pulsesrc ! audio/x-raw-int ! queue ! audioconvert ! vorbisenc ! mux. webmmux name=mux"
 
 # to reset default value to video record resource
 gsettings reset org.gnome.shell.recorder pipeline
+# improve speed of animations
+sudo sed -i.backup '/const ANIMATION_TIME/ s/\.[0-9]*/.001/g' /usr/share/gnome-shell/js/ui/overview.js
 } && gnomesettings
 
 installaptfast () {
@@ -77,10 +78,13 @@ firefox-daily-build () {
 } && firefox-daily-build
 
 zoomdesktop () {
-# source: http://www.upubuntu.com/2012/05/tool-to-magnify-screen-resolution-under.html
-sudo add-apt-repository ppa:tobias-quinn/gsmz
-sudo apt-fast update
-sudo apt-fast -y install gnome-shell-mousewheel-zoom
+apt-fast install -y python-xlib python-dbus git-core
+cd
+git clone https://github.com/tobiasquinn/gnome-shell-mousewheel-zoom.git
+sudo -f mv gnome-shell-mousewheel-zoom/mousewheelzoom.py /usr/bin/
+sudo chmod +x /usr/bin/mousewheelzoom.py
+sudo mv gnome-shell-mousewheel-zoom/mousewheelzoom.py.desktop /etc/xdg/autostart/
+rm -rf gnome-shell-mousewheel-zoom/
 } && zoomdesktop
 
 simplescreenrecorder (){
