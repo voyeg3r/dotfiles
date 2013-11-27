@@ -1,7 +1,7 @@
 #!/bin/bash
 # =================================================
 # CREATED:          Sáb 29/Dez/2012 hs 10:25
-# LAST CHANGE:      2013 Nov 24 08:22:44
+# LAST CHANGE:      2013 Nov 27 05:42:03
 # THIS SCRIPT AIMS: install programs and resources in ubuntu 13.10 'saucy'
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
@@ -70,6 +70,10 @@ sudo cp /etc/apt/sources.list{,.backup}
 sudo add-apt-repository ppa:apt-fast/stable -y && sudo apt-get update && sudo apt-get install -y axel aria2 apt-fast
 sudo apt-fast install -y synaptic aptitude aptoncd aptitude
 } && installaptfast
+
+installatex () {
+sudo apt-fast install texlive texlive-latex-extra texlive-lang-portuguese
+} && installatex
 
 firefox-daily-build () {
     sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
