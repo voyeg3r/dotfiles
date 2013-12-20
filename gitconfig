@@ -1,0 +1,27 @@
+[user]
+	name = voyeg3r
+	email = voyeg3r@gmail.com
+[credential]
+	helper = cache --timeout=3600
+[color]
+	ui = true
+[core]
+	editor = vim
+	filemode = false
+[merge]
+	tool = vimdiff
+[alias]
+  st = status
+  ss = status -s
+  aa = !git add -u && git add . && git status
+  ap = add -p
+  co = checkout
+  df = diff
+  lg = log --graph --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold green)<%an>%Creset' --abbrev-commit --date=relative
+  cm = commit --verbose
+  ca = commit -a --verbose
+  am = commit --amend
+  ph = push
+  ft = fetch
+  pl = pull
+  pr = pull --rebase
