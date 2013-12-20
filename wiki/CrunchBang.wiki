@@ -1,0 +1,3 @@
+Post installation script
+
+	cb-wellcome
