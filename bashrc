@@ -1,4 +1,4 @@
-# Last Change: 2013 Dez 21 11:28:23
+# Last Change: 2013 Dez 22 05:44:55
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -176,14 +176,14 @@ eng2audio () {
 # how truncate string  --> echo ${var:start:end}
 # removendo o último caractere de uma variável   ${var:0:-1}
 #   vou precisar truncar a string::::: echo "Sua string contém "${#var}" caracteres"
-command -v xclip || sudo apt-get install -y xclip
+#command -v xclip || sudo apt-get install -y xclip
 if   ping -q -c2 www.google.com >/dev/null ; then
         FILENAME="${@:?Usage: $0 give me some words to speech}"
         FILENAME=`awk '{print tolower($0)}' <<< "$FILENAME"`
         url="http://translate.google.com/translate_tts?ie=UTF-8&tl=en&q="
         wget -q -U Mozilla -O "${FILENAME// /_}.mp3" "${url}${FILENAME// /+}+' '"
         [ -f "${FILENAME// /_}.mp3" -a ! -s "${FILENAME// /_}.mp3" ] && { rm -f "${FILENAME// /_}.mp3" ; echo 'error!'; }
-        command -v mpg321 > /dev/null && mpg321 -q "${FILENAME// /_}.mp3"
+        command -v mpg123 > /dev/null && mpg123 -q "${FILENAME// /_}.mp3"
         echo "[sound:${FILENAME// /_}.mp3]" | xclip -selection c
 fi
 }
