@@ -1,4 +1,4 @@
-# Last Change: 2013 Dez 22 05:44:55
+# Last Change: 2013 Dez 23 16:05:24
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -330,6 +330,8 @@ if [ -d /usr/local/texlive/2013/bin/i386-linux ] ; then
 	PATH=/usr/local/texlive/2013/bin/i386-linux:$PATH
 	PATH=/usr/local/texlive/2013/texmf-dist/doc/man:$PATH
 fi
+
+[ -d ~/bin ] && PATH=~/bin:$PATH
 
 # para chamar o pythonrc
 PYTHONSTARTUP="$HOME/.pythonstartup"
