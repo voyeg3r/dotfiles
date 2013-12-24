@@ -1,13 +1,15 @@
 =Wiki do Sérgio para fins diversos=
 
 Criado: Dom 17/Out/2010 hs 14:23
-Last Change: 2013 Dez 20 09:32:10
+Last Change: 2013 Dez 24 08:36:41
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 
  [[ArTigos]] [[EnglishTips]] [[EnglishLyrics]] SunTzu TaticaEestrategi
 
  [[IdiomaticExpressions]] [[DicasLinux]] [[MegaSena]] [[CrunchBang]]
+
+ [[ArchLinux]]
 
  [[ComandosLinux]] [[DicasDoBash]] [[AwkNewieTutorial]] [[ReCeitas]]
 

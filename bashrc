@@ -1,4 +1,4 @@
-# Last Change: 2013 Dez 23 16:05:24
+# Last Change: 2013 Dez 23 17:01:44
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -106,6 +106,10 @@ dict() { curl "dict://dict.org/d:${1%%/}";}
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+
+# trying to fix sound in gnash flash
+export SDL_AUDIODRIVER=alsa
+export AUDIODEV=plug:dmix
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups

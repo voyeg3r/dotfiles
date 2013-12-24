@@ -1,0 +1,8 @@
+== load keymap ==
+
+	loadkeys br-abnt2
+
+== you can use archbang =
+
+  Archbang linux brings to you the beste of
+  ArchLinux without pain or boring process of installation
