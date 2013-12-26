@@ -6,3 +6,7 @@
 
   Archbang linux brings to you the beste of
   ArchLinux without pain or boring process of installation
+
+== guake ==
+
+	guake - Drop-down terminal for GNOME Desktop Environment
