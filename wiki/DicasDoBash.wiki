@@ -2,6 +2,10 @@
 
 	http://www.bashoneliners.com/?page=1
 
+= pegando os links mp3 de um html =
+
+	grep -o 'http://[^"]*'  < test.html  | grep mp3
+
 = como criar um array no bash=
 
   var=($(uname -a))
