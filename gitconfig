@@ -25,3 +25,5 @@
   ft = fetch
   pl = pull
   pr = pull --rebase
+[push]
+	default = simple
