@@ -1,4 +1,4 @@
-# Last Change: 2013 Dez 23 17:01:44
+# Last Change: 2013 Dez 27 18:34:45
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -168,7 +168,7 @@ getaudio () {
 	speak.pl en teste.txt "$filename"
 	rm -rf "$filename".tmp && rm -f teste.txt
 	echo "[sound:${filename}]" | xclip -selection c
-	mpg321 "$filename"
+	mpg123 "$filename"
 }
 
 eng2audio () {
