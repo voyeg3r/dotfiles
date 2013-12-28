@@ -1,4 +1,4 @@
-# Last Change: 2013 Dez 27 18:34:45
+# Last Change: 2013 Dez 28 11:27:46
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -89,6 +89,7 @@ shopt -s extglob
 [ ${BASH_VERSINFO[0]} -ge 4 ] && shopt -s globstar
 shopt -s cdspell                       # fix wrong type keys
 shopt -s dirspell
+shopt -s autocd
 
 # convert text to lowcase
 lower() { echo "${@}" | awk '{print tolower($0)}' ;}
