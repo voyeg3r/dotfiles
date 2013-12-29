@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2013 Dez 29 08:27:58
+#      LAST CHANGE: 2013 Dez 29 08:32:50
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -40,6 +40,7 @@ compactadores () {
 graphictools () {
 	pacman -Syu inkscape gimp
 	yaourt -S --noconfirm gloobus-sushi-bzr
+    yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
 } && graphictools
 
 multimedia () {
