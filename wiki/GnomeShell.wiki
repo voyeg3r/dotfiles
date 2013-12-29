@@ -1,6 +1,6 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: 2013 Nov 23 08:10:36
+Last Change: 2013 Dez 28 21:38:08
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -8,6 +8,18 @@ twitter: http://www.twitter.com/voyeg3r
 {{{ how install gnome shell in any distro with jhbuild
 http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distro-with-jhbuild/
 }}}
+
+== solving the problem of hidden files by default ==
+
+ * source: http://ubuntuforums.org/archive/index.php/t-2133298.html
+
+	open terminal and type:
+	dconf-editor
+	Enter and then:
+	org->gtk->settings->file-chooser
+	uncheck show-hidden
+
+	Have a nice day!
 
 ==how make a screencast on gnome-shell==
 
