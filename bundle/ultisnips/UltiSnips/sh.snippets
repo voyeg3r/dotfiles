@@ -17,6 +17,12 @@ snippet sh "cabeçalho bash" b
 ${0}
 endsnippet
 
+snippet fun "create a function" w
+${1:function_name} () {
+	${2:body function}
+} && $1
+endsnippet
+
 snippet ifs "internal field separator" w
 # how use it
 # Var='1;2;3'
