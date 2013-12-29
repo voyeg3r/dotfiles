@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2013 Dez 29 07:19:50
+" Last Change: 2013 Dez 29 07:30:18
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -53,8 +53,9 @@ nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outl
 nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
 nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
-" map to paste from clipboard
+" map to paste from clipboard with Ctrl-Alt-p
 nmap <C-M-P> "+p
+imap <C-M-P> <esc>"+pA
 
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
