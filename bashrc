@@ -1,4 +1,4 @@
-# Last Change: 2013 Dez 28 11:27:46
+# Last Change: 2013 Dez 29 08:19:44
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples

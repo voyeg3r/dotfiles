@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2013 Dez 29 07:30:21
+#      LAST CHANGE: 2013 Dez 29 08:27:58
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -9,19 +9,29 @@
 #            SKYPE: sergioaraujosilva
 # =================================================
 
+# Reference: https://gist.github.com/Xifax/1517721
+
 # testa se está logado como root
-if [ "$(id -u)" != "0" ]; then
-	echo "  Need be root"
-	sleep 2
-	exit  1
-fi
+#if [ "$(id -u)" != "0" ]; then
+#	echo "  Need be root"
+#	sleep 2
+#	exit  1
+#fi
 
 # how install lsb_release
 # wget -c https://www.archlinux.org/packages/community/any/lsb-release/download/ && pacman -U $_
 
+# how install yaourt
+# https://aur.archlinux.org/packages/yaourt/
+
 admintools () {
-	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl
+	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo
+	pacman -Syu openssh
 } && admintools
+
+basesystem () {
+	pacman -Syu dbus acpi acpid
+} && basesystem
 
 compactadores () {
 	pacman -Sy zip unzip unrar p7zip
@@ -29,11 +39,14 @@ compactadores () {
 
 graphictools () {
 	pacman -Syu inkscape gimp
+	yaourt -S --noconfirm gloobus-sushi-bzr
 } && graphictools
 
 multimedia () {
-	pacman -Syu audacious audacity
+	pacman -S --noconfirm audacious audacity
+	pacman -S --noconfirm gedit-plugins pulseaudio-gnome gnome-tweak-tool telepathy deja-dup
+	pacman -S --noconfirm rhythmbox
+	yaourt -S --noconfirm codecs
 } && multimedia
-
 
 
