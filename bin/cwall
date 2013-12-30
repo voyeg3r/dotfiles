@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# =================================================
+#          CREATED: Seg 30/Dez/2013 hs 15:07
+#      LAST CHANGE: 2013 Dez 30 15:09:15
+# THIS SCRIPT AIMS: change wallpaper in gnome-shell
+#           AUTHOR: Sérgio Luiz Araújo Silva
+#             SITE: http://vivaotux.blogspot.com
+#          TWITTER: @voyeg3r
+#            SKYPE: sergioaraujosilva
+# =================================================
+# source: http://superuser.com/questions/298050/periodically-changing-wallpaper-under-gnome-3
+
+# CHANGE THE FOLDERS NAME AND USER!
+# to run this script automaticaly in gnome-shell create
+# this file in ~/.config/autostart/cwall.desktop
+
+# ------- cwall.desktop file ----
+#  [Desktop Entry]
+#  Type=Application
+#  Exec=/home/sergio/bin/cwall
+#  Hidden=false
+#  NoDisplay=false
+#  X-GNOME-Autostart-enabled=true
+#  Name[pt_BR]=changewallpaper
+#  Name=changewallpaper
+#  Comment[pt_BR]=change wallpaper periodicaly
+#  Comment=change wallpaper periodicaly
+# ---------------------------------------------
+
+WP_DIR=/home/sergio/Pictures/wallpapers
+
+cd $WP_DIR
+while [ 1 ]
+  do
+  set -- *
+  WP=`ls -1 "$WP_DIR" | shuf -n1`
+  gsettings set org.gnome.desktop.background picture-uri "file://$WP_DIR/${WP}"
+
+  sleep 300
+done
