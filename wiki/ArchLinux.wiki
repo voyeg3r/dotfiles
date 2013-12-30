@@ -7,9 +7,9 @@
   Archbang linux brings to you the beste of
   ArchLinux without pain or boring process of installation
 
-== guake ==
+==bash completion=
 
-	guake - Drop-down terminal for GNOME Desktop Environment
+   pacman -Syu bash-completion
 
 == how use aur packages ==
 
@@ -56,8 +56,3 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="wlan0
 
 }}}
 
-==using aria2c with pacman ==
-
-Edit /etc/pacman.conf by adding the following line to the [options] section:
-
-XferCommand = /usr/bin/aria2c --allow-overwrite=true -c --file-allocation=none --log-level=error -m2 -x2 --max-file-not-found=5 -k5M --no-conf -Rtrue --summary-interval=60 -t5 -d / -o %o %u
