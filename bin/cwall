@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Seg 30/Dez/2013 hs 15:07
-#      LAST CHANGE: 2013 Dez 30 15:11:22
+#      LAST CHANGE: 2013 Dez 30 15:25:14
 # THIS SCRIPT AIMS: change wallpaper in gnome-shell
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -29,7 +29,6 @@
 
 WP_DIR=/home/sergio/Pictures/wallpapers
 
-cd $WP_DIR
 while [ 1 ]
   do
   set -- *
