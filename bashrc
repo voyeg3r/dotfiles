@@ -1,4 +1,4 @@
-# Last Change: 2013 Dez 31 12:36:54
+# Last Change: 2013 Dez 31 12:50:45
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -182,7 +182,6 @@ eng2audio () {
 # how truncate string  --> echo ${var:start:end}
 # removendo o último caractere de uma variável   ${var:0:-1}
 #   vou precisar truncar a string::::: echo "Sua string contém "${#var}" caracteres"
-#command -v xclip || sudo apt-get install -y xclip
 if   ping -q -c2 www.google.com >/dev/null ; then
         FILENAME="${@:?Usage: $0 give me some words to speech}"
         FILENAME=`awk '{print tolower($0)}' <<< "$FILENAME"`
