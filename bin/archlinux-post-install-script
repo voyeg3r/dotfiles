@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2013 Dez 31 07:51:10
+#      LAST CHANGE: 2013 Dez 31 08:05:13
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -20,6 +20,15 @@
 
 # Atualizar o sistema
 pacman -Syu
+
+cowerinstall () {
+	# another package manager "cower"
+	# https://aur.archlinux.org/packages/co/cower/cower.tar.gz
+	wget -c https://aur.archlinux.org/packages/co/cower/cower.tar.gz
+	tar zxvf cower.tar.gz && cd cower
+	makepkg -s
+	sudo pacman -U `find -maxdepth 1 -type f | grep pkg`
+} && cowerinstall
 
 # Documentação python
 pacman -Syu pydoc
