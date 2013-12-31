@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2013 Dez 31 12:10:12
+#      LAST CHANGE: 2013 Dez 31 12:22:57
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -42,6 +42,9 @@ pacman -Syu pydoc
 # https://aur.archlinux.org/packages/yaourt/
 
 # another good package mananger is pacaur
+
+# pm - little package mananger
+# https://aur.archlinux.org/packages.php?ID=62711
 
 # using aur.sh
 # source: http://aur.sh/
