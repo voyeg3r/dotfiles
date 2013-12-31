@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2013 Dez 29 12:10:23
+#      LAST CHANGE: 2013 Dez 31 07:51:10
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -21,6 +21,9 @@
 # Atualizar o sistema
 pacman -Syu
 
+# Documentação python
+pacman -Syu pydoc
+
 # pesquisar por pacotes: pacman -Ss <nome>
 
 # how install lsb_release
@@ -35,24 +38,26 @@ admintools () {
 } && admintools
 
 basesystem () {
-	pacman -Syu dbus acpi acpid
+	sudo pacman -Syu dbus acpi acpid
 } && basesystem
 
 compactadores () {
-	pacman -Sy zip unzip unrar p7zip
+	sudo pacman -Sy zip unzip unrar p7zip
 } && compactadores
 
 graphictools () {
-	pacman -Syu inkscape gimp
-	yaourt -S --noconfirm gloobus-sushi-bzr
-    yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
+	sudo pacman -Syu inkscape gimp
+	sudo yaourt -S --noconfirm gloobus-sushi-bzr
+    sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
 } && graphictools
 
 multimedia () {
-	pacman -S --noconfirm audacious audacity
-	pacman -S --noconfirm gedit-plugins pulseaudio-gnome gnome-tweak-tool telepathy deja-dup
-	pacman -S --noconfirm rhythmbox
-	yaourt -S --noconfirm codecs
+	# corebird is a twitter client
+	sudo yaourt -S corebird-git
+	sudo pacman -S --noconfirm audacious audacity
+	sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome gnome-tweak-tool telepathy deja-dup
+	sudo pacman -S --noconfirm rhythmbox
+	sudo yaourt -S --noconfirm codecs
 } && multimedia
 
 
