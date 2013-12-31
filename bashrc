@@ -1,4 +1,4 @@
-# Last Change: 2013 Dez 31 16:42:16
+# Last Change: 2013 Dez 31 17:01:33
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -497,5 +497,7 @@ fi
 
 if [ -d ~/anaconda ] ; then
 # added by Anaconda 1.8.0 installer
+# "source activate ~/anaconda"
+# http://va.mu/dkRc
 export PATH="/home/sergio/anaconda/bin:$PATH"
 fi
