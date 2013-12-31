@@ -1,4 +1,4 @@
-# Last Change: 2013 Dez 29 08:19:44
+# Last Change: 2013 Dez 31 12:31:39
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -25,6 +25,7 @@ stty stop ""
 # bash completion to sudo command
 complete -cf sudo
 complete -cf man
+complete -cf gksu
 complete -d cd mkdir rmdir
 # autocomplete ssh commands
 complete -W "$(echo `cat ~/.bash_history | egrep '^ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh
