@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2013 Dez 31 12:22:57
+#      LAST CHANGE: 2013 Dez 31 15:14:30
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -43,8 +43,14 @@ pacman -Syu pydoc
 
 # another good package mananger is pacaur
 
-# pm - little package mananger
-# https://aur.archlinux.org/packages.php?ID=62711
+installpm () {
+	# pm - little package mananger
+	# https://aur.archlinux.org/packages.php?ID=62711
+	# dependences: pacaur
+	wget -c  https://aur.archlinux.org/packages/pm/pm/pm.tar.gz
+	tar zxvf pm.tar.gz && cd pm
+	makepkg -si
+} && installpm
 
 # using aur.sh
 # source: http://aur.sh/
@@ -60,7 +66,7 @@ pacman -Syu pydoc
 
 admintools () {
 	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo
-	pacman -Syu openssh dnsmasq
+	pacman -Syu openssh dnsmasq python-setuptools
 } && admintools
 
 basesystem () {
