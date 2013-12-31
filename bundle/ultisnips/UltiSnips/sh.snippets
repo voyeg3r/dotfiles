@@ -33,7 +33,7 @@ IFS=$OLDIFS
 endsnippet
 
 snippet "here((doc)?umment)?" "here documment" r
-${1:cat} <<-EOF
+cat <<-EOF > ${1:filename}
 ${2:# add your text here }
 EOF
 endsnippet
