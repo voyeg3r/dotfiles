@@ -1,4 +1,4 @@
-# Last Change: 2013 Dez 31 12:31:39
+# Last Change: 2013 Dez 31 12:36:54
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -483,7 +483,9 @@ export MOZ_DISABLE_PANGO=1
 # http://ubuntuforums.org/archive/index.php/t-80289.html
 export FLASH_GTK_LIBRARY=libgtk-x11-2.0.so.0
 
-export PATH=/var/lib/gems/1.8/bin:$PATH
+if [ -d /var/lib/gems/1.8 ]; then
+	export PATH=/var/lib/gems/1.8/bin:$PATH
+fi
 
 # Instalacao das Funcoes ZZ (www.funcoeszz.net)
 #export ZZOFF=""  # desligue funcoes indesejadas
