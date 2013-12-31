@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2013 Dez 31 08:05:13
+#      LAST CHANGE: 2013 Dez 31 08:23:41
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -40,6 +40,10 @@ pacman -Syu pydoc
 
 # how install yaourt
 # https://aur.archlinux.org/packages/yaourt/
+
+# using aur.sh
+# source: http://aur.sh/
+# bash <(curl aur) -si [package ...]
 
 admintools () {
 	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo
