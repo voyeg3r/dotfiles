@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 03 10:28:29
+#      LAST CHANGE: 2014 Jan 03 16:57:09
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -93,9 +93,9 @@ graphictools () {
 multimedia () {
 	# corebird is a twitter client
 	sudo yaourt -S corebird-git
-	sudo pacman -Syu gnome-music gnome-documents gnome-maps gnome-photos
+	sudo pacman -Syu gnome-{document,music,maps,photos,tweak-tool}
 	sudo pacman -S --noconfirm audacious audacity
-	sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome gnome-tweak-tool telepathy deja-dup
+	sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
 	sudo pacman -S --noconfirm rhythmbox
 	sudo yaourt -S --noconfirm codecs
 } && multimedia
