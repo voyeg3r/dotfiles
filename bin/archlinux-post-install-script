@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 03 19:03:36
+#      LAST CHANGE: 2014 Jan 03 19:21:16
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -58,6 +58,7 @@ pacman -Syu pydoc
 # read about dnsmasq
 # https://wiki.archlinux.org/index.php/Dnsmasq
 
+
 installpm () {
 	# pm - little package mananger
 	# https://aur.archlinux.org/packages.php?ID=62711
@@ -75,6 +76,17 @@ admintools () {
 	# dav://webdav.4shared.com
 	pacman -U https://www.archlinux.org/packages/extra/i686/davfs2/download/
 } && admintools
+
+configzsh () {
+	# video explanation: http://www.youtube.com/watch?v=1S3MUVIAieE
+	# https://github.com/robbyrussell/oh-my-zsh
+	# after install you need to do new login
+	pacman -Syu zsh git
+	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+	cp ~/.zshrc ~/.zshrc.orig
+	cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+	sudo chsh -s $(which zsh) $(whoami)
+} && configzsh
 
 basesystem () {
 	sudo pacman -Syu dbus acpi acpid
