@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 02 20:46:31
+#      LAST CHANGE: 2014 Jan 03 10:28:29
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -17,6 +17,9 @@
 #	sleep 2
 #	exit  1
 #fi
+
+# userstyles to google
+# http://userstyles.org/styles/81403/gt-deepdark-for-google
 
 # Atualizar o sistema
 pacman -Syu
