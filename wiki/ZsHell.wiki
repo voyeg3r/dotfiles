@@ -1,10 +1,15 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: 2014 Jan 04 07:26:49
+Last Change: 2014 Jan 04 08:41:50
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r at gmail.com>
+{{{
+
+= changing the shell =
+
+	sudo chsh -s $(which zsh) $(whoami)
 
 =use r to repeat the last command - with substituition =
 
@@ -12,3 +17,8 @@ email: <voyeg3r at gmail.com>
   r two=three
   one three
 
+=how set up 'command not found'=
+
+[ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
+
+}}}
