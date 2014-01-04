@@ -1,0 +1,14 @@
+Arquivo: zshell tips and tricks
+Criado: Sáb 04/Jan/2014 hs 07:23
+Last Change: 2014 Jan 04 07:26:49
+autor: Sérgio Luiz Araújo Silva
+site: http://vivaotux.blogspot.com
+twitter: http://www.twitter.com/voyeg3r
+email: <voyeg3r at gmail.com>
+
+=use r to repeat the last command - with substituition =
+
+  echo one two
+  r two=three
+  one three
+
