@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2013 Dez 29 07:30:18
+" Last Change: 2014 Jan 04 11:26:02
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -487,7 +487,8 @@ command! SaveAsRoot w !sudo tee %
 " mapping to reload ~/.vimrc
 map <silent> <M-v> :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 map <silent> <leader>v :e ~/.vimrc<cr>
-map <silent> <leader>b :e ~/.bashrc<cr>
+" copy current buffer to clipboard
+nmap <leader>b :%y+<cr>
 
 autocmd! BufWritePost .vimrc source %
 
