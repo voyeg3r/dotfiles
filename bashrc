@@ -1,4 +1,4 @@
-# Last Change: 2014 Jan 03 20:39:15
+# Last Change: 2014 Jan 04 11:49:23
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -341,6 +341,10 @@ fi
 # para chamar o pythonrc
 PYTHONSTARTUP="$HOME/.pythonstartup"
 export PYTHONSTARTUP
+
+shell () {
+  ps | grep `echo $$` | awk '{ print $4 }'
+}
 
 up () {
 # Created at: 2012/06/19 10:37:26
