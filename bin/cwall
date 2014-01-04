@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Seg 30/Dez/2013 hs 15:07
-#      LAST CHANGE: 2014 Jan 02 13:33:59
+#      LAST CHANGE: 2014 Jan 04 01:08:42
 # THIS SCRIPT AIMS: change wallpaper in gnome-shell
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -33,9 +33,6 @@ while [ 1 ]
   do
   set -- *
   WP=`ls -1 "$WP_DIR" | shuf -n1`
-  # adding little time after session start
-  sleep 15
-  gsettings set org.gnome.desktop.background picture-uri "file://$WP_DIR/${WP}"
-
   sleep 300
+  gsettings set org.gnome.desktop.background picture-uri "file://$WP_DIR/${WP}"
 done
