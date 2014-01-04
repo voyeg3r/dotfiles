@@ -7,6 +7,18 @@ ZSH=$HOME/.vim/oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="gentoo"
 
+setopt AUTO_CD
+setopt CORRECT_ALL
+setopt EXTENDED_GLOB
+setopt NO_HIST_BEEP
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -108,3 +120,5 @@ fi
 
 #alias path=echo -e ${PATH//:/\n}
 alias lvim="vim -c \"normal '0\""
+alias -s txt=vim
+alias -s text=vim
