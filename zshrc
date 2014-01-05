@@ -63,6 +63,20 @@ setopt HIST_IGNORE_SPACE
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git github bundle python sudo themes extract archlinux colorize command-not-found common-aliases cp)
 
+###################### fix cdpath shown subdirs #######################################
+# source: http://superuser.com/questions/265547/zsh-cdpath-and-autocompletion#286713
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format %d
+
+#You can apply standard prompt formats to these descriptions to make them stand out:
+
+zstyle ':completion:*:descriptions' format %B%d%b        # bold
+zstyle ':completion:*:descriptions' format %S%d%s        # invert/standout
+zstyle ':completion:*:descriptions' format %U%d%u        # underline
+zstyle ':completion:*:descriptions' format %F{green}%d%f # green foreground
+zstyle ':completion:*:descriptions' format %K{blue}%d%k  # blue background
+######################################################################################
+
 ##### functions
 shell () {
   ps | grep `echo $$` | awk '{ print $4 }'
