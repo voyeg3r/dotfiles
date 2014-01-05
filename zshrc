@@ -5,7 +5,11 @@ ZSH=$HOME/.vim/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gentoo"
+#ZSH_THEME="gentoo"
+ZSH_THEME="bira"
+
+setopt auto_cd
+cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 
 setopt AUTO_CD
 setopt CORRECT_ALL
@@ -22,7 +26,6 @@ setopt HIST_IGNORE_SPACE
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias path='echo -e ${PATH//:/\\n}'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -61,37 +64,6 @@ alias path='echo -e ${PATH//:/\\n}'
 plugins=(git github bundle python sudo themes extract archlinux colorize command-not-found common-aliases cp)
 
 ##### functions
-up () {
-# Created at: 2012/06/19 10:37:26
-# Go up directory tree X number of directories
-# source: http://orangesplotch.com/bash-going-up/
-# see explanation at link above, worth!
-# I found this here: http://askubuntu.com/questions/110922/climb-up-the-directory-tree-faster
-# put this function to your ~/.bashrc
-# binding this function to key see below
-# http://stackoverflow.com/questions/4200800/in-bash-how-do-i-bind-a-function-key-to-a-command
-
-    COUNTER="$@";
-	# default $COUNTER to 1 if it isn't already set
-	if [[ -z $COUNTER ]]; then
-		COUNTER=1
-	fi
-	# make sure $COUNTER is a number
-	if [ $COUNTER -eq $COUNTER 2> /dev/null ]; then
-		nwd=`pwd` # Set new working directory (nwd) to current directory
-		# Loop $nwd up directory tree one at a time
-		until [[ $COUNTER -lt 1 ]]; do
-			nwd=`dirname $nwd`
-			let COUNTER-=1
-		done
-		cd $nwd # change directories to the new working directory
-	else
-		# print usage and return error
-		echo "usage: up [NUMBER]"
-		return 1
-	fi
-}
-
 shell () {
   ps | grep `echo $$` | awk '{ print $4 }'
 }
@@ -118,7 +90,8 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-#alias path=echo -e ${PATH//:/\n}
+alias path='echo -e ${PATH//:/\n}'
 alias lvim="vim -c \"normal '0\""
 alias -s txt=vim
 alias -s text=vim
+alias gril='grep -irl'
