@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# =================================================
+#          CREATED: Dom 05/Jan/2014 hs 07:55
+#      LAST CHANGE: 2014 Jan 05 07:55:43
+# THIS SCRIPT AIMS: English to audio script
+#           AUTHOR: Sérgio Luiz Araújo Silva
+#             SITE: http://vivaotux.blogspot.com
+#          TWITTER: @voyeg3r
+#            SKYPE: sergioaraujosilva
+# =================================================
+# convert any English string in audio
+
+# see this: https://gist.github.com/michalfapso/3110049/raw
+# http://michalfapso.blogspot.com.br/2012/01/using-google-text-to-speech.html
+# http://mostovenko.blogspot.com.br/2012/04/voicing-messages-in-python-or-fun-with.html
+# versão no snipt: https://snipt.net/voyeg3r/
+
+# how truncate string  --> echo ${var:start:end}
+# removendo o último caractere de uma variável   ${var:0:-1}
+#   vou precisar truncar a string::::: echo "Sua string contém "${#var}" caracteres"
+if   ping -q -c2 www.google.com >/dev/null ; then
+        FILENAME="${@:?Usage: $0 give me some words to speech}"
+        FILENAME=`awk '{print tolower($0)}' <<< "$FILENAME"`
+        url="http://translate.google.com/translate_tts?ie=UTF-8&tl=en&q="
+        wget -q -U Mozilla -O "${FILENAME// /_}.mp3" "${url}${FILENAME// /+}+' '"
+        [ -f "${FILENAME// /_}.mp3" -a ! -s "${FILENAME// /_}.mp3" ] && { rm -f "${FILENAME// /_}.mp3" ; echo 'error!'; }
+        command -v mpg123 > /dev/null && mpg123 -q "${FILENAME// /_}.mp3"
+        echo "[sound:${FILENAME// /_}.mp3]" | xclip -selection c
+fi
