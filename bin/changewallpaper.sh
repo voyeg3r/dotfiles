@@ -8,7 +8,7 @@
 # Tip: Don't forget create one blank line at bottom in crontab file
 
 # Wallpaper's directory.
-dir="${HOME}/Pictures/wallpapers/"
+dir="${HOME}/docs/img/wallpapers"
 
 # export DBUS_SESSION_BUS_ADDRESS environment variable
 PID=$(pgrep gnome-session)

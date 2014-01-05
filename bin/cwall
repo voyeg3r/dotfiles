@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Seg 30/Dez/2013 hs 15:07
-#      LAST CHANGE: 2014 Jan 04 01:08:42
+#      LAST CHANGE: 2014 Jan 05 08:33:13
 # THIS SCRIPT AIMS: change wallpaper in gnome-shell
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -27,7 +27,7 @@ Comment=change wallpaper periodicaly
 EOF
 fi
 
-WP_DIR=/home/sergio/Pictures/wallpapers
+WP_DIR=/home/sergio/docs/img/wallpapers
 
 while [ 1 ]
   do
