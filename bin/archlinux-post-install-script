@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 05 15:33:00
+#      LAST CHANGE: 2014 Jan 07 15:47:07
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -23,6 +23,8 @@
 
 # Atualizar o sistema
 pacman -Syu
+
+sudo pacman -S base-devel
 
 cowerinstall () {
 	# another package manager "cower"
@@ -70,12 +72,18 @@ installpm () {
 } && installpm
 
 admintools () {
-	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo git
+	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo git gksu gksudo
 	pacman -Syu openssh dnsmasq python-setuptools gvim
 	# davfs2 in order to access webdav services
 	# dav://webdav.4shared.com
 	pacman -U https://www.archlinux.org/packages/extra/i686/davfs2/download/
 } && admintools
+
+gdiskdump () {
+		wget -c https://aur.archlinux.org/packages/gd/gdiskdump/gdiskdump.tar.gz
+		tar zxvf gdiskdump.tar.gz && cd gdiskdump
+		makepkg -si
+} && gdiskdump
 
 configzsh () {
 	# video explanation: http://www.youtube.com/watch?v=1S3MUVIAieE
@@ -102,6 +110,13 @@ graphictools () {
 	sudo yaourt -S --noconfirm gloobus-sushi-bzr
     sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
 } && graphictools
+
+googletalkplugin () {
+		# https://aur.archlinux.org/packages/google-talkplugin/
+		wget -c https://aur.archlinux.org/packages/go/google-talkplugin/google-talkplugin.tar.gz
+		tar zxvf google-talkplugin.tar.gz && cd googletalkplugin
+		makepkg -si
+} && googletalkplugin
 
 multimedia () {
 	# corebird is a twitter client
