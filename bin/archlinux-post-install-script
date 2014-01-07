@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 07 15:47:07
+#      LAST CHANGE: 2014 Jan 07 15:48:49
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -114,7 +114,7 @@ graphictools () {
 googletalkplugin () {
 		# https://aur.archlinux.org/packages/google-talkplugin/
 		wget -c https://aur.archlinux.org/packages/go/google-talkplugin/google-talkplugin.tar.gz
-		tar zxvf google-talkplugin.tar.gz && cd googletalkplugin
+		tar zxvf google-talkplugin.tar.gz && cd google-talkplugin
 		makepkg -si
 } && googletalkplugin
 
