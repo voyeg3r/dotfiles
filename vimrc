@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2014 Jan 07 12:16:44
+" Last Change: 2014 Jan 07 12:18:32
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -36,7 +36,6 @@ call pathogen#helptags()
 
 " to use multiple cursors press ctrl-n in normal mode
 
-"let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts=0
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
