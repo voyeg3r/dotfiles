@@ -17,7 +17,7 @@ cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 
 setopt autopushd
 setopt AUTO_CD
-setopt CORRECT_ALL
+#setopt CORRECT_ALL
 setopt EXTENDED_GLOB
 setopt NO_HIST_BEEP
 setopt SHARE_HISTORY
@@ -27,6 +27,7 @@ setopt INC_APPEND_HISTORY
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
