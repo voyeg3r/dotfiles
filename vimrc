@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2014 Jan 04 11:26:02
+" Last Change: 2014 Jan 07 12:04:35
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -148,7 +148,7 @@ colorscheme solarized
 
 if ! has("gui_running")
     set t_Co=256
-    colo tango-morning
+    colo iceberg
 endif
 
 " turn off the toolbar and menubar
@@ -529,8 +529,8 @@ function! <SID>SwitchColorSchemes()
 		  elseif g:colors_name == 'solarized'
 				colorscheme github
 		  elseif g:colors_name == 'github'
-				colorscheme tango-morning
-		  elseif g:colors_name == 'tango-morning'
+				colorscheme iceberg
+		  elseif g:colors_name == 'iceberg'
 				colorscheme guepardo
 		  elseif g:colors_name == 'guepardo'
 				colorscheme whyspoignant
