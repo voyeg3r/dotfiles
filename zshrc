@@ -67,7 +67,7 @@ setopt HIST_IGNORE_SPACE
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github bundle python sudo themes extract archlinux colorize command-not-found common-aliases cp)
+plugins=(git github bundle python sudo extract archlinux colorize command-not-found common-aliases cp history-substring-search)
 
 ###################### fix cdpath shown subdirs #######################################
 # source: http://superuser.com/questions/265547/zsh-cdpath-and-autocompletion#286713
