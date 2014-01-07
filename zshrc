@@ -15,7 +15,7 @@ cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 # 		source /usr/share/doc/pkgfile/command-not-found.zsh
 # fi
 
-
+setopt autopushd
 setopt AUTO_CD
 setopt CORRECT_ALL
 setopt EXTENDED_GLOB
@@ -93,6 +93,9 @@ zstyle ':completion:*:kill:*'   force-list always
 # file multiple times. This fixes it. Also good for cp, et cetera..
 zstyle ':completion:*:rm:*' ignore-line yes
 zstyle ':completion:*:cp:*' ignore-line yes
+
+# cd will never select the parent directory (e.g.: cd ../<TAB>):
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
 ######################################################################################
 
 ##### functions
@@ -128,4 +131,26 @@ alias -s txt=vim
 alias -s text=vim
 alias gril='grep -irl'
 alias -g C='| wc -l'
+alias -g T='| tail'
+alias -g H='| head'
+alias -g G='| grep -i'
+
+############ Automatically Expanding zsh Global Aliases - Simplified
+# http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
+globalias() {
+   if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+     zle _expand_alias
+     zle expand-word
+   fi
+   zle self-insert
+}
+
+zle -N globalias
+
+bindkey " " globalias
+bindkey "^ " magic-space           # control-space to bypass completion
+bindkey -M isearch " " magic-space # normal space during searches
+############################################################################
+
+# disalbe rendering fonts in firefox to free memory
 export MOZ_DISABLE_PANGO='1'
