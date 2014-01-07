@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2014 Jan 07 12:04:35
+" Last Change: 2014 Jan 07 12:16:44
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -9,15 +9,15 @@
 " Download: http://bitbucket.org/sergio/vimfiles/src/tip/vimrc
 " Licence: Licença: Este arquivo é de domínio público
 " Garantia: O autor não se responsabiliza por eventuais danos
-"           causados pelo uso deste arquivo.
+"						causados pelo uso deste arquivo.
 
-"                  ( O O )
-"   +===========oOO==(_)==OOo==============+
-"   |                                      |
-"   |     °v°   Sergio Luiz Araujo Silva   |
-"   |    /(_)\  Linux User #423493         |
-"   |     ^ ^   voyeg3r   gmail.com       |
-"   +======================================+
+"									 ( O O )
+"		+===========oOO==(_)==OOo==============+
+"		|																			 |
+"		|			°v°		Sergio Luiz Araujo Silva	 |
+"		|		 /(_)\	Linux User #423493				 |
+"		|			^ ^		voyeg3r   gmail.com			 |
+"		+======================================+
 "
 " Referencias: http://stevelosh.com/blog/2010/09/coming-home-to-vim
 " http://bitbucket.org/sjl/dotfiles/src/tip/vim/.vimrc
@@ -45,13 +45,13 @@ let g:airline_right_sep = '◀'
 " http://bling.github.io/blog/2013/06/02/unite-dot-vim-the-plugin-you-didnt-know-you-need/
 let g:unite_source_history_yank_enable = 1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-"nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+"nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files	 -start-insert file_rec/async:!<cr>
 nnoremap <leader>t :<C-u>Unite -start-insert file_rec<CR>
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
-nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files		-start-insert file<cr>
+nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru			-start-insert file_mru<cr>
 nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank		history/yank<cr>
+nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer	buffer<cr>
 
 " map to paste from clipboard with Ctrl-Alt-p
 nmap <C-M-P> "+p
@@ -60,11 +60,11 @@ imap <C-M-P> <esc>"+pA
 " Custom mappings for the unite buffer
 autocmd FileType unite call s:unite_settings()
 function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+	" Play nice with supertab
+	let b:SuperTabDisabled=1
+	" Enable navigation with control-j and control-k in insert mode
+	imap <buffer> <C-j>		<Plug>(unite_select_next_line)
+	imap <buffer> <C-k>		<Plug>(unite_select_previous_line)
 endfunction
 
 " auto reload vimrc when editing it
@@ -147,8 +147,8 @@ let g:solarized_contrast = "high"
 colorscheme solarized
 
 if ! has("gui_running")
-    set t_Co=256
-    colo iceberg
+		set t_Co=256
+		colo iceberg
 endif
 
 " turn off the toolbar and menubar
@@ -193,13 +193,13 @@ match Problem /^\s\*\t\+\s\*/
 
 " this function gets last 20 cmds to new buffer
 fun! s:RedirHistoryCommands()
-    set paste
-    redir @r
-    history : -20,
-    redir End
-    new
-    put r
-    set nopaste
+		set paste
+		redir @r
+		history : -20,
+		redir End
+		new
+		put r
+		set nopaste
 endfun
 command! -nargs=0 GetHistory call s:RedirHistoryCommands()
 " q:22kyG ctrl-w-q p
@@ -208,11 +208,11 @@ command! -nargs=0 GetHistory call s:RedirHistoryCommands()
 " executa uma substituição armazena antes o ultimo
 " registro de buscas em 'old_query'
 fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    :%s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
+		let save_cursor = getpos(".")
+		let old_query = getreg('/')
+		:%s/\s\+$//e
+		call setpos('.', save_cursor)
+		call setreg('/', old_query)
 endfun
 nmap <silent> <leader>c :keepjumps call CleanExtraSpaces()<cr>
 autocmd BufWritePre * :keepjumps call CleanExtraSpaces()
@@ -221,14 +221,14 @@ autocmd BufWritePre * :keepjumps call CleanExtraSpaces()
 " http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
 " video from vimcasts.org: http://vimcasts.org/episodes/tidying-whitespace
 function! Preserve(command)
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business
-  execute a:command
-  " Restore previous search history and cursor position
-  let @/=_s
-  call cursor(l, c)
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	" Do the business
+	execute a:command
+	" Restore previous search history and cursor position
+	let @/=_s
+	call cursor(l, c)
 endfunction
 
 fun! Keeponlymp3()
@@ -237,16 +237,16 @@ fun! Keeponlymp3()
 	:g!/\.mp3/d
 endfun
 
-" Para inserir o simbolo  use ^v ^M  ou ^v Enter
+" Para inserir o simbolo	use ^v ^M  ou ^v Enter
 " dos2unix ^M
 fun! Dos2unixFunction()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-	" Strip trailing ^Ms, quietly.
-	%s/\%x0d$//e
-    let @/=_s
-    call cursor(l, c)
+		let _s=@/
+		let l = line(".")
+		let c = col(".")
+		" Strip trailing ^Ms, quietly.
+		%s/\%x0d$//e
+		let @/=_s
+		call cursor(l, c)
 endfun
 com! Dos2Unix keepjumps call Dos2unixFunction()
 
@@ -255,12 +255,12 @@ com! Dos2Unix keepjumps call Dos2unixFunction()
 "nno <leader>d :g/^\(.*\)\ze\n\%(.*\n\)*\1$/d<cr>
 "remover linhas em branco consecutivas
 fun! DelBlank()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    :g/^\n\{2,}/d
-    let @/=_s
-    call cursor(l, c)
+		let _s=@/
+		let l = line(".")
+		let c = col(".")
+		:g/^\n\{2,}/d
+		let @/=_s
+		call cursor(l, c)
 endfun
 map <special> <leader>d :keepjumps call DelBlank()<cr>
 
@@ -275,23 +275,23 @@ syntax keyword WordError teh
 " ou seja não insere o cabeçalho
 " usr_41.txt
 fun! InsertChangeLog()
-    let l:flag=0
-    for i in range(1,5)
-        if getline(i) !~ '.*Last Change.*'
-            let l:flag = l:flag + 1
-        endif
-    endfor
-    if l:flag >= 5
-        normal(1G)
-        call append(0, "Arquivo: <+Description+>")
-        call append(1, "Criado: " . strftime("%a %d/%b/%Y hs %H:%M"))
-        call append(2, "Last Change: " . strftime("%a %d/%b/%Y hs %H:%M"))
-        call append(3, "autor: <+digite seu nome+>")
-        call append(4, "site: <+digite o endereço de seu site+>")
-        call append(5, "twitter: <+your twitter here+>")
-        call append(6, "email: <+seu email+>")
-        normal gg
-    endif
+		let l:flag=0
+		for i in range(1,5)
+				if getline(i) !~ '.*Last Change.*'
+						let l:flag = l:flag + 1
+				endif
+		endfor
+		if l:flag >= 5
+				normal(1G)
+				call append(0, "Arquivo: <+Description+>")
+				call append(1, "Criado: " . strftime("%a %d/%b/%Y hs %H:%M"))
+				call append(2, "Last Change: " . strftime("%a %d/%b/%Y hs %H:%M"))
+				call append(3, "autor: <+digite seu nome+>")
+				call append(4, "site: <+digite o endereço de seu site+>")
+				call append(5, "twitter: <+your twitter here+>")
+				call append(6, "email: <+seu email+>")
+				normal gg
+		endif
 endfun
 " map <special> <F4> <esc>:call InsertChangeLog()<cr>
 " mapeamento para inserir códigos especiais em páginas do wikispaces
@@ -304,16 +304,16 @@ xmap <F4> d<F4><esc>p`[v`]vjdd?^[[code<enter>f"a
 " update changefile log
 " http://tech.groups.yahoo.com/group/vim/message/51005
 fun! LastChange()
-    if &modified
-        let _s=@/
-        let l = line(".")
-        let c = col(".")
-        if line("$") >= 5
-            1,5s/\c\s*Last Change:\s*\zs.*/\="" . strftime("%Y %b %d %X")/ge
-        endif
-        let @/=_s
-        call cursor(l, c)
-    endif
+		if &modified
+				let _s=@/
+				let l = line(".")
+				let c = col(".")
+				if line("$") >= 5
+						1,5s/\c\s*Last Change:\s*\zs.*/\="" . strftime("%Y %b %d %X")/ge
+				endif
+				let @/=_s
+				call cursor(l, c)
+		endif
 endfun
 autocmd BufWritePre * keepjumps call LastChange()
 
@@ -328,15 +328,15 @@ let g:BASH_Company = ''
 "  <leader>j jumps to the next marker
 " iabbr <buffer> for for <+i+> in <+intervalo+>:<cr><tab><+i+>
 function! LoadFileTemplate()
-    "silent! 0r ~/.vim/templates/%:e.tmpl
-    syn match vimTemplateMarker "<+.\++>" containedin=ALL
-    hi vimTemplateMarker guifg=#67a42c guibg=#112300 gui=bold
+		"silent! 0r ~/.vim/templates/%:e.tmpl
+		syn match vimTemplateMarker "<+.\++>" containedin=ALL
+		hi vimTemplateMarker guifg=#67a42c guibg=#112300 gui=bold
 endfunction
 function! JumpToNextPlaceholder()
-    let old_query = getreg('/')
-    echo search("<+.\\++>")
-    exec "norm! c/+>/e\<CR>"
-    call setreg('/', old_query)
+		let old_query = getreg('/')
+		echo search("<+.\\++>")
+		exec "norm! c/+>/e\<CR>"
+		call setreg('/', old_query)
 endfunction
 autocmd BufNewFile * :call LoadFileTemplate()
 nnoremap <special> <leader>j :keepjumps call JumpToNextPlaceholder()<CR>a
@@ -352,7 +352,7 @@ let g:vimwiki_list = [{'path': '~/.vim/wiki/', 'index': 'main'}]
 " Buble single lines - mover linhas
 " http://vimcasts.org/episodes/bubbling-text/
 nmap <special> <c-up> ddkP
-nmap  <special> <c-down> ddp
+nmap	<special> <c-down> ddp
 "buble multiple lines
 xmap <c-up> xkP`[V`]
 xmap <c-down> xp`[V`]
@@ -365,21 +365,21 @@ xmap <c-c> "+y
 " Show syntax highlighting groups for word under cursor
 nmap <special> <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+	if !exists("*synstack")
+		return
+	endif
+	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
 " para mostrar cores de valores hexadecimais
 if exists('*HexHighlight()')
-  nmap <leader>h :call HexHighlight()<Return>
+	nmap <leader>h :call HexHighlight()<Return>
 endif
 
 set nocompatible
 set modeline
 set modelines=5
-set tabstop=4
+set tabstop=2
 set shiftwidth=4
 set shiftround
 set copyindent
@@ -416,8 +416,8 @@ set showmatch
 set hlsearch
 set wrap
 set linebreak
-set nolist             " list disables linebreak
-set autoread           " recarrega arquivos alterados fora do vim
+set nolist						 " list disables linebreak
+set autoread					 " recarrega arquivos alterados fora do vim
 set textwidth=70
 set formatoptions+=l
 "set formatprg=par\ -w70j
@@ -425,16 +425,16 @@ set formatoptions+=l
 set listchars=tab:▸\ ,eol:¬
 set matchpairs+=<:>
 
-set wildignore+=.hg,.git,.svn                    " Version control
-set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.jpeg,*.mp3,*.mp4               " binary images
-set wildignore+=*.luac                           " Lua byte code
+set wildignore+=.hg,.git,.svn										 " Version control
+set wildignore+=*.aux,*.out,*.toc								 " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg	 " binary images
+set wildignore+=*.jpeg,*.mp3,*.mp4							 " binary images
+set wildignore+=*.luac													 " Lua byte code
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-set wildignore+=*.pyc                            " Python byte code
-set wildignore+=*.spl                            " compiled spelling word lists
-set wildignore+=*.sw?                            " Vim swap files
-set wildignore+=*.DS_Store?                      " OSX bullshit
+set wildignore+=*.pyc														 " Python byte code
+set wildignore+=*.spl														 " compiled spelling word lists
+set wildignore+=*.sw?														 " Vim swap files
+set wildignore+=*.DS_Store?											 " OSX bullshit
 
 map <leader>l:set list! list?<cr>
 nno <S-F11> :set hls! hls?<cr>
@@ -465,7 +465,7 @@ function! MakePattern(text)
 	let pat = escape(a:text, '\')
 	let pat = substitute(pat, '\_s\+$', '\\s\\*', '')
 	let pat = substitute(pat, '^\_s\+', '\\s\\*', '')
-	let pat = substitute(pat, '\_s\+',  '\\_s\\+', 'g')
+	let pat = substitute(pat, '\_s\+',	'\\_s\\+', 'g')
 	return '\\V' . escape(pat, '\"')
 endfunction
 vnoremap <silent> <F8> :<C-U>let @/="<C-R>=MakePattern(@*)<CR>"<CR>:set hls<CR>
@@ -494,8 +494,8 @@ autocmd! BufWritePost .vimrc source %
 
 nnoremap <leader>w :set wrap! wrap?<cr>
 
-au! VimEnter *  match ErrorMsg /^\t\+/
-au! VimEnter *  match ErrorMsg / $/
+au! VimEnter *	match ErrorMsg /^\t\+/
+au! VimEnter *	match ErrorMsg / $/
 
 " calculadora científica usando python
 command! -nargs=+ Calc :py print <args>
@@ -509,70 +509,70 @@ augroup end
 
 " fix to solarized colorscheme
 if !has('gui_running')
-    " Compatibility for Terminal
-    let g:solarized_termtrans=1
+		" Compatibility for Terminal
+		let g:solarized_termtrans=1
 
-    " Make Solarized use 16 colors for Terminal support
-    let g:solarized_termcolors=16
+		" Make Solarized use 16 colors for Terminal support
+		let g:solarized_termcolors=16
 endif
 
 function! <SID>SwitchColorSchemes()
 	 if exists("g:colors_name")
-		  if g:colors_name == 'google'
+			if g:colors_name == 'google'
 				colorscheme two2tango
-		  elseif g:colors_name == 'two2tango'
+			elseif g:colors_name == 'two2tango'
 				colorscheme darktango
-		  elseif g:colors_name == 'darktango'
+			elseif g:colors_name == 'darktango'
 				colorscheme colorful
-		  elseif g:colors_name == 'colorful'
+			elseif g:colors_name == 'colorful'
 				colorscheme solarized
-		  elseif g:colors_name == 'solarized'
+			elseif g:colors_name == 'solarized'
 				colorscheme github
-		  elseif g:colors_name == 'github'
+			elseif g:colors_name == 'github'
 				colorscheme iceberg
-		  elseif g:colors_name == 'iceberg'
+			elseif g:colors_name == 'iceberg'
 				colorscheme guepardo
-		  elseif g:colors_name == 'guepardo'
+			elseif g:colors_name == 'guepardo'
 				colorscheme whyspoignant
-		  elseif g:colors_name == 'whyspoignant'
+			elseif g:colors_name == 'whyspoignant'
 				colorscheme herokudoc
-		  elseif g:colors_name == 'herokudoc'
+			elseif g:colors_name == 'herokudoc'
 				colorscheme tango
-		  elseif g:colors_name == 'tango'
+			elseif g:colors_name == 'tango'
 				colorscheme softblue
-		  elseif g:colors_name == 'softblue'
+			elseif g:colors_name == 'softblue'
 				colorscheme vividchalk
-		  elseif g:colors_name == 'vividchalk'
+			elseif g:colors_name == 'vividchalk'
 				colorscheme neverness
-		  elseif g:colors_name == 'neverness'
+			elseif g:colors_name == 'neverness'
 				colorscheme vydark
-		  elseif g:colors_name == 'vydark'
+			elseif g:colors_name == 'vydark'
 				colorscheme underwater-mod
-		  elseif g:colors_name == 'underwater-mod'
+			elseif g:colors_name == 'underwater-mod'
 				colorscheme maroloccio
-		  elseif g:colors_name == 'maroloccio'
+			elseif g:colors_name == 'maroloccio'
 				colorscheme wombat
-		  elseif g:colors_name == 'wombat'
+			elseif g:colors_name == 'wombat'
 				colorscheme chrysoprase
-		  elseif g:colors_name == 'chrysoprase'
+			elseif g:colors_name == 'chrysoprase'
 				colorscheme quagmire
-		  elseif g:colors_name == 'quagmire'
+			elseif g:colors_name == 'quagmire'
 				colorscheme digerati
-		  elseif g:colors_name == 'digerati'
+			elseif g:colors_name == 'digerati'
 				colorscheme vitamins
-		  elseif g:colors_name == 'vitamins'
+			elseif g:colors_name == 'vitamins'
 				colorscheme rdark
-		  elseif g:colors_name == 'rdark'
+			elseif g:colors_name == 'rdark'
 				colorscheme native
-		  elseif g:colors_name == 'native'
+			elseif g:colors_name == 'native'
 				colorscheme vibrantink
-		  elseif g:colors_name == 'vibrantink'
+			elseif g:colors_name == 'vibrantink'
 				colorscheme Fluidvision
-		  elseif g:colors_name == 'Fluidvision'
+			elseif g:colors_name == 'Fluidvision'
 				colorscheme ir_black
-		  elseif g:colors_name == 'ir_black'
+			elseif g:colors_name == 'ir_black'
 				colorscheme google
-		  endif
+			endif
 	 endif
 endfunction
 "map <silent> <F6> :call <SID>SwitchColorSchemes()<CR> <BAR> :set t_Co=256 <BAR> :echo g:colors_name<cr>
@@ -582,29 +582,29 @@ map <special> <S-F6> :ec g:colors_name<cr>
 " statusline
 " cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " format markers:
-"   %< truncation point
-"   %n buffer number
-"   %f relative path to file
-"   %m modified flag [+] (modified), [-] (unmodifiable) or nothing
-"   %r readonly flag [RO]
-"   %y filetype [ruby]
-"   %= split point for left and right justification
-"   %-35. width specification
-"   %l current line number
-"   %L number of lines in buffer
-"   %c current column number
-"   %V current virtual column number (-n), if different from %c
-"   %P percentage through buffer
-"   %) end of width specification
+"		%< truncation point
+"		%n buffer number
+"		%f relative path to file
+"		%m modified flag [+] (modified), [-] (unmodifiable) or nothing
+"		%r readonly flag [RO]
+"		%y filetype [ruby]
+"		%= split point for left and right justification
+"		%-35. width specification
+"		%l current line number
+"		%L number of lines in buffer
+"		%c current column number
+"		%V current virtual column number (-n), if different from %c
+"		%P percentage through buffer
+"		%) end of width specification
 " mostra o código ascii do caractere sob o cursor e outras coisas mais
 set statusline=%F%m%r%h%w\
-     \ ft:%{&ft}\ \
-     \ff:%{&ff}\ \
-     \%{strftime(\"%a\ %d/%m/%Y\ \
-     \%H:%M:%S\",getftime(expand(\"%:p\")))}%=\ \
-     \buf:%n\ \
-     \L:%04l\ C:%04v\ \
-     \T:%04L\ HEX:%03.3B\ ASCII:%03.3b\ %P
+		 \ ft:%{&ft}\ \
+		 \ff:%{&ff}\ \
+		 \%{strftime(\"%a\ %d/%m/%Y\ \
+		 \%H:%M:%S\",getftime(expand(\"%:p\")))}%=\ \
+		 \buf:%n\ \
+		 \L:%04l\ C:%04v\ \
+		 \T:%04L\ HEX:%03.3B\ ASCII:%03.3b\ %P
 set laststatus=2 " Sempre exibe a barra de status
 
 nmap n nzz
@@ -615,20 +615,20 @@ nmap g# g#zz
 
 " autocomandos para python
 augroup python
-    au FileType python set keywordprg=pydoc
-    au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-    au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
-    au! BufWritePre *.py,*.js :call <SID>CleanExtraSpaces()
-    au! BufNewFile *.py 0r ~/.vim/skel/template.py
+		au FileType python set keywordprg=pydoc
+		au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+		au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
+		au! BufWritePre *.py,*.js :call <SID>CleanExtraSpaces()
+		au! BufNewFile *.py 0r ~/.vim/skel/template.py
 	au! BufWritePost *.py :silent !chmod a+x <afile>
-    autocmd FileType python set textwidth=79
-    autocmd FileType python filetype indent on
-    let python_highlight_all=1
-    let python_highlight_builtins=0
-    let python_highlight_builtins=1
-    let python_highlight_exceptions=1
-    let python_highlight_numbers=1
-    let python_highlight_space_errors=1
+		autocmd FileType python set textwidth=79
+		autocmd FileType python filetype indent on
+		let python_highlight_all=1
+		let python_highlight_builtins=0
+		let python_highlight_builtins=1
+		let python_highlight_exceptions=1
+		let python_highlight_numbers=1
+		let python_highlight_space_errors=1
 augroup end
 
 "	CTRL-X CTRL-F		file names
@@ -639,7 +639,7 @@ augroup end
 "	CTRL-X CTRL-T		words from a thesaurus
 "	CTRL-X CTRL-]		tags
 "	CTRL-X CTRL-V		Vim command line
-"	CTRL-X CTRL-O       códigos
+"	CTRL-X CTRL-O				códigos
 
 au FileType * exe('setl dict+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
 
@@ -659,36 +659,36 @@ EOF
 augroup html
 " au! <--> Remove all html autocommands
 au!
-  au BufNewFile,BufRead *.html,*.shtml,*.htm set ft=html
-  "au BufNewFile,BufRead,BufEnter  *.html,*.shtml,*.htm so ~/.vim/skel/skel.html
-  au BufNewFile *.html 0r ~/.vim/skel/skel.html
-  "au BufNewFile *.html,*.shtml,*.htm /body/+
-  au BufNewFile,BufRead *.html,*.shtml,*.htm set noautoindent
-  au BufNewFile,BufRead *.html,*.shtml,*.htm set nolist
-  au BufNewFile,BufRead *.html,*.shtml,*.htm call LastChange()
-  " needed one line with 'Created:' in firsts 5 lines
-  au Bufnewfile,BufRead *.html,*.shtml,*.htm 1,5s/\s*Created:\s*\zs.*/\="" . strftime("%Y %b %d %X")/ge
+	au BufNewFile,BufRead *.html,*.shtml,*.htm set ft=html
+	"au BufNewFile,BufRead,BufEnter  *.html,*.shtml,*.htm so ~/.vim/skel/skel.html
+	au BufNewFile *.html 0r ~/.vim/skel/skel.html
+	"au BufNewFile *.html,*.shtml,*.htm /body/+
+	au BufNewFile,BufRead *.html,*.shtml,*.htm set noautoindent
+	au BufNewFile,BufRead *.html,*.shtml,*.htm set nolist
+	au BufNewFile,BufRead *.html,*.shtml,*.htm call LastChange()
+	" needed one line with 'Created:' in firsts 5 lines
+	au Bufnewfile,BufRead *.html,*.shtml,*.htm 1,5s/\s*Created:\s*\zs.*/\="" . strftime("%Y %b %d %X")/ge
 augroup end
 
 augroup css
-    au Bufnewfile,BufRead *.css set ft=css
-    au BufNewFile *.css 0r ~/.vim/skel/template.css
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+		au Bufnewfile,BufRead *.css set ft=css
+		au BufNewFile *.css 0r ~/.vim/skel/template.css
+		autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 augroup end
 
 augroup tex
-    au Bufnewfile,BufRead *.tex set ft=tex
-    au BufNewFile *.tex 0r ~/.vim/skel/template.tex
+		au Bufnewfile,BufRead *.tex set ft=tex
+		au BufNewFile *.tex 0r ~/.vim/skel/template.tex
 	vmap e <tab>em<tab>
 	vmap ' <tab>'<tab>
-    iab latex \LaTeX\
+		iab latex \LaTeX\
 augroup end
 
 if has("autocmd") && exists("+omnifunc")
-  autocmd Filetype *
-    \   if &omnifunc == "" |
-    \   setlocal omnifunc=syntaxcomplete#Complete |
-    \ endif
+	autocmd Filetype *
+		\		if &omnifunc == "" |
+		\		setlocal omnifunc=syntaxcomplete#Complete |
+		\ endif
 endif
 
 " um destaque especial para MinhasNotas
@@ -708,16 +708,16 @@ nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>
 nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>
 
 if exists('+autochdir')
-  set autochdir
+	set autochdir
 else
-  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+	autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 endif
 "autocmd BufEnter * lcd %:p:h
 
 autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
+	\ if line("'\"") > 0 && line("'\"") <= line("$") |
+	\		exe "normal g`\"" |
+	\ endif
 
 iab idate <c-r>=strftime("%A %d/%m/%Y")<cr>
 iab ihora <c-r>=strftime("%H:%M:%S")<cr>
