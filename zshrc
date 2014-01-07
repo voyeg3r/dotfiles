@@ -89,6 +89,10 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*'   force-list always
+# With commands like rm, it's annoying if you keep getting offered the same
+# file multiple times. This fixes it. Also good for cp, et cetera..
+zstyle ':completion:*:rm:*' ignore-line yes
+zstyle ':completion:*:cp:*' ignore-line yes
 ######################################################################################
 
 ##### functions
