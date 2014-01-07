@@ -123,3 +123,4 @@ alias lvim="vim -c \"normal '0\""
 alias -s txt=vim
 alias -s text=vim
 alias gril='grep -irl'
+export MOZ_DISABLE_PANGO='1'
