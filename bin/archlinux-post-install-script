@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 07 15:48:49
+#      LAST CHANGE: 2014 Jan 07 16:30:58
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -23,7 +23,6 @@
 
 # Atualizar o sistema
 pacman -Syu
-
 sudo pacman -S base-devel
 
 cowerinstall () {

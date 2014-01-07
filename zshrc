@@ -11,6 +11,11 @@ ZSH_THEME="bira"
 setopt auto_cd
 cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 
+# if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
+# 		source /usr/share/doc/pkgfile/command-not-found.zsh
+# fi
+
+
 setopt AUTO_CD
 setopt CORRECT_ALL
 setopt EXTENDED_GLOB
@@ -75,6 +80,15 @@ zstyle ':completion:*:descriptions' format %S%d%s        # invert/standout
 zstyle ':completion:*:descriptions' format %U%d%u        # underline
 zstyle ':completion:*:descriptions' format %F{green}%d%f # green foreground
 zstyle ':completion:*:descriptions' format %K{blue}%d%k  # blue background
+
+# Autocompletion options
+# http://hawkradius.wordpress.com/2013/09/28/fun-with-linux-starting-out/
+setopt completealiases
+zstyle ':completion:*' menu select
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*'   force-list always
 ######################################################################################
 
 ##### functions
