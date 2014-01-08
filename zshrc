@@ -1,7 +1,25 @@
+# Arquivo: ~/.zshrc
+# Criado: Qua 08/Jan/2014 hs 19:24
+# Last Change: 2014 Jan 08 19:42:52
+# autor: Sérgio Luiz Araújo Silva
+# site: http://vivaotux.blogspot.com
+# twitter: http://www.twitter.com/voyeg3r
+# email: <voyeg3r at gmail.com>
+#
+#                ( O O )
+# +===========oOO==(_)==OOo==============+
+# |                                      |
+# |     °v° Sergio Luiz Araujo Silva     |
+# |    /(_)\ Linux User #423493          |
+# |     ^ ^ voyeg3r  gmail.com          |
+# +======================================+
+#
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/oh-my-zsh
 
 [[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
+
+INPUTRC=~/.inputrc
 
 # Set name of the theme to load.j
 # Look in ~/.oh-my-zsh/themes/
@@ -138,9 +156,12 @@ alias -s txt=vim
 alias -s text=vim
 alias gril='grep -irl'
 alias -g C='| wc -l'
+alias -g L='| less'
 alias -g T='| tail'
 alias -g H='| head'
 alias -g G='| grep -i'
+alias -g V='| gvim -'
+alias -g X='| xargs'
 
 ############ Automatically Expanding zsh Global Aliases - Simplified
 # http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
@@ -152,6 +173,13 @@ globalias() {
    zle self-insert
 }
 
+mkcd() { mkdir -p "$@" && cd $_; }
+
+function gs() { git commit -am "$1" && git push ;}
+
+
+insert_sudo () { zle beginning-of-line; zle -U "sudo " }
+zle -N insert-sudo insert_sudo
 zle -N globalias
 
 bindkey " " globalias
