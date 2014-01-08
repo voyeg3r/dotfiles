@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 08 19:42:52
+# Last Change: 2014 Jan 08 20:03:02
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -18,6 +18,12 @@
 ZSH=$HOME/.dotfiles/oh-my-zsh
 
 [[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
+
+# config LaTeX path
+if [[ -d /usr/local/texlive/2013/bin/i386-linux ]] ; then
+        PATH=/usr/local/texlive/2013/bin/i386-linux:$PATH
+        PATH=/usr/local/texlive/2013/texmf-dist/doc/man:$PATH
+fi
 
 INPUTRC=~/.inputrc
 
@@ -150,8 +156,23 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+alias ssh='ssh -C'
+alias scp='scp -r'
+alias less='less -r'
+alias youtube-dl='youtube-dl -t'
 alias path='echo -e ${PATH//:/\n}'
 alias lvim="vim -c \"normal '0\""
+
+# Listen to Air Traffic Control, used to be scripts.
+alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
+alias GRU='mplayer http://rio.radioetvweb.com.br:8298'
+alias POA='mplayer http://rio.radioetvweb.com.br:8282'
+alias CGH='mplayer http://rio.radioetvweb.com.br:8300'
+alias classic='mplayer http://80.237.154.83:8120'
+
+# watch aljazeera
+alias alj='rtmpdump -v -r "rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med" | mplayer -'
+
 alias -s txt=vim
 alias -s text=vim
 alias gril='grep -irl'
@@ -173,9 +194,20 @@ globalias() {
    zle self-insert
 }
 
-mkcd() { mkdir -p "$@" && cd $_; }
 
-function gs() { git commit -am "$1" && git push ;}
+gs() { git commit -am "$1" && git push ;}
+lower() { echo "${@}" | awk '{print tolower($0)}' ;}
+upper() { echo "${@}" | awk '{print toupper($0)}' ;}
+expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; }
+calc(){ echo "scale=2;$@" | bc;}
+ff () { find . -type f -iname '*'"$@"'*' ; }
+mkcd() { mkdir -p "$@" && cd $_; }
+decToBin () { echo "ibase=10; obase=2; $1" | bc; }
+decTohex () { bc <<< "obase=16; $1"; }
+biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
+top10 () { history | awk '{print $2}' | sort | uniq -c | sort -rn | head ; }
+beep () { echo -e -n \\a ; }
+dict() { curl "dict://dict.org/d:${1%%/}";}
 
 
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
@@ -189,3 +221,5 @@ bindkey -M isearch " " magic-space # normal space during searches
 
 # disalbe rendering fonts in firefox to free memory
 export MOZ_DISABLE_PANGO='1'
+# http://ubuntuforums.org/archive/index.php/t-80289.html
+export FLASH_GTK_LIBRARY=libgtk-x11-2.0.so.0
