@@ -3,11 +3,6 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 
 [[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
 
-if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]]; then
-# https://aur.archlinux.org/packages.php?ID=50867
-. /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
-fi
-
 # Set name of the theme to load.j
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
