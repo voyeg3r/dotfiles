@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/oh-my-zsh
 
-[[ -s /home/sergio/.dotfiles/autojump/etc/profile.d/autojump.sh ]] && . /home/sergio/.dotfiles/autojump/etc/profile.d/autojump.sh
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
 # Set name of the theme to load.j
 # Look in ~/.oh-my-zsh/themes/
