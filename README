@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2013 Dez 27 11:40:15
+Last Change: 2014 Jan 08 11:15:36
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voyeg3r
@@ -43,6 +43,16 @@ clonedotfiles () { #function to clone voyeg3r dotfiles
 	cd ~/.vim
 	git init
 	git add .
+
+
+	ln -s ~/.dotfiles/bashrc ~/.bashrc
+	ln -sfvn ~/.dotfiles/vim/vimrc ~/.vimrc
+	ln -sfvn ~/.dotfiles/inputrc ~/.inputrc
+	ln -sfvn ~/.dotfiles/gitconfig ~/.gitconfig
+	ln -sfvn ~/.dotfiles/fonts.conf ~/.fonts.conf
+	ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
+	ln -sfvn ~/.dotfiles/zshrc ~/.zshrc
+	ln -sfvn ~/.dotfiles/vim ~/.vim
 
     if
     cat ~/.dotfiles/.git/config

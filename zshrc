@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.vim/oh-my-zsh
+ZSH=$HOME/.dotfiles/oh-my-zsh
 
 # Set name of the theme to load.j
 # Look in ~/.oh-my-zsh/themes/
