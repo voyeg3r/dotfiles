@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2014 Jan 08 11:15:36
+Last Change: 2014 Jan 08 11:34:39
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voyeg3r
@@ -16,14 +16,6 @@ Para clonar este repositorio faça
 ---------------------------------
 
 clonedotfiles () { #function to clone voyeg3r dotfiles
-
-	ssh-keygen -t rsa -C
-
-	xclip -sel clip < ~/.ssh/id_rsa.pub
-
-	# go to --> https://github.com/settings/ssh
-
-    # try
 	ssh -T git@github.com
 
 	git config --global user.name voyeg3r
@@ -33,30 +25,17 @@ clonedotfiles () { #function to clone voyeg3r dotfiles
 	git config --global credential.helper 'cache --timeout=3600'
 	git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
 
-    command -v git >/dev/null || sudo apt-get install -y git-core
 	git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
-	ln -s ~/.dotfiles ~/.vim
-	rm -f ~/.vimrc && ln -s ~/.dotfiles/vimrc ~/.vimrc
-	rm -f ~/.bashrc && ln -s ~/.dotfiles/bashrc ~/.bashrc
-	[ -f ~/.inputrc ] && rm -f ~/.inputrc ; ln -s ~/.dotfiles/inputrc ~/.inputrc
-	[ ! -d ~/bin ] && ln -s ~/.vim/bin ~/bin
-	cd ~/.vim
-	git init
-	git add .
 
-
-	ln -s ~/.dotfiles/bashrc ~/.bashrc
 	ln -sfvn ~/.dotfiles/vim/vimrc ~/.vimrc
+	ln -sfvn ~/.dotfiles/vim ~/.vim
+	ln -sfvn ~/.dotfiles/bashrc ~/.bashrc
 	ln -sfvn ~/.dotfiles/inputrc ~/.inputrc
 	ln -sfvn ~/.dotfiles/gitconfig ~/.gitconfig
 	ln -sfvn ~/.dotfiles/fonts.conf ~/.fonts.conf
 	ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
 	ln -sfvn ~/.dotfiles/zshrc ~/.zshrc
-	ln -sfvn ~/.dotfiles/vim ~/.vim
-
-    if
-    cat ~/.dotfiles/.git/config
-
+	[ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
 
 } && clonedotfiles
 
@@ -66,13 +45,6 @@ MANUAIS DO GIT
 
 	http://mariomoraesneto.blogspot.com.br/2012/11/git-dicas-basicas-e-praticas.html
 	http://githowto.com/
-
-------------------------
-Configurando o usuário
-------------------------
-
-	git config --global user.name "seu nome"
-	git config --global user.email "seu@email.com"
 
 --------------------
 listar configurações
