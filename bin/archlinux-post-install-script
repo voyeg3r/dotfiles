@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 07 16:30:58
+#      LAST CHANGE: 2014 Jan 08 17:22:01
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -90,6 +90,7 @@ configzsh () {
 	# after install you need to do new login
 	# themes here: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 	pacman -Syu zsh zsh-lovers git
+	yaourt -S zsh-completions
 	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 	cp ~/.zshrc ~/.zshrc.orig
 	cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
