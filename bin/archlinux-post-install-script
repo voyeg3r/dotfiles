@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 08 17:22:01
+#      LAST CHANGE: 2014 Jan 08 17:47:20
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -120,6 +120,8 @@ googletalkplugin () {
 
 multimedia () {
 	# corebird is a twitter client
+	# simplescreenrecorder: https://aur.archlinux.org/packages/simplescreenrecorder/
+	# gnome-shell-mousewell: https://github.com/tobiasquinn/gnome-shell-mousewheel-zoom
 	sudo yaourt -S corebird-git
 	sudo pacman -Syu
 	gnome-{document,music,maps,photos,tweak-tool,extra}
