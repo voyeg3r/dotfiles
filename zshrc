@@ -3,6 +3,11 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 
 [[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
 
+if [[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]]; then
+# https://aur.archlinux.org/packages.php?ID=50867
+. /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
+fi
+
 # Set name of the theme to load.j
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -87,6 +92,9 @@ zstyle ':completion:*:descriptions' format %K{blue}%d%k  # blue background
 # Autocompletion options
 # http://hawkradius.wordpress.com/2013/09/28/fun-with-linux-starting-out/
 setopt completealiases
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # ignore case
+zstyle ':completion:*' menu select=2                        # menu if nb items > 2
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}       # colorz !
 zstyle ':completion:*' menu select
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
@@ -96,6 +104,7 @@ zstyle ':completion:*:kill:*'   force-list always
 # file multiple times. This fixes it. Also good for cp, et cetera..
 zstyle ':completion:*:rm:*' ignore-line yes
 zstyle ':completion:*:cp:*' ignore-line yes
+zstyle ':completion:*:processes' command 'ps -au$USER'
 
 # cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
