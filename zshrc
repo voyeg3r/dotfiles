@@ -109,6 +109,9 @@ cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 path=(~/bin $path)
 
 
+[[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
+
+
 if [[ $ZSH_PROFILE_RC -gt 0 ]] ; then
     zmodload zsh/zprof
 fi
@@ -2819,7 +2822,7 @@ export COLORTERM="yes"
 #a2# Execute \kbd{du -sch}
 alias da='du -sch'
 #a2# Execute \kbd{jobs -l}
-alias j='jobs -l'
+#alias j='jobs -l'
 
 # listing stuff
 #a2# Execute \kbd{ls -lSrah}
