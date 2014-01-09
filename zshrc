@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 09 05:11:33
+# Last Change: 2014 Jan 09 11:42:13
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -194,7 +194,7 @@ globalias() {
    zle self-insert
 }
 
-
+yt () mplayer -fs -quiet $(youtube-dl -g "$1")
 gs() { git commit -am "$1" && git push ;}
 lower() { echo "${@}" | awk '{print tolower($0)}' ;}
 upper() { echo "${@}" | awk '{print toupper($0)}' ;}
