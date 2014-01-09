@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 08 20:31:40
+# Last Change: 2014 Jan 09 05:11:33
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -159,7 +159,7 @@ fi
 alias ssh='ssh -C'
 alias scp='scp -r'
 alias less='less -r'
-alias youtube-dl='youtube-dl -t'
+#alias youtube-dl='youtube-dl -t'
 alias path='echo -e ${PATH//:/\n}'
 alias lvim="vim -c \"normal '0\""
 
