@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 09 11:42:13
+# Last Change: 2014 Jan 09 14:32:19
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -16,6 +16,11 @@
 #
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/oh-my-zsh
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
 
 [[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
 
@@ -41,18 +46,21 @@ cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 # 		source /usr/share/doc/pkgfile/command-not-found.zsh
 # fi
 
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
 setopt autopushd
-setopt AUTO_CD
-#setopt CORRECT_ALL
-setopt EXTENDED_GLOB
-setopt NO_HIST_BEEP
-setopt SHARE_HISTORY
-setopt APPEND_HISTORY
-setopt EXTENDED_HISTORY
-setopt INC_APPEND_HISTORY
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
+setopt auto_cd
+#setopt correct_all
+setopt extended_glob
+setopt no_hist_beep
+setopt share_history
+setopt append_history
+setopt extended_history
+setopt inc_append_history
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
 
 
 # Example aliases
@@ -159,9 +167,11 @@ fi
 alias ssh='ssh -C'
 alias scp='scp -r'
 alias less='less -r'
-#alias youtube-dl='youtube-dl -t'
 alias path='echo -e ${PATH//:/\n}'
 alias lvim="vim -c \"normal '0\""
+#alias scp='noglob scp'
+#alias rsync='noglob rsync'
+#alias youtube-dl='noglob youtube-dl -t'
 
 # Listen to Air Traffic Control, used to be scripts.
 alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
@@ -208,7 +218,6 @@ biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
 top10 () { history | awk '{print $2}' | sort | uniq -c | sort -rn | head ; }
 beep () { echo -e -n \\a ; }
 dict() { curl "dict://dict.org/d:${1%%/}";}
-
 
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo

@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: 2014 Jan 04 12:06:01
+Last Change: 2014 Jan 09 14:38:51
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -16,6 +16,10 @@ email: <voyeg3r at gmail.com>
   echo one two
   r two=three
   one three
+
+= print var in lowcase =
+
+		echo $var:l
 
 =how set up 'command not found'=
 
