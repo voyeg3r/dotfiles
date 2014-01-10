@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: 2014 Jan 09 14:38:51
+Last Change: 2014 Jan 10 15:18:36
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -10,6 +10,13 @@ email: <voyeg3r at gmail.com>
 = changing the shell =
 
 	sudo chsh -s $(which zsh) $(whoami)
+
+= one-liners =
+
+# lowcase filenames - source: http://lorenzod8n.wordpress.com/category/zsh/
+
+		for file in *; do mv $file ${file:l}; done
+		for p in ~/pictures/**/*[A-Z]*; do mv $p ${p:l}; done
 
 =use r to repeat the last command - with substituition =
 
