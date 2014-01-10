@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 09 21:14:28
+# Last Change: 2014 Jan 09 21:37:13
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -13,6 +13,10 @@
 # |    /(_)\ Linux User #423493          |
 # |     ^ ^ voyeg3r  gmail.com          |
 # +======================================+
+#
+# # Reference: https://github.com/plitc/zshrc/blob/master/.zshrc
+#
+#
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/oh-my-zsh
 
@@ -23,6 +27,15 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 ZSH_THEME="bira"
 
 [[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
+
+HISTFILE=~/.zhistory
+HISTSIZE=25000
+SAVEHIST=25000
+HOSTNAME="`hostname`"
+PAGER='less'
+EDITOR='vim'
+
+setopt auto_list  #list choices on an ambiguous completion
 
 
 alias lvim="vim -c \"normal '0\""
@@ -42,6 +55,8 @@ alias path='echo $PATH | tr ":" "\n"'
 # bindkey " " globalias
 # bindkey "^ " magic-space           # control-space to bypass completion
 # bindkey -M isearch " " magic-space # normal space during searches
+#
+autoload -U compinit && compinit
 
 globalias() {
    if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
@@ -83,13 +98,18 @@ alias -g V='| gvim -'
 alias -g X='| xargs'
 
 # Auto-completar para o comando 'kill':
+zstyle ':completion:*' group-name ''
 zstyle ':completion:*:processes' command 'ps x -o pid,command'
+zstyle ':completion:*:processes-names' command 'ps axho command'
+#zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
+zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -A -o pid,user,cmd'
 zstyle ':completion:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
 # Faster! (?)
-zstyle ':completion:*' use-cache on
+#zstyle ':completion:*' use-cache on
+zstyle ':completion:*' use-cache 1
 zstyle ':completion:*' cache-path ~/.zsh_cache
 
 # Example aliases
