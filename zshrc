@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 10 05:58:59
+# Last Change: 2014 Jan 10 18:40:23
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -43,6 +43,8 @@ PAGER='less'
 EDITOR='vim'
 
 setopt auto_list  #list choices on an ambiguous completion
+setopt zle
+setopt completealiases
 
 
 
@@ -160,8 +162,8 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
 gsend() { git commit -am "$1" && git push ;}
-lower() { echo "${@}" | awk '{print tolower($0)}' ;}
-upper() { echo "${@}" | awk '{print toupper($0)}' ;}
+#lower() { echo "${@}" | awk '{print tolower($0)}' ;}
+#upper() { echo "${@}" | awk '{print toupper($0)}' ;}
 expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; }
 calc(){ echo "scale=2;$@" | bc;}
 ff () { find . -type f -iname '*'"$@"'*' ; }
