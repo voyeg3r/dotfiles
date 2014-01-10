@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 10 18:47:39
+# Last Change: 2014 Jan 10 20:08:02
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -42,7 +42,7 @@ HOSTNAME="`hostname`"
 PAGER='less'
 EDITOR='vim'
 
-setopt auto_list  #list choices on an ambiguous completion
+#setopt auto_list  #list choices on an ambiguous completion
 setopt zle
 setopt completealiases
 
@@ -102,12 +102,15 @@ alias -g G='| grep -i'
 alias -g V='| gvim -'
 alias -g X='| xargs'
 
+# autocomplete file
+zstyle :compinstall filename '/home/sergio/.zshrc'
+
 # Auto-completar para o comando 'kill':
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*:processes' command 'ps x -o pid,command'
-zstyle ':completion:*:processes-names' command 'ps axho command'
-#zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
-zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -A -o pid,user,cmd'
+# zstyle ':completion:*' group-name ''
+# zstyle ':completion:*:processes' command 'ps x -o pid,command'
+# zstyle ':completion:*:processes-names' command 'ps axho command'
+# #zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
+#zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -A -o pid,user,cmd'
 zstyle ':completion:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
