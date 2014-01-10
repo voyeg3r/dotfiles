@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 09 19:23:40
+# Last Change: 2014 Jan 09 21:14:28
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -30,6 +30,32 @@ cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 path=(~/bin $path)
 alias path='echo $PATH | tr ":" "\n"'
 
+# # http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
+# globalias() {
+#    if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+#      zle _expand_alias
+#      zle expand-word
+#    fi
+#    zle self-insert
+# }
+#
+# bindkey " " globalias
+# bindkey "^ " magic-space           # control-space to bypass completion
+# bindkey -M isearch " " magic-space # normal space during searches
+
+globalias() {
+   if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+     zle _expand_alias
+   fi
+   zle self-insert
+}
+
+zle -N globalias
+
+bindkey " " globalias
+bindkey "^ " magic-space           # control-space to bypass completion
+bindkey -M isearch " " magic-space # normal space during searches
+
 # aliases
 alias ls='ls --color'
 alias path='echo $PATH | tr ":" "\n"'
@@ -49,7 +75,7 @@ alias -s txt=vim
 alias -s text=vim
 alias gril='grep -irl'
 alias -g C='| wc -l'
-alias -g L='| less'
+alias -g L='| less -r'
 alias -g T='| tail'
 alias -g H='| head'
 alias -g G='| grep -i'
