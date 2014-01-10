@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 09 21:37:13
+# Last Change: 2014 Jan 09 21:51:13
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -20,6 +20,13 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/oh-my-zsh
 
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
+alias lvim="vim -c \"normal '0\""
+cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
+path=(~/bin $path)
+alias path='echo $PATH | tr ":" "\n"'
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -38,10 +45,6 @@ EDITOR='vim'
 setopt auto_list  #list choices on an ambiguous completion
 
 
-alias lvim="vim -c \"normal '0\""
-cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
-path=(~/bin $path)
-alias path='echo $PATH | tr ":" "\n"'
 
 # # http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
 # globalias() {
@@ -171,7 +174,6 @@ beep () { echo -e -n \\a ; }
 dict() { curl "dict://dict.org/d:${1%%/}";}
 
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
