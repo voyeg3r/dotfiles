@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 12 11:11:19
+# Last Change: 2014 Jan 12 12:59:11
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -131,6 +131,7 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 alias v='f -e vim'       # open file with vim
+alias o='a -e xdg-open'  # quick opening files with xdg-open
 
 # autocomplete file
 zstyle :compinstall filename '/home/sergio/.zshrc'
@@ -188,7 +189,7 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git pacman cp sudo themes history-substrin-search command-not-found)
+plugins=(git pacman cp sudo tmux themes history-substrin-search command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
