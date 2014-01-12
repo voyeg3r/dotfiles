@@ -1,6 +1,6 @@
-# Arquivo: ~/.zshrc
+# Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 12 12:59:11
+# Last Change: 2014 Jan 12 14:28:20
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -17,22 +17,25 @@
 # # Reference: https://github.com/plitc/zshrc/blob/master/.zshrc
 #
 #
-# Path to your oh-my-zsh configuration.
+# Path to your oh-my-zsh configuration.# }}}
+
 ZSH=$HOME/.dotfiles/oh-my-zsh
 
-
+# path and cdpath {{{
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
-alias lvim="vim -c \"normal '0\""
 cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 path=(~/bin $path)
-alias path='echo $PATH | tr ":" "\n"'
+# }}}
 
+# theme {{{
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
+# }}}
 
+# fasd or autojump {{{
 #[[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
 # I am using now fasd: https://github.com/clvv/fasd
 
@@ -52,8 +55,9 @@ local _fasd_ret="$(fasd -e 'printf %s' "$@")"
 
 # as an autojump user, i need only this for now
 alias j=' fasd_cd -d'
+# }}}
 
-
+# basic fonfig {{{
 HISTFILE=~/.zhistory
 HISTSIZE=25000
 SAVEHIST=25000
@@ -64,24 +68,10 @@ EDITOR='vim'
 #setopt auto_list  #list choices on an ambiguous completion
 setopt zle
 setopt completealiases
-
-
-
-# # http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
-# globalias() {
-#    if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
-#      zle _expand_alias
-#      zle expand-word
-#    fi
-#    zle self-insert
-# }
-#
-# bindkey " " globalias
-# bindkey "^ " magic-space           # control-space to bypass completion
-# bindkey -M isearch " " magic-space # normal space during searches
-#
 autoload -U compinit && compinit
+# }}}
 
+# magic-space and more {{{
 globalias() {
    if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
      zle _expand_alias
@@ -94,11 +84,12 @@ zle -N globalias
 bindkey " " globalias
 bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
+# }}}
 
-# aliases
+# aliases# {{{
+alias lvim="vim -c \"normal '0\""
 alias ls='ls --color'
 alias path='echo $PATH | tr ":" "\n"'
-alias lvim="vim -c \"normal '0\""
 alias ssh='ssh -C'
 alias scp='scp -r'
 alias less='less -r'
@@ -131,8 +122,10 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 alias v='f -e vim'       # open file with vim
-alias o='a -e xdg-open'  # quick opening files with xdg-open
+alias o='a -e xdg-open'  # quick opening files with xdg-open# }}}
 
+## complete {{{
+# zstyle - completions
 # autocomplete file
 zstyle :compinstall filename '/home/sergio/.zshrc'
 
@@ -150,7 +143,9 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 #zstyle ':completion:*' use-cache on
 zstyle ':completion:*' use-cache 1
 zstyle ':completion:*' cache-path ~/.zsh_cache
+# }}}
 
+# oh my zsh tips {{{
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -185,15 +180,20 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
+# end tips }}}
 
+# plugins {{{
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+
 plugins=(git pacman cp sudo tmux themes history-substrin-search command-not-found)
+
+# }}}
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# functions {{{
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
 gsend() { git commit -am "$1" && git push ;}
 #lower() { echo "${@}" | awk '{print tolower($0)}' ;}
@@ -208,22 +208,9 @@ biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
 top10 () { history | awk '{print $2}' | sort | uniq -c | sort -rn | head ; }
 beep () { echo -e -n \\a ; }
 dict() { curl "dict://dict.org/d:${1%%/}";}
+# end functions }}}
 
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
+# firefox improviments {{{
 # disalbe rendering fonts in firefox to free memory
 export MOZ_DISABLE_PANGO='1'
+# }}}
