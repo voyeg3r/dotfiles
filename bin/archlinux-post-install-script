@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 08 17:47:20
+#      LAST CHANGE: 2014 Jan 12 09:59:26
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -71,7 +71,7 @@ installpm () {
 } && installpm
 
 admintools () {
-	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo git gksu gksudo
+	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo git gksu gksudo lsof
 	pacman -Syu openssh dnsmasq python-setuptools gvim
 	# davfs2 in order to access webdav services
 	# dav://webdav.4shared.com

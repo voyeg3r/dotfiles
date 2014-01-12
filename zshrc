@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 10 20:08:02
+# Last Change: 2014 Jan 12 10:12:58
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -33,7 +33,26 @@ alias path='echo $PATH | tr ":" "\n"'
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
 
-[[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
+#[[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
+# I am using now fasd: https://github.com/clvv/fasd
+
+# needed to load fasd utility
+eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
+
+# fasd_cd + outputs directory
+fasd_cd() {
+  if [ $# -le 1 ]; then
+fasd "$@"
+  else
+local _fasd_ret="$(fasd -e 'printf %s' "$@")"
+    [ -z "$_fasd_ret" ] && return
+    [ -d "$_fasd_ret" ] && print "$_fasd_ret" && cd "$_fasd_ret" || printf %s\n "$_fasd_ret"
+  fi
+}
+
+# as an autojump user, i need only this for now
+alias j=' fasd_cd -d'
+
 
 HISTFILE=~/.zhistory
 HISTSIZE=25000
@@ -101,6 +120,16 @@ alias -g H='| head'
 alias -g G='| grep -i'
 alias -g V='| gvim -'
 alias -g X='| xargs'
+
+# aliases para fasd
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
 
 # autocomplete file
 zstyle :compinstall filename '/home/sergio/.zshrc'
