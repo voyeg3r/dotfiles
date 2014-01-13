@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 12 17:38:42
+# Last Change: 2014 Jan 13 15:05:28
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -87,6 +87,7 @@ bindkey -M isearch " " magic-space # normal space during searches
 # }}}
 
 # aliases# {{{
+alias shell='echo ${SHELL:t}'
 alias lvim="vim -c \"normal '0\""
 alias ls='ls --color'
 alias path='echo $PATH | tr ":" "\n"'
@@ -208,12 +209,6 @@ biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
 top10 () { history | awk '{print $2}' | sort | uniq -c | sort -rn | head ; }
 beep () { echo -e -n \\a ; }
 dict() { curl "dict://dict.org/d:${1%%/}";}
-
-lower(){
-  echo ${*}
-}
-
-
 # end functions }}}
 
 # firefox improviments {{{
