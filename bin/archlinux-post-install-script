@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 12 13:03:33
+#      LAST CHANGE: 2014 Jan 13 05:52:02
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -59,6 +59,8 @@ pacman -Syu pydoc
 # read about dnsmasq
 # https://wiki.archlinux.org/index.php/Dnsmasq
 
+# wallpaper changer
+# https://aur.archlinux.org/packages/variety/
 
 installpm () {
 	# pm - little package mananger
