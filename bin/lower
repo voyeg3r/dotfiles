@@ -1,0 +1,12 @@
+#!/bin/zsh
+# This function handles both parameters and pipelines
+# if there is some parameter -> ${@}
+# else is a pipe
+
+if [[ ${@} != "" ]]; then
+    echo ${@:l}
+else
+		eval 'var=$(cat); echo "${var:l}"'
+fi
+
+
