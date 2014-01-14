@@ -1,4 +1,4 @@
-# Last Change: 2014 Jan 04 11:49:23
+# Last Change: 2014 Jan 14 14:21:08
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -143,34 +143,34 @@ fi
 
 if [[ "$(id -un)" != "root" ]]; then
 PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]"\
-	|| echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  || echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
 # prompt para o root
 #PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 PS1='`[ $? = 0 ] && echo "\[\033[01;34m\]✔\[\033[00m\]" ||\
-	echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;31m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  echo "\[\033[01;31m\]✘\[\033[00m\]"` [\A] \[\033[01;31m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
 
 export PROMPT_COMMAND='echo -ne "\033]0;"`hostname -I`"\007"'
 
 getextension () {
-	echo "Full filename: $(basename ${1})"
-	echo "Extension: ${1##*.}"
-	echo "without extension: ${1%.*}"
+  echo "Full filename: $(basename ${1})"
+  echo "Extension: ${1##*.}"
+  echo "without extension: ${1%.*}"
 }
 
 getaudio () {
 # dependences: libmp3lame-dev libmad0-dev and compile sox
 # http://michalfapso.blogspot.com.br/2012/01/using-google-text-to-speech.html
 
-	var="${@}"
-	echo "${@}" > teste.txt
+  var="${@}"
+  echo "${@}" > teste.txt
 
-	filename="${var// /_}.mp3"
-	speak.pl en teste.txt "$filename"
-	rm -rf "$filename".tmp && rm -f teste.txt
-	echo "[sound:${filename}]" | xclip -selection c
-	mpg123 "$filename"
+  filename="${var// /_}.mp3"
+  speak.pl en teste.txt "$filename"
+  rm -rf "$filename".tmp && rm -f teste.txt
+  echo "[sound:${filename}]" | xclip -selection c
+  mpg123 "$filename"
 }
 
 eng2audio () {
@@ -198,31 +198,31 @@ mp4tomp3 () {
 command -v ffmpeg > /dev/null || sudo apt-get install -y ffmpeg
 command -v lame > /dev/null || sudo apt-get install -y gstreamer0.10-plugins-ugly
 
-	local var="${1%.*}"                              # strip extension
-	local newname="${var// /_}.mp3"                  # get rid space and add mp3 extension
-	ffmpeg -i "$1" -f mp3 -ab 320000 -vn "$newname"
+  local var="${1%.*}"                              # strip extension
+  local newname="${var// /_}.mp3"                  # get rid space and add mp3 extension
+  ffmpeg -i "$1" -f mp3 -ab 320000 -vn "$newname"
 }
 
 youtube-mp3 () {
 # put thins function in your ~/.bashrc
 
-	${1:?"error: I need a youtube link"}
+  ${1:?"error: I need a youtube link"}
 
-	# testing existence of programs
-	NEEDED_COMMANDS="youtube-dl ffmpeg"
-	missing_counter=0
-	for needed_command in $NEEDED_COMMANDS; do
-		if ! hash "$needed_command" >/dev/null 2>&1; then
-			printf "Command not found in PATH: %s\n" "$needed_command" >&2
-			((missing_counter++))
-		fi
-	done
-	if ((missing_counter > 0)); then
-		sudo apt-get install -y $NEEDED_COMMANDS
-	fi
+  # testing existence of programs
+  NEEDED_COMMANDS="youtube-dl ffmpeg"
+  missing_counter=0
+  for needed_command in $NEEDED_COMMANDS; do
+    if ! hash "$needed_command" >/dev/null 2>&1; then
+      printf "Command not found in PATH: %s\n" "$needed_command" >&2
+      ((missing_counter++))
+    fi
+  done
+  if ((missing_counter > 0)); then
+    sudo apt-get install -y $NEEDED_COMMANDS
+  fi
 
-	# geting video and converting with ffmpeg
-	youtube-dl --restrict-filenames -x --audio-format=mp3 --audio-quality 320k  "${1}"
+  # geting video and converting with ffmpeg
+  youtube-dl --restrict-filenames -x --audio-format=mp3 --audio-quality 320k  "${1}"
 }
 
 geturls () {
@@ -246,19 +246,19 @@ backup() {
 }
 
 #diskusage() {
-#	du -ks "$@" | sort -nr | \
-#	awk '{ \
-#	if ($1 > 1048576) printf("%8.2fG", $1/1048576) ; \
-#		else if ($1 > 1024) printf("%8.2fM", $1/1024) ; \
-#		else printf("%8.2fK", $1) ; \
-#		sub($1, "") ; print \
-#	}'
+# du -ks "$@" | sort -nr | \
+# awk '{ \
+# if ($1 > 1048576) printf("%8.2fG", $1/1048576) ; \
+#   else if ($1 > 1024) printf("%8.2fM", $1/1024) ; \
+#   else printf("%8.2fK", $1) ; \
+#   sub($1, "") ; print \
+# }'
 #}
 
 getmp3 (){
 ${1?"Usage: getmp3 Link"}
 for i in "`wget -q "$1" -O - | grep -i -o 'http://.*\.mp3'`"; do
-	wget -c "$i"
+  wget -c "$i"
 done
 }
 
@@ -296,8 +296,8 @@ compact() {
       fi ; }
 
 extract() {
-	# agradeça esta função ao J.F.Mitre
-	# http://jfmitre.com/2010/11/descompactando-arquivos-no-terminal-do.html
+  # agradeça esta função ao J.F.Mitre
+  # http://jfmitre.com/2010/11/descompactando-arquivos-no-terminal-do.html
     for i in "$@";  do
         if [ -f "$i" ]; then
             case "$i" in
@@ -332,8 +332,8 @@ export HISTCONTROL=ignoredups
 
 # configuração do path
 if [ -d /usr/local/texlive/2013/bin/i386-linux ] ; then
-	PATH=/usr/local/texlive/2013/bin/i386-linux:$PATH
-	PATH=/usr/local/texlive/2013/texmf-dist/doc/man:$PATH
+  PATH=/usr/local/texlive/2013/bin/i386-linux:$PATH
+  PATH=/usr/local/texlive/2013/texmf-dist/doc/man:$PATH
 fi
 
 [ -d ~/bin ] && PATH=~/bin:$PATH
@@ -357,42 +357,42 @@ up () {
 # http://stackoverflow.com/questions/4200800/in-bash-how-do-i-bind-a-function-key-to-a-command
 
     COUNTER="$@";
-	# default $COUNTER to 1 if it isn't already set
-	if [[ -z $COUNTER ]]; then
-		COUNTER=1
-	fi
-	# make sure $COUNTER is a number
-	if [ $COUNTER -eq $COUNTER 2> /dev/null ]; then
-		nwd=`pwd` # Set new working directory (nwd) to current directory
-		# Loop $nwd up directory tree one at a time
-		until [[ $COUNTER -lt 1 ]]; do
-			nwd=`dirname $nwd`
-			let COUNTER-=1
-		done
-		cd $nwd # change directories to the new working directory
-	else
-		# print usage and return error
-		echo "usage: up [NUMBER]"
-		return 1
-	fi
+  # default $COUNTER to 1 if it isn't already set
+  if [[ -z $COUNTER ]]; then
+    COUNTER=1
+  fi
+  # make sure $COUNTER is a number
+  if [ $COUNTER -eq $COUNTER 2> /dev/null ]; then
+    nwd=`pwd` # Set new working directory (nwd) to current directory
+    # Loop $nwd up directory tree one at a time
+    until [[ $COUNTER -lt 1 ]]; do
+      nwd=`dirname $nwd`
+      let COUNTER-=1
+    done
+    cd $nwd # change directories to the new working directory
+  else
+    # print usage and return error
+    echo "usage: up [NUMBER]"
+    return 1
+  fi
 }
 
 myip (){
-	clear
-	echo
+  clear
+  echo
     DEV=`awk '/UG/ {print $NF}' <(/sbin/route -n)`
-	#DEV=`awk '/eth/ {print $1}' <(netstat -i)` # indentifica o device
-	IPLOCAL=`hostname -I`
-	MEUIP=`awk '/inet end/ {print $3}' <(/sbin/ifconfig $DEV)`
-	IPEXTERNO=`curl --connect-timeout 4 -s sputnick-area.net/ip`
-	echo "        IP LOCAL: .....${IPLOCAL:-'off-line'}"
-	echo "        NETMASK: ......`awk -F':' '/Mas/ {print $4}' <(/sbin/ifconfig $DEV)`"
-	echo "        MAC ADDRESS: ..`awk '/HW/ {print $7}' <(/sbin/ifconfig $DEV)`"
-	echo "        ROUTER: .......`awk '/UG/ {print $2}' <(/sbin/route -n)`"
+  #DEV=`awk '/eth/ {print $1}' <(netstat -i)` # indentifica o device
+  IPLOCAL=`hostname -I`
+  MEUIP=`awk '/inet end/ {print $3}' <(/sbin/ifconfig $DEV)`
+  IPEXTERNO=`curl --connect-timeout 4 -s sputnick-area.net/ip`
+  echo "        IP LOCAL: .....${IPLOCAL:-'off-line'}"
+  echo "        NETMASK: ......`awk -F':' '/Mas/ {print $4}' <(/sbin/ifconfig $DEV)`"
+  echo "        MAC ADDRESS: ..`awk '/HW/ {print $7}' <(/sbin/ifconfig $DEV)`"
+  echo "        ROUTER: .......`awk '/UG/ {print $2}' <(/sbin/route -n)`"
     echo "        IP EXTERNO: ...${IPEXTERNO}"
     echo
     read -sn 1 -p "     Pressione uma tecla para continuar..."
-	clear
+  clear
 }
 
 _getdomainnameonly(){
@@ -440,15 +440,15 @@ host(){
 
 export LESS="-P ?c<- .?f%f:Standard input.  ?n:?eEND:?p%pj\%.. .?c%ccol . ?mFile %i of %m  .?xNext\ %x.%t   Press h for help"
 man() { # wrapper para o comando man
-	env \
-		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-		LESS_TERMCAP_md=$(printf "\e[1;31m") \
-		LESS_TERMCAP_me=$(printf "\e[0m") \
-		LESS_TERMCAP_se=$(printf "\e[0m") \
-		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-		LESS_TERMCAP_ue=$(printf "\e[0m") \
-		LESS_TERMCAP_us=$(printf "\e[1;32m") \
-			man "$@"
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+      man "$@"
 }
 
 apt-history () {
@@ -487,7 +487,7 @@ export MOZ_DISABLE_PANGO=1
 export FLASH_GTK_LIBRARY=libgtk-x11-2.0.so.0
 
 if [ -d /var/lib/gems/1.8 ]; then
-	export PATH=/var/lib/gems/1.8/bin:$PATH
+  export PATH=/var/lib/gems/1.8/bin:$PATH
 fi
 
 # Instalacao das Funcoes ZZ (www.funcoeszz.net)
