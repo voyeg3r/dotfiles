@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 13 16:37:32
+# Last Change: 2014 Jan 14 09:06:33
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -69,6 +69,11 @@ EDITOR='vim'
 setopt zle
 setopt completealiases
 autoload -U compinit && compinit
+
+# edit command line with Esc-e
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
 # }}}
 
 # magic-space and more {{{
