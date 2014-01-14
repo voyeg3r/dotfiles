@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 14 09:01:35
+#      LAST CHANGE: 2014 Jan 14 12:05:21
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -128,6 +128,7 @@ multimedia () {
 	# gnome-shell-mousewell: https://github.com/tobiasquinn/gnome-shell-mousewheel-zoom
 	sudo yaourt -S corebird-git
 	sudo pacman -Syu
+	sudo pacman -Syu xorg-utils
 	gnome-{document,music,maps,photos,tweak-tool,extra}
 	sudo pacman -S --noconfirm audacious audacity
 	sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
@@ -136,16 +137,5 @@ multimedia () {
 	# sucessor do ffmpeg
 	# https://aur.archlinux.org/packages/libav-git/
 } && multimedia
-
-
-avconvinstall () {
-	# sucessor do ffmpeg
-	# https://aur.archlinux.org/packages/libav-git/
-	# instale antes: https://aur.archlinux.org/packages/x264-git/
-  wget -c  https://aur.archlinux.org/packages/li/libav-git/libav-git.tar.gz
-  tar zxvf libav-git.tar.gz
-  cd libav-git
-  makepkg -si
-} && avconvinstall
 
 
