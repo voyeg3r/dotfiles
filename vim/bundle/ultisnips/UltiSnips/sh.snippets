@@ -208,5 +208,9 @@ done
 #${0: c-j to jump}
 endsnippet
 
+# Set SCRIPT_DIR variable to directory script is located.
+snippet sdir
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+endsnippet
 
 # vim:ft=snippets:

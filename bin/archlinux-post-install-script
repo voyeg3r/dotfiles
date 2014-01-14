@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 13 05:52:02
+#      LAST CHANGE: 2014 Jan 13 18:51:57
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -72,6 +72,8 @@ installpm () {
 	makepkg -si
 } && installpm
 
+
+
 admintools () {
 	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo git gksu gksudo lsof tmux
 	pacman -Syu openssh dnsmasq python-setuptools gvim
@@ -131,6 +133,8 @@ multimedia () {
 	sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
 	sudo pacman -S --noconfirm rhythmbox
 	sudo yaourt -S --noconfirm codecs
+	# sucessor do ffmpeg
+	pm i avconvert
 } && multimedia
 
 
