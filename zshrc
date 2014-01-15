@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 14 15:28:53
+# Last Change: 2014 Jan 15 20:54:27
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -193,7 +193,7 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(extract git pacman cp sudo tmux themes history-substrin-search command-not-found)
+plugins=(extract git pacman cp sudo tmux themes history-substrin-search command-not-found zsh-syntax-highlighting)
 
 # }}}
 
