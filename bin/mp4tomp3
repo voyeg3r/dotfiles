@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# =================================================
+#          CREATED: Qua 15/Jan/2014 hs 19:42
+#      LAST CHANGE: 2014 Jan 15 19:47:29
+# THIS SCRIPT AIMS: convert mp4 to mp3
+#           AUTHOR: Sérgio Luiz Araújo Silva
+#             SITE: http://vivaotux.blogspot.com
+#          TWITTER: @voyeg3r
+#            SKYPE: sergioaraujosilva
+# =================================================
+
+nome=${1%.mp4}
+
+echo "convertendo $1 para ${1%.mp4}.mp3" ...
+sleep 2
+ffmpeg -i $1 -vn -ab 192k -acodec libmp3lame -ac 2 ${nome}.mp3
+
+
