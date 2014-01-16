@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: 2014 Jan 16 16:47:56
+Last Change: 2014 Jan 16 17:21:08
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -87,6 +87,19 @@ find all files you accessed within the last month:
 find all files with size larger than 10 megabytes
 
 		ls **/*(.Lm+10)
+
+
+show only executable files
+
+   ls -l **/*(*)
+
+tornar executáveis todos os arquivos de um diretório
+{{{
+
+    o ponto "." é um qualificador que indica arquio
+
+		chmod -x **/*(.)
+}}}
 
 }}}
 
