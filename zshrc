@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 15 20:54:27
+# Last Change: 2014 Jan 16 16:36:14
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -69,6 +69,9 @@ EDITOR='vim'
 setopt zle
 setopt completealiases
 autoload -U compinit && compinit
+
+autoload -U zsh-mime-setup
+zsh-mime-setup
 
 # edit command line with Esc-e
 autoload -U edit-command-line
