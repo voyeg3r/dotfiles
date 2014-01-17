@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: 2013 Ago 16 10:49:56
+Last Change: 2014 Jan 17 07:22:46
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -324,12 +324,16 @@ FUNÇÃO PARA DECREMENTAR A SEQUÊNCIA ACIMA
     :%s/.star_10/\=".star_" . Decr()/
 
 =como selecionar texto recém colado=
+{{{
 
 `[  ...... inicio do trecho colado
 v   ...... seleção visual
 `]  ...... fim do trecho colado
 V`] ...... reseleciona trecho colado
 `[v`] .... reseleciona trecho colado
+'[ ....... local anterior ao último insert
+
+}}}
 
 =abrir ajuda em tela cheia em nova aba=
 
