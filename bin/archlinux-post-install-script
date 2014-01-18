@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 17 12:34:13
+#      LAST CHANGE: 2014 Jan 18 20:32:25
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -20,6 +20,9 @@
 
 # userstyles to google
 # http://userstyles.org/styles/81403/gt-deepdark-for-google
+
+# mailpile
+# https://aur.archlinux.org/packages/mailpile-git/?setlang=pt_BR
 
 # xkill: https://www.archlinux.org/packages/extra/i686/xorg-xkill/
 
