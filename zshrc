@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 16 16:36:14
+# Last Change: 2014 Jan 17 20:06:37
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -73,6 +73,18 @@ autoload -U compinit && compinit
 autoload -U zsh-mime-setup
 zsh-mime-setup
 
+# zmv "programmable rename"
+autoload -U zmv
+# Replace spaces in filenames with a underline
+# zmv '* *' '$f:gs/ /_'
+# zmv '(* *)' '${1// /}'
+# zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
+# # Change the suffix from *.sh to *.pl
+# zmv -W '*.sh' '*.pl'
+# # lowercase/uppercase all files/directories
+# $ zmv '(*)' '${(L)1}' # lowercase
+# $ zmv '(*)' '${(U)1}' # uppercase
+
 # edit command line with Esc-e
 autoload -U edit-command-line
 zle -N edit-command-line
@@ -97,6 +109,7 @@ bindkey -M isearch " " magic-space # normal space during searches
 # aliases# {{{
 alias shell='echo ${SHELL:t}'
 alias lvim="vim -c \"normal '0\""
+alias vnew='cd && vim */**(.om[1])'
 alias ls='ls --color'
 alias path='echo $PATH | tr ":" "\n"'
 alias ssh='ssh -C'
@@ -120,6 +133,7 @@ alias -g H='| head'
 alias -g G='| grep -i'
 alias -g V='| gvim -'
 alias -g X='| xargs'
+alias -g N='*/**(.om[1])'
 
 # aliases para fasd
 alias a='fasd -a'        # any
@@ -196,7 +210,7 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(extract git pacman cp sudo tmux themes history-substrin-search command-not-found zsh-syntax-highlighting)
+plugins=(extract git battery pacman cp sudo tmux themes history-substrin-search command-not-found zsh-syntax-highlighting)
 
 # }}}
 

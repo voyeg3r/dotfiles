@@ -16,7 +16,7 @@ if [[ $(uname) == "Darwin" ]] ; then
     integer i=$(((currentcapacity/maxcapacity) * 100))
     echo $i
   }
-  
+
   function battery_pct_remaining() {
     if [[ $(ioreg -rc AppleSmartBattery | grep -c '^.*"ExternalConnected"\ =\ No') -eq 1 ]] ; then
       battery_pct
@@ -54,7 +54,7 @@ elif [[ $(uname) == "Linux"  ]] ; then
 
   function battery_pct_remaining() {
     if [[ $(acpi 2&>/dev/null | grep -c '^Battery.*Discharging') -gt 0 ]] ; then
-      echo "$(acpi | cut -f2 -d ',' | tr -cd '[:digit:]')" 
+      echo "$(acpi | cut -f2 -d ',' | tr -cd '[:digit:]')"
     fi
   }
 
@@ -65,7 +65,7 @@ elif [[ $(uname) == "Linux"  ]] ; then
   }
 
   function battery_pct_prompt() {
-    b=$(battery_pct_remaining) 
+    b=$(battery_pct_remaining)
     if [[ $(acpi 2&>/dev/null | grep -c '^Battery.*Discharging') -gt 0 ]] ; then
       if [ $b -gt 50 ] ; then
         color='green'
