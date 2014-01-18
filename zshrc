@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 18 17:09:48
+# Last Change: 2014 Jan 18 17:30:49
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -77,15 +77,6 @@ zsh-mime-setup
 
 # zmv "programmable rename"
 autoload -U zmv
-# Replace spaces in filenames with a underline
-# zmv '* *' '$f:gs/ /_'
-# zmv '(* *)' '${1// /}'
-# zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
-# # Change the suffix from *.sh to *.pl
-# zmv -W '*.sh' '*.pl'
-# # lowercase/uppercase all files/directories
-# $ zmv '(*)' '${(L)1}' # lowercase
-# $ zmv '(*)' '${(U)1}' # uppercase
 
 # edit command line with Esc-e
 autoload -U edit-command-line
