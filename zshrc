@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 18 19:47:37
+# Last Change: 2014 Jan 19 09:01:59
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -100,6 +100,7 @@ bindkey -M isearch " " magic-space # normal space during searches
 # }}}
 
 # aliases# {{{
+#alias ping='ping -n -c 4 -i 0.2 -W1'
 alias shell='echo ${SHELL:t}'
 alias lvim="vim -c \"normal '0\""
 alias vnew='cd && vim */**(.om[1])'
@@ -209,6 +210,10 @@ plugins=(extract git battery pacman cp sudo tmux themes history-substrin-search 
 
 source $ZSH/oh-my-zsh.sh
 
+# wrapper function to ping command
+#fpath=( ~/.dotfiles/functions "${fpath[@]}" )
+#autoload -Uz ping host
+
 # functions {{{
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
 gsend() { git commit -am "$1" && git push ;}
@@ -229,6 +234,43 @@ youtube-mp3 () {
 # get mp3 from youtube
 command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames --extract-audio --audio-format=mp3 --audio-quality 320k  "${1}"
 [[ $? = 1 ]] && echo "instale o programa ffmpeg para poder converter para mp3"
+}
+
+
+_getdomainnameonly(){
+    local h="$1"
+    local f="${h:l}"
+    # remove protocol part of hostname
+        f="${f#http://}"
+        f="${f#https://}"
+    f="${f#ftp://}"
+    f="${f#scp://}"
+    f="${f#scp://}"
+    f="${f#sftp://}"
+    # remove username and/or username:password part of hostname
+    f="${f#*:*@}"
+    f="${f#*@}"
+    # remove all /foo/xyz.html*
+    f=${f%%/*}
+    # show domain name only
+    echo "$f"
+}
+
+
+ping(){
+  local t="$1"
+  local _ping="/bin/ping"
+  local c=$(_getdomainnameonly "$t")
+  [ "$t" != "$c" ] && echo "Sending ICMP ECHO_REQUEST to \"$c\"..."
+  $_ping -n -c 4 -i 0.2 -W1 $c
+}
+
+host(){
+  local t="$1"
+  local _host="/usr/bin/host"
+  local c=$(_getdomainnameonly "$t")
+  [ "$t" != "$c" ] && echo "Performing DNS lookups for \"$c\"..."
+  $_host $c
 }
 
 # end functions }}}
