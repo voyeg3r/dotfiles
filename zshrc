@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 19 09:09:29
+# Last Change: 2014 Jan 20 20:51:23
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -100,6 +100,7 @@ bindkey -M isearch " " magic-space # normal space during searches
 # }}}
 
 # aliases# {{{
+groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
 alias ping='ping -n -c 4 -i 0.2 -W1'
 alias shell='echo ${SHELL:t}'
 alias lvim="vim -c \"normal '0\""
