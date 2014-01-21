@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Seg 30/Dez/2013 hs 15:07
-#      LAST CHANGE: 2014 Jan 05 08:33:13
+#      LAST CHANGE: 2014 Jan 21 12:41:14
 # THIS SCRIPT AIMS: change wallpaper in gnome-shell
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -13,6 +13,7 @@
 [ ! -f ~/bin/cwall ] && echo you 'need to confiure the $PATH' && exit 1
 
 if [ ! -f ~/.config/autostart/cwall.desktop ]; then
+[ -d ~/.config/autostart ] || mkdir ~/.config/autostart
 cat <<-EOF > ~/.config/autostart/cwall.desktop
 [Desktop Entry]
 Type=Application
