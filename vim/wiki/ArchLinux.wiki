@@ -2,6 +2,19 @@
 
 	loadkeys br-abnt2
 
+remover package sem deixar pacotes orfãos
+
+		sudo pacman -Rns packagename
+
+Se você ao remover pacotes não usa o comando acima há grandes chances de que você tenha algun pacote
+órfão, para se certificar disto use este comando
+
+		sudo pacman -Qdt
+
+Para remover todos os pacotes orfãos use o comando
+
+		sudo pacman -Rns $(pacman -Qdtq)
+
 == you can use archbang =
 
   Archbang linux brings to you the beste of
