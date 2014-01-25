@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 20 20:51:23
+# Last Change: 2014 Jan 25 08:33:48
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -129,6 +129,8 @@ alias -g G='| grep -i'
 alias -g V='| gvim -'
 alias -g X='| xargs'
 alias -g N='*/**(.om[1])'
+alias -g ND='*(/om[1])' # newest directory
+alias -g NF='*(.om[1])' # newest file
 
 # aliases para fasd
 alias a='fasd -a'        # any
