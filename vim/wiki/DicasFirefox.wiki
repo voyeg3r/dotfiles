@@ -1,9 +1,18 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: 2013 Ago 06 15:03:33
+Last Change: 2014 Jan 26 09:17:06
 autor: slas
 site: vivaotux
 twitter: voyeg3r
+
+= fix youtube comments if you have third part cookies bocked =
+
+add exceptions for this url's
+
+		plus.googleapis.com
+		google.com
+		plus.google.com
+		apis.google.com
 
 = ativar plugins sob demanda =
 dentro do about:config
