@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 25 18:29:54
+# Last Change: 2014 Jan 30 21:26:39
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -76,7 +76,7 @@ autoload -U zsh-mime-setup
 zsh-mime-setup
 
 # zmv "programmable rename"
-autoload -U zmv
+autoload -Uz zmv
 
 # edit command line with Esc-e
 autoload -U edit-command-line

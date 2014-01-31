@@ -1,6 +1,6 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: 2014 Jan 26 09:17:06
+Last Change: 2014 Jan 28 20:19:24
 autor: slas
 site: vivaotux
 twitter: voyeg3r
@@ -9,15 +9,15 @@ twitter: voyeg3r
 
 add exceptions for this url's
 
-		plus.googleapis.com
-		google.com
-		plus.google.com
-		apis.google.com
+    plus.googleapis.com
+    google.com
+    plus.google.com
+    apis.google.com
 
 = ativar plugins sob demanda =
 dentro do about:config
 
-	plugins.click_to_play
+  plugins.click_to_play
 
 = extensão para assistir sites como hulu =
 https://addons.mozilla.org/en-US/firefox/addon/proxmate/
@@ -38,11 +38,11 @@ http://en.kioskea.net/faq/1686-optimize-firefox-completely
     Restart Firefox
     You should see an improvement
 
-	browser.download.manager.scanWhenDone
+  browser.download.manager.scanWhenDone
 
 == Carregar abas sob demanda apenas ==
 coloque a chave
-	browser.sessionstore.restore_pinned_tabs_on_demand
+  browser.sessionstore.restore_pinned_tabs_on_demand
 
 com valor true
 
@@ -75,7 +75,7 @@ for i in ~/.adobe ~/.macromedia ; do ( rm $i/ -rf ; ln -s /dev/null $i ) ; done
                https://addons.mozilla.org/pt-br/firefox/addon/f1-by-mozilla-labs/
 
  It's all text ... com essa estensão consigo editar o wikispaces com o vim
-								  hControl+Shift+Alt+Rttp://va.mu/Xhz0
+                  hControl+Shift+Alt+Rttp://va.mu/Xhz0
 
  Turn on your pdf reader ......... pdfjs.disabled
 
