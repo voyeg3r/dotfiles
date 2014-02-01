@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: 2014 Jan 18 17:34:34
+Last Change: 2014 Fev 01 16:04:12
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -112,8 +112,13 @@ tornar executáveis todos os arquivos de um diretório
 
 # zmv "programmable rename"
 autoload -U zmv
-# Replace spaces in filenames with a underline
+
+# rename txt to html
+zmv '(*).txt' '$1.html'
+
+#Replace spaces in filenames with underline
 zmv '* *' '$f:gs/ /_'
+
 zmv '(* *)' '${1// /}'
 zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
 # Change the suffix from *.sh to *.pl
