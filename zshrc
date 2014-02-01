@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Jan 30 21:26:39
+# Last Change: 2014 Fev 01 15:23:13
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -224,6 +224,7 @@ gsend() { git commit -am "$1" && git push ;}
 #upper() { echo "${@}" | awk '{print toupper($0)}' ;}
 expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; }
 calc(){ echo "scale=2;$@" | bc;}
+alias calc='noglob calc'
 ff () { find . -type f -iname '*'"$@"'*' ; }
 mkcd() { mkdir -p "$@" && cd $_; }
 decToBin () { echo "ibase=10; obase=2; $1" | bc; }
