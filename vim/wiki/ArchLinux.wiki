@@ -1,3 +1,7 @@
+==update firefox-nightly==
+
+		yaourt -Syua firefox-nightly
+
 == load keymap ==
 
 	loadkeys br-abnt2
