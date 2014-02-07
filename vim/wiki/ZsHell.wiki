@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: 2014 Fev 01 16:04:12
+Last Change: 2014 Fev 06 19:39:09
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -39,11 +39,6 @@ shell () {
   ps | grep `echo $$` | awk '{ print $4 }'
 }
 
-
-
-
-
-
 # show only directories
 print -l foldero/**/*(/)
 
@@ -74,6 +69,10 @@ ls -l foldero/**/*(om[1,3])
 show all files with extension .pdf in current directory and all subdirectory
 
 ls **/*.pdf
+
+make all files executable (recursively)
+
+		chmod -x **/*(.)
 
 show all regular files with the word “test” in their name in current directory and all subdirectory
 
