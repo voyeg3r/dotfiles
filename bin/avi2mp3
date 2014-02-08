@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# =================================================
+#          CREATED: Sáb 08/Fev/2014 hs 09:29
+#      LAST CHANGE: 2014 Fev 08 09:32:31
+# THIS SCRIPT AIMS: convert avi to mp3
+#           AUTHOR: Sérgio Luiz Araújo Silva
+#             SITE: http://vivaotux.blogspot.com
+#          TWITTER: @voyeg3r
+#            SKYPE: sergioaraujosilva
+# =================================================
+
+nome=${1%.avi}
+
+echo "convertendo $1 para ${1%.avi}.mp3" ...
+sleep 2
+ffmpeg -i $1 -f mp3 ${nome}.mp3
+
+
+
+
