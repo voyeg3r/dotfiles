@@ -1,4 +1,4 @@
-# Last Change: 2014 Jan 14 14:21:08
+# Last Change: 2014 Fev 09 13:32:08
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -44,7 +44,7 @@ alias config-date='sudo ntpdate -u -b bonehed.lcs.mit.edu'
 alias aria2c='aria2c -x5 -c'
 alias 4shared='cadaver http://webdav.4shared.com/'
 alias compilalivro='make clean; make && make show'
-alias updatelivro='hg push ssh://hg@bitbucket.org/sergio/learn-english'
+#alias updatelivro='hg push ssh://hg@bitbucket.org/sergio/learn-english'
 alias less='less -r'
 alias ls="ls --color=auto"
 alias dir="dir --color=auto"
@@ -68,7 +68,7 @@ alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 alias path='echo -e ${PATH//:/\\n}'
 [ -e `which vim` ] &&  alias vi='vim'
 command -v apt-proz >/dev/null && INSTALLER="apt-proz" || INSTALLER="apt-get"
-alias update='sudo apt-proz update'
+#alias update='sudo apt-proz update'
 alias upgrade='sudo apt-proz update && sudo apt-proz upgrade'
 alias acs='apt-cache search'
 alias install='sudo apt-proz -y install'
@@ -91,6 +91,10 @@ shopt -s extglob
 shopt -s cdspell                       # fix wrong type keys
 shopt -s dirspell
 shopt -s autocd
+
+update(){
+ yaourt -Syua firefox-nightly
+}
 
 # convert text to lowcase
 lower() { echo "${@}" | awk '{print tolower($0)}' ;}
