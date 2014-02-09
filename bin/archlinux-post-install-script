@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Jan 21 13:25:23
+#      LAST CHANGE: 2014 Fev 09 15:08:47
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -155,6 +155,8 @@ multimedia () {
 	# gnome-shell-mousewell: https://github.com/tobiasquinn/gnome-shell-mousewheel-zoom
 	# python powerline: https://aur.archlinux.org/packages/python-powerline-git/
 	# http://gonzalorau.com.ar/descarga-musica-de-grooveshark-con-groove-dl/
+	# audio-recorder
+	# https://aur.archlinux.org/packages/au/audio-recorder/audio-recorder.tar.gz
 	yaourt -S groove-dl-git
 	sudo yaourt -S corebird-git
 	sudo pacman -Syu
