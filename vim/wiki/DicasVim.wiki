@@ -1,10 +1,14 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: 2014 Jan 17 07:22:46
+Last Change: 2014 Fev 21 09:54:11
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+==move some line to current line==
+
+		:3m .
 
 ==how install new version of vim from source==
 
