@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Fev 09 15:08:47
+#      LAST CHANGE: 2014 Fev 26 10:21:54
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -167,7 +167,8 @@ multimedia () {
 	sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
 	sudo pacman -S --noconfirm rhythmbox
 	sudo yaourt -S --noconfirm codecs
-	sudo yaourt -S vlc
+  sudo pacman -S vlc ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
+	rm -rf ~/.thumbnails/fail
 	# sucessor do ffmpeg
 	# https://aur.archlinux.org/packages/libav-git/
 } && multimedia
