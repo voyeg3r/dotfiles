@@ -1,12 +1,24 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: 2014 Fev 06 19:39:09
+Last Change: 2014 Mar 01 10:01:57
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r at gmail.com>
 
 {{{
+
+=fasd tool shortcuts==
+
+  fasd is a tools installed in zsh environment
+
+  f foo           # list frecent files matching foo
+  a foo bar       # list frecent files and directories matching foo and bar
+  f js$           # list frecent files that ends in js
+  f -e vim foo    # run vim on the most frecent file matching foo
+  mplayer `f bar` # run mplayer on the most frecent file matching bar
+  z foo           # cd into the most frecent directory matching foo
+  open `sf pdf`   # interactively select a file matching pdf and launch `open`
 
 = changing the shell =
 
