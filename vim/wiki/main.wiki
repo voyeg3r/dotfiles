@@ -1,7 +1,7 @@
 [[=Wiki]] do Sérgio para fins diversos=
 
 Criado: Dom 17/Out/2010 hs 14:23
-Last Change: 2014 Jan 26 09:17:10
+Last Change: 2014 Mar 02 09:55:24
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 
@@ -9,7 +9,7 @@ site: http://vivaotux.blogspot.com
 
  [[IdiomaticExpressions]] [[DicasLinux]] [[MegaSena]] [[CrunchBang]]
 
- [[ArchLinux]]  [[ZsHell]]
+ [[ArchLinux]]  [[ZsHell]]  [[espiritismo]]
 
  [[ComandosLinux]] [[DicasDoBash]] [[AwkNewieTutorial]] [[ReCeitas]]
 
