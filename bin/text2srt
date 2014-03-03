@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 # Download the auto generated caption (English) from the internet, convert to the text.
 # Then this script is to convert the text into the .srt format
+# source: http://allencch.wordpress.com/2013/07/03/youtube-automatic-captions-to-srt-subtitle-format/
 use strict;
 use warnings;
 
