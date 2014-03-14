@@ -2,16 +2,20 @@
 # # -*- coding: UTF-8 -*-"
 # ----------------------------------------------------------
 #         CREATED:  Qua 05/Mar/2014 hs 10:24
-#     LAST CHANGE:  2014 Mar 05 16:55:01
+#     LAST CHANGE:  2014 Mar 05 17:32:33
 # THIS SCRIPT AIM:  fix subtitle files
 #          AUTHOR:  Sergio Luiz Araujo Silva
 #            SITE:  http://vivaotux.blogspot.com
 #         TWITTER:  @voyeg3r
+#        Download:  http://pastebin.com/ukhbCiA9
 # ----------------------------------------------------------
 
-# source: http://tuxbalaji.wordpress.com/2013/10/05/how-to-fix-subtitles-delay-or-ealier-with-your-movies-by-python-code/
+# Reference: http://tuxbalaji.wordpress.com/2013/10/05/how-to-fix-subtitles-delay-or-ealier-with-your-movies-by-python-code/
 # >>> subs.shift(seconds=-2) # Move all subs 2 seconds earlier
 # >>> subs.shift(minutes=1)  # Move all subs 1 minutes later
+
+# Install needed libs first !!!!!
+# sudo easy_install pysrt3 pysrt argparse
 
 import pysrt, argparse
 

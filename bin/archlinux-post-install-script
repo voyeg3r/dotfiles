@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Mar 05 10:02:26
+#      LAST CHANGE: 2014 Mar 08 19:38:20
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -161,6 +161,7 @@ multimedia () {
 	yaourt -S groove-dl-git
 	# tools to edit subtitles
 	yaourt -S subtitleeditor python-pysrt
+	yaourt -S font-manager
 	sudo yaourt -S corebird-git
 	sudo yaourt -S youtube-dl gcap
 	sudo pacman -Syu
