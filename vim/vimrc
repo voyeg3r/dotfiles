@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2014 Mar 01 11:20:54
+" Last Change: 2014 Mar 14 09:31:52
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -453,6 +453,7 @@ nmap <silent> <F11> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 
 " for txt, autoformat and wrap text at 70 chars.
 autocmd BufNewFile,BufRead,BufEnter *.txt set fo+=t tw=60
+autocmd BufNewFile,BufRead,BufEnter *.txt setf txt
 autocmd FileType make setlocal noexpandtab
 
 map <BS> X
