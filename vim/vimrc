@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2014 Mar 14 09:31:52
+" Last Change: 2014 Mar 26 19:18:11
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -239,6 +239,12 @@ fun! Keeponlymp3()
 " this function keeps only mp3 urls in current text
 	:%s/.*\(http.*.mp3\).*/\1/g
 	:g!/\.mp3/d
+endfun
+
+fun! Keeponlypdf()
+" this function keeps only pdf urls in current text
+	:%s/.*\(http.*.pdf\).*/\1/g
+	:g!/\.pdf/d
 endfun
 
 " Para inserir o simbolo	use ^v ^M  ou ^v Enter
