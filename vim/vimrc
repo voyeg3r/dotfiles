@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: 2014 Abr 02 21:02:18
+" Last Change: Qua Abr 02, 2014  09:13
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -27,6 +27,7 @@
 " div.content>h1.post-title+p{Sample Content}
 " http://peepcode.com/products/smash-into-vim-ii
 " http://snipt.net/public/tag/vim
+" tring to se if it works
 
 filetype off
 call pathogen#infect()
@@ -313,19 +314,36 @@ xmap <F4> d<F4><esc>p`[v`]vjdd?^[[code<enter>f"a
 
 " update changefile log
 " http://tech.groups.yahoo.com/group/vim/message/51005
-fun! LastChange()
-		if &modified
-				let _s=@/
-				let l = line(".")
-				let c = col(".")
-				if line("$") >= 5
-						1,5s/\c\s*Last Change:\s*\zs.*/\="" . strftime("%Y %b %d %X")/ge
-				endif
-				let @/=_s
-				call cursor(l, c)
-		endif
+"fun! LastChange()
+"		if &modified
+"				let _s=@/
+"				let l = line(".")
+"				let c = col(".")
+"				if line("$") >= 5
+"						1,5s/\c\s*Last Change:\s*\zs.*/\="" . strftime("%Y %b %d %X")/ge
+"				endif
+"				let @/=_s
+"				call cursor(l, c)
+"		endif
+"endfun
+"autocmd BufWritePre * keepjumps call LastChange()
+
+
+" If buffer modified, update any 'Last modified: ' in the first 20 lines.
+" 'Last modified: ' can have up to 10 characters before (they are retained).
+" Restores cursor and window position using save_cursor variable.
+" source: http://vim.wikia.com/wiki/Insert_current_date_or_time
+function! LastChange()
+  if &modified
+    let save_cursor = getpos(".")
+    let n = min([20, line("$")])
+    keepjumps exe '1,' . n . 's#^\(.\{,10}Last Change: \).*#\1' .
+          \ strftime('%a %b %d, %Y  %I:%M%p') . '#e'
+    call histdel('search', -1)
+    call setpos('.', save_cursor)
+  endif
 endfun
-autocmd BufWritePre * keepjumps call LastChange()
+autocmd BufWritePre * call LastChange()
 
 " for bash-support
 let g:BASH_AuthorName = 'Sergio Luiz Araujo Silva'

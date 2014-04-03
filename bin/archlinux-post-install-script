@@ -82,7 +82,8 @@ installpm () {
 	makepkg -si
 } && installpm
 
-
+# kernel optimization to desktop
+pm i ulatencyd
 
 admintools () {
 	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo git gksu gksudo lsof tmux

@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: 2014 Abr 02 21:05:01
+# Last Change: 2014 Abr 02 21:07:00
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -15,7 +15,6 @@
 # +======================================+
 #
 # # Reference: https://github.com/plitc/zshrc/blob/master/.zshrc
-#
 #
 # Path to your oh-my-zsh configuration.# }}}
 
