@@ -1,4 +1,15 @@
+==Backlight==
+
+When system starts, screen backlight is set to maximum by default. This can be fixed by specifying backlight level in the following udev rule:
+
+/etc/udev/rules.d/backlight.rules
+
+## SET BACKLIGHT
+SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="1"
+
+
 ==update firefox-nightly==
+
 
 		yaourt -Syua firefox-nightly
 

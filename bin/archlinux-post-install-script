@@ -85,6 +85,17 @@ installpm () {
 # kernel optimization to desktop
 pm i ulatencyd
 
+# program needed to kill bluetooth
+# https://wiki.archlinux.org/index.php/Power_saving
+pm i rfkill
+
+#
+# edit --> /etc/udev/rules.d/bt.rules
+#
+#   ## DISABLE BLUETOOTH
+#   SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"
+
+
 admintools () {
 	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo git gksu gksudo lsof tmux
 	pacman -Syu openssh dnsmasq python-setuptools gvim terminator
