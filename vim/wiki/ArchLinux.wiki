@@ -2,6 +2,13 @@
 
 		yaourt -Syua firefox-nightly
 
+==how restore your usb stick==
+
+# dd count=1 bs=512 if=/dev/zero of=/dev/sdx && sync
+
+== how create bootable antergos ==
+# dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx && sync
+
 ==yaourt without confirmation==
 config-yaourt(){
 [ -f ~/.yaourtrc ] || touch ~/.yaourtrc
