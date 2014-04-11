@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Abr 07, 2014  10:15
+" Last Change: Sex Abr 11, 2014  11:56
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -262,6 +262,7 @@ endfun
 com! Dos2Unix keepjumps call Dos2unixFunction()
 
 " remove linhas duplicadas
+" remove duplicated lines
 "nno <leader>d %s/^\(.*\)\(\n\1\)\+$/\1/
 "nno <leader>d :g/^\(.*\)\ze\n\%(.*\n\)*\1$/d<cr>
 "remover linhas em branco consecutivas
