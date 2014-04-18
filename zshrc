@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Ter Abr 15, 2014  10:31
+# Last Change: Sex Abr 18, 2014  12:36
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -240,15 +240,6 @@ biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
 top10 () { history | awk '{print $2}' | sort | uniq -c | sort -rn | head ; }
 beep () { echo -e -n \\a ; }
 dict() { curl "dict://dict.org/d:${1%%/}";}
-
-function rm mv () {
-    if git rev-parse --is-inside-work-tree &> /dev/null
-    then
-        git $0 "$@"
-    else
-        command $0 "$@"
-    fi
-}
 
 youtube-mp3 () {
 # get mp3 from youtube

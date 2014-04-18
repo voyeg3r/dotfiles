@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# =================================================
+#          CREATED: Sex 18/Abr/2014 hs 12:43
+#      LAST CHANGE: Sex 18/Abr/2014 hs 12:43
+# THIS SCRIPT AIMS: speak what you asks through parameter
+#           AUTHOR: Sérgio Luiz Araújo Silva
+#             SITE: http://vivaotux.blogspot.com
+#          TWITTER: @voyeg3r
+#            SKYPE: sergioaraujosilva
+# =================================================
+
+# Crystal .... US English
+# Mike ....... US English
+# Rich ....... US English
+# Lauren ..... US English
+# Claire ..... US English
+# Rosa ....... Latin Am. Spanish
+# Alberto .... Latin Am. Spanish
+
+voice="rich"
+
+wget -c http://204.178.9.51$(curl --data "voice=$voice&txt=$*&speakButton=SPEAK" "204.178.9.51/tts/cgi-bin/nph-nvttsdemo"|grep ".wav"|cut -d\" -f2)
+
+newname=`sed 's, ,_,g' <<<$*`
+oldname=`find -maxdepth 1 -cmin -10 -iname "*.wav"`
+
+lame -h -b 192 $oldname $newname.mp3
+rm -f $oldname
+
+mpg123 $newname.mp3
+
