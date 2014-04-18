@@ -122,6 +122,17 @@ Quando os tempos são concorrentes (uma enchendo e outra vazando)
 T1 x T2
 T1 - T2
 
+LEMBRE COMO DEVE CALCULAR fração de hora
+
+  por exemplo 2,4h
+  2h 120m
+  0,4 = 4 x 0,1 de hora
+  0,1 de hora = 6min
+  0,4 = 4 x 6  = 24 min
+
+ 2,4 = 2h e 24min
+
+
 Existem duas torneiras para encher um tanque vazio. Se apenas a
 primeira torneira for aberta, ao máximo, o tanque encherá em 24 horas.
 Se apenas a segunda torneira for aberta, ao máximo, o tanque encherá
