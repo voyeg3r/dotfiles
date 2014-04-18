@@ -109,6 +109,9 @@ https://www.youtube.com/watch?v=lx07p-doq4g
 Problema das torneiras
 https://www.youtube.com/watch?v=lcqdqWsZZVU
 
+PRODUTO PELA SOMA (quanto todas as torneiras enchem)
+PROBLEMAPELA DIFERENÇA (quando uma esvazia)
+
 Na verdade é um problema de produtividade (lembre-se de simplificar
 antes de fazer os cálculos). Quando os tempos se soman:
 
