@@ -17,15 +17,22 @@
 # Rosa ....... Latin Am. Spanish
 # Alberto .... Latin Am. Spanish
 
-voice="rich"
+voice="mike"
 
 wget -c http://204.178.9.51$(curl --data "voice=$voice&txt=$*&speakButton=SPEAK" "204.178.9.51/tts/cgi-bin/nph-nvttsdemo"|grep ".wav"|cut -d\" -f2)
 
-newname=`sed 's, ,_,g' <<<$*`
-oldname=`find -maxdepth 1 -cmin -10 -iname "*.wav"`
+# removing spaces in file
+newname=`sed -e 's, ,_,g' -e 's,$,.mp3,g' <<<$* | tr A-Z a-z`
 
-lame -h -b 192 $oldname $newname.mp3
+oldname=`find -maxdepth 1 -cmin -5 -iname "*.wav"`
+
+lame -h -b 192 $oldname $newname
+
 rm -f $oldname
 
-mpg123 $newname.mp3
+# only playing to you
+mpg123 $newname
+
+# this line is used to speed up the anki edition and could be removed
+echo "[sound:$newname]" | xclip -selection c
 
