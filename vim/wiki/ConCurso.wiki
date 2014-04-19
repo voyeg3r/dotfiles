@@ -234,3 +234,7 @@ Uma proposição bicondicional só é verdadeira quando ambos os termos
 tem o mesmo valor lógico, ou ambos F ou ambos V
 
                  p <--> q
+
+Durante a prova converta cada afirmação a,b,c,d,e em proposições do tipo
+  p e q , p --> q, p ou q e assim por diante, a fim de comparar
+  com as proposições do enunciado.
