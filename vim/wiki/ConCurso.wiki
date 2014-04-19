@@ -229,3 +229,8 @@ aparecer quando você estiver lendo a frase no sentido contrário.
 
 É SUFICIENTE LER NA ORDEM NORMAL
 É NECESSÁRIO INVERTER A FRASE
+
+Uma proposição bicondicional só é verdadeira quando ambos os termos
+tem o mesmo valor lógico, ou ambos F ou ambos V
+
+                 p <--> q
