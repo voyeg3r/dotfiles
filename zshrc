@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Sex Abr 18, 2014  12:36
+# Last Change: Seg Abr 21, 2014  08:02
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -245,6 +245,11 @@ youtube-mp3 () {
 # get mp3 from youtube
 command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames --extract-audio --audio-format=mp3 --audio-quality 320k  "${1}"
 [[ $? = 1 ]] && echo "instale o programa ffmpeg para poder converter para mp3"
+}
+
+record(){
+ [ -z "$1" ] && name="output.mp3" || name="$1"
+ arecord -v -f cd -t raw | lame -r - $name
 }
 
 # end functions }}}
