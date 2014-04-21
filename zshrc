@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Seg Abr 21, 2014  08:02
+# Last Change: Seg Abr 21, 2014  08:04
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -248,6 +248,9 @@ command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames --extract-audio 
 }
 
 record(){
+# references:
+# http://mocha.freeshell.org/audio.html
+# http://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
  [ -z "$1" ] && name="output.mp3" || name="$1"
  arecord -v -f cd -t raw | lame -r - $name
 }
