@@ -38,5 +38,7 @@ rm -f $oldname
 mpg123 $newname
 
 # this line is used to speed up the anki edition and could be removed
+# it only get the name of generated file and put it in this format
+# [sound:filename.mp3] in the clipboard
 echo "[sound:$newname]" | xclip -selection c
 
