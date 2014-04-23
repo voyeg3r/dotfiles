@@ -21,12 +21,15 @@
 # Rosa ....... Latin Am. Spanish
 # Alberto .... Latin Am. Spanish
 
+red='\e[0;31m'
+NC='\e[0m' # No Color
 
-names=("crystal" "mike" "lauren" "claire" "julia")
+
+names=("crystal" "mike" "lauren" "claire")
 voice=${names[$RANDOM % ${#names[@]}]}
 
 echo
-echo "$voice will speak this to you..."
+echo -e "${red}$voice will speak this to you...${NC}"
 echo sleep 1
 
 
