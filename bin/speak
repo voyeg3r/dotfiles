@@ -21,7 +21,14 @@
 # Rosa ....... Latin Am. Spanish
 # Alberto .... Latin Am. Spanish
 
-voice="julia"
+
+names=("crystal" "mike" "lauren" "claire" "julia")
+voice=${names[$RANDOM % ${#names[@]}]}
+
+echo
+echo "$voice will speak this to you..."
+echo sleep 1
+
 
 wget -c http://204.178.9.51$(curl --data "voice=$voice&txt=$*&speakButton=SPEAK" "204.178.9.51/tts/cgi-bin/nph-nvttsdemo"|grep ".wav"|cut -d\" -f2)
 
