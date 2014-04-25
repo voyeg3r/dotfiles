@@ -25,7 +25,7 @@ red='\e[0;31m'
 NC='\e[0m' # No Color
 
 
-names=("crystal" "mike" "lauren" "claire")
+names=("crystal" "mike" "lauren")
 voice=${names[$RANDOM % ${#names[@]}]}
 
 echo

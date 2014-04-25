@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc # head {{{
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Seg Abr 21, 2014  08:04
+# Last Change: Qua Abr 23, 2014  11:50
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -56,6 +56,14 @@ local _fasd_ret="$(fasd -e 'printf %s' "$@")"
 alias j=' fasd_cd -d'
 # }}}
 #
+
+# auto open images
+alias -s jpg="feh -FZd"
+alias -s JPG="feh -FZd"
+alias -s jpeg="feh -FZd"
+alias -s JPEG="feh -FZd"
+alias -s png="feh -FZd"
+alias -s gif="feh -FZd"
 
 update(){
  yaourt -Syua firefox-nightly
