@@ -3,6 +3,13 @@
 http://50.22.9.66/ConsultaLocalProva.aspx?key=239&tipo=O
 }}}
 
+Trabalhe com quadro sinótico, cada matéria em uma página
+de uma olhada ver o todo, faça uma apostila que só você vai entender
+revise a materia através do seu próprio material
+
+Dica do Sapia: https://www.youtube.com/watch?v=jM5hpV1d1pc
+
+
 Língua Portuguesa
 
 
@@ -19,7 +26,8 @@ Há cerca de duas horas minha irmã partiu
 * Digladiar é uma forma correta - Degladiar não existe
 * Prestar atenção nas palavras com acento (marcando-as) na linha
 * Observar vem, vem, têm, têm (singular e plural)
-* Uma pessoa discreta é uma pessoa reservada quanto ao falar e/ou às suas formas de agir - Discrição é, portanto, a qualidade ou o procedimento de quem - ou do que - é discreto
+* Uma pessoa discreta é uma pessoa reservada quanto ao falar e/ou às suas formas de agir
+ - Discrição é, portanto, a qualidade ou o procedimento de quem - ou do que - é discreto
 
 Parônimos
 * Infligir ao invés de inflingir
@@ -102,6 +110,17 @@ Gabarito dos exercícios:
 8 - C
 9 - E
 10 - B
+
+Uso dos porques:
+
+ por que --> por qual motivo, por qual
+ por quê --> por qual motivo, por queal (aparece antes de pontuação) (mãe raivosa)
+ porque  --> pois (conjunção)
+ porquê  --> motivo
+
+ Separação silábilca
+ prefixo    Consoante com vogal junta
+ profixo    Consoante com consoante separa
 
 ________________
 Matemática
@@ -213,6 +232,11 @@ Para converter P v Q em condicional basta trocar o sentido de P e manter Q
 ~P → Q
 
 A equivalência de  ~P → ~Q   é:     Q → P
+
+Equivalências possíveis para p -> q
+
+    * contrapositiva (nega voltando)  ~q -> ~p
+    * lei da dupla negação     ~p  v  q
 
 https://www.youtube.com/watch?v=wkCNtoJngrk
 
