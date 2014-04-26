@@ -25,8 +25,11 @@ red='\e[0;31m'
 NC='\e[0m' # No Color
 
 
-names=("crystal" "mike" "lauren")
-voice=${names[$RANDOM % ${#names[@]}]}
+# if you wanna random voice uncomment the next two lines
+#names=("crystal" "mike" "lauren")
+#voice=${names[$RANDOM % ${#names[@]}]}
+
+voice='crystal'
 
 echo
 echo -e "${red}$voice will speak this to you...${NC}"
