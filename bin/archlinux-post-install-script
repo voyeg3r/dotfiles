@@ -149,7 +149,7 @@ compactadores () {
 } && compactadores
 
 graphictools () {
-	sudo pacman -Syu inkscape gimp
+	sudo pacman -Syu inkscape gimp pandoc imagemagick
 	sudo yaourt -S --noconfirm gloobus-sushi-bzr
     sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
 } && graphictools
