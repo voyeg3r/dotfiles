@@ -100,15 +100,15 @@ palavras:
 
 Gabarito dos exercícios:
 
-1 - D
-2 - C
-3 - E
-4 - D
-5 - D
-6 - B
-7 - E
-8 - C
-9 - E
+01 - D
+02 - C
+03 - E
+04 - D
+05 - D
+06 - B
+07 - E
+08 - C
+09 - E
 10 - B
 
 Uso dos porques:
@@ -122,7 +122,7 @@ Uso dos porques:
  prefixo    Consoante com vogal junta
  profixo    Consoante com consoante separa
 
-________________
+
 Matemática
 Muito cuidado com os sinais nos enunciados
 
@@ -184,7 +184,7 @@ http://www.youtube.com/watch?v=UE_F9T2SDYg
 Veja novamente os vídeos sobre a multiplicação Védica
 http://www.youtube.com/watch?v=oRAORiHhcyU
 
-________________
+
 Lógica
 https://www.youtube.com/watch?v=rzOV6PmmZUQ
 
@@ -236,7 +236,7 @@ A equivalência de  ~P → ~Q   é:     Q → P
 Equivalências possíveis para p -> q
 
     * contrapositiva (nega voltando)  ~q -> ~p
-    * lei da dupla negação     ~p  v  q
+    * lei da dupla negação            ~p  v  q
 
 https://www.youtube.com/watch?v=wkCNtoJngrk
 

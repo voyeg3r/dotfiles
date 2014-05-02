@@ -148,8 +148,14 @@ compactadores () {
 	sudo pacman -Sy zip unzip unrar p7zip
 } && compactadores
 
+# adding pandoc
+# https://bbs.archlinux.org/viewtopic.php?id=127998
+pacman -Sy cabal-install
+cabal update
+cabal install pandoc
+
 graphictools () {
-	sudo pacman -Syu inkscape gimp pandoc imagemagick
+	sudo pacman -Syu inkscape gimp imagemagick
 	sudo yaourt -S --noconfirm gloobus-sushi-bzr
     sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
 } && graphictools

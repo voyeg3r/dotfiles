@@ -1064,6 +1064,8 @@ search these lessons through the hole web
 How get google translte audio?
 http://translate.google.com/translate_tts?tl=en&q="hello world"
 
+Another good tts site: http://www.lumenvox.com/products/tts/
+
 #1. Estudar pelo menos 10 palavras novas por dia
 #2. Estudar um novo conceito de gramática por dia
 #3. Escrever 10 frases que aplicam a nova gramática e o novo vocabulário que você aprendeu nos passos #1 e #2.
