@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sex Abr 11, 2014  11:56
+" Last Change: Sáb Mai 10, 2014  12:02
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -55,6 +55,7 @@ nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer	buffer<cr>
 
 "Enables very magic mode by default
 nnoremap / /\v
+cnoremap %s/ %s/\v
 
 " map to paste from clipboard with Ctrl-Alt-p
 nmap <C-M-P> "+p
