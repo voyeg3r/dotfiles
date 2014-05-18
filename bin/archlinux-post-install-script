@@ -32,16 +32,19 @@
 # chenge workspace easyly on gnome shell
 # https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/
 
+# stopping bluetooth service
+sudo systemctl stop bluetooth
+
 # Atualizar o sistema
 pacman -Syu
 sudo pacman -S base-devel
 
 cowerinstall () {
-	# another package manager "cower"
-	# https://aur.archlinux.org/packages/co/cower/cower.tar.gz
-	wget -c https://aur.archlinux.org/packages/co/cower/cower.tar.gz
-	tar zxvf cower.tar.gz && cd cower
-	makepkg -si
+		# another package manager "cower"
+		# https://aur.archlinux.org/packages/co/cower/cower.tar.gz
+		wget -c https://aur.archlinux.org/packages/co/cower/cower.tar.gz
+		tar zxvf cower.tar.gz && cd cower
+		makepkg -si
 } && cowerinstall
 
 # Documentação python
@@ -73,13 +76,13 @@ pacman -Syu pydoc
 # https://aur.archlinux.org/packages/variety/
 
 installpm () {
-	# pm - little package mananger
-	# https://aur.archlinux.org/packages.php?ID=62711
-	# dependences: pacaur
-	[ -d ~/build ] && cd ~/build
-	wget -c  https://aur.archlinux.org/packages/pm/pm/pm.tar.gz
-	tar zxvf pm.tar.gz && cd pm
-	makepkg -si
+		# pm - little package mananger
+		# https://aur.archlinux.org/packages.php?ID=62711
+		# dependences: pacaur
+		[ -d ~/build ] && cd ~/build
+		wget -c  https://aur.archlinux.org/packages/pm/pm/pm.tar.gz
+		tar zxvf pm.tar.gz && cd pm
+		makepkg -si
 } && installpm
 
 # alternative to firefox
@@ -100,11 +103,11 @@ pm i rfkill
 
 
 admintools () {
-	pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo git gksu gksudo lsof tmux
-	pacman -Syu openssh dnsmasq python-setuptools gvim terminator
-	# davfs2 in order to access webdav services
-	# dav://webdav.4shared.com
-	pacman -U https://www.archlinux.org/packages/extra/i686/davfs2/download/
+		pacman -Syu gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo git gksu gksudo lsof tmux
+		pacman -Syu openssh dnsmasq python-setuptools gvim terminator
+		# davfs2 in order to access webdav services
+		# dav://webdav.4shared.com
+		pacman -U https://www.archlinux.org/packages/extra/i686/davfs2/download/
 } && admintools
 
 gdiskdump () {
@@ -114,41 +117,41 @@ gdiskdump () {
 } && gdiskdump
 
 configzsh () {
-	# video explanation: http://www.youtube.com/watch?v=1S3MUVIAieE
-	# https://github.com/robbyrussell/oh-my-zsh
-	# after install you need to do new login
-	# themes here: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-	pacman -Syu zsh zsh-lovers git
-	yaourt -S zsh-completions
-	git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-	cp ~/.zshrc ~/.zshrc.orig
-	cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-	sudo chsh -s $(which zsh) $(whoami)
+		# video explanation: http://www.youtube.com/watch?v=1S3MUVIAieE
+		# https://github.com/robbyrussell/oh-my-zsh
+		# after install you need to do new login
+		# themes here: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
+		pacman -Syu zsh zsh-lovers git
+		yaourt -S zsh-completions
+		git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+		cp ~/.zshrc ~/.zshrc.orig
+		cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+		sudo chsh -s $(which zsh) $(whoami)
 } && configzsh
 
 configyaourt(){
-cat <<-EOF > ~/.yaourtrc
-# Yaourt Configuration File
-# Sun Jan  2 21:04:01 IST 2011
+		cat <<-EOF > ~/.yaourtrc
+		# Yaourt Configuration File
+		# Sun Jan  2 21:04:01 IST 2011
 
-# If set to 1, always use the default choice without confirmation.
-NOCONFIRM=1
+		# If set to 1, always use the default choice without confirmation.
+		NOCONFIRM=1
 
-#If set to 0, don’t propose to edit files (from AUR or from ABS).
-EDITFILES=0
+		#If set to 0, don’t propose to edit files (from AUR or from ABS).
+		EDITFILES=0
 
-#If 0, disable colors
-USECOLOR=1
-EOF
+		#If 0, disable colors
+		USECOLOR=1
+		EOF
 } && configyaourt
 
 
 basesystem () {
-	sudo pacman -Syu dbus acpi acpid
+		sudo pacman -Syu dbus acpi acpid
 } && basesystem
 
 compactadores () {
-	sudo pacman -Sy zip unzip unrar p7zip
+		sudo pacman -Sy zip unzip unrar p7zip
 } && compactadores
 
 # adding pandoc
@@ -158,9 +161,9 @@ cabal update
 cabal install pandoc
 
 graphictools () {
-	sudo pacman -Syu inkscape gimp imagemagick
-	sudo yaourt -S --noconfirm gloobus-sushi-bzr
-    sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
+		sudo pacman -Syu inkscape gimp imagemagick
+		sudo yaourt -S --noconfirm gloobus-sushi-bzr
+		sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
 } && graphictools
 
 googletalkplugin () {
@@ -171,32 +174,32 @@ googletalkplugin () {
 } && googletalkplugin
 
 multimedia () {
-	# corebird is a twitter client
-	# simplescreenrecorder: https://aur.archlinux.org/packages/simplescreenrecorder/
-	# gnome-shell-mousewell: https://github.com/tobiasquinn/gnome-shell-mousewheel-zoom
-	# python powerline: https://aur.archlinux.org/packages/python-powerline-git/
-	# http://gonzalorau.com.ar/descarga-musica-de-grooveshark-con-groove-dl/
-	# audio-recorder
-	# https://aur.archlinux.org/packages/au/audio-recorder/audio-recorder.tar.gz
-	# gcap is a tool to download youtube subtitles
-	yaourt -S groove-dl-git
-	# tools to edit subtitles
-	yaourt -S subtitleeditor python-pysrt
-	yaourt -S font-manager
-	sudo yaourt -S corebird-git
-	sudo yaourt -S youtube-dl gcap
-	sudo pacman -Syu
-	sudo pacman -Syu sox
-	sudo pacman -Syu xorg-utils pavucontrol
-	gnome-{document,music,maps,photos,tweak-tool,extra}
-	sudo pacman -S --noconfirm audacious audacity
-	sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
-	sudo pacman -S --noconfirm rhythmbox
-	sudo yaourt -S --noconfirm codecs
-  sudo pacman -S vlc ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
-	rm -rf ~/.thumbnails/fail
-	# sucessor do ffmpeg
-	# https://aur.archlinux.org/packages/libav-git/
+		# corebird is a twitter client
+		# simplescreenrecorder: https://aur.archlinux.org/packages/simplescreenrecorder/
+		# gnome-shell-mousewell: https://github.com/tobiasquinn/gnome-shell-mousewheel-zoom
+		# python powerline: https://aur.archlinux.org/packages/python-powerline-git/
+		# http://gonzalorau.com.ar/descarga-musica-de-grooveshark-con-groove-dl/
+		# audio-recorder
+		# https://aur.archlinux.org/packages/au/audio-recorder/audio-recorder.tar.gz
+		# gcap is a tool to download youtube subtitles
+		yaourt -S groove-dl-git
+		# tools to edit subtitles
+		yaourt -S subtitleeditor python-pysrt
+		yaourt -S font-manager
+		sudo yaourt -S corebird-git
+		sudo yaourt -S youtube-dl gcap
+		sudo pacman -Syu
+		sudo pacman -Syu sox
+		sudo pacman -Syu xorg-utils pavucontrol
+		gnome-{document,music,maps,photos,tweak-tool,extra}
+		sudo pacman -S --noconfirm audacious audacity
+		sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
+		sudo pacman -S --noconfirm rhythmbox
+		sudo yaourt -S --noconfirm codecs
+		sudo pacman -S vlc ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
+		rm -rf ~/.thumbnails/fail
+		# sucessor do ffmpeg
+		# https://aur.archlinux.org/packages/libav-git/
 } && multimedia
 
 
