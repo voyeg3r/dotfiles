@@ -3,6 +3,11 @@
 
 sudo chsh -s $(which zsh) john
 
+==stopping services==
+# https://wiki.archlinux.org/index.php/Systemd#Basic_systemctl_usage
+
+ systemctl disable bluetooth
+
 ==Backlight==
 
 When system starts, screen backlight is set to maximum by default. This can be fixed by specifying backlight level in the following udev rule:
