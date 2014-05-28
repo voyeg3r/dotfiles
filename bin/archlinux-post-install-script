@@ -91,6 +91,9 @@ pm i icecat
 # anki
 pm i aur/anki-git
 
+# watch movies throug torrents
+pm i aur/popcorntime-git
+
 # kernel optimization to desktop
 pm i ulatencyd
 
