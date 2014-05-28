@@ -89,7 +89,7 @@ installpm () {
 pm i icecat
 
 # anki
-pm i aur/anki-git
+pm i aur/anki-git mplayer
 
 # watch movies throug torrents
 pm i aur/popcorntime-git
