@@ -88,6 +88,9 @@ installpm () {
 # alternative to firefox
 pm i icecat
 
+# anki
+pm i aur/anki-git
+
 # kernel optimization to desktop
 pm i ulatencyd
 
@@ -161,7 +164,7 @@ cabal update
 cabal install pandoc
 
 graphictools () {
-		sudo pacman -Syu inkscape gimp imagemagick
+		sudo pacman -Syu inkscape gimp imagemagick xclip
 		sudo yaourt -S --noconfirm gloobus-sushi-bzr
 		sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
 } && graphictools
