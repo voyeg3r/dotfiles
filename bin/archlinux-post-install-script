@@ -89,7 +89,7 @@ installpm () {
 pm i icecat
 
 # anki
-pm i aur/anki-git mplayer aur/python-pyaudio lame sox
+pm i aur/anki-git mplayer aur/python-pyaudio lame sox aur/audio-recorder
 
 # watch movies throug torrents
 pm i aur/popcorntime-git
