@@ -1,0 +1,14 @@
+#!/bin/env bash
+
+awk 'BEGIN {
+	command = "ls"
+	while ( ( command | getline  line  ) > 0) {
+		linelower = tolower(line)
+		if ( linelower ~ /[[:space:]]/ )  {
+			gsub(/[[:space:]]/,"",linelower)
+			mvcmd = "mv \047" line "\047 " linelower
+			system(mvcmd)
+		}
+	}
+	close(command)
+	}'
