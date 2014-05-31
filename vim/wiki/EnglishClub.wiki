@@ -1,6 +1,6 @@
-English Club
+=English Club=
 
-Introdução:
+=Introdução=
 
 Um clube de inglês, no qual alunos mais adiantados no estudo
 da lingua inglesa organizam reuniões semanais para praticar
@@ -12,7 +12,7 @@ professores ou local, uma vez que na nternet existem
 inúmeros recursos como skype, twitter, e-mais etc. que
 facilitam a interação dos membros do clube.
 
-Metodologia:
+=Metodologia=
 
 Inglês real, usando metodologias como:
 
@@ -78,7 +78,7 @@ This way our brain learn more fast and easyest
       * Não aprenda palavras, aprenda frases:
 Aprender por sentenças é mais produtivo poque a gramática já está embutida, se aprende também as contrações e ligações entre palavras.
 
-Why study phases?
+=Why study phases?=
 
 “People don’t speak a language well just by learning single
 words and grammar points. Instead, fluent speakser remember
@@ -156,8 +156,7 @@ what to say next.” Girias da da Internet
          * YW – You’re welcome! (De nada!)
          * ZOMG – Oh, my God! (Aí, meu Deus) [usado para expressar sarcasmo]
 
-________________
-Técnicas para Aprender Inglês e Ampliar Vocabulário pt.1
+=Técnicas para Aprender Inglês e Ampliar Vocabulário pt.1=
 
 Publicado em 08/05/2010
 
@@ -235,7 +234,7 @@ desnorteados cada vez que escutam uma palavra sendo
 pronunciada de um jeito diferente ou quando vêem um nativo
 usando uma regra de gramática incorretamente.
 
-Ler em voz alta ativa o lóbulo frontal do cérebro
+=Ler em voz alta ativa o lóbulo frontal do cérebro=
 
 Narrow Reading/ Listening
 Você pode usar essa técnica para
@@ -253,7 +252,7 @@ goste. Encontre vários artigos, livros, podcasts, enfim,
 materiais em geral relacionados com esse tema. Dê prioridade
 aos que forem mais fáceis de entender. E divirta-se!
 
-A Técnica para Aprender Inglês que Muitos Subestimam
+=A Técnica para Aprender Inglês que Muitos Subestimam=
 
 Parte do segredo para se adquirir um vocabulário amplo, em
 qualquer idioma, é a repetição. Eu não conheço nenhum
@@ -270,7 +269,7 @@ Porém enquanto você é iniciante ou intermediário a repetição
 é vital, pois você ainda está construindo a sua base naquele
 idioma. Para aprender mais dicas simples e eficientes:
 
-CONCLUSÃO
+=CONCLUSÃO=
 
 Por experiência própria e por relatos de outros estudantes
 que utilizaram esses mesmos métodos eu te garanto que
@@ -285,14 +284,14 @@ você tem que repetir o último nível que você cursou.  O
 curioso é que depois que você termina o curso, eles garantem
 que você nunca mais esquece… interessante, não acha???
 
-Onde eu Aprendi Essas Técnicas?
+=Onde eu Aprendi Essas Técnicas?=
 
 Essas dicas vem da Newsletter do site Effortless English e
 das experiências que eu tive colocando o método deles em
 ação. Tem mais dicas nessa newsletter, cadastre-se e
 confira: Effortless English Newsletter
 
-Seven rules to learn english fastest
+=Seven rules to learn english fastest=
 
 Hi, I’m A.J. Hoge, the director of "Effortless English" and
 welcome to the Free 7 Rules e-mail course. Today is rule 1.
@@ -333,7 +332,7 @@ ice-cream". You write down the whole phrase. Why do we do
 this? What's the power of phrases? Well, phrases give you a
 lot of information, much more information.
 
-Number 1
+==Number 1==
 
 Phrases are easier to remember, because they have meaning,
 they have a kind of a picture, a story, especially when you
@@ -346,7 +345,7 @@ information, all this extra information helps you remember
 the meaning of the phrase and the meaning of that word. So
 it helps your memory. Much easier to remember.
 
-Number 2
+==Number 2==
 
 There's a bonus. When you learn phrases, you are learning
 grammar also. You are not only learning an individual word,
@@ -409,7 +408,7 @@ with rule number 2. So I will see you tomorrow. Bye-bye.
 
 Click here to go to the official Effortless English website!
 
-Rule 2
+==Rule 2==
 
 Hi! This is A.J. Hoge again, the director of "Effortless
 English" and today we're gonna learn about Rule Number 2.
@@ -491,7 +490,7 @@ rule number three tomorrow. So I hope you enjoyed this
 e-mail course and these videos and I'll see you next time.
 Bye-bye.
 
-Rule 3
+==Rule 3==
 
 Hi, I'm A.J. Hoge, the director of "Effortless English",
 welcome to Rule Number 3. So rule number three is very
@@ -567,7 +566,7 @@ see you then. Bye-bye.
 
 Click here to check Effortless English lessons for yourself!
 
-Rule 4
+==Rule 4==
 
 Hi, this is A.J. again, director of "Effortless English".
 Welcome to the fourth rule for speaking excellent English.
@@ -675,7 +674,7 @@ learning, repeat everything a lot, repeat it many times. So
 I'll see you tomorrow for rule number 5. Have a great day.
 Take care. Bye-bye.
 
-Rule 5
+==Rule 5==
 
 Hi, this is A.J. Hoge, the director of "Effortless English".
 Welcome to day 5 of the seven rules to excellent speaking
@@ -787,7 +786,7 @@ Alright? That's the end of today's rule, I will see you
 tomorrow for our next rule. Take care and have a great day.
 Bye-bye.
 
-Rule 6
+==Rule 6==
 
 Hi, this is A.J. Hoge, director of "Effortless English", and
 today we have rule number 6 to speak excellent English.
@@ -802,19 +801,19 @@ up or in the trash. So what should you do? How can you learn
 now? Well, I want you to use real materials. What do I mean
 with real materials? Well, I mean English materials that are
 for native speakers or that are very similar to native
-		speaker materials. For example, when you read, don't
-		read text books. Text books are terrible things to read,
-		you don't want to use those. If you want to read
-		English, and reading is great, you should read easy
-		English story books. Easy English novels. And in... in
-		later e-mails, in some of my bonus e-mails, I'll tell
-		you exactly how to do that and give you some suggestions
-		for good books to read. But you wanna read easy English
-				books that you enjoy. Imagine that! right? Pick
-				something you enjoy, something that's interesting,
-				maybe a romance book, maybe an adventure story.
-				Something like that. It's easy, it's fun. That's the
-				best kind of reading.
+speaker materials. For example, when you read, don't
+read text books. Text books are terrible things to read,
+you don't want to use those. If you want to read
+English, and reading is great, you should read easy
+English story books. Easy English novels. And in... in
+later e-mails, in some of my bonus e-mails, I'll tell
+you exactly how to do that and give you some suggestions
+for good books to read. But you wanna read easy English
+books that you enjoy. Imagine that! right? Pick
+something you enjoy, something that's interesting,
+maybe a romance book, maybe an adventure story.
+Something like that. It's easy, it's fun. That's the
+best kind of reading.
 
 So, you know that you should focus on your listening. Your
 listening should be 80% of your learning. So what should you
@@ -856,13 +855,13 @@ to a story book is more interesting and more fun than some
 boring text book. As you get better, when your level is
 higher, you can listen to audio books for young adults or
 for older children. And you just keep listening, listening,
-		and when it's too easy then you choose something a
-		little more difficult and you listen, listen, listen
-		more, a little more difficult, a little more difficult.
-		Eventually, when you are advanced, you can listen to CNN
-		or the BBC or American movies, British movies,
-		Australian movies, etc. But that's at an advanced level.
-		In the beginning start with easy stuff.
+and when it's too easy then you choose something a
+little more difficult and you listen, listen, listen
+more, a little more difficult, a little more difficult.
+Eventually, when you are advanced, you can listen to CNN
+or the BBC or American movies, British movies,
+Australian movies, etc. But that's at an advanced level.
+In the beginning start with easy stuff.
 
 So you're always choosing these real things: audio books,
 podcasts, movies, TV shows (they can be children's TV shows,
@@ -891,7 +890,7 @@ OK. So that's rule number 6. I hope you enjoyed it. Tomorrow
 rule nuber 7, our last rule. Alright, I'll see you tomorrow.
 Have a great day. Bye-bye.
 
-Rule 7
+==Rule 7==
 
 Hi, this is A.J. Hoge, the director of "Effortless English"
 and today is the last rule, rule number 7. And rule number 7
@@ -978,7 +977,7 @@ all of them so that you will learn much more quickly, so
 that you will understand English very quickly and so that
 you will speak English easily, quickly and automatically.
 
-PUBLICITY:
+==PUBLICITY==
 
 So, what's your next step? Well, first you wanna use all 7
 rules. Every time you study English use all of the 7 rules.
@@ -1050,13 +1049,13 @@ TY - thank you
 WTF* - what the f*ck
 
 Referências:
-         * http://learnrealenglish.com/
-         * http://www.effortlessenglishpage.com/p/7-rules.html
-         * http://www.effortlessenglish.org/listening.html
-         * http://www.thinkwithgoogle.co.uk/quarterly/
-         * http://www.phrasemix.com/about_us/
-         * http://delicious.com/voyeg3r/english
-         * http://inglesparaleigos.com/
+ * http://learnrealenglish.com/
+ * http://www.effortlessenglishpage.com/p/7-rules.html
+ * http://www.effortlessenglish.org/listening.html
+ * http://www.thinkwithgoogle.co.uk/quarterly/
+ * http://www.phrasemix.com/about_us/
+ * http://delicious.com/voyeg3r/english
+ * http://inglesparaleigos.com/
 
 Power lessons from effortless english
 search these lessons through the hole web
@@ -1079,33 +1078,33 @@ http://www.lingq.com/learn/en/workdesk/item/6488552/reader/?select=6609976
 There are certain words that serve a function of intensifying that have very limited collocations.
 In fact, some of them only occur with one possible word. It’s what’s called a very strong collocation, or a “word partnership”.
 Study the list of these partnerships below.
-         * Look at them. They’re madly in love.
-         * They’re twins, but they’re radically different.
-         * It’s safer where medicine and doctors are readily available.
-         * Leaving her is something I deeply regret.
-         * The war is an event they still bitterly resent.
-         * If you think you’re finished then you’re sadly mistaken.
-         * The two religious leaders are deeply divided.
-         * The prisoners managed to narrowly escape.
-         * If you help me I’ll be eternally grateful.
-         * I want you to know that I’m terribly sorry.
-         * I want to see the kitchen spotlessly clean.
-         * The stock market is fiercely competitive.
-         * Don’t tell anyone – it’s strictly confidential.
-         * Is that what you truly believe?
-         * She is someone I sorely miss.
-         * The UFO conspiracy is still hotly debated.
-         * I know it’s just marketing, but I think they genuinely care.
-         * All we can do is sincerely hope.
-         * Your guests anxiously await.
-         * She thought no one would notice but it was glaringly obvious.
-         * It’s possible, but I seriously doubt it.
-         * They don’t know for sure. Right now it’s pure conjecture.
-         * The scientist’s research was sharply criticized.
-         * Their technology is vastly superior.
-         * Starting the conflict is something they vehemently deny.
-         * Don’t worry about that. At your age it’s perfectly normal.
-         * The two concepts are diametrically opposed.
+ * Look at them. They’re madly in love.
+ * They’re twins, but they’re radically different.
+ * It’s safer where medicine and doctors are readily available.
+ * Leaving her is something I deeply regret.
+ * The war is an event they still bitterly resent.
+ * If you think you’re finished then you’re sadly mistaken.
+ * The two religious leaders are deeply divided.
+ * The prisoners managed to narrowly escape.
+ * If you help me I’ll be eternally grateful.
+ * I want you to know that I’m terribly sorry.
+ * I want to see the kitchen spotlessly clean.
+ * The stock market is fiercely competitive.
+ * Don’t tell anyone – it’s strictly confidential.
+ * Is that what you truly believe?
+ * She is someone I sorely miss.
+ * The UFO conspiracy is still hotly debated.
+ * I know it’s just marketing, but I think they genuinely care.
+ * All we can do is sincerely hope.
+ * Your guests anxiously await.
+ * She thought no one would notice but it was glaringly obvious.
+ * It’s possible, but I seriously doubt it.
+ * They don’t know for sure. Right now it’s pure conjecture.
+ * The scientist’s research was sharply criticized.
+ * Their technology is vastly superior.
+ * Starting the conflict is something they vehemently deny.
+ * Don’t worry about that. At your age it’s perfectly normal.
+ * The two concepts are diametrically opposed.
 
 Reference: Como Dizer Tudo em Inglês Avançado, de Ron Martinez.
 
@@ -1172,7 +1171,7 @@ http://esl-lab.com/
 Here i can get hundreds of examples and phrases
 http://www.talkenglish.com/Speaking/Idioms/Category6.aspx
 
-Impotant skills to a poliglot
+=Impotant skills to a poliglot=
 Noticing
 Processing
 Guessing
