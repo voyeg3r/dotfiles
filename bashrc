@@ -1,4 +1,4 @@
-# Last Change: 2014 Fev 09 13:32:08
+# Last Change: Qui Jun 05, 2014  09:39
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -103,6 +103,7 @@ expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; 
 calc(){ echo "scale=2;$@" | bc;}
 ff () { find . -type f -iname '*'"$@"'*' ; }
 mkcd() { mkdir -p "$@" && cd $_; }
+gsend() { git commit -am "$1" && git push ;}
 decToBin () { echo "ibase=10; obase=2; $1" | bc; }
 decTohex () { bc <<< "obase=16; $1"; }
 biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
@@ -340,7 +341,7 @@ if [ -d /usr/local/texlive/2013/bin/i386-linux ] ; then
   PATH=/usr/local/texlive/2013/texmf-dist/doc/man:$PATH
 fi
 
-[ -d ~/bin ] && PATH=~/bin:$PATH
+#[ -d ~/bin ] && PATH=~/bin:$PATH
 
 # para chamar o pythonrc
 PYTHONSTARTUP="$HOME/.pythonstartup"

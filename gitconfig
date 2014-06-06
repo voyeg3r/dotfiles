@@ -1,31 +1,29 @@
 [user]
-	name = voyeg3r
-	email = voyeg3r@gmail.com
-[credential]
-	helper = cache --timeout=3600
+    name = voyeg3r
+    email = voyeg3r@gmail.com
+
 [color]
-	ui = true
-[core]
-	editor = vim
-	filemode = false
-[merge]
-	tool = vimdiff
-[alias]
-  st = status
-  ss = status -s
-  aa = !git add -u && git add . && git status
-  ap = add -p
-  co = checkout
-  df = diff
-  lg = log --graph --pretty=format:'%C(bold red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold green)<%an>%Creset' --abbrev-commit --date=relative
-  cm = commit --verbose
-  ca = commit -a --verbose
-  am = commit --amend
-  ph = push
-  ft = fetch
-  pl = pull
-  pr = pull --rebase
-	gm = !bash -c \"git commit $@ && git push\"
-	commit-push = !bash -c \"git commit $@ && git push\"
+    diff = auto
+    status = auto
+    branch = auto
+    ui = auto
+
 [push]
-	default = simple
+    default = matching
+
+[core]
+    editor = gvim
+    pager = less -R
+
+[alias]
+    diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ls = ls-files
