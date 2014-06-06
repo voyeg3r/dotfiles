@@ -1,4 +1,4 @@
-# Last Change: Qui Jun 05, 2014  09:39
+# Last Change: Qui Jun 05, 2014  10:12
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -104,6 +104,7 @@ calc(){ echo "scale=2;$@" | bc;}
 ff () { find . -type f -iname '*'"$@"'*' ; }
 mkcd() { mkdir -p "$@" && cd $_; }
 gsend() { git commit -am "$1" && git push ;}
+gst() { git status;}
 decToBin () { echo "ibase=10; obase=2; $1" | bc; }
 decTohex () { bc <<< "obase=16; $1"; }
 biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
@@ -510,3 +511,23 @@ if [ -d ~/anaconda ] ; then
 # http://va.mu/dkRc
 export PATH="/home/sergio/anaconda/bin:$PATH"
 fi
+
+eval "$(fasd --init auto)"
+
+fasd_cache="$HOME/.fasd-init-bash"
+if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+  fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+fi
+
+source "$fasd_cache"
+unset fasd_cache
+# interactive fasd
+alias zi="fasd -e cd -i"
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
