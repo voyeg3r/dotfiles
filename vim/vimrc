@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom Mai 18, 2014  10:36
+" Last Change: Sáb Jun 07, 2014  01:01
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -159,7 +159,7 @@ endif
 
 " turn off the toolbar and menubar
 if has('gui_running')
-	set anti gfn=Ubuntu\ Mono\ 13,Monaco\ 10,Bpmono\ 11,\ Envy\ Code\ R\ 10
+	set anti gfn=Ubuntu\ Mono\ 12,Monaco\ 10,Bpmono\ 11,\ Envy\ Code\ R\ 10
 end
 
 " correção do plugin surround para a letra 's'
