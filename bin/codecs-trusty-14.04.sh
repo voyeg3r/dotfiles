@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jun 10, 2014  04:51
+# Last Change: Ter Jun 10, 2014  06:29
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -104,6 +104,9 @@ wget -O faience_icon.zip http://db.tt/U5v4fQUx
 unzip faience_icon.zip -d ~/.icons; rm faience_icon.zip
 
 sudo apt-get install -y `apt-cache search gnome-icon-theme | awk '{print $1}'`
+
+# enable midle mouse
+gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled true
 } && changedesktop
 
 
