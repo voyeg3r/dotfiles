@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jun 10, 2014  04:27
+# Last Change: Ter Jun 10, 2014  04:38
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -29,6 +29,12 @@ sudo add-apt-repository ppa:thefanclub/ubuntu-after-install
 sudo apt-get update
 sudo apt-get install -y ubuntu-after-install
 } && ubuntuafterinstall
+
+firefoxnightly (){
+sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+sudo apt-get update
+sudo apt-get -y install firefox-trunk
+} && firefoxnightly
 
 synapselauncher (){
 # install synapse application launcher
