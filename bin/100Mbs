@@ -2,7 +2,7 @@
 # script to perform full duplex to your netcard (linux)
 # save in /etc/network/if-up.d/full-duplex && chmod +x them
 # Author: Sergio Luiz Araujo Silva
-# wget -c  https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/100Mbs -O /etc/network/if-up.d/100Mbs
+# wget -c  https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/100mbs -o - > /etc/network/if-up.d/100mbs
 
 # where is ethtool ?
 #ETHTOOL=`command -v ethtool` || { echo "I require ethtool but it's not installed. Aborting." >&2; exit 1; }

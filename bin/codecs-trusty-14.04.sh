@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jun 10, 2014  02:24
+# Last Change: Ter Jun 10, 2014  03:22
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -12,6 +12,10 @@
 
 # backup sources.list
 sudo cp /etc/apt/sources.list{,.backup}
+
+# disabling some consoles
+sudo sed -i '/ACTIVE_CONSOLES/s/1-6/1-2/g' /etc/default/console-setup
+sudo apt-get install -y zram-config
 
 synapselauncher (){
 # install synapse application launcher
@@ -52,4 +56,27 @@ test -f /sys/block/sdb/queue/scheduler && echo deadline > /sys/block/sdb/queue/s
 test -f /sys/block/hda/queue/scheduler && echo deadline > /sys/block/hda/queue/scheduler
 } && escalonandodiscos
 
+multimidia (){
+sudo apt-get install -y audacity audacious audacious-plugins
+} && multimidia
+
+graphic (){
+sudo apt-get install -y gimp inkscape imagemagick pdftk
+} && graphic
+
+changedesktop (){
+# theme
+[ -d ~/.themes ] || mkdir ~/.themes
+wget -O faience_gnome_shell_theme.zip http://db.tt/3GSR2iOD
+unzip faience_gnome_shell_theme.zip -d ~/.themes; rm faience_gnome_shell_theme.zip
+
+
+
+# icons
+[ -d ~/.icons ] || mkdir ~/.icons
+wget -O faience_icon.zip http://db.tt/U5v4fQUx
+unzip faience_icon.zip -d ~/.icons; rm faience_icon.zip
+
+sudo apt-get install -y `apt-cache search gnome-icon-theme | awk '{print $1}'`
+} && changedesktop
 
