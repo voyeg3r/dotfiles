@@ -1,6 +1,6 @@
-# Arquivo: ~/.zshrc # head {{{
+# Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Dom Mai 04, 2014  01:17
+# Last Change: Ter Jun 10, 2014  06:25
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -15,26 +15,25 @@
 # +======================================+
 #
 # # Reference: https://github.com/plitc/zshrc/blob/master/.zshrc
-#
-# Path to your oh-my-zsh configuration.# }}}
 
+# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.dotfiles/oh-my-zsh
 
-# path and cdpath {{{
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
+# path and cdpath
+#export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
 cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
-path=(~/bin $path)
-# }}}
+#path=(~/bin $path)
+#
 
-# theme {{{
+# theme
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
-# }}}
+#
 
-# fasd or autojump {{{
+# fasd or autojump
 #[[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
 # I am using now fasd: https://github.com/clvv/fasd
 
@@ -55,7 +54,7 @@ local _fasd_ret="$(fasd -e 'printf %s' "$@")"
 
 # as an autojump user, i need only this for now
 alias j=' fasd_cd -d'
-# }}}
+#
 #
 
 # auto open images
@@ -70,11 +69,11 @@ update(){
  yaourt -Syua firefox-nightly
 }
 
-# basic fonfig {{{
+# basic fonfig
 HISTFILE=~/.zhistory
 HISTSIZE=25000
 SAVEHIST=25000
-HOSTNAME="`hostname`"
+HOSTNAME="`/bin/hostname`"
 PAGER='less'
 EDITOR='vim'
 
@@ -95,9 +94,9 @@ autoload -Uz zmv
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^Xe' edit-command-line
-# }}}
+#
 
-# magic-space and more {{{
+# magic-space and more
 globalias() {
    if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
      zle _expand_alias
@@ -110,9 +109,9 @@ zle -N globalias
 bindkey " " globalias
 bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
-# }}}
+#
 
-# aliases# {{{
+# aliases#
 groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
 alias ping='ping -n -c 4 -i 0.2 -W1'
 alias shell='echo ${SHELL:t}'
@@ -158,9 +157,9 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 alias v='f -e vim'       # open file with vim
-alias o='a -e xdg-open'  # quick opening files with xdg-open# }}}
+alias o='a -e xdg-open'  # quick opening files with xdg-open#
 
-## complete {{{
+## complete
 # zstyle - completions
 # autocomplete file
 zstyle :compinstall filename '/home/sergio/.zshrc'
@@ -179,9 +178,9 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 #zstyle ':completion:*' use-cache on
 zstyle ':completion:*' use-cache 1
 zstyle ':completion:*' cache-path ~/.zsh_cache
-# }}}
+#
 
-# oh my zsh tips {{{
+# oh my zsh tips
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -216,16 +215,16 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
-# end tips }}}
+# end tips
 
-# plugins {{{
+# plugins
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(extract git battery pacman cp sudo tmux themes history-substrin-search command-not-found zsh-syntax-highlighting)
+plugins=(extract git battery pacman cp sudo themes history-substrin-search command-not-found zsh-syntax-highlighting)
 
-# }}}
+#
 
 source $ZSH/oh-my-zsh.sh
 
@@ -233,7 +232,7 @@ source $ZSH/oh-my-zsh.sh
 #fpath=( ~/.dotfiles/functions "${fpath[@]}" )
 #autoload -Uz ping host
 
-# functions {{{
+# functions
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
 gsend() { git commit -am "$1" && git push ;}
 #lower() { echo "${@}" | awk '{print tolower($0)}' ;}
@@ -264,9 +263,9 @@ record(){
  arecord -v -f cd -t raw | lame -r - $name
 }
 
-# end functions }}}
+# end functions
 
-# firefox improviments {{{
+# firefox improviments
 # disalbe rendering fonts in firefox to free memory
 export MOZ_DISABLE_PANGO='1'
-# }}}
+#
