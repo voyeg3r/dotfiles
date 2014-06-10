@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jun 10, 2014  04:38
+# Last Change: Ter Jun 10, 2014  04:51
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -129,4 +129,8 @@ sudo apt-get update
 sudo apt-get -y install skype
 } && installskype
 
-
+installpopcorntime (){
+wget https://raw.github.com/hotice/webupd8/master/popcorn-build
+chmod +x popcorn-build
+./popcorn-build
+} && installpopcorntime
