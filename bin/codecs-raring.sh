@@ -1,7 +1,7 @@
 #!/bin/bash
 # codecs-raring.sh
 # Criado: Sab 27/abr/2013 hs 16h
-# Last Change: 2013 Nov 01 16:12:58
+# Last Change: Ter Jun 10, 2014  04:18
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -348,7 +348,7 @@ rm -rf ~/.gstreamer-0.10/*
 gst-inspect
 } && totemshowthumbnails
 
-sudo apt-fast install gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-gnonlin gstreamer0.10-plugins-bad-multiverse gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly totem-plugins-extra gstreamer-dbus-media-service gstreamer-tools ubuntu-restricted-extras ttf-mscorefonts-installer
+sudo apt-get install gstreamer0.10-ffmpeg gstreamer0.10-fluendo-mp3 gstreamer0.10-gnonlin gstreamer0.10-plugins-bad-multiverse gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly totem-plugins-extra gstreamer-dbus-media-service gstreamer-tools ubuntu-restricted-extras ttf-mscorefonts-installer
 
 # jdownloader
 sudo add-apt-repository ppa:jd-team/jdownloader && sudo apt-fast update && sudo apt-fast install jdownloader -y
