@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qua Jun 11, 2014  10:57
+# Last Change: Qua Jun 11, 2014  11:01
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -76,7 +76,7 @@ test -f /sys/block/hda/queue/scheduler && echo deadline > /sys/block/hda/queue/s
 } && escalonandodiscos
 
 multimidia (){
-sudo apt-get install -y audacity audacious audacious-plugins
+sudo apt-get install -y audacity audacious audacious-plugins sox
 sudo apt-get install -y ubuntu-restricted-extras vlc youtube-dl
 
 sudo apt-get install gstreamer0.10-plugins-ugly libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra
