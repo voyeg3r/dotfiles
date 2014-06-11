@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qua Jun 11, 2014  10:47
+# Last Change: Qua Jun 11, 2014  10:57
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -107,6 +107,8 @@ sudo apt-get install -y `apt-cache search gnome-icon-theme | awk '{print $1}'`
 
 # enable midle mouse
 gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled true
+
+sudo apt-get install -y nautilus-open-terminal
 } && changedesktop
 
 
