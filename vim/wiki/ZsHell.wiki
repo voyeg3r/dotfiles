@@ -1,12 +1,10 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: 2014 Mar 01 16:06:27
+Last Change: Qua Jun 11, 2014  05:09
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r at gmail.com>
-
-{{{
 
 =fasd tool shortcuts==
 
@@ -30,7 +28,7 @@ email: <voyeg3r at gmail.com>
 	alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 	alias zz='fasd_cd -d -i' # cd with interactive selection
 	alias v='f -e vim'       # open file with vim
-	alias o='a -e xdg-open'  # quick opening files with xdg-open# }}}
+	alias o='a -e xdg-open'  # quick opening files with xdg-open#
 
 = changing the shell =
 
@@ -69,7 +67,7 @@ print -l foldero/**/*(/)
 # show only regular files
 print -l foldero/**/*(.)
 
- changed in last three days
+changed in last three days
 		ls -l */**(.m3)
 
 # show empty files

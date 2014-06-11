@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qua Jun 11, 2014  11:01
+# Last Change: Qua Jun 11, 2014  07:23
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -57,6 +57,9 @@ sudo apt-get -y install xclip
 
 # how generate new ssh key
 # https://help.github.com/articles/generating-ssh-keys
+
+# how install neovim on ubuntu
+# http://robinlovelace.net/computing/2014/04/19/installing-neovim-on-ubuntu.html
 
 installadmintools (){
 wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/gitconfig -O ~/.gitconfig

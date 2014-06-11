@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Ter Jun 10, 2014  06:25
+# Last Change: Qua Jun 11, 2014  05:15
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -235,8 +235,8 @@ source $ZSH/oh-my-zsh.sh
 # functions
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
 gsend() { git commit -am "$1" && git push ;}
-#lower() { echo "${@}" | awk '{print tolower($0)}' ;}
-#upper() { echo "${@}" | awk '{print toupper($0)}' ;}
+lower() { echo "${*}" | awk '{print tolower($0)}' ;}
+upper() { echo "${*}" | awk '{print toupper($0)}' ;}
 expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; }
 calc(){ echo "scale=2;$@" | bc;}
 alias calc='noglob calc'
