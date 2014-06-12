@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qui Jun 12, 2014  10:15
+# Last Change: Qui Jun 12, 2014  12:15
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -14,45 +14,51 @@
 sudo cp /etc/apt/sources.list{,.backup}
 
 fixetchosts () {
-[ "`awk 'NR==1 {print $NF}' /etc/hosts`" == "`hostname`" ] || \
-sed -i "1s/\(.*\)/\1 `hostname`/g" /etc/hosts
+		[ "`awk 'NR==1 {print $NF}' /etc/hosts`" == "`hostname`" ] || \
+				sed -i "1s/\(.*\)/\1 `hostname`/g" /etc/hosts
 } && fixetchosts
 
 
 installaptfast () {
-# references: https://github.com/ilikenwf/apt-fast
-if ! which apt-fast >/dev/null; then
-  # https://github.com/ilikenwf/apt-fast
+		# references: https://github.com/ilikenwf/apt-fast
+		if ! which apt-fast >/dev/null; then
+				# https://github.com/ilikenwf/apt-fast
 
-  # aria2
-  command -v aria2c || sudo apt-get -y install aria2
+				# aria2
+				command -v aria2c || sudo apt-get -y install aria2
 
-	# the script itself
-	wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/apt-fast -O /usr/bin/apt-fast && chmod 0755 $_
-  wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/apt-fast.conf -O /etc/apt-fast.conf
+				# make backup
+				cp /etc/apt-fast.conf{,-backup}
 
-  # don't make questions
-  sed -i 's/#DOWNLOADBEFORE=true/DOWNLOADBEFORE=false/g' /etc/apt-fast.conf
+				# the script itself
+				wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/apt-fast -O /usr/bin/apt-fast && chmod 0755 $_
+				wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/apt-fast.conf -O /etc/apt-fast.conf
 
-	# zsh completions
-  wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/completions/zsh/_apt-fast -O /usr/share/zsh/functions/Completion/Debian/_apt-fast
-  chown root:root /usr/share/zsh/functions/Completion/Debian/_apt-fast
-  source /usr/share/zsh/functions/Completion/Debian/_apt-fast
+				# don't make questions
+				sed -i 's/#DOWNLOADBEFORE=true/DOWNLOADBEFORE=false/g' /etc/apt-fast.conf
 
-	# bash completions
-  wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/completions/bash/apt-fast -O /etc/bash_completion.d/apt-fast
-	chown root:root /etc/bash_completion.d/apt-fast
-  #. /etc/bash_completion
+				# list of brazilian mirrors
+				mirrors="https://launchpad.net/ubuntu/+mirror/ubuntu.c3sl.ufpr.br-archive,https://launchpad.net/ubuntu/+mirror/mirror.globo.com-archive,https://launchpad.net/ubuntu/+mirror/edugraf,https://launchpad.net/ubuntu/+mirror/mirror.unesp.br-archive,https://launchpad.net/ubuntu/+mirror/sft.if.usp.br-archive,https://launchpad.net/ubuntu/+mirror/ubuntu-archive.locaweb.com.br-archive,https://launchpad.net/ubuntu/+mirror/ubuntu.laps.ufpa.br-archive,https://launchpad.net/ubuntu/+mirror/www.las.ic.unicamp.br-archive"
 
-	# man pages
-  wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/man/apt-fast.8 -O /usr/share/man/man8/apt-fast.8
-	gzip -f9 /usr/share/man/man8/apt-fast.8
-	wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/man/apt-fast.conf.5 -O /usr/share/man/man5/apt-fast.conf.5
-  gzip -f9 /usr/share/man/man5/apt-fast.conf.5
+				# zsh completions
+				wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/completions/zsh/_apt-fast -O /usr/share/zsh/functions/Completion/Debian/_apt-fast
+				chown root:root /usr/share/zsh/functions/Completion/Debian/_apt-fast
+				source /usr/share/zsh/functions/Completion/Debian/_apt-fast
 
-  # update and upgrade
-  apt-fast update && apt-fast upgrade
-fi
+				# bash completions
+				wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/completions/bash/apt-fast -O /etc/bash_completion.d/apt-fast
+				chown root:root /etc/bash_completion.d/apt-fast
+				#. /etc/bash_completion
+
+				# man pages
+				wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/man/apt-fast.8 -O /usr/share/man/man8/apt-fast.8
+				gzip -f9 /usr/share/man/man8/apt-fast.8
+				wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/man/apt-fast.conf.5 -O /usr/share/man/man5/apt-fast.conf.5
+				gzip -f9 /usr/share/man/man5/apt-fast.conf.5
+
+				# update and upgrade
+				apt-fast update && apt-fast upgrade
+		fi
 } && installaptfast
 
 # disabling some consoles
@@ -60,31 +66,31 @@ sudo sed -i '/ACTIVE_CONSOLES/s/1-6/1-2/g' /etc/default/console-setup
 sudo apt-fast install -y zram-config
 
 firefoxnightly (){
-sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
-sudo apt-fast update
-sudo apt-fast -y install firefox-trunk
+		sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
+		sudo apt-fast update
+		sudo apt-fast -y install firefox-trunk
 } && firefoxnightly
 
 # chromium browser
 apt-fast install -y `apt-cache search chromium-browser | awk '{print $1}'`
 
 synapselauncher (){
-# install synapse application launcher
-# reference: http://askubuntu.com/questions/449285/is-synapse-application-launcher-available
-sudo apt-add-repository ppa:synapse-core/testing
-sudo apt-fast update
-sudo apt-fast install -y synapse
+		# install synapse application launcher
+		# reference: http://askubuntu.com/questions/449285/is-synapse-application-launcher-available
+		sudo apt-add-repository ppa:synapse-core/testing
+		sudo apt-fast update
+		sudo apt-fast install -y synapse
 } && synapselauncher
 
 installgit (){
-# source: https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04
-sudo apt-fast update
-sudo apt-fast install -y git
-sudo apt-fast install -y build-essential libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
+		# source: https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04
+		sudo apt-fast update
+		sudo apt-fast install -y git
+		sudo apt-fast install -y build-essential libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
 } && installgit
 
 installxclip (){
-sudo apt-fast -y install xclip
+		sudo apt-fast -y install xclip
 } && installxclip
 
 # how generate new ssh key
@@ -94,90 +100,90 @@ sudo apt-fast -y install xclip
 # http://robinlovelace.net/computing/2014/04/19/installing-neovim-on-ubuntu.html
 
 installadmintools (){
-wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/gitconfig -O ~/.gitconfig
-sudo apt-fast install -y zsh vim-gnome vim-doc curl nmap aria2 ethtool
-# fasd
-wget -c  https://github.com/clvv/fasd/tarball/1.0.1
-tar zxvf 1.0.1 && cd 1.0.1
-PREFIX=$HOME make install
+		wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/gitconfig -O ~/.gitconfig
+		sudo apt-fast install -y zsh vim-gnome vim-doc curl nmap aria2 ethtool
+		# fasd
+		wget -c  https://github.com/clvv/fasd/tarball/1.0.1
+		tar zxvf 1.0.1 && cd 1.0.1
+		PREFIX=$HOME make install
 } && installadmintools
 
 escalonandodiscos (){
-test -f /sys/block/sda/queue/scheduler && echo deadline > /sys/block/sda/queue/scheduler
+		test -f /sys/block/sda/queue/scheduler && echo deadline > /sys/block/sda/queue/scheduler
 
-test -f /sys/block/sdb/queue/scheduler && echo deadline > /sys/block/sdb/queue/scheduler
+		test -f /sys/block/sdb/queue/scheduler && echo deadline > /sys/block/sdb/queue/scheduler
 
-test -f /sys/block/hda/queue/scheduler && echo deadline > /sys/block/hda/queue/scheduler
+		test -f /sys/block/hda/queue/scheduler && echo deadline > /sys/block/hda/queue/scheduler
 } && escalonandodiscos
 
 multimidia (){
-sudo apt-fast install -y audacity audacious audacious-plugins sox
-sudo apt-fast install -y ubuntu-restricted-extras vlc youtube-dl
+		sudo apt-fast install -y audacity audacious audacious-plugins sox
+		sudo apt-fast install -y ubuntu-restricted-extras vlc youtube-dl
 
-sudo apt-fast install gstreamer0.10-plugins-ugly libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra
+		sudo apt-fast install gstreamer0.10-plugins-ugly libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra
 } && multimidia
 
 
 installaudiorec () {
-sudo apt-add-repository ppa:osmoma/audio-recorder
-sudo apt-fast update && sudo apt-fast -y install audio-recorder
+		sudo apt-add-repository ppa:osmoma/audio-recorder
+		sudo apt-fast update && sudo apt-fast -y install audio-recorder
 } && installaudiorec
 
 graphic (){
-sudo apt-fast install -y gimp inkscape imagemagick pdftk
+		sudo apt-fast install -y gimp inkscape imagemagick pdftk
 } && graphic
 
 changedesktop (){
-# theme
-[ -d ~/.themes ] || mkdir ~/.themes
-wget -O faience_gnome_shell_theme.zip http://db.tt/3GSR2iOD
-unzip faience_gnome_shell_theme.zip -d ~/.themes; rm faience_gnome_shell_theme.zip
+		# theme
+		[ -d ~/.themes ] || mkdir ~/.themes
+		wget -O faience_gnome_shell_theme.zip http://db.tt/3GSR2iOD
+		unzip faience_gnome_shell_theme.zip -d ~/.themes; rm faience_gnome_shell_theme.zip
 
-# icons
-[ -d ~/.icons ] || mkdir ~/.icons
-wget -O faience_icon.zip http://db.tt/U5v4fQUx
-unzip faience_icon.zip -d ~/.icons; rm faience_icon.zip
+		# icons
+		[ -d ~/.icons ] || mkdir ~/.icons
+		wget -O faience_icon.zip http://db.tt/U5v4fQUx
+		unzip faience_icon.zip -d ~/.icons; rm faience_icon.zip
 
-sudo apt-fast install -y `apt-cache search gnome-icon-theme | awk '{print $1}'`
+		sudo apt-fast install -y `apt-cache search gnome-icon-theme | awk '{print $1}'`
 
-# enable midle mouse
-gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled true
+		# enable midle mouse
+		gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled true
 
-sudo apt-fast install -y nautilus-open-terminal
+		sudo apt-fast install -y nautilus-open-terminal
 } && changedesktop
 
 
 unhidestartupapplications (){
-# Como ver as entradas ocultas do arranque do Ubuntu?
-# fonte: http://ubuntued.info/como-ver-as-entradas-ocultas-do-arranque-do-ubuntu?
-cd /etc/xdg/autostart
-sudo sed --in-place 's/NoDisplay=true/NoDisplay=false/g' *.desktop
-# só para garantir vamos voltar para a pasta padrão
-cd
+		# Como ver as entradas ocultas do arranque do Ubuntu?
+		# fonte: http://ubuntued.info/como-ver-as-entradas-ocultas-do-arranque-do-ubuntu?
+		cd /etc/xdg/autostart
+		sudo sed --in-place 's/NoDisplay=true/NoDisplay=false/g' *.desktop
+		# só para garantir vamos voltar para a pasta padrão
+		cd
 } && unhidestartupapplications
 
 
 libreofficeptbr (){
-sudo apt-fast -y install language-support-writing-pt aspell-pt-br myspell-pt-br ibrazilian iportuguese wportuguese libreoffice-l10n-pt-br
+		sudo apt-fast -y install language-support-writing-pt aspell-pt-br myspell-pt-br ibrazilian iportuguese wportuguese libreoffice-l10n-pt-br
 } && libreofficeptbr
 
 sudo apt-fast -y install deluge
 
 installskype (){
-sudo sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
-sudo apt-fast update
-sudo apt-fast -y install skype
+		sudo sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
+		sudo apt-fast update
+		sudo apt-fast -y install skype
 } && installskype
 
 googletalkplugin () {
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-fast update
-sudo apt-fast install -y google-talkplugin
+		wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+		sudo sh -c 'echo "deb http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+		sudo apt-fast update
+		sudo apt-fast install -y google-talkplugin
 } && googletalkplugin
 
 installpopcorntime (){
-wget https://raw.github.com/hotice/webupd8/master/popcorn-build
-chmod +x popcorn-build
-./popcorn-build
+		wget https://raw.github.com/hotice/webupd8/master/popcorn-build
+		chmod +x popcorn-build
+		./popcorn-build
 } && installpopcorntime
