@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qui Jun 12, 2014  09:00
+# Last Change: Qui Jun 12, 2014  10:15
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -18,41 +18,73 @@ fixetchosts () {
 sed -i "1s/\(.*\)/\1 `hostname`/g" /etc/hosts
 } && fixetchosts
 
+
+installaptfast () {
+# references: https://github.com/ilikenwf/apt-fast
+if ! which apt-fast >/dev/null; then
+  # https://github.com/ilikenwf/apt-fast
+
+  # aria2
+  command -v aria2c || sudo apt-get -y install aria2
+
+	# the script itself
+	wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/apt-fast -O /usr/bin/apt-fast && chmod 0755 $_
+  wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/apt-fast.conf -O /etc/apt-fast.conf
+
+  # don't make questions
+  sed -i 's/#DOWNLOADBEFORE=true/DOWNLOADBEFORE=false/g' /etc/apt-fast.conf
+
+	# zsh completions
+  wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/completions/zsh/_apt-fast -O /usr/share/zsh/functions/Completion/Debian/_apt-fast
+  chown root:root /usr/share/zsh/functions/Completion/Debian/_apt-fast
+  source /usr/share/zsh/functions/Completion/Debian/_apt-fast
+
+	# bash completions
+  wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/completions/bash/apt-fast -O /etc/bash_completion.d/apt-fast
+	chown root:root /etc/bash_completion.d/apt-fast
+  #. /etc/bash_completion
+
+	# man pages
+  wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/man/apt-fast.8 -O /usr/share/man/man8/apt-fast.8
+	gzip -f9 /usr/share/man/man8/apt-fast.8
+	wget -c https://raw.githubusercontent.com/ilikenwf/apt-fast/master/man/apt-fast.conf.5 -O /usr/share/man/man5/apt-fast.conf.5
+  gzip -f9 /usr/share/man/man5/apt-fast.conf.5
+
+  # update and upgrade
+  apt-fast update && apt-fast upgrade
+fi
+} && installaptfast
+
 # disabling some consoles
 sudo sed -i '/ACTIVE_CONSOLES/s/1-6/1-2/g' /etc/default/console-setup
-sudo apt-get install -y zram-config
-
-ubuntuafterinstall (){
-# to run the program run: ubuntu-after-install
-# source: http://www.edivaldobrito.com.br/como-instalar-o-ubuntu-install-ubuntu-14-04-e-derivados/
-sudo add-apt-repository ppa:thefanclub/ubuntu-after-install
-sudo apt-get update
-sudo apt-get install -y ubuntu-after-install
-} && ubuntuafterinstall
+sudo apt-fast install -y zram-config
 
 firefoxnightly (){
 sudo add-apt-repository ppa:ubuntu-mozilla-daily/ppa
-sudo apt-get update
-sudo apt-get -y install firefox-trunk
+sudo apt-fast update
+sudo apt-fast -y install firefox-trunk
 } && firefoxnightly
+
+# chromium browser
+apt-fast install -y `apt-cache search chromium-browser | awk '{print $1}'`
 
 synapselauncher (){
 # install synapse application launcher
 # reference: http://askubuntu.com/questions/449285/is-synapse-application-launcher-available
 sudo apt-add-repository ppa:synapse-core/testing
-sudo apt-get update
-sudo apt-get install -y synapse
+sudo apt-fast update
+sudo apt-fast install -y synapse
 } && synapselauncher
 
 installgit (){
 # source: https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04
-sudo apt-get update
-sudo apt-get install -y git
-sudo apt-get install -y build-essential libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
+sudo apt-fast update
+sudo apt-fast install -y git
+sudo apt-fast install -y build-essential libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip
 } && installgit
 
 installxclip (){
-sudo apt-get -y install xclip
+sudo apt-fast -y install xclip
 } && installxclip
 
 # how generate new ssh key
@@ -63,7 +95,7 @@ sudo apt-get -y install xclip
 
 installadmintools (){
 wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/gitconfig -O ~/.gitconfig
-sudo apt-get install -y zsh vim-gnome vim-doc curl nmap aria2 ethtool
+sudo apt-fast install -y zsh vim-gnome vim-doc curl nmap aria2 ethtool
 # fasd
 wget -c  https://github.com/clvv/fasd/tarball/1.0.1
 tar zxvf 1.0.1 && cd 1.0.1
@@ -79,20 +111,20 @@ test -f /sys/block/hda/queue/scheduler && echo deadline > /sys/block/hda/queue/s
 } && escalonandodiscos
 
 multimidia (){
-sudo apt-get install -y audacity audacious audacious-plugins sox
-sudo apt-get install -y ubuntu-restricted-extras vlc youtube-dl
+sudo apt-fast install -y audacity audacious audacious-plugins sox
+sudo apt-fast install -y ubuntu-restricted-extras vlc youtube-dl
 
-sudo apt-get install gstreamer0.10-plugins-ugly libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra
+sudo apt-fast install gstreamer0.10-plugins-ugly libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra
 } && multimidia
 
 
 installaudiorec () {
 sudo apt-add-repository ppa:osmoma/audio-recorder
-sudo apt-get update && sudo apt-get -y install audio-recorder
+sudo apt-fast update && sudo apt-fast -y install audio-recorder
 } && installaudiorec
 
 graphic (){
-sudo apt-get install -y gimp inkscape imagemagick pdftk
+sudo apt-fast install -y gimp inkscape imagemagick pdftk
 } && graphic
 
 changedesktop (){
@@ -106,12 +138,12 @@ unzip faience_gnome_shell_theme.zip -d ~/.themes; rm faience_gnome_shell_theme.z
 wget -O faience_icon.zip http://db.tt/U5v4fQUx
 unzip faience_icon.zip -d ~/.icons; rm faience_icon.zip
 
-sudo apt-get install -y `apt-cache search gnome-icon-theme | awk '{print $1}'`
+sudo apt-fast install -y `apt-cache search gnome-icon-theme | awk '{print $1}'`
 
 # enable midle mouse
 gsettings set org.gnome.settings-daemon.peripherals.mouse middle-button-enabled true
 
-sudo apt-get install -y nautilus-open-terminal
+sudo apt-fast install -y nautilus-open-terminal
 } && changedesktop
 
 
@@ -129,19 +161,19 @@ libreofficeptbr (){
 sudo apt-fast -y install language-support-writing-pt aspell-pt-br myspell-pt-br ibrazilian iportuguese wportuguese libreoffice-l10n-pt-br
 } && libreofficeptbr
 
-sudo apt-get -y install deluge
+sudo apt-fast -y install deluge
 
 installskype (){
 sudo sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
-sudo apt-get update
-sudo apt-get -y install skype
+sudo apt-fast update
+sudo apt-fast -y install skype
 } && installskype
 
 googletalkplugin () {
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-get update
-sudo apt-get install -y google-talkplugin
+sudo apt-fast update
+sudo apt-fast install -y google-talkplugin
 } && googletalkplugin
 
 installpopcorntime (){
