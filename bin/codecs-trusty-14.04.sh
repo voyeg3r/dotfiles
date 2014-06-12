@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qua Jun 11, 2014  07:23
+# Last Change: Qui Jun 12, 2014  09:00
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -136,6 +136,13 @@ sudo sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt
 sudo apt-get update
 sudo apt-get -y install skype
 } && installskype
+
+googletalkplugin () {
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update
+sudo apt-get install -y google-talkplugin
+} && googletalkplugin
 
 installpopcorntime (){
 wget https://raw.github.com/hotice/webupd8/master/popcorn-build
