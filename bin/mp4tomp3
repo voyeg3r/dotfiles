@@ -16,6 +16,6 @@ sleep 2
 
 # ffmpeg is deprecrated
 #ffmpeg -i $1 -vn -ab 192k -acodec libmp3lame -ac 2 ${nome}.mp3
-avconv -i $1 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 ${nome}.mp3
+avconv -i "$1" -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 ${nome}.mp3
 
 

@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qui Jun 12, 2014  12:15
+# Last Change: Sex Jun 13, 2014  08:19
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -110,19 +110,15 @@ installadmintools (){
 
 escalonandodiscos (){
 		test -f /sys/block/sda/queue/scheduler && echo deadline > /sys/block/sda/queue/scheduler
-
 		test -f /sys/block/sdb/queue/scheduler && echo deadline > /sys/block/sdb/queue/scheduler
-
 		test -f /sys/block/hda/queue/scheduler && echo deadline > /sys/block/hda/queue/scheduler
 } && escalonandodiscos
 
 multimidia (){
 		sudo apt-fast install -y audacity audacious audacious-plugins sox
 		sudo apt-fast install -y ubuntu-restricted-extras vlc youtube-dl
-
 		sudo apt-fast install gstreamer0.10-plugins-ugly libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra
 } && multimidia
-
 
 installaudiorec () {
 		sudo apt-add-repository ppa:osmoma/audio-recorder
@@ -152,7 +148,6 @@ changedesktop (){
 		sudo apt-fast install -y nautilus-open-terminal
 } && changedesktop
 
-
 unhidestartupapplications (){
 		# Como ver as entradas ocultas do arranque do Ubuntu?
 		# fonte: http://ubuntued.info/como-ver-as-entradas-ocultas-do-arranque-do-ubuntu?
@@ -161,7 +156,6 @@ unhidestartupapplications (){
 		# só para garantir vamos voltar para a pasta padrão
 		cd
 } && unhidestartupapplications
-
 
 libreofficeptbr (){
 		sudo apt-fast -y install language-support-writing-pt aspell-pt-br myspell-pt-br ibrazilian iportuguese wportuguese libreoffice-l10n-pt-br
@@ -187,3 +181,10 @@ installpopcorntime (){
 		chmod +x popcorn-build
 		./popcorn-build
 } && installpopcorntime
+
+# reference: http://caminholivre.wordpress.com/2014/06/12/instale-o-copy-no-ubuntu-e-derivados-atraves-de-ppa-2/
+installcopy (){
+sudo add-apt-repository ppa:paolorotolo/copy
+sudo apt-fast update
+sudo apt-fast -y install copy
+} && installcopy
