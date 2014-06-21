@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Sáb Jun 21, 2014  08:41
+# Last Change: Sáb Jun 21, 2014  10:28
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -14,6 +14,7 @@
 sudo cp /etc/apt/sources.list{,.backup}
 
 fixetchosts () {
+		cp /etc/hosts{,-backup}
 		[ "`awk 'NR==1 {print $NF}' /etc/hosts`" == "`hostname`" ] || \
 				sed -i "1s/\(.*\)/\1 `hostname`/g" /etc/hosts
 } && fixetchosts
