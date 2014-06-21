@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Sáb Jun 21, 2014  12:27
+# Last Change: Sáb Jun 21, 2014  12:59
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -137,7 +137,8 @@ installaudiorec () {
 } && installaudiorec
 
 graphic (){
-		sudo apt-fast install -y gimp inkscape imagemagick pdftk
+		sudo apt-fast install -y gimp gimp-data-extras
+		gimp-plugin-registry inkscape imagemagick pdftk
 } && graphic
 
 changedesktop (){
