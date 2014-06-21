@@ -4,3 +4,4 @@ OparadoxoPython
 PythonEocaminhoDoMeio
 [[YouDontGrokVi]]
 [[DicaTedTalks]]
+[[TheFreeSoftwareEcoSystem]]
