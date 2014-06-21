@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Sáb Jun 21, 2014  12:59
+# Last Change: Sáb Jun 21, 2014  01:31
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -10,6 +10,7 @@
 # references:
 # https://github.com/voyeg3r/dotfiles/blob/master/bin/codecs-precise.sh
 # www.noobslab.com/2014/04/thingstweaks-to-do-after-install-of.html
+
 
 # backup sources.list
 sudo cp /etc/apt/sources.list{,.backup}
@@ -65,6 +66,12 @@ installaptfast () {
 				apt-fast update && apt-fast upgrade
 		fi
 } && installaptfast
+
+installprelink (){
+sudo apt-fast install -y prelink
+sudo sed -i.backup '/PRELINK/ s/unknown/yes/g' /etc/default/prelink
+sudo /etc/cron.daily/prelinksudo sed -i.backup '/PRELINK/ s/unknown/yes/g' /etc/default/prelink
+} && installprelink
 
 # disabling some consoles
 sudo sed -i '/ACTIVE_CONSOLES/s/1-6/1-2/g' /etc/default/console-setup
