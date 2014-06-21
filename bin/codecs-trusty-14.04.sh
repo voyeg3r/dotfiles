@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Sáb Jun 21, 2014  10:28
+# Last Change: Sáb Jun 21, 2014  11:08
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -12,6 +12,9 @@
 
 # backup sources.list
 sudo cp /etc/apt/sources.list{,.backup}
+
+# disabling guest account
+sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" >/usr/share/lightdm/lightdm.conf.d/50-no-guest.conf'
 
 fixetchosts () {
 		cp /etc/hosts{,-backup}
