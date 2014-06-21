@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # source: http://www.noobslab.com/2014/04/thingstweaks-to-do-after-install-of.html
+# reference: http://www.noobslab.com/2014/04/thingstweaks-to-do-after-install-of.html
 
 GS="/usr/bin/gsettings"
 CCUL="com.canonical.Unity.lenses"

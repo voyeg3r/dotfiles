@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Sáb Jun 21, 2014  11:08
+# Last Change: Sáb Jun 21, 2014  12:27
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -9,6 +9,7 @@
 
 # references:
 # https://github.com/voyeg3r/dotfiles/blob/master/bin/codecs-precise.sh
+# www.noobslab.com/2014/04/thingstweaks-to-do-after-install-of.html
 
 # backup sources.list
 sudo cp /etc/apt/sources.list{,.backup}
@@ -105,7 +106,7 @@ installxclip (){
 
 installadmintools (){
 		wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/gitconfig -O ~/.gitconfig
-		sudo apt-fast install -y zsh vim-gnome vim-doc curl nmap aria2 ethtool gparted zsync
+		sudo apt-fast install -y zsh vim-gnome vim-doc curl nmap aria2 ethtool gparted zsync openssh-server
 		# fasd
 		wget -c  https://github.com/clvv/fasd/tarball/1.0.1
 		tar zxvf 1.0.1 && cd 1.0.1
@@ -121,7 +122,13 @@ escalonandodiscos (){
 multimidia (){
 		sudo apt-fast install -y audacity audacious audacious-plugins sox
 		sudo apt-fast install -y ubuntu-restricted-extras vlc youtube-dl
-		sudo apt-fast install gstreamer0.10-plugins-ugly libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra
+		sudo apt-fast install gstreamer0.10-plugins-ugly libxine1-ffmpeg gxine mencoder libdvdread4 \
+				totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra
+		sudo /usr/share/doc/libdvdread4/install-css.sh
+
+		sudo add-apt-repository ppa:mc3man/trusty-media
+		sudo apt-fast update
+		sudo apt-fast -y install gstreamer0.10-ffmpeg
 } && multimidia
 
 installaudiorec () {
