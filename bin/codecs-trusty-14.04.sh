@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Sáb Jun 21, 2014  01:31
+# Last Change: Seg Jun 23, 2014  10:57
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -17,6 +17,9 @@ sudo cp /etc/apt/sources.list{,.backup}
 
 # disabling guest account
 sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" >/usr/share/lightdm/lightdm.conf.d/50-no-guest.conf'
+
+# disable crash repots
+sudo sed -i '/enabled/ s/1/0/g' /etc/default/apport
 
 fixetchosts () {
 		cp /etc/hosts{,-backup}
@@ -159,6 +162,7 @@ changedesktop (){
 		wget -O faience_icon.zip http://db.tt/U5v4fQUx
 		unzip faience_icon.zip -d ~/.icons; rm faience_icon.zip
 
+
 		sudo apt-fast install -y `apt-cache search gnome-icon-theme | awk '{print $1}'`
 
 		# enable midle mouse
@@ -166,6 +170,13 @@ changedesktop (){
 
 		sudo apt-fast install -y nautilus-open-terminal
 } && changedesktop
+
+othericons(){
+# http://itsfoss.com/best-icon-themes-ubuntu-1404/
+sudo add-apt-repository ppa:moka/stable
+sudo apt-fast update
+sudo apt-fast install -y moka-icon-theme
+} && othericons
 
 unhidestartupapplications (){
 		# Como ver as entradas ocultas do arranque do Ubuntu?
