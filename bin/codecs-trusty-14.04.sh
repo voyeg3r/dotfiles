@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Seg Jun 23, 2014  10:58
+# Last Change: Ter Jun 24, 2014  07:26
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -69,6 +69,13 @@ installaptfast () {
 				apt-fast update && apt-fast upgrade
 		fi
 } && installaptfast
+
+installprofilecleaner(){
+# source: http://www.ubuntugeek.com/profile-cleaner-reduce-the-size-of-browser-profiles.html
+sudo add-apt-repository ppa:graysky/utils
+sudo apt-fast update
+sudo apt-fast -y install profile-cleaner
+} && installprofilecleaner
 
 installprelink (){
 sudo apt-fast install -y prelink
