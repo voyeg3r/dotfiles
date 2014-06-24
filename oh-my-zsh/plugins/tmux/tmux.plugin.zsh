@@ -5,7 +5,6 @@
 alias ta='tmux attach -t'
 alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
-alias td='tmux detach'
 
 # Only run if tmux is actually installed
 if which tmux &> /dev/null

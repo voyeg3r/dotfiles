@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Seg Jun 23, 2014  10:57
+# Last Change: Seg Jun 23, 2014  10:58
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -19,7 +19,7 @@ sudo cp /etc/apt/sources.list{,.backup}
 sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" >/usr/share/lightdm/lightdm.conf.d/50-no-guest.conf'
 
 # disable crash repots
-sudo sed -i '/enabled/ s/1/0/g' /etc/default/apport
+sudo sed -i '/enabled/ s/1/0/g' /etc/default/apport && sudo service apport stop
 
 fixetchosts () {
 		cp /etc/hosts{,-backup}
