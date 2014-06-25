@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jun 24, 2014  07:26
+# Last Change: Qua Jun 25, 2014  06:02
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -14,6 +14,12 @@
 
 # backup sources.list
 sudo cp /etc/apt/sources.list{,.backup}
+
+
+stopterminals(){
+rename 's/$/.bak/g' /etc/init/tty[3-6].conf
+sed -i.backup '/ACTIVE_CONSOLES=/s/1-6/1-2/g' /etc/default/console-setup
+} && stopterminals
 
 # disabling guest account
 sudo sh -c 'printf "[SeatDefaults]\nallow-guest=false\n" >/usr/share/lightdm/lightdm.conf.d/50-no-guest.conf'
@@ -69,6 +75,9 @@ installaptfast () {
 				apt-fast update && apt-fast upgrade
 		fi
 } && installaptfast
+
+# control startup services
+sudo apt-fast -y install bum
 
 installprofilecleaner(){
 # source: http://www.ubuntugeek.com/profile-cleaner-reduce-the-size-of-browser-profiles.html
