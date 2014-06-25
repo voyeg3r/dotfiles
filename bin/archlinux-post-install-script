@@ -75,6 +75,13 @@ pacman -Syu pydoc
 # wallpaper changer
 # https://aur.archlinux.org/packages/variety/
 
+installpacaur(){
+		wget -c https://aur.archlinux.org/packages/pa/pacaur/pacaur.tar.gz
+		[ -d ~/build ] && cd ~/build
+		tar zxvf pacaur.tar.gz && cd pacaur
+		makepkg -si
+} && installpacaur
+
 installpm () {
 		# pm - little package mananger
 		# https://aur.archlinux.org/packages.php?ID=62711
@@ -84,6 +91,10 @@ installpm () {
 		tar zxvf pm.tar.gz && cd pm
 		makepkg -si
 } && installpm
+
+
+# firefox and chrome profile cleaner
+pm i profile-cleaner
 
 # alternative to firefox
 pm i icecat
