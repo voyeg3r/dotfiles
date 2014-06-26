@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Qua Jun 11, 2014  05:15
+# Last Change: Qui Jun 26, 2014  06:28
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -122,6 +122,8 @@ alias path='echo $PATH | tr ":" "\n"'
 alias ssh='ssh -C'
 alias scp='scp -r'
 alias less='less -r'
+alias compilalivro='make clean; make && make show'
+
 # Listen to Air Traffic Control, used to be scripts.
 alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
 alias GRU='mplayer http://rio.radioetvweb.com.br:8298'
