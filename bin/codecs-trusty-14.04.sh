@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qua Jun 25, 2014  06:02
+# Last Change: Sex Jun 27, 2014  11:14
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -75,6 +75,14 @@ installaptfast () {
 				apt-fast update && apt-fast upgrade
 		fi
 } && installaptfast
+
+avoidoverheating(){
+# source: http://itsfoss.com/things-to-do-after-installing-linux-mint-16-petra/
+sudo add-apt-repository ppa:linrunner/tlp
+sudo apt-fast update
+sudo apt-fast -y install tlp tlp-rdw
+sudo tlp start
+} && avoidoverheating
 
 # control startup services
 sudo apt-fast -y install bum
