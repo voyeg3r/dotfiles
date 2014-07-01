@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Qua Jun 18, 2014  05:40
+" Last Change: Seg Jun 30, 2014  11:09
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -153,7 +153,7 @@ set background=dark
 let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-colorscheme wombat
+colorscheme vitamins
 
 if ! has("gui_running")
 		set t_Co=256

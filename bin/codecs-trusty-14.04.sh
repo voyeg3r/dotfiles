@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Sex Jun 27, 2014  11:14
+# Last Change: Seg Jun 30, 2014  10:48
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -75,6 +75,14 @@ installaptfast () {
 				apt-fast update && apt-fast upgrade
 		fi
 } && installaptfast
+
+newgnomeshell(){
+# source: http://askubuntu.com/questions/452864/how-to-get-gnome-shell-3-12-on-ubuntu-14-04
+sudo add-apt-repository ppa:gnome3-team/gnome3-staging
+sudo apt-fast update
+sudo apt-fast dist-upgrade
+sudo apt-fast -y install gnome-weather gnome-maps gnome-photos gnome-music
+} && newgnomeshell
 
 avoidoverheating(){
 # source: http://itsfoss.com/things-to-do-after-installing-linux-mint-16-petra/
