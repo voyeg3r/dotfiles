@@ -5,7 +5,8 @@
 # Retorna o seu ip
 
 # discover what is your default netcard interface
-DEV=`netstat -i | awk '/eth/ {print $1}'`
+#DEV=`netstat -i | awk '/eth/ {print $1}'`
+DEV=`route | awk 'NR == 3 {print $8}'`
 
 ifconfig $DEV | awk '/inet end/ {print $3}'
 
