@@ -12,6 +12,8 @@
 # mplayer -tv driver=v4l2:width=320:height=240: -vo xv tv:// -geometry "99%:95%" -ontop
 
 
-ffmpeg -f alsa -ac 2 -i default -f x11grab -r 15 -s $(xwininfo -root | grep 'geometry' | awk '{print $2;}') -s 1366x768 -i :0.0 -acodec pcm_s16le -vcodec libx264 -preset ultrafast -threads 0 out.mkv
+#ffmpeg -f alsa -ac 2 -i default -f x11grab -r 15 -s $(xwininfo -root | grep 'geometry' | awk '{print $2;}') -s 1366x768 -i :0.0 -acodec pcm_s16le -vcodec libx264 -preset ultrafast -threads 0 out.mkv
 
+
+ffmpeg -f alsa -ac 2 -i default -f x11grab -r 15 -s $(xwininfo -root | grep 'geometry' | awk '{print $2;}') -s 1366x768 -i :0.0 -acodec pcm_s16le -vcodec libx264 -preset ultrafast -threads 0 out.mkv
 
