@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Qui Jun 26, 2014  06:28
+# Last Change: Seg Jun 30, 2014  09:01
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -31,7 +31,7 @@ cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
-#
+
 
 # fasd or autojump
 #[[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
@@ -66,7 +66,8 @@ alias -s png="feh -FZd"
 alias -s gif="feh -FZd"
 
 update(){
- yaourt -Syua firefox-nightly
+ which apt-get >/dev/null && sudo apt-fast update && sudo apt-fast upgrade
+ which pacman >/dev/null && yaourt -Syua firefox-nightly
 }
 
 # basic fonfig
