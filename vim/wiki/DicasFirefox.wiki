@@ -1,6 +1,6 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: Ter Jul 01, 2014  07:54
+Last Change: Ter Jul 01, 2014  08:04
 autor: slas
 site: vivaotux
 twitter: voyeg3r
@@ -9,10 +9,10 @@ twitter: voyeg3r
 
 add exceptions for this url's
 
-    plus.googleapis.com
-    google.com
-    plus.google.com
-    apis.google.com
+  plus.googleapis.com
+  google.com
+  plus.google.com
+  apis.google.com
 
 = ativar plugins sob demanda =
 dentro do about:config
@@ -25,18 +25,18 @@ https://addons.mozilla.org/en-US/firefox/addon/proxmate/
 ==desabilitar a checagem de virus==
 http://en.kioskea.net/faq/1686-optimize-firefox-completely
 
-    Launch Firefox
-    In the address bar, type about:config
-    Confirm if needed
-    In the filter, type safe
-    In the Settings list, double-click on the following parameters and set them to false:
-        browser.safebrowsing.enabled
-        browser.safebrowsing.malware.enabled
-    Close Firefox and wait several seconds
-    In your Firefox profile, delete the file urlclassifier3.sqlite
-        This poses no long-term risk - Firefox can recreate it if required
-    Restart Firefox
-    You should see an improvement
+  Launch Firefox
+  In the address bar, type about:config
+  Confirm if needed
+  In the filter, type safe
+  In the Settings list, double-click on the following parameters and set them to false:
+  browser.safebrowsing.enabled
+  browser.safebrowsing.malware.enabled
+  Close Firefox and wait several seconds
+  In your Firefox profile, delete the file urlclassifier3.sqlite
+  This poses no long-term risk - Firefox can recreate it if required
+  Restart Firefox
+  You should see an improvement
 
   browser.download.manager.scanWhenDone
 
@@ -68,16 +68,16 @@ for i in ~/.adobe ~/.macromedia ; do ( rm $i/ -rf ; ln -s /dev/null $i ) ; done
 
 =Plugins que uso no firefox=
 
- Feedly ...... plugin que gera um novo layout para as notícias do google reader
-               e twitter: https://addons.mozilla.org/pt-BR/firefox/addon/feedly/
+  Feedly ...... plugin que gera um novo layout para as notícias do google reader
+  e twitter: https://addons.mozilla.org/pt-BR/firefox/addon/feedly/
 
- F1 .......... Extensão que permite compartilhar notícias direto por e-mail, twitter
-               https://addons.mozilla.org/pt-br/firefox/addon/f1-by-mozilla-labs/
+  F1 .......... Extensão que permite compartilhar notícias direto por e-mail, twitter
+  https://addons.mozilla.org/pt-br/firefox/addon/f1-by-mozilla-labs/
 
- It's all text ... com essa estensão consigo editar o wikispaces com o vim
-                  hControl+Shift+Alt+Rttp://va.mu/Xhz0
+  It's all text ... com essa estensão consigo editar o wikispaces com o vim
+  hControl+Shift+Alt+Rttp://va.mu/Xhz0
 
- Turn on your pdf reader ......... pdfjs.disabled
+  Turn on your pdf reader ......... pdfjs.disabled
 
 
 = firefox cache in RAM=
@@ -91,7 +91,18 @@ coloque o valor para /var/shm/firefox-cache
 ==http cache resource==
 The Mozilla team is working on a number of performance tweaks for upcoming versions of Firefox, one of which is the use of a new HTTP cache that should fix some UI hang issues. It isn't enabled by default yet, but will be soon—and you can enable it right now with an about:config tweak. To do so:
 
-   browser.cache.use_new_backend
+  browser.cache.use_new_backend
 
 Change its value from 0 to 1 to enable the new cache.
+
+=open searches in new tab=
+By default, Firefox has a search box in the upper-right hand corner from which you can Google things with ease. When you type in a search term, it opens the results in your current tab, which is annoying if you want to keep your current tab open.
+
+To change this behavior, open about:config and search for:
+
+  browser.search.openintab
+
+=Preview Tabs in the Ctrl+Tab Switcher=
+
+  browser.ctrlTab.previews
 
