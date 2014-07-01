@@ -1,6 +1,6 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: 2014 Jan 28 20:19:24
+Last Change: Ter Jul 01, 2014  07:54
 autor: slas
 site: vivaotux
 twitter: voyeg3r
@@ -87,3 +87,11 @@ criar a seguinte chave (string) através do about:config
 browser.cache.disk.parent_directory
 
 coloque o valor para /var/shm/firefox-cache
+
+==http cache resource==
+The Mozilla team is working on a number of performance tweaks for upcoming versions of Firefox, one of which is the use of a new HTTP cache that should fix some UI hang issues. It isn't enabled by default yet, but will be soon—and you can enable it right now with an about:config tweak. To do so:
+
+   browser.cache.use_new_backend
+
+Change its value from 0 to 1 to enable the new cache.
+
