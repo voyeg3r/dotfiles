@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Seg Jun 30, 2014  09:01
+# Last Change: Qua Jul 02, 2014  02:24
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -113,6 +113,7 @@ bindkey -M isearch " " magic-space # normal space during searches
 #
 
 # aliases#
+alias install='sudo apt-fast -y install'
 groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
 alias ping='ping -n -c 4 -i 0.2 -W1'
 alias shell='echo ${SHELL:t}'

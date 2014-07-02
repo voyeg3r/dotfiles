@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jul 01, 2014  04:34
+# Last Change: Qua Jul 02, 2014  02:39
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -118,6 +118,18 @@ firefoxnightly (){
 		sudo apt-fast -y install firefox-trunk
 } && firefoxnightly
 
+renicefirefox(){
+renice 15 $(pidof firefox)
+renice 15 $(pidof firefox-trunk)
+cat <<-EOF> /etc/cron.hourly/renicefirefox
+#!/bin/sh
+# http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/
+echo renice 15 \`pidof firefox\`
+echo renice 15 \`pidof firefox-trunk\`
+EOF
+chmod +x /etc/cron.hourly/renicefirefox
+} && renicefirefox
+
 # chromium browser
 apt-fast install -y `apt-cache search chromium-browser | awk '{print $1}'`
 
@@ -180,7 +192,7 @@ installaudiorec () {
 
 graphic (){
 		sudo apt-fast install -y gimp gimp-data-extras
-		gimp-plugin-registry inkscape imagemagick pdftk
+		gimp-plugin-registry inkscape imagemagick pdftk gmic
 } && graphic
 
 changedesktop (){
