@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Qua Jul 02, 2014  02:24
+# Last Change: Qui Jul 03, 2014  09:30
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -180,6 +180,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
 # Faster! (?)
 #zstyle ':completion:*' use-cache on
+[ ! -e ~/.zsh_cache ] && touch ~/.zsh_cache
 zstyle ':completion:*' use-cache 1
 zstyle ':completion:*' cache-path ~/.zsh_cache
 #

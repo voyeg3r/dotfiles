@@ -27,14 +27,16 @@ endfunction
 "
 function s:makeDefaultBehavior()
   let behavs = {
-        \   '*'      : [],
-        \   'ruby'   : [],
-        \   'python' : [],
-        \   'perl'   : [],
-        \   'xml'    : [],
-        \   'html'   : [],
-        \   'xhtml'  : [],
-        \   'css'    : [],
+        \   '*'            : [],
+        \   'ruby'         : [],
+        \   'python'       : [],
+        \   'javascript'   : [],
+        \   'php'          : [],
+        \   'perl'         : [],
+        \   'xml'          : [],
+        \   'html'         : [],
+        \   'xhtml'        : [],
+        \   'css'          : [],
         \ }
   "---------------------------------------------------------------------------
   if !empty(g:acp_behaviorUserDefinedFunction) &&
@@ -87,7 +89,19 @@ function s:makeDefaultBehavior()
         \   'repeat'  : 0,
         \ })
   "---------------------------------------------------------------------------
+  call add(behavs.javascript, {
+        \   'command' : "\<C-x>\<C-o>",
+        \   'meets'   : 'acp#meetsForJavaScriptOmni',
+        \   'repeat'  : 0,
+        \ })
+  "---------------------------------------------------------------------------
   call add(behavs.perl, {
+        \   'command' : "\<C-x>\<C-o>",
+        \   'meets'   : 'acp#meetsForPerlOmni',
+        \   'repeat'  : 0,
+        \ })
+  "---------------------------------------------------------------------------
+  call add(behavs.php, {
         \   'command' : "\<C-x>\<C-o>",
         \   'meets'   : 'acp#meetsForPerlOmni',
         \   'repeat'  : 0,

@@ -121,15 +121,27 @@ function acp#meetsForRubyOmni(context)
 endfunction
 
 "
+function acp#meetsForJavaScriptOmni(context)
+  return g:acp_behaviorPythonOmniLength >= 0 &&
+        \ a:context =~ '\k\.\k\{' . g:acp_behaviorPythonOmniLength . ',}$'
+endfunction
+
+"
 function acp#meetsForPythonOmni(context)
   return has('python') && g:acp_behaviorPythonOmniLength >= 0 &&
         \ a:context =~ '\k\.\k\{' . g:acp_behaviorPythonOmniLength . ',}$'
 endfunction
 
 "
+function acp#meetsForPhpOmni(context)
+  return g:acp_behaviorPhpOmniLength >= 0 &&
+        \ a:context =~ '\k->\k\{' . g:acp_behaviorPhpOmniLength . ',}$'
+endfunction
+
+"
 function acp#meetsForPerlOmni(context)
   return g:acp_behaviorPerlOmniLength >= 0 &&
-        \ a:context =~ '\w->\k\{' . g:acp_behaviorPerlOmniLength . ',}$'
+        \ a:context =~ '\k->\k\{' . g:acp_behaviorPerlOmniLength . ',}$'
 endfunction
 
 "
@@ -190,8 +202,17 @@ function acp#onPopupPost()
   " to clear <C-r>= expression on command-line
   echo ''
   if pumvisible()
-    inoremap <silent> <expr> <C-h> acp#onBs()
-    inoremap <silent> <expr> <BS>  acp#onBs()
+    inoremap <silent> <expr>  <C-h> acp#onBs()
+    inoremap <silent> <expr>  <BS>  acp#onBs()
+
+    " adding <Tab> for choosing items
+    silent let s:original_tab       = maparg("<Tab>", "i", 0, 1)
+    silent let s:original_shift_tab = maparg("<S-Tab>", "i", 0, 1)
+    silent inoremap <silent> <Tab>   <C-n>
+    silent inoremap <silent> <S-Tab> <C-p>
+    silent inoremap <silent> <Down>  <C-n>
+    silent inoremap <silent> <Up>    <C-p>
+
     " a command to restore to original text and select the first match
     return (s:behavsCurrent[s:iBehavs].command =~# "\<C-p>" ? "\<C-n>\<Up>"
           \                                                 : "\<C-p>\<Down>")
@@ -358,7 +379,8 @@ function s:feedPopup()
   " or try popup once. So first completion is duplicated.
   call insert(s:behavsCurrent, s:behavsCurrent[s:iBehavs])
   call s:setTempOption(s:GROUP0, 'spell', 0)
-  call s:setTempOption(s:GROUP0, 'completeopt', 'menuone' . (g:acp_completeoptPreview ? ',preview' : ''))
+  call s:setTempOption(s:GROUP0, 'completeopt', 'menu' . (g:acp_completeoptPreview ? ',preview' : ''))
+  " call s:setTempOption(s:GROUP0, 'completeopt', 'menuone' . (g:acp_completeoptPreview ? ',preview' : ''))
   call s:setTempOption(s:GROUP0, 'complete', g:acp_completeOption)
   call s:setTempOption(s:GROUP0, 'ignorecase', g:acp_ignorecaseOption)
   " NOTE: With CursorMovedI driven, Set 'lazyredraw' to avoid flickering.
@@ -375,6 +397,28 @@ endfunction
 function s:finishPopup(fGroup1)
   inoremap <C-h> <Nop> | iunmap <C-h>
   inoremap <BS>  <Nop> | iunmap <BS>
+
+  if exists("s:original_tab")
+    let tab_noremap = s:original_tab.noremap ? "noremap"   : "map"
+    let tab_silent  = s:original_tab.silent  ? " <silent>" : ""
+    let tab_expr    = s:original_tab.expr    ? " <expr>"   : ""
+    let tab_buffer  = s:original_tab.buffer  ? " <buffer>" : ""
+    let tab_rhs     = s:original_tab.rhs
+    silent execute "i" . tab_noremap . tab_silent . tab_expr . tab_buffer . " <Tab> " . tab_rhs
+  endif
+
+  if exists("s:original_shift_tab")
+    let shift_tab_noremap = s:original_tab.noremap ? "noremap"   : "map"
+    let shift_tab_silent  = s:original_tab.silent  ? " <silent>" : ""
+    let shift_tab_expr    = s:original_tab.expr    ? " <expr>"   : ""
+    let shift_tab_buffer  = s:original_tab.buffer  ? " <buffer>" : ""
+    let shift_tab_rhs     = s:original_tab.rhs
+    silent execute "i" . shift_tab_noremap . shift_tab_silent . shift_tab_expr . shift_tab_buffer . " <S-Tab>" . shift_tab_rhs
+  endif
+
+  inoremap <Down> <Down>
+  inoremap <Up>   <Up>
+
   let s:behavsCurrent = []
   call s:restoreTempOptions(s:GROUP0)
   if a:fGroup1
