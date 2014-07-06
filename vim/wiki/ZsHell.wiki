@@ -1,10 +1,28 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Qua Jun 11, 2014  05:09
+Last Change: Dom Jul 06, 2014  11:47
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r at gmail.com>
+
+==how upgrade oh-my-zsh==
+
+
+    Open up Terminal
+
+    Type in '~/.oh-my-zsh', this should change your directory to the zsh directory.
+    -Terminal should read: " .oh-my-zsh git:(master) ". If it does, go to step 3.
+
+    Type in "git status" to see that your status is ahead of master.
+    -If you're not concerned about the file status changes, you can "stash" those changes by doing step 4.
+
+    Type in "git stash" to save the progress in the git and move the head back to master.
+    Done. Now you should be able to upgrade the next time the terminal asks you too.
+
+    now type
+
+				upgrade_oh_my_zsh
 
 =fasd tool shortcuts==
 
