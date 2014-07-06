@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Dom Jul 06, 2014  11:47
+Last Change: Dom Jul 06, 2014  11:49
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -23,6 +23,10 @@ email: <voyeg3r at gmail.com>
     now type
 
 				upgrade_oh_my_zsh
+
+		now type
+
+				git stash pop
 
 =fasd tool shortcuts==
 
