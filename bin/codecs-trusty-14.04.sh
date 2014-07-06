@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qua Jul 02, 2014  02:39
+# Last Change: Dom Jul 06, 2014  11:55
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -75,6 +75,10 @@ installaptfast () {
 				apt-fast update && apt-fast upgrade
 		fi
 } && installaptfast
+
+compactadores(){
+sudo apt-fast -y  install p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
+} && compactadores
 
 newgnomeshell(){
 # source: http://askubuntu.com/questions/452864/how-to-get-gnome-shell-3-12-on-ubuntu-14-04

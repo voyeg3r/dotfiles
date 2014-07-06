@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Qui Jul 03, 2014  09:30
+# Last Change: Dom Jul 06, 2014  11:52
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -67,7 +67,7 @@ alias -s gif="feh -FZd"
 
 update(){
  which apt-get >/dev/null && sudo apt-fast update && sudo apt-fast upgrade
- which pacman >/dev/null && yaourt -Syua firefox-nightly
+ which pacman >/dev/null && yaourt -Syua firefox-nightly && pm u
 }
 
 # basic fonfig
