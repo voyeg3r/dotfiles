@@ -6,7 +6,8 @@
 
 # discover what is your default netcard interface
 #DEV=`netstat -i | awk '/eth/ {print $1}'`
-DEV=`route | awk 'NR == 3 {print $8}'`
 
-ifconfig $DEV | awk '/inet end/ {print $3}'
+#DEV=`route | awk 'NR == 3 {print $8}'`
+#ifconfig $DEV | awk '/inet end/ {print $3}'
 
+ifconfig `route | awk '$4=="UG" {print $8}'` | awk 'NR==2 {print $3}'
