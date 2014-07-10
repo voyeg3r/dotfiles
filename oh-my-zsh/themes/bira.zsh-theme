@@ -14,9 +14,7 @@ fi
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
 
-local myip=$(ifconfig $(route | awk '$4=="UG" {print $8}') | awk 'NR==2 {print $3}')
-
-PROMPT="╭─${user_host} ${current_dir} ${rvm_ruby} ${git_branch} ${myip}
+PROMPT="╭─${user_host} ${current_dir} ${rvm_ruby} ${git_branch}
 ╰─%B$%b "
 RPS1="${return_code}"
 
