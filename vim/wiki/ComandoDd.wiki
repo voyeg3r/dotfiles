@@ -34,8 +34,8 @@ wodim -v -eject /path/to/image.iso
 
 Serve também para zerar a senha da bios
 
-  # printf "x2E" | dd bs=1 seek=112 of=/dev/port
-  # printf "xFF" | dd bs=1 seek=113 of=/dev/port
+	# printf "x2E" | dd bs=1 seek=112 of=/dev/port
+	# printf "xFF" | dd bs=1 seek=113 of=/dev/port
 
 
 Serve também para clonar hds em combinação com o comando [[netcat]]
