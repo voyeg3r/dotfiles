@@ -53,6 +53,7 @@ ComandoCurl - transferencia de arquivos via rede
 ComandoCut - manipula campos de uma saída
 [[ComandoDate]] - exibe e modifica a data do sistema
 [[ComandoDd]] - faz cópias perfeitas e muito mais
+[[ComandoDetox]] - Limpa os nomes de arquivos
 ComandoDf - mostra o espaço livre no disco
 ComandoDhclient - configura a rede com ip dinâmico DHCP
 [[ComandoDiff]] - compara exibindo em destaque as diferenças
