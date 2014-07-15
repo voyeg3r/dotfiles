@@ -1194,3 +1194,12 @@ incorrect
 More than 30 years of research show us that native speakers
 know 20,000 individual words but several hundreds thousands
 collocations
+
+
+1 - The apple is red        5 - He gives it to John        9 - I must give it to him
+
+2 - It is John's apple        6 - She gives it to him        10 - I want to give it to her
+
+3 - I give John the apple    7 - Is the apple red?        11 - I'm going to know tomorrow
+
+4 - We give him the apple    8 - The apples are red        12 - I can't eat the apple
