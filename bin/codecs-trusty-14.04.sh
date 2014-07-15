@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jul 15, 2014  08:27
+# Last Change: Ter Jul 15, 2014  08:55
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -170,6 +170,17 @@ installadmintools (){
 		tar zxvf 1.0.1 && cd 1.0.1
 		PREFIX=$HOME make install
 } && installadmintools
+
+peerflixinstall(){
+#peerflix é um cliente de stream de filmes via torrent
+# http://www.edivaldobrito.com.br/peerflix-stream-de-torrents-de-videos-com-vlc-ou-mplayer-via-linha-de-comando/
+# another important link
+# http://forum.pinguyos.com/Thread-Stream-Torrents-with-VLC
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-fast update
+sudo apt-fast -y install nodejs
+sudo npm install -g peerflix
+} && peerflixinstall
 
 escalonandodiscos (){
 		test -f /sys/block/sda/queue/scheduler && echo deadline > /sys/block/sda/queue/scheduler
