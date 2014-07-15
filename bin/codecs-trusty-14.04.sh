@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jul 08, 2014  10:19
+# Last Change: Ter Jul 15, 2014  08:27
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -164,7 +164,7 @@ installxclip (){
 
 installadmintools (){
 		wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/gitconfig -O ~/.gitconfig
-		sudo apt-fast install -y zsh vim-gnome vim-doc curl nmap aria2 ethtool gparted zsync openssh-server
+		sudo apt-fast install -y zsh vim-gnome vim-doc curl nmap aria2 ethtool gparted zsync openssh-server detox
 		# fasd
 		wget -c  https://github.com/clvv/fasd/tarball/1.0.1
 		tar zxvf 1.0.1 && cd 1.0.1
