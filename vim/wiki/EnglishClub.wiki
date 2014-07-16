@@ -78,6 +78,14 @@ This way our brain learn more fast and easyest
 * Não aprenda palavras, aprenda frases:
 Aprender por sentenças é mais produtivo poque a gramática já está embutida, se aprende também as contrações e ligações entre palavras.
 
+=alterando o tempo de legendas com o script subslider.py=
+O script subslider.py altera o tempo de legendas, adiantando ou
+atrasando o tempo de exibição das memas assim:
+
+   subslider.py nome-da-legenda.srt +19,000
+
+   isso aumentará o tempo de cada legenda em 19 segundos
+
 =Why study phases?=
 
 “People don’t speak a language well just by learning single
