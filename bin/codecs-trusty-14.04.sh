@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jul 15, 2014  09:51
+# Last Change: Ter Jul 15, 2014  11:02
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -275,7 +275,7 @@ installpopcorntime (){
 } && installpopcorntime
 
 anotherpopcorntime(){
-udo add-apt-repository ppa:webupd8team/popcorntime
+sudo add-apt-repository ppa:webupd8team/popcorntime
 sudo apt-get update
 sudo apt-get install popcorn-time
 } && anotherpopcorntime
