@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jul 15, 2014  08:55
+# Last Change: Ter Jul 15, 2014  09:07
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -178,8 +178,11 @@ peerflixinstall(){
 # http://forum.pinguyos.com/Thread-Stream-Torrents-with-VLC
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-fast update
-sudo apt-fast -y install nodejs
+sudo apt-fast -y install nodejs vlc xterm python-libtorrent wget
 sudo npm install -g peerflix
+[ -d ~/bin ] || mkdir ~/bin
+wget https://raw.github.com/hotice/webupd8/master/Torrent-Video-Player -O ~/bin/Torrent-Video-Player && chmod +x $_
+wget https://raw.github.com/hotice/webupd8/master/Magnet-Video-Player -O ~/Magnet-Video-Player && chmod +x $_
 } && peerflixinstall
 
 escalonandodiscos (){
