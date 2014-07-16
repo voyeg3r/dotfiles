@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Jun 30, 2014  11:09
+" Last Change: Qua Jul 16, 2014  05:14
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -80,6 +80,11 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 " configurações so plugin ultisnips
 " Ctrl-j next snip -- Ctrl-k previous
 let g:UltiSnipsEditSplit='vertical'
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " permite ao plugin supertab inferir o melhor modo de complementação
 let g:SuperTabDefaultCompletionType = "context"
