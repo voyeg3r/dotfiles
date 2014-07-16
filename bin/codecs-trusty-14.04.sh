@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Ter Jul 15, 2014  09:07
+# Last Change: Ter Jul 15, 2014  09:51
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -262,7 +262,7 @@ installskype (){
 } && installskype
 
 googletalkplugin () {
-		wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+		wget -q -O - https://dl-ssl.google.com/linux/laninux_signing_key.pub | sudo apt-key add -
 		sudo sh -c 'echo "deb http://dl.google.com/linux/talkplugin/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 		sudo apt-fast update
 		sudo apt-fast install -y google-talkplugin
@@ -273,6 +273,12 @@ installpopcorntime (){
 		chmod +x popcorn-build
 		./popcorn-build
 } && installpopcorntime
+
+anotherpopcorntime(){
+udo add-apt-repository ppa:webupd8team/popcorntime
+sudo apt-get update
+sudo apt-get install popcorn-time
+} && anotherpopcorntime
 
 # reference: http://caminholivre.wordpress.com/2014/06/12/instale-o-copy-no-ubuntu-e-derivados-atraves-de-ppa-2/
 installcopy (){
