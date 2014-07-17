@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Dom Jul 06, 2014  11:52
+# Last Change: Qui Jul 17, 2014  03:51
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -274,3 +274,4 @@ record(){
 # disalbe rendering fonts in firefox to free memory
 export MOZ_DISABLE_PANGO='1'
 #
+
