@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qua Jul 16, 2014  09:40
+# Last Change: Qui Jul 17, 2014  03:16
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -275,10 +275,16 @@ installpopcorntime (){
 } && installpopcorntime
 
 anotherpopcorntime(){
-sudo add-apt-repository ppa:webupd8team/popcorntime
+sudo add-apt-repository ppa:webupd8team/popcorntime -y
 sudo apt-fast update
 sudo apt-fast -y install popcorn-time
 } && anotherpopcorntime
+
+installtv-maxe(){
+# reference: http://www.n00bsonubuntu.net/content/install-tv-maxe-ubuntu-14-04/
+sudo add-apt-repository ppa:venerix/pkg -y
+sudo apt-fast update && sudo apt-fast install tv-maxe -y
+} && installtv-maxe
 
 # reference: http://caminholivre.wordpress.com/2014/06/12/instale-o-copy-no-ubuntu-e-derivados-atraves-de-ppa-2/
 installcopy (){
