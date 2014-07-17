@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Qua Jul 16, 2014  06:42
+# Last Change: Qua Jul 16, 2014  09:40
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -164,7 +164,7 @@ installxclip (){
 
 installadmintools (){
 		wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/gitconfig -O ~/.gitconfig
-		sudo apt-fast install -y zsh vim-gnome vim-doc curl nmap aria2 ethtool gparted zsync openssh-server detox
+		sudo apt-fast install -y zsh vim-gnome vim-doc curl nmap aria2 ethtool gparted zsync openssh-server detox openssh-client
 		# fasd
 		wget -c  https://github.com/clvv/fasd/tarball/1.0.1
 		tar zxvf 1.0.1 && cd 1.0.1
@@ -256,7 +256,7 @@ libreofficeptbr (){
 sudo apt-fast -y install deluge
 
 installskype (){
-		sudo sh -c 'echo "deb http://archive.canonical.com/ quantal partner" >> /etc/apt/sources.list'
+		sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 		sudo apt-fast update
 		sudo apt-fast -y install skype
 } && installskype
