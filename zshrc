@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Qui Jul 17, 2014  03:51
+# Last Change: Sex Jul 18, 2014  06:59
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -266,6 +266,11 @@ record(){
 # http://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
  [ -z "$1" ] && name="output.mp3" || name="$1"
  arecord -v -f cd -t raw | lame -r - $name
+}
+
+getlinks (){
+		# function to get lins from a given html
+		grep -o 'http://[^"]*' "${1}"
 }
 
 # end functions
