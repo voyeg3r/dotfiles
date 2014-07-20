@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Dom Jul 20, 2014  07:41
+# Last Change: Dom Jul 20, 2014  03:48
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -193,6 +193,7 @@ escalonandodiscos (){
 
 multimidia (){
 		sudo apt-fast install -y audacity audacious audacious-plugins sox
+		miro
 		sudo apt-fast install -y ubuntu-restricted-extras vlc youtube-dl ffmpeg
 		sudo apt-fast install gstreamer0.10-plugins-ugly libxine1-ffmpeg gxine mencoder libdvdread4 \
 				totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra
