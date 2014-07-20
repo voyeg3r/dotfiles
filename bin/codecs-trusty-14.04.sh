@@ -1,7 +1,7 @@
 #!/bin/env bash
 # Arquivo: codecs trusty 14.04
 # Criado: Ter 10/Jun/2014 hs 14:05
-# Last Change: Dom Jul 20, 2014  07:15
+# Last Change: Dom Jul 20, 2014  07:41
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -193,7 +193,7 @@ escalonandodiscos (){
 
 multimidia (){
 		sudo apt-fast install -y audacity audacious audacious-plugins sox
-		sudo apt-fast install -y ubuntu-restricted-extras vlc youtube-dl ffmpeg minitube
+		sudo apt-fast install -y ubuntu-restricted-extras vlc youtube-dl ffmpeg
 		sudo apt-fast install gstreamer0.10-plugins-ugly libxine1-ffmpeg gxine mencoder libdvdread4 \
 				totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra
 		sudo /usr/share/doc/libdvdread4/install-css.sh
@@ -202,6 +202,13 @@ multimidia (){
 		sudo apt-fast update
 		sudo apt-fast -y install gstreamer0.10-ffmpeg
 } && multimidia
+
+installminitube(){
+sudo add-apt-repository ppa:noobslab/apps -y
+sudo apt-fast update
+sudo apt-fast -y install libqtgui4 libqt4-xml libqt4-network libqt4-dbus phonon-backend-vlc
+sudo apt-fast install -y minitube
+} && installminitube
 
 installaudiorec () {
 		sudo apt-add-repository ppa:osmoma/audio-recorder
