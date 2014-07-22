@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Ter Jul 22, 2014  10:35
+# Last Change: Ter Jul 22, 2014  10:47
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -274,10 +274,6 @@ record(){
  arecord -v -f cd -t raw | lame -r - $name
 }
 
-getlinks (){
-		# function to get lins from a given html
-		grep -o 'http://[^"]*' "${1}"
-}
 
 # end functions
 
