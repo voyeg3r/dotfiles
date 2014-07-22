@@ -36,7 +36,7 @@
 sudo systemctl stop bluetooth
 
 # Atualizar o sistema
-pacman -Syu
+sudo pacman -Syu
 sudo pacman -S base-devel
 
 cowerinstall () {
@@ -98,6 +98,12 @@ pm i profile-cleaner
 
 # alternative to firefox
 pm i icecat
+
+installpopcorntime(){
+wget -c https://aur.archlinux.org/packages/po/popcorntime-bin/popcorntime-bin.tar.gz
+tar zxvf popcorntime-bin.tar.gz && cd popcorntime-bin
+makepkg -si
+} && installpopcorntime
 
 # anki
 pm i aur/anki-git mplayer aur/python-pyaudio lame sox aur/audio-recorder
