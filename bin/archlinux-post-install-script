@@ -157,6 +157,7 @@ admintools () {
 
 # making zsh my default shell
 sudo chsh -s $(which zsh) $(whoami)
+echo "export $(export | grep '^PATH=')" > ~/.zshenv
 
 gdiskdump () {
 		wget -c https://aur.archlinux.org/packages/gd/gdiskdump/gdiskdump.tar.gz

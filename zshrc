@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Sáb Jul 19, 2014  11:01
+# Last Change: Ter Jul 22, 2014  10:35
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -22,7 +22,7 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 # path and cdpath
 #export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
 cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
-#path=(~/bin $path)
+path=(~/bin $path)
 #
 
 # theme
@@ -237,6 +237,11 @@ source $ZSH/oh-my-zsh.sh
 # wrapper function to ping command
 #fpath=( ~/.dotfiles/functions "${fpath[@]}" )
 #autoload -Uz ping host
+
+# load custom executable functions
+for function in ~/.dotfiles/functions/*; do
+		source $function
+done
 
 # functions
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
