@@ -92,6 +92,11 @@ installpm () {
 		makepkg -si
 } && installpm
 
+pm i command-not-found
+
+# media server similar to xbmpc
+pm i plexmediaserver
+
 
 # firefox and chrome profile cleaner
 pm i profile-cleaner
