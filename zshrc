@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Ter Jul 22, 2014  10:47
+# Last Change: Ter Jul 22, 2014  10:57
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -64,6 +64,8 @@ alias -s jpeg="feh -FZd"
 alias -s JPEG="feh -FZd"
 alias -s png="feh -FZd"
 alias -s gif="feh -FZd"
+alias -s sh=vim
+alias -s py=vim
 
 update(){
  which apt-get >/dev/null && sudo apt-fast update && sudo apt-fast upgrade
@@ -148,6 +150,7 @@ alias -g X='| xargs'
 alias -g N='*/**(.om[1])'
 alias -g ND='./**/*(/om[1])' # newest directory
 alias -g NF='./**/*(.om[1])' # newest file
+alias -g DN='>/dev/null'     # a /dev/null shortcut
 alias -g LC='| tr A-Z a-z'
 alias -g UL="| sed 's, ,_,g'"
 alias -g ULC="| tr A-Z a-z | sed 's, ,_,g'"
