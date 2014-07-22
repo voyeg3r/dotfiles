@@ -128,6 +128,10 @@ pm i rfkill
 pm i texlive-core texlive-langcjk texlive-latexextra texlive-pictures
 haskell-pandoc
 
+# to install haskell-pandoc you must add this repo
+#[haskell-core]
+#Server = http://xsounds.org/~haskell/core/$arch
+
 admintools () {
 		pm i gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo \
 				git gksu gksudo lsof openssh dnsmasq python-setuptools gvim terminator
