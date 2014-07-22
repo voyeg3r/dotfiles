@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Ter Jul 22, 2014  11:58
+# Last Change: Ter Jul 22, 2014  08:08
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -64,8 +64,6 @@ alias -s jpeg="feh -FZd"
 alias -s JPEG="feh -FZd"
 alias -s png="feh -FZd"
 alias -s gif="feh -FZd"
-alias -s sh=vim
-alias -s py=vim
 
 update(){
  which apt-get >/dev/null && sudo apt-fast update && sudo apt-fast upgrade

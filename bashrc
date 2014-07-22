@@ -1,4 +1,4 @@
-# Last Change: Qui Jun 05, 2014  10:13
+# Last Change: Ter Jul 22, 2014  02:43
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -351,6 +351,8 @@ export PYTHONSTARTUP
 shell () {
   ps | grep `echo $$` | awk '{ print $4 }'
 }
+
+groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
 
 up () {
 # Created at: 2012/06/19 10:37:26
