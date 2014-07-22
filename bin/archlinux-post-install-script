@@ -126,6 +126,7 @@ pm i rfkill
 
 # \LaTeX\
 pm i texlive-core texlive-langcjk texlive-latexextra texlive-pictures
+haskell-pandoc
 
 admintools () {
 		pm i gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo \
