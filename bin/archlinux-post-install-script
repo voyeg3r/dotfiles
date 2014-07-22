@@ -97,6 +97,9 @@ pm i command-not-found
 # media server similar to xbmpc
 pm i plexmediaserver
 
+# a beautiful player
+pm i aur/spotify
+
 
 # firefox and chrome profile cleaner
 pm i profile-cleaner
