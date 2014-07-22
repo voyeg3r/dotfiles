@@ -18,6 +18,9 @@
 #	exit  1
 #fi
 
+# how enable transparency in gnome-terminal
+#https://xyzhou.com/blogs/easy-transparent-terminal-solution-install-devilspie2-with-gnome3-on-arch-linux
+
 # userstyles to google
 # http://userstyles.org/styles/81403/gt-deepdark-for-google
 

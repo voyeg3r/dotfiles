@@ -6,7 +6,8 @@
 
 INTERFACE=$(route | awk '/UG/ {print $8}')
 IFCONFIG=$(which ifconfig)
+MYIP=$($IFCONFIG $INTERFACE | awk '/inet/ {print $2}')
 
 echo
-echo $($IFCONFIG $INTERFACE | awk '/inet/ {print $2}')
+[ -z $MYIP ] && echo ' offline' || echo $MYIP
 echo

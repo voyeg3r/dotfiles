@@ -1,10 +1,12 @@
-Arquivo: zshell tips and tricks
+[[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Ter Jul 22, 2014  11:49
+Last Change: Ter Jul 22, 2014  01:20
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r at gmail.com>
+
+{{{
 
 References: http://chneukirchen.org/dotfiles/.zshrc
 
@@ -69,6 +71,9 @@ An application of modifiers is !:t, which results into the basename of the last 
 
 % wget ftp://ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p330.tar.gz
 % tar xzvf !:t
+
+
+		for f (**/*.txt) {echo $f}
 
 =use r to repeat the last command - with substituition =
 
