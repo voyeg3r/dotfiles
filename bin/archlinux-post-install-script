@@ -149,11 +149,14 @@ haskell-pandoc
 
 admintools () {
 		pm i gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo \
-				git gksu gksudo lsof openssh dnsmasq python-setuptools gvim terminator aria2
+				git gksu gksudo lsof openssh dnsmasq python-setuptools gvim terminator aria2 zsh
 		# davfs2 in order to access webdav services
 		# dav://webdav.4shared.com
 		pacman -U https://www.archlinux.org/packages/extra/i686/davfs2/download/
 } && admintools
+
+# making zsh my default shell
+sudo chsh -s $(which zsh) $(whoami)
 
 gdiskdump () {
 		wget -c https://aur.archlinux.org/packages/gd/gdiskdump/gdiskdump.tar.gz
