@@ -102,6 +102,7 @@ pm i plexmediaserver
 # systemctl enable plexmediaserver
 #To start Plex (after the basic setup):
 # systemctl start plexmediaserver
+#To begin configuring Plex, browse to http://localhost:32400/manage.
 
 # a beautiful player
 pm i aur/spotify
