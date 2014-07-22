@@ -181,6 +181,7 @@ compactadores () {
 # https://bbs.archlinux.org/viewtopic.php?id=127998
 pacman -Sy cabal-install
 cabal update
+pm i ghc
 cabal install pandoc
 
 graphictools () {
