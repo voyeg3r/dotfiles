@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Ter Jul 22, 2014  11:20
+# Last Change: Ter Jul 22, 2014  11:58
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -102,6 +102,26 @@ bindkey '^Xe' edit-command-line
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
+
+# Move to where the arguments belong. | use Ctrl-x 1
+after-first-word() {
+  zle beginning-of-line
+  zle forward-word
+}
+zle -N after-first-word
+bindkey "^X1" after-first-word
+
+# Increase/decrease last numeric word.
+# 04jan2013  +chris+  using incarg
+# 12mar2013  +chris+  revert to own implementation, improved
+_increase_number() {
+  local -a match mbegin mend
+  [[ $LBUFFER =~ '([0-9]+)[^0-9]*$' ]] &&
+    LBUFFER[mbegin,mend]=$(printf %0${#match[1]}d $((10#$match+${NUMERIC:-1})))
+}
+zle -N increase-number _increase_number
+bindkey '^Xa' increase-number
+bindkey -s '^Xx' '^[-^Xa'
 
 # magic-space and more
 globalias() {

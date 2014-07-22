@@ -4,14 +4,9 @@
 # Autor: Sérgio Luiz Araújo Silva
 # Retorna o seu ip
 
-# discover what is your default netcard interface
-#DEV=`netstat -i | awk '/eth/ {print $1}'`
+INTERFACE=$(route | awk '/UG/ {print $8}')
+IFCONFIG=$(which ifconfig)
 
-#DEV=`route | awk 'NR == 3 {print $8}'`
-#ifconfig $DEV | awk '/inet end/ {print $3}'
-
-myip=$(ifconfig $(route | awk '$4=="UG" {print $8}') | awk 'NR==2 {print $3}')
-
-[ "$myip" == "MULTICAST" ] && myip="offline"
-
-echo $myip
+echo
+echo $($IFCONFIG $INTERFACE | awk '/inet/ {print $2}')
+echo
