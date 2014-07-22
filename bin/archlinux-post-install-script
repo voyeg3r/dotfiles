@@ -124,6 +124,8 @@ pm i rfkill
 #   ## DISABLE BLUETOOTH
 #   SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"
 
+# \LaTeX\
+pm i texlive-core texlive-langcjk texlive-latexextra texlive-pictures
 
 admintools () {
 		pm i gparted nmap arp-scan unetbootin polkit-gnome curl rsync sudo \
