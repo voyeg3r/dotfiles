@@ -18,7 +18,7 @@
 # how truncate string  --> echo ${var:start:end}
 # removendo o último caractere de uma variável   ${var:0:-1}
 #   vou precisar truncar a string::::: echo "Sua string contém "${#var}" caracteres"
-if   ping -q -c2 www.google.com >/dev/null ; then
+#if   ping -q -c2 www.google.com >/dev/null ; then
         FILENAME="${@:?Usage: $0 give me some words to speech}"
         FILENAME=`awk '{print tolower($0)}' <<< "$FILENAME"`
         url="http://translate.google.com/translate_tts?ie=UTF-8&tl=en&q="
@@ -26,4 +26,4 @@ if   ping -q -c2 www.google.com >/dev/null ; then
         [ -f "${FILENAME// /_}.mp3" -a ! -s "${FILENAME// /_}.mp3" ] && { rm -f "${FILENAME// /_}.mp3" ; echo 'error!'; }
         command -v mpg123 > /dev/null && mpg123 -q "${FILENAME// /_}.mp3"
         echo "[sound:${FILENAME// /_}.mp3]" | xclip -selection c
-fi
+#fi
