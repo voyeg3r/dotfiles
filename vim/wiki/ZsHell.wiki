@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Qua Jul 23, 2014  10:36
+Last Change: Qua Jul 23, 2014  04:07
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -185,6 +185,8 @@ autoload -U zmv
 #Replace spaces in filenames with underline
 
 		zmv '* *' '$f:gs/ /_'
+
+		zmv '*' '$f:s/hell/heaven/'
 
 zmv '(* *)' '${1// /}'
 zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"

@@ -53,6 +53,7 @@ cowerinstall () {
 # Documentação python
 pacman -Syu pydoc
 
+
 # pesquisar por pacotes: pacman -Ss <nome>
 
 # how install lsb_release
@@ -96,6 +97,9 @@ installpm () {
 } && installpm
 
 pm i command-not-found
+
+# better performance
+pm i aur/zramswap
 
 # media server similar to xbmpc
 pm i plexmediaserver
