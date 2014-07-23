@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Qua Jul 16, 2014  05:14
+" Last Change: Qua Jul 23, 2014  09:34
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -97,6 +97,7 @@ syntax on
 set omnifunc=syntaxcomplete#Complete
 set completeopt+=longest
 set cot-=preview "disable doc preview in omnicomplete
+
 
 " para que o shell exiba as variáveis corretamente
 " http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=552108

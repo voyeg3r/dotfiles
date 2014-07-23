@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Ter Jul 22, 2014  01:20
+Last Change: Qua Jul 23, 2014  10:36
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -67,13 +67,21 @@ References: http://chneukirchen.org/dotfiles/.zshrc
 		for file in *; do mv $file ${file:l}; done
 		for p in ~/pictures/**/*[A-Z]*; do mv $p ${p:l}; done
 
-An application of modifiers is !:t, which results into the basename of the last argument. Very useful when working with URLs, for example. You’ll never have to strip the path manually again:
+An application of modifiers is !:t, which results into the basename of
+the last argument. Very useful when working with URLs, for example.
+You’ll never have to strip the path manually again:
 
 % wget ftp://ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p330.tar.gz
 % tar xzvf !:t
 
 
-		for f (**/*.txt) {echo $f}
+# this command
+
+						ls -1 */**/*.sh
+
+# is equivalent to:
+
+						find -iname "*.sh" -printf "\n%f"
 
 =use r to repeat the last command - with substituition =
 
@@ -169,12 +177,14 @@ tornar executáveis todos os arquivos de um diretório
 autoload -U zmv
 
 # rename txt to html
-zmv '(*).txt' '$1.html'
+#
+		zmv '(*).txt' '$1.html'
 
-zmv -W '*.txt' '*.html'
+		zmv -W '*.txt' '*.html'
 
 #Replace spaces in filenames with underline
-zmv '* *' '$f:gs/ /_'
+
+		zmv '* *' '$f:gs/ /_'
 
 zmv '(* *)' '${1// /}'
 zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
