@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Qua Jul 23, 2014  09:20
+# Last Change: Qua Jul 23, 2014  12:09
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -253,7 +253,7 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(extract git battery pacman cp sudo themes history-substrin-search command-not-found zsh-syntax-highlighting)
+plugins=(extract git battery pacman cp sudo themes history-substrin-search zsh-syntax-highlighting)
 
 #
 
@@ -267,6 +267,8 @@ source $ZSH/oh-my-zsh.sh
 for function in ~/.dotfiles/functions/*; do
  source $function
 done
+
+arch=$(uname -m)
 
 # functions
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
