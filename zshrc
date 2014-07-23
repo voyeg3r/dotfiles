@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Ter Jul 22, 2014  08:08
+# Last Change: Qua Jul 23, 2014  09:20
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -43,13 +43,13 @@ eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-ins
 
 # fasd_cd + outputs directory
 fasd_cd() {
-  if [ $# -le 1 ]; then
+ if [ $# -le 1 ]; then
 fasd "$@"
-  else
+ else
 local _fasd_ret="$(fasd -e 'printf %s' "$@")"
-    [ -z "$_fasd_ret" ] && return
-    [ -d "$_fasd_ret" ] && print "$_fasd_ret" && cd "$_fasd_ret" || printf %s\n "$_fasd_ret"
-  fi
+ [ -z "$_fasd_ret" ] && return
+ [ -d "$_fasd_ret" ] && print "$_fasd_ret" && cd "$_fasd_ret" || printf %s\n "$_fasd_ret"
+ fi
 }
 
 # as an autojump user, i need only this for now
@@ -103,8 +103,8 @@ bindkey "^[s" insert-sudo
 
 # Move to where the arguments belong. | use Ctrl-x 1
 after-first-word() {
-  zle beginning-of-line
-  zle forward-word
+ zle beginning-of-line
+ zle forward-word
 }
 zle -N after-first-word
 bindkey "^X1" after-first-word
@@ -113,9 +113,9 @@ bindkey "^X1" after-first-word
 # 04jan2013  +chris+  using incarg
 # 12mar2013  +chris+  revert to own implementation, improved
 _increase_number() {
-  local -a match mbegin mend
-  [[ $LBUFFER =~ '([0-9]+)[^0-9]*$' ]] &&
-    LBUFFER[mbegin,mend]=$(printf %0${#match[1]}d $((10#$match+${NUMERIC:-1})))
+ local -a match mbegin mend
+ [[ $LBUFFER =~ '([0-9]+)[^0-9]*$' ]] &&
+ LBUFFER[mbegin,mend]=$(printf %0${#match[1]}d $((10#$match+${NUMERIC:-1})))
 }
 zle -N increase-number _increase_number
 bindkey '^Xa' increase-number
@@ -123,10 +123,10 @@ bindkey -s '^Xx' '^[-^Xa'
 
 # magic-space and more
 globalias() {
-   if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
-     zle _expand_alias
-   fi
-   zle self-insert
+ if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+ zle _expand_alias
+ fi
+ zle self-insert
 }
 
 zle -N globalias
@@ -265,7 +265,7 @@ source $ZSH/oh-my-zsh.sh
 
 # load custom executable functions
 for function in ~/.dotfiles/functions/*; do
-		source $function
+ source $function
 done
 
 # functions
