@@ -98,6 +98,9 @@ installpm () {
 
 pm i command-not-found
 
+# light terminal with transparency support
+pm i extra/xfce4-terminal
+
 # better performance
 pm i aur/zramswap
 
