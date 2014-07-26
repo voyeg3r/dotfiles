@@ -98,8 +98,12 @@ installpm () {
 
 pm i command-not-found
 
-# light terminal with transparency support
-pm i extra/xfce4-terminal
+installxfceterminal(){
+		#light terminal with transparency support
+		pm i extra/xfce4-terminal
+		sed -i.backup '/MiscMenubarDefault/s/TRUE$/FALSE/g' ~/.config/xfce4/terminal/terminalrc
+} && installxfceterminal
+
 
 # how configure nautilus-open-terminal with xfce4-terminal
 # http://askubuntu.com/questions/76712/setting-nautilus-open-terminal-to-launch-terminator-rather-than-gnome-terminal
