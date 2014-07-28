@@ -1,4 +1,6 @@
 # function to change filename and dirnames to lowcase
+# the first line change to lower case
+# the second one swich empty spaces for underscores
 autoload -Uz zmv
 
 lower(){
