@@ -1,0 +1,4 @@
+# function to change filename and dirnames to lowcase
+autoload -Uz zmv
+
+zmv '(*)' '${(L)1}'

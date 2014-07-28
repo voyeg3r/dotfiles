@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Qua Jul 23, 2014  12:09
+# Last Change: Seg Jul 28, 2014  09:52
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -273,7 +273,7 @@ arch=$(uname -m)
 # functions
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
 gsend() { git commit -am "$1" && git push ;}
-lower() { echo "${*}" | awk '{print tolower($0)}' ;}
+lowerstring() { echo "${*}" | awk '{print tolower($0)}' ;}
 upper() { echo "${*}" | awk '{print toupper($0)}' ;}
 expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; }
 calc(){ echo "scale=2;$@" | bc;}
