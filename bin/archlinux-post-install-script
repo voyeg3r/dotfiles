@@ -266,6 +266,7 @@ multimedia () {
 		sudo yaourt -S --noconfirm codecs
 		sudo pacman -S vlc ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
     sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-pluginscman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins
+pm i extra/sound-juicer
 		rm -rf ~/.thumbnails/fail
 		# sucessor do ffmpeg
 		# https://aur.archlinux.org/packages/libav-git/
