@@ -2,8 +2,7 @@
 % Sergio Luiz Araújo Silva
 % July 31, 2014
 
-Synopsis
-========
+#Synopsis
 
 pandoc [*options*] [*input-file*]...
 
@@ -20,16 +19,14 @@ pandoc will fetch the content using HTTP:
 
     pandoc -f html -t markdown http://www.fsf.org
 
-Paragraphs
-----------
+## Paragraphs
 
 A paragraph is one or more lines of text followed by one or more blank line.
 Newlines are treated as spaces, so you can reflow your paragraphs as you like.
 If you need a hard line break, put two or more spaces at the end of a line.
 
 
-Footnotes
----------
+## Footnotes
 
 **Extension: `footnotes`**
 
@@ -40,3 +37,24 @@ Pandoc's markdown allows footnotes, using the following syntax:
     [^1]: Here is the footnote.
 
     [^longnote]: Here's one with multiple blocks.
+
+## Code syntax highlight
+
+```python
+import os
+import sys
+
+def application(env, start_response):
+    start_response('200 OK', [('Content-Type','text/html')])
+    return "Hello WSGI!!"
+```
+
+## Definition lists
+
+Term 1
+
+:   Definition 1
+
+Term 2 with *inline markup*
+
+:   Definition 2

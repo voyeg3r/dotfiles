@@ -1,20 +1,18 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: 2014 Jan 08 11:34:39
+Last Change: Sáb Ago 02, 2014  12:03
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voyeg3r
 
-Esta pasta do vim está sob controle de versões do programa git
-da forma que ele se encontra agora no repositorio:
+# voyeg3r dotfiles
 
 	https://github.com/voyeg3r/dotfiles
 
 
----------------------------------
-Para clonar este repositorio faça
----------------------------------
+## Para clonar este repositorio faça
 
+```bash
 clonedotfiles () { #function to clone voyeg3r dotfiles
 	ssh -T git@github.com
 
@@ -38,23 +36,19 @@ clonedotfiles () { #function to clone voyeg3r dotfiles
 	[ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
 
 } && clonedotfiles
+```
 
---------------
-MANUAIS DO GIT
---------------
+## Manuais do git
 
 	http://mariomoraesneto.blogspot.com.br/2012/11/git-dicas-basicas-e-praticas.html
 	http://githowto.com/
 
---------------------
-listar configurações
---------------------
+## listar configurações
 
 	git config --list
 
---------------------------
-Configurando git submodule
---------------------------
+## Configurando git submodule
+
 reference: http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
 http://gitref.org/
 http://fadamiao.github.io/git-start/
@@ -66,13 +60,13 @@ http://fadamiao.github.io/git-start/
 	git add .
 	git commit -m "Install Fugitive.vim bundle as a submodule."
 
---------------------------------------------------------
- É possível configurar alias para os comandos, exemplos
---------------------------------------------------------
+## É possível configurar alias para os comandos, exemplos
+
 
 dentro do seu repositório um arquivo .git/config
 dentro dele cole estas linas.
 
+```bash
 	[alias]
 	co = checkout
 	ci = commit
@@ -81,20 +75,20 @@ dentro dele cole estas linas.
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	type = cat-file -t
 	dump = cat-file -p
+```
 
---------------------------------------
-Como adicionar sua chave ssh ao github
---------------------------------------
+## Como adicionar sua chave ssh ao github
+
 
 	https://help.github.com/articles/generating-ssh-keys
 
----------------------------
- começando um novo projeto
----------------------------
+##  começando um novo projeto
 
+```bash
 	touch README.md
 	git init
 	git add README.md
 	git commit -m "first commit"
 	git remote add origin git@github.com:voyeg3r/dotfiles.git
 	git push -u origin master
+```
