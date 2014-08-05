@@ -160,6 +160,8 @@ pm i rfkill
 pm i texlive-core texlive-langcjk texlive-latexextra texlive-pictures
 haskell-pandoc
 
+pm i community/txt2tags
+
 # to install haskell-pandoc you must add this repo
 #[haskell-core]
 #Server = http://xsounds.org/~haskell/core/$arch
