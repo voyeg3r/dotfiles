@@ -170,7 +170,7 @@ pm i community/txt2tags
 
 admintools () {
 		pm i gparted nmap arp-scan unetbootin polkit-gnome curl rsync \
-				git gksu gksudo lsof openssh dnsmasq python-setuptools gvim terminator aria2 zsh detox
+				git gksu gksudo lsof openssh dnsmasq python-setuptools gvim terminator aria2 zsh aur/detox
 		# davfs2 in order to access webdav services
 		# dav://webdav.4shared.com
 		pacman -U https://www.archlinux.org/packages/extra/i686/davfs2/download/
