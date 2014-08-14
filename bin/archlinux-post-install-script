@@ -100,6 +100,8 @@ pm i command-not-found
 
 pm i aur/firefox-nightly
 
+pm i community/html2text
+
 installxfceterminal(){
 		#light terminal with transparency support
 		pm i extra/xfce4-terminal
