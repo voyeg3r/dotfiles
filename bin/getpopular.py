@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # # -*- coding: UTF-8 -*-
 # Criado em:Ter 02/Mar/2010 hs 11:58
-# Last Change: 2011 Abr 11 13:41:56
+# Last Change: Seg Ago 25, 2014  01:01
 # vim:ft=python:nolist:nu:
 # Instituicao: none
 # Proposito do script: pesquisar tags populares no delicious
