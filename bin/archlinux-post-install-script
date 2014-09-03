@@ -102,6 +102,10 @@ pm i aur/firefox-nightly
 
 pm i community/html2text
 
+# mega file storage
+pm i megasync
+pm i aur/nautilus-megasync
+
 installxfceterminal(){
 		#light terminal with transparency support
 		pm i extra/xfce4-terminal
