@@ -1,10 +1,15 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Ter Ago 26, 2014  08:56
+Last Change: Qua Set 03, 2014  02:20
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+==setting utf-8 encoding==
+
+set encoding=utf-8  " The encoding displayed.
+set fileencoding=utf-8  " The encoding written to file.
 
 ==reindenting whole file==
 
