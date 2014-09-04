@@ -96,8 +96,6 @@ installpm () {
 		makepkg -si
 } && installpm
 
-pm i command-not-found
-
 pm i aur/firefox-nightly
 
 pm i community/html2text
@@ -105,6 +103,9 @@ pm i community/html2text
 # mega file storage
 pm i megasync
 pm i aur/nautilus-megasync
+
+# skype alternative
+pm i aur/tox-git
 
 installxfceterminal(){
 		#light terminal with transparency support
