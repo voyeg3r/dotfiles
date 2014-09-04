@@ -107,6 +107,9 @@ pm i aur/nautilus-megasync
 # skype alternative
 pm i aur/tox-git
 
+# software manangement
+pm i community/gnome-packagekit
+
 installxfceterminal(){
 		#light terminal with transparency support
 		pm i extra/xfce4-terminal
