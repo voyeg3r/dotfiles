@@ -34,7 +34,7 @@ length=`echo "${palavras[@]}" | wc -c`
 echo "tamanho do array 'string:' $length"
 
 array2=()
-while [ "`echo ${palavras[@]} | wc -c`" -gt "100" ]; do
+while [ "`echo ${palavras[@]} | wc -c`" -gt "30" ]; do
 	  echo "palavra removida: `echo ${palavras[${#palavras[*]}-1]}`"
 	  array2=( ${palavras[${#palavras[*]}-1]} "${array2[@]}"  )
       unset palavras[${#palavras[*]}-1]

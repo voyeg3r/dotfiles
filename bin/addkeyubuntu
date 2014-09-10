@@ -1,11 +1,11 @@
 #!/bin/bash
 # Criado em:Sex 15/Out/2010 hs 07:19
-# Last Change: Sex 15 Out 2010 12:09:15 BRT
+# Last Change: Ter Set 09, 2014  06:47
 # vim:ft=sh:fdm=syntax:nu:
 # Instituicao: none
 # Proposito do script: conserta chave gpg
-# Autor: Sérgio Luiz Araújo Silva 
-# site: http://vivaotux.blogspot.com 
+# Autor: Sérgio Luiz Araújo Silva
+# site: http://vivaotux.blogspot.com
 # http://twitter.com/voyeg3r
 
 # Referência: http://andregondim.eti.br/?p=2313 - André Gondim

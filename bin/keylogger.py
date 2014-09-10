@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 # Arquivo: keylogger para linux
 # Criado: Qua 04/Mai/2011 hs 14:01
-# Last Change: 2012 Out 07 09:10:15
+# Last Change: Ter Set 09, 2014  05:03
 # autor: bavardage (Ben Duffield)
 # site: http://ardoris.wordpress.com
 # changed by: Sérgio Luiz Araújo Silva
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     logger = Popen("xinput test 8", shell=True, bufsize=1, stdout=PIPE).stdout
     counts = collections.defaultdict(lambda : 0)
     output = []
-    open(‘saida.txt’,'w’).write(output)
+    open('saida.txt','w').write(output)
 
     try:
         for line in logger:
