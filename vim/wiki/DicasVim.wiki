@@ -1,14 +1,14 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Qui Set 11, 2014  09:01
+Last Change: Qua Set 17, 2014  01:36
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 ==opening two files side by side==
 
-  vim -O file1.txt file2.txt
+  vim -O file1.txt [[file2.txt]]
 
 ==setting utf-8 encoding==
 
