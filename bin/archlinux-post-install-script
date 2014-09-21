@@ -110,6 +110,9 @@ pm i aur/tox-git
 # software manangement
 pm i community/gnome-packagekit
 
+# subtitles searcher and downloader
+pm i periscope
+
 installxfceterminal(){
 		#light terminal with transparency support
 		pm i extra/xfce4-terminal
