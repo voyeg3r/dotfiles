@@ -111,7 +111,7 @@ pm i aur/tox-git
 pm i community/gnome-packagekit
 
 # subtitles searcher and downloader
-pm i periscope
+pm i periscope nautilus-periscope
 
 installxfceterminal(){
 		#light terminal with transparency support
