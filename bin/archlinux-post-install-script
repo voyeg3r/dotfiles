@@ -110,6 +110,11 @@ pm i aur/tox-git
 # software manangement
 pm i community/gnome-packagekit
 
+# limitar velocidade do pacman
+# http://www.taringa.net/posts/linux/15314299/Limitar-velocidad-de-Pacman-en-ArchLinux.html
+pm i trickle
+# sudo trickle -d 50 pacman -Syuw --noconfirm
+
 # subtitles searcher and downloader
 pm i periscope nautilus-periscope
 

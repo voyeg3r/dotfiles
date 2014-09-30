@@ -42,6 +42,11 @@ fazem perguntas sobre a mesma, em seguida a mesma estória é
 recontada em outro tempo, com alterações. Visa melhorar a
 desenvoltura e naturalidade dos membros.
 
+==spaced repetition==
+
+ * anki
+ * http://www.memrise.com
+
 ===Pimsleur approach===
 
 spaced repetition -  First you will be told a foreign
@@ -59,6 +64,9 @@ This is an amazingly efficient way to form new memories.
 Spaced repetition was invented back in 1932 by Professor C. A. Mace, so it’s
 a very old concept. Pimsleur language courses were developed after cassette
 tape technology became widespread in the 1970s.
+
+==Lexical approach==
+
 
 ===English dictation channel on youtube===
 
