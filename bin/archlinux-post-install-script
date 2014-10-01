@@ -115,6 +115,9 @@ pm i community/gnome-packagekit
 pm i trickle
 # sudo trickle -d 50 pacman -Syuw --noconfirm
 
+# cmd line image viwever
+pm i extra/feh
+
 # subtitles searcher and downloader
 pm i periscope nautilus-periscope
 
