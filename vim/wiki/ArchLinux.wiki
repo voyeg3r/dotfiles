@@ -49,6 +49,14 @@ cat <<-EOF> ~/.yaourtrc
 EOF
 } && config-yaourt
 
+=pacman=
+
+   # optimize
+		pacman-optimize && sync
+
+   # update
+    pacman -Syu
+
 == load keymap ==
 
 	loadkeys br-abnt2
