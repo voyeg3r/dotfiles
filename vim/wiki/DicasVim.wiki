@@ -1,10 +1,62 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Qua Set 17, 2014  01:36
+Last Change: Sex Out 03, 2014  02:42
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+
+=como apagar tags do tipo </font*> no vim =
+
+Toda vez que for fazer uma ação de substituição complexa no
+vim recomendamos primeiro fazer uma busca incremental pela ocorrência
+a ser substituida ou apagada.
+
+Primeiro testamos a busca com o comando abaixo
+lembrando que a opção 'hlsearch' ou seleção incremental
+da busca estando ativada nos ajuda consideravelmente
+no nosso teste de busca
+
+<\/\?font[^<]*>
+
+A expressão regular acima apaga a tag <font*> ou </font*>
+de documentos quaisquer, o asterisco representa qualquer caractere
+no intervalo entre 'font' e o fechamento da tag
+
+Explicando:
+
+    < .................. abertura 'literal' da tag
+    \ .................. escape para a barra
+    / .................. no caso de tag de fechamento tip </font*>
+    \? ................. quantificador (no caso zero ou mais)
+    font ............... palavra font literal
+
+     EXPLICAÇÃO PARA O GRUPO  ---->  [^<]*
+
+    [ .................. abertura de um grupo
+    ^ .................. se aparece no começo do grupo nega tudo que nele aparece
+    < .................. no caso estamos negando a abertura de tag
+    ] .................. fechamento do grupo
+    * .................. quantificador para o grupo (zero ou mais)
+
+
+		%s,</\?font[^<]*>,,g
+
+		Para evitar usar muitos escapes usamos no comando final (acima) um
+		delimitador de busca diferente, para não ter que escapar todas asa
+		barras, havendo somente um escape para \? que é o quantificador da
+		barra nornal, significa uma barra normal no começo ou não (zero ou 1 ocorrências)
+
+		Para quem não sabe no vim você pode fazer substituições do tipo:
+
+				:%s,Windows,GNU/Linux,g
+
+		No caso acima o uso da virgula no lugar da barra é providencial
+		uma vez que a barra no nome GNU/Linux se confundiria com a barra
+		que delimita a busca ficando assim:
+
+		   :%subsitua,isto,poristo,g
 
 ==opening two files side by side==
 
