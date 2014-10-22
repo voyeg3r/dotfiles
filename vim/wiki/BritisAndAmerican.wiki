@@ -1,6 +1,6 @@
 Arquivo: class notes
 Criado: Ter 21/Out/2014 hs 11:53
-Last Change: Ter Out 21, 2014  02:52
+Last Change: Ter Out 21, 2014  07:06
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -14,3 +14,7 @@ flat rate ...   valor fixo, montante fixo
 
 Youtube video: possessive pronoums and determiners
 http://va.mu/AdL98
+
+If you wanna download one phrase in english you can do:
+
+http://translate.google.com/translate_tts?tl=en&q=How+are+you+doing
