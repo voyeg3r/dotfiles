@@ -100,6 +100,9 @@ pm i aur/firefox-nightly
 
 pm i community/html2text
 
+# music player
+pm i aur/lollypop
+
 # mega file storage
 pm i megasync
 pm i aur/nautilus-megasync
