@@ -103,6 +103,9 @@ pm i community/html2text
 # music player
 pm i aur/lollypop
 
+# change wallpaper
+pm i community/variety
+
 # mega file storage
 pm i megasync
 pm i aur/nautilus-megasync
