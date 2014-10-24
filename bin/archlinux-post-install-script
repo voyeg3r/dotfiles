@@ -106,6 +106,9 @@ pm i aur/lollypop
 # change wallpaper
 pm i community/variety
 
+# troubleshooting tool for sysadmins
+pm i aur/sysdig
+
 # mega file storage
 pm i megasync
 pm i aur/nautilus-megasync
