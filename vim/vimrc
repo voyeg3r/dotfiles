@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Jul 28, 2014  08:19
+" Last Change: Ter Out 28, 2014  07:17
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -248,6 +248,7 @@ endfunction
 
 fun! Keeponlymp3()
 " this function keeps only mp3 urls in current text
+  :%s/mp3/mp3\r/g
 	:%s/.*\(http.*.mp3\).*/\1/g
 	:g!/\.mp3/d
 endfun
