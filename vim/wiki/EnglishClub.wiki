@@ -1232,6 +1232,12 @@ will find all tenses.
  * Como dizer tudo em ingles
  * Applied English Phonology
 
+=apps=
+Some applications to improve your lerning speed
+
+		* Lingua.ly
+		* duolingo
+
 =podcasts=
 
 * http://www.theosgoodfile.com/

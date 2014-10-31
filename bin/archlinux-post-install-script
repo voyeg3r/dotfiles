@@ -113,6 +113,9 @@ pm i aur/sysdig
 pm i megasync
 pm i aur/nautilus-megasync
 
+# patch for terminal transparency
+# https://aur.archlinux.org/packages/gnome-terminal-transparent
+
 # skype alternative
 pm i aur/tox-git
 
