@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Ter Set 30, 2014  09:52
+# Last Change: Ter Nov 04, 2014  09:53
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -176,6 +176,7 @@ alias -g DN='>/dev/null'     # a /dev/null shortcut
 alias -g LC='| tr A-Z a-z'
 alias -g UL="| sed 's, ,_,g'"
 alias -g ULC="| tr A-Z a-z | sed 's, ,_,g'"
+alias pnf='mpg123 ./**/*(.om[1])'
 
 # aliases para fasd
 alias a='fasd -a'        # any
