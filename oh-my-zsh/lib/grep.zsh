@@ -3,7 +3,7 @@
 # Examples: http://rubyurl.com/ZXv
 #
 
-#GREP_OPTIONS="--color=auto"
+GREP_OPTIONS="--color=auto"
 
 # avoid VCS folders (if the necessary grep flags are available)
 grep-flag-available() {
