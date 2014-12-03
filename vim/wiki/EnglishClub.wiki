@@ -15,9 +15,9 @@ facilitam a interação dos membros do clube.
 =Metodologia=
 
 
-    HAVE SOMETHING TO SAY, KNOW HOW TO SAY IT AND HAVE SOMEONE TO SAY IT TO
+		HAVE SOMETHING TO SAY, KNOW HOW TO SAY IT AND HAVE SOMEONE TO SAY IT TO
 
-    KIND A QUANTUM LEAP
+		KIND A QUANTUM LEAP
 
 		I (don’t) like...       to dance    today
 		Do you like...?
