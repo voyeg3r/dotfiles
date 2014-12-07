@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Ter Nov 04, 2014  09:53
+# Last Change: Dom Dez 07, 2014  08:01
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -253,6 +253,8 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+#
+unset GREP_OPTIONS
 
 plugins=(extract git battery pacman cp sudo themes history-substrin-search zsh-syntax-highlighting)
 
