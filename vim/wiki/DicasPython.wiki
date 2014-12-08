@@ -1,6 +1,6 @@
 Arquivo: dicas sobre python
 Criado: Ter 18/Dez/2012 hs 18:57
-Last Change: 2014 Mar 05 10:21:42
+Last Change: Seg Dez 08, 2014  10:33
 autor: Sérgio Luiz Araújo Silva
 site: vivaotux
 twitter: voyeg3r
@@ -31,4 +31,4 @@ subs.save('/home/bala/new.srt', encoding='utf-8')#saves file with new.srt in you
 
 
 
-}}}
+[[}}}]]
