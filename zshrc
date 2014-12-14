@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Seg Dez 08, 2014  02:09
+# Last Change: Sex Dez 12, 2014  08:44
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -38,7 +38,7 @@ ZSH_THEME="bira"
 # I am using now fasd: https://github.com/clvv/fasd
 
 # needed to load fasd utility
-eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
+ eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 
 # fasd_cd + outputs directory

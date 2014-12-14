@@ -1,0 +1,6 @@
+
+=assigning a range or printing=
+
+		To print a list [1, 3, 5, 7, 9, 11]
+
+		print(list(range(1,12,2)))

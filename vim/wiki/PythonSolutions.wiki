@@ -1,28 +1,29 @@
 
 //Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
-* [[http://docs.python.org/library/stdtypes.html| referência built-in]]
+
 * programando com janelas http://www.gustavobarbieri.com.br/eagle/docs/eagle-pt.html
-* [[http://codevibe.blogspot.com/2008/03/erros-em-php.html| python-irc]] by Alec
-* [[http://code.activestate.com/recipes/langs/python/| python-cookbook]]
+
+
 * http://www.caiomoritz.com/2008/01/05/byte-of-python/
 * http://www.lightbird.net/py-by-example/platform-module.html
 * http://www.lightbird.net/py-by-example/index.html
 * http://mail.python.org/pipermail/python-list/2002-August/159344.html
 * http://svn.python.org/projects/python/branches/py3k-urllib/Lib/platform.py
+
 ==video sobre geração de números randomicos==
 * www.youtube.com/watch?v=6YweJ63XGGo
 * www.youtube.com/watch?v=rp5srgJDozM
 ==Módulos para acesso a informações do windows==
-* winreg [[http://www.python.org/doc/current/lib/module--winreg.html| documentação]]
+
 * win32api
 ==truncar string em N bytes sem truncar nenhuma palavra ==
-[[code format="python"]]
+
 >>>> import textwrap
 >>>> textwrap.fill(u"string com texto bem maior que oitenta bytes de tamanho, jogar a palavra que está na coluna 80 para próxima linha", 80)
-[[code]]
+
 ==imprimir intervalo de linhas==
-[[code format="python"]]
+
 python
 Python 2.5.2 (r252:60911, Jul 22 2009, 15:35:03)
 [GCC 4.2.4 (Ubuntu 4.2.4-1ubuntu3)] on linux2
@@ -31,47 +32,47 @@ Python 2.5.2 (r252:60911, Jul 22 2009, 15:35:03)
 >>> for i,line in enumerate(open("file.txt")):
 ...     if i >= 26 and i < 99 :
 ...             fp.write(line)
-[[code]]
+
 ==sequencia de fibonacci==
 * http://www.petercollingridge.co.uk/blog/python-fibonacci-generator-using-reduce
-[[code format="bash"]]
->>> a = [1,1]
->>> for i in range(10):
-...   a.append(a[-1] + a[-2])
-...
->>> a
-[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
-[[code]]
+
+		>>> a = [1,1]
+		>>> for i in range(10):
+		...   a.append(a[-1] + a[-2])
+		...
+		>>> a
+		[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
+
 ==contar linhas de um arquivo==
 * http://stackoverflow.com/questions/845058/how-to-get-line-count-cheaply-in-python
-[[code format="python"]]
+
 def file_len(fname):
   counts = itertools.count()
   with open(fname) as f:
     for _ in f: counts.next()
-  return counts.next()
+		return counts.next()
 
 # outro exemplo
 num_lines = sum(1 for line in open('myfile.txt'))
-[[code]]
+
 ==função map==
-[[code format="bash"]]
+
 >>> print map(lambda w: len(w), 'It is raining cats and dogs'.split())
 [2, 2, 7, 4, 3, 4]
-[[code]]
+
 ==somar linhas de um arquivo==
-[[code format="bash"]]
+
 lista = ['34\n', '42\n', '11\n', '6\n', '2\n', '99\n', '\n']
 sum([int(i.strip()) for i in lista if i.strip().isdigit()])
 
 python -c "from fileinput import input; print sum(map(int, input()))" teste.txt
-[[code]]
+
 ==builtin len==
-[[code format="python"]]
+
 "minha string".__len__()
-[[code]]
+
 ==remover caracteres de uma string==
-[[code format="python"]]
+
 # fonte: lista python brasil
 #Bom dia.
 #Como faço para remover os parênteses de uma palavra ?
@@ -85,17 +86,17 @@ print a.strip('()')
 '123.123.123'
 
 "".join([ char for char in string if char not in '()' ])
-[[code]]
+
 ==ler a primeira e ultima linhas de um arquivo==
-[[code format="python"]]
+
 fp = open('file.txt','r')
 data = fp.readlines()
 fp.close()
 print data[0],
 print data[-1],
-[[code]]
+
 =verificar se há numeros repetidos em uma lista=
-[[code format="python"]]
+
 #O jeito mais simples de verificar se há valores repetidos é converter para set
 #e comparar se o tamanho muda.
 
@@ -112,25 +113,25 @@ False
 print 'List has duplicate item %s' % [item for item in set(L) if L.count(item) > 1]
 
 any(i for i in lista if lista.count(i) > 1)
-[[code]]
+
 =numeros primos=
 * fonte: http://code.activestate.com/recipes/117119-sieve-of-eratosthenes/
-[[code format="python"]]
->>> primes = lambda l: l and l[:1]+primes([n for n in l if n%l[0]])
+
+
 >>> primes(range(2,40))
 [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
-[[code]]
+
 outra implementação bem legal
-[[code format="python"]]
-print [x for x in range(2,100) if not [t for t in range(2,x) if not x%t]]
-[[code]]
+
+
+
 =imprimir sequencia de binarios=
-[[code format="python"]]
+
 for i in xrange(16): print '{0:04b}'.format(i)
-[[code]]
+
 
 =enviar e-mails=
-[[code format="python"]]
+
 import sys, smtplib
 
 fromaddr = raw_input("From: ")
@@ -147,11 +148,11 @@ while 1:
 server = smtplib.SMTP('localhost')
 server.sendmail(fromaddr, toaddrs, msg)
 server.quit()
-[[code]]
+
 
 ==Ordenar uma matriz pelo segunda coluna==
-* [[http://groups.google.com.br/group/python-em-portugues/browse_thread/thread/2326534427fcc09d/223d896955cb38e3?show_docid=223d896955cb38e3&pli=1|fonte lista python brasil]]
-[[code format="text"]]
+
+
 Vamos lá...
 
 A decisão de usar lista.sort(...) ou sorted(...) é influenciada pela
@@ -172,167 +173,159 @@ Entretanto, você pode também fazer uso do módulo operator, que contém
 diversas funcões implementadas em C e que, como o nome já diz, têm
 alguma correspondência com os operadores do Python. Com isso você pode
 ganhar um pouco mais de velocidade:
-[[code]]
-[[code format="python"]]
-import operator
 
-# sem alterar a lista
-print sorted(lista, key=operator.itemgetter(1))
 
-# alterando a lista
-lista.sort(key=operator.itemgetter(1))
-print lista
-[[code]]
+# imprimindo uma lista ordenada pelo tamanho
+
+		print(sorted(colors, key=len))
+
+
 
 =Ordenar strings pelo tamanho=
-[[code format="python"]]
+
 string.sort(key=len)
 
 >>> print sorted("This is a test string from Andrew".split(), key=len)
 ['a', 'is', 'This', 'test', 'from', 'string', 'Andrew']
 
 # Agradecimentos ao Rodrigo Hübner http://rodrigohubner.blogspot.com/
-[[code]]
+
 
 =imprimir tags populares do delicious=
 
 * instale o pydelicious
-[[code format="bash"]]
+
 sudo su -
 easy_install -z http://pydelicious.googlecode.com/files/pydelicious%2Btools-0.5.3.zip
-[[code]]
+
 
 =Limpando a tela=
-[[code format="python"]]
+
 # source: http://stackoverflow.com/questions/517970/how-to-clear-python-interpreter-console
 
 import os
-
 def cls():
     os.system(['clear','cls'][os.name == 'nt'])
 
 # now, to clear the screen
 cls()
-[[code]]
+
 
 =iteradores=
-[[code format="python"]]
+
 >>> s = 'casa'
 >>> it = iter(s)
 >>> it.next()
 ... c
 >>> it.next()
 ... a
-[[code]]
+
 
 =acessando favoritos do delicious usando a biblioteca pydelicios=
 
-[[code format="python"]]
+
 >> import pydelicious
 >>> populares = pydelicious.get_popular(tag="python")
 >>> print "\n".join([ x.get('url') for x in populares ])
-[[code]]
+
 
 =Como testar se existe uma chave em um dicionário?=
-[[code format="python"]]
+
 print d.get('key','not found')
-[[code]]
+
 
 =contar quantos numeros 9 existem entre 1 e 100=
 
-[[code format="python"]]
+
 str([x for x in xrange(1,101)]).count('9')
 
 # ou
 
 str(range(1,1001)).count('9')
-[[code]]
+
 
 =Extranct range=
 
-[[code format="python"]]
+
 >>> fp = open("/tmp/file8","w")
 >>> for i,line in enumerate(open("file.txt")):
 ...     if i >= 26 and i < 99 :
 ...             fp.write(line)
-[[code]]
+
 
 
 =Snippets - códigos de exemplos prontos=
 * http://www.ubuntugeek.com/acire-browse-python-code-snippets-quickly-and-easily.html
-[[image:sn.jpg]]
+
 =Print raw of 50 hyphens=
-[[code format="python"]]
+
 # source: http://www.commandlinefu.com
  python -c 'print "-" * 50'
-[[code]]
+
 ==imprimir itens de uma lista sem laço for==
 
-[[code format="python"]]
+
 recent_presidents = ['George Bush', 'Bill Clinton', 'George W. Bush']
 print 'The three most recent presidents were: %s.' % ', '.join(recent_presidents)
 prints 'The three most recent presidents were: George Bush, Bill Clinton, George W. Bush.
-[[code]]
+
 
 
 =fizzbuzz=
 fonte: http://kodumaro.blogspot.com/2010/01/fizzbuzz.html
 
 A brincadeira consiste em imprimir uma sequência de números, tradicionalmente de 1 a 100. Porém os números múltiplos de 3 devem ser substituídos por //fizz// e os números múltiplos de 5 por //buzz//. Os números que são divisíveis por 3 e por 5 devem ser substituídos por //fizzbuzz//.
-[[code format="python"]]
+
 print "\n".join('fizzbuzz' if x%15==0 else 'fizz' if x%3==0 else 'buzz' if x%5==0 else str(x) for x in xrange(1, 101))
-[[code]]
+
 
 
 =atribuição condicional=
-fonte: [[http://under-linux.org/b1602-curso-de-python-atribuicao-condicional?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+underlinux+%28Under-Linux.Org%29&utm_content=Google+Reader|under linux]]
-[[code format="bash"]]
+
+
 n1 = float(raw_input("Por favor digite o primeiro numero: "))
 n2 = float(raw_input("Por favor digite o segundo numero: "))
 
 resultado = 'O denominador não pode ser zero!' if n2 == 0 else 'Resultado: '+str(n1/n2)
 
 print resultado
-[[code]]
-Mais um exemplo
-[[code format="bash"]]
-x = 3 if (y == 1) else 2
-[[code]]
 
-fonte: [[http://aprenda-python.blogspot.com/2009/10/atribuir-conteudo-default-uma-variavel.html|aprenda python]]
-[[code format="python"]]
+Mais um exemplo
+
+x = 3 if (y == 1) else 2
+
+
 >>> x = 1 and 2 or 3
 >>> x
 >>> 2
-[[code]]
+
 ===Como uma atribuição condicional pode me ajudar?===
 Imagine a seguinte situação
-[[code format="python"]]
+
 if not minha_var:
     minha_var = 'default'
-[[code]]
+
 Que tal então fazer assim
-[[code format="python"]]
+
 minha_var = minha_var or 'default'
-[[code]]
+
 
 
 
 =Imprimir as variáveis de ambiente=
-[[code format="python"]]
+
 import os
-print "\n".join([ "%s=%s" % (k,v) for k,v in os.environ.items()])
-[[code]]
+print("\n".join([ "%s=%s" % (k,v) for k,v in os.environ.items()]))
+
 ==imprimir um intervalo de linhas==
-[[code format="python"]]
+
 fp = open("/tmp/file8","w")
 for i,line in enumerate(open("file.txt")):
     if i >= 26 and i < 99 :
         fp.write(line)
-[[code]]
+
 ==Somar números em um arquivo==
 
-[[code format="python"]]
 >>> sum = 0
 >>> lines = open("/tmp/file.txt", "r").readlines()
 >>> lines
@@ -342,29 +335,28 @@ for i,line in enumerate(open("file.txt")):
 ...
 >>> sum
 256237131
-[[code]]
 
 ==testar se string contém substring==
-[[code format="python"]]
+
 if 'word' in var:
     print "a variavel existe"
-[[code]]
+
 ==impressão inusitada==
-[[code format="python"]]
+
 recent_presidents = ['George Bush', 'Bill Clinton', 'George W. Bush']
 print 'The three most recent presidents were: %s.' % ', '.join(recent_presidents)
 # prints 'The three most recent presidents were: George Bush, Bill Clinton, George W. Bush.
-[[code]]
+
 
 =Numeros abaixo de um certo valor=
-[[code format="python"]]
+
 numbers = [1,2,3,4,5]
 numbers_under_4 = [number for number in numbers if number < 4]
 # Now, numbers_under_4 contains [1,2,3]
-[[code]]
+
 ==nova forma de usar o print==
 * http://aprenda-python.blogspot.com/2009/10/nova-formatacao-de-strings.html
-[[code format="python"]]
+
 nome = 'Fernando'
 sobrenome = 'Silva'
 idade = 9
@@ -384,42 +376,40 @@ print "minha idade é {idade:02d} anos".format(idade=idade)
 # Argumento posicional.
 print "eu sou {0} e eu tenho {1} anos".format(nome, idade)
 
-[[code]]
 
 ==Converter para minúsculas ou maiúsculas==
 
-[[code format="python"]]
 normal = open(”usuarios.txt”).read()
 lower_string = normal.lower()
 upper_string = normal.upper()
-[[code]]
+
 
 ==Servidor simples http==
-[[code]]
+
 python -m SimpleHTTPServer
-[[code]]
+
 Disponibiliza o conteúdo do directório actual em http://$hostname:8000/
 =Python: Introspeção de atributos e métodos com vars(), locals() e dir()=
-fonte: [[@http://codare.net/2009/09/25/python-introspecao-de-atributos-e-metodos-com-vars-locals-e-dir/|codare]]
+
 Para descobrir os atributos de um objeto podemos utilizar:
-[[code]]
+
 objeto.__dict__
 
 vars(objeto)
-[[code]]
+
 Para descobrir os atributos de uma classe:
-[[code]]
+
 vars(Classe())
-[[code]]
+
 Se utilizar vars() sem argumentos, funciona como locals(), listando todas as variáveis.
 Para listar métodos e atributos de um objeto:
-[[code]]
+
 dir(objeto)
-[[code]]
+
 
 ==algoritmo de ordençaão bubblesort==
 * http://www.phpavancado.net/node/302
-[[code format="python"]]
+
 def bsort(a):
     sorted = False
     while not sorted:
@@ -435,27 +425,27 @@ a = [4,5,2,1,3,7,5]
 print repr(a)
 bsort(a)
 print repr(a)
-[[code]]
-==atribuição condicional==
-[[code format="python"]]
-x = 3 if (y == 1) else 2
-[[code]]
-==testar se é número==
-[[code format="python"]]
-type("a")
-[[code]]
 
-[[code format="python"]]
+==atribuição condicional==
+
+x = 3 if (y == 1) else 2
+
+==testar se é número==
+
+type("a")
+
+
+
 def is_number(x):
     try:
         x + 1
         return True
     except TypeError:
         return False
-[[code]]
+
 Outro método
 * python isinstance site:http://stackoverflow.com/
-[[code format="python"]]
+
  result = []
  for key, value in data.items():
     if isinstance(value, int):
@@ -465,40 +455,40 @@ Outro método
     elif isinstance(value, bool):
         result.append(dict(name=key, type='bool',
                            value=value and 'true' or 'false'))
-[[code]]
+
 Mais um exemplo
-[[code format="python"]]
+
 >>> s = "A Simple String"
 >>> print isinstance(s, basestring)
 True
 >>> print isinstance(s, dict)
 False
 >>>
-[[code]]
 
-[[code]]
+
+
 if type(obj) is int:
     return True
 else:
     return False
-[[code]]
 
-[[code format="python"]]
+
+
 if type(obj) is int
 if type(obj) is str
 if type(obj) is list
-[[code]]
+
 ==testar o sistema operacional==
-[[code format="python"]]
+
 def get_memory_size():
    if platform.system() == "Linux":
      print "você está no GNU/Linux"
    elif platform.system() == "Windows":
      print "aprenda a usar GNU/Linux"
-[[code]]
+
 ==detectar arquivos duplicados==
 fonte: http://stackoverflow.com/questions/748675/finding-duplicate-files-and-removing-them
-[[code format="python"]]
+
 import sys
 import os
 import hashlib
@@ -532,17 +522,17 @@ if sys.argv[1:]:
 else:
     print "Please pass the paths to check as parameters to the script"
 
-[[code]]
+
 
 ==Argumentos==
 fonte: http://infog.casoft.info/?p=498
-[[code format="python"]]
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import sys
 for param in sys.argv :
     print(param)
-[[code]]
+
 No site citado acima há um desafio a ser cumprido
 
 ==conceitos==
@@ -551,7 +541,7 @@ No site citado acima há um desafio a ser cumprido
 fontes:
 * http://silveiraneto.net/tag/python/
 * http://www.builderau.com.au/program/python/soa/Lazy-list-builders-Generators-in-Python/0,2000064084,339279708,00.htm
-[[code format="python"]]
+
 def all_perms(str):
     if len(str) <=1:
         yield str
@@ -568,14 +558,14 @@ def all_perms(str):
 ['a', 'c', 'b']
 ['c', 'a', 'b']
 ['c', 'b', 'a']
-[[code]]
+
 outro exemplo
-[[code format="python"]]
+
 [ (x,y) for x in palavra for y in palavra if x != y ]
-[[code]]
+
 ==Mais um exemplo usando a biblioteca itertools==
 * http://stackoverflow.com/questions/104420/how-to-generate-all-permutations-of-a-list-in-python
-[[code format="python"]]
+
 import itertools
 
 print list(itertools.product([1,2,3], [4,5,6]))
@@ -586,9 +576,9 @@ print list(itertools.product([1,2,3], [4,5,6]))
 print list(itertools.product([1,2], repeat=3))
 [(1, 1, 1), (1, 1, 2), (1, 2, 1), (1, 2, 2),
 (2, 1, 1), (2, 1, 2), (2, 2, 1), (2, 2, 2)]
-[[code]]
+
 Outro exemplo:
-[[code format="python"]]
+
 def permute(items, i):
     items = items[:]
     n = len(items)
@@ -613,11 +603,11 @@ def permute(items, i):
 [2, 3, 1]
 [3, 1, 2]
 [3, 2, 1]
-[[code]]
+
 
 ==Módulo para aleatoriedade==
 aleatório - embaralhando
-[[code format="python"]]
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # importando o módulo random
@@ -627,9 +617,9 @@ lista = ["joão", "maria", "josé", "ana"]
 # embaralhando a lista
 random.shuffle(lista)
 print(lista)
-[[code]]
 
-[[code format="python"]]
+
+
 import random
 randrange(1,10)
 
@@ -642,9 +632,9 @@ randrange(1,10)
 >>> [ random.randint(1,100) for i in xrange(10)]
 [37, 15, 36, 57, 65, 87, 63, 26, 97, 13]
 
-[[code]]
 
-[[code format="python"]]
+
+
 # fonte: python-brasil http://bit.ly/dAmCPC
 # Se você estiver fazendo algo sério, e quiser uma implementação decente pra
 # essa geração de um vetor aleatório, deveria usar o Numpy.
@@ -692,7 +682,7 @@ def test_method(num, times):
 
 if __name__=='__main__':
     [test_method(i, TIMES) for i in xrange(1,6)]
-[[code]]
+
 
 
 
@@ -704,7 +694,7 @@ Fonte: http://pt.wikipedia.org/wiki/Parser
 * fonte: lista python brasil
 Se você realmente precisa checar se uma VARIÁVEL foi criada antes, sua
 lógica tem algum problema...
-[[code format="python"]]
+
 >>> try:
 
 ...     print c
@@ -713,7 +703,7 @@ lógica tem algum problema...
 
 substitua o "print c" pelo bloco que vc que verificar a existencia da variavel
 e o "print "Essa variavel nao existe" pela mensagem de erro caso ela nao exista.
-[[code]]
+
 
 Mas vou ser solidário... faz tempo, mas também cheguei no Python vindo
 do PHP, e esta foi uma dúvida minha. Normalmente precisa-se checar
@@ -721,28 +711,28 @@ isto em chaves de arrays associativos (o que, em Python, chamamos de
 dicionário ;-)). Se este for o seu caso - e eu torço para que sim, já
 que nunca realmente precisei checar se uma variável existe no Python
 -, sugiro o seguinte:
-[[code format="python"]]
+
 >>> x = {'a': 1, 'b': 2}
 >>> x.has_key('a')
 True
 >>> x.has_key('d')
 False
-[[code]]
+
 Mas o método has_key, se não me engano, será removido no Python 3k. O
 jeito certo e novo de se fazer esta checagem é:
-[[code format="python"]]
+
 >>> x =  {'a': 1, 'b': 2}
 >>> 'a' in x
 True
 >>> 'd' in x
-[[code]]
+
 Thiago F. Pappacena
 
 As variáveis quando usadas vao para 'vars()'.
 
 ==ler arquivo csv e mostrar==
 fonte: http://aprenda-python.blogspot.com/2008/10/exemplo-3-ler-arquivo-csv-e-mostrar.html
-[[code format="python"]]
+
 1 """ Le um arquivo delimitado e mostra os campos na tela. """
 2 import csv
 3
@@ -753,7 +743,7 @@ fonte: http://aprenda-python.blogspot.com/2008/10/exemplo-3-ler-arquivo-csv-e-mo
 8
 9 print f.line_num, 'linhas lidas'
 10 print '--- fim'
-[[code]]
+
 Vamos analisar o programa:
 
 * Linha 2: importa o pacote csv necessário. Visite o link e veja alguns exemplos.
@@ -764,7 +754,7 @@ Vamos analisar o programa:
 * Linha 9: veja que temos um contador automático! :-D
 
 ==trocar extensão de arquivos==
-[[code format="python"]]
+
 import os
 
 target_dir = "."
@@ -778,9 +768,9 @@ for path, dirs, files in os.walk(target_dir):
             old_filepath = os.path.join(path, file)
             new_filepath = os.path.join(path, new_file)
             os.rename(old_filepath, new_filepath)
-[[code]]
 
-[[code format="python"]]
+
+
 1 '''Transforma string delimitada em lista'''
 2
 3 print __doc__
@@ -795,12 +785,12 @@ for path, dirs, files in os.walk(target_dir):
 12 emails.sort()
 13 for email in emails:
 14     print email
-[[code]]
+
 
 
 ==Mover arquivos==
 * fonte: lista python-br
-[[code format="python"]]
+
 shutil.move:
 
 def move(src, dst):
@@ -825,36 +815,40 @@ itself '%s'." % (src, dst)
          else:
              copy2(src,dst)
              os.unlink(src)
-[[code]]
+
 
 ==Imprimindo uma sequência invertida==
-[[code format="python"]]
+
   for i in reversed(xrange(1,11)):
-        print i
-[[code]]
+
+
+colors = list('red green blue yellow'.split())
+for color in reversed(colors):
+   print(color)
+
 ==imprimindo uma string invertida==
-[[code format="python"]]
+
 s[::-1]
-[[code]]
+
 outro modo
-[[code format="python"]]
+
 a = ["Python", "Java", "Microsoft"]
 a.reverse()
-[[code]]
+
 
 ==Resolvendo problemas com acentuação==
 fonte: http://naotemmosquito.blogspot.com/2008/09/processando-texto-em-portugus-usando.html
-[[code format="python"]]
+
 >>> import locale
 >>> locale.setlocale(locale.LC_CTYPE, ('pt_BR', 'iso8859-1'))
 'pt_BR.ISO8859-1'
 >>> print 'água'.capitalize()
 Água
-[[code]]
+
 
 ==regex - expressões regulares==
 Um caso em que não usamos regex por conta do desempenho
-[[code format="python"]]
+
 #No caso, o seu problema é:
 #dado "TTqqcoisaAAA", eu quero tirar o "TT" do começo e tirar o "AAA" do final.
 #"traduzindo" de português para python:
@@ -893,24 +887,24 @@ Diz aí, esses prefixos são fixos? Se forem, basta
 ('kkamsdkamslkdmalsmd',)
 
 A[]'s
-[[code]]
+
 
 ==combinando listas==
 fontes:
 * http://bytes.com/forum/thread673891.html
 * http://www.ibm.com/developerworks/library/l-prog.html
-[[code format="python"]]
+
 lista1=['1','2','3']
 lista2=['4','5','6']
 zip(lista1,lista2)
 
 print [(x,y) for x in (1,2,3,4) for y in (10,15,3,22) if x*y > 25]
-[[code]]
+
 
 ==Métodos de strings==
 * fonte: Eu podia estar matando
 * http://defpython.blogspot.com/2007/01/trabalhando-com-strings_15.html
-[[code format="python"]]
+
 >>> 'www.google.com'.split('.')
 ['www', 'google', 'com']
 >>> ‘19:16:23′.split(’:')
@@ -927,14 +921,14 @@ print [(x,y) for x in (1,2,3,4) for y in (10,15,3,22) if x*y > 25]
 # primeiro criamos a lista
 lista = 'www.google.com'.split('.')
 ".".join(lista)
-[[code]]
+
 Em casos em que você receber uma data no estilo norte americano faça:
-[[code format="python"]]
+
   "/".join(reversed(data_mysql.split("-")))
-[[code]]
+
 
 ==formatando datas==
-[[code format="python"]]
+
 import time
 print time.localtime()
 [2008,9,23,16,24,1,267,0]
@@ -949,16 +943,16 @@ ano, mes, dia, hora, minuto, segundo = time.strftime("%Y-%m-%d-%H-%M-%S").split(
 
 data=time.strftime("%m-%d-%Y")
 hora=time.strftime("%H:%M:%S")
-[[code]]
+
 ==criando um timer==
-[[code format="python"]]
+
 import time
 time.sleep(10)
-[[code]]
-==Brincando com datas==
-from: [[@http://mrsantos76.wordpress.com/2009/12/03/brincando-com-datas-no-python/]]
 
-[[code format="python"]]
+==Brincando com datas==
+
+
+
 >>> from datetime import date
 >>> today = date.today()
 >>> print "A data de hoje é %s" % today
@@ -970,38 +964,38 @@ A data de hoje é 2009-12-03
 12
 >>> today.day
 3
-[[code]]
+
 Hum, tá começando a ficar interessante..
 vejam só o timetuple come ele temos uma maneira interessante de acessar os mesmos dados acima mas em uma tupla..
-[[code]]
+
 >>> today.timetuple()
 (2009, 12, 3, 0, 0, 0, 3, 337, -1)
 
-[[code]]
+
 Ok digamos que eu queira saber quantos dias já se passaram esse ano?
 fácil é o oitavo carinha da nossa tupla, então pra acessar podemos fazer simplesmente assim:
-[[code]]
+
 >>> today.timetuple()[7]
 337
 >>>
 
-[[code]]
+
 Ué mas eu não tinha dito o oitavo item?
 sim disse mas lembrem-se que uma tupla assim como uma lista em python é indexada em 0!
 podemos aproveitar agora pra formatar a saida de uma data, para isso vamos usar o
-strftime que é usado exatamente pra isso, formatar nossa data [[image:http://s.wordpress.com/wp-includes/images/smilies/icon_wink.gif caption=";)"]]
-[[code]]
+
+
 >>> print today.strftime("Ano com 4 digitos: %Y, agora com dois:: %y, mes: %m, dia: %d")
 Ano com 4 digitos: 2009, agora com dois:: 09, mes: 12, dia: 03
 >>>
 
-[[code]]
+
 Bom assim fica tranquilo formatar nossas datas né…
 para maiores detalhes sobre formatação e assuntos relacionados aconselho a dar uma olhada aqui
-[[http://docs.python.org/library/time.html#time.strftime| time.strftime]]
+
 Outra coisa corriqueira que temos que faze é transformar uma data no padrão DMYHMS em timestamp
 vamos a mais um exemplo:
-[[code]]
+
 >>>
 >>> now = datetime.datetime.now()
 >>> print now
@@ -1011,42 +1005,42 @@ vamos a mais um exemplo:
 Timestamp: 1259879483.0
 >>>
 
-[[code]]
+
 e claro muitas vezes temos que fazer a operação contrária, transformar um timestamp em uma data
-[[code]]
+
 >>> timestamp = time.mktime(now.timetuple())
 >>> data = time.localtime(timestamp)
 >>> data
 (2009, 12, 3, 20, 31, 23, 3, 337, 1)
 >>>
 
-[[code]]
+
 Bom nessa tupla temos
 Ano, mes, dia, hora, minuto, segundos, dias transcorridos no ano etc…
 Bom pra finalizar esse post mas não o assuntos vamos subtrair duas datas
-e pra fazer isso vamos ver quantos dias eu já vivi [[image:http://s.wordpress.com/wp-includes/images/smilies/icon_wink.gif caption=";)"]]
-[[code]]
+
+
 >>> dias_vividos = datetime.date(2009, 12, 03) - datetime.date(1976, 03, 21)
 >>> print dias_vividos
 12310 days, 0:00:00
 >>>
 
-[[code]]
+
 
 ==Criando uma lista à partir de uma string==
-[[code format="python"]]
+
  lista = 'jonas marcos maria fernanda isabele'.split()
  lista
  ['jonas','marcos','maria','fernanda','isabele']
  for x, y in enumerate(lista):
      print x, y
-[[code]]
+
 Se desejasse transformar novamente a lista em uma string faria:
-[[code format="python"]]
+
  texto = ' '.join(lista)
-[[code]]
+
 ==Criando uma string a partir de uma lista==
-[[code format="python"]]
+
 texto = []
 for item in range(10):
     texto.append(str(item))
@@ -1057,24 +1051,24 @@ print texto
 texto = map(lambda x : int(x), texto)
 #usando list compreensions
 [ str(x) for x in range(10) ]
-[[code]]
+
 ==somando itens de um dicionario (strings)==
 Referência: http://selinap.com/2009/05/how-to-sum-the-values-of-a-python-dictionary/
-[[code format="python"]]
+
 se você tem um dicionário assim:
 dic = {'a':'10','b':'20','c':'30','d':'40','c':'50'}
 sum([ int(x) for x in dic.values() ])
-[[code]]
+
 ===outros métodos úteis===
-[[code format="python"]]
+
   string.replace("isto","aquilo") # troca caracteres de posição
   '  um texto com espacos '.strip() # remove espaços no inicio e no fim
-[[code]]
+
 ==contador de troco==
 * link: http://wille.wordpress.com/2008/08/28/programando-em-python-contador-de-troco/
 ==árvore binária em python==
 fonte: http://medeubranco.wordpress.com/2008/07/05/brincando-de-arvore-binaria-com-python/
-[[code format="python"]]
+
 #! /usr/bin/env python
 # -.- encoding: utf-8 -.-
 
@@ -1128,28 +1122,28 @@ class arvbin:
             listamaior=self.Maior.ordena()
         return listamenor + [ (self.valor, self.conta) ] + listamaior
 
-[[code]]
+
 ==Funções lambda==
 São funções abrevidas e que podems ser usadas em alguns locais
 em que uma função normal não poderia ser usada. Uma função normal seria:
-[[code format="python"]]
+
   def pot(x):
       return x**2
-[[code]]
+
 a mesma função usando lambda:
-[[code format="python"]]
+
  pot = lambda x : x**2
-[[code]]
+
 Veja um local em que uma função normal não poderia ser usada:
-[[code format="python"]]
+
   map(lambda x : x**2, range(1,11))
   # a função map mapeia uma função em função da outra, ou seja para cada item
   # do intervalo "range(1,11)" acontece a função lambda, que neste caso
   # não foi sequer atribuida a nenhuma variável
-[[code]]
+
 ==Equação do segundo grau==
 * fonte: http://blog.elcio.com.br/resolvendo-equacoes-do-segundo-grau-com-python/
-[[code format="python"]]
+
 # -*- encoding: utf-8 -*-
 '''
 Funções matemáticas para equações do segundo grau.
@@ -1181,10 +1175,10 @@ if __name__=="__main__":
   # Se rodou o  arquivo diretamente, sem importar, roda os testes.
   import doctest
   doctest.testmod()
-[[code]]
+
 
 ==Como setar o path do python no windows==
-[[code format="txt"]]
+
 To set the PYTHONPATH variable:
 
    1. Go to Control Panel -> System-> Advanced.
@@ -1193,25 +1187,25 @@ To set the PYTHONPATH variable:
 
 PYTHONPATH in the 'Variable Name' field. In the 'Variable Value'
 field enter path  c:\my\path
-[[code]]
+
 Usando o DOS
-[[code format="txt"]]
+
  C:\> SET PYTHONPATH=c:\my\path
-[[code]]
+
 
 Uma forma mais inteligente de configurar o path para um projeto
-[[code format="python"]]
+
 import sys;sys.path.insert(0,'/home/user/projetos')
-[[code]]
+
 
 ==função boleana==
-[[code format="python"]]
+
 def isDivisible(x,y):
   return x % y == 0
-[[code]]
+
 
 ==Adicionando ~/bin ao path==
-[[code format="python"]]
+
 import os
 import sys
 sys.path.append(str(os.path.expanduser("~/bin")))
@@ -1220,10 +1214,10 @@ del sys
 '''
 print "\vseu path agora é \n" + "\n".join(sys.path)
 '''
-[[code]]
+
 
 ==codificação de strings==
-[[code format="python"]]
+
 '''> Bom, sou iniciante em Python(não em programação) e nessa lista, e estou com
 > o seguinte problema:
 
@@ -1246,16 +1240,16 @@ from urllib import unquote
 # ... seu programa aqui ...
 
 unquoted_str = unquote(xml_escaped_string)
-[[code]]
+
 
 ==palavras reservadas==
-[[code format="python"]]
+
 import keyword
 print keyword.kwlist
-[[code]]
+
 
 ==Dicas para listas==
-[[code format="python"]]
+
   numeros=[1,5]
   numeros[1:1]=[2,3,4]
   print numeros
@@ -1266,10 +1260,10 @@ print keyword.kwlist
  range(1,6)
  [1,2,3,4,5]
  numeros[1:4]= []
-[[code]]
+
 
 ==criando um path sob demanda==
-[[code format="python"]]
+
 '''> Em suma, gostaria de poder chamar
 > os.mkdir('/home/gustavo/dir1/dir2') e ao inves de um erro ser
 > gerado, os diretorios dir1 e dir2 serem criados.
@@ -1280,29 +1274,29 @@ cisaria apenas fazer algo como'''
 
 import os
 os.makedirs('/home/gustavo/dir1/dir2/')
-[[code]]
+
 
 ==closures==
 Funções que constroem outras funções
-* [[http://nacaolivre.org/2007/06/18/python-brainstorms-3-mais-exemplos/#more-184| acesse aqui]]
-[[code format="python"]]
+
+
    def calcular(valor1,valor2):
        def somar():
            return valor1 + valor2
        return somar()
    print calcular(2,4)
-[[code]]
+
 
 ==Abrindo arquivos==
 Obs: a notação no corpo do laço evita que se imprima
 a quebra de linha original.
-[[code format="python"]]
+
 for line in file('some_file.txt'):
     print line[:-1]
-[[code]]
+
 
 ==testes==
-[[code format="python"]]
+
 if __name__ == '__main__' :
    # Este trecho do código só executa se o arquivo
    # estiver sendo executado diretamente a partir da linha
@@ -1315,20 +1309,20 @@ if __name__ == '__main__' :
 
 if __name__=="__main__":
         print __doc__
-[[code]]
+
 
 ==Python Decorators==
 * http://ruivaldo.blogspot.com/2008/09/python-decorators.html
 
 ==Expressões geradoras==
-leia também sobre "[[http://blog.carlos-rodrigues.com/2006/02/funes-geradoras-em-python.html|funções geradoras]]"
-[[code format="python"]]
+
+
 s = sum(item for item in aList if item > 0)
 print s
-[[code]]
+
 
 O que, usando funções geradoras, seria equivalente a escrever...
-[[code format="python"]]
+
 def positive(aList):
     for item in aList:
         if item > 0:
@@ -1336,9 +1330,9 @@ def positive(aList):
 
 s = sum(positive(aList))
 print s
-[[code]]
+
 ==dicas==
-[[code format="python"]]
+
 my_object = 'Test' # True example
 # my_object = '' # False example
 
@@ -1353,31 +1347,31 @@ if object != '':
 
 if object: # an empty string will evaluate to False
     print 'my_object is not empty'
-[[code]]
+
 Conclusão: Você não precisa chegar o tamanho de uma string ou igualdade
 se quer saber apenas se a string está vazia
 
 ===veja também:===
 http://www.dmat.furg.br/~python/diferente.html
 Este mecanismo faz com que and e or se comportem como os operadores booleanos que implementam, mas eles também permitem escrever expressões condicionais muito curiosas. Por exemplo, o código
-[[code format="python"]]
+
     if a:
         print a
     else:
         print b
-[[code]]
+
 Poderia ser substituído por:
-[[code format="python"]]
+
     print a or b
-[[code]]
+
 
 ==Droopy - receba arquivos via http==
-[[droopy]]
+
 
 ==setando o path==
 Referências: * http://vivaotux.blogspot.com/2008/09/adicionando-sua-pasta-bin-ao-path-do.html
 * http://code.activestate.com/recipes/52662/
-[[code format="python"]]
+
 def AddSysPath(new_path):
     import sys, os
 
@@ -1425,21 +1419,21 @@ if __name__ == '__main__':
     print 'After:'
     for x in sys.path:
         print x
-[[code]]
+
 
 ==Trabalhando com codificações diversas==
-[[code format="python"]]
+
 try:
     texto = texto.encode("ISO-8859-1")
 except:
     pass
-[[code]]
+
 
 ==copiar arquivos==
 http://python-blog.blogspot.com/
 leia sobre o módulo nmap
 
-[[code format="python"]]
+
 #So para dar um ultimo toque, tem um jeito mais simples
 #ainda de fazer isso, que eh usar a funcao 'copyfileobj' do modulo 'shutil':
 
@@ -1453,9 +1447,9 @@ shutil.copyfileobj(input, output)
 
 #Usando file.read() e .seek() deixou o programa
 # extremamente ineficaz. Solução: mmap (http://docs.python.org/lib/module-mmap.html).
-[[code]]
 
-[[code format="python"]]
+
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import sys
@@ -1476,22 +1470,22 @@ import sys
     #Fechando os arquivos
     input.close()
     output.close()
-[[code]]
+
 
 ==informação de hardware==
 Importando comandos
-[[code format="python"]]
+
 import os, commands
 print os.system("ipconfig")
 print os.system("hostname")
-[[code]]
 
-[[code format="python"]]
+
+
 import os
 for k in os.environ: print "%s: %s" %(k, os.environ[k])
-[[code]]
 
-[[code format="python"]]
+
+
 import os; print os.uname()[1]
 
 import socket
@@ -1503,10 +1497,10 @@ ip = str(ip[2])
 # returns: "['192.168.0.2']"
 ip = ip[2:-2]
 # returns: '192.168.0.2'
-[[code]]
+
 
 ==iterando sobre um dicionário==
-[[code format="python"]]
+
 *>>> b = {'a':3,'b':8,'c':4,'d':7,'e':17}
  >>> [b[k] for k in b]
 [3, 4, 8, 17, 7]
@@ -1516,14 +1510,14 @@ ip = ip[2:-2]
 >>> b = {'a':3,'b':8,'c':4,'d':7,'e':17}
 >>> b.values()
 [3, 4, 8, 17, 7]
-[[code]]
+
 
 ==Plataforma==
-[[code format="python"]]
-python -c "import platform; print platform.node()"
-[[code]]
 
-[[code format="python"]]
+python -c "import platform; print platform.node()"
+
+
+
 # python
 >>> import platform
 >>> print platform.system(), platform.release()
@@ -1546,54 +1540,54 @@ nt
 'Windows_NT'
 >>>
 
-[[code]]
+
 
 ==Descobrindo o home do usuário==
-[[code format="python"]]
+
 import os
 print os.path.expanduser("~")
-[[code]]
+
 ==Imprimindo data e hora==
-[[code format="python"]]
+
 import time
 print time.strftime('%H:%M:%S')
 time.strftime('%d-%m-%Y')
-[[code]]
+
 usando o módulo datetime
-[[code format="python"]]
+
 from datetime import datetime
 print datetime.now()
-[[code]]
+
 outro método
-[[code format="python"]]
+
 #!/usr/bin/env python
 from time import localtime, strftime, sleep
 while True:  # rodar para sempre
     print strftime('%H:%M:%S',localtime())
     sleep(1) # aguardar 1 segundo
-[[code]]
+
 
 ==trocando variáveis==
 O jeito antigo
-[[code format="c"]]
+
   if ( a > b){
      tmp = a
      a = b
      b = tmp
    }
 
-[[code]]
+
 O jeito novo
-[[code format="python"]]
+
  if a > b:
    a , b = b ,a
-[[code]]
+
 
 ==Contador de troco==
 http://wille.wordpress.com/2008/08/28/programando-em-python-contador-de-troco/
 
 ==Exibindo documentação de módulos==
-[[code format="python"]]
+
 >>> print os.__doc__
 OS routines for Mac, NT, or Posix depending on what system we're on.
 
@@ -1616,11 +1610,11 @@ portable between different platforms.  Of course, they must then
 only use functions that are defined by all platforms (e.g., unlink
 and opendir), and leave all pathname manipulation to os.path
 (e.g., split and join).
-[[code]]
-[[media type="custom" key="908939"]]
+
+
 
 ==Meu módulo de data==
-[[code format="python"]]
+
 #!C:\\Python25\\python.exe
 #-*- coding: ISO-8859-1 -*-
 """
@@ -1670,10 +1664,10 @@ if __name__=="__main__":
         print __doc__
         main()
 
-[[code]]
+
 
 ==Teste de paridade==
-[[code format="python"]]
+
 #!C:\\Python25\\python.exe
 #-*- coding: ISO-8859-1 -*-
 """
@@ -1690,13 +1684,13 @@ while True:
            break
     except ValueError:
            print "Esta função só aceita números.  Tente novamente..."
-[[code]]
 
-[[code format="python"]]
+
+
 # retorna False ou True
 def par(x):
     return x % 2 == 0
-[[code]]
+
 
 ==Referências==
 * http://www.onlamp.com/pub/a/python/2001/05/17/docstrings.html
