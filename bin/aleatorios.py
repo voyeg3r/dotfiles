@@ -10,8 +10,8 @@
 
 import random
 
-tam = input('Digite quantos valores seram incluidos: ')
-print [random.randint(1, tam) for i in xrange(tam)]
+tam = eval(input('Digite quantos valores seram incluidos: '))
+print([random.randint(1, tam) for i in range(tam)])
 
 
 #Se você estiver fazendo algo sério, e quiser uma implementação decente pra
