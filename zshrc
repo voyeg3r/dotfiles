@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Sex Dez 12, 2014  08:44
+# Last Change: Ter Dez 16, 2014  09:39
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -190,6 +190,7 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 alias v='f -e vim'       # open file with vim
 alias o='a -e xdg-open'  # quick opening files with xdg-open#
+alias _!='fc -e "sed -i -e \"s/^/sudo /\""'  # sudo last command
 
 ## complete
 # zstyle - completions

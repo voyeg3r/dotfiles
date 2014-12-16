@@ -1,12 +1,12 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Qua Jul 23, 2014  04:07
+Last Change: Seg Dez 15, 2014  11:07
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r at gmail.com>
 
-{{{
+[[{{{]]
 
 References: http://chneukirchen.org/dotfiles/.zshrc
 
