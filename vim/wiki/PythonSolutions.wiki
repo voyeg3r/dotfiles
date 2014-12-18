@@ -4,7 +4,6 @@
 
 * programando com janelas http://www.gustavobarbieri.com.br/eagle/docs/eagle-pt.html
 
-
 * http://www.caiomoritz.com/2008/01/05/byte-of-python/
 * http://www.lightbird.net/py-by-example/platform-module.html
 * http://www.lightbird.net/py-by-example/index.html
@@ -80,7 +79,6 @@ python -c "from fileinput import input; print sum(map(int, input()))" teste.txt
 
 #Tenho (201.8.205.113) e quero apenas 201.8.205.113
 
-
 a = '(123.123.123)'
 print a.strip('()')
 '123.123.123'
@@ -117,18 +115,14 @@ any(i for i in lista if lista.count(i) > 1)
 =numeros primos=
 * fonte: http://code.activestate.com/recipes/117119-sieve-of-eratosthenes/
 
-
 >>> primes(range(2,40))
 [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
 
 outra implementação bem legal
 
-
-
 =imprimir sequencia de binarios=
 
 for i in xrange(16): print '{0:04b}'.format(i)
-
 
 =enviar e-mails=
 
@@ -149,9 +143,7 @@ server = smtplib.SMTP('localhost')
 server.sendmail(fromaddr, toaddrs, msg)
 server.quit()
 
-
 ==Ordenar uma matriz pelo segunda coluna==
-
 
 Vamos lá...
 
@@ -174,12 +166,9 @@ diversas funcões implementadas em C e que, como o nome já diz, têm
 alguma correspondência com os operadores do Python. Com isso você pode
 ganhar um pouco mais de velocidade:
 
-
 # imprimindo uma lista ordenada pelo tamanho
 
 		print(sorted(colors, key=len))
-
-
 
 =Ordenar strings pelo tamanho=
 
@@ -190,14 +179,12 @@ string.sort(key=len)
 
 # Agradecimentos ao Rodrigo Hübner http://rodrigohubner.blogspot.com/
 
-
 =imprimir tags populares do delicious=
 
 * instale o pydelicious
 
 sudo su -
 easy_install -z http://pydelicious.googlecode.com/files/pydelicious%2Btools-0.5.3.zip
-
 
 =Limpando a tela=
 
@@ -210,7 +197,6 @@ def cls():
 # now, to clear the screen
 cls()
 
-
 =iteradores=
 
 >>> s = 'casa'
@@ -220,22 +206,17 @@ cls()
 >>> it.next()
 ... a
 
-
 =acessando favoritos do delicious usando a biblioteca pydelicios=
-
 
 >> import pydelicious
 >>> populares = pydelicious.get_popular(tag="python")
 >>> print "\n".join([ x.get('url') for x in populares ])
 
-
 =Como testar se existe uma chave em um dicionário?=
 
 print d.get('key','not found')
 
-
 =contar quantos numeros 9 existem entre 1 e 100=
-
 
 str([x for x in xrange(1,101)]).count('9')
 
@@ -243,16 +224,12 @@ str([x for x in xrange(1,101)]).count('9')
 
 str(range(1,1001)).count('9')
 
-
 =Extranct range=
-
 
 >>> fp = open("/tmp/file8","w")
 >>> for i,line in enumerate(open("file.txt")):
 ...     if i >= 26 and i < 99 :
 ...             fp.write(line)
-
-
 
 =Snippets - códigos de exemplos prontos=
 * http://www.ubuntugeek.com/acire-browse-python-code-snippets-quickly-and-easily.html
@@ -264,12 +241,9 @@ str(range(1,1001)).count('9')
 
 ==imprimir itens de uma lista sem laço for==
 
-
 recent_presidents = ['George Bush', 'Bill Clinton', 'George W. Bush']
 print 'The three most recent presidents were: %s.' % ', '.join(recent_presidents)
 prints 'The three most recent presidents were: George Bush, Bill Clinton, George W. Bush.
-
-
 
 =fizzbuzz=
 fonte: http://kodumaro.blogspot.com/2010/01/fizzbuzz.html
@@ -278,10 +252,7 @@ A brincadeira consiste em imprimir uma sequência de números, tradicionalmente 
 
 print "\n".join('fizzbuzz' if x%15==0 else 'fizz' if x%3==0 else 'buzz' if x%5==0 else str(x) for x in xrange(1, 101))
 
-
-
 =atribuição condicional=
-
 
 n1 = float(raw_input("Por favor digite o primeiro numero: "))
 n2 = float(raw_input("Por favor digite o segundo numero: "))
@@ -293,7 +264,6 @@ print resultado
 Mais um exemplo
 
 x = 3 if (y == 1) else 2
-
 
 >>> x = 1 and 2 or 3
 >>> x
@@ -308,9 +278,6 @@ if not minha_var:
 Que tal então fazer assim
 
 minha_var = minha_var or 'default'
-
-
-
 
 =Imprimir as variáveis de ambiente=
 
@@ -347,7 +314,6 @@ recent_presidents = ['George Bush', 'Bill Clinton', 'George W. Bush']
 print 'The three most recent presidents were: %s.' % ', '.join(recent_presidents)
 # prints 'The three most recent presidents were: George Bush, Bill Clinton, George W. Bush.
 
-
 =Numeros abaixo de um certo valor=
 
 numbers = [1,2,3,4,5]
@@ -376,13 +342,11 @@ print "minha idade é {idade:02d} anos".format(idade=idade)
 # Argumento posicional.
 print "eu sou {0} e eu tenho {1} anos".format(nome, idade)
 
-
 ==Converter para minúsculas ou maiúsculas==
 
 normal = open(”usuarios.txt”).read()
 lower_string = normal.lower()
 upper_string = normal.upper()
-
 
 ==Servidor simples http==
 
@@ -405,7 +369,6 @@ Se utilizar vars() sem argumentos, funciona como locals(), listando todas as var
 Para listar métodos e atributos de um objeto:
 
 dir(objeto)
-
 
 ==algoritmo de ordençaão bubblesort==
 * http://www.phpavancado.net/node/302
@@ -433,8 +396,6 @@ x = 3 if (y == 1) else 2
 ==testar se é número==
 
 type("a")
-
-
 
 def is_number(x):
     try:
@@ -465,14 +426,10 @@ True
 False
 >>>
 
-
-
 if type(obj) is int:
     return True
 else:
     return False
-
-
 
 if type(obj) is int
 if type(obj) is str
@@ -521,8 +478,6 @@ if sys.argv[1:]:
     check_for_duplicates(sys.argv[1:])
 else:
     print "Please pass the paths to check as parameters to the script"
-
-
 
 ==Argumentos==
 fonte: http://infog.casoft.info/?p=498
@@ -604,7 +559,6 @@ def permute(items, i):
 [3, 1, 2]
 [3, 2, 1]
 
-
 ==Módulo para aleatoriedade==
 aleatório - embaralhando
 
@@ -618,8 +572,6 @@ lista = ["joão", "maria", "josé", "ana"]
 random.shuffle(lista)
 print(lista)
 
-
-
 import random
 randrange(1,10)
 
@@ -631,9 +583,6 @@ randrange(1,10)
 # fonte: http://groups.google.com.br/group/python-em-portugues/browse_thread/thread/a8550e5c6857725c/9a47252ebad18b92?show_docid=9a47252ebad18b92
 >>> [ random.randint(1,100) for i in xrange(10)]
 [37, 15, 36, 57, 65, 87, 63, 26, 97, 13]
-
-
-
 
 # fonte: python-brasil http://bit.ly/dAmCPC
 # Se você estiver fazendo algo sério, e quiser uma implementação decente pra
@@ -683,9 +632,6 @@ def test_method(num, times):
 if __name__=='__main__':
     [test_method(i, TIMES) for i in xrange(1,6)]
 
-
-
-
 ===parser===
 Um Parser é um programa de computador (ou apenas um componente de um programa) que serve para analisar a estrutura gramatical de uma entrada, manipulando os tokens, que são segmentos de texto ou símbolos que podem ser manipulados. Em XML, o parser pode ser um leitor que ajuda na conversão do arquivo para manipulação dos dados contidos no mesmo.
 Fonte: http://pt.wikipedia.org/wiki/Parser
@@ -703,7 +649,6 @@ lógica tem algum problema...
 
 substitua o "print c" pelo bloco que vc que verificar a existencia da variavel
 e o "print "Essa variavel nao existe" pela mensagem de erro caso ela nao exista.
-
 
 Mas vou ser solidário... faz tempo, mas também cheguei no Python vindo
 do PHP, e esta foi uma dúvida minha. Normalmente precisa-se checar
@@ -769,8 +714,6 @@ for path, dirs, files in os.walk(target_dir):
             new_filepath = os.path.join(path, new_file)
             os.rename(old_filepath, new_filepath)
 
-
-
 1 '''Transforma string delimitada em lista'''
 2
 3 print __doc__
@@ -785,8 +728,6 @@ for path, dirs, files in os.walk(target_dir):
 12 emails.sort()
 13 for email in emails:
 14     print email
-
-
 
 ==Mover arquivos==
 * fonte: lista python-br
@@ -816,11 +757,9 @@ itself '%s'." % (src, dst)
              copy2(src,dst)
              os.unlink(src)
 
-
 ==Imprimindo uma sequência invertida==
 
   for i in reversed(xrange(1,11)):
-
 
 colors = list('red green blue yellow'.split())
 for color in reversed(colors):
@@ -835,7 +774,6 @@ outro modo
 a = ["Python", "Java", "Microsoft"]
 a.reverse()
 
-
 ==Resolvendo problemas com acentuação==
 fonte: http://naotemmosquito.blogspot.com/2008/09/processando-texto-em-portugus-usando.html
 
@@ -844,7 +782,6 @@ fonte: http://naotemmosquito.blogspot.com/2008/09/processando-texto-em-portugus-
 'pt_BR.ISO8859-1'
 >>> print 'água'.capitalize()
 Água
-
 
 ==regex - expressões regulares==
 Um caso em que não usamos regex por conta do desempenho
@@ -888,7 +825,6 @@ Diz aí, esses prefixos são fixos? Se forem, basta
 
 A[]'s
 
-
 ==combinando listas==
 fontes:
 * http://bytes.com/forum/thread673891.html
@@ -899,7 +835,6 @@ lista2=['4','5','6']
 zip(lista1,lista2)
 
 print [(x,y) for x in (1,2,3,4) for y in (10,15,3,22) if x*y > 25]
-
 
 ==Métodos de strings==
 * fonte: Eu podia estar matando
@@ -926,7 +861,6 @@ Em casos em que você receber uma data no estilo norte americano faça:
 
   "/".join(reversed(data_mysql.split("-")))
 
-
 ==formatando datas==
 
 import time
@@ -951,8 +885,6 @@ time.sleep(10)
 
 ==Brincando com datas==
 
-
-
 >>> from datetime import date
 >>> today = date.today()
 >>> print "A data de hoje é %s" % today
@@ -971,7 +903,6 @@ vejam só o timetuple come ele temos uma maneira interessante de acessar os mesm
 >>> today.timetuple()
 (2009, 12, 3, 0, 0, 0, 3, 337, -1)
 
-
 Ok digamos que eu queira saber quantos dias já se passaram esse ano?
 fácil é o oitavo carinha da nossa tupla, então pra acessar podemos fazer simplesmente assim:
 
@@ -979,16 +910,13 @@ fácil é o oitavo carinha da nossa tupla, então pra acessar podemos fazer simp
 337
 >>>
 
-
 Ué mas eu não tinha dito o oitavo item?
 sim disse mas lembrem-se que uma tupla assim como uma lista em python é indexada em 0!
 podemos aproveitar agora pra formatar a saida de uma data, para isso vamos usar o
 
-
 >>> print today.strftime("Ano com 4 digitos: %Y, agora com dois:: %y, mes: %m, dia: %d")
 Ano com 4 digitos: 2009, agora com dois:: 09, mes: 12, dia: 03
 >>>
-
 
 Bom assim fica tranquilo formatar nossas datas né…
 para maiores detalhes sobre formatação e assuntos relacionados aconselho a dar uma olhada aqui
@@ -1005,7 +933,6 @@ vamos a mais um exemplo:
 Timestamp: 1259879483.0
 >>>
 
-
 e claro muitas vezes temos que fazer a operação contrária, transformar um timestamp em uma data
 
 >>> timestamp = time.mktime(now.timetuple())
@@ -1014,18 +941,14 @@ e claro muitas vezes temos que fazer a operação contrária, transformar um tim
 (2009, 12, 3, 20, 31, 23, 3, 337, 1)
 >>>
 
-
 Bom nessa tupla temos
 Ano, mes, dia, hora, minuto, segundos, dias transcorridos no ano etc…
 Bom pra finalizar esse post mas não o assuntos vamos subtrair duas datas
-
 
 >>> dias_vividos = datetime.date(2009, 12, 03) - datetime.date(1976, 03, 21)
 >>> print dias_vividos
 12310 days, 0:00:00
 >>>
-
-
 
 ==Criando uma lista à partir de uma string==
 
@@ -1122,7 +1045,6 @@ class arvbin:
             listamaior=self.Maior.ordena()
         return listamenor + [ (self.valor, self.conta) ] + listamaior
 
-
 ==Funções lambda==
 São funções abrevidas e que podems ser usadas em alguns locais
 em que uma função normal não poderia ser usada. Uma função normal seria:
@@ -1176,7 +1098,6 @@ if __name__=="__main__":
   import doctest
   doctest.testmod()
 
-
 ==Como setar o path do python no windows==
 
 To set the PYTHONPATH variable:
@@ -1192,17 +1113,14 @@ Usando o DOS
 
  C:\> SET PYTHONPATH=c:\my\path
 
-
 Uma forma mais inteligente de configurar o path para um projeto
 
 import sys;sys.path.insert(0,'/home/user/projetos')
-
 
 ==função boleana==
 
 def isDivisible(x,y):
   return x % y == 0
-
 
 ==Adicionando ~/bin ao path==
 
@@ -1215,6 +1133,10 @@ del sys
 print "\vseu path agora é \n" + "\n".join(sys.path)
 '''
 
+= imprimir o path=
+
+import sys
+print("\n".join(sys.path))
 
 ==codificação de strings==
 
@@ -1241,12 +1163,10 @@ from urllib import unquote
 
 unquoted_str = unquote(xml_escaped_string)
 
-
 ==palavras reservadas==
 
 import keyword
 print keyword.kwlist
-
 
 ==Dicas para listas==
 
@@ -1261,7 +1181,6 @@ print keyword.kwlist
  [1,2,3,4,5]
  numeros[1:4]= []
 
-
 ==criando um path sob demanda==
 
 '''> Em suma, gostaria de poder chamar
@@ -1275,10 +1194,8 @@ cisaria apenas fazer algo como'''
 import os
 os.makedirs('/home/gustavo/dir1/dir2/')
 
-
 ==closures==
 Funções que constroem outras funções
-
 
    def calcular(valor1,valor2):
        def somar():
@@ -1286,14 +1203,12 @@ Funções que constroem outras funções
        return somar()
    print calcular(2,4)
 
-
 ==Abrindo arquivos==
 Obs: a notação no corpo do laço evita que se imprima
 a quebra de linha original.
 
 for line in file('some_file.txt'):
     print line[:-1]
-
 
 ==testes==
 
@@ -1310,16 +1225,13 @@ if __name__ == '__main__' :
 if __name__=="__main__":
         print __doc__
 
-
 ==Python Decorators==
 * http://ruivaldo.blogspot.com/2008/09/python-decorators.html
 
 ==Expressões geradoras==
 
-
 s = sum(item for item in aList if item > 0)
 print s
-
 
 O que, usando funções geradoras, seria equivalente a escrever...
 
@@ -1364,9 +1276,7 @@ Poderia ser substituído por:
 
     print a or b
 
-
 ==Droopy - receba arquivos via http==
-
 
 ==setando o path==
 Referências: * http://vivaotux.blogspot.com/2008/09/adicionando-sua-pasta-bin-ao-path-do.html
@@ -1420,7 +1330,6 @@ if __name__ == '__main__':
     for x in sys.path:
         print x
 
-
 ==Trabalhando com codificações diversas==
 
 try:
@@ -1428,11 +1337,9 @@ try:
 except:
     pass
 
-
 ==copiar arquivos==
 http://python-blog.blogspot.com/
 leia sobre o módulo nmap
-
 
 #So para dar um ultimo toque, tem um jeito mais simples
 #ainda de fazer isso, que eh usar a funcao 'copyfileobj' do modulo 'shutil':
@@ -1447,8 +1354,6 @@ shutil.copyfileobj(input, output)
 
 #Usando file.read() e .seek() deixou o programa
 # extremamente ineficaz. Solução: mmap (http://docs.python.org/lib/module-mmap.html).
-
-
 
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -1471,7 +1376,6 @@ import sys
     input.close()
     output.close()
 
-
 ==informação de hardware==
 Importando comandos
 
@@ -1479,12 +1383,8 @@ import os, commands
 print os.system("ipconfig")
 print os.system("hostname")
 
-
-
 import os
 for k in os.environ: print "%s: %s" %(k, os.environ[k])
-
-
 
 import os; print os.uname()[1]
 
@@ -1498,7 +1398,6 @@ ip = str(ip[2])
 ip = ip[2:-2]
 # returns: '192.168.0.2'
 
-
 ==iterando sobre um dicionário==
 
 *>>> b = {'a':3,'b':8,'c':4,'d':7,'e':17}
@@ -1506,17 +1405,13 @@ ip = ip[2:-2]
 [3, 4, 8, 17, 7]
  >>>*
 
-
 >>> b = {'a':3,'b':8,'c':4,'d':7,'e':17}
 >>> b.values()
 [3, 4, 8, 17, 7]
 
-
 ==Plataforma==
 
 python -c "import platform; print platform.node()"
-
-
 
 # python
 >>> import platform
@@ -1539,8 +1434,6 @@ nt
 >>> os.environ['OS']
 'Windows_NT'
 >>>
-
-
 
 ==Descobrindo o home do usuário==
 
@@ -1566,7 +1459,6 @@ while True:  # rodar para sempre
     print strftime('%H:%M:%S',localtime())
     sleep(1) # aguardar 1 segundo
 
-
 ==trocando variáveis==
 O jeito antigo
 
@@ -1576,12 +1468,10 @@ O jeito antigo
      b = tmp
    }
 
-
 O jeito novo
 
  if a > b:
    a , b = b ,a
-
 
 ==Contador de troco==
 http://wille.wordpress.com/2008/08/28/programando-em-python-contador-de-troco/
@@ -1610,8 +1500,6 @@ portable between different platforms.  Of course, they must then
 only use functions that are defined by all platforms (e.g., unlink
 and opendir), and leave all pathname manipulation to os.path
 (e.g., split and join).
-
-
 
 ==Meu módulo de data==
 
@@ -1664,8 +1552,6 @@ if __name__=="__main__":
         print __doc__
         main()
 
-
-
 ==Teste de paridade==
 
 #!C:\\Python25\\python.exe
@@ -1685,12 +1571,9 @@ while True:
     except ValueError:
            print "Esta função só aceita números.  Tente novamente..."
 
-
-
 # retorna False ou True
 def par(x):
     return x % 2 == 0
-
 
 ==Referências==
 * http://www.onlamp.com/pub/a/python/2001/05/17/docstrings.html
