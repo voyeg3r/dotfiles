@@ -1,11 +1,30 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Sex Out 03, 2014  02:42
+Last Change: Qui Dez 18, 2014  08:26
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
+
+= como limpar os cartões exportados do anki =
+
+   Primeiro remover as tags html
+   :%s,<[^>]*>,,g
+
+ Tive que exportar meu deck do anki para fazer um backup
+ e queria apenas os textos dos cartões (decks), daí me deparei
+ com um problema como apagar as tags associadas ao som?
+
+ A solução começa testando este padrão de busca
+
+		\[sound:[^]]*]
+
+		Localizar:
+
+		\[  ............. um colchete de abertura literal
+		sound: .......... a palavra sound seguida de dois pontos
+		[^]]*] .......... uma lista negada que pega tudo dentro dos colchetes em qualquer quantidade
 
 =como apagar tags do tipo </font*> no vim =
 
