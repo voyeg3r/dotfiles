@@ -1,11 +1,14 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Qui Dez 18, 2014  08:26
+Last Change: Sáb Dez 20, 2014  02:03
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
+==colocando o nome do arquivo no proprio ==
+
+  :put =expand('%:p')
 
 = como limpar os cartões exportados do anki =
 
