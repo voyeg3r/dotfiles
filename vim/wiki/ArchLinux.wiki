@@ -1,7 +1,18 @@
+
 ==setting default shell==
 * reference: http://va.mu/hbcr  (superuser)
 
 sudo chsh -s $(which zsh) john
+
+==improving network speed==
+
+wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf -O /etc/sysctl.d/99-sysctrl.conf
+
+# since v207 /etc/sysctl.conf is no longer parsed, however
+# backward compatibility is provided by /etc/sysctl.d/99-sysctl.conf
+if [ ! -L /etc/sysctl.d/99-sysctl.conf -a -e /etc/sysctl.conf ]; then
+		/usr/bin/ln -sf /etc/sysctl.conf /etc/sysctl.d/99-sysctl.conf || :
+fi
 
 ==stopping services==
 # https://wiki.archlinux.org/index.php/Systemd#Basic_systemctl_usage

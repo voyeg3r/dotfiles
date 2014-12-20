@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Dez 08, 2014  10:47
+" Last Change: Sáb Dez 20, 2014  05:20
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -475,6 +475,10 @@ set formatoptions+=l
 "set colorcolumn=85
 set listchars=tab:▸\ ,eol:¬
 set matchpairs+=<:>
+
+" ==== make the 81st column stand out ===
+highlight Colorcolumn ctermbg=magenta
+call matchadd('Colorcolumn', '\%81v', 100)
 
 set wildignore+=.hg,.git,.svn										 " Version control
 set wildignore+=*.aux,*.out,*.toc								 " LaTeX intermediate files
