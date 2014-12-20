@@ -609,6 +609,17 @@ awk 'BEGIN {RS="\n\n"} {gsub("!!","",$NF);print $1": "$NF}' teste.txt
 # um jeito bem mais simples
 awk '{print $1": "$4}' RS="\n\n" results.txt
 
+==imprimindo a saida do ifconfig==
+
+ sudo ifconfig | awk 'BEGIN {RS="";FS="\n"} {if (NR=="1" || NR=="3") print}'
+
+ Pegando o registro 1 e 3 imprimimos eth0 e wlan0
+
+
+Abaixo imprimimos o mac address da placa eth0 e wlan0
+
+ ifconfig | awk '/ether/ {print $2}'
+
 
 ==juntando linhas a cada 5 linhas==
 * fonte: http://br.groups.yahoo.com/group/shell-script/message/31367
