@@ -7,7 +7,7 @@ endif
 function! pymatcher#PyMatch(items, str, limit, mmode, ispath, crfile, regex)
 
     call clearmatches()
-    
+
     if a:str == ''
         return a:items[0:a:limit]
     endif

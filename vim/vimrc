@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom Dez 21, 2014  08:16
+" Last Change: Dom Dez 21, 2014  08:40
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -40,6 +40,14 @@ call pathogen#helptags()
 let g:airline_powerline_fonts=0
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
+
+"ctrl-p config
+" to learn more: http://kien.github.io/ctrlp.vim/
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_user_command = 'find %s -type f'
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " PyMatcher for CtrlP
 if !has('python')
