@@ -119,6 +119,9 @@ function! s:Match_wrapper(word, forward, mode) range
   else
     execute "let match_words =" b:match_words
   endif
+  let default = escape(&mps, '[$^.*~\\/?]') . (strlen(&mps) ? "," : "") .
+    \ '\/\*:\*\/,#if\%(def\)\=:#else\>:#elif\>:#endif\>'
+  let match_words = match_words . (strlen(match_words) ? "," : "") . default
 " Thanks to Preben "Peppe" Guldberg and Bram Moolenaar for this suggestion!
   if (match_words != s:last_words) || (&mps != s:last_mps) ||
     \ exists("b:match_debug")
@@ -130,10 +133,7 @@ function! s:Match_wrapper(word, forward, mode) range
     " append the builtin pairs (/*, */, #if, #ifdef, #else, #elif, #endif)
     " let default = substitute(escape(&mps, '[$^.*~\\/?]'), '[,:]\+',
     "  \ '\\|', 'g').'\|\/\*\|\*\/\|#if\>\|#ifdef\>\|#else\>\|#elif\>\|#endif\>'
-    let default = escape(&mps, '[$^.*~\\/?]') . (strlen(&mps) ? "," : "") .
-      \ '\/\*:\*\/,#if\%(def\)\=:#else\>:#elif\>:#endif\>'
     " s:all = pattern with all the keywords
-    let match_words = match_words . (strlen(match_words) ? "," : "") . default
     if match_words !~ s:notslash . '\\\d'
       let s:do_BR = 0
       let s:pat = match_words
@@ -656,6 +656,7 @@ fun! s:MultiMatch(spflag, mode)
   else
     execute "let match_words =" b:match_words
   endif
+  let match_words = match_words . (strlen(match_words) ? "," : "") . default
   if (match_words != s:last_words) || (&mps != s:last_mps) ||
     \ exists("b:match_debug")
     let s:last_words = match_words

@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Dez 22, 2014  03:44
+" Last Change: Seg Dez 22, 2014  07:07
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -30,10 +30,46 @@
 " tring to se if it works
 
 filetype off
-call pathogen#infect()
-silent! call pathogen#runtime_append_all_bundles()
+" call pathogen#infect()
+" silent! call pathogen#runtime_append_all_bundles()
 " para gerar a documentação de todos os plugins
-call pathogen#helptags()
+" call pathogen#helptags()
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+set shell=/bin/bash
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'bling/vim-airline'
+Bundle 'gmarik/Vundle.vim'
+Bundle 'FelikZ/ctrlp-py-matcher'
+Bundle 'rking/ag.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'henrik/vim-indexed-search'
+Bundle 'tmhedberg/matchit'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/nextCS'
+Bundle 'chrisbra/NrrwRgn'
+Bundle 'rstacruz/sparkup'
+Bundle 'scrooloose/syntastic'
+Bundle 'godlygeek/tabular'
+Bundle 'SirVer/ultisnips'
+Bundle 'othree/vim-autocomplpop'
+Bundle 'eparreno/vim-l9'
+Bundle 'vim-scripts/vimwiki'
+Bundle 'vim-scripts/VisIncr'
+" All of your Plugins must be added before the following line
+call vundle#end() " required
 
 let g:syntastic_python_python_exec = '/usr/bin/python'
 
@@ -41,6 +77,8 @@ let g:airline_powerline_fonts=0
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
+" configuratin to ag plugin
+let g:agprg="<custom-ag-path-goes-here> --column"
 
 "Set this to 1 if you want CtrlP to scan for dotfiles and dotdirs: >
 let g:ctrlp_show_hidden = 1

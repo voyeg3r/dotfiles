@@ -16,8 +16,8 @@ set cpo&vim
 
 " Default configuration {{{1
 if !exists('g:nextcs_dir') | let g:nextcs_dir= 'colors/' | endif
-if !exists('g:nextcs_map') | let g:nextcs_map= '<F6>' | endif
-if !exists('g:previouscs_map') | let g:previouscs_map= '<S-F6>' | endif
+if !exists('g:nextcs_map') | let g:nextcs_map= '<F12>' | endif
+if !exists('g:previouscs_map') | let g:previouscs_map= '<F11>' | endif
 
 " Commands & Mappings {{{1
 command! NextCS     call nextCS#Next()

@@ -63,8 +63,8 @@ function acp#meetsForSnipmate(context)
   if g:acp_behaviorSnipmateLength < 0
     return 0
   endif
-  let matches = matchlist(a:context, '\(^\|\s\|\<\)\(\u\{' .
-        \                            g:acp_behaviorSnipmateLength . ',}\)$')
+  let matches = matchlist(a:context, "\(^\|\s\|[\"']\@<!\<\)\(\u\{" .
+        \                            g:acp_behaviorSnipmateLength . ",}\)$")
   return !empty(matches) && !empty(s:getMatchingSnipItems(matches[2]))
 endfunction
 
@@ -140,9 +140,25 @@ endfunction
 
 "
 function acp#meetsForHtmlOmni(context)
-  return g:acp_behaviorHtmlOmniLength >= 0 &&
-        \ a:context =~ '\(<\|<\/\|<[^>]\+ \|<[^>]\+=\"\)\k\{' .
-        \              g:acp_behaviorHtmlOmniLength . ',}$'
+    if g:acp_behaviorHtmlOmniLength >= 0
+        if a:context =~ '\(<\|<\/\|<[^>]\+ \|<[^>]\+=\"\)\k\{' .g:acp_behaviorHtmlOmniLength . ',}$'
+            return 1
+        elseif a:context =~ '\(\<\k\{1,}\(=\"\)\{0,1}\|\" \)$'
+            let cur = line('.')-1
+            while cur > 0
+                let lstr = getline(cur)
+                if lstr =~ '>[^>]*$'
+                    return 0
+                elseif lstr =~ '<[^<]*$'
+                    return 1
+                endif
+                let cur = cur-1
+            endwhile
+            return 0
+        endif
+    else
+        return 0
+    endif
 endfunction
 
 "
@@ -161,26 +177,33 @@ function acp#meetsForCssOmni(context)
 endfunction
 
 "
+function acp#meetsForJavaScriptOmni(context)
+    let matches = matchlist(a:context, '\(\k\{1}\)$')
+    if empty(matches)
+        return 0
+    endif
+    return 1
+endfunction
+
+"
 function acp#completeSnipmate(findstart, base)
   if a:findstart
     let s:posSnipmateCompletion = len(matchstr(s:getCurrentText(), '.*\U'))
     return s:posSnipmateCompletion
   endif
   let lenBase = len(a:base)
-  let items = filter(GetSnipsInCurrentScope(),
-        \            'strpart(v:key, 0, lenBase) ==? a:base')
-  return map(sort(items(items)), 's:makeSnipmateItem(v:val[0], v:val[1])')
+  let items = snipMate#GetSnippetsForWordBelowCursor(a:base, 0)
+  call filter(items, 'strpart(v:val[0], 0, len(a:base)) ==? a:base')
+  return map(sort(items), 's:makeSnipmateItem(v:val[0], values(v:val[1])[0])')
 endfunction
 
 "
 function acp#onPopupCloseSnipmate()
   let word = s:getCurrentText()[s:posSnipmateCompletion :]
-  for trigger in keys(GetSnipsInCurrentScope())
-    if word ==# trigger
-      call feedkeys("\<C-r>=TriggerSnippet()\<CR>", "n")
-      return 0
-    endif
-  endfor
+  if len(snipMate#GetSnippetsForWordBelowCursor(word, 0))
+    call feedkeys("\<C-r>=snipMate#TriggerSnippet()\<CR>", "n")
+    return 0
+  endif
   return 1
 endfunction
 
@@ -188,12 +211,17 @@ endfunction
 function acp#onPopupPost()
   " to clear <C-r>= expression on command-line
   echo ''
-  if pumvisible()
+  if pumvisible() && exists('s:behavsCurrent[s:iBehavs]')
     inoremap <silent> <expr> <C-h> acp#onBs()
     inoremap <silent> <expr> <BS>  acp#onBs()
-    " a command to restore to original text and select the first match
-    return (s:behavsCurrent[s:iBehavs].command =~# "\<C-p>" ? "\<C-n>\<Up>"
-          \                                                 : "\<C-p>\<Down>")
+    if exists('g:AutoComplPopDontSelectFirst') ? g:AutoComplPopDontSelectFirst : 0
+      return (s:behavsCurrent[s:iBehavs].command =~# "\<C-p>" ? "\<C-n>"
+            \                                                 : "\<C-p>")
+    else
+      " a command to restore to original text and select the first match
+      return (s:behavsCurrent[s:iBehavs].command =~# "\<C-p>" ? "\<C-n>\<Up>"
+            \                                                 : "\<C-p>\<Down>")
+    endif
   endif
   let s:iBehavs += 1
   if len(s:behavsCurrent) > s:iBehavs 
@@ -386,6 +414,9 @@ function s:makeSnipmateItem(key, snip)
   if type(a:snip) == type([])
     let descriptions = map(copy(a:snip), 'v:val[0]')
     let snipFormatted = '[MULTI] ' . join(descriptions, ', ')
+  elseif type(a:snip) == type({})
+    let descriptions = values(a:snip)[0]
+    let snipFormatted = substitute(descriptions, '\(\n\|\s\)\+', ' ', 'g')
   else
     let snipFormatted = substitute(a:snip, '\(\n\|\s\)\+', ' ', 'g')
   endif
@@ -399,7 +430,7 @@ endfunction
 function s:getMatchingSnipItems(base)
   let key = a:base . "\n"
   if !exists('s:snipItems[key]')
-    let s:snipItems[key] = items(GetSnipsInCurrentScope())
+    let s:snipItems[key] = snipMate#GetSnippetsForWordBelowCursor(tolower(a:base), 0)
     call filter(s:snipItems[key], 'strpart(v:val[0], 0, len(a:base)) ==? a:base')
     call map(s:snipItems[key], 's:makeSnipmateItem(v:val[0], v:val[1])')
   endif
