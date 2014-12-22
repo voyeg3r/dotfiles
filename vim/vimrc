@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Dez 22, 2014  07:07
+" Last Change: Seg Dez 22, 2014  07:27
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -58,7 +58,6 @@ Bundle 'henrik/vim-indexed-search'
 Bundle 'tmhedberg/matchit'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/nerdtree'
-Bundle 'vim-scripts/nextCS'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'rstacruz/sparkup'
 Bundle 'scrooloose/syntastic'
@@ -72,6 +71,69 @@ Bundle 'vim-scripts/VisIncr'
 call vundle#end() " required
 
 let g:syntastic_python_python_exec = '/usr/bin/python'
+
+function! <SID>SwitchColorSchemes()
+		if exists("g:colors_name")
+				if g:colors_name == 'google'
+						colorscheme two2tango
+				elseif g:colors_name == 'two2tango'
+						colorscheme darktango
+				elseif g:colors_name == 'darktango'
+						colorscheme colorful
+				elseif g:colors_name == 'colorful'
+						colorscheme solarized
+				elseif g:colors_name == 'solarized'
+						colorscheme github
+				elseif g:colors_name == 'github'
+						colorscheme iceberg
+				elseif g:colors_name == 'iceberg'
+						colorscheme guepardo
+				elseif g:colors_name == 'guepardo'
+						colorscheme whyspoignant
+				elseif g:colors_name == 'whyspoignant'
+						colorscheme herokudoc
+				elseif g:colors_name == 'herokudoc'
+						colorscheme tango
+				elseif g:colors_name == 'tango'
+						colorscheme softblue
+				elseif g:colors_name == 'softblue'
+						colorscheme vividchalk
+				elseif g:colors_name == 'vividchalk'
+						colorscheme neverness
+				elseif g:colors_name == 'neverness'
+						colorscheme vydark
+				elseif g:colors_name == 'vydark'
+						colorscheme underwater-mod
+				elseif g:colors_name == 'underwater-mod'
+						colorscheme maroloccio
+				elseif g:colors_name == 'maroloccio'
+						colorscheme wombat
+				elseif g:colors_name == 'wombat'
+						colorscheme chrysoprase
+				elseif g:colors_name == 'chrysoprase'
+						colorscheme quagmire
+				elseif g:colors_name == 'quagmire'
+						colorscheme digerati
+				elseif g:colors_name == 'digerati'
+						colorscheme vitamins
+				elseif g:colors_name == 'vitamins'
+						colorscheme rdark
+				elseif g:colors_name == 'rdark'
+						colorscheme native
+				elseif g:colors_name == 'native'
+						colorscheme vibrantink
+				elseif g:colors_name == 'vibrantink'
+						colorscheme Fluidvision
+				elseif g:colors_name == 'Fluidvision'
+						colorscheme ir_black
+				elseif g:colors_name == 'ir_black'
+						colorscheme google
+				endif
+		endif
+endfunction
+"map <silent> <F6> :call <SID>SwitchColorSchemes()<CR> <BAR> :set t_Co=256 <BAR> :echo g:colors_name<cr>
+map <silent> <F6> <esc>:call <SID>SwitchColorSchemes()<CR><bar>:echo g:colors_name<cr>
+map <special> <S-F6> :ec g:colors_name<cr>
 
 let g:airline_powerline_fonts=0
 let g:airline_left_sep = '▶'
