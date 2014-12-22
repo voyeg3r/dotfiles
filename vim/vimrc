@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Dez 22, 2014  01:32
+" Last Change: Seg Dez 22, 2014  03:04
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -66,6 +66,12 @@ endif
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_working_path_mode = ""
+
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+						\ 'dir':  '\.git$|vendor\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+						\ 'file': '\.exe$\|\.so$\|\.dat$\|\.mp3$'
+						\ }
 
 "Enables very magic mode by default
 nnoremap / /\v
