@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Dez 22, 2014  03:04
+" Last Change: Seg Dez 22, 2014  03:25
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -41,9 +41,13 @@ let g:airline_powerline_fonts=0
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
+
+"Set this to 1 if you want CtrlP to scan for dotfiles and dotdirs: >
+let g:ctrlp_show_hidden = 1
+
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
+let g:ctrlp_switch_buffer = 'Et'
 "let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window = 'results:100'
 
@@ -60,7 +64,8 @@ if executable('ag')
 		let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 		" ag is fast enough that CtrlP doesn't need to cache
-		let g:ctrlp_use_caching = 0
+		let g:ctrlp_use_caching = 1
+		let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 endif
 
 let g:ctrlp_max_files=0
@@ -69,8 +74,8 @@ let g:ctrlp_working_path_mode = ""
 
 " Sane Ignore For ctrlp
 let g:ctrlp_custom_ignore = {
-						\ 'dir':  '\.git$|vendor\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
-						\ 'file': '\.exe$\|\.so$\|\.dat$\|\.mp3$'
+						\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+						\ 'file': '\v[\/]\.(mp3|mp4|png|jpg)$'
 						\ }
 
 "Enables very magic mode by default
