@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom Dez 21, 2014  08:40
+" Last Change: Seg Dez 22, 2014  12:53
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -41,33 +41,31 @@ let g:airline_powerline_fonts=0
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
-"ctrl-p config
-" to learn more: http://kien.github.io/ctrlp.vim/
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+" CtrlP settings
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+"let g:ctrlp_working_path_mode = 0
+let g:ctrlp_match_window = 'results:100'
+
+" shortcuts to ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_user_command = 'find %s -type f'
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-" PyMatcher for CtrlP
-if !has('python')
-		echo 'In order to use pymatcher plugin, you need +python compiled vim'
-else
-		let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-endif
-
-" Set delay to prevent extra search
-let g:ctrlp_lazy_update = 350
-" Do not clear filenames cache, to improve CtrlP startup
-" You can manualy clear it by <F5>
-let g:ctrlp_clear_cache_on_exit = 0
-" Set no file limit, we are building a big project
-let g:ctrlp_max_files = 0
-" If ag is available use it as filename list generator instead of 'find'
-if executable("ag")
+" The Silver Searcher
+if executable('ag')
+		" Use ag over grep
 		set grepprg=ag\ --nogroup\ --nocolor
-		let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+
+		" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+		let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+		" ag is fast enough that CtrlP doesn't need to cache
+		let g:ctrlp_use_caching = 0
 endif
+
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+let g:ctrlp_working_path_mode = ""
 
 "Enables very magic mode by default
 nnoremap / /\v
@@ -540,7 +538,11 @@ set showmode
 nnoremap p p=`]
 nnoremap <c-p> p
 
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
