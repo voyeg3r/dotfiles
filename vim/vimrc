@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Dez 22, 2014  03:39
+" Last Change: Seg Dez 22, 2014  03:44
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -75,7 +75,7 @@ let g:ctrlp_working_path_mode = ""
 " Sane Ignore For ctrlp
 let g:ctrlp_custom_ignore = {
 						\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-						\ 'file': '\v[\/]\.(mp3|mp4|png|jpg)$'
+						\ 'file': '\v[\/]\.(mp3|swp|pyc|wav|ogg|mp4|png|jpg)$'
 						\ }
 
 "Enables very magic mode by default
