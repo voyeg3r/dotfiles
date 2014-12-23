@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Dez 22, 2014  07:27
+" Last Change: Seg Dez 22, 2014  08:09
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -142,41 +142,18 @@ let g:airline_right_sep = '◀'
 " configuratin to ag plugin
 let g:agprg="<custom-ag-path-goes-here> --column"
 
-"Set this to 1 if you want CtrlP to scan for dotfiles and dotdirs: >
-let g:ctrlp_show_hidden = 1
-
 " CtrlP settings
 let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 'Et'
-"let g:ctrlp_working_path_mode = 0
-let g:ctrlp_match_window = 'results:100'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-" shortcuts to ctrlp
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-" The Silver Searcher
-if executable('ag')
-		" Use ag over grep
-		set grepprg=ag\ --nogroup\ --nocolor
-
-		" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-		let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-		" ag is fast enough that CtrlP doesn't need to cache
-		let g:ctrlp_use_caching = 1
-		let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-endif
-
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
-let g:ctrlp_working_path_mode = ""
-
-" Sane Ignore For ctrlp
+set wildignore+=*.aux,*.log,*.class,*.mp3
 let g:ctrlp_custom_ignore = {
 						\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-						\ 'file': '\v[\/]\.(mp3|swp|pyc|wav|ogg|mp4|png|jpg)$'
+						\ 'file': '\v\.(exe|so|dll|mp3)$',
 						\ }
+
 
 "Enables very magic mode by default
 nnoremap / /\v
