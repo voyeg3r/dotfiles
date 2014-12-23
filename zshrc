@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Ter Dez 16, 2014  09:39
+# Last Change: Ter Dez 23, 2014  05:37
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -100,6 +100,7 @@ bindkey '^Xe' edit-command-line
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
+bindkey "^Xs" insert-sudo
 
 # Move to where the arguments belong. | use Ctrl-x 1
 after-first-word() {

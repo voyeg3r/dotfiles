@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Dez 22, 2014  08:09
+" Last Change: Ter Dez 23, 2014  05:47
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -69,6 +69,39 @@ Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/VisIncr'
 " All of your Plugins must be added before the following line
 call vundle#end() " required
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+""" The Silver Searcher
+"
+" Note #1: by default, |wildignore| and |g:ctrlp_custom_ignore| only apply when
+" |globpath()| is used to scan for files, thus these options do not apply when a
+" command defined with |g:ctrlp_user_command| is being used.
+"
+"if executable('ag')
+"		" Use ag over grep
+"		set grepprg=ag\ --nogroup\ --nocolor
+"
+"		" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+"		let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"
+"		" ag is fast enough that CtrlP doesn't need to cache
+"		let g:ctrlp_use_caching = 0
+"endif
+
+
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_show_hidden = 1
+
+let g:ctrlp_custom_ignore = {
+						\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+						\ 'file': '\v\.(mp3|mkv|avi|mp4)$',
+						\ }
 
 let g:syntastic_python_python_exec = '/usr/bin/python'
 
@@ -141,19 +174,6 @@ let g:airline_right_sep = '◀'
 
 " configuratin to ag plugin
 let g:agprg="<custom-ag-path-goes-here> --column"
-
-" CtrlP settings
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-set wildignore+=*.aux,*.log,*.class,*.mp3
-let g:ctrlp_custom_ignore = {
-						\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-						\ 'file': '\v\.(exe|so|dll|mp3)$',
-						\ }
-
 
 "Enables very magic mode by default
 nnoremap / /\v
@@ -484,8 +504,6 @@ endfunction
 autocmd BufNewFile * :call LoadFileTemplate()
 nnoremap <special> <leader>j :keepjumps call JumpToNextPlaceholder()<CR>a
 inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a
-" Delete to end of line, bash-style
-inoremap <C-K> <C-O>D
 
 inoremap jj <esc>
 
@@ -813,6 +831,7 @@ autocmd BufReadPost *
 iab idate <c-r>=strftime("%A %d/%m/%Y")<cr>
 iab ihora <c-r>=strftime("%H:%M:%S")<cr>
 
+iab -> →
 iab tambem também
 iab fro for
 iab ,m <voyeg3r  gmail.com>

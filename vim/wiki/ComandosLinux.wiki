@@ -6,6 +6,7 @@ começando pelo [[VlC]]
 ComandoAck - Fitra textos como o grep
 ComandoAddgroup - adiciona grupos de usuários
 ComandoAdduser - adiciona usuários ao sistema
+[[CommandoAg]] - parecido com o grep só que mai rápido
 [[ComandoAircrack-NG]] - ferramenta hacker para redes wi-fi
 ComandoAlias - cria um atalho para um comando
 ComandoAlsaconf - configura o som através do sistema alsa
