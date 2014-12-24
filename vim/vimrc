@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Ter Dez 23, 2014  05:47
+" Last Change: Qua Dez 24, 2014  08:53
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -63,6 +63,7 @@ Bundle 'rstacruz/sparkup'
 Bundle 'scrooloose/syntastic'
 Bundle 'godlygeek/tabular'
 Bundle 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Bundle 'othree/vim-autocomplpop'
 Bundle 'eparreno/vim-l9'
 Bundle 'vim-scripts/vimwiki'
