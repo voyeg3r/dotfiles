@@ -115,6 +115,9 @@ pm i aur/sysdig
 # remote admin your machine
 pm i openssh
 
+# silver searcher ag
+sudo pacman -S the_silver_searcher
+
 # mega file storage
 pm i megasync
 pm i aur/nautilus-megasync
