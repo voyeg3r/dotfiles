@@ -1,121 +1,249 @@
-priority -50
-
 extends texmath
 
-snippet "b(egin)?" "begin{} / end{}" br
-\begin{${1:something}}
-	${0:${VISUAL}}
-\end{$1}
+###########################################################################
+#                             LATEX SNIPPETS                              #
+###########################################################################
+
+# search more here:
+# https://github.com/madsdk/yasnippets-latex
+
+snippet "change(log)?|cl" "create changelog header" wr
+% ------------------------------------------------
+%          FILE:  ${1:file name}.tex
+%       CREATED:  `!v strftime("%a %d/%b/%Y hs %H:%M")`
+%   LAST CHANGE:  `!v strftime("%a %d/%b/%Y hs %H:%M")`
+%        AUTHOR:  ${2:Sérgio Luiz Araújo Silva}
+%          SITE:  ${3:http://vivaotux.blogspot.com}
+%       TWITTER:  ${4:@voyeg3r}
+%         SKYPE:  ${5:sergioaraujosilva}
+% -------------------------------------------------
+
+${0}
 endsnippet
 
-snippet tab "tabular / array environment" b
+snippet "abs(tract)?" "abstract" r
+\begin{abstract}
+${0}
+\end{abstract}
+endsnippet
+
+snippet "(bold)|((text)?(bf))" "textbf" r
+\textbf{${1:${VISUAL:your text here}}}$ {0}
+endsnippet
+
+snippet "(text)?(it(alico?)?)" "textit" r
+\textit{${1:${VISUAL:yout text here}}} ${0}
+endsnippet
+
+snippet "((text)?(tt))" "texttt" r
+\texttt{$1:${VISUAL:your text here}}}${0}
+endsnippet
+
+snippet "\b(em(ph)?)\b" "enfatiza texto" r
+\emph{${1:${VISUAL:text}}}
+endsnippet
+
+snippet color "coloca cores" w
+\texcolor{${1:red}}{${2:${VISUAL:text}}}
+endsnippet
+
+snippet "(cen((t(ering)?)?))|ce" "\center" r
+\begin{center}
+${1:${VISUAL}}
+\end{center}
+endsnippet
+
+snippet "(flu((sh(right)?)?))|fr" "flushright" r
+\begin{flushright}
+   ${1:${VISUAL:text}}
+\end{flushright}
+${0}
+endsnippet
+
+snippet r "\ref{}" w
+\ref{$1}
+endsnippet
+
+snippet "(foot(note)?)|fn" "footnote" wr
+\footnote{${1:your note}} ${0}
+endsnippet
+
+snippet "hr(ef)?" "create external links" wr
+\href{${1:${VISUAL:link}}}{${2:$1}}
+endsnippet
+
+snippet "minipage" "insert minipage" w
+\begin{minipage}[t]{${1:.8}\textwidth}
+${1:${VISUAL}}
+\end{minipage}
+endsnippet
+
+snippet "vs(pace)?" "insert vertical space" wr
+\vspace{${1:0.3}\baselineskip} ${0}
+endsnippet
+
+snippet dica "insert \ding{42}" w
+{\footnotesize \ding{42} ${1:${VISUAL:seu texto}} } ${0}
+endsnippet
+
+snippet "ind(ex)?" "indexing" wr
+\index{${1:name}} ${0}
+endsnippet
+
+snippet "label" "labbeling" w
+\label{${1:name}} ${0}
+endsnippet
+
+snippet "(pageref)|(pr(ef)?)" "pageref" r
+\ref{${1:sec}:${2:section name}} página \pageref{$1:$2} ${0}
+endsnippet
+
+snippet include "include text" !b
+\include{${1:chapter or section...}}
+${0}
+endsnippet
+
+snippet img "insert images" b
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=${1:0.8}\textwidth]{${2:file}}
+	\caption{$2}
+\end{figure}
+
+${0}
+endsnippet
+
+snippet "includeg(raphics)?|ig" "includegraphics" r
+\includegraphics[width=${1:0.8}\textwidth]{${2:file}}
+
+${0}
+endsnippet
+
+snippet "col(unas)?" "inserecolunas" r
+\begin{multicols}{2}
+Column 1
+\vfill \columnbreak
+Column 2
+\end{multicols}
+
+$0
+endsnippet
+
+
+###########################################################################
+#                            TEXTMATE SNIPPETS                            #
+###########################################################################
+
+#################
+# GENERAL STUFF #
+#################
+snippet begin "begin{} / end{}" w
+\begin{${1:something}}
+	${2:${VISUAL}}
+\end{$1}
+
+${0}
+endsnippet
+
+####################
+# TABULARS, ARRAYS #
+####################
+
+snippet tab
 \begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
 $0${2/((?<=.)c|l|r)|./(?1: & )/g}
 \end{$1${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
 endsnippet
 
-snippet table "Table environment" b
-\begin{table}[${1:htpb}]
-	\centering
-	\caption{${2:caption}}
-	\label{tab:${3:label}}
-	\begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
-	$0${5/((?<=.)c|l|r)|./(?1: & )/g}
-	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
-\end{table}
-endsnippet
-
-snippet fig "Figure environment" b
-\begin{figure}[${2:htpb}]
-	\centering
-	\includegraphics[width=${3:0.8}\linewidth]{${4:name.ext}}
-	\caption{${4/(\w+)\.\w+/\u$1/}$0}
-	\label{fig:${4/(\w+)\.\w+/$1/}}
-\end{figure}
-endsnippet
-
-snippet enum "Enumerate" b
+########################
+# ENUM, DESCR, ITEMIZE #
+########################
+snippet "enum(erate)?" "Enumerate" r
 \begin{enumerate}
 	\item $0
 \end{enumerate}
 endsnippet
 
-snippet item "Itemize" b
+snippet item "itemize" !b
 \begin{itemize}
-	\item $0
+	\item ${1:seu texto aqui}${0}
 \end{itemize}
 endsnippet
 
-snippet desc "Description" b
+snippet "desc(ription)?" "Description" r
 \begin{description}
 	\item[$1] $0
 \end{description}
 endsnippet
 
-snippet it "Individual item" b
-\item ${1}
-$0
-endsnippet
+#####################################
+# SECTIONS, CHAPTERS AND THERE LIKE #
+#####################################
 
 snippet part "Part" b
 \part{${1:part name}}
-\label{prt:${2:${1/(\w+)|\W+/(?1:\L$0\E:_)/ga}}}
+\label{prt:${2:${1/(\w+)|\W+/(?1:\L$0\E:_)/g}}}
 
 ${0}
+
+% part $2 (end)
 endsnippet
 
-snippet cha "Chapter" b
+snippet  "chap?t?e?r?" "Latex chapter" rb
 \chapter{${1:chapter name}}
-\label{cha:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{cha:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
-${0}
+${VISUAL}${0}
+
+% chapter $2 (end)
 endsnippet
 
 snippet sec "Section" b
 \section{${1:section name}}
-\label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
-${0}
+${VISUAL}${0}
+
+% section $2 (end)
 endsnippet
+
 
 snippet sub "Subsection" b
 \subsection{${1:subsection name}}
-\label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
-${0}
+${VISUAL}${0}
+
+% subsection $2 (end)
 endsnippet
 
 snippet ssub "Subsubsection" b
 \subsubsection{${1:subsubsection name}}
-\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
-${0}
+${VISUAL}${0}
+
+% subsubsection $2 (end)
+
 endsnippet
 
 snippet par "Paragraph" b
 \paragraph{${1:paragraph name}}
-\label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
 ${0}
+
+% paragraph $2 (end)
 endsnippet
+
 
 snippet subp "Subparagraph" b
 \subparagraph{${1:subparagraph name}}
-\label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
 
 ${0}
+
+% subparagraph $2 (end)
 endsnippet
 
-snippet ni "Non-indented paragraph" b
-\noindent
-${0}
-endsnippet
-
-snippet pac "Package" b
-\usepackage[${1:options}]{${2:package}}$0
-endsnippet
-
-snippet lp "Long parenthesis"
-\left(${1:${VISUAL:contents}}\right)$0
-endsnippet
 # vim:ft=snippets:

@@ -1,36 +1,155 @@
-priority -50
-
-global !p
-import vim
-
-# Tests for the existence of a variable declared by Vim's filetype detection
-# suggesting the type of shell script of the current file
-def testShell(scope, shell):
-	return vim.eval("exists('" + scope + ":is_" + shell + "')")
-
-# Loops over the possible variables, checking for global variables
-# first since they indicate an override by the user.
-def getShell():
-	for scope in ["g", "b"]:
-		for shell in ["bash", "posix", "sh", "kornshell"]:
-			if testShell(scope, shell) == "1":
-				if shell == "kornshell":
-					return "ksh"
-				if shell == "posix":
-					return "sh"
-				return shell
-	return "sh"
-endglobal
 
 ###########################################################################
 #                            TextMate Snippets                            #
 ###########################################################################
+snippet sh "cabeçalho bash" b
+#!/usr/bin/env bash
+# =================================================
+#          CREATED: `!v strftime("%a %d/%b/%Y hs %H:%M")`
+#      LAST CHANGE: `!v strftime("%a %d/%b/%Y hs %H:%M")`
+# THIS SCRIPT AIMS: ${1:describe here}
+#           AUTHOR: ${2:Sérgio Luiz Araújo Silva}
+#             SITE: ${3:http://vivaotux.blogspot.com}
+#          TWITTER: ${4:@voyeg3r}
+#            SKYPE: sergioaraujosilva
+# =================================================
+
+${0}
+endsnippet
+
+snippet zh "cabeçalho zsh" b
+#!/usr/bin/env zsh
+# =================================================
+#          CREATED: `!v strftime("%a %d/%b/%Y hs %H:%M")`
+#      LAST CHANGE: `!v strftime("%a %d/%b/%Y hs %H:%M")`
+# THIS SCRIPT AIMS: ${1:describe here}
+#           AUTHOR: ${2:Sérgio Luiz Araújo Silva}
+#             SITE: ${3:http://vivaotux.blogspot.com}
+#          TWITTER: ${4:@voyeg3r}
+#            SKYPE: sergioaraujosilva
+# =================================================
+
+${0}
+endsnippet
+
+snippet fun "create a function" w
+${1:function_name} () {
+	${2:body function}
+} && $1
+endsnippet
+
+snippet ifs "internal field separator" w
+# how use it
+# Var='1;2;3'
+# IFS=\; read a b c d <<< "$Var"
+OLDIFS=$IFS
+${1:your_text}
+IFS=$OLDIFS
+endsnippet
+
+snippet "here((doc)?umment)?" "here documment" r
+cat <<-EOF > ${1:filename}
+${2:# add your text here }
+EOF
+endsnippet
+
+snippet mkfiles "create 10 files" w
+for i in {001..010}; do
+    touch file-"${i}".txt
+done
+endsnippet
+
+snippet alias
+alias ${1:name}='${2:action}'
+${0: c-j to jump}
+endsnippet
+
+snippet lower "lowcase var" w
+${1:var}=${$1,,}
+
+${0:# press c-j}
+endsnippet
+
+snippet upper "uppercase var" w
+${1:var}=${$1^^}
+
+${0:# press c-j}
+endsnippet
+
+snippet usage
+usage()
+{
+	echo "Usage: $(basename $${1:0}) ${2:argument}"
+	echo "${3:explanation}"
+}
+
+${0:# press c-j}
+endsnippet
+
+snippet response "get yes or no from user" w
+read response
+if [[ "$response" =~ ^[^yY] ]];then
+	exit 0
+fi
+${0:# press c-j}
+endsnippet
+
+snippet lock
+LOCK_FILE=/tmp/.lock
+(set -C; :  > $LOCK_FILE) 2> /dev/null
+if [  $? != "0" ];  then
+  echo "Lock File exists - exiting"
+   sleep 1
+   exit 1
+fi
+
+${0:# press c-j}
+endsnippet
+
+snippet ir "if user is root" w
+# testa se está logado como root
+if [ "$(id -u)" != "0" ]; then
+	echo "  Need be root"
+	sleep 2
+	exit  1
+fi
+
+${0}
+endsnippet
+
+snippet ifile "if file exists" w
+if [ ! -e ${1:filename}  ]; then
+	echo "  file $1 do not exists"
+fi
+
+${0}
+endsnippet
+
+snippet isempty "if file is empty" w
+[ -f "${1:filename}" -a ! -s "$1" ] && echo "$1 is empty'!'"
+${0:# press c-j to exit snippet}
+endsnippet
+
+snippet ifdir "test if dir exists" w
+[ -d ${1:namedir} ] || mkdir $1 ; cd $1
+endsnippet
+
+snippet "ifprog(ram)?" "test if program is installed" r
+command -v ${1:prog} >/dev/null || sudo apt-get install $1
+
+${0:# press c-j}
+endsnippet
+
 snippet #!
-`!p snip.rv = '#!/bin/' + getShell() + "\n\n" `
+#!/usr/bin/env bash
+
+${0}
 endsnippet
 
 snippet !env "#!/usr/bin/env (!env)"
-`!p snip.rv = '#!/usr/bin/env ' + getShell() + "\n\n" `
+#!/usr/bin/env bash
+
+${0}
 endsnippet
 
 snippet temp "Tempfile"
@@ -59,17 +178,17 @@ for (( i = 0; i < ${1:10}; i++ )); do
 done
 endsnippet
 
-snippet forin "for ... in ... done (forin)"
-for ${1:i}${2/.+/ in /}${2:words}; do
+snippet forin "for ... in ... done (forin)" w
+for ${1:i}${2/.+/ in /}${2:"$@"}; do
 	${0:#statements}
 done
 endsnippet
 
-snippet here "here document (here)"
-<<-${2:'${1:TOKEN}'}
-	$0
-${1/['"`](.+)['"`]/$1/}
-endsnippet
+#snippet here "here document (here)"
+#<<-${2:'${1:TOKEN}'}
+#	$0
+#${1/['"`](.+)['"`]/$1/}
+#endsnippet
 
 snippet if "if ... then (if)"
 if ${2:[[ ${1:condition} ]]}; then
@@ -87,6 +206,26 @@ snippet while "while ... (done)"
 while ${2:[[ ${1:condition} ]]}; do
 	${0:#statements}
 done
+endsnippet
+
+snippet array "Create an array" w
+${1:lista}=($(${2:ls}))
+endsnippet
+
+snippet unset "unset array element" w
+unset ${1:name}[${#$1[*]}-1]
+endsnippet
+
+snippet forarray "interact with array elements" w
+for i in "${${1:arrayname}[@]}"; do
+	${2:action} $i
+done
+#${0: c-j to jump}
+endsnippet
+
+# Set SCRIPT_DIR variable to directory script is located.
+snippet sdir
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 endsnippet
 
 # vim:ft=snippets:
