@@ -64,9 +64,8 @@ git submodule foreach git pull
 
 = how checkout from a particular revison point =
 
-		do a regular "git clone"
+		Git clone particular version of remote repository
 
-    git clone
-		git checkout <sha1 rev> of the rev you want
-		git reset --hard
-		git checkout -b master
+		git clone [remote_address_here] my_repo
+		cd my_repo
+		git reset --hard [ENTER HERE THE COMMIT HASH YOU WANT]
