@@ -62,4 +62,11 @@ Como adicionar sua chave ssh ao github
 = Git - easy way pull latest of all submodules=
 git submodule foreach git pull
 
+= how checkout from a particular revison point =
 
+		do a regular "git clone"
+
+    git clone
+		git checkout <sha1 rev> of the rev you want
+		git reset --hard
+		git checkout -b master
