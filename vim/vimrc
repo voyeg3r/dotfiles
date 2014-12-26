@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Qua Dez 24, 2014  08:53
+" Last Change: Sex Dez 26, 2014  04:29
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -87,7 +87,7 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 "		set grepprg=ag\ --nogroup\ --nocolor
 "
 "		" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-"		let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"		let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 "
 "		" ag is fast enough that CtrlP doesn't need to cache
 "		let g:ctrlp_use_caching = 0
@@ -658,6 +658,7 @@ command! SaveAsRoot w !sudo tee %
 " mapping to reload ~/.vimrc
 map <silent> <M-v> :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 map <silent> <leader>v :e ~/.vimrc<cr>
+map <silent> <leader>z :e ~/.zshrc<cr>
 " copy current buffer to clipboard
 nmap <leader>b :%y+<cr>
 
