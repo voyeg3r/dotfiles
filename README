@@ -1,6 +1,6 @@
 Arquivo: Arquivos de configuração do vim
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: Sáb Ago 02, 2014  12:03
+Last Change: Sáb Dez 27, 2014  03:47
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voyeg3r
@@ -33,6 +33,7 @@ clonedotfiles () { #function to clone voyeg3r dotfiles
 	ln -sfvn ~/.dotfiles/fonts.conf ~/.fonts.conf
 	ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
 	ln -sfvn ~/.dotfiles/zshrc ~/.zshrc
+	ln -sfvn ~/.dotfiles/agignore ~/.agignore
 	[ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
 
 } && clonedotfiles

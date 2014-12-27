@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sex Dez 26, 2014  04:29
+" Last Change: Sex Dez 26, 2014  10:01
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -76,23 +76,18 @@ let g:ctrlp_cmd = 'CtrlP'
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
-""" The Silver Searcher
-"
-" Note #1: by default, |wildignore| and |g:ctrlp_custom_ignore| only apply when
-" |globpath()| is used to scan for files, thus these options do not apply when a
-" command defined with |g:ctrlp_user_command| is being used.
-"
-"if executable('ag')
-"		" Use ag over grep
-"		set grepprg=ag\ --nogroup\ --nocolor
-"
-"		" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-"		let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-"
-"		" ag is fast enough that CtrlP doesn't need to cache
-"		let g:ctrlp_use_caching = 0
-"endif
+if executable("ag")
+		set grepprg=ag\ --nogroup\ --nocolor
+		let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+endif
 
+
+" PyMatcher for CtrlP
+if !has('python')
+		echo 'In order to use pymatcher plugin, you need +python compiled vim'
+else
+		let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+endif
 
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
 let g:ctrlp_switch_buffer = 'Et'
@@ -645,7 +640,7 @@ set showmode
 nnoremap p p=`]
 nnoremap <c-p> p
 
-nnoremap <leader>u :GundoToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
 
 " move vertically by visual line
 nnoremap j gj

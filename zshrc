@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Sex Dez 26, 2014  04:30
+# Last Change: Sáb Dez 27, 2014  03:21
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -152,7 +152,10 @@ alias less='less -r'
 alias compilalivro='make clean; make && make show'
 alias 4shared='cadaver http://webdav.4shared.com/'
 alias yd='youtube-dl `xclip -o`'
-alias cb='ls NF | awk -F'./' '{print $2}' | xclip -selection c'
+
+# don't expand aliases _before_ completion has finished
+# like: git comm-[tab]
+setopt complete_aliases
 
 # Listen to Air Traffic Control, used to be scripts.
 alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
