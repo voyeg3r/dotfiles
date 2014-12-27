@@ -1,10 +1,11 @@
+*.adobe*
+*.avi
+*.directory
+*.gif
+*.jpg
 *.mp3
 *.mp4
-*.avi
-*.jpg
+*.pdf
 *.png
-*.gif
 *.vch
-*.directory
-*.adobe*
 *.webm
