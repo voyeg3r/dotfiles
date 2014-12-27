@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sex Dez 26, 2014  10:01
+" Last Change: Sáb Dez 27, 2014  05:03
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -34,6 +34,9 @@ filetype off
 " silent! call pathogen#runtime_append_all_bundles()
 " para gerar a documentação de todos os plugins
 " call pathogen#helptags()
+
+" adding my personal snippets to ultisnippets
+set runtimepath+=~/.vim/snippets
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
