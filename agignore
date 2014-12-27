@@ -1,11 +1,16 @@
 *.adobe*
 *.avi
 *.directory
+*.exe
 *.gif
 *.jpg
+*.jar
 *.mp3
 *.mp4
 *.pdf
+*.pyc
+*.so
+*.swp
 *.png
 *.vch
 *.webm
