@@ -118,6 +118,9 @@ pm i openssh
 # silver searcher ag
 sudo pacman -S the_silver_searcher
 
+# download manager
+pm i aur/jdownloader
+
 # mega file storage
 pm i megasync
 pm i aur/nautilus-megasync
