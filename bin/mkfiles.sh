@@ -11,7 +11,7 @@
  extensao=.txt
 
 # for i in {001..010}; do
-#	 echo "arquivo${i}${tensao}" > arquivo$i$extensao
+#	 echo "arquivo${i}${extensao}" > arquivo$i$extensao
 # done
 
 touch file{001..010}$extensao

@@ -100,6 +100,9 @@ pm i aur/firefox-nightly
 
 pm i community/html2text
 
+# chat, video sms like appear.in
+pm i aur/tox-git
+
 # capture audio stream playlist
 pm i extra/streamripper
 
