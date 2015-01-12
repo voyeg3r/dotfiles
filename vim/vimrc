@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sáb Jan 02, 2010  02:25
+" Last Change: Seg Jan 12, 2015  08:52
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -51,6 +51,7 @@ Plugin 'gmarik/Vundle.vim'
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'EinfachToll/DidYouMean'
 Bundle 'bling/vim-airline'
 Bundle 'gmarik/Vundle.vim'
 Bundle 'FelikZ/ctrlp-py-matcher'
