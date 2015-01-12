@@ -176,7 +176,7 @@ ComandoRedirecionamentos - descricao
 ComandoRcp - cópia remota
 ComandoRecordmydesktop - grava videos com som (do desktop)
 ComandoRecode - recodifica arquivos
-ComandoRename - renomeia arquivos
+[[ComandoRename]] - renomeia arquivos
 [[ComandoRm]] - remove arquivos e pastas
 ComandoRmmod - descarrega ou desinstala módulos do kernel
 ComandoRoute - controle de rotas

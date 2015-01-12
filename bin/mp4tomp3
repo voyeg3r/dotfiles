@@ -9,12 +9,45 @@
 #            SKYPE: sergioaraujosilva
 # =================================================
 
-nome=${1%.mp4}
+# REQUISITOS PARA EXECUTAR O PROGRAMA
+# bash: interpretador de comamdos
+# avconv ou ffmpeg: conversores de formato
+# nome do arquivo a ser convertido
 
-echo "convertendo $1 para ${1%.mp4}.mp3" ...
+
+# testando se há avconv ou ffmpeg instalados
+prog=$( command -v avconv || command -v ffmpeg)
+
+# se o programa não estive instalado exibir essa mensagem
+if [[ "$prog" = "" ]] ; then
+		echo "instale o ffmpeg ou avconv..."
+		sleep 2
+		exit 1
+fi
+
+# testando se o parâmetro necessário foi fornecido
+if [[ "$1" = "" ]]; then
+		echo
+		echo "Você tem que fornecer o nome de um arquivo mp4"
+		echo "HELP: $0  arquivo.mp4"
+		sleep 3
+		echo
+		exit 1
+fi
+
+# nome antigo e novo nome para o arquivo a ser convertido
+#oldname="${1%.mp4}"
+oldname="${1}"
+nelname="${1%.mp4}.mp3"
+
+echo "convertendo $oldname para $nelname" ...
 sleep 2
 
-ffmpeg -i $1 -vn -ab 192k -acodec libmp3lame -ac 2 ${nome}.mp3
-#avconv -i "$1" -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 ${nome}.mp3
-
+if [[ "$prog" =~ ".*ffmpeg.*" ]]; then
+    #usando ffmpeg
+		"$prog" -i "$oldname" -vn -ab 192k -acodec libmp3lame -ac 2 "$nelname"
+else
+    # usando avconv
+		"$prog" -i "$oldname" -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 "$nelname"
+fi
 
