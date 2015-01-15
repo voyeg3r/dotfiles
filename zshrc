@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Sáb Dez 27, 2014  03:21
+# Last Change: Qui Jan 15, 2015  04:42
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -151,7 +151,7 @@ alias scp='scp -r'
 alias less='less -r'
 alias compilalivro='make clean; make && make show'
 alias 4shared='cadaver http://webdav.4shared.com/'
-alias yd='youtube-dl `xclip -o`'
+alias yd='youtube-dl --write-auto-sub `xclip -o`'
 
 # don't expand aliases _before_ completion has finished
 # like: git comm-[tab]
