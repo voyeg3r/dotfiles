@@ -19,6 +19,11 @@ tar jxvf pacote.tar.bz2 -C $HOME/tmp
 
     tar axvf somefile.tar.bz?
 
+==apagando arquivos descompactados indevidamente numa pasta==
+Fonte: dicas-l http://va.mu/A6Erx
+
+    rm -rf $(tar ztf arquivo.tar.gz)
+
 ==descompactando e descartando a pasta pai==
 
 tar jxvf pacote.tar.bz2 --strip 1

@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Jan 12, 2015  08:52
+" Last Change: Qua Jan 14, 2015  02:25
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -67,13 +67,27 @@ Bundle 'rstacruz/sparkup'
 Bundle 'scrooloose/syntastic'
 Bundle 'godlygeek/tabular'
 Bundle 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Bundle 'honza/vim-snippets'
+Bundle 'reedes/vim-lexical'
 Bundle 'othree/vim-autocomplpop'
 Bundle 'eparreno/vim-l9'
 Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/VisIncr'
 " All of your Plugins must be added before the following line
 call vundle#end() " required
+
+"lexical plugin
+" https://github.com/reedes/vim-lexical
+augroup lexical
+autocmd!
+autocmd FileType markdown,mkd call lexical#init()
+autocmd FileType textile call lexical#init()
+autocmd FileType text call lexical#init({ 'spell': 0 })
+augroup END
+
+let g:lexical#spelllang = ['en_us','en_ca',]
+let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
+let g:lexical#thesaurus_key = '<leader>t'
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
