@@ -129,9 +129,16 @@ snippet pdb
 # ipython debugger (ipdb)
 snippet ipdb
 	import ipdb; ipdb.set_trace()
+# embed ipython itself
+snippet iem
+	import IPython; IPython.embed()
 # ipython debugger (pdbbb)
 snippet pdbbb
 	import pdbpp; pdbpp.set_trace()
+# python_prompt_toolkit
+snippet ppt
+	from prompt_toolkit.contrib.repl import embed
+	embed(globals(), locals(), vi_mode=${1:default=False}, history_filename=${2:default=None})
 # python console debugger (pudb)
 snippet pudb
 	import pudb; pudb.set_trace()

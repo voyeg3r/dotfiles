@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Qua Jan 14, 2015  02:25
+" Last Change: Fri Jan 16, 2015  07:45AM
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -182,9 +182,10 @@ endfunction
 map <silent> <F6> <esc>:call <SID>SwitchColorSchemes()<CR><bar>:echo g:colors_name<cr>
 map <special> <S-F6> :ec g:colors_name<cr>
 
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
+
 
 " configuratin to ag plugin
 let g:agprg="<custom-ag-path-goes-here> --column"
