@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Qua 15/Jan/2014 hs 19:42
-#      LAST CHANGE: 2014 jun 11 11:15
+#      LAST CHANGE: Sat Jan 17, 2015  11:50AM
 # THIS SCRIPT AIMS: convert mp4 to mp3
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -13,7 +13,6 @@
 # bash: interpretador de comamdos
 # avconv ou ffmpeg: conversores de formato
 # nome do arquivo a ser convertido
-
 
 # testando se há avconv ou ffmpeg instalados
 prog=$( command -v avconv || command -v ffmpeg)

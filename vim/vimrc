@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sat Jan 17, 2015  07:37AM
+" Last Change: Sat Jan 17, 2015  12:40PM
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -51,6 +51,7 @@ Plugin 'gmarik/Vundle.vim'
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'amiorin/ctrlp-z'
 Bundle 'EinfachToll/DidYouMean'
 Bundle 'bling/vim-airline'
 Bundle 'gmarik/Vundle.vim'
@@ -77,6 +78,7 @@ call vundle#end() " required
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 0
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 

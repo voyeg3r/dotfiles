@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Sat Jan 17, 2015  07:07AM
+# Last Change: Sat Jan 17, 2015  01:13PM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -54,8 +54,6 @@ local _fasd_ret="$(fasd -e 'printf %s' "$@")"
 
 # as an autojump user, i need only this for now
 alias j=' fasd_cd -d'
-#
-#
 
 # auto open images
 alias -s jpg="feh -FZd"
@@ -65,6 +63,7 @@ alias -s JPEG="feh -FZd"
 alias -s png="feh -FZd"
 alias -s gif="feh -FZd"
 alias -s txt=gvim
+
 alias update='yaourt -Syua'
 
 # basic fonfig
@@ -258,7 +257,7 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(extract git battery pacman cp sudo themes history-substrin-search zsh-syntax-highlighting)
+plugins=(extract fasd git battery pacman cp sudo themes history-substrin-search zsh-syntax-highlighting)
 
 #
 
