@@ -1,6 +1,6 @@
 #!/bin/bash
 # Criado em:Mon 30/May/2011 hs 12:24
-# Last Change: 2011 Jun 03 14:21:50
+# Last Change: Sat Jan 17, 2015  07:30AM
 # vim:ft=sh:fdm=syntax:nu:
 # Instituicao: none
 # Proposito do script: Inkscape print merge
@@ -24,7 +24,8 @@ for needed_command in $NEEDED_COMMANDS; do
 	fi
 done
 if ((missing_counter > 0)); then
-	sudo apt-get install -y $NEEDED_COMMANDS
+	echo "instale os programas: $NEEDED_COMMANDS"
+	exit 1
 fi
 
 # create directory to put all files

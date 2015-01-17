@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 05/Jan/2014 hs 07:55
-#      LAST CHANGE: 2014 Jan 05 07:55:43
+#      Last Change: Sat Jan 17, 2015  07:31AM
 # THIS SCRIPT AIMS: English to audio script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -22,14 +22,30 @@
 
 # testar se há conexão de forma rápida, talvez sem usar o ping
 
-        FILENAME="${@:?Usage: $0 give me some words to speech}"
-        FILENAME=`awk '{print tolower($0)}' <<< "$FILENAME"`
-        url="http://translate.google.com/translate_tts?ie=UTF-8&tl=en&q="
+
+# dependences wget mpg123 xclip
+NEEDED_COMMANDS="wget mpg123 xclip"
+missing_counter=0
+for needed_command in $NEEDED_COMMANDS; do
+    if ! hash "$needed_command" >/dev/null 2>&1; then
+        printf "Command not found in PATH: %s\n" "$needed_command" >&2
+        ((missing_counter++))
+    fi
+done
+if ((missing_counter > 0)); then
+    echo "Instale os seguintes programas: $NEEDED_COMMANDS"
+    exit 1
+fi
 
 
-        wget -q -U Mozilla -O "${FILENAME// /_}.mp3" "${url}${FILENAME// /+}+' '"
-        [ -f "${FILENAME// /_}.mp3" -a ! -s "${FILENAME// /_}.mp3" ] && { rm -f "${FILENAME// /_}.mp3" ; echo 'error!'; }
-        command -v mpg123 > /dev/null && mpg123 -q "${FILENAME// /_}.mp3"
-        echo "[sound:${FILENAME// /_}.mp3]" | xclip -selection c
+   FILENAME="${@:?Usage: $0 give me some words to speech}"
+   FILENAME=`awk '{print tolower($0)}' <<< "$FILENAME"`
+   url="http://translate.google.com/translate_tts?ie=UTF-8&tl=en&q="
+
+
+   wget -q -U Mozilla -O "${FILENAME// /_}.mp3" "${url}${FILENAME// /+}+' '"
+   [ -f "${FILENAME// /_}.mp3" -a ! -s "${FILENAME// /_}.mp3" ] && { rm -f "${FILENAME// /_}.mp3" ; echo 'error!'; }
+   command -v mpg123 > /dev/null && mpg123 -q "${FILENAME// /_}.mp3"
+   echo "[sound:${FILENAME// /_}.mp3]" | xclip -selection c
 
 
