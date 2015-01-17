@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Qui Jan 15, 2015  04:42
+# Last Change: Sat Jan 17, 2015  07:07AM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -65,10 +65,7 @@ alias -s JPEG="feh -FZd"
 alias -s png="feh -FZd"
 alias -s gif="feh -FZd"
 alias -s txt=gvim
-
-update(){
-[ `lsb_release -si`=='Arch' ] &&  yaourt -Syua firefox-nightly && pm u
-}
+alias update='yaourt -Syua'
 
 # basic fonfig
 HISTFILE=~/.zhistory

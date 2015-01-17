@@ -1,3 +1,10 @@
+Arquivo: archlinux.wiki
+Criado: Sat 17/Jan/2015 hs 06:52
+Last Change: Sat Jan 17, 2015  06:55AM
+autor: Sérgio Luiz Araújo Silva
+site: http://vivaotux.blogspot.com
+twitter: http://www.twitter.com/voyeg3r
+email: <voyeg3r  gmail.com>
 
 ==setting default shell==
 * reference: http://va.mu/hbcr  (superuser)
@@ -84,7 +91,19 @@ EOF
     pacman -Qo arquivo = mostra a qual pacote aquele arquivo pertence;
     pacman -Sc = deleta do cache todos os pacotes antigos ;
     pacman -A arquivo.pkg.tar.gz = instala um pacote local;
-    pacman -Scc = limpa o cache, removendo todos os pacotes existentes no /var/cache/pacman/pkg/.
+    pacman -Scc = limpa o cache, em /var/cache/pacman/pkg/.
+
+    yaourt commands
+
+    yaourt -S package_name – package installation from AUR
+    yaourt -Ss password – package search
+    yaourt -Syu –aur – packages and system update using AUR
+    yaourt -Si package_name – display packages’ information
+    yaourt -Sc – remove old packages from cache
+    yaourt -Su – update all AUR packages
+    yaourt -Sy – get the newest AUR packages database
+    yaourt -Cd – clean AUR packages database
+    yaourt -R package_name – remove package
 
 == load keymap ==
 
