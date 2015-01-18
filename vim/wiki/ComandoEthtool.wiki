@@ -1,18 +1,27 @@
+Arquivo: ethtool
+Criado: Sun 18/Jan/2015 hs 09:50
+Last Change: Sun Jan 18, 2015  09:51AM
+autor: Sérgio Luiz Araújo Silva
+site: http://vivaotux.blogspot.com
+twitter: http://www.twitter.com/voyeg3r
+email: <voyeg3r  gmail.com>
+
+
 ==speed up the Ethernet==
 
-sudo ethtool -s eth0 speed 100 duplex full
-
+    sudo ethtool -s eth0 speed 100 duplex full
 
 ==como forçar a placa de rede para full duplex==
 
 
 # instale o programa ethtool
-iface eth0 inet static
-#pre-up /usr/sbin/ethtool -s $IFACE speed 1000 duplex full autoneg off
-pre-up /usr/sbin/ethtool -s $IFACE autoneg off 100 duplex full
-address 123.456.789.123
-netmask 255.255.255.0
-gateway 123.456.789.254
+
+    iface eth0 inet static
+    #pre-up /usr/sbin/ethtool -s $IFACE speed 1000 duplex full autoneg off
+    pre-up /usr/sbin/ethtool -s $IFACE autoneg off 100 duplex full
+    address 123.456.789.123
+    netmask 255.255.255.0
+    gateway 123.456.789.254
 
 
 <span style="display: block; text-align: JUSTIFY;"> Para verificar o uso do modo full-duplex no Windows, acesse as propriedades da conexão de rede e clicar em

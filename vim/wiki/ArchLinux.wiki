@@ -1,10 +1,16 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Sat Jan 17, 2015  06:55AM
+Last Change: Sun Jan 18, 2015  11:53AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
+
+==enable gdm as default display manager==
+
+source: https://bbs.archlinux.org/viewtopic.php?id=151156
+
+    sudo systemctl enable gdm.service -f
 
 ==setting default shell==
 * reference: http://va.mu/hbcr  (superuser)
@@ -43,10 +49,11 @@ SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="
 
 ==how restore your usb stick==
 
-# dd count=1 bs=512 if=/dev/zero of=/dev/sdx && sync
+  # dd count=1 bs=512 if=/dev/zero of=/dev/sdx && sync
 
 == how create bootable antergos ==
-# dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx && sync
+
+  # dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx && sync
 
 ==yaourt without confirmation==
 config-yaourt(){

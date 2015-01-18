@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Fri Jan 16, 2015  02:52PM
+Last Change: Sun Jan 18, 2015  10:00AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -48,7 +48,7 @@ lembrando que a opção 'hlsearch' ou seleção incremental
 da busca estando ativada nos ajuda consideravelmente
 no nosso teste de busca
 
-<\/\?font[^<]*>
+<\/\?font[^>]*>
 
 A expressão regular acima apaga a tag <font*> ou </font*>
 de documentos quaisquer, o asterisco representa qualquer caractere
@@ -66,12 +66,12 @@ Explicando:
 
     [ .................. abertura de um grupo
     ^ .................. se aparece no começo do grupo nega tudo que nele aparece
-    < .................. no caso estamos negando a abertura de tag
+    > .................. no caso estamos negando a fechamento de tag
     ] .................. fechamento do grupo
     * .................. quantificador para o grupo (zero ou mais)
 
 
-		%s,</\?font[^<]*>,,g
+		%s,</\?font[^>]*>,,g
 
 		Para evitar usar muitos escapes usamos no comando final (acima) um
 		delimitador de busca diferente, para não ter que escapar todas asa
@@ -122,22 +122,6 @@ installvim () {
 	which vim
 	vim --version
 } && installvim
-
-
-== nova versão do plugin powerline ==
-{{{
-	https://powerline.readthedocs.org/en/latest/
-	easy_install pip
-	https://powerline.readthedocs.org/en/latest/installation/linux.html#installation-linux
-
-	wget -c https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
-	wget -c https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
-	mkdir ~/.fonts.conf.d/
-	cp 10-powerline-symbols.conf
-	cp PowerlineSymbols.otf ~/.fonts
-	fc-cache -vf ~/.fonts
-
-}}}
 
 = how extract urls =
 
