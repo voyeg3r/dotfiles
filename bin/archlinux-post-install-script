@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: 2014 Mar 08 19:38:20
+#      LAST CHANGE: Tue Jan 20, 2015  08:12AM
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -42,15 +42,6 @@ sudo systemctl stop bluetooth
 sudo pacman -Syu
 sudo pacman -S base-devel
 
-cowerinstall () {
-		# another package manager "cower"
-		# https://aur.archlinux.org/packages/co/cower/cower.tar.gz
-		wget -c https://aur.archlinux.org/packages/co/cower/cower.tar.gz
-		tar zxvf cower.tar.gz && cd cower
-		makepkg -si
-} && cowerinstall
-
-# Documentação python
 pacman -Syu pydoc
 
 
@@ -79,22 +70,8 @@ pacman -Syu pydoc
 # wallpaper changer
 # https://aur.archlinux.org/packages/variety/
 
-installpacaur(){
-		wget -c https://aur.archlinux.org/packages/pa/pacaur/pacaur.tar.gz
-		[ -d ~/build ] && cd ~/build
-		tar zxvf pacaur.tar.gz && cd pacaur
-		makepkg -si
-} && installpacaur
-
-installpm () {
-		# pm - little package mananger
-		# https://aur.archlinux.org/packages.php?ID=62711
-		# dependences: pacaur
-		[ -d ~/build ] && cd ~/build
-		wget -c  https://aur.archlinux.org/packages/pm/pm/pm.tar.gz
-		tar zxvf pm.tar.gz && cd pm
-		makepkg -si
-} && installpm
+# developing packages
+yaourt -Syua --devel
 
 pm i aur/firefox-nightly
 

@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Sun Jan 18, 2015  10:00AM
+Last Change: Sun Jan 18, 2015  12:23PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -315,6 +315,10 @@ http://stackoverflow.com/questions/6303882/vim-append-to-clipboard
 	let @+ .= my_expression
 
 	Reference: :help :let.=
+
+	Put the clipboard content into a register
+
+	:let @a="<C-r>*"
 
 =navegando em linhas longas no vim=
 
