@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Seg Dez 15, 2014  11:07
+Last Change: Tue Jan 20, 2015  08:59AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -82,6 +82,40 @@ You’ll never have to strip the path manually again:
 # is equivalent to:
 
 						find -iname "*.sh" -printf "\n%f"
+
+=zsh completions for yaourt=
+
+http://youtu.be/mCHwb_TD4ng
+
+1) First install aur-git and run sudo aur to build local database.
+2) Grab this function I sloppily put together:
+
+# http://pastebin.com/EJrzSh5A
+# -----8<------------------------
+#compdef yaourt
+typeset -A opt_args
+
+_localaur () { compadd $(ls /var/aur/) ; }
+_yaourt() {
+'_localaur'
+}
+
+
+_yaourt "$@"
+
+# -----8<------------------------
+
+and put it in a directory other then the default functions directory for zsh ( I am using $HOME/.zsh/functions ).
+
+
+3) Add a directory to your fpath in your .zshrc so as not to conflict with the original completion script for yaourt.
+
+fpath=( $HOME/.zsh/functions $fpath )
+
+
+Now tab away and enjoy.
+
+That's it. Thanks for watching.
 
 =use r to repeat the last command - with substituition =
 

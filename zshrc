@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Tue Jan 20, 2015  08:31AM
+# Last Change: Tue Jan 20, 2015  12:33PM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -23,7 +23,7 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 #export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
 cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 path=(~/bin $path)
-#
+
 
 # theme
 # Set name of the theme to load.
@@ -212,7 +212,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 # Faster! (?)
 #zstyle ':completion:*' use-cache on
 [ ! -e ~/.zsh_cache ] && touch ~/.zsh_cache
-zstyle ':completion:*' use-cache 1
+zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh_cache
 #
 
@@ -258,14 +258,14 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(extract fasd git battery pacman cp sudo themes history-substrin-search zsh-syntax-highlighting)
+plugins=(archlinux extract fasd git battery pacman cp sudo themes history-substrin-search zsh-syntax-highlighting)
 
 #
 
 source $ZSH/oh-my-zsh.sh
 
 # wrapper function to ping command
-#fpath=( ~/.dotfiles/functions "${fpath[@]}" )
+fpath=( $HOME/.dotfiles/functions "${fpath[@]}" )
 #autoload -Uz ping host
 
 # load custom executable functions

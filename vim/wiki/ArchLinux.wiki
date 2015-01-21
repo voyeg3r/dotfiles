@@ -1,6 +1,6 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Sun Jan 18, 2015  12:21PM
+Last Change: Wed Jan 21, 2015  12:56PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -111,6 +111,12 @@ EOF
     yaourt -Sy – get the newest AUR packages database
     yaourt -Cd – clean AUR packages database
     yaourt -R package_name – remove package
+    yaourt -Ssq pattern - list packages with pattern
+
+    makepkg -sc PKGBUILD
+
+    -s  instalar dependências caso tiver
+    -c  limpar arquivos desnecessários após o fim do processo
 
 == load keymap ==
 
