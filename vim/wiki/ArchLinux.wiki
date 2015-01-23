@@ -1,6 +1,6 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Wed Jan 21, 2015  12:56PM
+Last Change: Wed Jan 21, 2015  12:58PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -104,6 +104,7 @@ EOF
 
     yaourt -S package_name – package installation from AUR
     yaourt -Ss password – package search
+    yaourt -Ssq pattern - list packages with pattern
     yaourt -Syu –aur – packages and system update using AUR
     yaourt -Si package_name – display packages’ information
     yaourt -Sc – remove old packages from cache
@@ -111,7 +112,6 @@ EOF
     yaourt -Sy – get the newest AUR packages database
     yaourt -Cd – clean AUR packages database
     yaourt -R package_name – remove package
-    yaourt -Ssq pattern - list packages with pattern
 
     makepkg -sc PKGBUILD
 

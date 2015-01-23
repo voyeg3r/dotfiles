@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Tue Jan 20, 2015  12:33PM
+# Last Change: Thu Jan 22, 2015  10:03PM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -63,6 +63,7 @@ alias -s JPEG="feh -FZd"
 alias -s png="feh -FZd"
 alias -s gif="feh -FZd"
 alias -s txt=gvim
+alias -s tex=vim
 
 alias update='yaourt -Syua'
 
@@ -214,7 +215,6 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 [ ! -e ~/.zsh_cache ] && touch ~/.zsh_cache
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh_cache
-#
 
 # oh my zsh tips
 # Example aliases
@@ -258,7 +258,7 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(archlinux extract fasd git battery pacman cp sudo themes history-substrin-search zsh-syntax-highlighting)
+plugins=(archlinux extract fasd git git-prompt sudo battery pacman cp sudo themes history-substring-search zsh-syntax-highlighting)
 
 #
 
