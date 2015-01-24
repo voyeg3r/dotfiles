@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Thu Jan 22, 2015  10:03PM
+# Last Change: Fri Jan 23, 2015  05:56PM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -79,6 +79,7 @@ EDITOR='vim'
 setopt zle
 setopt completealiases
 autoload -U compinit && compinit
+
 
 setopt extendedglob
 
