@@ -1,7 +1,7 @@
 [[Wiki]] do Sérgio para fins diversos=
 
 Criado: Dom 17/Out/2010 hs 14:23
-Last Change: Fri Jan 16, 2015  02:51PM
+Last Change: Sun Jan 25, 2015  07:30PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 
@@ -19,7 +19,7 @@ site: http://vivaotux.blogspot.com
 
  CodecsMaverick [[DicasUbuntu]] [[ConTatos]] [[UsandoOgit]]
 
- [[PythonSolutions]]  [[Python3]]
+ [[PythonSolutions]]  [[Python3]] [[XbMc]]
 
  [[UsandoOmercurial]] hg WebdoisPontoZero [[DicasPython]]
 
