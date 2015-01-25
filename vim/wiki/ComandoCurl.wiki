@@ -77,6 +77,10 @@ curl -u user:passwd -T /home/dir/local_file_to_upload ftp://your_host.com/subdir
 
 curl http://www.phrack.org/archives/tgz/phrack[1-67].tar.gz -o phrack#1.tar.gz
 
+curl "http://forklift-photos.com.s3.amazonaws.com/[12-48].jpg" -o "#1.jpg"
+
+curl "http://www.ssb.no/english/subjects/06/05/nos_lonn_en/nos_d362_en/tab/tab-[001-131].html" -o "#1.html"
+
 ==baixando lições de inglês audio e texto==
 
 curl --limit-rate 15k http://learnrealenglish.com/AudioVideo/Tip%20[1-7].zip -o tip_#1.zip
