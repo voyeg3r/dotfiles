@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Fri Jan 23, 2015  05:56PM
+# Last Change: Sun Jan 25, 2015  12:04AM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -292,6 +292,7 @@ biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
 top10 () { history | awk '{print $2}' | sort | uniq -c | sort -rn | head ; }
 beep () { echo -e -n \\a ; }
 dict() { curl "dict://dict.org/d:${1%%/}";}
+cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
 
 youtube-mp3 () {
 # get mp3 from youtube

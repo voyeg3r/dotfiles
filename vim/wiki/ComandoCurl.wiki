@@ -39,17 +39,14 @@ curl http://www.commandlinefu.com/commands/browse/sort-by-votes/plaintext/[0-250
 
 curl ifconfig.me
 
-
 ==Save mp3 from stream==
 
 curl -sS -o $outfile -m $showlengthinseconds $streamurl
-
 
 ==encurtador de urls do google==
 * http://vivaotux.blogspot.com/2010/03/encurtador-de-urls-do-google.html
 
 curl -s 'http://ggl-shortener.appspot.com/?url='"$1" | sed -e 's/{"short_url":"//' -e 's/"}/\n/g'
-
 
 ==Exibir IP externo==
 
@@ -60,7 +57,6 @@ curl icanhazip.com
 curl -s ip.appspot.com
 
 ==Dá pra twittar com o curl==
-
 
 curl -u NOMEDEUSUARIO:SENHA -d status=”SUA MENSAGEM AQUI ENTRE AS ASPAS” http://www.twitter.com/statuses/update.xml
 curl -u user:pass -d status="Tweeting from the shell" http://twitter.com/statuses/update.xml
@@ -73,16 +69,11 @@ curl -u twitter-username -d status="Hello World, Twitter!" -d source="cURL" http
 curl -u USER:PASS -d status="$*" http://twitter.com/statuses/update.xml > /dev/null
 echo "Message sent!"
 
-
-
 ==upload via ftp==
-
 
 curl -u user:passwd -T /home/dir/local_file_to_upload ftp://your_host.com/subdir/
 
-
 ==baixar todos os pacotes tar.gz==
-
 
 curl http://www.phrack.org/archives/tgz/phrack[1-67].tar.gz -o phrack#1.tar.gz
 
