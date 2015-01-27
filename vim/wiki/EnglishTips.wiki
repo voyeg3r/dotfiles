@@ -1,6 +1,6 @@
 Arquivo: dicas de ingles
 Criado: Qua 12/Jan/2011 hs 12:52
-Last Change: Qui Set 25, 2014  06:37
+Last Change: Tue Jan 27, 2015  08:28AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -10,6 +10,21 @@ https://github.com/Anoncheg1/Command-line-translator
 apt-get install curl spidermonkey-bin html2text mpg123
 https://raw.github.com/Anoncheg1/Command-line-translator/master/translate
 }}}
+
+You'd come to Brazil... Você deveria vir ao Brasil. (Acredito que está certo)
+You've... (O que significa isso?)
+
+Favor me expliquem qual o uso dessas duas abreviaturas e com exemplos. Obrigado!
+
+You'd = You would
+would serve para formar o "futuro do pretérito" (quando o verbo termina em IA)
+Então "You'd come to Brazil" significa "Você viria ao Brazil".
+
+You've = You have (você tem)
+"You've come to Brazil" significa "Você tem vindo ao Brazil"
+
+Pra ficar no sentido imperativo você teria que colocar o TO depois do HAVE
+You've to come to Brazil (Você tem que vir ao Brasil)
 
 Lexical approach
 
