@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Sun Jan 25, 2015  12:04AM
+# Last Change: Sun Feb 01, 2015  04:28PM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -38,8 +38,7 @@ ZSH_THEME="bira"
 # I am using now fasd: https://github.com/clvv/fasd
 
 # needed to load fasd utility
- eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
-
+eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 # fasd_cd + outputs directory
 fasd_cd() {
@@ -53,7 +52,7 @@ local _fasd_ret="$(fasd -e 'printf %s' "$@")"
 }
 
 # as an autojump user, i need only this for now
-alias j=' fasd_cd -d'
+# alias j=' fasd_cd -d'
 
 # auto open images
 alias -s jpg="feh -FZd"
