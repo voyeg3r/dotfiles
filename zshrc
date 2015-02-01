@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Sun Feb 01, 2015  04:28PM
+# Last Change: Sun Feb 01, 2015  05:18PM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -43,7 +43,7 @@ eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-ins
 # fasd_cd + outputs directory
 fasd_cd() {
  if [ $# -le 1 ]; then
-fasd "$@"
+    fasd "$@"
  else
 local _fasd_ret="$(fasd -e 'printf %s' "$@")"
  [ -z "$_fasd_ret" ] && return
@@ -258,7 +258,7 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(archlinux extract fasd git git-prompt sudo battery pacman cp sudo themes history-substring-search zsh-syntax-highlighting)
+plugins=(archlinux extract fasd git git-prompt sudo battery pacman cp sudo themes history-substring-search zsh-syntax-highlighting zsh-utilities)
 
 #
 
