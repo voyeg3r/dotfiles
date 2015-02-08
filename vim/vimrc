@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Fri Jan 30, 2015  04:54PM
+" Last Change: Sun Feb 08, 2015  07:51AM
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -307,6 +307,9 @@ vmap ( <tab>(<tab>
 vmap { <tab>{<tab>
 vmap [ <tab>[<tab>
 
+" este mapeamente permite criar cloze deletions para o anki de forma simplificada
+vmap \c "adi{{c1::<c-r>a}}<esc>
+
 cab W  w
 cab Wq wq
 cab Q  q
@@ -523,6 +526,9 @@ xmap <c-down> xp`[V`]
 " usando Ctrl-c graças ao mapeamento abaixo
 xmap <c-c> "+y
 
+" clear search register
+" source: http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
+nmap \r :let @/ = ""<cr>
 
 " http://vimcasts.org/episodes/creating-colorschemes-for-vim/
 " Show syntax highlighting groups for word under cursor
@@ -589,8 +595,8 @@ set listchars=tab:▸\ ,eol:¬
 set matchpairs+=<:>
 
 " ==== make the 81st column stand out ===
-highlight Colorcolumn ctermbg=magenta
-call matchadd('Colorcolumn', '\%81v', 100)
+" highlight Colorcolumn ctermbg=magenta
+" call matchadd('Colorcolumn', '\%81v', 100)
 
 set wildignore+=.hg,.git,.svn										 " Version control
 set wildignore+=*.aux,*.out,*.toc								 " LaTeX intermediate files
