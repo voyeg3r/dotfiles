@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Thu Jan 22, 2015  03:08PM
+Last Change: Sun Feb 08, 2015  09:09AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -154,6 +154,13 @@ ls -l foldero/**/*(Lk+3)
 
 # show files modified in the last hour
 print -l foldero/**/*(mh-1)
+
+# shortcut to show or manipulate most recent file
+ for example
+
+    ls Ctrl-x Ctrl-m
+
+The above shortuc will put the most recent file name in command line
 
 # sort files from most to least recently modified and show the last 3
 ls -l foldero/**/*(om[1,3])
