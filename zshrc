@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Sun Feb 08, 2015  09:11AM
+# Last Change: Sun Feb 08, 2015  09:12AM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -175,7 +175,7 @@ alias -g X='| xargs'
 alias -g N='*/**(.om[1])'
 alias -g ND='./**/*(/om[1])' # newest directory
 alias -g NF='./**/*(.om[1])' # newest file
-alias -g latest='./**/*(.om[1])' # newest file
+alias -g latest='./**/*(.om[1])' # newest file | also Ctrl-x Ctrl-m
 alias -g DN='>/dev/null'     # a /dev/null shortcut
 alias -g LC='| tr A-Z a-z'
 alias -g UL="| sed 's, ,_,g'"
