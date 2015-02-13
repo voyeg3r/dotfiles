@@ -1,12 +1,11 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Sun Feb 08, 2015  09:09AM
+Last Change: Fri Feb 13, 2015  09:56AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r at gmail.com>
 
-[[{{{]]
 
 References: http://chneukirchen.org/dotfiles/.zshrc
 
@@ -237,4 +236,4 @@ zmv -W '*.sh' '*.pl'
 $ zmv '(*)' '${(L)1}' # lowercase
 $ zmv '(*)' '${(U)1}' # uppercase
 
-}}}
+
