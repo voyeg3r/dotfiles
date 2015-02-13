@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+# source: https://gist.github.com/wheatpenny/8669489
+
+radio() {
+
+ PS3='Please enter your choice: '
+ options=("WBGO" "The Core" "WNYC" "CBC T.dot" "Pitt: WYEP" "Pitt: WESA" "Pitt: WQED" "KCRW: Live" "KCRW: Music" "WNCW" "KUTX" "Bluegrass Country" "Pandora" "Quit")
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "WBGO")
+                mplayer -playlist "http://www.wbgo.org/sites/default/files/listennow/wbgo.m3u"
+                ;;
+            "The Core")
+                mplayer -playlist "http://thecore.fm/broadband.m3u"
+                ;;
+            "WNYC")
+                mplayer -playlist "http://www.wnyc.org/stream/wnyc-fm939/mp3.pls"
+                ;;
+            "Pitt: WYEP")
+                mplayer -playlist "http://wyep.streamguys.net/listen.pls"
+                ;;
+            "Pitt: WESA")
+                mplayer -playlist "http://wesa.streamguys.com/live.m3u"
+                ;;
+            "Pitt: WQED")
+                mplayer -playlist "http://www.wqed.org/fm/wqed_fm_mp3.pls"
+                ;;
+            "KCRW: Live")
+                mplayer -playlist "http://legacy.kcrw.com/pls/kcrwsimulcast.pls"
+                ;;
+            "KCRW: Music")
+                mplayer -playlist "http://media.kcrw.com/live/kcrwmusic.pls"
+                ;;
+            "WNCW")
+                mplayer -playlist "http://old.wncw.org/media/Misc/128K.m3u"
+                ;;
+            "KUTX")
+                mplayer -playlist "http://www.publicbroadcasting.net/kut/ppr/kut2.pls"
+                ;;
+            "Bluegrass Country")
+                mplayer -playlist "http://bluegrasscountry.org/?p=live&format=m3u"
+                ;;
+            "CBC T.dot")
+                mplayer -playlist "http://playerservices.streamtheworld.com/pls/CBC_R1_WDR_H.pls"
+                ;;
+            "Pandora")
+                pianobar
+                ;;
+            "Quit")
+                break
+                ;;
+            *) echo invalid option;;
+        esac
+        break
+    done
+
+}
+
+radio
