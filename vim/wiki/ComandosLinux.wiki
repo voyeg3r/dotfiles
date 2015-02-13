@@ -140,7 +140,7 @@ ComandoMakepasswd - cria senhas seguras
 ComandoMkfs - cria sistema de aruqivos - formata pendrives
 ComandoMv - move ou renomeia arquivos e pastas
 ComandoMkisofs - cria imagens iso (inclusive de pastas
-ComandoMplayer - assistir dvds e extrair audio
+[[ComandoMplayer]] - assistir dvds e extrair audio
 ComandoNano - editor de textos de linha de comando bem fácil de usar
 ComandoNbtscan - exibe informações netbios
 ComandoNewusers - cria usuários à partir de uma lista
