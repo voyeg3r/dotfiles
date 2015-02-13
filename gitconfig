@@ -1,6 +1,6 @@
 [user]
-    name = voyeg3r
-    email = voyeg3r@gmail.com
+	name = voyeg3r
+	email = voyeg3r@gmail.com
 
 [color]
     diff = auto
@@ -9,7 +9,7 @@
     ui = auto
 
 [push]
-    default = matching
+	default = simple
 
 [core]
     editor = gvim
