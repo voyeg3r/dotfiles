@@ -1,6 +1,6 @@
 # Arquivo: ~/.zshrc
 # Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Fri Feb 13, 2015  08:52AM
+# Last Change: Fri Feb 13, 2015  02:24PM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
@@ -9,150 +9,75 @@
 #                ( O O )
 # +===========oOO==(_)==OOo==============+
 # |                                      |
-# |     °v° Sergio Luiz Araujo Silva     |
-# |    /(_)\ Linux User #423493          |
-# |     ^ ^ voyeg3r  gmail.com          |
+# |  °v° Sergio Luiz Araujo Silva        |
+# | /(_)\ Linux User #423493             |
+# |  ^ ^ voyeg3r  gmail.com             |
 # +======================================+
 #
-# # Reference: https://github.com/plitc/zshrc/blob/master/.zshrc
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+# References: http://joshsymonds.com/blog/2014/06/12/shell-awesomeness-with-prezto/
+# http://jr0cket.co.uk/2013/09/hey-prezto-zsh-for-command-line-heaven.html
 
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.dotfiles/oh-my-zsh
+# Source Prezto.
+ZDOTDIR=~/.dotfiles
+if [[ -s "${ZDOTDIR:-$HOME}/zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/zprezto/init.zsh"
+fi
 
-# path and cdpath
-#export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
+# Customize to your needs...
+
 cdpath=(. .. ~/bin ~/docs ~/docs/img ~/tmp)
 path=(~/bin $path)
 
+# This makes cd=pushd
+setopt AUTO_PUSHD
 
-# theme
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="bira"
+# This will use named dirs when possible
+setopt AUTO_NAME_DIRS
 
+# If we have a glob this will expand it
+setopt GLOB_COMPLETE
+setopt PUSHD_MINUS
 
-# fasd or autojump
-#[[ -s /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
-# I am using now fasd: https://github.com/clvv/fasd
+# blank pushd goes to home
+setopt PUSHD_TO_HOME
 
-# needed to load fasd utility
-eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
+# use magic (this is default, but it can't hurt!)
+setopt ZLE
 
-# fasd_cd + outputs directory
-fasd_cd() {
-    if [ $# -le 1 ]; then
-        fasd "$@"
-    else
-        local _fasd_ret="$(fasd -e 'printf %s' "$@")"
-        [ -z "$_fasd_ret" ] && return
-        [ -d "$_fasd_ret" ] && print "$_fasd_ret" && cd "$_fasd_ret" || printf %s\n "$_fasd_ret"
-    fi
-}
+setopt NO_HUP
 
-# as an autojump user, i need only this for now
-# alias j=' fasd_cd -d'
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
 
-# auto open images
-alias -s jpg="feh -FZd"
-alias -s JPG="feh -FZd"
-alias -s jpeg="feh -FZd"
-alias -s JPEG="feh -FZd"
-alias -s png="feh -FZd"
-alias -s gif="feh -FZd"
-alias -s txt=gvim
-alias -s tex=vim
+# Case insensitive globbing
+setopt NO_CASE_GLOB
 
-alias update='yaourt -Syua'
+# Be Reasonable!
+setopt NUMERIC_GLOB_SORT
 
-# basic fonfig
-HISTFILE=~/.zhistory
-HISTSIZE=25000
-SAVEHIST=25000
-HOSTNAME="`/bin/hostname`"
-PAGER='less'
-EDITOR='vim'
+# I don't know why I never set this before.
+setopt EXTENDED_GLOB
 
-#setopt auto_list  #list choices on an ambiguous completion
-setopt zle
-setopt completealiases
-autoload -U compinit && compinit
-
-
-setopt extendedglob
-
-autoload -U zsh-mime-setup
-zsh-mime-setup
-
-# zmv "programmable rename"
-autoload -Uz zmv
-
-# edit command line with Esc-e
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^Xe' edit-command-line
-
-# usar Ctrl-esc + s
-insert_sudo () { zle beginning-of-line; zle -U "sudo " }
-zle -N insert-sudo insert_sudo
-bindkey "^[s" insert-sudo
-bindkey "^Xs" insert-sudo
-
-# Move to where the arguments belong. | use Ctrl-x 1
-after-first-word() {
-    zle beginning-of-line
-    zle forward-word
-}
-zle -N after-first-word
-bindkey "^X1" after-first-word
-
-# Increase/decrease last numeric word.
-# 04jan2013  +chris+  using incarg
-# 12mar2013  +chris+  revert to own implementation, improved
-_increase_number() {
-    local -a match mbegin mend
-    [[ $LBUFFER =~ '([0-9]+)[^0-9]*$' ]] &&
-        LBUFFER[mbegin,mend]=$(printf %0${#match[1]}d $((10#$match+${NUMERIC:-1})))
-}
-zle -N increase-number _increase_number
-bindkey '^Xa' increase-number
-bindkey -s '^Xx' '^[-^Xa'
-
-# magic-space and more
-globalias() {
-    if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
-        zle _expand_alias
-    fi
-    zle self-insert
-}
-
-zle -N globalias
-
-bindkey " " globalias
-bindkey "^ " magic-space           # control-space to bypass completion
-bindkey -M isearch " " magic-space # normal space during searches
-#
-
-# aliases#
-alias install='sudo apt-fast -y install'
-groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
-alias ping='ping -n -c 4 -i 0.2 -W1'
-alias shell='echo ${SHELL:t}'
-alias lvim="vim -c \"normal '0\""
-alias vnew='cd && vim */**(.om[1])'
-alias ls='ls --color'
-alias path='echo $PATH | tr ":" "\n"'
-alias ssh='ssh -C'
-alias scp='scp -r'
-alias less='less -r'
-alias compilalivro='make clean; make && make show'
-alias 4shared='cadaver http://webdav.4shared.com/'
-alias yd='youtube-dl --write-auto-sub `xclip -o`'
-
-# don't expand aliases _before_ completion has finished
-# like: git comm-[tab]
-setopt complete_aliases
+########### aliases #################
+# aliases para fasd
+alias a='fasd -a' # any
+alias s='fasd -si' # show / search / select
+alias d='fasd -d' # directory
+alias f='fasd -f' # file
+alias sd='fasd -sid' # interactive directory selection
+alias sf='fasd -sif' # interactive file selection
+alias z='fasd_cd -d' # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+alias v='f -e vim' # open file with vim
+alias v='f -t -e vim -b viminfo'
+alias o='a -e xdg-open' # quick opening files with xdg-open
+alias _!='fc -e "sed -i -e \"s/^/sudo /\""' # sudo last command
 
 # Listen to Air Traffic Control, used to be scripts.
 alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
@@ -176,105 +101,26 @@ alias -g N='*/**(.om[1])'
 alias -g ND='./**/*(/om[1])' # newest directory
 alias -g NF='./**/*(.om[1])' # newest file
 alias -g latest='./**/*(.om[1])' # newest file | also Ctrl-x Ctrl-m
-alias -g DN='>/dev/null'     # a /dev/null shortcut
+alias -g DN='>/dev/null' # a /dev/null shortcut
 alias -g LC='| tr A-Z a-z'
 alias -g UL="| sed 's, ,_,g'"
 alias -g ULC="| tr A-Z a-z | sed 's, ,_,g'"
 alias pnf='mpg123 ./**/*(.om[1])'
-
-# aliases para fasd
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # cd with interactive selection
-alias v='f -e vim'       # open file with vim
-alias v='f -t -e vim -b viminfo'
-alias o='a -e xdg-open'  # quick opening files with xdg-open
-alias _!='fc -e "sed -i -e \"s/^/sudo /\""'  # sudo last command
-
-## complete
-# zstyle - completions
-# autocomplete file
-zstyle :compinstall filename '/home/sergio/.zshrc'
-
-# Auto-completar para o comando 'kill':
-# zstyle ':completion:*' group-name ''
-# zstyle ':completion:*:processes' command 'ps x -o pid,command'
-# zstyle ':completion:*:processes-names' command 'ps axho command'
-# #zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
-#zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -A -o pid,user,cmd'
-zstyle ':completion:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*' force-list always
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-
-# Faster! (?)
-#zstyle ':completion:*' use-cache on
-[ ! -e ~/.zsh_cache ] && touch ~/.zsh_cache
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh_cache
-
-# oh my zsh tips
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment following line if you want to  shown in the command execution time stamp
-# in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
-# yyyy-mm-dd
-# HIST_STAMPS="mm/dd/yyyy"
-# end tips
-
-# plugins
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-
-plugins=(archlinux extract fasd git git-prompt sudo battery pacman cp sudo themes history-substring-search zsh-syntax-highlighting zsh-utilities)
-
-#
-
-source $ZSH/oh-my-zsh.sh
-
-# wrapper function to ping command
-fpath=( $HOME/.dotfiles/functions "${fpath[@]}" )
-#autoload -Uz ping host
-
-# load custom executable functions
-for function in ~/.dotfiles/functions/*; do
-    source $function
-done
-
-arch=$(uname -m)
+alias install='sudo apt-fast -y install'
+groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
+alias ping='ping -n -c 4 -i 0.2 -W1'
+alias shell='echo ${SHELL:t}'
+alias lvim="vim -c \"normal '0\""
+alias vnew='cd && vim */**(.om[1])'
+alias ls='ls --color'
+alias path='echo $PATH | tr ":" "\n"'
+alias ssh='ssh -C'
+alias scp='scp -r'
+alias less='less -r'
+alias compilalivro='make clean; make && make show'
+alias 4shared='cadaver http://webdav.4shared.com/'
+alias yd='youtube-dl --write-auto-sub `xclip -o`'
+########### end aliases #################
 
 # functions
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
@@ -296,8 +142,28 @@ cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | 
 
 youtube-mp3 () {
     # get mp3 from youtube
-    command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames --extract-audio --audio-format=mp3 --audio-quality 320k  "${1}"
+    command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames --extract-audio --audio-format=mp3 --audio-quality 320k "${1}"
     [[ $? = 1 ]] && echo "instale o programa ffmpeg para poder converter para mp3"
+}
+
+# some radios using mplayer
+alias wnyc="mplayer -playlist http://www.wnyc.org/stream/wnyc-fm939/mp3.pls"
+alias news="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
+alias current="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/the_current.pls" # The Current
+alias classical="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/classical.pls" # Classical MPR
+alias localcurrent="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/local.pls" # Local Current
+alias heartland="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/radio_heartland.pls" # MPR Radio Heartland
+alias wonderground="mplayer http://wondergroundstream2.publicradio.org/wonderground" # MPR Wonderground Windows Media
+alias choral="mplayer -playlist http://choralstream1.publicradio.org/choral.m3u" # Clasical MPR Choral
+alias wefunk="mplayer -playlist http://www.wefunkradio.com/play/shoutcast.pls" # WEFUNK Radio MP3 64K
+alias sleepbot="mplayer -playlist http://sleepbot.com/ambience/cgi/listen.cgi/listen.pls" # Sleepbot Environmental Broadcast 56K MP3
+alias groovesalad="mplayer -playlist http://somafm.com/groovesalad130.pls" # Soma FM Groove Salad iTunes AAC 128K
+alias dronezone="mplayer -playlist http://somafm.com/dronezone130.pls" # Soma FM Drone Zone iTunes AAC 128K
+alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTunes AAC 128K
+alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
+
+dumpwnyc () {
+mplayer -playlist "http://www.wnyc.org/stream/wnyc-fm939/mp3.pls" -dumpstream -dumpfile wnyc.mp3
 }
 
 record(){
@@ -308,10 +174,6 @@ record(){
     arecord -v -f cd -t raw | lame -r - $name
 }
 
-
-# end functions
-
 # firefox improviments
 # disalbe rendering fonts in firefox to free memory
 export MOZ_DISABLE_PANGO='1'
-
