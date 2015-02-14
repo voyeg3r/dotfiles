@@ -44,7 +44,7 @@ ComandoClear - limpa a tela
 [[ComandoComm]] - compara arquivos
 ComandoColumn - formata saida em colunas
 [[ComandoCron]] - "crontab -e" edita a tabela de agendamento de tarefas
-ComandoConvert - recodifica caracteres
+[[ComandoConvert]] - recodifica caracteres
 ComandoConvmv - converte nomes de arquivos para outra codificação
 ComandoCp - copia arquivos e pastas
 ComandoCpuinfo - retorna informações da cpu

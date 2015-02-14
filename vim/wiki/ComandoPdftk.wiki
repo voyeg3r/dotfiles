@@ -1,6 +1,6 @@
 Arquivo: manual do comando pdftk
 Criado: Sex 04/Nov/2011 hs 19:25
-Last Change: 2011 Nov 04 19:27:04
+Last Change: Sat Feb 14, 2015  06:49PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -30,4 +30,13 @@ apenas os parâmetros. Por exemplo, remover a página 5 de um arquivo:
 
 	pdftk arquivo.pdf cat 1-4 6-end output novoarquivo.pdf
 
+==convertendo formato cbr para pdf==
+# source: http://askubuntu.com/questions/207172/how-to-convert-cbr-to-pdf
+
+  O formato cbr é usado em comics (cartoons)
+  Você deve ter instalados os programas: pdftk sam2p unrar unzip
+
+  O comando de conversão é:
+
+    cbr2pdf file.cbr
 
