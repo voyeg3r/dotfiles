@@ -65,6 +65,7 @@ alias _!='fc -e "sed -i -e \"s/^/sudo /\""' # sudo last command
 # this alias depends on prezto's archive utility
 alias x='unarchive'
 
+
 # cd by .. or ... or ... or mv file ..../.
 alias '..'='cd ..'
 alias -g ...='../..'
