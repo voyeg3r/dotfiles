@@ -1,5 +1,13 @@
 Dicas do comando git
 
+---------------------------------------------
+Clonar um repositório num momento específico
+---------------------------------------------
+http://stackoverflow.com/questions/3489173/how-to-clone-git-repository-with-specific-revision-changeset
+
+   git clone $URL
+   git reset --hard $SHA1
+
 ---------------------------------
 Para clonar este repositorio faça
 ---------------------------------
