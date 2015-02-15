@@ -1,29 +1,12 @@
-# Arquivo: ~/.zshrc
-# Criado: Qua 08/Jan/2014 hs 19:24
-# Last Change: Fri Feb 13, 2015  02:24PM
-# autor: Sérgio Luiz Araújo Silva
-# site: http://vivaotux.blogspot.com
-# twitter: http://www.twitter.com/voyeg3r
-# email: <voyeg3r at gmail.com>
-#
-#                ( O O )
-# +===========oOO==(_)==OOo==============+
-# |                                      |
-# |  °v° Sergio Luiz Araujo Silva        |
-# | /(_)\ Linux User #423493             |
-# |  ^ ^ voyeg3r  gmail.com             |
-# +======================================+
 #
 # Executes commands at the start of an interactive session.
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
-# References: http://joshsymonds.com/blog/2014/06/12/shell-awesomeness-with-prezto/
-# http://jr0cket.co.uk/2013/09/hey-prezto-zsh-for-command-line-heaven.html
+ZDOTDIR=~/.dotfiles
 
 # Source Prezto.
-ZDOTDIR=~/.dotfiles
 if [[ -s "${ZDOTDIR:-$HOME}/zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/zprezto/init.zsh"
 fi
@@ -79,6 +62,15 @@ alias v='f -t -e vim -b viminfo'
 alias o='a -e xdg-open' # quick opening files with xdg-open
 alias _!='fc -e "sed -i -e \"s/^/sudo /\""' # sudo last command
 
+# this alias depends on prezto's archive utility
+alias x='unarchive'
+
+# cd by .. or ... or ... or mv file ..../.
+alias '..'='cd ..'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+
 # Listen to Air Traffic Control, used to be scripts.
 alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
 alias GRU='mplayer http://rio.radioetvweb.com.br:8298'
@@ -113,7 +105,7 @@ alias shell='echo ${SHELL:t}'
 alias lvim="vim -c \"normal '0\""
 alias vnew='cd && vim */**(.om[1])'
 alias ls='ls --color'
-alias path='echo $PATH | tr ":" "\n"'
+alias path="echo ${PATH//:/$'\n'}"
 alias ssh='ssh -C'
 alias scp='scp -r'
 alias less='less -r'
@@ -163,7 +155,7 @@ alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTun
 alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
 
 dumpwnyc () {
-mplayer -playlist "http://www.wnyc.org/stream/wnyc-fm939/mp3.pls" -dumpstream -dumpfile wnyc.mp3
+    mplayer -playlist "http://www.wnyc.org/stream/wnyc-fm939/mp3.pls" -dumpstream -dumpfile wnyc.mp3
 }
 
 record(){
