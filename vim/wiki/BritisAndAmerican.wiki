@@ -1,6 +1,6 @@
 Arquivo: class notes
 Criado: Ter 21/Out/2014 hs 11:53
-Last Change: Ter Out 21, 2014  07:06
+Last Change: Sun Feb 15, 2015  09:16AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -18,3 +18,9 @@ http://va.mu/AdL98
 If you wanna download one phrase in english you can do:
 
 http://translate.google.com/translate_tts?tl=en&q=How+are+you+doing
+
+------------------------------------------------
+ Good places to practice your grammar knowledge
+ ------------------------------------------------
+
+http://web2.uvcs.uvic.ca/elc/studyzone/410/grammar/410-modals-of-necessity-prohibition-and-permission1.htm
