@@ -1,0 +1,5 @@
+# this function show links from a givem html file
+
+getlinks (){
+		grep -o 'http://[^"]*' "${1}"
+}
