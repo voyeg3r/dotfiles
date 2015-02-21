@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: Sun Feb 01, 2015  12:46PM
+#      LAST CHANGE: Sat Feb 21, 2015  06:10PM
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -40,6 +40,10 @@ sudo systemctl stop bluetooth
 
 # watch tv on your linux
 yaourt -S xbmc
+
+# clonar as fontes powerline
+# para instalar rode o script install contido na pasta
+git clone git@github.com:powerline/fonts.git
 
 # neovim
 yaourt -S aur/neovim-git
