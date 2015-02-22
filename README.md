@@ -1,6 +1,6 @@
-Arquivo: Arquivos de configuração do vim
+# Arquivo: Arquivos de configuração de ambiente
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: Sáb Dez 27, 2014  03:47
+Last Change: Sun Feb 22, 2015  06:11PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voyeg3r
