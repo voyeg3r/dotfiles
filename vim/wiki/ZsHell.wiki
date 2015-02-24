@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Fri Feb 13, 2015  09:56AM
+Last Change: Mon Feb 23, 2015  11:29AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -8,6 +8,19 @@ email: <voyeg3r at gmail.com>
 
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+==zsh buffer stack==
+
+  If you type
+
+  ls -L /etc/some_command
+
+  and them press Esc-q to call man ls
+  when you exit the manual the last command reapers
+
+  and if you are typing a command and press Esc-h, iven if
+  you are in the middle of a typed command, zsh will show you
+  the required manual
 
 ==how upgrade oh-my-zsh==
 
