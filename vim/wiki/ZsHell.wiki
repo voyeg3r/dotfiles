@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Mon Feb 23, 2015  11:29AM
+Last Change: Wed Feb 25, 2015  11:30AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -8,6 +8,17 @@ email: <voyeg3r at gmail.com>
 
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+==Just found this little gem==
+
+cd old new
+
+This form of cd replaces all occurences of old in the full path of the present directory with new and tries to change the working directory to the resulting path.
+
+For example, if your working directory is /home/larry/code/backrub/server and you want to switch to /home/sergei/code/backrub/server, all you need to do is:
+
+cd larry sergei
+
 
 ==zsh buffer stack==
 
