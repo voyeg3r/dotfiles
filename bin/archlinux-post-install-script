@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: Sat Feb 21, 2015  06:10PM
+#      LAST CHANGE: Wed Feb 25, 2015  10:17AM
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -44,6 +44,9 @@ yaourt -S xbmc
 # clonar as fontes powerline
 # para instalar rode o script install contido na pasta
 git clone git@github.com:powerline/fonts.git
+
+# watch online tv | don't forget to install hola firefox addon
+yaourt -S aur/zattoo
 
 # neovim
 yaourt -S aur/neovim-git
