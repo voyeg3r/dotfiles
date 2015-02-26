@@ -1,10 +1,22 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Wed Jan 21, 2015  12:58PM
+Last Change: Thu Feb 26, 2015  08:57AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
+
+==updating the system without confirmation==
+
+You can create a file ~/.yaourtrc and put this in it:
+
+    # avoiding many questions during instalation
+    BUILD_NOCONFIRM=1
+    EDITFILES=0
+
+Another option would be to use the "--noconfirm".
+
+    yaourt -Syua --noconfirm
 
 ==enable gdm as default display manager==
 
