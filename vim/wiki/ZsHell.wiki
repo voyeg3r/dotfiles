@@ -1,11 +1,12 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Wed Feb 25, 2015  11:30AM
+Last Change: Thu Feb 26, 2015  05:21PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r at gmail.com>
 
+{{{ keep this line to see literal text
 
 References: http://chneukirchen.org/dotfiles/.zshrc
 
@@ -105,6 +106,14 @@ You’ll never have to strip the path manually again:
 # is equivalent to:
 
 						find -iname "*.sh" -printf "\n%f"
+
+# to show files created less than one day
+
+   ls -1 *(.m-1)
+
+   the option -1 sets one result per line
+   and the dot '.' alows only regular files
+   the 'm-1' asks modifications at less than one day
 
 =zsh completions for yaourt=
 
@@ -260,4 +269,4 @@ zmv -W '*.sh' '*.pl'
 $ zmv '(*)' '${(L)1}' # lowercase
 $ zmv '(*)' '${(U)1}' # uppercase
 
-
+}}}
