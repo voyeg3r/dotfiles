@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Fri Feb 27, 2015  03:08AM
+Last Change: Fri Feb 27, 2015  10:34AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -9,6 +9,8 @@ email: <voyeg3r at gmail.com>
 {{{ keep this line to see literal text
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+you can use =command instead $(which command)
 
 ==Just found this little gem==
 
@@ -123,6 +125,38 @@ You’ll never have to strip the path manually again:
 # find all files you accessed within the last month:
 
         ls **/*(.aM-1)
+
+# list files not ending with 'o'
+
+        echo *.[^o]
+
+# avoinding files that start with uppercase
+
+        echo [^[:upper:]]*
+
+# files changed in the last hour
+
+        echo *(mh-1)
+
+Nevertheless, you could also check for either
+
+    acced or changed in the last hour
+    access ................. (ah-1)
+    or creation ............ (ch-1)
+
+    acced or changed in the last minute
+    access ................. (am-1)
+    or creation ............ (cm-1)
+
+    acced or changed in the last Month
+    access ................. (aM-1)
+    or creation ............ (cM-1)
+
+    changed at more than 3 weeks (mw+3)
+
+    (Lm+5) —larger than five megabytes.
+
+Note that the default unit for this qualifier is days, so (m-1) will mean a day ago or, more precisely, up to 24 hours before the current system time.
 
 =zsh completions for yaourt=
 
@@ -255,14 +289,18 @@ tornar executáveis todos os arquivos de um diretório
 
 		chmod -x **/*(.)
 
+# You can access zmv's advanced documentation by typing man zshcontrib.
 # zmv "programmable rename"
 autoload -U zmv
 
-# rename txt to html
-#
-		zmv '(*).txt' '$1.html'
+# rename txt to rb
 
-		zmv -W '*.txt' '*.html'
+    zmv -Wv '*.txt' '*.rb'
+
+with the '-n' option you can only see what will happen
+without actualy changing any file.
+
+    zmv -n (*) ${(U)1}
 
 #Replace spaces in filenames with underline
 

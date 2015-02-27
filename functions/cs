@@ -1,0 +1,3 @@
+function cs {
+    cd "$@" && ls -A
+}
