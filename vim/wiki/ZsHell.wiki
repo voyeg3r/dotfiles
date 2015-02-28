@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Fri Feb 27, 2015  10:34AM
+Last Change: Fri Feb 27, 2015  09:38PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -9,6 +9,11 @@ email: <voyeg3r at gmail.com>
 {{{ keep this line to see literal text
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+==how to show a function definition==
+reference: http://va.mu/BLEHZ
+
+  functions func_name
 
 you can use =command instead $(which command)
 
