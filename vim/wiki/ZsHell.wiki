@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Fri Feb 27, 2015  09:38PM
+Last Change: Fri Feb 27, 2015  10:44PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -160,6 +160,20 @@ Nevertheless, you could also check for either
     changed at more than 3 weeks (mw+3)
 
     (Lm+5) —larger than five megabytes.
+
+    ls **/*(.) .......... regular files
+    ls **/*(^.) ......... not regular files
+    ls **/*(@) .......... simbolic links
+    ls **/*(*) .......... executable files
+    ls **/*(rwx) ........ readable writable and executable by user
+    ls **/*(m-1) ........ modification time -1 24h
+    ls **/*(mm-1) ....... modification minute -1
+    ls **/*(M-1) ........ modification time -1 month
+    ls **/*(mh-1) ....... modification hour
+    ls **/*(a+1) .......  acces more than one day
+    ls **/*(aM+1) ....... acces more than one month
+    ls **/*(L+10M) ...... file more than 10M
+    ls **/*(*Lk-5) ...... executable files less than 5kb
 
 Note that the default unit for this qualifier is days, so (m-1) will mean a day ago or, more precisely, up to 24 hours before the current system time.
 
