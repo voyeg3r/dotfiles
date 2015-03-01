@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Fri Feb 27, 2015  10:44PM
+Last Change: Sat Feb 28, 2015  05:58PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -172,8 +172,18 @@ Nevertheless, you could also check for either
     ls **/*(mh-1) ....... modification hour
     ls **/*(a+1) .......  acces more than one day
     ls **/*(aM+1) ....... acces more than one month
+    ls **/*(.DmM+12) .... regular files older thant one year
     ls **/*(L+10M) ...... file more than 10M
     ls **/*(*Lk-5) ...... executable files less than 5kb
+
+    ls *(.D)  ........... D dotfiles '.' regular files
+
+    ls -l **/*(.Lm-2mh-1om[1,3])
+    Lm-2 # <2mbs
+    mh-1 # less 1 hr
+    om[1,3] most recent 3
+
+    (om) tells the glob to sort the remaining files by their modification date.
 
 Note that the default unit for this qualifier is days, so (m-1) will mean a day ago or, more precisely, up to 24 hours before the current system time.
 
