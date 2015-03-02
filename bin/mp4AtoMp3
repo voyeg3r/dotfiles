@@ -1,4 +1,20 @@
 #!/bin/bash
-for i in *.m4a; do
-    avconv -i "$i" -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 "`basename "$i" .m4a`.mp3"
-done
+
+# testando se há avconv ou ffmpeg instalados
+prog=$( command -v avconv || command -v ffmpeg)
+
+# se o programa não estive instalado exibir essa mensagem
+if [[ "$prog" = "" ]] ; then
+    echo "instale o ffmpeg ou avconv..."
+    sleep 2
+    exit 1
+fi
+
+if [[ "$prog" =~ ".*ffmpeg.*" ]]; then
+    #usando ffmpeg
+    "$prog" -i "$oldname" -vn -ab 192k -acodec libmp3lame -ac 2 "$nelname"
+else
+    # usando avconv
+    "$prog" -i "$oldname" -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 "$nelname"
+fi
+

@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Sat Feb 28, 2015  05:58PM
+Last Change: Sun Mar 01, 2015  12:42PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -336,6 +336,7 @@ without actualy changing any file.
 		zmv '* *' '$f:gs/ /_'
 
 		zmv '*' '$f:s/hell/heaven/'
+
 
 zmv '(* *)' '${1// /}'
 zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
