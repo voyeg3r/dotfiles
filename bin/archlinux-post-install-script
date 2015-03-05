@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: Wed Feb 25, 2015  10:17AM
+#      LAST CHANGE: Wed Mar 04, 2015  08:25PM
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -54,6 +54,9 @@ yaourt -S aur/atom-editor-git
 
 # ramlog
 yaourt -S ramlog
+
+# radio player
+yaourt -S great-little-radio-player
 
 # mount folder/filesystem through SSH
 # sshfs name@server:/path/to/folder /path/to/mount/point
