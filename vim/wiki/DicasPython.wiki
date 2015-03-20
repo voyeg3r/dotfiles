@@ -1,6 +1,6 @@
 Arquivo: dicas sobre python
 Criado: Ter 18/Dez/2012 hs 18:57
-Last Change: Seg Dez 08, 2014  10:33
+Last Change: Fri Mar 13, 2015  05:43PM
 autor: Sérgio Luiz Araújo Silva
 site: vivaotux
 twitter: voyeg3r
@@ -28,6 +28,14 @@ subs=open("/home/bala/Pirates of the Caribbean -The Curse of the Black Pearl(200
 subs.shift(minutes=-2) # Move all subs 2 minutes earlier
 subs.save('/home/bala/new.srt', encoding='utf-8')#saves file with new.srt in your home directory
 
+=baixando legendas com o subliminal=
+
+# no caso do ubuntu ou debian use...
+
+    sudo apt-get install python-pip
+    sudo pip install subliminal
+
+    subliminal -l en -- The.Big.Bang.Theory.S05E18.HDTV.x264-LOL.mp4
 
 
 
