@@ -1,6 +1,6 @@
 Arquivo: dicas de ingles
 Criado: Qua 12/Jan/2011 hs 12:52
-Last Change: Tue Jan 27, 2015  08:28AM
+Last Change: Sun Mar 22, 2015  07:37AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -12,7 +12,7 @@ https://raw.github.com/Anoncheg1/Command-line-translator/master/translate
 }}}
 
 You'd come to Brazil... Você deveria vir ao Brasil. (Acredito que está certo)
-You've... (O que significa isso?)
+You've --> You have
 
 Favor me expliquem qual o uso dessas duas abreviaturas e com exemplos. Obrigado!
 
@@ -26,8 +26,9 @@ You've = You have (você tem)
 Pra ficar no sentido imperativo você teria que colocar o TO depois do HAVE
 You've to come to Brazil (Você tem que vir ao Brasil)
 
-Lexical approach
-
+-------------------------------
+    Lexical approach
+-------------------------------
 
 Neurociency tips about learn english
 feel calm to activate your brain language center
@@ -45,7 +46,7 @@ Some times quotes are described or represented with
 other word, wich is "line"
 
      I got another line from another movie
-     this is an old movie ...
+     this yis an old movie ...
 
 =What means ...=
 
@@ -57,8 +58,7 @@ other word, wich is "line"
 	cerebrais e você não tira os olhos da tela do computador.
 ---------------------------------------------------------------
 
-jam means thats has so many cars
-in all directions
+jam means thats has so many cars in all directions
 
 Mother Teresa, who received
 a Nobel Peace Prize for her
@@ -235,7 +235,7 @@ Queen - Radio Gaga - http://goo.gl/Sa1p8
 
 =frases traduzidas=
 
-They had a special art to tame wild beasts; they rode on white
+They had a special art to tame wild beasts; they rode[past of ride] on white
 elephants, with large body and short trunk that they painted [...]
 santiagobovisio.com
 
@@ -250,7 +250,7 @@ perfected without trials.  -Chinese Proverbs
 	aperfeiçoado sem desafios.  Provérbios chineses
 
 magazines and other services are available for a monthly charge
-revistas e outros serviços estão disponíveis para uma carga mensal
+revistas e outros serviços estão disponíveis para uma carga[cobrança] mensal
 
 sharpen your mind
 aguçar sua mente

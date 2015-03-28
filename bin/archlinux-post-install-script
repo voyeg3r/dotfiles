@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: Fri Mar 13, 2015  05:42PM
+#      LAST CHANGE: Fri Mar 27, 2015  09:56PM
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -320,7 +320,7 @@ multimedia () {
 		sudo pacman -Syu
 		sudo pacman -Syu sox
 		sudo pacman -Syu xorg-utils pavucontrol
-		gnome-{document,music,maps,photos,tweak-tool,extra}
+		gnome-{documents,music,maps,photos,tweak-tool,extra}
 		sudo pacman -S --noconfirm audacious audacity
 		sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
 		sudo pacman -S --noconfirm rhythmbox
