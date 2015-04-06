@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: Fri Mar 27, 2015  09:56PM
+#      LAST CHANGE: Mon Apr 06, 2015  03:01PM
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -40,6 +40,9 @@ sudo systemctl stop bluetooth
 
 # python package installer
 sudo pacman python-pip
+
+# source: https://www.youtube.com/watch?v=l1lDiCzkjlk
+sudo pacman -S community/aircrack-ng
 
 # programa para legendas
 sudo pip install subliminal
@@ -169,6 +172,8 @@ installxfceterminal(){
 
 # better performance
 pm i aur/zramswap
+
+
 
 # media server similar to xbmpc
 pm i plexmediaserver
