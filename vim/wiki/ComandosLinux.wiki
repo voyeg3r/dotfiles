@@ -154,6 +154,7 @@ ComandoNmblookup - procura no windows netbios o nome associado a um ip
 ComandoNslookup - usado para obter informações de um servidor dns
 ComandoNtpdate - atualiza o relógio via rede
 ComandoOggenc - converter audio para ogg
+[[ComandoPacman]] - instalador de pacotes do archlinux
 [[ComandoPdfimages]] - extrac images from pdf files
 [[ComandoPdftk]] - manipula pdfs de várias formas
 ComandoPasswd - modifica a senha
