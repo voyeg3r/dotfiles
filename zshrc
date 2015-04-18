@@ -51,6 +51,9 @@ plugins=(git fasd extract)
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
+#
+cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
+path=(~/bin $path)
 
 source $ZSH/oh-my-zsh.sh
 
