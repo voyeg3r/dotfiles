@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+# =================================================
+#          CREATED: Qua 15/Jan/2014 hs 19:42
+#      LAST CHANGE: Seg Abr 20, 2015  10:08
+# THIS SCRIPT AIMS: convert mp4 to mp3
+#           AUTHOR: Sérgio Luiz Araújo Silva
+#             SITE: http://vivaotux.blogspot.com
+#          TWITTER: @voyeg3r
+#            SKYPE: sergioaraujosilva
+# =================================================
+
+# REQUISITOS PARA EXECUTAR O PROGRAMA
+# bash: interpretador de comamdos
+# avconv ou ffmpeg: conversores de formato
+# nome do arquivo a ser convertido
+
+# testando se há avconv ou ffmpeg instalados
+prog=$( command -v avconv || command -v ffmpeg)
+
+
+# se o programa não estive instalado exibir essa mensagem
+if [[ "$prog" = "" ]] ; then
+		echo "instale o ffmpeg ou avconv..."
+		sleep 2
+		exit 1
+fi
+
+# testando se o parâmetro necessário foi fornecido
+if [[ "$1" = "" ]]; then
+		echo
+		echo "Você tem que fornecer o nome de um arquivo mp4"
+		echo "HELP: $0  arquivo.mp4"
+		sleep 3
+		echo
+		exit 1
+fi
+
+# nome antigo e novo nome para o arquivo a ser convertido
+#oldname="${1%.mp4}"
+oldname="${1}"
+newname="${1%.mp4}.mp3"
+
+echo "convertendo $oldname para $newname" ...
+sleep 2
+
+if [[ "$prog" =~ ".*ffmpeg.*" ]]; then
+    #usando ffmpeg
+    "$prog" -i "$oldname" -vn -ab 128k -ar 44100 -y "$newname"
+else
+    # usando avconv
+    "$prog" -acodec libmp3lame  -i "$oldname"  "$newname"
+fi
+
+# avconv -acodec libmp3lame0 -i test.flv test.mp3
+# ffmpeg -i input.webm -acodec libmp3lame -aq 4 output.mp3
