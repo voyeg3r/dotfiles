@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # =================================================
 # CREATED:          Sáb 29/Dez/2012 hs 10:25
-# LAST CHANGE: Ter Abr 21, 2015  08:09
-# THIS SCRIPT AIMS: describe here
+# LAST CHANGE: Ter Abr 21, 2015  08:13
+# THIS SCRIPT AIMS: record sound via command line
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
 # TWITTER:          @voyeg3r
