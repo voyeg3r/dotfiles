@@ -2,6 +2,11 @@
 
 	http://www.bashoneliners.com/?page=1
 
+
+==Bash: Read a file into a variable==
+
+    value=$(<config.txt)
+
 = pegando os links mp3 de um html =
 
 	grep -o 'http://[^"]*'  < test.html  | grep mp3
