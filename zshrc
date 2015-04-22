@@ -91,6 +91,8 @@ alias classic='mplayer http://80.237.154.83:8120'
 # watch aljazeera
 alias alj='rtmpdump -v -r "rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med" | mplayer -'
 
+
+
 ########### aliases #################
 # aliases para fasd
 alias a='fasd -a' # any
@@ -106,6 +108,10 @@ alias v='f -e vim' # open file with vim
 alias v='f -t -e vim -b viminfo'
 alias o='a -e xdg-open' # quick opening files with xdg-open
 alias _!='fc -e "sed -i -e \"s/^/sudo /\""' # sudo last command
+
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files
