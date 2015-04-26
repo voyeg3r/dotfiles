@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Sun Mar 01, 2015  12:42PM
+Last Change: Dom Abr 26, 2015  07:28
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -9,6 +9,13 @@ email: <voyeg3r at gmail.com>
 {{{ keep this line to see literal text
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+==how to run a secret series of commands==
+source: http://unix.stackexchange.com/questions/6094/is-there-any-way-to-keep-a-command-from-being-added-to-your-history/6141#6141
+
+    % fc -p
+    % secret-command
+    % fc -P
 
 ==how to show a function definition==
 reference: http://va.mu/BLEHZ

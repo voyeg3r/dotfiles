@@ -3,12 +3,12 @@ snippet #!
 	#!/usr/bin/env bash
 
 snippet ir "if user is root" w
-		# testa se está logado como root
-		if [ "$(id -u)" != "0" ]; then
-		echo "  Need be root"
-				sleep 2
-				exit  1
-		fi
+	# testa se está logado como root
+	if [ "$(id -u)" != "0" ]; then
+	echo "  Need be root"
+		sleep 2
+		exit  1
+	fi
 
 		${0}
 
@@ -38,13 +38,13 @@ snippet until
 snippet case
 	case ${1:word} in
 		${2:pattern})
-			${0};;
+		${0};;
 	esac
 snippet go
 	while getopts '${1:o}' ${2:opts}
 	do
 		case $$2 in
-		${3:o0})
+			${3:o0})
 			${0:#staments};;
 		esac
 	done
@@ -103,38 +103,38 @@ snippet ffun
 
 
 snippet response "get yes or no from user" w
-		read -p "Type one response [y|n]:" response
-		if [[ "${response,,}" =~ ^[^y] ]];then
-				exit 0
-		fi
-		${0:# press c-j}
-
+	read -p "Type one response [y|n]:" response
+	if [[ "${response,,}" =~ ^[^y] ]];then
+		exit 0
+	fi
+	${0:# press c-j}
 
 snippet ifile "if file exists" w
-		if [ ! -e ${1:filename}  ]; then
+	if [ ! -e ${1:filename}  ]; then
 		echo "  file $1 do not exists"
-		fi
+	fi
 
-		${0}
+	${0}
 
 snippet isempty "if file is empty" w
-		[ -f "${1:filename}" -a ! -s "$1" ] && echo "$1 is empty'!'"
-		${0:# press c-j to exit snippet}
+	[ -f "${1:filename}" -a ! -s "$1" ] && echo "$1 is empty'!'"
+	${0:# press c-j to exit snippet}
 
 
 snippet ifdir "test if dir exists" w
-		[ -d ${1:namedir} ] || mkdir $1 ; cd $1
-		${0:# press c-j}
+	[ -d ${1:namedir} ] || mkdir $1 ; cd $1
+	${0:# press c-j}
 
 snippet "ifprog(ram)?" "test if program is installed" r
-		command -v ${1:prog} >/dev/null || sudo apt-get install $1
-		${0:# press c-j}
+	command -v ${1:prog} >/dev/null || sudo apt-get install $1
+	${0:# press c-j}
 
 snippet lock
-		LOCK_FILE=/tmp/.lock
-		(set -C; :  > $LOCK_FILE) 2> /dev/null
-		if [  $? != "0" ];  then
-				echo "Lock File exists - exiting"
-				sleep 1
-				exit 1
-		fi
+	LOCK_FILE=/tmp/.lock
+	(set -C; :  > $LOCK_FILE) 2> /dev/null
+	if [  $? != "0" ];  then
+		echo "Lock File exists - exiting"
+		sleep 1
+		exit 1
+	fi
+	${0:# press c-j}
