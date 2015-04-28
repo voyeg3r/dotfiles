@@ -1,10 +1,17 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Thu Feb 26, 2015  08:57AM
+Last Change: Ter Abr 28, 2015  08:49
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
+
+==delete pacman lock file==
+
+    If pacman is not running and has a lock package avoiding
+    other instalations, run this:
+
+    rm /var/lib/pacman/db.lck
 
 ==updating the system without confirmation==
 

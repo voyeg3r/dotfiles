@@ -1,6 +1,6 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: 2013 Dez 28 21:38:08
+Last Change: Ter Abr 28, 2015  09:39
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -8,6 +8,10 @@ twitter: http://www.twitter.com/voyeg3r
 {{{ how install gnome shell in any distro with jhbuild
 http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distro-with-jhbuild/
 }}}
+
+== performance tweaks ==
+
+http://penguininside.blogspot.com.br/2009/08/top-10-gnome-performance-tweaks.html
 
 == solving the problem of hidden files by default ==
 
