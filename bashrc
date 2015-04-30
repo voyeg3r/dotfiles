@@ -1,4 +1,4 @@
-# Last Change: Sat Jan 17, 2015  02:59PM
+# Last Change: Thu Apr 30, 2015  04:31PM
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -38,6 +38,9 @@ function gm() {
 }
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 alias proz='proz -v -f -s'
 alias xclip='xclip -selection c'
 alias config-date='sudo ntpdate -u -b bonehed.lcs.mit.edu'
