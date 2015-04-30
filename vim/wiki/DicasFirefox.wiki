@@ -1,6 +1,6 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: Ter Jul 01, 2014  08:04
+Last Change: Qua Abr 29, 2015  08:27
 autor: slas
 site: vivaotux
 twitter: voyeg3r
@@ -27,12 +27,16 @@ http://en.kioskea.net/faq/1686-optimize-firefox-completely
 
   Launch Firefox
   In the address bar, type about:config
+
   Confirm if needed
   In the filter, type safe
   In the Settings list, double-click on the following parameters and set them to false:
+
   browser.safebrowsing.enabled
+
   browser.safebrowsing.malware.enabled
   Close Firefox and wait several seconds
+
   In your Firefox profile, delete the file urlclassifier3.sqlite
   This poses no long-term risk - Firefox can recreate it if required
   Restart Firefox
@@ -41,7 +45,9 @@ http://en.kioskea.net/faq/1686-optimize-firefox-completely
   browser.download.manager.scanWhenDone
 
 == Carregar abas sob demanda apenas ==
+
 coloque a chave
+
   browser.sessionstore.restore_pinned_tabs_on_demand
 
 com valor true
