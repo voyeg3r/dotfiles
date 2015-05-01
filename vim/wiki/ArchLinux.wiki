@@ -1,6 +1,6 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Fri May 01, 2015  03:02PM
+Last Change: Fri May 01, 2015  03:10PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -15,7 +15,10 @@ email: <voyeg3r  gmail.com>
 
   Por fim ative a partição assim
 
-         sudo swapon -p 1000 /dev/sdc1
+         sudo swapon -p 1000 -v /dev/sdc1
+
+  a opção -p 1000 aumenta a prioridade de seu uso
+  e opção -v mostra a saída do comando mais detalhada
 
 ==delete pacman lock file==
 
