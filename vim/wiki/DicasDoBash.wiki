@@ -2,6 +2,11 @@
 
 	http://www.bashoneliners.com/?page=1
 
+==catching file name and file extensions==
+
+    filename=$(basename "$fullfile")
+    extension="${filename##*.}"
+    filename="${filename%.*}"
 
 ==Bash: Read a file into a variable==
 
