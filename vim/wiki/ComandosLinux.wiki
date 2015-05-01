@@ -205,7 +205,7 @@ ComandoStat - mostra informações detalhadas sobre arquivos e diretórios
 ComandoStartx - inicia modo gráfico
 [[ComandoSsh]] - permite acesso remoto de forma segura
 ComandoSvn - sistema de controle de versões
-ComandoSwapon - habilita memória swap
+[[ComandoSwapon]] - habilita memória swap
 ComandoSync - sincroniza dados entre memória e discos
 ComandoTail - exibe as ultimas linhas de um arquivo
 [[ComandoTar]] - empacota arquivos compactados
