@@ -1,6 +1,6 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: Ter Abr 28, 2015  09:39
+Last Change: Fri May 01, 2015  11:30AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -56,3 +56,6 @@ https://extensions.gnome.org/extension/97/coverflow-alt-tab/
 
   Basta pressionar a tecla windows
 
+==best gnome shell addons ==
+https://extensions.gnome.org/extension/549/web-search-dialog/
+https://extensions.gnome.org/extension/277/impatience/
