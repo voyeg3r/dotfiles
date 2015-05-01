@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução= 
 fonte: http://br-net.org/post/formatando-o-pendrive-no-linux
 

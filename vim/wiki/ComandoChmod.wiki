@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 comando para atribuir permissões no linux
 

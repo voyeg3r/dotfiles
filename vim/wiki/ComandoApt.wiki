@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 efetua uma comparação entre os pacotes que estão
 instalados em sua maquina e se na lista houver um pacote com a versão

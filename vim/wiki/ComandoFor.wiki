@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 Um exemplo para substituir 02 por 03 
 

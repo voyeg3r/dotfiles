@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 Se utilizar o comando abaixo em um script ele retorna o 
 caminho completo com o nome

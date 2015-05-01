@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 Para aquelas situações em que você deseja saber
 a versão do sistema use este comando:

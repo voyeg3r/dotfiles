@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução= 
 O squid é um excelente filtro de conteúdo para intranets, com ele podemos restringir
 extensões de arquivos, [[expressões regulares]], além disto ele é uma forma de manter

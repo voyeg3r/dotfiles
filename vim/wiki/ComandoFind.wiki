@@ -1,5 +1,4 @@
 [[toc]]
-Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 O comando find é extremamente poderoso veja algumas construções do mesmo
 

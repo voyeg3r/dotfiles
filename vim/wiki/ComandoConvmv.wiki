@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução= 
 Para converter o nome dos arquivos entre as duas codificações, o comando é o convmv
 A sintaxe á dada por:

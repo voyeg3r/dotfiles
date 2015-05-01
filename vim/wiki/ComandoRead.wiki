@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução= 
 O comando abaixo guarda a senha sem exibi-la
 

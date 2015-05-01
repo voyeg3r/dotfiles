@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 O comando pkill, é uma ferramenta da família pgrep. Ele 
 tem a mesma função que o comando kill, porém pode enviar 

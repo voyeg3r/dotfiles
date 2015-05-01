@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 O comando abaixo mostra a quantidade de memória livre em
 seu sistema

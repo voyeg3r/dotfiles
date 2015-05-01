@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 
 # date "+Data: %d/%m/%Y%nHora: %H:%M:%S"

@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 fonte: http://ivanix.wordpress.com/2009/01/17/ferramentas-que-auxiliam-na-monitoracao-de-processos/
 

@@ -1,5 +1,4 @@
 
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 
 * programando com janelas http://www.gustavobarbieri.com.br/eagle/docs/eagle-pt.html

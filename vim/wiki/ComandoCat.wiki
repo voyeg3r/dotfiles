@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução= 
 O comando cat serve para visualizar conteudos de textos e também para
 concatenar arquivos divididos como comando [[split]]

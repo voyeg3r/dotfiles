@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 Permite baixar arquivos sem riscos, ou seja,
 mantém um resumo do que foi baixado

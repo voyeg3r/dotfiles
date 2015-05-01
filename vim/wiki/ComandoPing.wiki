@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução=
 
 ping -c1 www.google.com  &> /dev/null && echo "rede ok" || echo rede fora

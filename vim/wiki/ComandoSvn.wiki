@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução= 
 
 Por padrão o cliente Subversion só irá pedir senha durante a primeira conexão com o servidor Subversion, pois o cliente do Subversion irá armazenar a senha e outras informações de autenticação em ~/.subversion/auth. Isto cria possíveis pontos de exploração do servidor Subversion, para mudar isto edite o arquivo em ~/.subversion/config e altere a seguinte linha de:

@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 ==removendo espaços no nome==
 
 rename 'y/ /_/' *

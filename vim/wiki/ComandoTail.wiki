@@ -1,4 +1,3 @@
-//Ultima modificação: {$revisionday} de {$revisionmonth} de {$revisionyear}//
 =Introdução= 
 Comando usado para exibir as linhas finais de um arquivo qualquer
 
