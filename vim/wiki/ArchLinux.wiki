@@ -1,10 +1,21 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Ter Abr 28, 2015  08:49
+Last Change: Fri May 01, 2015  03:02PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
+
+==usando seu pendrive como memória swap==
+
+ Formate ele usando o gparted
+ depois descubra onde está a partição com o comando
+
+         fdisk -l
+
+  Por fim ative a partição assim
+
+         sudo swapon -p 1000 /dev/sdc1
 
 ==delete pacman lock file==
 
