@@ -1,11 +1,9 @@
 # Arquivo: Arquivos de configuração de ambiente
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: Sat May 02, 2015  10:19AM
+Last Change: Sat May 02, 2015  10:20AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voyeg3r
-
-# voyeg3r dotfiles --> https://github.com/voyeg3r/dotfiles
 
 ```bash
 clonedotfiles () {
