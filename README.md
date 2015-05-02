@@ -1,43 +1,45 @@
 # Arquivo: Arquivos de configuração de ambiente
 Criado: Dom 17/Out/2010 hs 15:13
-Last Change: Sun Feb 22, 2015  06:11PM
+Last Change: Sat May 02, 2015  10:14AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 http://www.twitter.com/voyeg3r
 
-# voyeg3r dotfiles
-
-	https://github.com/voyeg3r/dotfiles
+# voyeg3r dotfiles --> https://github.com/voyeg3r/dotfiles
 
 
-## Para clonar este repositorio faça
+## To clone these dotfiles do:
+# change var to return your e-mail
+# the use of regular expressions here is only to avoid robots to get important information
 
-```bash
-clonedotfiles () { #function to clone voyeg3r dotfiles
-	ssh -T git@github.com
+clonedotfiles () {
+ssh -T git@github.com
 
-	git config --global user.name voyeg3r
-	git config --global user.email <putyour mail here>
-	git config --global credential.helper cache
-	git config --global push.default simple
-	git config --global credential.helper 'cache --timeout=3600'
-	git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+var=`echo 3gmail.com@ | sed 's,\(^3\)\(gmail\.com\)\(\@\),voyeg\1r\3\2,g'`
+git config --global user.name voyeg3r
 
-	git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+# in the line below substitute ${var} by your e-mail
+git config --global user.email ${var}
 
-	ln -sfvn ~/.dotfiles/vim/vimrc ~/.vimrc
-	ln -sfvn ~/.dotfiles/vim ~/.vim
-	ln -sfvn ~/.dotfiles/bashrc ~/.bashrc
-	ln -sfvn ~/.dotfiles/inputrc ~/.inputrc
-	ln -sfvn ~/.dotfiles/gitconfig ~/.gitconfig
-	ln -sfvn ~/.dotfiles/fonts.conf ~/.fonts.conf
-	ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
-	ln -sfvn ~/.dotfiles/zshrc ~/.zshrc
-	ln -sfvn ~/.dotfiles/agignore ~/.agignore
-	[ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
+git config --global credential.helper cache
+git config --global push.default simple
+git config --global credential.helper 'cache --timeout=3600'
+git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+
+git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+
+ln -sfvn ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -sfvn ~/.dotfiles/vim ~/.vim
+ln -sfvn ~/.dotfiles/bashrc ~/.bashrc
+ln -sfvn ~/.dotfiles/inputrc ~/.inputrc
+ln -sfvn ~/.dotfiles/gitconfig ~/.gitconfig
+ln -sfvn ~/.dotfiles/fonts.conf ~/.fonts.conf
+ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
+ln -sfvn ~/.dotfiles/zshrc ~/.zshrc
+ln -sfvn ~/.dotfiles/agignore ~/.agignore
+[ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
 
 } && clonedotfiles
-```
 
 ## Manuais do git
 
