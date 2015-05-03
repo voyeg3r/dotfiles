@@ -38,7 +38,8 @@ $0
 endsnippet
 
 snippet main "main() (main)"
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
 	${VISUAL}${0}
 	return 0;
 }
@@ -96,29 +97,9 @@ snippet fprintf "fprintf ..."
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
 
-snippet if "if .. (if)"
-if (${1:/* condition */}) {
-	${VISUAL}${0}
-}
-endsnippet
-
-snippet el "else .. (else)"
-else {
-	${VISUAL}${0}
-}
-endsnippet
-
 snippet eli "else if .. (eli)"
 else if (${1:/* condition */}) {
 	${VISUAL}${0}
-}
-endsnippet
-
-snippet ife "if .. else (ife)"
-if (${1:/* condition */}) {
-	${2}
-} else {
-	${3:/* else */}
 }
 endsnippet
 
@@ -133,7 +114,8 @@ struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
 endsnippet
 
 snippet fun "function" b
-${1:void} ${2:function_name}(${3}) {
+${1:void} ${2:function_name}(${3})
+{
 	${VISUAL}${0}
 }
 endsnippet
