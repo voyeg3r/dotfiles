@@ -8,7 +8,7 @@ snippet #!
 snippet sh
 	#!/usr/bin/env bash
 	# Criado em: `system("date +%m-%d-%Y")`
-	# Last Change: Sun May 03, 2015  07:58AM
+	# Last Change: Sun May 03, 2015  08:05AM
 	# vim:ft=sh:fdm=syntax:nu:
 	# Instituicao: ${1:instituicao}
 	# Proposito do script: ${2:write here the script purpose}
@@ -150,3 +150,7 @@ snippet usage
 		echo "Usage: $(basename $${1:0}) ${2:argument}"
 		echo "${3:explanation}"
 	}
+
+# sets default var
+snippet dvar
+	MYVAR=${1:{1:-default}}
