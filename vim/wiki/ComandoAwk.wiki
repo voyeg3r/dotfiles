@@ -32,6 +32,7 @@ pois o cifrão "$" representa para o awk indicador de campos
 usadas aspas simples o shell tentará interpretar primeiro
 buscando alí uma variável que na verdade não existe.
 
+
 ==Variáveis do awk==
 
 NR     Contém o número do registro atual (linha)
@@ -40,6 +41,11 @@ FS     indica o separador de campos
 RS     indica o separador de registros
 OFS    indica o separador de campo do arquivo de saida
 ORS    indica o separador de registros do arquivo de saida
+
+= which OS I am using =
+
+    OS=`awk -F= '/DISTRIB_ID/ {print tolower($2)}' /etc/lsb-release`
+    echo "Seu sistema é ${OS}"
 
 = criando hard links com o find plus awk plus ln =
 

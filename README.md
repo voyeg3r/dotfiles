@@ -3,10 +3,12 @@
 clonedotfiles () {
 # Arquivo: Arquivos de configuração de ambiente
 # Criado: Dom 17/Out/2010 hs 15:13
-# Last Change: Sat May 02, 2015  10:22AM
+# Last Change: Sat May 02, 2015  08:59PM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # http://www.twitter.com/voyeg3r
+
+sudo pacman -S git zsh
 
 ssh -T git@github.com
 
@@ -33,6 +35,8 @@ ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
 ln -sfvn ~/.dotfiles/zshrc ~/.zshrc
 ln -sfvn ~/.dotfiles/agignore ~/.agignore
 [ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
+
+sudo chsh -s $(which zsh) $(whoami)
 
 } && clonedotfiles
 ```
