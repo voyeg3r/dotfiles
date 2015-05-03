@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Seg Abr 20, 2015  06:44
+" Last Change: Sun May 03, 2015  07:42AM
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -81,6 +81,11 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 0
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+" my id
+let g:snips_author = "Sergio Luiz Araujo Silva"
+let g:snips_site = "http://vivaotux.blogspot.com"
+let g:snips_twitter = "http://www.twitter.com/voyeg3r"
 
 if executable("ag")
 		set grepprg=ag\ --nogroup\ --nocolor

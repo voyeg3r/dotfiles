@@ -7,6 +7,14 @@ snippet #!
 
 snippet sh
 	#!/usr/bin/env bash
+	# Criado em: `system("date +%m-%d-%Y")`
+	# Last Change: Sun May 03, 2015  07:58AM
+	# vim:ft=sh:fdm=syntax:nu:
+	# Instituicao: ${1:instituicao}
+	# Proposito do script: ${2:write here the script purpose}
+	# Autor: ${3:`g:snips_author`}
+	# site: ${4:`g:snips_site`}
+	${0:# press Ctrl-j to jump placeholders}
 
 snippet has
 	NEEDED_COMMANDS="${1:program}"
@@ -24,14 +32,12 @@ snippet has
 	${2}
 
 snippet ir "if user is root" w
-	# testa se está logado como root
 	if [ "$(id -u)" != "0" ]; then
 	echo "  Need be root"
 		sleep 2
 		exit  1
 	fi
-
-		${0}
+	${0:# Press ctrl-j to jump here}
 
 snippet if
 	if [[ ${1:condition} ]]; then
@@ -72,45 +78,6 @@ snippet go
 # Set SCRIPT_DIR variable to directory script is located.
 snippet sdir
 	SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-# getopt
-snippet getopt
-	__ScriptVersion="${1:version}"
-
-	#===  FUNCTION  ================================================================
-	#         NAME:  usage
-	#  DESCRIPTION:  Display usage information.
-	#===============================================================================
-	function usage ()
-	{
-			cat <<- EOT
-
-	  Usage :  $${0:0} [options] [--]
-
-	  Options:
-	  -h|help       Display this message
-	  -v|version    Display script version
-
-			EOT
-	}    # ----------  end of function usage  ----------
-
-	#-----------------------------------------------------------------------
-	#  Handle command line arguments
-	#-----------------------------------------------------------------------
-
-	while getopts ":hv" opt
-	do
-	  case $opt in
-
-		h|help     )  usage; exit 0   ;;
-
-		v|version  )  echo "$${0:0} -- Version $__ScriptVersion"; exit 0   ;;
-
-		\? )  echo -e "\n  Option does not exist : $OPTARG\n"
-			  usage; exit 1   ;;
-
-	  esac    # --- end of case ---
-	done
-	shift $(($OPTIND-1))
 snippet root
 	if [ \$(id -u) -ne 0 ]; then exec sudo \$0; fi
 snippet fun
@@ -122,8 +89,7 @@ snippet ffun
 		${0:#function_body}
 	}
 
-
-snippet response "get yes or no from user" w
+snippet replay "get yes or no from user" w
 	read -p "Type one response [y|n]:" response
 	if [[ "${response,,}" =~ ^[^y] ]];then
 		exit 0
@@ -141,13 +107,12 @@ snippet isempty "if file is empty" w
 	[ -f "${1:filename}" -a ! -s "$1" ] && echo "$1 is empty'!'"
 	${0:# press c-j to exit snippet}
 
-
 snippet ifdir "test if dir exists" w
 	[ -d ${1:namedir} ] || mkdir $1 ; cd $1
 	${0:# press c-j}
 
 snippet "ifprog(ram)?" "test if program is installed" r
-	command -v ${1:prog} >/dev/null || sudo apt-get install $1
+	command -v ${1:prog} >/dev/null || sudo pacman -S $1
 	${0:# press c-j}
 
 snippet lock
@@ -159,3 +124,29 @@ snippet lock
 		exit 1
 	fi
 	${0:# press c-j}
+
+snippet lower
+	${1:var}=${$1,,}
+	${0:#press ctrl-j}
+snippet upper
+	${1:var}=${$1^^}
+	${0:#press ctrl-j}
+
+snippet array
+	#ARRAY=( 'Debian Linux' 'Redhat Linux' Ubuntu Linux )
+	# get number of elements in the array
+	ELEMENTS=${#ARRAY[@]}
+	for (( i=0;i<$ELEMENTS;i++)); do
+		${1:echo} ${ARRAY[${i}]}
+	done
+	${0:# press ctrl-j}
+
+snippet alias
+	alias ${1:name}='${2:action}'
+
+snippet usage
+	usage()
+	{
+		echo "Usage: $(basename $${1:0}) ${2:argument}"
+		echo "${3:explanation}"
+	}
