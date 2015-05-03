@@ -8,6 +8,21 @@ snippet #!
 snippet sh
 	#!/usr/bin/env bash
 
+snippet has
+	NEEDED_COMMANDS="${1:program}"
+	missing_counter=0
+	for needed_command in $NEEDED_COMMANDS; do
+		if ! hash "$needed_command" >/dev/null 2>&1; then
+			printf "Command not found in PATH: %s\n" "$needed_command" >&2
+			((missing_counter++))
+		fi
+	done
+	if ((missing_counter > 0)); then
+		printf "Minimum %d commands are missing in PATH, aborting" "$missing_counter" >&2
+		exit 1
+	fi
+	${2}
+
 snippet ir "if user is root" w
 	# testa se está logado como root
 	if [ "$(id -u)" != "0" ]; then

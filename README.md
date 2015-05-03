@@ -3,12 +3,19 @@
 clonedotfiles () {
 # Arquivo: Arquivos de configuração de ambiente
 # Criado: Dom 17/Out/2010 hs 15:13
-# Last Change: Sat May 02, 2015  08:59PM
+# Last Change: Sun May 03, 2015  07:27AM
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # http://www.twitter.com/voyeg3r
 
-sudo pacman -S git zsh
+NEEDED_COMMANDS="git zsh"
+for needed_command in $NEEDED_COMMANDS; do
+    if ! hash "$needed_command" >/dev/null 2>&1; then
+        printf "Command not found in PATH: %s\n" "$needed_command" >&2
+        echo "instaling..."
+        sudo pacman -S $needed_command
+    fi
+done
 
 ssh -T git@github.com
 
@@ -37,6 +44,10 @@ ln -sfvn ~/.dotfiles/agignore ~/.agignore
 [ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
 
 sudo chsh -s $(which zsh) $(whoami)
+
+# installing fasdcd
+git clone git@github.com:clvv/fasd.git
+cd fasd && sudo make install
 
 } && clonedotfiles
 ```
