@@ -1,6 +1,6 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: Fri May 01, 2015  11:30AM
+Last Change: Sun May 03, 2015  11:38AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -10,8 +10,21 @@ http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distr
 }}}
 
 == performance tweaks ==
+* https://wiki.archlinux.org/index.php/Sysctl
+* http://penguininside.blogspot.com.br/2009/08/top-10-gnome-performance-tweaks.html
 
-http://penguininside.blogspot.com.br/2009/08/top-10-gnome-performance-tweaks.html
+Put this in your /etc/environment
+
+    BROWSER=/usr/bin/firefox
+    CLUTTER_PAINT=disable-clipped-redraws:disable-culling
+    export CLUTTER_VBLANK=none
+
+Network performance
+
+https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf
+
+If you had customized /etc/sysctl.conf, you need to rename it as /etc/sysctl.d/99-sysctl.conf. If you had e.g. /etc/sysctl.d/foo, you need to rename is to /etc/sysctl.d/foo.conf
+
 
 == solving the problem of hidden files by default ==
 
