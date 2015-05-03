@@ -1,6 +1,6 @@
 Arquivo: ifconfig.wiki
 Criado: Sun 18/Jan/2015 hs 09:41
-Last Change: Sun Jan 18, 2015  09:45AM
+Last Change: Sun May 03, 2015  08:16AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -58,6 +58,11 @@ ls -l /sys/class/net  | awk '/eth/ {print $8}' #eth0 ou eth1?
     broadcast 192.168.16.255
 
     gateway 192.168.16.1 #gateway da rede
+
+
+   # outro exemplo bacana
+   # Create an IP alias from CLI
+        /sbin/ifconfig eth0:1 192.168.3.33
 
 =Fixing NetworkManager DNS issue in Ubuntu (Hardy Heron/Gutsy)=
 
@@ -295,3 +300,4 @@ openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'
 * http://www.guiadohardware.net/artigos/compartilhar-placa/
 * http://www.cyberciti.biz/tips/ubuntu-linux-creating-ethernet-alias-for-eth0-network-device.html
 * http://www.gdhpress.com.br/redeseservidores/leia/index.php?p=cap4-8
+* http://cavepopo.hd.free.fr/wordpress/bash/bash-scripts-examples/
