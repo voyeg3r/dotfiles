@@ -11,7 +11,7 @@ snippet #!
 snippet sh
 	#!/usr/bin/env bash
 	# Criado em: `system("date +%m-%d-%Y")`
-	# Last Change: Sun May 03, 2015  09:31AM
+	# Last Change: Sun May 03, 2015  12:36PM
 	# vim:ft=sh:fdm=syntax:nu:
 	# Instituicao: ${1:instituicao}
 	# Proposito do script: ${2:write here the script purpose}
@@ -33,6 +33,11 @@ snippet has
 		exit 1
 	fi
 	${2}
+
+snippet here
+	cat <<${1:EOF}
+	${2:type your text here}
+	${1}
 
 snippet ir "if user is root" w
 	if [ "$(id -u)" != "0" ]; then

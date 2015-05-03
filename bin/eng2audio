@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 05/Jan/2014 hs 07:55
-#      Last Change: Sat Jan 17, 2015  07:31AM
+#      Last Change: Sun May 03, 2015  01:08PM
 # THIS SCRIPT AIMS: English to audio script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -24,7 +24,7 @@
 
 
 # dependences wget mpg123 xclip
-NEEDED_COMMANDS="wget mpg123 xclip"
+NEEDED_COMMANDS="wget mpg123 xclip sox"
 missing_counter=0
 for needed_command in $NEEDED_COMMANDS; do
     if ! hash "$needed_command" >/dev/null 2>&1; then
@@ -49,3 +49,17 @@ fi
    echo "[sound:${FILENAME// /_}.mp3]" | xclip -selection c
 
 
+# after many times having problems with the end of the
+# file I was forced (I had to) figure out a solution, thus
+# the below lines add 1 second silence to the final file
+oldname=${1}
+
+# the var below gets only the file name, if you wnat to get the
+# extension do this: extension="${filename##*.}"
+
+newname=${1%.*}-with-silence.mp3
+
+sox $1 $newname pad 0 1
+
+rm -f $1
+mv $newname $oldname
