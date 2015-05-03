@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 05/Jan/2014 hs 07:55
-#      Last Change: Sun May 03, 2015  01:08PM
+#      Last Change: Sun May 03, 2015  02:04PM
 # THIS SCRIPT AIMS: English to audio script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -52,14 +52,17 @@ fi
 # after many times having problems with the end of the
 # file I was forced (I had to) figure out a solution, thus
 # the below lines add 1 second silence to the final file
-oldname=${1}
+
+
+oldname="${FILENAME// /_}.mp3"
 
 # the var below gets only the file name, if you wnat to get the
 # extension do this: extension="${filename##*.}"
 
-newname=${1%.*}-with-silence.mp3
 
-sox $1 $newname pad 0 1
+newname=${oldname%.*}-with-silence.mp3
 
-rm -f $1
+sox $oldname $newname pad 0 1
+
+rm -f $oldname
 mv $newname $oldname
