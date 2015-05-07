@@ -1,6 +1,6 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: Sun May 03, 2015  06:45PM
+Last Change: Thu May 07, 2015  01:01PM
 autor: slas
 site: vivaotux
 twitter: voyeg3r
@@ -13,6 +13,7 @@ add exceptions for this url's
   google.com
   plus.google.com
   apis.google.com
+  books.googleusercontent.com
 
 = ativar plugins sob demanda =
 dentro do about:config

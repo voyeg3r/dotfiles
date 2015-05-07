@@ -91,7 +91,7 @@ alias classic='mplayer http://80.237.154.83:8120'
 # watch aljazeera
 alias alj='rtmpdump -v -r "rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med" | mplayer -'
 
-
+alias myexternalip='curl http://myexternalip.com/raw'
 
 ########### aliases #################
 # aliases para fasd
