@@ -120,6 +120,7 @@ ComandoLn - cria links
 [[ComandoLs]] - lista o conteúdo de diretórios
 ComandoLscpu - CPU architecture details
 ComandoLsb_release - exibe a versão do sistema
+[[ComandoLsblk]] - exibe a identificação única dos dispositivos
 ComandoLsmod - lista os módulos carregados do kernel
 ComandoLshw - mostra informações sobre o hardware
 ComandoLsof - mostra arquivos abertos no sistema
