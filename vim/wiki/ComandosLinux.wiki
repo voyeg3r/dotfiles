@@ -24,7 +24,7 @@ ComandoBasename - retorna o nome do arquivo sem o caminho
 ComandoBadblocks - Comando para recuperação de hds
 ComandoBc - calculadora de linha de comando
 ComandoBeep - emite um som no terminal
-ComandoBlkid - exibe o 'uuid' volume id das partições
+[[ComandoBlkid]] - exibe o 'uuid' volume id das partições
 [[ComandoCadaver]] - permite fazer downloads e uploads via webdav
 ComandoCase - extrutura para escolhas múltiplas
 ComandoCat - mostra na tela arquivos
