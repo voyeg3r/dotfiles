@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Dom Abr 26, 2015  07:28
+Last Change: Thu May 14, 2015  08:54AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -237,6 +237,17 @@ That's it. Thanks for watching.
 = print var in lowcase =
 
 		echo $var:l
+
+= print file name without extension =
+
+    echo $filename:r
+
+    # Remove the suffix from each file (*.sh in this example)
+    $f:e is $f file extension
+    :h --> head (dirname)
+    :t --> tail (basename)
+    :r --> rest (extension removed)
+    $ for f (*.sh) mv $f $f:r
 
 =how set up 'command not found'=
 
