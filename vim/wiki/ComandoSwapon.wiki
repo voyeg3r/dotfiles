@@ -47,14 +47,13 @@ e opção -v mostra a saída do comando mais detalhada
 
     sudo swapon -p 1000 -U 0de2281f-1544-4eb0-800f-91282e15edf6
 
- Para remontar as partições faça:
-
-    sudo mount -a
 
  Uma explicação em inglês do forum do ubuntu
 
 
- If you use the nofail option in /etc/fstab, the system will look for your disk (and partition) on boot time. If the device is plugged, the filesystem will be mounted. If not, the boot will continue as normal.
+ If you use the nofail option in /etc/fstab, the system will look for
+ your disk (and partition) on boot time. If the device is plugged, the
+ filesystem will be mounted. If not, the boot will continue as normal.
 
  See arch wiki: https://wiki.archlinux.org/index.php/Fstab
 
@@ -64,5 +63,5 @@ e opção -v mostra a saída do comando mais detalhada
 
  Conclusão, para o meu caso a linha no fstab ficará assim:
 
- UUID=0de2281f-1544-4eb0-800f-91282e15edf6 swap swap defaults,nofail 0 0
+    UUID=0de2281f-1544-4eb0-800f-91282e15edf6 swap swap defaults,nofail 0 0
 
