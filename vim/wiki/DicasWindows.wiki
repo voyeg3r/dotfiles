@@ -1,10 +1,19 @@
 Arquivo: dicas windows
 Criado: Ter 11/Dez/2012 hs 15:31
-Last Change: Dom Abr 26, 2015  06:39
+Last Change: Mon May 18, 2015  10:39AM
 autor: sergio
 site: vivaotux
 twitter: voyeg3r
 email: voyeg3r at gmail.com
+
+= todos os atalhos de configuração em uma única pasta =
+
+1. Crie uma pasta em qualquer lugar;
+2. De a essa pasta o seguinte nome (sem aspas):
+
+    GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
+
+3. O ícone da pasta deve mudar, indicante que o processo foi realizado com sucesso.
 
 = Limpando o spool de de impressão =
 
