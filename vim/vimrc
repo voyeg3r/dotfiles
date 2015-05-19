@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sun May 03, 2015  07:42AM
+" Last Change: Tue May 19, 2015  08:17AM
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -577,8 +577,17 @@ set laststatus=2
 set number
 "set relativenumber
 "set undofile
-set undodir=~/.vim/undo/
+"set undodir=~/.vim/undo/
 au BufWritePre /tmp/* setlocal noundofile
+
+" Persistent undo
+" source: http://stackoverflow.com/questions/5700389/using-vims-persistent-undo
+try
+    set undodir=$HOME/.undodir
+    set undofile
+catch
+endtry
+
 
 set ignorecase
 set smartcase
