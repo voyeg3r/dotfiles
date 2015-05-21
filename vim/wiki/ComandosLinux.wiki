@@ -186,7 +186,7 @@ ComandoRsh - executa comandos remotos - remote shell
 [[ComandoRsync]] - sincroniza dados entre hosts
 ComandoScreen - abre multiplos terminais em um só
 [[ComandoSed]] - editor de streams
-ComandoSeq - gera uma sequencia na tela
+[[ComandoSeq]] - gera uma sequencia na tela
 ComandoSetxkbmap - configura o teclado nos sistemas modernos com novo xorg
 ComandoScp - permite cópias entre dois hosts
 ComandoSftp - Permite cópias mais seguras que o [[scp

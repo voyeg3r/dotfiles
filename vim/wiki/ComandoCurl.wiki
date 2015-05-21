@@ -31,6 +31,12 @@ pacotes não será necessário fazer este download.
 # add this line in your ~/.bashrc
 alias curl='curl --proxy 192.168.1.11:8080'
 
+== followig redirections ==
+
+   just use the "-L" option
+
+   curl -L url
+
 ==salvando os comandos mais populares do site command-line-fu==
 
 curl http://www.commandlinefu.com/commands/browse/sort-by-votes/plaintext/[0-2500:25] | grep -v _curl_ > comfu.txt
