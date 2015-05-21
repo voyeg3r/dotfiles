@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Dom 29/Dez/2013 hs 07:08
-#      LAST CHANGE: Sex Abr 17, 2015  09:43
+#      LAST CHANGE: Thu May 21, 2015  07:47AM
 # THIS SCRIPT AIMS: arch linux post install script
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -37,6 +37,10 @@
 
 # stopping bluetooth service
 sudo systemctl stop bluetooth
+
+# hostsblock
+# A script and cronjob that downloads, sorts, and installs multiple ad- and # malware-blocking hosts files
+# https://aur.archlinux.org/packages/ho/hostsblock/hostsblock.tar.gz
 
 # python package installer
 sudo pacman python-pip
@@ -337,4 +341,5 @@ pm i extra/sound-juicer
 		# https://aur.archlinux.org/packages/libav-git/
 } && multimedia
 
-
+# gui for youtube-dl
+# https://aur.archlinux.org/packages/youtube-dl-gui-git/
