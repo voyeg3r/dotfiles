@@ -1,6 +1,6 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: Sun May 03, 2015  11:38AM
+Last Change: Sat May 23, 2015  08:39AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -12,6 +12,24 @@ http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distr
 == performance tweaks ==
 * https://wiki.archlinux.org/index.php/Sysctl
 * http://penguininside.blogspot.com.br/2009/08/top-10-gnome-performance-tweaks.html
+https://alexcabal.com/disabling-gnomes-recently-used-file-list-the-better-way/
+
+
+-------------------------------
+ disable most recent files view --> recently-used-xbel
+-------------------------------
+
+Put the following in ~/.config/gtk-3.0/settings.ini (create the file if it doesn’t exist):
+
+        [Settings]
+        gtk-recent-files-max-age=0
+        gtk-recent-files-limit=0
+
+    Then, remove the file holding recently-used data:
+
+        rm ~/.local/share/recently-used.xbel
+
+= other stuff =
 
 Put this in your /etc/environment
 
