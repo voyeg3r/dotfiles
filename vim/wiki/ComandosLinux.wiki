@@ -165,7 +165,7 @@ ComandoPidof - mostra o pid de um processo
 [[ComandoPing]] - testa se um host está ativo
 ComandoPkill - mata processos pelo nome
 ComandoPppoeconf - configura uma conexão adsl
-ComandoPrintf - usado para imprimir valores na tela
+[[ComandoPrintf]] - usado para imprimir valores na tela
 [[ComandoPs]] - mostra números dos processos
 ComandoPwd - mostra o diretório atual
 ComandoPwgen - gerador de senhas

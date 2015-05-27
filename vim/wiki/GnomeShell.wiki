@@ -1,6 +1,6 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: Sat May 23, 2015  08:39AM
+Last Change: Sat May 23, 2015  08:54AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -28,6 +28,10 @@ Put the following in ~/.config/gtk-3.0/settings.ini (create the file if it doesn
     Then, remove the file holding recently-used data:
 
         rm ~/.local/share/recently-used.xbel
+
+Disabling tracer system
+
+    tracker-control
 
 = other stuff =
 
