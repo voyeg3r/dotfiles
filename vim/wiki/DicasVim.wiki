@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Sun Jan 18, 2015  12:23PM
+Last Change: Thu May 28, 2015  09:55AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -9,6 +9,13 @@ twitter: http://www.twitter.com/voyeg3r
 ==configuração do airline==
 Uma barra de status mais bacana para o vim
 https://powerline.readthedocs.org/en/latest/installation/linux.html#font-installation
+
+==conertendo o formato de arquivo de Windows para Linux==
+
+   :set ff=unix
+
+
+   Para inserir  use o atalho Ctrl-v Ctrl-m no modo insert
 
 ==colocando o nome do arquivo no proprio ==
 

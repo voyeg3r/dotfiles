@@ -42,6 +42,25 @@ RS     indica o separador de registros
 OFS    indica o separador de campo do arquivo de saida
 ORS    indica o separador de registros do arquivo de saida
 
+= convert DOS file to Unix file =
+
+    To use awk to convert a Windows file to Unix, enter:
+
+        awk '{ sub("\r$", ""); print }' winfile.txt > unixfile.txt
+
+    To convert a Unix file to Windows, enter:
+
+        awk 'sub("$", "\r")' unixfile.txt > winfile.txt
+
+
+    Usei este recurso para manipular meus contatos do telefone que
+    estavam no formato vcf mas que usavam terminador de linha do windows
+
+    após converter usando o comando acima imprimi somente os contatos
+    que tinham telefone usando este comando
+
+    awk 'BEGIN {RS="\n\n"; FS="\n";} /TEL/ {print $0}' unix.vcf
+
 = which OS I am using =
 
     OS=`awk -F= '/DISTRIB_ID/ {print tolower($2)}' /etc/lsb-release`
@@ -449,6 +468,14 @@ teste
 e o delimitador de campos para quebra de linha faça:
 
 awk 'BEGIN { FS="\n"; RS="teste"} {if (NR=="2") print }' teste.txt
+
+   OBS: estando no linux verifique o terminador de linha
+        se o formato for do windows o terminador de linha é
+        diferente e pode gerar erros no awk assim como no vim
+
+          faça a veriricação assim:
+
+            cat -vet target-file
 
 
 ==Imprimir valores negativos==
