@@ -1,4 +1,4 @@
-=Introdução=
+[[=Introdução=]]
 O awk trabalha sempre dessa forma:
 
     awk padrão ação
@@ -60,6 +60,13 @@ ORS    indica o separador de registros do arquivo de saida
     que tinham telefone usando este comando
 
     awk 'BEGIN {RS="\n\n"; FS="\n";} /TEL/ {print $0}' unix.vcf
+
+    finalmente eu queria apagar os registros que continham um padrão
+    usei a negação com exclamação, usei também o operador && para
+    incluir outro critério, os registros tem que ter telefone, ou seja,
+    na minha agenda do telefone só interessa registro com número.
+
+    awk 'BEGIN {RS="\n\n"; FS="\n"} !/Câmara dos Deputados/ && /TEL/ {print $0}' unix.vcf
 
 = which OS I am using =
 
