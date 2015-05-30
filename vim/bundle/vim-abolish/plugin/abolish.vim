@@ -11,7 +11,7 @@ endif
 let g:loaded_abolish = 1
 
 if !exists("g:abolish_save_file")
-  if isdirectory(expand("~/.vim"))
+  if isdirectory(expand("~/.dotfiles/vim"))
     let g:abolish_save_file = expand("~/.vim/after/plugin/abolish.vim")
   elseif isdirectory(expand("~/vimfiles")) || has("win32")
     let g:abolish_save_file = expand("~/vimfiles/after/plugin/abolish.vim")
