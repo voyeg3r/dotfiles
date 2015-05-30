@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Fri May 29, 2015  01:10PM
+" Last Change: Sat May 30, 2015  12:13PM
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -41,40 +41,8 @@ set runtimepath+=~/.vim/snippets
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 set shell=/bin/bash
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'amiorin/ctrlp-z'
-Bundle 'EinfachToll/DidYouMean'
-Bundle 'bling/vim-airline'
-Bundle 'gmarik/Vundle.vim'
-Bundle 'FelikZ/ctrlp-py-matcher'
-Bundle 'rking/ag.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'henrik/vim-indexed-search'
-Bundle 'tmhedberg/matchit'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'scrooloose/nerdtree'
-Bundle 'chrisbra/NrrwRgn'
-Bundle 'rstacruz/sparkup'
-Bundle 'scrooloose/syntastic'
-Bundle 'godlygeek/tabular'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'othree/vim-autocomplpop'
-Bundle 'eparreno/vim-l9'
-Bundle 'vim-scripts/vimwiki'
-Bundle 'vim-scripts/VisIncr'
-" All of your Plugins must be added before the following line
-call vundle#end() " required
+execute pathogen#infect()
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -856,6 +824,7 @@ autocmd BufReadPost *
 	\ if line("'\"") > 0 && line("'\"") <= line("$") |
 	\		exe "normal g`\"" |
 	\ endif
+
 
 iab idate <c-r>=strftime("%A %d/%m/%Y")<cr>
 iab ihora <c-r>=strftime("%H:%M:%S")<cr>
