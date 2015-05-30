@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Tue May 19, 2015  08:17AM
+" Last Change: Fri May 29, 2015  01:10PM
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -366,6 +366,12 @@ function! Preserve(command)
 	" Restore previous search history and cursor position
 	let @/=_s
 	call cursor(l, c)
+endfunction
+
+fun! Setutf8()
+  " source: http://stackoverflow.com/questions/9310274/how-can-i-use-vim-to-convert-my-file-to-utf8
+  :set fileencoding=utf8
+  :w!
 endfunction
 
 fun! Keeponlymp3()

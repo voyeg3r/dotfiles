@@ -7,6 +7,8 @@ export ZSH=/home/sergio/.dotfiles/oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
 
+setopt PROMPT_BANG # enables '!' substituition on prompt
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 

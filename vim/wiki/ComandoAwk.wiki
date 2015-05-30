@@ -68,6 +68,11 @@ ORS    indica o separador de registros do arquivo de saida
 
     awk 'BEGIN {RS="\n\n"; FS="\n"} !/Câmara dos Deputados/ && /TEL/ {print $0}' unix.vcf
 
+    Sabendo que sempre se pode melhorar podemos omitir o print já que
+    é a ação padrão do awk
+
+    awk 'BEGIN {RS="\n\n"; FS="\n"} !/Câmara dos Deputados/ && /TEL/' unix.vcf
+
 = which OS I am using =
 
     OS=`awk -F= '/DISTRIB_ID/ {print tolower($2)}' /etc/lsb-release`
