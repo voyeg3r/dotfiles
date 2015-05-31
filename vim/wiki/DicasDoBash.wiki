@@ -8,6 +8,11 @@
     extension="${filename##*.}"
     filename="${filename%.*}"
 
+
+==Inserting DOS carriage return==
+
+    simple press Ctrl-v Ctrl-m
+
 ==Bash: Read a file into a variable==
 
     value=$(<config.txt)
@@ -34,7 +39,7 @@
 
 =Dicas do Júlio César Neves=
 
-    read -p “Deseja continuar (s/n)? “
+    read -p "Deseja continuar (s/n)? "
 
     [[ ${REPLY^} == N ]] && exit
 
