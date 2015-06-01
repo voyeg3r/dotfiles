@@ -116,17 +116,6 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 
-d2u (){
-    if (( ! $# )); then
-        echo "Usage: $0:t input-dosfile output-unixfile"
-        return 1
-    fi
-
-    codification="`file -bi "$1" | awk -F"=" '{print $NF}'`"
-    if [[ "$codification" != "utf-8" ]]  && iconv -f ISO8859-9 -t UTF-8 "$1" > "${1}.changed"
-
-    sed -i 's/\x0D$//' "${1}.changed"
-}
 
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files

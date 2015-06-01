@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# if (( ! $# )); then
+#     echo "Usage: $0:t input-dosfile output-unixfile"
+#     return 1
+# fi
+
+
+# filename=$(basename "$fullfile")
+# extension="${filename##*.}"
+# filename="${filename%.*}"
+
+# executar dois testes, se é utf-8 e se é formato DOS
+
+outfile="${1}".utf-8
+
+cat "$1" > "$outfile"
+
+codification="`file -bi "$1" | awk -F"=" '{print $NF}'`"
+
+[[ "$codification" != "utf-8" ]]  && iconv -f ISO8859-9 -t UTF-8 "$1" > $outfile
+
+sed -i 's/\x0D$//' $outfile
