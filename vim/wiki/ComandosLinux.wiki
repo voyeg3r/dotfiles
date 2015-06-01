@@ -94,7 +94,7 @@ ComandoHead - mostra as primeiras linhas de um arquivo
 [[ComandoHistory]] - Exibe o histórico de comandos
 ComandoHtml2text - convert html para texto
 ComandoHwclock - ajusta o relógio da placa mãe do computador
-ComandoIconv - recodifica arquivos
+[[ComandoIconv]] - recodifica arquivos
 [[ComandoId]] - mostra a identidade numérica do usuário
 ComandoIf - "se" - faz testes (use em scripts)
 [[ComandoIfs]] - internal field separator

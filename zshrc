@@ -121,7 +121,10 @@ d2u (){
         echo "Usage: $0:t input-dosfile output-unixfile"
         return 1
     fi
-    iconv -f ISO8859-9 -t UTF-8 "$1" > "${1}.changed"
+
+    codification="`file -bi "$1" | awk -F"=" '{print $NF}'`"
+    if [[ "$codification" != "utf-8" ]]  && iconv -f ISO8859-9 -t UTF-8 "$1" > "${1}.changed"
+
     sed -i 's/\x0D$//' "${1}.changed"
 }
 
