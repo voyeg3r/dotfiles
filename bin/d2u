@@ -12,6 +12,7 @@
 
 # executar dois testes, se é utf-8 e se é formato DOS
 
+
 outfile="${1}".utf-8
 
 cat "$1" > "$outfile"

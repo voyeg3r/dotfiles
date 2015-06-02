@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Thu May 28, 2015  09:55AM
+Last Change: Tue Jun 02, 2015  02:04PM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -10,12 +10,50 @@ twitter: http://www.twitter.com/voyeg3r
 Uma barra de status mais bacana para o vim
 https://powerline.readthedocs.org/en/latest/installation/linux.html#font-installation
 
+== corretor ortográfico no vim==
+
+Corretor ortográfico para VIM
+Standard
+
+Você usa VIM para criação de textos (LaTeX ou afins)? Sempre sentiu falta de um corretor ortográfico? Seus problemas se acabaram!!!
+
+success_vim-273x300
+Preparando ambiente:
+
+# cd ~ ; mkdir corretor ; cd corretor
+Baixando a base de palavras:
+
+# wget http://extensions.libreoffice.org/extension-center/vero-verificador-ortografico-e-hifenizador-em-portugues-do-brasil/pscreleasefolder.2012-01-04.1563120832/2.1.2/vero_pt_br_v212aoc.oxt
+
+# unzip -x vero_pt_br_v212aoc.oxt
+Aplicando no vim
+
+Acesse o vim com o comando abaixo:
+
+# vim
+
+No vim digite:
+
+:mkspell pt pt_BR
+
+Obs: Pode demorar um pouco e dará alguns erros de arquivos duplicados, ok?
+
+# cp pt.utf-8.spl /usr/share/vim/vim*/spell/
+Usando o corretor no vim
+
+Dentro do vim execute o seguinte comando:
+
+set spell spelllang=pt,en
+
+Caso queira que o corretor seja habilitado automaticamente sempre que acessar o vim:
+
+# echo ‘set spell spelllang=pt,en’ >> ~/.vimrc
+
 ==conertendo o formato de arquivo de Windows para Linux==
 
    :set ff=unix
 
-
-   Para inserir  use o atalho Ctrl-v Ctrl-m no modo insert
+   Para inserir  use o atalho Ctrl-v Ctrl-m no modo [[insert]]
 
 ==colocando o nome do arquivo no proprio ==
 

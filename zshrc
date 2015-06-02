@@ -115,14 +115,13 @@ alias _!='fc -e "sed -i -e \"s/^/sudo /\""' # sudo last command
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
-
-
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files
 alias lsd='ls -d -- *(/)'				  # only show directories
 alias -s txt=vim
 alias -s text=vim
 alias gril='grep -irl'
+alias -g CB='| xclip -selection c'
 alias -g C='| wc -l'
 alias -g L='| less -r'
 alias -g T='| tail'
