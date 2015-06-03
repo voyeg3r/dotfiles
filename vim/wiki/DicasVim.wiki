@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Wed Jun 03, 2015  08:45AM
+Last Change: Wed Jun 03, 2015  08:53AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -986,6 +986,7 @@ quais arquivos serão instalados assim:
  NarrowRegionPlugin
  PluginTabular
  SnipMate
+ [[Abolish]] ..............https://github.com/tpope/vim-abolish
 
 =trabalhando com janelas=
 

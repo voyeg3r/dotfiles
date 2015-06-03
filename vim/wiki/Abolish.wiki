@@ -1,0 +1,9 @@
+
+
+  O plugin abolish permite abreviações mais complexas como:
+
+  :Abolish! {col,hon}our{,s,ed,ing} {}or{}
+
+
+  Usando a exclamação o plugin já adiciona a abreviação no arquivo
+  necessário ao carregamento da mesma
