@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Wed Jun 03, 2015  08:43AM
+" Last Change: Wed Jun 03, 2015  11:08AM
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -358,13 +358,16 @@ endfun
 " Para inserir o simbolo	use ^v ^M  ou ^v Enter
 " dos2unix ^M
 fun! Dos2unixFunction()
-		let _s=@/
-		let l = line(".")
-		let c = col(".")
-		" Strip trailing ^Ms, quietly.
-		%s/\%x0d$//e
-		let @/=_s
-		call cursor(l, c)
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	" Strip trailing ^Ms, quietly.
+	%s/\%x0d$//e
+	let @/=_s
+	call cursor(l, c)
+	set ff=unix
+	set encoding=utf-8
+	set fileencoding=utf-8
 endfun
 com! Dos2Unix keepjumps call Dos2unixFunction()
 

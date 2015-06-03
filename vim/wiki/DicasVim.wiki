@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Wed Jun 03, 2015  08:53AM
+Last Change: Wed Jun 03, 2015  10:59AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -975,7 +975,7 @@ quais arquivos serão instalados assim:
  SparkupPlugin
  PydictionPlugin
  ProjectPlugin
- PowerLine
+ [[PowerLine]]
  VisincrPlugin
  SurroundPlugin
  GundoPlugin

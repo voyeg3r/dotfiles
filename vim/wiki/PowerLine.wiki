@@ -1,6 +1,6 @@
 Arquivo: Sobre o plugin powerline
 Criado: Sex 02/Mar/2012 hs 10:18
-Last Change: 2012 Mar 02 10:30:07
+Last Change: Wed Jun 03, 2015  10:59AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -20,3 +20,10 @@ No seu vimrc coloque:
 Execute o comando:
 
     PowerlineClearCache<Enter>
+
+    To install the fonts do this:
+
+  git clone git@github.com:powerline/fonts.git
+  cd fonts
+  ./install
+
