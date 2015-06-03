@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sat May 30, 2015  12:37PM
+" Last Change: Wed Jun 03, 2015  08:43AM
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -30,10 +30,10 @@
 " tring to se if it works
 
 filetype off
-" call pathogen#infect()
-" silent! call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+silent! call pathogen#runtime_append_all_bundles()
 " para gerar a documentação de todos os plugins
-" call pathogen#helptags()
+call pathogen#helptags()
 
 " adding my personal snippets to ultisnippets
 set runtimepath+=~/.vim/snippets

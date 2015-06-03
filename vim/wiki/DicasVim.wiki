@@ -1,10 +1,23 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Tue Jun 02, 2015  02:04PM
+Last Change: Wed Jun 03, 2015  08:45AM
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+==gerando os helptag para navegar na ajuda==
+
+http://stackoverflow.com/questions/4180590/vim-helptag-generation
+
+    cd <plugindir>
+    vim -c "helptags doc/"
+
+  se usa o plugin pathogen coloque no .vimrc
+
+    filetype off
+    call pathogen#runtime_append_all_bundles()
+    call pathogen#helptags()
 
 ==configuração do airline==
 Uma barra de status mais bacana para o vim
