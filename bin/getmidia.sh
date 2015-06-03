@@ -35,3 +35,5 @@ for i in $topics; do
 
    cd ..
 done
+
+find -iname "*.txt" | xargs sed -i '1,9d'
