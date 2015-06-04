@@ -111,7 +111,7 @@ ComandoIwconfig - configuração de rede wireless
 ComandoKill - mata processos
 ComandoKillall - mata processos
 ComandoLastlog - mostra o último login
-ComandoLet - atribui valor a uma variável
+[[ComandoLet]] - perform arithmetic operations on shell variables
 ComandoLess - permite paginar uma saida na tela ou paginar arquivos
 ComandoLame - cria e converte mp3
 ComandoLocate - localiza arquivos pelo nome
