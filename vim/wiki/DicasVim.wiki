@@ -163,6 +163,11 @@ set fileencoding=utf-8  " The encoding written to file.
 
 		:3m .
 
+==numbering operators==
+
+   as you know 'u' refers to undo, then you can
+   do this  3u or 3.
+
 ==how install new version of vim from source==
 
 installvim () {
