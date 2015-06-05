@@ -4,12 +4,12 @@
 "
 " Credits: 	   Srinath Avadhanula <srinath@fastmail.fm>
 "			   Justin Randall <Randall311@yahoo.com>
-"			   for the original script and concept, and			
+"			   for the original script and concept, and
 "			   Neeraj Prasad <neeraj@alumnux.com>
 "			   Bikram Chatterjee <bikram@alumnux.com>
 "			   who suggested me not to delete any comment (if exists) after
 "			   the time stamp and inspired me to do further modifications
-"			   			
+"
 " Last Modified: Fri May 04 04:30 PM 2007
 "
 " Description: sets the last modification time of the current file.
@@ -35,7 +35,7 @@
 
 " Initialise the variables: {{{1
 if !exists('g:timeStampLeader')
-	let s:timeStampLeader = 'Last Modified'
+	let s:timeStampLeader = 'Last Change'
 else
 	let s:timeStampLeader = g:timeStampLeader
 endif

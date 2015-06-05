@@ -13,7 +13,7 @@
 "                 ( O O )
 "  +===========oOO==(_)==OOo==============+
 "  |                                      |
-"  |   °v°    Sergio Luiz Araujo Silva    |
+"  |    °v°    Sergio Luiz Araujo Silva   |
 "  |   /(_)\  Linux User #423493          |
 "  |   ^ ^    voyeg3r   gmail.com        |
 "  +======================================+
@@ -37,6 +37,12 @@ set runtimepath+=~/.vim/snippets
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 0
+
+" ctrlp-z allow use fasd with ctrlp
+let g:ctrlp_extensions = ['Z', 'F']
+nnoremap sz :CtrlPZ<Cr>
+nnoremap sf :CtrlPF<Cr>
+
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
