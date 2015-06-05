@@ -1,0 +1,8 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1362
+
+It changes the Last modified date automatically without changing the format of the time you use
+Here i added some extra features ----
+   1> It checks the time format in the file you are working on and the format given in the plugin. If both are same, it changes the time, other wise it shows you a warning.
+   2> It does not change any other thing in the file.
+
+
