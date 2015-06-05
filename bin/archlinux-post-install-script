@@ -176,8 +176,6 @@ installxfceterminal(){
 # better performance
 pm i aur/zramswap
 
-
-
 # media server similar to xbmpc
 pm i plexmediaserver
 #It may be necessary to run through the Plex basic setup wizard before launching Plex via its systemd unit:
@@ -190,7 +188,6 @@ pm i plexmediaserver
 
 # a beautiful player
 pm i aur/spotify
-
 
 # firefox and chrome profile cleaner
 pm i profile-cleaner

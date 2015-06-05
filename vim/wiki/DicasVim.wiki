@@ -980,18 +980,21 @@ quais arquivos serão instalados assim:
  SparkupPlugin
  PydictionPlugin
  ProjectPlugin
- [[PowerLine]]
+ [[PowerLine]] ....... nowadays I am using Airline plugin
+ AirLine...............https://github.com/bling/vim-airline
  VisincrPlugin
- SurroundPlugin
+ SurroundPlugin........https://github.com/tpope/vim-surround
  GundoPlugin
- RepeatPlugin
- PathogenPlugin
+ RepeatPlugin .........https://github.com/tpope/vim-repeat
+ PathogenPlugin........https://github.com/tpope/vim-pathogen
  WordCompletePlugin
  FuzzyFinderPlugin
  NarrowRegionPlugin
  PluginTabular
  SnipMate
  [[Abolish]] ..............https://github.com/tpope/vim-abolish
+ [[vim-system-copy]] ....... https://github.com/christoomey/vim-system-copy
+
 
 =trabalhando com janelas=
 

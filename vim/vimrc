@@ -506,10 +506,10 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+set relativenumber
 set number
-"set relativenumber
-"set undofile
-"set undodir=~/.vim/undo/
+set undofile
+set undodir=~/.vimundo
 au BufWritePre /tmp/* setlocal noundofile
 
 " Persistent undo
