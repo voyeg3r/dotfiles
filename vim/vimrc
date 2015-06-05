@@ -39,6 +39,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 0
 
 " ctrlp-z allow use fasd with ctrlp
+" once opened ctrlp plugin window use ctrl-r to change modes
 let g:ctrlp_extensions = ['Z', 'F']
 nnoremap sz :CtrlPZ<Cr>
 nnoremap sf :CtrlPF<Cr>
