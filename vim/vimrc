@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sat 06 Jun 2015 06:30:31 PM BRT
+" Last Change: Sat 06 Jun 2015 06:49:59 PM BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -9,7 +9,7 @@
 " Licence: Licença: Este arquivo é de domínio público
 " Garantia: O autor não se responsabiliza por eventuais danos
 " causados pelo uso deste arquivo.
-
+"
 "                 ( O O )
 "  +===========oOO==(_)==OOo==============+
 "  |                                      |
@@ -43,7 +43,6 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_extensions = ['Z', 'F']
 nnoremap sz :CtrlPZ<Cr>
 nnoremap sf :CtrlPF<Cr>
-
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
@@ -356,7 +355,15 @@ com! Dos2Unix call Preserve(Dos2unixFunction())
 " remove linhas duplicadas
 " remove duplicated lines
 " see Preserve function definition
-map <special> <leader>d :call Preserve(DelBlank())<cr>
+fun! DelBlank()
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    :g/^\n\{2,}/d
+    let @/=_s
+    call cursor(l, c)
+endfun
+map <special> <leader>d :call DelBlank()<cr>
 
 map <special> <s-F8> :call Preserve(ReinDent())<cr>
 
@@ -406,9 +413,9 @@ function! LastModified()
         call setpos('.', save_cursor)
     endif
 endfun
-"autocmd BufWritePre * call LastModified()
 autocmd BufWritePre * :call Preserve(LastModified())
-map <F9> <esc>:call Preserve(LastModified())<cr>
+map <silent> <F9> <esc>:call Preserve(LastModified())<cr>
+
 
 " map <special> <F4> <esc>:call InsertChangeLog()<cr>
 " mapeamento para inserir códigos especiais em páginas do wikispaces
@@ -417,7 +424,6 @@ nmap <special> <F4> i[[code format=""]]<enter><+comteudo+><enter>[[code]]<esc>kk
 xmap <F4> d<F4><esc>p`[v`]vjdd?^[[code<enter>f"a
 " addon to firefox edit text areas with your favorite editor
 " https://addons.mozilla.org/pt-BR/firefox/addon/its-all-text/
-
 
 " for bash-support
 let g:BASH_AuthorName = 'Sergio Luiz Araujo Silva'
@@ -438,7 +444,7 @@ endfunction
 " The function must be used in a piece of subtitles
 " in order to clean it, join the lines and put the results
 " on clipboard to be pasted on anki
-fun! s:CleanSubtitles()
+fun! CleanSubtitles()
     let old_query = getreg('/')
     :g/^\(\s\+\)\=\d\+$/d
     :g/^\(\s\+\)\=\d\+.*-->\s\d[^,]*,\d\d\d$/d
@@ -447,7 +453,7 @@ fun! s:CleanSubtitles()
     :%+y
     call setreg('/', old_query)
 endfun
-command! -nargs=0 GetSubs call s:CleanSubtitles()
+command! -nargs=0 GetSubs call CleanSubtitles()
 
 function! JumpToNextPlaceholder()
   let old_query = getreg('/')
@@ -531,7 +537,6 @@ try
     set undofile
 catch
 endtry
-
 
 set ignorecase
 set smartcase
