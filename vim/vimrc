@@ -437,6 +437,14 @@ function! LoadFileTemplate()
   hi vimTemplateMarker guifg=#67a42c guibg=#112300 gui=bold
 endfunction
 
+fun! CleanSubtitles()
+    :g/^\(\s\+\)\=\d\+$/d
+    :g/^\(\s\+\)\=\d\+.*-->\s\d[^,]*,\d\d\d$/d
+    :%j
+    :%s,\s\+, ,g
+    :%+y
+endfun
+
 function! JumpToNextPlaceholder()
   let old_query = getreg('/')
   echo search("<+.\\++>")
