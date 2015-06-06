@@ -437,12 +437,17 @@ function! LoadFileTemplate()
   hi vimTemplateMarker guifg=#67a42c guibg=#112300 gui=bold
 endfunction
 
+" The function must be used in a piece of subtitles
+" in order to clean it, join the lines and put the results
+" on clipboard to be pasted on anki
 fun! CleanSubtitles()
+    let old_query = getreg('/')
     :g/^\(\s\+\)\=\d\+$/d
     :g/^\(\s\+\)\=\d\+.*-->\s\d[^,]*,\d\d\d$/d
     :%j
     :%s,\s\+, ,g
     :%+y
+    call setreg('/', old_query)
 endfun
 
 function! JumpToNextPlaceholder()
@@ -564,9 +569,10 @@ set wildignore+=*.sw?               " Vim swap files
 set wildignore+=*.DS_Store?            " OSX bullshit
 
 map <leader>l:set list! list?<cr>
-nno <S-F11> :set hls! hls?<cr>
-imap <S-F11> <ESC>:set hls!<CR>a
-xmap <S-F11> <ESC>:set hls!<CR>gv
+" to reselect use gv in normal mode
+nmap <S-F11> <ESC>:noh<cr>
+imap <S-F11> <C-o>:noh<cr>
+xmap <S-F11> <ESC>:noh<cr>
 
 " map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
 " togle between number nonumber and relativenumber
