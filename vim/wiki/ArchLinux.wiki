@@ -6,6 +6,27 @@ site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
+==acessando ssh==
+https://wiki.archlinux.org/index.php/Secure_Shell#Installing_OpenSSH
+
+
+Configuring SSHD
+
+The SSH daemon configuration file can be found and edited in
+
+    /etc/ssh/sshd_config.
+
+To allow access only for some users add this line:
+
+    AllowUsers    user1 user2
+
+To allow access only for some groups:
+
+    AllowGroups   group1 group2
+
+    # systemctl start sshd.service
+    # systemctl enable sshd.service
+
 ==usando seu pendrive como memória swap==
 
  Formate ele usando o gparted

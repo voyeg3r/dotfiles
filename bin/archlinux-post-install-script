@@ -75,7 +75,7 @@ yaourt -S great-little-radio-player
 
 # mount folder/filesystem through SSH
 # sshfs name@server:/path/to/folder /path/to/mount/point
-sudo pacman -S sshfs
+sudo pacman -S sshfs openssh
 
 # Atualizar o sistema
 sudo pacman -Syu

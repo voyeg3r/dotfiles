@@ -372,7 +372,6 @@ fun! DelBlank()
 endfun
 map <special> <leader>d :keepjumps call DelBlank()<cr>
 
-
 fun! ReinDent()
   let _s=@/
   let l = line(".")
@@ -437,6 +436,7 @@ function! LoadFileTemplate()
   syn match vimTemplateMarker "<+.\++>" containedin=ALL
   hi vimTemplateMarker guifg=#67a42c guibg=#112300 gui=bold
 endfunction
+
 function! JumpToNextPlaceholder()
   let old_query = getreg('/')
   echo search("<+.\\++>")

@@ -6,6 +6,19 @@ autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
+==neovim==
+
+O problema de instalar o neovim no arch são as dependências
+mas é fácil de resolver, basta rodar esta função:
+
+    installneovim (){
+        yaourt -S libtermkey-bzr
+        yaourt -S libvterm-git-neovim
+        yaourt -S unibilium
+        yaourt -S neovim-git
+        yankrt -S lua51-messagepack
+        } && installneovim
+
 ==gerando os helptag para navegar na ajuda==
 
 http://stackoverflow.com/questions/4180590/vim-helptag-generation
