@@ -440,7 +440,7 @@ endfunction
 " The function must be used in a piece of subtitles
 " in order to clean it, join the lines and put the results
 " on clipboard to be pasted on anki
-fun! CleanSubtitles()
+fun! s:CleanSubtitles()
     let old_query = getreg('/')
     :g/^\(\s\+\)\=\d\+$/d
     :g/^\(\s\+\)\=\d\+.*-->\s\d[^,]*,\d\d\d$/d
@@ -449,6 +449,7 @@ fun! CleanSubtitles()
     :%+y
     call setreg('/', old_query)
 endfun
+command! -nargs=0 GetSubs call s:CleanSubtitles()
 
 function! JumpToNextPlaceholder()
   let old_query = getreg('/')
@@ -572,7 +573,7 @@ map <leader>l:set list! list?<cr>
 " to reselect use gv in normal mode
 nmap <S-F11> <ESC>:noh<cr>
 imap <S-F11> <C-o>:noh<cr>
-xmap <S-F11> <ESC>:noh<cr>
+vnoremap <S-F11> <ESC>:noh<cr> <bar> gv
 
 " map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
 " togle between number nonumber and relativenumber
