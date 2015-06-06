@@ -243,7 +243,7 @@ endif
 
 " turn off the toolbar and menubar
 if has('gui_running')
- set anti gfn=Fixed\ 14,Ubuntu\ Mono\ 12,Monaco\ 10,Bpmono\ 11,\ Envy\ Code\ R\ 10
+ set anti gfn=Ubuntu\ Mono\ 13,Monaco\ 10,Bpmono\ 11,\ Envy\ Code\ R\ 10
 end
 
 " correção do plugin surround para a letra 's'
@@ -334,53 +334,31 @@ fun! Keeponlymp3()
  :%s/.*\(http.*.mp3\).*/\1/g
  :g!/\.mp3/d
 endfun
+com! KeepMp3 call Preserve(Keeponlymp3())
 
 fun! Keeponlypdf()
 " this function keeps only pdf urls in current text
  :%s/.*\(http.*.pdf\).*/\1/g
  :g!/\.pdf/d
 endfun
+com! KeepPdf call Preserve(Keeponlymp3())
 
 " Para inserir o simbolo use ^v ^M  ou ^v Enter
 " dos2unix ^M
 fun! Dos2unixFunction()
- let _s=@/
- let l = line(".")
- let c = col(".")
- " Strip trailing ^Ms, quietly.
- %s/\%x0d$//e
- let @/=_s
- call cursor(l, c)
+ :%s/\%x0d$//e
  set ff=unix
  set encoding=utf-8
  set fileencoding=utf-8
 endfun
-com! Dos2Unix keepjumps call Dos2unixFunction()
+com! Dos2Unix call Preserve(Dos2unixFunction())
 
 " remove linhas duplicadas
 " remove duplicated lines
-"nno <leader>d %s/^\(.*\)\(\n\1\)\+$/\1/
-"nno <leader>d :g/^\(.*\)\ze\n\%(.*\n\)*\1$/d<cr>
-"remover linhas em branco consecutivas
-fun! DelBlank()
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  :g/^\n\{2,}/d
-  let @/=_s
-  call cursor(l, c)
-endfun
-map <special> <leader>d :keepjumps call DelBlank()<cr>
+" see Preserve function definition
+map <special> <leader>d :call Preserve(DelBlank())<cr>
 
-fun! ReinDent()
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  normal gg=G
-  let @/=_s
-  call cursor(l, c)
-endfun
-map <special> <s-F8> :keepjumps call ReinDent()<cr>
+map <special> <s-F8> :call Preserve(ReinDent())<cr>
 
 " marca como erro duas palavras identicas duplicadas
 syntax match DoubleWordErr "\c\<\(\a\+\)\_s\+\1\>"
