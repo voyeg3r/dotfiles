@@ -27,9 +27,12 @@ Here is a short overview of the functionality provided by the plugin:
     :NRN	 - Disable Syncing the buffer content back
     :NRL	 - Reselect the last selected region and open it again in a narrowed window
 ####Visual mode commands:
-    \nr		 - Open the current visual selection in a new narrowed window
+    <Leader>nr		 - Open the current visual selection in a new narrowed window
 ####Scripting Functions:
     nrrwrgn#NrrwRgnStatus()   - Return a dict with all the status information for the current window
+
+###Attention###
+   :NRM is currently experimental
 
 ####Similar Work
 Andreas Politz' [narrow_region](http://www.vim.org/scripts/script.php?script_id=2038)<br/>

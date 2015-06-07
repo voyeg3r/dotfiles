@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sat 06 Jun 2015 06:49:59 PM BRT
+" Last Change: Sun 07 Jun 2015 11:06:20 AM BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -26,10 +26,37 @@
 " http://snipt.net/public/tag/vim
 
 filetype off
-call pathogen#infect()
-silent! call pathogen#runtime_append_all_bundles()
-" para gerar a documentação de todos os plugins
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'rking/ag.vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ompugao/ctrlp-z'
+Plugin 'sjl/gundo.vim'
+Plugin 'edsono/vim-matchit'
+Plugin 'scrooloose/nerdtree'
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'rstacruz/sparkup'
+Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-abolish'
+Plugin 'bling/vim-airline'
+Plugin 'eparreno/vim-l9'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-repeat'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
+Plugin 'vimwiki/vimwiki'
+Plugin 'vim-scripts/VisIncr'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " adding my personal snippets to ultisnippets
 set runtimepath+=~/.vim/snippets
@@ -444,7 +471,7 @@ endfunction
 " The function must be used in a piece of subtitles
 " in order to clean it, join the lines and put the results
 " on clipboard to be pasted on anki
-fun! CleanSubtitles()
+fun! s:CleanSubtitles()
     let old_query = getreg('/')
     :g/^\(\s\+\)\=\d\+$/d
     :g/^\(\s\+\)\=\d\+.*-->\s\d[^,]*,\d\d\d$/d
@@ -453,7 +480,7 @@ fun! CleanSubtitles()
     :%+y
     call setreg('/', old_query)
 endfun
-command! -nargs=0 GetSubs call CleanSubtitles()
+command! -nargs=0 GetSubs call s:CleanSubtitles()
 
 function! JumpToNextPlaceholder()
   let old_query = getreg('/')

@@ -3,10 +3,9 @@
 " Version:	   0.33
 " Maintainer:  Christian Brabandt <cb@256bit.org>
 " Last Change: Thu, 15 Jan 2015 20:52:29 +0100
-"
 " Script: http://www.vim.org/scripts/script.php?script_id=3075
-" Copyright:   (c) 2009, 2010 by Christian Brabandt
-"			   The VIM LICENSE applies to histwin.vim
+" Copyright:   (c) 2009-2015 by Christian Brabandt
+"			   The VIM LICENSE applies to NrrwRgn.vim
 "			   (see |copyright|) except use "NrrwRgn.vim"
 "			   instead of "Vim".
 "			   No warranty, express or implied.
@@ -57,11 +56,11 @@ com! -bang NRLast :NRL
 
 " Define the actual Commands "{{{2
 com! -range -bang NR	 :<line1>, <line2>call nrrwrgn#NrrwRgn('',<q-bang>)
-com! -range -bang NRP  :exe ":" . <line1> . ',' . <line2> . 'call nrrwrgn#Prepare(<q-bang>)'
+com! -range -bang NRP    :<line1>, <line2>call nrrwrgn#Prepare(<q-bang>)
 com! -bang -range NRV :call nrrwrgn#NrrwRgn(visualmode(), <q-bang>)
 com! NUD :call nrrwrgn#UnifiedDiff()
 com! -bang NW	 :exe ":" . line('w0') . ',' . line('w$') . "call nrrwrgn#NrrwRgn(0,<q-bang>)"
-com! -bang NRM :call nrrwrgn#NrrwRgnDoPrepare(<q-bang>)
+com! -bang NRM :call nrrwrgn#NrrwRgnDoMulti(<q-bang>)
 com! -bang NRL :call nrrwrgn#LastNrrwRgn(<q-bang>)
 
 " Define the Mapping: "{{{2
