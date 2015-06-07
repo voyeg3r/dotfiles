@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sun 07 Jun 2015 11:42:19 AM BRT
+" Last Change: Sun 07 Jun 2015 06:19:32 PM BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -472,7 +472,7 @@ endfunction
 " The function must be used in a piece of subtitles
 " in order to clean it, join the lines and put the results
 " on clipboard to be pasted on anki
-fun! s:CleanSubtitles()
+fun! CleanSubtitles()
     let old_query = getreg('/')
     :g/^\(\s\+\)\=\d\+$/d
     :g/^\(\s\+\)\=\d\+.*-->\s\d[^,]*,\d\d\d$/d
@@ -481,7 +481,7 @@ fun! s:CleanSubtitles()
     :%+y
     call setreg('/', old_query)
 endfun
-command! -nargs=0 GetSubs call s:CleanSubtitles()
+command! -nargs=0 GetSubs :call CleanSubtitles()
 
 function! JumpToNextPlaceholder()
   let old_query = getreg('/')
@@ -602,8 +602,8 @@ set wildignore+=*.DS_Store?            " OSX bullshit
 
 map <leader>l:set list! list?<cr>
 " to reselect use gv in normal mode
-nmap <S-F11> <ESC>:noh<cr>
-imap <S-F11> <C-o>:noh<cr>
+nnoremap <S-F11> <ESC>:noh<cr>
+inoremap <S-F11> <C-o>:noh<cr>
 vnoremap <S-F11> <ESC>:noh<cr> <bar> gv
 
 " map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
