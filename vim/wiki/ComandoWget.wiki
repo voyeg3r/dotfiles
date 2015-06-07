@@ -39,6 +39,12 @@ wget -m -nd -A.avi -erobots=off -i urls.txt
 
 wget --random-wait -r -p -e robots=off -U mozilla http://www.example.com
 
+    --------------------------------------------------
+    Lembre-se que algumas opções fazem os links locais
+    --------------------------------------------------
+
+    wget -nc -k -r $(echo /moc.hsolevets.yawdrahehttpircsmivnrael//:ptth | rev)
+
 =Baixando e descompactando sem deixar o tarball no disco=
 
 wget -qO - http://example.com/path/to/blah.tar.gz | tar xzf -
