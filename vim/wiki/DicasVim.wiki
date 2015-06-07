@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Sun 07 Jun 2015 11:11:46 AM BRT
+Last Change: Sun 07 Jun 2015 11:16:40 AM BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -995,6 +995,8 @@ First try install vundle
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
     :PluginInstall(!) - install (update) plugins
+    :PluginUpdate
+    :PluginSearch! plugin_query
 
 Plugin 'rking/ag.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
