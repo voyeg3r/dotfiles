@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sun 07 Jun 2015 11:30:59 AM BRT
+" Last Change: Sun 07 Jun 2015 11:42:19 AM BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -775,7 +775,7 @@ au!
  "au BufNewFile *.html,*.shtml,*.htm /body/+
  au BufNewFile,BufRead *.html,*.shtml,*.htm set noautoindent
  au BufNewFile,BufRead *.html,*.shtml,*.htm set nolist
- au BufNewFile,BufRead *.html,*.shtml,*.htm call LastChange()
+ au BufNewFile,BufRead *.html,*.shtml,*.htm call LastModified()
  " needed one line with 'Created:' in firsts 5 lines
  au Bufnewfile,BufRead *.html,*.shtml,*.htm 1,5s/\s*Created:\s*\zs.*/\="" . strftime("%Y %b %d %X")/ge
 augroup end
