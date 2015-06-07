@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sun 07 Jun 2015 06:19:32 PM BRT
+" Last Change: Sun 07 Jun 2015 08:27:14 PM BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -281,8 +281,8 @@ xmap <Leader>s <Plug>Vsurround
 " o mapeamento abaixo permite reselecionar texto recem colado ou selecionado
 nmap gV `[v`]
 
-nmap <special><F9> <esc>:w<cr>
-imap <special><F9> <C-O><C-S>
+nmap <special> <F9> <esc>:w<cr>
+inoremap <special> <F9> <C-O>:w<cr>
 
 " Fechamento automático de parênteses
 "imap { {}<left>
@@ -688,6 +688,13 @@ if !has('gui_running')
 endif
 
 "map <special> <S-F6> :ec g:colors_name<cr>
+
+" statusline configuration
+set statusline=%f
+set statusline+=%=
+set statusline+=%l
+set statusline+=/
+set statusline+=%L
 
 " statusline
 " cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P

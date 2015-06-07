@@ -1,12 +1,30 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Sun 07 Jun 2015 03:21:13 PM BRT
+Last Change: Sun 07 Jun 2015 08:18:33 PM BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 ==Writing vim functions==
+
+:onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
+
+  the above map can change sections like this:
+
+  Topic One
+  =========
+  This is some text about topic one.
+  It has multiple paragraphs.
+  Topic Two
+  =========
+
+  :onoremap ah :<c-u>execute "normal! ?^==\\+\r:nohlsearch\rg_vk0"<cr>
+
+  Try it by putting your cursor in a section’s text and typing cah .
+  This time Vim will delete not only the heading’s text but also the
+  line of equal signs that denotes a heading. You can think of this
+  movement as “around this section’s heading”.
 
 ==neovim==
 
