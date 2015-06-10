@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sun 07 Jun 2015 08:27:14 PM BRT
+" Last Change: Wed 10 Jun 2015 08:40:00 AM BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -580,6 +580,7 @@ set nolist       " list disables linebreak
 set autoread      " recarrega arquivos alterados fora do vim
 set textwidth=70
 set formatoptions+=l
+set formatoptions+=t
 "set formatprg=par\ -w70j
 "set colorcolumn=85
 set listchars=tab:▸\ ,eol:¬
@@ -600,7 +601,7 @@ set wildignore+=*.spl               " compiled spelling word lists
 set wildignore+=*.sw?               " Vim swap files
 set wildignore+=*.DS_Store?            " OSX bullshit
 
-map <leader>l:set list! list?<cr>
+map <leader>l :set list! list?<cr>
 " to reselect use gv in normal mode
 nnoremap <S-F11> <ESC>:noh<cr>
 inoremap <S-F11> <C-o>:noh<cr>
@@ -696,39 +697,16 @@ set statusline+=%l
 set statusline+=/
 set statusline+=%L
 
-" statusline
-" cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-" format markers:
-"  %< truncation point
-"  %n buffer number
-"  %f relative path to file
-"  %m modified flag [+] (modified), [-] (unmodifiable) or nothing
-"  %r readonly flag [RO]
-"  %y filetype [ruby]
-"  %= split point for left and right justification
-"  %-35. width specification
-"  %l current line number
-"  %L number of lines in buffer
-"  %c current column number
-"  %V current virtual column number (-n), if different from %c
-"  %P percentage through buffer
-"  %) end of width specification
-" mostra o código ascii do caractere sob o cursor e outras coisas mais
-"set statusline=%F%m%r%h%w\
-"   \ ft:%{&ft}\ \
-"   \ff:%{&ff}\ \
-"   \%{strftime(\"%a\ %d/%m/%Y\ \
-"   \%H:%M:%S\",getftime(expand(\"%:p\")))}%=\ \
-"   \buf:%n\ \
-"   \L:%04l\ C:%04v\ \
-"   \T:%04L\ HEX:%03.3B\ ASCII:%03.3b\ %P
-"set laststatus=2 " Sempre exibe a barra de status
-
 nmap n nzz
 nmap * *zz
 nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
+
+" efetuar cálculos com o registro de expressões
+" you can make a visual selection and then
+" :'<,'>normal Q
+" nnoremap Q 0yt=A<C-r>=<C-r>"<CR><Esc>
 
 " autocomandos para python
 augroup python

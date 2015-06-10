@@ -1,12 +1,61 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Sun 07 Jun 2015 08:18:33 PM BRT
+Last Change: Wed 10 Jun 2015 07:03:51 AM BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
+==how repeat last command in vim==
+
+   @:
+
+   Which means "@" register, : command
+
+   @@  --> repeat last register easily
+
+==jumping to edit positions and insert position==
+
+   gi ................. start insert mode at the latest inert position
+   g; ................. go to the position of the older edit positon
+   g, ................. go to the previous change position
+
+   Ctrl-o ............. jumplist go previous
+   Ctrl-i ............. go forward in the jumplist
+
+
+= Registros =
+
+   Registro de expressões
+
+    A<c-r>=         "inserts result at the cursor point
+
+    21 * 12  =
+    12 * 12  =
+    156 / 12 =
+    35 * 19  =
+
+    nnoremap <leader>q 0yt=A<C-r>=<C-r>"<CR><Esc>
+
+    Para o trecho acima usamos
+
+       yt=  .......... copia até o igual mas não incluido
+       A ............. entra em modo insert no final da linha
+       <c-r> ......... inicia o registro de expressões
+       <c-r>"......... cola o texto copiado dentro do registro
+
+   :put =sqrt(81)   "inserts result in a new line
+
+   :h function-list
+
+   :put =system('ruby fake-creds.rb')
+   :read! ruby fake-credentials.rb
+   :h :r!
+
+
 ==Writing vim functions==
+
+   :put =system('echo $RANDOM')
 
 :onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
 

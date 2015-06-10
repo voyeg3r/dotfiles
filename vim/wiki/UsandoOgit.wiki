@@ -8,6 +8,14 @@ http://stackoverflow.com/questions/3489173/how-to-clone-git-repository-with-spec
    git clone $URL
    git reset --hard $SHA1
 
+   to revert a change in a single file do this:
+
+    git co filename
+
+    No vim faça:
+
+    :Git checkout %
+
 ---------------------------------
 Para clonar este repositorio faça
 ---------------------------------
@@ -68,7 +76,8 @@ Como adicionar sua chave ssh ao github
 	git push -u origin master
 
 = Git - easy way pull latest of all submodules=
-git submodule foreach git pull
+
+    git submodule foreach git pull
 
 = how checkout from a particular revison point =
 
@@ -77,3 +86,4 @@ git submodule foreach git pull
 		git clone [remote_address_here] my_repo
 		cd my_repo
 		git reset --hard [ENTER HERE THE COMMIT HASH YOU WANT]
+
