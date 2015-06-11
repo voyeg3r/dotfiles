@@ -1,10 +1,51 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Wed 10 Jun 2015 07:03:51 AM BRT
+Last Change: Wed 10 Jun 2015 07:55:11 PM BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+  Search vimgolf chalenges to vim users
+
+==appending registers with global command==
+
+   :g/TODO/yank A
+
+==insert mode tricks==
+
+    Para colocar o texto abaixo entre parênteses
+
+            one two
+            three
+
+            (one) (two)
+            (three)
+
+       temos que usar
+
+            <c-r><c-o>"
+
+==command line tricks==
+
+   :9 copy 13
+
+      copia a linha 9 para a linha 13
+
+    :9t16
+
+    does the same faster
+
+    :[range]copy {address}
+    :9t.
+
+    Usando relative numbers
+
+    :-7t.
+
+==formating text on vim==
+
+   gwip .... formats paragraph and restores cursor position
 
 ==how repeat last command in vim==
 
@@ -691,8 +732,9 @@ command! -nargs=0 -range=% Number <line1>,<line2>s/^\zs/\=(line('.') - <line1>+1
 " se setar-mos como abaixo mostra os subníveis dos folders
 set foldcolumn=3
 
-zO ................ open all folders
-zM ................ close all folders
+zi .............  opens and closes all folders
+zO ................  open all folders
+zM ................  close all folders
 
 
 =artigos e links legais sobre o vim=

@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Wed 10 Jun 2015 08:40:00 AM BRT
+" Last Change: Wed 10 Jun 2015 08:11:44 PM BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -176,6 +176,16 @@ let g:agprg="<custom-ag-path-goes-here> --column"
 "Enables very magic mode by default
 nnoremap / /\v
 cnoremap %s/ %s/\v
+
+" mappgings for indenting and keep visual selection
+nmap <leader>u <<
+nmap <leader>i >>
+vmap <leader>u <gv
+vmap <leader>i >gv
+
+" countable changes
+" nnoremap Q @='n.'<CR>
+nnoremap Q :normal n.<CR>
 
 "http://vimcasts.org/episodes/creating-mappings-that-accept-a-count/
 nnoremap Q :normal n.
@@ -578,7 +588,9 @@ set wrap
 set linebreak
 set nolist       " list disables linebreak
 set autoread      " recarrega arquivos alterados fora do vim
-set textwidth=70
+
+set textwidth=66
+"set formatoptions+=a
 set formatoptions+=l
 set formatoptions+=t
 "set formatprg=par\ -w70j
@@ -601,7 +613,7 @@ set wildignore+=*.spl               " compiled spelling word lists
 set wildignore+=*.sw?               " Vim swap files
 set wildignore+=*.DS_Store?            " OSX bullshit
 
-map <leader>l :set list! list?<cr>
+map <leader>l :set list! <cr>
 " to reselect use gv in normal mode
 nnoremap <S-F11> <ESC>:noh<cr>
 inoremap <S-F11> <C-o>:noh<cr>

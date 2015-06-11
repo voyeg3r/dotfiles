@@ -16,6 +16,10 @@ http://stackoverflow.com/questions/3489173/how-to-clone-git-repository-with-spec
 
     :Git checkout %
 
+==add current file to git==
+
+ :Git add %
+
 ---------------------------------
 Para clonar este repositorio faça
 ---------------------------------
