@@ -38,12 +38,14 @@
 # stopping bluetooth service
 sudo systemctl stop bluetooth
 
+yaourt gnome-session-properties
+
 # hostsblock
 # A script and cronjob that downloads, sorts, and installs multiple ad- and # malware-blocking hosts files
 # https://aur.archlinux.org/packages/ho/hostsblock/hostsblock.tar.gz
 
 # python package installer
-sudo pacman python-pip
+sudo pacman -S python-pip
 
 # source: https://www.youtube.com/watch?v=l1lDiCzkjlk
 sudo pacman -S community/aircrack-ng
