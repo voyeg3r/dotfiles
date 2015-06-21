@@ -1,6 +1,6 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Fri May 01, 2015  03:10PM
+Last Change: Sun 21 Jun 2015 08:20:50 AM BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -26,6 +26,17 @@ To allow access only for some groups:
 
     # systemctl start sshd.service
     # systemctl enable sshd.service
+
+
+== configurando o touchpad para colar com toque de dois dedos==
+
+# source:
+# https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Buttonless_TouchPads_.28aka_ClickPads.29
+
+/etc/X11/xorg.conf.d/50-synaptics.conf
+
+sudo cp /usr/share/X11/xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d/
+
 
 ==usando seu pendrive como memória swap==
 
