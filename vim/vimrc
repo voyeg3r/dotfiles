@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sun 14 Jun 2015 08:15:50 PM BRT
+" Last Change: Tue 16 Jun 2015 05:10:55 PM BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -35,6 +35,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+
 
 Plugin 'ervandew/supertab'
 Plugin 'rking/ag.vim'
