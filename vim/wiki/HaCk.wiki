@@ -2,6 +2,18 @@ in order to remember that key read this
 this is related with your mail account
 my: brand new password and birth year
 
+==como cancelar mensagens das operadoras de celular ==
+
+Passo 1. Abra o aplicativo de mensagens do seu celular e envie a palavra “sair” para sua operadora:
+
+    TIM: 4112
+
+    Claro: 888
+
+    Oi: 55555
+
+    Vivo: 457
+
 british 11098
 
 skype user: sergioaraujosilva
@@ -12,7 +24,7 @@ passwd: sameofmylinuxmachine
 
 5ig3 35C011* user: 03141991367 pass: 121285
 
-mypasswdbb 801189 Bu R Na
+mypasswdbb 801189 BuRNa
 
 airos ip: http://198.168.167.100/
 passwrd airos -->

@@ -36,6 +36,8 @@ dica do Mitre: http://jfmitre.com/2006/05/convertendo-arquivos-utf-8-em-iso-8859
 alias iso2utf='iconv -f iso-8859-1 -t utf-8'
 alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 
+iconv -f UTF-8 -t ISO-8859-15 in.txt > out.txt
+
 
 ==script para converter todos os arquivos de uma pasta==
 

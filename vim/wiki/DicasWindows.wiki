@@ -1,10 +1,18 @@
 Arquivo: dicas windows
 Criado: Ter 11/Dez/2012 hs 15:31
-Last Change: Mon May 18, 2015  10:39AM
+Last Change: Wed 24 Jun 2015 05:35:34 PM BRT
 autor: sergio
 site: vivaotux
 twitter: voyeg3r
 email: voyeg3r at gmail.com
+
+== adding a new dir to windows path ==
+
+  first to see the path
+
+    echo %path%
+
+    setx /M PATH "%PATH%;C:\Program Files\MySQL\MySQL Server 5.5\bin"
 
 = todos os atalhos de configuração em uma única pasta =
 
