@@ -48,6 +48,8 @@ iso8859-1 e no ubuntu utf8 posso usar um parâmetro como abaixo:
 
 rsync --iconv=utf8,iso88591 /origem /destino
 
+rsync -va --iconv=utf8,iso88591 /source/latin1/ /destination/utf8
+
 =Copie pastas mantendo sua extrutura=
 
 

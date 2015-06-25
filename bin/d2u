@@ -19,7 +19,7 @@ cat "$1" > "$outfile"
 
 codification="`file -bi "$1" | awk -F"=" '{print $NF}'`"
 
-[[ "$codification" != "utf-8" ]]  && iconv -f ISO8859-9 -t UTF-8 "$1" > $outfile
+[[ "$codification" != "utf-8" ]]  && iconv -f ISO8859-1 -t UTF-8 "$1" > $outfile
 
 sed -i 's/\x0D$//' $outfile
 
