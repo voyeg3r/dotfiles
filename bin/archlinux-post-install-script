@@ -127,13 +127,13 @@ pm i extra/streamripper
 pm i aur/lollypop
 
 # change wallpaper
-pm i community/variety
+sudo pacman -S community/variety
 
 # troubleshooting tool for sysadmins
 pm i aur/sysdig
 
 # remote admin your machine
-pm i openssh
+sudo pacman -S openssh rsync nmap
 
 # silver searcher ag
 sudo pacman -S the_silver_searcher
