@@ -1,9 +1,13 @@
 Arquivo: dicas do ubuntu
 Criado: Seg 10/Jan/2011 hs 16:41
-Last Change: 2013 Jul 16 19:40:53
+Last Change: Mon 29 Jun 2015 09:14:25 AM BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+==setting abnt2 keyboard==
+
+    setxkbmap -model abnt2 -layout br
 
 = comando para definir o brilho de forma emergencial =
 
