@@ -192,6 +192,7 @@ bindkey "^[s" insert-sudo
 bindkey ' ' magic-space
 
 # some radios using mplayer
+alias bbc="mplayer -playlist http://peace.str3am.com:6810/live-96k.mp3.m3u"
 alias wnyc="mplayer -playlist http://www.wnyc.org/stream/wnyc-fm939/mp3.pls"
 alias wfiu="mplayer -playlist http://hannibal.ucs.indiana.edu:8000/wfiu_hi.m3u"
 alias news="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
