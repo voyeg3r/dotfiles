@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Tue 16 Jun 2015 05:10:55 PM BRT
+" Last Change: Wed 01 Jul 2015 02:03:01 PM BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -37,6 +37,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 Plugin 'gmarik/Vundle.vim'
 
 
+Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'ervandew/supertab'
 Plugin 'rking/ag.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
