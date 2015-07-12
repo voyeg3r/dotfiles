@@ -6,45 +6,45 @@ começando pelo [[VlC]]
 ComandoAck - Fitra textos como o grep
 ComandoAddgroup - adiciona grupos de usuários
 ComandoAdduser - adiciona usuários ao sistema
-[[ComandoAg]] - parecido com o grep só que mai rápido
-[[ComandoAircrack-NG]] - ferramenta hacker para redes wi-fi
+[[Comando|Ag]] - parecido com o grep só que mai rápido
+[[Comando|Aircrack-NG]] - ferramenta hacker para redes wi-fi
 ComandoAlias - cria um atalho para um comando
 ComandoAlsaconf - configura o som através do sistema alsa
 ComandoApropos - busca manuais
-[[ComandoApt]] - instala programas
+[[Comando|Apt]] - instala programas
 ComandoAria2c - programa acelerador de downloads
-[[ComandoArpscan]] - diagnóstico de rede
+[[Comando|Arpscan]] - diagnóstico de rede
 ComandoArp-scan - diganóstico de rede (como root)
 ComandoA2ps - gera arquivos ps de uma entrada
-[[ComandoAptitude]] - gerenciador de pacotes
-[[ComandoAt]] - agenda comandos
-[[ComandoAwk]] - manipula textos
+[[Comando|Aptitude]] - gerenciador de pacotes
+[[Comando|At]] - agenda comandos
+[[Comando|Awk]] - manipula textos
 ComandoAxel - acelerador de downloads
 ComandoBasename - retorna o nome do arquivo sem o caminho
 ComandoBadblocks - Comando para recuperação de hds
 ComandoBc - calculadora de linha de comando
 ComandoBeep - emite um som no terminal
-[[ComandoBlkid]] - exibe o 'uuid' volume id das partições
-[[ComandoCadaver]] - permite fazer downloads e uploads via webdav
+[[Comando|Blkid]] - exibe o 'uuid' volume id das partições
+[[Comando|Cadaver]] - permite fazer downloads e uploads via webdav
 ComandoCase - extrutura para escolhas múltiplas
 ComandoCat - mostra na tela arquivos
 ComandoCancel - cancela trabalhos de impressão
 ComandoCd - entra em diretórios
-[[ComandoCdrecord]] - grava cds e dvds em modo texto
+[[Comando|Cdrecord]] - grava cds e dvds em modo texto
 ComandoCdparanoia - extrai faixas de cd
 ComandoCfdisk - particionador de discos
 ComandoChkconfig - gerenciar serviços no linux
 ComandoChattr - modifica atributos
-[[ComandoChmod]] - modifica permissões de arquivos
+[[Comando|Chmod]] - modifica permissões de arquivos
 ComandoChown - modifica o dono de arquivos e pastas
 ComandoChpasswd - permite modificar senhas através de scripts
 ComandoChroot - cria uma árvore falsa de arquivos
 ComandoChgrp - altera o grupo
 ComandoClear - limpa a tela
-[[ComandoComm]] - compara arquivos
+[[Comando|Comm]] - compara arquivos
 ComandoColumn - formata saida em colunas
-[[ComandoCron]] - "crontab -e" edita a tabela de agendamento de tarefas
-[[ComandoConvert]] - recodifica caracteres
+[[Comando|Cron]] - "crontab -e" edita a tabela de agendamento de tarefas
+[[Comando|Convert]] - recodifica caracteres
 ComandoConvmv - converte nomes de arquivos para outra codificação
 ComandoCp - copia arquivos e pastas
 ComandoCpuinfo - retorna informações da cpu
@@ -52,21 +52,21 @@ ComandoCron - agenda comandos para datas específicas
 ComandoCsplit - divide um arquivo em seções determinadas pelo contexto
 ComandoCurl - transferencia de arquivos via rede
 ComandoCut - manipula campos de uma saída
-[[ComandoDate]] - exibe e modifica a data do sistema
-[[ComandoDd]] - faz cópias perfeitas e muito mais
-[[ComandoDetox]] - Limpa os nomes de arquivos
+[[Comando|Date]] - exibe e modifica a data do sistema
+[[Comando|Dd]] - faz cópias perfeitas e muito mais
+[[Comando|Detox]] - Limpa os nomes de arquivos
 ComandoDf - mostra o espaço livre no disco
 ComandoDhclient - configura a rede com ip dinâmico DHCP
-[[ComandoDiff]] - compara exibindo em destaque as diferenças
+[[Comando|Diff]] - compara exibindo em destaque as diferenças
 ComandoDig - obtem informações do dns
 ComandoDnsmasq - cache de dns para sua estação de trabalho
 ComandoDosfsck - verifica integridade de sistemas de arquivos vfat
 ComandoDpkg - instala pacotes sem rede (gera dependências
 ComandoDu - mostra o espaço usado no disco
 ComandoDmesg - log da inicialização do kernel
-[[ComandoDmidecode]] - mostra informações sobre o hardware
+[[Comando|Dmidecode]] - mostra informações sobre o hardware
 ComandoEcho - mostra uma string na tela
-[[ComandoEgrep]] - grep extendido suporta expressões regulares modernas
+[[Comando|Egrep]] - grep extendido suporta expressões regulares modernas
 ComandoEject - ejeta cds
 ComandoEnv - mostra as variáveis de ambiente
 ComandoEmacs - editor super completo e complexo - se iniciante não se aventure
@@ -76,51 +76,51 @@ ComandoEttercap - sniffer de rede
 ComandoExpr - manipula expressões
 ComandoFc - edita o último comando
 ComandoFdisk - particionador de discos
-[[ComandoFfmpeg]] - conversor de formatos de midia
+[[Comando|Ffmpeg]] - conversor de formatos de midia
 ComandoFfmpeg2theora - converte videos para o formato ogv
 ComandoFor - repete comandos determinados
 ComandoFile - exibe o tipo do arquivo passado
-[[ComandoFind]] - busca arquivos e pastas
+[[Comando|Find]] - busca arquivos e pastas
 ComandoFree - informa sobre o uso da memória
 ComandoFuser - identifica qual processo está usando um recurso
 ComandoGpasswd - adiciona usuário a grupos
 ComandoGparted - particionador de discos
-[[ComandoGrep]] - filtra textos
+[[Comando|Grep]] - filtra textos
 ComandoGrin - filtra textos (baseado em python)
-[[ComandoGetconf]] - exibi informações do sistema
+[[Comando|Getconf]] - exibi informações do sistema
 ComandoHalt - desliga o sistama
 ComandoHostname - mostra o nome do computador
 ComandoHead - mostra as primeiras linhas de um arquivo
-[[ComandoHistory]] - Exibe o histórico de comandos
+[[Comando|History]] - Exibe o histórico de comandos
 ComandoHtml2text - convert html para texto
 ComandoHwclock - ajusta o relógio da placa mãe do computador
-[[ComandoIconv]] - recodifica arquivos
-[[ComandoId]] - mostra a identidade numérica do usuário
+[[Comando|Iconv]] - recodifica arquivos
+[[Comando|Id]] - mostra a identidade numérica do usuário
 ComandoIf - "se" - faz testes (use em scripts)
-[[ComandoIfs]] - internal field separator
-[[ComandoIfconfig]] - mostra e configura endereço de rede
+[[Comando|Ifs]] - internal field separator
+[[Comando|Ifconfig]] - mostra e configura endereço de rede
 ComandoIftop - mostra o uso da rede por aplicações
-[[ComandoImagemagick]] - manipula imagens pela linha de comando
+[[Comando|Imagemagick]] - manipula imagens pela linha de comando
 ComandoImport - captura imgens da tela
 ComandoInstall - copia arquivos e configura atributos
 ComandoIp - exibe e manipula rotas
 ComandoIptraf - monitoramento de rede
 ComandoIptstate - analizador de tráfego de rede
 ComandoIwconfig - configuração de rede wireless
-[[ComandoIwlist]] - listar as redes wireless disponíveis
+[[Comando|Iwlist]] - listar as redes wireless disponíveis
 ComandoKill - mata processos
 ComandoKillall - mata processos
 ComandoLastlog - mostra o último login
-[[ComandoLet]] - perform arithmetic operations on shell variables
+[[Comando|Let]] - perform arithmetic operations on shell variables
 ComandoLess - permite paginar uma saida na tela ou paginar arquivos
 ComandoLame - cria e converte mp3
 ComandoLocate - localiza arquivos pelo nome
-[[ComandoLp]] - para imprimir
+[[Comando|Lp]] - para imprimir
 ComandoLn - cria links
-[[ComandoLs]] - lista o conteúdo de diretórios
+[[Comando|Ls]] - lista o conteúdo de diretórios
 ComandoLscpu - CPU architecture details
 ComandoLsb_release - exibe a versão do sistema
-[[ComandoLsblk]] - exibe a identificação única dos dispositivos
+[[Comando|Lsblk]] - exibe a identificação única dos dispositivos
 ComandoLsmod - lista os módulos carregados do kernel
 ComandoLshw - mostra informações sobre o hardware
 ComandoLsof - mostra arquivos abertos no sistema
@@ -129,19 +129,19 @@ ComandoLynx - navegador web via linha de comandos
 ComandoMan - exibe o manula de um comando
 ComandoMc - gerenciador de arquivos por linha de comando
 ComandoMcedit - um editor de linha de comando fácil de usar
-[[ComandoMd5sum]] - checa a integridade de arquivos
+[[Comando|Md5sum]] - checa a integridade de arquivos
 ComandoMencoder - conversor de formatos de video
 ComandoMondo - ferramenta de backup do sistema
-[[ComandoMount]] - monta discos permitindo o acesso aos mesmos
+[[Comando|Mount]] - monta discos permitindo o acesso aos mesmos
 ComandoUmount - desmonta dispositivos
 ComandoMkdir - cria pastas
 ComandoMkdosfs - cria sistema de arquivos fat
-[[ComandoMktemp]] - cria arquivos temporários seguros
+[[Comando|Mktemp]] - cria arquivos temporários seguros
 ComandoMakepasswd - cria senhas seguras
 ComandoMkfs - cria sistema de aruqivos - formata pendrives
 ComandoMv - move ou renomeia arquivos e pastas
 ComandoMkisofs - cria imagens iso (inclusive de pastas
-[[ComandoMplayer]] - assistir dvds e extrair audio
+[[Comando|Mplayer]] - assistir dvds e extrair audio
 ComandoNano - editor de textos de linha de comando bem fácil de usar
 ComandoNbtscan - exibe informações netbios
 ComandoNewusers - cria usuários à partir de uma lista
@@ -150,24 +150,24 @@ ComandoNetstat - mostra informações da rede
 ComandoNgrep - um [[grep que filtra dados na rede
 ComandoNl - mostra um arquivo na tela numerado
 ComandoNmblookup - procura no windows netbios o nome associado a um ip
-[[ComandoNmap]] - ferramenta superpoderosa para redes
-[[ComandoNproc]] - mostra a quantidade de núcleos do seu processador
+[[Comando|Nmap]] - ferramenta superpoderosa para redes
+[[Comando|Nproc]] - mostra a quantidade de núcleos do seu processador
 ComandoNslookup - usado para obter informações de um servidor dns
 ComandoNtpdate - atualiza o relógio via rede
 ComandoOggenc - converter audio para ogg
-[[ComandoPacman]] - instalador de pacotes do archlinux
-[[ComandoPandoc]] - convert multiple file formats
-[[ComandoPdfimages]] - extrac images from pdf files
-[[ComandoPdftk]] - manipula pdfs de várias formas
+[[Comando|Pacman]] - instalador de pacotes do archlinux
+[[Comando|Pandoc]] - convert multiple file formats
+[[Comando|Pdfimages]] - extrac images from pdf files
+[[Comando|Pdftk]] - manipula pdfs de várias formas
 ComandoPasswd - modifica a senha
 ComandoPaste - descricao
 ComandoPerl - linguagem de programação interpretada
 ComandoPidof - mostra o pid de um processo
-[[ComandoPing]] - testa se um host está ativo
+[[Comando|Ping]] - testa se um host está ativo
 ComandoPkill - mata processos pelo nome
 ComandoPppoeconf - configura uma conexão adsl
-[[ComandoPrintf]] - usado para imprimir valores na tela
-[[ComandoPs]] - mostra números dos processos
+[[Comando|Printf]] - usado para imprimir valores na tela
+[[Comando|Ps]] - mostra números dos processos
 ComandoPwd - mostra o diretório atual
 ComandoPwgen - gerador de senhas
 ComandoPump - atribui endereço ip via [[dhcp
@@ -179,23 +179,23 @@ ComandoRedirecionamentos - descricao
 ComandoRcp - cópia remota
 ComandoRecordmydesktop - grava videos com som (do desktop)
 ComandoRecode - recodifica arquivos
-[[ComandoRename]] - renomeia arquivos
-[[ComandoRm]] - remove arquivos e pastas
+[[Comando|Rename]] - renomeia arquivos
+[[Comando|Rm]] - remove arquivos e pastas
 ComandoRmmod - descarrega ou desinstala módulos do kernel
 ComandoRoute - controle de rotas
 ComandoRsh - executa comandos remotos - remote shell
-[[ComandoRsync]] - sincroniza dados entre hosts
+[[Comando|Rsync]] - sincroniza dados entre hosts
 ComandoScreen - abre multiplos terminais em um só
-[[ComandoSed]] - editor de streams
-[[ComandoSeq]] - gera uma sequencia na tela
+[[Comando|Sed]] - editor de streams
+[[Comando|Seq]] - gera uma sequencia na tela
 ComandoSetxkbmap - configura o teclado nos sistemas modernos com novo xorg
 ComandoScp - permite cópias entre dois hosts
 ComandoSftp - Permite cópias mais seguras que o [[scp
 ComandoShred - apaga um arquivo tornando o mesmo irrecuperável
-[[ComandoSitecopy]] - managing a WWW site via FTP, DAV or HTTP
+[[Comando|Sitecopy]] - managing a WWW site via FTP, DAV or HTTP
 ComandoSleep - aguarda um tempo até a continuação de um comando
 ComandoShutdown - desliga ou renicia o comaputador
-[[ComandoShuf]] - gera permutações randômicas
+[[Comando|Shuf]] - gera permutações randômicas
 ComandoSmbclient - permite acesso à máquinas windows
 ComandoSmbmount - monta compartilhamentos windows
 ComandoSort - ordena linhas de um arquivo
@@ -205,23 +205,23 @@ ComandoSplit - divide um arquivo em pedaços
 ComandoSponge - permite redirecionar um arquivo manipulado via pipe para dentro do mesmo
 ComandoStat - mostra informações detalhadas sobre arquivos e diretórios
 ComandoStartx - inicia modo gráfico
-[[ComandoSsh]] - permite acesso remoto de forma segura
+[[Comando|Ssh]] - permite acesso remoto de forma segura
 ComandoSvn - sistema de controle de versões
-[[ComandoSwapon]] - habilita memória swap
-ComandoSync - sincroniza dados entre memória e discos
+[[Comando|Swapon]] - habilita memória swap
+[[Comando|Sync]] - sincroniza dados entre memória e discos
 ComandoTail - exibe as ultimas linhas de um arquivo
-[[ComandoTar]] - empacota arquivos compactados
+[[Comando|Tar]] - empacota arquivos compactados
 ComandoTcpdump - captura pacotes - sniffer
 ComandoTcpflow - captura fluxo tcp
 ComandoTime - testa o tempo de execução de um comando
-[[ComandoTidy]] - indenta códigos fonte
+[[Comando|Tidy]] - indenta códigos fonte
 ComandoTimidity - programa para tocar musicas midi - linha de comando
 ComandoTrickle - limita banda de conexão
 ComandoTree - exibe a listagem do diretório como uma arvore
 ComandoTouch - exibe a hora de criação de arquivos
 ComandoTee - descricao
 ComandoTr - faz substituição de caracteres
-[[ComandoTrap]] - captura sinais (veja exemplo)
+[[Comando|Trap]] - captura sinais (veja exemplo)
 ComandoTty - exibe o nome do terminal atual
 ComandoType - exibe onde está um comando
 ComandoTzselect - seleciona o timezone (país)
@@ -235,7 +235,7 @@ ComandoVol_id - fornece string de identificação de dispositivos (hd)
 ComandoWatch - executa um comando periodicamente exibindo a saida
 ComandoWhatis - exibe a descrição sobre um comando dado
 ComandoWc - conta linhas de um arquivo
-[[ComandoWget]] - baixa arquivos e sites em modo texto
+[[Comando|Wget]] - baixa arquivos e sites em modo texto
 ComandoWhich - O comando which é usado para localizar comandos
 ComandoWhereis - indica o local de um comando
 ComandoWho - informa quem está logado no computador
@@ -254,5 +254,5 @@ ComandoXrandr  - mostra e configura resolução de tela
 ComandoXsel - manipula o clipboard
 ComandoZip - compacta arquivos
 ComandoZsync - implementação para http do protocolo rsync
-[[ComandoYoutubedl]] - baixa vídeos do youtube
+[[Comando|Youtubedl]] - baixa vídeos do youtube
 ComandoUnzip - descompacta arquivos zip
