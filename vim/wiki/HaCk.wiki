@@ -16,15 +16,18 @@ Passo 1. Abra o aplicativo de mensagens do seu celular e envie a palavra “sair
 
 british 11098
 
+    Tour&Pesca desktop:
+
+        echo ielnez | rev
+
 skype user: sergioaraujosilva
 passwd: sameofmylinuxmachine
 
 new google account: sergioluizaraujosilva
 passwd: sameofmylinuxmachine
 
-5ig3 35C011* user: 03141991367 pass: 121285
 
-mypasswdbb 801189 BuRNa
+mypasswdpp 801189 BuRNa
 
 airos ip: http://198.168.167.100/
 passwrd airos -->
