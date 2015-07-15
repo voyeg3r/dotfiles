@@ -263,6 +263,9 @@ configzsh () {
 		sudo chsh -s $(which zsh) $(whoami)
 } && configzsh
 
+# aditional zsh completion
+yaourt zsh-completions-git
+
 # execute the following script on bash
 configyaourt(){
 		cat <<-EOF > ~/.yaourtrc
