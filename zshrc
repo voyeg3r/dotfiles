@@ -49,6 +49,11 @@ setopt PROMPT_BANG # enables '!' substituition on prompt
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract)
 
+# testing completions
+# https://github.com/zsh-users/zsh-completions
+plugins+=(zsh-completions)
+autoload -U compinit && compinit
+
 # User configuration
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
