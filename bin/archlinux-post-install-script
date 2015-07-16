@@ -163,7 +163,7 @@ pm i trickle
 pm i extra/feh
 
 # subtitles searcher and downloader
-pm i periscope nautilus-periscope
+yaourt aur/periscope nautilus-periscope
 
 installxfceterminal(){
 		#light terminal with transparency support
