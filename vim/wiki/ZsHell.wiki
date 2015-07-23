@@ -1,6 +1,6 @@
 [[Arquivo:]] zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Thu May 14, 2015  08:54AM
+Last Change: Thu 23 Jul 2015 08:24:54 AM BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -9,6 +9,20 @@ email: <voyeg3r at gmail.com>
 {{{ keep this line to see literal text
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+
+==how get pipestatus==
+How to get exit status of process that's piped to another
+
+The syntax is:
+
+    command1 | command2
+    echo "${PIPESTATUS[@]}"
+
+    OR
+
+    command1 | command2
+    echo "${PIPESTATUS[0]} ${PIPESTATUS[1]}"
 
 ==how to run a secret series of commands==
 source: http://unix.stackexchange.com/questions/6094/is-there-any-way-to-keep-a-command-from-being-added-to-your-history/6141#6141

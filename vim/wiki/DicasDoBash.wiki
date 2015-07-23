@@ -2,6 +2,19 @@
 
 	http://www.bashoneliners.com/?page=1
 
+==how get pipestatus==
+How to get exit status of process that's piped to another
+
+The syntax is:
+
+    command1 | command2
+    echo "${PIPESTATUS[@]}"
+
+    OR
+
+    command1 | command2
+    echo "${PIPESTATUS[0]} ${PIPESTATUS[1]}"
+
 ==catching file name and file extensions==
 
     filename=$(basename "$fullfile")
