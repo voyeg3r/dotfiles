@@ -1,17 +1,23 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: Mon 27 Jul 2015 11:03:45 AM BRT
+Last Change: Mon 27 Jul 2015 11:06:25 AM BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
-Alterando o tempo de gravação no gnome shell
+{{{
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys max-screencast-length 1800
+==Alterando o tempo de gravação no gnome shell==
 
-[[{{{]] how install gnome shell in any distro with jhbuild
+    fonte: http://www.talesam.org/blog/dica-ampliando-o-tempo-de-gravacao-do-desktop-no-gnome-shell/
+
+    gsettings set org.gnome.settings-daemon.plugins.media-keys max-screencast-length 1800
+
+    Extensão que permite gravar com audio
+    https://extensions.gnome.org/extension/690/easyscreencast/
+
+==how install gnome shell in any distro with jhbuild==
 http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distro-with-jhbuild/
-}}}
 
 == performance tweaks ==
 * https://wiki.archlinux.org/index.php/Sysctl
@@ -73,11 +79,9 @@ gsettings reset org.gnome.shell.recorder pipeline
 
 == text expander for linux ==
 
-{{{
 https://bbs.archlinux.org/viewtopic.php?id=71938
 https://github.com/Dieterbe/snip/
 https://github.com/Dieterbe/snip/tree/master
-}}}
 
 = beste addons to gnome-shell =
 
@@ -98,3 +102,5 @@ https://extensions.gnome.org/extension/97/coverflow-alt-tab/
 ==best gnome shell addons ==
 https://extensions.gnome.org/extension/549/web-search-dialog/
 https://extensions.gnome.org/extension/277/impatience/
+
+}}}
