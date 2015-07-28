@@ -96,7 +96,7 @@ You basically have to put any font you would like to use into the `~/.fonts` fol
 
 
 ```sh
-cd ~/.fonts && curl -fLo DroidSansMonoForPowerlinePlusNerdFileTypes.otf https://raw.githubusercontent.com/ryanoasis/nerd-filetype-glyphs-fonts-patcher/master/patched-fonts/Droid%20Sans%20Mono%20for%20Powerline%20Plus%20Nerd%20File%20Types.otf
+cd ~/.fonts && curl -fLo DroidSansMonoForPowerlinePlusNerdFileTypes.otf https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/Droid%20Sans%20Mono%20for%20Powerline%20Plus%20Nerd%20File%20Types.otf
 ```
 
 You can find more fonts under my [patched fonts repo][font-nerd-icons-patched-fonts].
@@ -130,6 +130,8 @@ fileformats symbols | ![image](https://raw.githubusercontent.com/wiki/ryanoasis/
 
 
 ### [unite][unite]
+
+* Currently only supports `file`, `file_rec`, and `buffer`
 
 ![image](https://github.com/ryanoasis/vim-webdevicons/wiki/screenshots/v0.5.1/unite.png)
 
