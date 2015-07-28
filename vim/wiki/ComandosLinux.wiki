@@ -18,6 +18,7 @@ começando pelo [[VlC]]
 [[ComandoA2ps|A2ps]] - gera arquivos ps de uma entrada
 [[ComandoAptitude|Aptitude]] - gerenciador de pacotes
 [[ComandoAt|At]] - agenda comandos
+[[ComandoAvconv|avconv]] - video converter
 [[ComandoAwk|Awk]] - manipula textos
 [[ComandoAxel|Axel]] - acelerador de downloads
 [[ComandoBasename|Basename]] - retorna o nome do arquivo sem o caminho
