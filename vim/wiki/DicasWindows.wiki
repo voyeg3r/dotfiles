@@ -1,10 +1,16 @@
 Arquivo: dicas windows
 Criado: Ter 11/Dez/2012 hs 15:31
-Last Change: Wed 24 Jun 2015 05:35:34 PM BRT
+Last Change: Tue 04 Aug 2015 05:14:57 PM BRT
 autor: sergio
 site: vivaotux
 twitter: voyeg3r
 email: voyeg3r at gmail.com
+
+== Recording a desktop session ==
+
+    http://goo.gl/lbwM9G
+    On execute menu open:  psr.exe
+    In English "Step recorder" em portugues Gravador de passos
 
 == adding a new dir to windows path ==
 

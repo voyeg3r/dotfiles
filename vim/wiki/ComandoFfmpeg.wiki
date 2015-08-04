@@ -1,3 +1,18 @@
+=Recording your screen cam=
+https://trac.ffmpeg.org/wiki/Capture/Webcam
+
+List devices
+
+    v4l2-ctl --list-devices
+
+List device capabilities
+
+     ffmpeg -f v4l2 -list_formats all -i /dev/video0
+
+Usage example
+
+ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -i /dev/video0 output.mkv
+
 =remove audio from video=
 
 	ffmpeg -i grade-metalica.webm -an -vcodec copy output.webm
