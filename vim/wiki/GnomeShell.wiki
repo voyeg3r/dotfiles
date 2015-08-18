@@ -1,11 +1,15 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: Mon 27 Jul 2015 11:06:25 AM BRT
+Last Change: Wed 12 Aug 2015 07:43:20 PM BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 {{{
+
+== accessing ssh throug nautilus ==
+
+    sftp://user@address/folder/
 
 ==Alterando o tempo de gravação no gnome shell==
 

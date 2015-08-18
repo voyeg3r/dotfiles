@@ -2,6 +2,12 @@
 MEncoder é uma ferramenta que usa linha de comando para codificação de vídeos sob a Licença Pública Geral GNU.
 O MEncoder é distribuido juntamente com o MPlayer e permite converter de todos os formatos de vídeo aceitos pelo MPlayer para um grande número de outros. Possui diversos filtros de aúdio e vídeo para a manipulação dos arquivos.
 Devido a enorme quantidade de opções o MEncoder pode parecer pouco amigável no começo, mas ele é uma ferramenta extremamente poderosa para conversão de vídeo. Alguns frontends foram desenvolvidos para torná-lo mais acessível. fonte Wikipedia.
+
+== fix corrupted avi index ==
+
+mencoder -forceidx -oac copy -ovc copy corruptvideo.avi -o fixedvideo.avi
+
+
 =ripar dvd=
 
 mencoder dvd://1 -alang en -slang pt -oac mp3lame -lameopts \
@@ -38,9 +44,9 @@ mencoder -ovc lavc -lavcopts vcodec=mpeg4:vbitrate=1000:vhq -oac mp3lame -lameop
 
 =Convert virtually any video into a DVD-valid MPEG2 stream=
 
-mencoder -oac lavc -ovc lavc -of mpeg -mpegopts format=dvd -vf scale=720:480,harddup -srate 48000 
--af lavcresample=48000 -lavcopts  
-codec=mpeg2video:vrc_buf_size=1835:vrc_maxrate=9800:vbitrate=5000:keyint=18:aspect=16/9:acodec=ac3:abitrate=192 
+mencoder -oac lavc -ovc lavc -of mpeg -mpegopts format=dvd -vf scale=720:480,harddup -srate 48000
+-af lavcresample=48000 -lavcopts
+codec=mpeg2video:vrc_buf_size=1835:vrc_maxrate=9800:vbitrate=5000:keyint=18:aspect=16/9:acodec=ac3:abitrate=192
 -ofps 30000/1001 -o output.mpg input.extension
 
 
