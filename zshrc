@@ -122,6 +122,10 @@ alias _!='fc -e "sed -i -e \"s/^/sudo /\""' # sudo last command
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
+# este alias é para editar no audacity um audio selecionado
+# dentro do anki
+alias EW='z collect && audacity `xclip -selection clipboard -o`'
+
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files
 alias lsd='ls -d -- *(/)'				  # only show directories
