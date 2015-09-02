@@ -1,9 +1,9 @@
-" Version: 0.5.3
-" Webpage: https://github.com/ryanoasis/vim-webdevicons
+" Version: 0.6.0
+" Webpage: https://github.com/ryanoasis/vim-devicons
 " Maintainer: Ryan McIntyre <ryanoasis@gmail.com>
 " License: see LICENSE
 
-let s:version = '0.5.4'
+let s:version = '0.6.0'
 
 " standard fix/safety: line continuation (avoiding side effects) {{{1
 "========================================================================
@@ -78,6 +78,10 @@ if !exists('g:WebDevIconsUnicodeDecorateFolderNodes')
   let g:WebDevIconsUnicodeDecorateFolderNodes = 0
 endif
 
+if !exists('g:DevIconsEnableFoldersOpenClose')
+  let g:DevIconsEnableFoldersOpenClose = 0
+endif
+
 " whether to try to match folder notes with any exact file node matches
 " default is to match but requires WebDevIconsUnicodeDecorateFolderNodes set
 " to 1:
@@ -105,7 +109,17 @@ if !exists('g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol')
 endif
 
 if !exists('g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol')
-  let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+  if g:DevIconsEnableFoldersOpenClose
+    " use new glyph
+    let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+  else
+    " use older glyph
+    let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+  endif
+endif
+
+if !exists('g:DevIconsDefaultFolderOpenSymbol')
+    let g:DevIconsDefaultFolderOpenSymbol = ''
 endif
 
 " functions {{{1
@@ -128,6 +142,7 @@ function! s:setDictionaries()
 		\	'htm'      : '',
 		\	'html'     : '',
 		\	'slim'     : '',
+		\	'ejs'      : '',
 		\	'css'      : '',
 		\	'less'     : '',
 		\	'md'       : '',
@@ -147,6 +162,7 @@ function! s:setDictionaries()
 		\	'conf'     : '',
 		\	'ini'      : '',
 		\	'yml'      : '',
+		\	'bat'      : '',
 		\	'jpg'      : '',
 		\	'jpeg'     : '',
 		\	'bmp'      : '',
@@ -176,7 +192,7 @@ function! s:setDictionaries()
 		\	'cljs'     : '',
 		\	'edn'      : '',
 		\	'scala'    : '',
-		\	'go'       : '',
+		\	'go'       : '',
 		\	'dart'     : '',
 		\	'xul'      : '',
 		\	'sln'      : '',
@@ -198,7 +214,9 @@ function! s:setDictionaries()
 		\	'vim'      : '',
 		\	'ai'       : '',
 		\	'psd'      : '',
-		\	'psb'      : ''
+		\	'psb'      : '',
+		\	'ts'       : '',
+		\	'jl'       : ''
 	\}
 
 	let s:file_node_exact_matches = {
@@ -218,7 +236,9 @@ function! s:setDictionaries()
 		\	'.bashprofile'                     : '',
 		\	'favicon.ico'                      : '',
 		\	'license'                          : '',
-		\	'node_modules'                     : ''
+		\	'node_modules'                     : '',
+		\	'react.jsx'                        : '',
+		\	'procfile'                         : '',
 	\}
 
 	let s:file_node_pattern_matches = {
@@ -278,6 +298,30 @@ function! s:setSyntax()
       autocmd FileType nerdtree setlocal concealcursor=nvic
     augroup END
   endif
+endfunction
+
+" scope: local
+" stole solution/idea from nerdtree-git-plugin :)
+function! s:setCursorHold()
+  if g:webdevicons_enable_nerdtree
+    augroup webdevicons_cursor_hold
+      autocmd CursorHold * silent! call s:CursorHoldUpdate()
+    augroup END
+  endif
+endfunction
+
+" scope: local
+" stole solution/idea from nerdtree-git-plugin :)
+function! s:CursorHoldUpdate()
+  if g:NERDTreeUpdateOnCursorHold != 1
+    return
+  endif
+
+  if !g:NERDTree.IsOpen()
+    return
+  endif
+
+  b:NERDTreeRoot.refreshFlags()
 endfunction
 
 " scope: local
@@ -470,6 +514,7 @@ endfunction
 function! s:initialize()
   call s:setDictionaries()
   call s:setSyntax()
+  call s:setCursorHold()
   call s:initializeFlagship()
   call s:initializeUnite()
   call s:initializeVimfiler()
@@ -623,10 +668,28 @@ function! NERDTreeWebDevIconsRefreshListener(event)
   if !path.isDirectory
     let flag = prePadding . WebDevIconsGetFileTypeSymbol(path.str()) . padding
   elseif path.isDirectory && g:WebDevIconsUnicodeDecorateFolderNodes == 1
+
+    let directoryOpened = 0
+
+    if g:DevIconsEnableFoldersOpenClose && len(path.flagSet._flagsForScope("webdevicons")) > 0
+      " isOpen is not available on the path listener, compare using symbols
+      if path.flagSet._flagsForScope("webdevicons")[0] == prePadding . g:DevIconsDefaultFolderOpenSymbol . padding
+        let directoryOpened = 1
+      endif
+    endif
+
     if g:WebDevIconsUnicodeDecorateFolderNodesExactMatches == 1
-      let flag = prePadding . WebDevIconsGetFileTypeSymbol(path.str(), path.isDirectory) . padding
+      if g:DevIconsEnableFoldersOpenClose && directoryOpened
+        let flag = prePadding . g:DevIconsDefaultFolderOpenSymbol . padding
+      else
+        let flag = prePadding . WebDevIconsGetFileTypeSymbol(path.str(), path.isDirectory) . padding
+      endif
     else
-      let flag = prePadding . g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol
+      if g:DevIconsEnableFoldersOpenClose && directoryOpened
+        let flag = prePadding . g:DevIconsDefaultFolderOpenSymbol . padding
+      else
+        let flag = prePadding . g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol
+      endif
     endif
   else
     let flag = ''

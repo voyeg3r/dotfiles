@@ -8,6 +8,12 @@ if !exists('g:webdevicons_enable_nerdtree')
   let g:webdevicons_enable_nerdtree = 1
 endif
 
+if !exists('g:DevIconsEnableFoldersOpenClose')
+  let g:DevIconsEnableFoldersOpenClose = 0
+endif
+
+" end @todo duplicate global variables
+
 " Temporary (hopefully) fix for glyph issues in gvim (proper fix is with the
 " actual font patcher)
 if !exists('g:webdevicons_gui_glyph_fix')
@@ -70,8 +76,66 @@ function! WebDevIconsNERDTreeUpDirCurrentRootClosedHandler()
   redraw!
 endfunction
 
+" NERDTreeMapActivateNode and <2-LeftMouse>
+" handle the user activating a tree node
+" scope: global
+function! WebDevIconsNERDTreeMapActivateNode(node)
+  let path = a:node.path
+  let isOpen = a:node.isOpen
+  let padding = g:WebDevIconsNerdTreeAfterGlyphPadding
+  let prePadding = ''
+  let hasGitFlags = (len(path.flagSet._flagsForScope("git")) > 0)
+  let hasGitNerdTreePlugin = (exists('g:loaded_nerdtree_git_status') == 1)
+
+  if g:WebDevIconsUnicodeGlyphDoubleWidth == 0
+    let padding = ''
+  endif
+
+  if hasGitFlags && g:WebDevIconsUnicodeGlyphDoubleWidth == 1
+    let prePadding = ' '
+  endif
+
+  " align vertically at the same level: non git-flag nodes with git-flag nodes
+  if g:WebDevIconsNerdTreeGitPluginForceVAlign && !hasGitFlags && hasGitNerdTreePlugin
+    let prePadding .= '  '
+  endif
+
+  " toggle flag
+  if isOpen
+    let flag = prePadding . g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol . padding
+  else
+    let flag = prePadding . g:DevIconsDefaultFolderOpenSymbol . padding
+  endif
+
+  call a:node.path.flagSet.clearFlags("webdevicons")
+
+  if flag != ''
+    call a:node.path.flagSet.addFlag("webdevicons", flag)
+    call a:node.path.refreshFlags()
+  endif
+
+  " continue with normal activate logic
+  call a:node.activate()
+endfunction
+
 if g:webdevicons_enable == 1 && g:webdevicons_enable_nerdtree == 1
   call s:SetupListeners()
+
+  if g:DevIconsEnableFoldersOpenClose
+    " NERDTreeMapActivateNode
+    call NERDTreeAddKeyMap({
+      \ 'key': g:NERDTreeMapActivateNode,
+      \ 'callback': 'WebDevIconsNERDTreeMapActivateNode',
+      \ 'override': 1,
+      \ 'scope': 'DirNode' })
+
+    " <2-LeftMouse>
+    call NERDTreeAddKeyMap({
+      \ 'key': '<2-LeftMouse>',
+      \ 'callback': 'WebDevIconsNERDTreeMapActivateNode',
+      \ 'override': 1,
+      \ 'scope': 'DirNode' })
+  endif
 
   " Temporary (hopefully) fix for glyph issues in gvim (proper fix is with the
   " actual font patcher)
