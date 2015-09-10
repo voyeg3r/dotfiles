@@ -17,5 +17,5 @@ digits=$(($(ls | wc -l | wc -c)-1))
 find . -name '*.jpg' | sort -V | awk 'BEGIN{ a=1 }{ printf "mv \"%s\" %0'${digits}'d.jpg\n", $0, a++ }' | bash
 
 # only a test
-convert *.jpg file.pdf
+convert *.jpg ${TITLE}.pdf
 
