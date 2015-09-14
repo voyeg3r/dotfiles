@@ -53,6 +53,7 @@ plugins=(git fasd extract)
 # https://github.com/zsh-users/zsh-completions
 plugins+=(zsh-completions)
 autoload -U compinit && compinit
+autoload -Uz url-quote-magic; zle -N self-insert url-quote-magic
 
 # User configuration
 
