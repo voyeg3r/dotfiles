@@ -1,7 +1,7 @@
 "============================================================================
-"File:        yaml.vim
+"File:        jade_lint.vim
 "Description: Syntax checking plugin for syntastic.vim
-"Maintainer:  Martin Grenfell <martin.grenfell at gmail dot com>
+"Maintainer:  Ben Parnell <benjaminparnell.94@gmail.com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
 "             it and/or modify it under the terms of the Do What The Fuck You
@@ -10,37 +10,29 @@
 "
 "============================================================================
 
-if exists('g:loaded_syntastic_yaml_jsyaml_checker')
+if exists('g:loaded_syntastic_jade_jade_lint_checker')
     finish
 endif
-let g:loaded_syntastic_yaml_jsyaml_checker = 1
+let g:loaded_syntastic_jade_jade_lint_checker = 1
 
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! SyntaxCheckers_yaml_jsyaml_GetLocList() dict
-    if !exists('s:js_yaml_new')
-        let s:js_yaml_new = syntastic#util#versionIsAtLeast(self.getVersion(), [2])
-    endif
+function! SyntaxCheckers_jade_jade_lint_GetLocList() dict
+    let makeprg = self.makeprgBuild({ 'args_after': '-r inline' })
 
-    let makeprg = self.makeprgBuild({ 'args_after': (s:js_yaml_new ? '' : '--compact') })
-
-    let errorformat =
-        \ 'Error on line %l\, col %c:%m,' .
-        \ 'JS-YAML: %m at line %l\, column %c:,' .
-        \ 'YAMLException: %m at line %l\, column %c:,' .
-        \ '%-G%.%#'
+    let errorformat = '%f:%l:%c %m'
 
     return SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
-        \ 'defaults': {'bufnr': bufnr('')} })
+        \ 'returns': [0, 2] })
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
-    \ 'filetype': 'yaml',
-    \ 'name': 'jsyaml',
-    \ 'exec': 'js-yaml'})
+    \ 'filetype': 'jade',
+    \ 'name': 'jade_lint',
+    \ 'exec': 'jade-lint' })
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
