@@ -1,6 +1,6 @@
 Arquivo: dicas windows
 Criado: Ter 11/Dez/2012 hs 15:31
-Last Change: Tue 04 Aug 2015 05:14:57 PM BRT
+Last Change: Fri 18 Sep 2015 02:06:15 PM BRT
 autor: sergio
 site: vivaotux
 twitter: voyeg3r
@@ -142,6 +142,7 @@ Painel de controlo Java (se instalado) = jpicpl32.cpl
 Paint = pbrush
 Partilhas DDE = ddeshare
 Pasta de impressoras = printers
+ver pastas compartilhadas no cmd = "net share" ou compmgmt.msc graficamente
 Pastas partilhadas = fsmgmt.msc
 Pedidos do operador de armazenamento amovível = ntmsoprq.msc
 Performance Monitor = perfmon
