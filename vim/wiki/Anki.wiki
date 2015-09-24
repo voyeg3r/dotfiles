@@ -1,0 +1,19 @@
+=Dicas relacionadas ao Anki=
+
+==como anexar arquivos de audio aos flashcards==
+
+Para anexar audio aos seus flashcards do Anki coloque o audio
+correspondente à sua frase na pasta:
+
+Meus Documentos\Anki\collection.media
+
+Crie o seu deck (baralho) e na hora de adicionar uma frase
+que tenha um audio relacionado use a seguinte notação:
+
+[sound:file.mp3]
+
+Um cartão do anki com audio ficaria então assim:
+
+This is the English phrase[sound:nome-do-audio.mp3]
+
+Esta é uma frase em Inglês

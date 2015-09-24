@@ -66,8 +66,7 @@ mount -o remount rw /
 
 ==Montar iso em loop==
 Digamos que você tem uma imagem de cd e quer ver as pastas contidas na mesma,
-você poderia descompactar a iso (uma solução possível) mas [[http://vivaotux.blogspot.com/2007/09/usando-o-jigdo-para-obter-nova-verso-do.html|há casos]] em que você
-precisa mantar a iso para que o sistsema reconheça a mesma como se fosse um cd normal
+você poderia descompactar a iso (uma solução possível) mas [[http://vivaotux.blogspot.com/2007/09/usando-o-jigdo-para-obter-nova-verso-do.html|há casos]] em que você precisa mantar a iso para que o sistsema reconheça a mesma como se fosse um cd normal
 
 Lembrando que o comando moutn usa o padrão
 
@@ -76,6 +75,7 @@ Lembrando que o comando moutn usa o padrão
 A barra invertida é um recurso que permite digitar comandos
 longos em várias linhas (legibiligade) faz parte de uma [[http://www.ibm.com/developerworks/aix/library/au-badunixhabits.html|série de dicas]]
 que eu recomendo.
+
 ==descobrindo qual processo impede a desmontagem de um dispositivo==
 
 $ fuser -v /media/cdrom

@@ -1,6 +1,6 @@
 Arquivo: dicas de ingles
 Criado: Qua 12/Jan/2011 hs 12:52
-Last Change: Sun Mar 22, 2015  07:37AM
+Last Change: Qui 24 Set 2015 07:54:26 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -12,6 +12,7 @@ https://raw.github.com/Anoncheg1/Command-line-translator/master/translate
 }}}
 
 You'd come to Brazil... Você deveria vir ao Brasil. (Acredito que está certo)
+You'd  --> you would
 You've --> You have
 
 Favor me expliquem qual o uso dessas duas abreviaturas e com exemplos. Obrigado!
