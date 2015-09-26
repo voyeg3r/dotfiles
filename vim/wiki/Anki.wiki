@@ -4,6 +4,13 @@
 a referência para esta dica veio daqui:
 http://danielhnyk.cz/change-default-folder-anki-space-repetition/
 
+Basicamente o local para editar as preferências do anki é na
+pasta:
+
+    /usr/share/anki/aqt
+
+Mas se pode fazer de outra forma também:
+
  crie em --> /usr/local/bin
 
  um arquivo  chamado 'anki', sem aspas contendo o seguinte:
