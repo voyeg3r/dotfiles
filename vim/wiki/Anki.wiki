@@ -13,6 +13,32 @@ http://danielhnyk.cz/change-default-folder-anki-space-repetition/
 
    Depois atribua SETUID para o arquivo com o comando
    chmod a+sx anki
+
+Outra solução possível seria:
+Go to the folder where ANKI is installed, in my case:
+
+    /usr/share/anki
+
+Edit file in aqt folder called profiles.py, you have to find category Helpers and edit appropriate line (it depends which OS you use: Win, Mac, Linux..) you wish:
+
+def _defaultBase(self):
+    if isWin:
+    if False: #qtmajor >= 5:
+    loc = QStandardPaths.writeableLocation(QStandardPaths.DocumentsLocation)
+    else:
+        loc = QDesktopServices.storageLocation(QDesktopServices.DocumentsLocation)
+        return os.path.join(loc, "Anki")
+        elif isMac:
+        return os.path.expanduser("~/Documents/Anki")
+        else:
+        return os.path.expanduser("~/Anki")
+
+e.g I edited last line to this:
+
+        return os.path.expanduser("~/edu/Anki")
+
+        to change my default folder to ~/edu/Anki.
+
 ---------------------------------------------------
 
 O Anki é um software de repetição espaçada, a Repetiação espaçada
