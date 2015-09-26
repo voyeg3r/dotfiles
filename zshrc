@@ -48,6 +48,7 @@ setopt PROMPT_BANG # enables '!' substituition on prompt
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract)
+eval "$(fasd --init posix-alias zsh-hook)"
 
 # testing completions
 # https://github.com/zsh-users/zsh-completions
