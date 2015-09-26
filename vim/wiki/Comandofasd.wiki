@@ -53,3 +53,11 @@ Daí você só vai ter que digitar os comandos tipo...
 ==Comandos úteis do fasd_cd==
 
    cp `f .vimrc` `d 17`
+
+Alguns comandos úteis do fasd_cd
+
+v post install    ---- abrirá meu arquivo archlinux-post-install-script
+s post install ....... mostra o local do meu arquivo de post instal
+cp `f .vimrc` .  copia meu vimrc para a pasta atual de onde eu esteja
+z collec ............ entra na minha pasta collection.media do anki
+d collec   .......... mostra minha pasta collection.midia do anki
