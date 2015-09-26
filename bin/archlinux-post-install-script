@@ -40,6 +40,9 @@ sudo systemctl stop bluetooth
 
 yaourt gnome-session-properties
 
+# alternative browser
+yaourt -S vivaldi
+
 # hostsblock
 # A script and cronjob that downloads, sorts, and installs multiple ad- and # malware-blocking hosts files
 # https://aur.archlinux.org/packages/ho/hostsblock/hostsblock.tar.gz
