@@ -1,6 +1,37 @@
-=Dicas relacionadas ao Anki=
+=O que é o Anki=
+
+==Como mudar a pasta padrão do anki==
+a referência para esta dica veio daqui:
+http://danielhnyk.cz/change-default-folder-anki-space-repetition/
+
+ crie em --> /usr/local/bin
+
+ um arquivo  chamado 'anki', sem aspas contendo o seguinte:
+
+    #!/usr/bin/bash
+    /usr/bin/anki -b $HOME/docs/anki
+
+   Depois atribua SETUID para o arquivo com o comando
+   chmod a+sx anki
+---------------------------------------------------
+
+O Anki é um software de repetição espaçada, a Repetiação espaçada
+surge como uma descoberta da Neurociência, é de conhecimento
+científico que repetições em intervalos de tempo específicos
+aumentam o nível de retenção do conhecimento. Nos foruns em Inglês
+eles usam a Sigla SRS, ou spaced repetition system.
+
+==Como instalar o Anki==
+No site do mairo vergara você encontrará um manual que
+lhe mostra como instalar o Anki.
+http://www.mairovergara.com/como-instalar-e-usar-o-anki/
 
 ==como anexar arquivos de audio aos flashcards==
+
+Esta parte é super importante pois o manual de instalação do Mairo
+vergara não mostra, é com este simples passo que você se permitir
+praticar de uma só vez vocabulário e pronúncia de uma forma
+prática e eficiente
 
 Para anexar audio aos seus flashcards do Anki coloque o audio
 correspondente à sua frase na pasta:
