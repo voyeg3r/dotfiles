@@ -74,6 +74,7 @@ começando pelo [[VlC]]
 [[ComandoEthtool|Ethtool]] - configura parâmetros da interface de rede
 [[ComandoEttercap|Ettercap]] - sniffer de rede
 [[ComandoExpr|Expr]] - manipula expressões
+[[Comandofasd|fasd]] - acelera copia e acesso a arquivos
 [[ComandoFc|Fc]] - edita o último comando
 [[ComandoFdisk|Fdisk]] - particionador de discos
 [[ComandoFfmpeg|Ffmpeg]] - conversor de formatos de midia
