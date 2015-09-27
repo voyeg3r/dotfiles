@@ -48,7 +48,8 @@ setopt PROMPT_BANG # enables '!' substituition on prompt
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract)
-eval "$(fasd --init posix-alias zsh-hook )"
+#eval "$(fasd --init posix-alias zsh-hook )"
+eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 # testing completions
 # https://github.com/zsh-users/zsh-completions
@@ -64,6 +65,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin
 cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
 path=(~/bin $path)
 
+#zshhighlight: https://github.com/zsh-users/zsh-syntax-highlighting
+zshhightligh="/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+[ -f $zshhightligh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
