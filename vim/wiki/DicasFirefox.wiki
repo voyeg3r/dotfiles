@@ -1,6 +1,6 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: Sáb 19 Set 2015 22:27:30 BRT
+Last Change: Dom 27 Set 2015 15:50:37 BRT
 autor: slas
 site: vivaotux
 twitter: voyeg3r
@@ -76,6 +76,11 @@ Here’s how to do it:
 =Como instalar o plugin flash via rede local=
 
 scp root@192.168.1.74:/usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins
+
+Você pode baixar o plugin no site da adobe e colocar o arquivo
+libflashplayer.so na pasta:
+
+  /usr/lib/share/mozilla/plugins/
 
 =como impedir o plugin flash de capturar cookies=
 
