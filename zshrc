@@ -48,7 +48,7 @@ setopt PROMPT_BANG # enables '!' substituition on prompt
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract)
-eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
+eval "$(fasd --init posix-alias zsh-hook )"
 
 # testing completions
 # https://github.com/zsh-users/zsh-completions
@@ -119,7 +119,6 @@ alias v='f -e vim' # open file with vim
 alias v='f -t -e vim -b viminfo'
 alias o='a -e xdg-open' # quick opening files with xdg-open
 alias _!='fc -e "sed -i -e \"s/^/sudo /\""' # sudo last command
-
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'

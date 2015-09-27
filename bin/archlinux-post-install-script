@@ -40,8 +40,8 @@ sudo systemctl stop bluetooth
 
 yaourt gnome-session-properties
 
-# alternative browser
-yaourt -S vivaldi
+# messenger do facebook
+yaourt -S messengerfordesktop
 
 # hostsblock
 # A script and cronjob that downloads, sorts, and installs multiple ad- and # malware-blocking hosts files
