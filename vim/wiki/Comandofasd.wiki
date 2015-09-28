@@ -62,3 +62,5 @@ cp `f .vimrc` .  copia meu vimrc para a pasta atual de onde eu esteja
 z collec ............ entra na minha pasta collection.media do anki
 d collec   .......... mostra minha pasta collection.midia do anki
 o `sf pdf` .......... abrir arquivos pdf interativamente xdg-open
+
+
