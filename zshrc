@@ -65,9 +65,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin
 cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
 path=(~/bin $path)
 
-#zshhighlight: https://github.com/zsh-users/zsh-syntax-highlighting
-zshhightligh="/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-[ -f $zshhightligh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment

@@ -3,7 +3,7 @@
 clonedotfiles () {
 # Arquivo: Arquivos de configuração de ambiente
 # Criado: Dom 17/Out/2010 hs 15:13
-# Last Change: Sun May 03, 2015  07:27AM
+# Last Change: Seg 28 Set 2015 08:59:05 BRT
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # http://www.twitter.com/voyeg3r
@@ -41,6 +41,7 @@ ln -sfvn ~/.dotfiles/fonts.conf ~/.fonts.conf
 ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
 ln -sfvn ~/.dotfiles/zshrc ~/.zshrc
 ln -sfvn ~/.dotfiles/agignore ~/.agignore
+ln -sfvn ~/.dotfiles/zshenv ~/.zshenv
 [ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
 
 sudo chsh -s $(which zsh) $(whoami)
