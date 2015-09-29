@@ -84,6 +84,7 @@ começando pelo [[VlC]]
 [[ComandoFind|Find]] - busca arquivos e pastas
 [[ComandoFree|Free]] - informa sobre o uso da memória
 [[ComandoFuser|Fuser]] - identifica qual processo está usando um recurso
+[[ComandoFzf|fzf]] command line fuzzy finder
 [[ComandoGpasswd|Gpasswd]] - adiciona usuário a grupos
 [[ComandoGparted|Gparted]] - particionador de discos
 [[ComandoGrep|Grep]] - filtra textos

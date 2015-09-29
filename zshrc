@@ -209,13 +209,20 @@ insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
-# ctrl-p for zsh
-# source: https://goo.gl/Tts3vW (reddit)
-ctrlp() {
-    </dev/tty vim -c CtrlP
-}
-zle -N ctrlp
-bindkey "^p" ctrlp
+# fzf settings
+# ZSH keybinding example; ~/.zshrc
+fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^F' fzf_history
+fzf_killps() { zle -I; ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }; zle -N fzf_killps; bindkey '^Q' fzf_killps
+fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" ; }; zle -N fzf_cd; bindkey '^E' fzf_cd
+
+# ctrl-p for zsh (when fzf is setted whith
+# yaourt -S fzf comment these lines
+# # source: https://goo.gl/Tts3vW (reddit)
+# ctrlp() {
+#     </dev/tty vim -c CtrlP
+# }
+# zle -N ctrlp
+# bindkey "^p" ctrlp
 
 # use magic-space
 bindkey ' ' magic-space
