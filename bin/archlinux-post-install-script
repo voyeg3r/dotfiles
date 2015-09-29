@@ -47,6 +47,9 @@ yaourt -S zsh-completions
 
 yaourt -S dos2unix
 
+# A plugin manager for zsh, inspired by oh-my-zsh and vundle.
+yaourt -S antigen-git
+
 # hostsblock
 # A script and cronjob that downloads, sorts, and installs multiple ad- and # malware-blocking hosts files
 # https://aur.archlinux.org/packages/ho/hostsblock/hostsblock.tar.gz

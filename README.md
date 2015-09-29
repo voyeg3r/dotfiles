@@ -3,7 +3,7 @@
 clonedotfiles () {
 # Arquivo: Arquivos de configuração de ambiente
 # Criado: Dom 17/Out/2010 hs 15:13
-# Last Change: Seg 28 Set 2015 08:59:05 BRT
+# Last Change: Ter 29 Set 2015 03:28:19 BRT
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # http://www.twitter.com/voyeg3r
@@ -45,6 +45,12 @@ ln -sfvn ~/.dotfiles/zshenv ~/.zshenv
 [ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
 
 sudo chsh -s $(which zsh) $(whoami)
+
+# do not forget to install antigen
+# A plugin manager for zsh, inspired by oh-my-zsh and vundle.
+# source: http://blog.namangoel.com/zsh-with-antigen
+    yaourt -S antigen-git
+
 
 # installing fasdcd
 git clone git@github.com:clvv/fasd.git
