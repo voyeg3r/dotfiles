@@ -45,6 +45,8 @@ yaourt -S messengerfordesktop
 
 yaourt -S zsh-completions
 
+yaourt -S dos2unix
+
 # hostsblock
 # A script and cronjob that downloads, sorts, and installs multiple ad- and # malware-blocking hosts files
 # https://aur.archlinux.org/packages/ho/hostsblock/hostsblock.tar.gz

@@ -67,6 +67,16 @@ path=(~/bin $path)
 
 source $ZSH/oh-my-zsh.sh
 
+# Some functions, like _apt and _dpkg, are very slow. You can use a cache in
+# order to proxy the list of results
+# (like the list of available debian packages) Use a cache:
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# Ignore completion functions for commands you don’t have:
+zstyle ':completion:*:functions' ignored-patterns '_*'
+
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
