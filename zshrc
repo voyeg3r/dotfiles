@@ -209,6 +209,14 @@ insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
+# ctrl-p for zsh
+# source: https://goo.gl/Tts3vW (reddit)
+ctrlp() {
+    </dev/tty vim -c CtrlP
+}
+zle -N ctrlp
+bindkey "^p" ctrlp
+
 # use magic-space
 bindkey ' ' magic-space
 

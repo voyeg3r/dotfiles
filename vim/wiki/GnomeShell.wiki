@@ -1,11 +1,15 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: Wed 12 Aug 2015 07:43:20 PM BRT
+Last Change: Ter 29 Set 2015 07:42:20 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 {{{
+
+== setting gnome screenshot dir ==
+
+  gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/$USER/pictures/"
 
 == accessing ssh throug nautilus ==
 
