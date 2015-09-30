@@ -209,20 +209,47 @@ insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
-# fzf settings
+# fzf settings ##############################################
 # ZSH keybinding example; ~/.zshrc
-fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^F' fzf_history
+fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^h' fzf_history
 fzf_killps() { zle -I; ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }; zle -N fzf_killps; bindkey '^Q' fzf_killps
 fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" ; }; zle -N fzf_cd; bindkey '^E' fzf_cd
+
+# vimf - Open selected file in Vim
+vimf() {
+    FILE=$(fzf) && vim "$FILE"
+}
+
+# fd - cd to selected directory
+fd() {
+    DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR"
+}
+
+# fda - including hidden directories
+fda() {
+    DIR=$(find ${1:-.} -type d 2> /dev/null | fzf) && cd "$DIR"
+}
+
+# fh - repeat history
+fh() {
+    eval $(history | fzf +s | sed 's/ *[0-9]* *//')
+}
+
+# fkill - kill process
+fkill() {
+    ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9}
+}
+
+# End fzf settings
 
 # ctrl-p for zsh (when fzf is setted whith
 # yaourt -S fzf comment these lines
 # # source: https://goo.gl/Tts3vW (reddit)
-# ctrlp() {
-#     </dev/tty vim -c CtrlP
-# }
-# zle -N ctrlp
-# bindkey "^p" ctrlp
+ctrlp() {
+    </dev/tty vim -c CtrlP
+}
+zle -N ctrlp
+bindkey "^f" ctrlp
 
 # use magic-space
 bindkey ' ' magic-space
