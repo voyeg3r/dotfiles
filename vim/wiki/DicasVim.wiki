@@ -1,12 +1,16 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Tue 16 Jun 2015 08:29:16 PM BRT
+Last Change: Qua 30 Set 2015 10:35:07 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
   Search vimgolf chalenges to vim users
+
+== changing modes on ctrl-p ==
+
+   just press Ctrl-f or Ctrl-b
 
 ==fixing subtitles with vim==
 

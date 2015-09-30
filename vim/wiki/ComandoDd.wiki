@@ -4,14 +4,16 @@ O comando dd pode ser usado para gerar imagens de cd:
 	dd if=/dev/cdrom of=imagem.iso
 
 =Gerando um pendrive bootavel=
-Como root rode o comando //**fdisk -l**// para saber em que partição está o pendrive
-se ele mostrar /dev/sdb1 anote e desmonte o pendrive, em seguida faça
+
+Como root rode o comando //**fdisk -l**// para saber em que partição está o pendrive se ele mostrar /dev/sdb1 anote e desmonte o pendrive, em seguida faça
 
 	dd if=ubuntu.iso of=/dev/sdb bs=1M && sync
 
+  dd bs=4M if=./antergos-2015.09.13-i686.iso of=/dev/sdb && sync
+
 	or
 
-	dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx && sync
+  sudo dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx && sync
 
 Obs: não precisa indicar sdb1 por exemplo basta indicar sdb, e outra coisa tem que desmontar a
 unidade antes de rodar o comando
@@ -19,6 +21,8 @@ unidade antes de rodar o comando
 == How to restore USB flash after installing ==
 
     dd count=1 bs=512 if=/dev/zero of=/dev/sdx && sync
+
+    dd count=1 bs=512 if=/dev/zero of=/dev/sdb && sync
 
     Where sdc represents your usbdrive partition
     after that format your usbdrive using gparted
