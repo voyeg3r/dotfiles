@@ -234,6 +234,19 @@ testar se a máquina a ser acessada tem
 * um ip ativo, use o comando ping --> ping ip
 * em último caso apague nas duas máquinas ~/.ssh
 
+== copiando a chave pública para a area de transferência ==
+
+  Esse procedimento serve para adicionar sua chave pública ao
+  github por exmeplo
+
+  pbcopy < ~/.ssh/id_rsa.pub
+
+  Caso não tenha o pbcopy pode colocar esses dois aliases no seu
+  zshrc ou bashrc
+
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+
 =Exportando a chave do ssh=
 
 ssh-keygen -b 1024 -t dsa
