@@ -195,6 +195,7 @@ InstallMon 13 Jul 2015 07:52:17 PM BRT - copia arquivos e configura atributos
 [[ComandoSftp|Sftp]] - Permite cópias mais seguras que o [[scp
 [[ComandoShred|Shred]] - apaga um arquivo tornando o mesmo irrecuperável
 [[ComandoSitecopy|Sitecopy]] - managing a WWW site via FTP, DAV or HTTP
+[[ComandoSox|sox]] Sound eXchange, the Swiss Army knife of audio manipulation
 [[ComandoSleep|Sleep]] - aguarda um tempo até a continuação de um comando
 [[ComandoShutdown|Shutdown]] - desliga ou renicia o comaputador
 [[ComandoShuf|Shuf]] - gera permutações randômicas
