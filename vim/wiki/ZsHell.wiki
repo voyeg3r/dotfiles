@@ -1,6 +1,6 @@
-[[Arquivo:]] zshell tips and tricks
+Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Thu 23 Jul 2015 08:24:54 AM BRT
+Last Change: Qui 01 Out 2015 15:14:35 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r

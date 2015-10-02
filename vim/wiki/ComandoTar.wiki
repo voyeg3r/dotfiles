@@ -1,6 +1,12 @@
 =Introdução=
 compactador e descompactador do linux
 
+== Descompactar durante um download ==
+
+    wget http://example.com/archive.tar.bz2 -O - | tar -xj
+
+    curl http://example.com/archive.tar.bz2 | tar -xj
+
 ==Descompactando tar.bz2==
 
 tar jxvf pacote.tar.bz2
