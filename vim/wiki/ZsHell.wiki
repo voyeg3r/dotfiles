@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Qui 01 Out 2015 15:14:35 BRT
+Last Change: Sáb 03 Out 2015 07:36:39 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -10,6 +10,19 @@ email: <voyeg3r at gmail.com>
 
 References: http://chneukirchen.org/dotfiles/.zshrc
 
+== create one folder for each file and movi it into it ==
+
+# first you have to know something about filename
+# and file's extensions when it comes to shell script
+
+    filename="$1"
+    extension="${filename##*.}"
+    filename="${filename%.*}"
+
+    for i in `ls *`; do
+        mkdir ${i%.*}
+        mv $i ${i%.*}
+    done
 
 ==how get pipestatus==
 How to get exit status of process that's piped to another
