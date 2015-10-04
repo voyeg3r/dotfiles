@@ -38,21 +38,8 @@
 # stopping bluetooth service
 sudo systemctl stop bluetooth
 
-# antergos-openbox-setup
-git clone git@github.com:Antergos/openbox-setup.git
-#git clone git@github.com:Antergos/antergos-openbox-setup.git
-cd /tmp
-wget https://github.com/Antergos/openbox-setup/archive/master.tar.gz
-tar -xf master.tar.gz
-cd openbox-setup-master
-sudo cp etc/oblogout.conf /etc
-mv config .config
-cp -R .config ${HOME}
-cp gtkrc-2.0 ${HOME}
-sudo mkdir -p /usr/share/themes/Numix
-sudo cp -R oblogout /usr/share/themes/Numix
-
-sudo pacman -S lxappearance-obconf lxinput lxmenu-data lxpolkit nitrogen obconf oblogout obmenu openbox-menu parcellite plank plank-theme-numix python2-xdg scrot tint2 volumeicon xfce4-notifyd
+# gnome with transparency support
+yaourt -S gnome-terminal-fedora
 
 yaourt gnome-session-properties
 
