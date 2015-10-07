@@ -257,7 +257,9 @@ admintools () {
 } && admintools
 
 # terminal with transparence and more responsive
-yaourt -S roxterm
+# phanteon-terminal could be changed using dconf
+# https://gist.github.com/davidgomes/5162998
+yaourt -S roxterm pantheon-terminal
 
 # making zsh my default shell
 sudo chsh -s $(which zsh) $(whoami)

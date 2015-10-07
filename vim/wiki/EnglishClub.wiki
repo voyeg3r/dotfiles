@@ -1284,4 +1284,7 @@ Some applications to improve your lerning speed
   Guia de pronuncia do dicionário cambridge
 * http://dictionary.cambridge.org/pronunciation/english/city
 
+  Site que pronuncia (trechos de video no youtube)
+  http://youpronounce.it/
+
 }}}
