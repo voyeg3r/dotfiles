@@ -1,6 +1,6 @@
 Arquivo: dicas sobre o google
 Criado: Sex 05/Out/2012 hs 07:45
-Last Change: 2013 Jan 01 14:56:30
+Last Change: Qua 07 Out 2015 08:52:32 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -12,6 +12,10 @@ email: mymail
 
 =Lista de todos os recursos do google=
 * http://www.google.com/help/features.html
+
+== Link direto pra baixar filmes ==
+
+To find direct download link for movies, search “[movie name] -inurl:(htm|html|php|pls|txt) intitle:index.of “last modified” (mkv|mp4|avi)”.
 
 =Como buscar fontes, livros e mp3 no google? =
 
