@@ -158,9 +158,10 @@ alias -g NF='./**/*(.om[1])' # newest file
 alias -g latest='./**/*(.om[1])' # newest file | also Ctrl-x Ctrl-m
 alias -g NUL="> /dev/null 2>&1"
 alias -g DN="> /dev/null 2>&1"
-alias -g LC='| tr A-Z a-z'
+# alias -g LC='| tr A-Z a-z'
+alias -g LC="| sed 's/./\L&/g'"
 alias -g UL="| sed 's, ,_,g'"
-alias -g ULC="| tr A-Z a-z | sed 's, ,_,g'"
+alias -g ULC="| sed 's/./\L&/g' | sed 's, ,_,g'"
 alias pnf='mpg123 ./**/*(.om[1])'
 alias install='sudo apt-fast -y install'
 mktbz () { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/";}
