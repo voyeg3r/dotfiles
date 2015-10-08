@@ -254,8 +254,20 @@ ctrlp() {
 zle -N ctrlp
 bindkey "^f" ctrlp
 
-# use magic-space
-bindkey ' ' magic-space
+# source: http://goo.gl/HUXBjG
+globalias() {
+    if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+        zle _expand_alias
+        zle expand-word
+    fi
+    zle self-insert
+}
+
+zle -N globalias
+
+bindkey " " globalias
+bindkey "^ " magic-space           # control-space to bypass completion
+bindkey -M isearch " " magic-space # normal space during searches
 
 # some radios using mplayer
 alias bbc="mplayer -playlist http://peace.str3am.com:6810/live-96k.mp3.m3u"
