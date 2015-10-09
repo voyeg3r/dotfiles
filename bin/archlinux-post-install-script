@@ -50,8 +50,15 @@ yaourt -S zsh-completions
 
 yaourt -S dos2unix
 
-# A plugin manager for zsh, inspired by oh-my-zsh and vundle.
-yaourt -S antigen-git
+
+#Command-line downloader and uploader for Rapidshare, Mediafire and other
+# file sharing websites.
+# site: https://github.com/mcrapet/plowshare
+yaourt -S plowshare
+
+# mediafire fuse
+# https://github.com/MediaFire/mediafire-fuse
+git clone git@github.com:MediaFire/mediafire-fuse.git
 
 # command line fuzzy finder
 yaourt -S fzf

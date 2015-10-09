@@ -58,12 +58,15 @@ autoload -U compinit && compinit
 autoload -Uz url-quote-magic; zle -N self-insert url-quote-magic
 
 # User configuration
+export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
+setopt HIST_IGNORE_DUPS
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 #
 cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
-path=(~/bin $path)
+typeset -U path
+path=(~/bin $path[@])
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,7 +79,6 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 
 # Ignore completion functions for commands you don’t have:
 zstyle ':completion:*:functions' ignored-patterns '_*'
-
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -142,8 +144,8 @@ alias EW='z collect && audacity `xclip -selection clipboard -o`'
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files
 alias lsd='ls -d -- *(/)'				  # only show directories
-alias -s txt=vim
-alias -s text=vim
+alias -s {md,txt,text}=vim
+alias -s {wav,mp3,ogg}=mplayer
 alias gril='grep -irl'
 alias -g CB='| xclip -selection c'
 alias -g C='| wc -l'
@@ -162,6 +164,7 @@ alias -g DN="> /dev/null 2>&1"
 alias -g LC="| sed 's/./\L&/g'"
 alias -g UL="| sed 's, ,_,g'"
 alias -g ULC="| sed 's/./\L&/g' | sed 's, ,_,g'"
+alias -g FC="echo `pbpaste` | sed 's, ,_,g' | sed 's/./\L&/g' | xclip -selection c"
 alias pnf='mpg123 ./**/*(.om[1])'
 alias install='sudo apt-fast -y install'
 mktbz () { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/";}
