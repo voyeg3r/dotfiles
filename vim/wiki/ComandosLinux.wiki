@@ -261,4 +261,5 @@ InstallMon 13 Jul 2015 07:52:17 PM BRT - copia arquivos e configura atributos
 [[ComandoZip|Zip]] - compacta arquivos
 [[ComandoZsync|Zsync]] - implementação para http do protocolo rsync
 [[ComandoYoutubedl|Youtubedl]] - baixa vídeos do youtube
+[[ComandoYaourt|yaourt]] Gerenciador de pacotes para archlinux
 [[ComandoUnzip|Unzip]] - descompacta arquivos zip
