@@ -70,6 +70,7 @@ source $ZSH/oh-my-zsh.sh
 # Some functions, like _apt and _dpkg, are very slow. You can use a cache in
 # order to proxy the list of results
 # (like the list of available debian packages) Use a cache:
+zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
@@ -158,7 +159,6 @@ alias -g NF='./**/*(.om[1])' # newest file
 alias -g latest='./**/*(.om[1])' # newest file | also Ctrl-x Ctrl-m
 alias -g NUL="> /dev/null 2>&1"
 alias -g DN="> /dev/null 2>&1"
-# alias -g LC='| tr A-Z a-z'
 alias -g LC="| sed 's/./\L&/g'"
 alias -g UL="| sed 's, ,_,g'"
 alias -g ULC="| sed 's/./\L&/g' | sed 's, ,_,g'"
@@ -184,7 +184,7 @@ alias yd='youtube-dl --write-auto-sub `xclip -o`'
 # functions
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
 gsend() { git commit -am "$1" && git push ;}
-lowerstring() { echo "${*}" | awk '{print tolower($0)}' ;}
+lowerstring() { echo "${*}" | sed 's/./\L&/g' ;}
 lower (){ echo ${@:l} }  # this versio only works in zsh
 upper (){ echo ${@:u} }  # this versio only works in zsh
 expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; }
