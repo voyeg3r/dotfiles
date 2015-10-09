@@ -206,6 +206,7 @@ youtube-mp3 () {
     [[ $? = 1 ]] && echo "instale o programa ffmpeg para poder converter para mp3"
 }
 
+# alt-s inserts "sudo" at the start of line:
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
