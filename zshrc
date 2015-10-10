@@ -145,6 +145,8 @@ background() {
     "$@" &
 }
 
+alias newest='ls -lt  **/*(.om[1,20])' # list 20 newest files anywhere in directory hierarchy (very useful) *N*'
+alias flashcard="echo $(pbpaste) | sed 's, ,-,g' | sed 's/./\L&/g' | sed 's,.*,&.mp3,g' | xclip -selection c"
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files
 alias lsd='ls -d -- *(/)'				  # only show directories
@@ -169,7 +171,6 @@ alias -g DN="> /dev/null 2>&1"
 alias -g LC="| sed 's/./\L&/g'"
 alias -g UL="| sed 's, ,_,g'"
 alias -g ULC="| sed 's/./\L&/g' | sed 's, ,_,g'"
-alias -g FC="echo `pbpaste` | sed 's, ,_,g' | sed 's/./\L&/g' | xclip -selection c"
 alias pnf='mpg123 ./**/*(.om[1])'
 alias install='sudo apt-fast -y install'
 mktbz () { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/";}
