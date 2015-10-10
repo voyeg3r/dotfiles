@@ -141,11 +141,16 @@ alias pbpaste='xclip -selection clipboard -o'
 # dentro do anki
 alias EW='z collect && audacity `xclip -selection clipboard -o`'
 
+background() {
+    "$@" &
+}
+
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files
 alias lsd='ls -d -- *(/)'				  # only show directories
 alias -s {md,txt,text}=vim
-alias -s {wav,mp3,ogg}=mplayer
+alias -s {wav,mp3,ogg}='background mplayer'
+alias -s pdf=evince
 alias gril='grep -irl'
 alias -g CB='| xclip -selection c'
 alias -g C='| wc -l'
