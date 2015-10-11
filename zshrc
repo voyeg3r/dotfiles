@@ -79,12 +79,21 @@ path=(~/bin $path[@])
 
 source $ZSH/oh-my-zsh.sh
 
-# Some functions, like _apt and _dpkg, are very slow. You can use a cache in
-# order to proxy the list of results
-# (like the list of available debian packages) Use a cache:
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
+# If you end up using a directory as argument,
+# this will remove the trailing slash (usefull in ln)
+zstyle ':completion:*' squeeze-slashes true
+
+# HISTORY
+HISTSIZE=10000
+SAVEHIST=9000
+HISTFILE=~/.zsh_history
+
+# Use caching so that commands like apt and dpkg complete are useable
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+
+ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
+mkdir -p ${ZSH_CACHE_DIR}
 
 # Ignore completion functions for commands you don’t have:
 zstyle ':completion:*:functions' ignored-patterns '_*'
