@@ -51,6 +51,15 @@ plugins=(git fasd extract)
 #eval "$(fasd --init posix-alias zsh-hook )"
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
+
+if [ -f ~/.dotfiles/oh-my-zsh/custom/auto-fu/auto-fu.plugin.zsh ]; then
+    source ~/.dotfiles/oh-my-zsh/custom/auto-fu/auto-fu.plugin.zsh ;
+    function zle-line-init () {
+    auto-fu-init
+}
+zle -N zle-line-init
+fi
+
 # testing completions
 # https://github.com/zsh-users/zsh-completions
 plugins+=(zsh-completions)
@@ -145,8 +154,9 @@ background() {
     "$@" &
 }
 
+# to show aliases definitions simple do: which alias
 alias newest='ls -lt  **/*(.om[1,20])' # list 20 newest files anywhere in directory hierarchy (very useful) *N*'
-alias flashcard="echo $(pbpaste) | sed 's, ,-,g' | sed 's/./\L&/g' | sed 's,.*,&.mp3,g' | xclip -selection c"
+alias flashcard="echo $(pbpaste) | sed 's, ,-,g' | sed 's/./\L&/g' | sed 's,$,.mp3,g' | xclip -selection c"
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files
 alias lsd='ls -d -- *(/)'				  # only show directories
