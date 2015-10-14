@@ -46,6 +46,9 @@ yaourt gnome-session-properties
 # messenger do facebook
 yaourt -S messengerfordesktop
 
+# awesome theme
+yaourt -S zukitwo-themes
+
 yaourt -S zsh-completions
 
 yaourt -S dos2unix

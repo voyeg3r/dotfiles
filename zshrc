@@ -89,11 +89,11 @@ SAVEHIST=9000
 HISTFILE=~/.zsh_history
 
 # Use caching so that commands like apt and dpkg complete are useable
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+#zstyle ':completion::complete:*' use-cache 1
+#zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 
-ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
-mkdir -p ${ZSH_CACHE_DIR}
+#ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
+#mkdir -p ${ZSH_CACHE_DIR}
 
 # Ignore completion functions for commands you don’t have:
 zstyle ':completion:*:functions' ignored-patterns '_*'
@@ -165,7 +165,7 @@ background() {
 
 # to show aliases definitions simple do: which alias
 alias newest='ls -lt  **/*(.om[1,20])' # list 20 newest files anywhere in directory hierarchy (very useful) *N*'
-alias flashcard="echo $(pbpaste) | sed 's, ,-,g' | sed 's/./\L&/g' | sed 's,$,.mp3,g' | xclip -selection c"
+alias flashcard="echo $(xclip -selection clipboard -o) | sed 's, ,-,g' | sed 's/./\L&/g' | sed 's,$,.mp3,g' | xclip -selection cliboard"
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files
 alias lsd='ls -d -- *(/)'				  # only show directories
@@ -184,6 +184,7 @@ alias -g X='| xargs'
 alias -g N='*/**(.om[1])'
 alias -g ND='./**/*(/om[1])' # newest directory
 alias -g NF='./**/*(.om[1])' # newest file
+alias -g MP3'./**/*.mp3(om[1])'
 alias -g latest='./**/*(.om[1])' # newest file | also Ctrl-x Ctrl-m
 alias -g NUL="> /dev/null 2>&1"
 alias -g DN="> /dev/null 2>&1"
