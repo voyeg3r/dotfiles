@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Qua 30 Set 2015 12:54:18 BRT
+" Last Change: Seg 19 Out 2015 16:23:45 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -26,7 +26,7 @@
 " http://snipt.net/public/tag/vim
 
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 
 " config for silversearcher ag
