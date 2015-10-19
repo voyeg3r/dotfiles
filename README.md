@@ -3,7 +3,7 @@
 clonedotfiles () {
 # Arquivo: Arquivos de configuração de ambiente
 # Criado: Dom 17/Out/2010 hs 15:13
-# Last Change: Ter 29 Set 2015 03:28:19 BRT
+# Last Change: Seg 19 Out 2015 16:41:15 BRT
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # http://www.twitter.com/voyeg3r
@@ -31,6 +31,18 @@ git config --global credential.helper 'cache --timeout=3600'
 git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
 
 git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+
+# porwerline fonts
+git clone git@github.com:powerline/fonts.git
+
+# how install fasd
+git clone git://github.com/clvv/fasd.git && cd fasd
+sudo make install
+
+# config vundle
+# https://github.com/VundleVim/Vundle.vim
+rm -rf ~/.dotfiles/vim/bundle/Vundle.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/vim/bundle/Vundle.vim
 
 ln -sfvn ~/.dotfiles/vim/vimrc ~/.vimrc
 ln -sfvn ~/.dotfiles/vim ~/.vim
