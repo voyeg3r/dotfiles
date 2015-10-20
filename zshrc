@@ -165,7 +165,7 @@ background() {
 
 # to show aliases definitions simple do: which alias
 alias newest='ls -lt  **/*(.om[1,20])' # list 20 newest files anywhere in directory hierarchy (very useful) *N*'
-alias flashcard="echo $(xclip -selection clipboard -o) | sed 's, ,-,g' | sed 's/./\L&/g' | sed 's,$,.mp3,g' | xclip -selection cliboard"
+alias flashcard="echo $(xclip -selection clipboard -o) | sed 's, ,-,g' | sed 's/./\L&/g' | sed 's,$,.mp3,g' | xclip -selection cliboard ; exit"
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files
 alias lsd='ls -d -- *(/)'				  # only show directories

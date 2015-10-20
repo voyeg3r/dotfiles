@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Qua 07 Out 2015 18:32:54 BRT
+Last Change: Seg 19 Out 2015 22:03:43 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -376,6 +376,9 @@ autoload -U zmv
 # rename txt to rb
 
     zmv -Wv '*.txt' '*.rb'
+
+    # removendo extensão mp4a
+    zmv '(*)mp4a' '$f:gs/\.mp4a//'
 
 with the '-n' option you can only see what will happen
 without actualy changing any file.
