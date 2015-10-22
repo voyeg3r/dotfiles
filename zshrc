@@ -74,7 +74,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 #
 cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
-typeset -U path
+typeset -U path cdpath fpath manpath
 path=(~/bin $path[@])
 
 source $ZSH/oh-my-zsh.sh

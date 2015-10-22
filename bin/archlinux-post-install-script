@@ -38,6 +38,9 @@
 # stopping bluetooth service
 sudo systemctl stop bluetooth
 
+# accessing gooogle drive
+yaourt -S gvfs gvfs-goa gvfs-google
+
 # gnome with transparency support
 yaourt -S gnome-terminal-fedora
 
@@ -337,13 +340,6 @@ graphictools () {
 		sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
 		sudo yaourt --noconfirm -S ttf-source-code-pro
 } && graphictools
-
-googletalkplugin () {
-		# https://aur.archlinux.org/packages/google-talkplugin/
-		wget -c https://aur.archlinux.org/packages/go/google-talkplugin/google-talkplugin.tar.gz
-		tar zxvf google-talkplugin.tar.gz && cd google-talkplugin
-		makepkg -si
-} && googletalkplugin
 
 multimedia () {
 		# corebird is a twitter client
