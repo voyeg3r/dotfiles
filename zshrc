@@ -300,6 +300,15 @@ bindkey " " globalias
 bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
 
+# como quase nunca uso Ctrl-s linkey ele com o sudo
+add_sudo (){
+    prefix="sudo"
+    BUFFER="$prefix $BUFFER"
+    CURSOR=$(($CURSOR + $#prefix + 1))
+}
+zle -N add_sudo
+bindkey "^s" add_sudo
+
 # some radios using mplayer
 alias bbc="mplayer -playlist http://peace.str3am.com:6810/live-96k.mp3.m3u"
 alias wnyc="mplayer -playlist http://www.wnyc.org/stream/wnyc-fm939/mp3.pls"

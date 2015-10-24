@@ -16,6 +16,6 @@ done;
 digits=$(($(ls | wc -l | wc -c)-1))
 find . -name '*.jpg' | sort -V | awk 'BEGIN{ a=1 }{ printf "mv \"%s\" %0'${digits}'d.jpg\n", $0, a++ }' | bash
 
-# only a test
-convert *.jpg ${TITLE}.pdf
+# In this case we are using xargs for a better memory usage
+find -iname "*.jpg" -print0 | xargs -0 convert ${TITLE}.pdf
 
