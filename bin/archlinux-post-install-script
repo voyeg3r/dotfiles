@@ -41,6 +41,9 @@ sudo systemctl stop bluetooth
 # accessing gooogle drive
 yaourt -S gvfs gvfs-goa gvfs-google
 
+# tool to manipulate mkv files
+yaourt -S mkvtoolnix-cli
+
 # gnome with transparency support
 yaourt -S gnome-terminal-fedora
 
