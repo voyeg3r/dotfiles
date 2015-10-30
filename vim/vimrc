@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Qua 21 Out 2015 11:12:39 BRT
+" Last Change: Sex 30 Out 2015 07:48:36 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -35,7 +35,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
+Plugin 'Raimondi/delimitMate'
 Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'ervandew/supertab'
 Plugin 'rking/ag.vim'
@@ -493,7 +493,7 @@ fun! CleanSubtitles()
     :g/^\(\s\+\)\=\d\+.*-->\s\d[^,]*,\d\d\d$/d
     :%j
     :%s,\s\+, ,g
-    :%s|,|, |g
+    :%s/,/, /g
     :%+y
     call setreg('/', old_query)
 endfun
