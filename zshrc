@@ -47,7 +47,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract history-substring-search)
+plugins=(git fasd extract history-substring-search systemd.plugin.zsh)
 #eval "$(fasd --init posix-alias zsh-hook )"
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
