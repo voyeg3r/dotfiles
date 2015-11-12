@@ -123,6 +123,8 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias xterm='xterm -rv'
+
 # Listen to Air Traffic Control, used to be scripts.
 alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
 alias GRU='mplayer http://rio.radioetvweb.com.br:8298'

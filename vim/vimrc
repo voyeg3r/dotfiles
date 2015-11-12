@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sex 30 Out 2015 07:48:36 BRT
+" Last Change: Qua 11 Nov 2015 19:04:02 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -70,6 +70,7 @@ set runtimepath+=~/.vim/snippets
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_clear_cache_on_exit = 0
 
 " ctrlp-z allow use fasd with ctrlp
 " once opened ctrlp plugin window use ctrl-r to change modes
