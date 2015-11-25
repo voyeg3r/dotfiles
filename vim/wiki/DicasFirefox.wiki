@@ -1,6 +1,6 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: Dom 27 Set 2015 15:50:37 BRT
+Last Change: Qua 25 Nov 2015 19:19:48 BRT
 autor: slas
 site: vivaotux
 twitter: voyeg3r
@@ -10,6 +10,7 @@ twitter: voyeg3r
 source: http://www.online-tech-tips.com/computer-tips/speed-up-mozilla-firefox/
 
     about:memory
+    about:support
 
 = fix youtube comments if you have third part cookies bocked =
 
