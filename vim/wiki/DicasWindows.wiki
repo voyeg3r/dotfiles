@@ -1,6 +1,6 @@
 Arquivo: dicas windows
 Criado: Ter 11/Dez/2012 hs 15:31
-Last Change: Fri 18 Sep 2015 02:06:15 PM BRT
+Last Change: Qua 25 Nov 2015 19:17:49 BRT
 autor: sergio
 site: vivaotux
 twitter: voyeg3r
@@ -46,6 +46,40 @@ alt + espaço + e + l
 
 (considere neste caso o pendrive como sendo letra 'g')
 attrib -h -r -s /s /d g:\*.*
+
+ Outra versão
+ -------------------------8<---------------------------
+    @ECHO OFF
+    ECHO Digite a letra do seu dispositivo e pressione enter.
+    ECHO (Verifique a letra atraves do Windows Explorer)
+    ECHO.
+    ECHO Digite somente a letra:
+    set /p letter=
+
+    ECHO.
+    ECHO %letter%: selecionado.
+
+    ECHO.
+    ECHO Fechando o Explorer para evitar problemas.
+    ECHO (Sera aberto novamente ao finalizar o processo)
+    ECHO Aproveite para acessar os blogs: www.thiagomedeiros.com e o www.ogestor.eti.br
+    ECHO.
+    taskkill /im explorer.exe /f
+    ECHO.
+    ECHO.
+    ECHO Processando arquivos, aguarde...
+    ECHO.
+    -------------------------8<---------------------------
+
+    attrib -r -a -s -h /s /d %letter%:*.*
+    del %letter%:*.lnk .vbs. .js .com /f /q
+    ECHO.
+    ECHO ------------CONCLUIDO!------------
+    ECHO.
+    pause
+    start explorer
+    start explorer %letter%:
+    taskkill /im cmd.exe /f
 
 =comandos do windows=
 
