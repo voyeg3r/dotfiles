@@ -1,0 +1,2 @@
+
+yaourt -S gimp-plugin-lqr gimp-plugin-gmic
