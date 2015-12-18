@@ -43,6 +43,7 @@ yaourt -S gvfs gvfs-goa gvfs-google
 
 # flash atualizado - updated flash for linux
 yaourt -s freshplayerplugin-git
+# ln -sfvn /usr/lib/mozilla/plugins/libfreshwrapper-flashplayer.so ~/.mozilla/plugins/libflashplayer.so
 
 # tool to manipulate mkv files
 yaourt -S mkvtoolnix-cli
