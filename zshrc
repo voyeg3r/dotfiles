@@ -161,6 +161,46 @@ alias pbpaste='xclip -selection clipboard -o'
 # dentro do anki
 alias EW='z collect && audacity `xclip -selection clipboard -o`'
 
+# ping wrapper ------------------------------------------------
+# source: http://www.cyberciti.biz/tips/unix-linux-bash-shell-script-wrapper-examples.html
+_getdomainnameonly(){
+    # Name: _getdomainnameonly
+    # Arg: Url/domain/ip
+    # Returns: Only domain name
+    # Purpose: Get domain name and remove protocol part, username:password and other parts from url
+    # get url
+    local h="$1"
+    # upper to lowercase
+    local f="${h:l}"
+    # remove protocol part of hostname
+    f="${f#http://}"
+    f="${f#https://}"
+    f="${f#ftp://}"
+    f="${f#scp://}"
+    f="${f#scp://}"
+    f="${f#sftp://}"
+    # Remove username and/or username:password part of hostname
+    f="${f#*:*@}"
+    f="${f#*@}"
+    # remove all /foo/xyz.html*
+    f=${f%%/*}
+    # show domain name only
+    echo "$f"
+}
+
+# Name: ping() wrapper
+# Arg: url/domain/ip
+# Purpose: Send ping request to domain by removing urls, protocol, username:pass using system /usr/bin/ping
+ping(){
+    local t="$1"
+    local _ping="/usr/bin/ping"
+    local c=$(_getdomainnameonly "$t")
+    [ "$t" != "$c" ] && echo "Sending ICMP ECHO_REQUEST to \"$c\"..."
+    $_ping -n -c 4 -i 0.2 -W1 $c
+    #-n -c 4 -i 0.2 -W1
+}
+# End ping wrapper ------------------------------------------------
+
 background() {
     "$@" &
 }
@@ -198,7 +238,7 @@ alias install='sudo apt-fast -y install'
 mktbz () { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/";}
 groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
 man2pdf () { man -w $1 && man -t $1 | ps2pdf - $1.pdf; }
-alias ping='ping -n -c 4 -i 0.2 -W1'
+#alias ping='ping -n -c 4 -i 0.2 -W1'
 alias shell='echo ${SHELL:t}'
 alias lvim="vim -c \"normal '0\""
 alias vnew='cd && vim */**(.om[1])'
