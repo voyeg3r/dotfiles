@@ -207,8 +207,9 @@ subslider(){
     $_subslider $@
     # creates a local array buffer
     local -a param
-    param=(${@[1]})
-    sed -i 's/\x0D$//' "${param:r}_offset.srt"
+    param=(${@[-1]})
+    #sed -i 's/\x0D$//' "${param:r}_orig.srt"
+    sed -i 's/\x0D$//' "${param:r}.srt"
 }
 
 background() {
