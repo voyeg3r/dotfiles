@@ -211,7 +211,7 @@ subslider(){
     param=(${@[-1]})
     #sed -i 's/\x0D$//' "${param:r}_orig.srt"
     # [[ ! -z "$param"  ]] && sed -i 's/\x0D$//' "${param:r}.srt"
-    [[ "$#" -gt 1  ]] && sed -i 's/\x0D$//' "${param:r}.srt"
+    [[ -f "${param:r}.srt"  ]] && sed -i 's/\x0D$//' "${param:r}.srt"
 }
 
 background() {
