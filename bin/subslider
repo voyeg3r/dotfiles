@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Source: https://raw.githubusercontent.com/micheleb/subslider/master/subslider.py
+# https://github.com/micheleb/subslider
 # SubSlider - a simple script to apply offsets to subtitles
 #
 # Copyright (C) 2014 - Michele Bonazza <http://somethingididnotknow.wordpress.com>
