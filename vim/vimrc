@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom 20 Dez 2015 12:59:01 BRT
+" Last Change: Dom 20 Dez 2015 13:08:21 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -173,7 +173,7 @@ map <silent> <F6> <esc>:call <SID>SwitchColorSchemes()<CR><bar>:echo g:colors_na
 map <special> <S-F6> :ec g:colors_name<cr>
 
 " copy the inner paragraph to clipboard
-nmap <F7> vip"+y
+nmap <F7> vip"+y:echo "parágrafo copiado para o clipboard"<cr>
 
 let g:airline_powerline_fonts=1
 let g:airline_left_sep = '▶'
