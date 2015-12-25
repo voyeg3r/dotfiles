@@ -38,6 +38,13 @@
 # stopping bluetooth service
 sudo systemctl stop bluetooth
 
+# You can think of Bleachbit as the CCleaner for Linux – but more
+# powerful. It will not only recover disk space by deleting
+# temporary or otherwise unnecessary files, but will also improve
+# Firefox performance and securely destroy unnecessary files to
+# prevent recovery.
+yaourt -S bleachbit
+
 # accessing gooogle drive
 yaourt -S gvfs gvfs-goa gvfs-google
 
