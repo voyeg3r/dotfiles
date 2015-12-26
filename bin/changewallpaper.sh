@@ -25,6 +25,14 @@
 
 # new reference: https://major.io/2015/02/11/rotate-gnome-3s-wallpaper-systemd-user-units-timers/
 
+# systemctl --user enable gnome-background-change.timer
+# systemctl --user start gnome-background-change.timer
+
+#Checking our work
+#You can use systemctl to query the timer we just activated:
+
+#$ systemctl --user list-timers
+
 
 walls_dir=$HOME/pictures/new-wallpapers
 selection=$(find $walls_dir -type f -name "*.jpg" -o -name "*.png" | shuf -n1)

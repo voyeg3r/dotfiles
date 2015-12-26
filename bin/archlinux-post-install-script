@@ -45,6 +45,12 @@ sudo systemctl stop bluetooth
 # prevent recovery.
 yaourt -S bleachbit
 
+# converter legendas sub para srt
+yaourt -S sub2srt
+
+# cairo-dock desktop launcher
+yaourt -S cairo-dock
+
 # accessing gooogle drive
 yaourt -S gvfs gvfs-goa gvfs-google
 
