@@ -49,7 +49,7 @@ yaourt -S bleachbit
 yaourt -S sub2srt
 
 # cairo-dock desktop launcher
-yaourt -S cairo-dock
+yaourt -S cairo-dock cairo-dock-plug-ins
 
 # accessing gooogle drive
 yaourt -S gvfs gvfs-goa gvfs-google
