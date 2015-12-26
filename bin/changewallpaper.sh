@@ -33,7 +33,50 @@
 
 #$ systemctl --user list-timers
 
+ SYSTEMDDIR=${HOME}/.config/systemd/user/
+
+ [[ ! -e "$SYSTEMDDIR" ]] && mkdir "$SYSTEMDDIR"
+
+ SERVICE="${SYSTEMDDIR}"gnome-background-change.service
+ TIMER="${SYSTEMDDIR}"gnome-background-change.timer
+
+if  [[ ! -f "${SERVICE}" ]] ; then
+cat <<EOF > "${SERVICE}"
+[Unit]
+Description=Rotate GNOME background
+
+[Service]
+Type=oneshot
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/bash "${HOME}"/bin/changewallpaper.sh
+
+[Install]
+WantedBy=basic.target
+EOF
+fi
+
+if [[ ! -f "${TIMER}" ]]; then
+cat <<EOF > "${TIMER}"
+[Unit]
+Description=Rotate GNOME wallpaper timer
+
+[Timer]
+OnCalendar=*:0/5
+Persistent=true
+Unit=gnome-background-change.service
+
+[Install]
+WantedBy=gnome-background-change.service
+EOF
+fi
+
+
+USER=$(whoami)
+PID=$(pgrep -u $USER gnome-session)
+export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-)
 
 walls_dir=$HOME/pictures/new-wallpapers
 selection=$(find $walls_dir -type f -name "*.jpg" -o -name "*.png" | shuf -n1)
 gsettings set org.gnome.desktop.background picture-uri "file://$selection"
+
+
