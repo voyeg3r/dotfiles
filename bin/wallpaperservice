@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# coloque o script changewallpaper.sh no seu path
+
+systemctl --user enable gnome-background-change.timer
+systemctl --user start gnome-background-change.timer
