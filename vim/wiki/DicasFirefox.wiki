@@ -1,6 +1,6 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: Qua 25 Nov 2015 19:19:48 BRT
+Last Change: Qui 31 Dez 2015 16:35:32 BRT
 autor: slas
 site: vivaotux
 twitter: voyeg3r
@@ -117,7 +117,15 @@ The Mozilla team is working on a number of performance tweaks for upcoming versi
 
 Change its value from 0 to 1 to enable the new cache.
 
+
+
+http://pt.wikihow.com/Fazer-o-Firefox-Carregar-as-P%C3%A1ginas-de-Forma-Mais-R%C3%A1pida
+
+also enable this:
+https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf
+
 =open searches in new tab=
+
 By default, Firefox has a search box in the upper-right hand corner from which you can Google things with ease. When you type in a search term, it opens the results in your current tab, which is annoying if you want to keep your current tab open.
 
 To change this behavior, open about:config and search for:
