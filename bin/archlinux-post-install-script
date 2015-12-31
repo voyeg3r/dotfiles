@@ -35,6 +35,15 @@
 # chenge workspace easyly on gnome shell
 # https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/
 
+# network performance
+sudo cp /etc/sysct.conf{,-backup}
+sudo wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf -O /etc/sysctl.d/99-sysctl.conf
+
+# To load all configuration files manually, execute
+
+sudo ln -sfvn /etc/sysctl.d/99-sysctl.conf /etc/sysctl.conf
+sudo sysctl --system
+
 # stopping bluetooth service
 sudo systemctl stop bluetooth
 

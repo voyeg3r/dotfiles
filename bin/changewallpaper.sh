@@ -35,7 +35,7 @@
 
  SYSTEMDDIR=${HOME}/.config/systemd/user/
 
- [[ ! -e "$SYSTEMDDIR" ]] && mkdir "$SYSTEMDDIR"
+ [[ ! -e "$SYSTEMDDIR" ]] && mkdir -p "$SYSTEMDDIR"
 
  SERVICE="${SYSTEMDDIR}"gnome-background-change.service
  TIMER="${SYSTEMDDIR}"gnome-background-change.timer
