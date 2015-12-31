@@ -96,3 +96,9 @@ Como adicionar sua chave ssh ao github
 		cd my_repo
 		git reset --hard [ENTER HERE THE COMMIT HASH YOU WANT]
 
+
+-----------------------------------
+Atualizando um repositório clonado
+-----------------------------------
+
+    git remote update
