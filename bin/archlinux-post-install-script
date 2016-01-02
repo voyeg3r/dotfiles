@@ -39,6 +39,9 @@
 sudo cp /etc/sysct.conf{,-backup}
 sudo wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf -O /etc/sysctl.d/99-sysctl.conf
 
+# setando o muse para ser destacado com o ctrl ou não
+gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
+
 # To load all configuration files manually, execute
 
 sudo ln -sfvn /etc/sysctl.d/99-sysctl.conf /etc/sysctl.conf
