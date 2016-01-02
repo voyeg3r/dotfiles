@@ -391,7 +391,7 @@ multimedia () {
 		sudo pacman -Syu
 		sudo pacman -Syu sox
 		sudo pacman -Syu xorg-utils pavucontrol
-		gnome-{documents,music,maps,photos,tweak-tool,extra}
+		gnome-{documents,music,maps,photos,tweak-tool,extra} dconf-editor
 		sudo pacman -S --noconfirm audacious audacity
 		sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
 		sudo pacman -S --noconfirm rhythmbox
