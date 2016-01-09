@@ -73,6 +73,17 @@ ORS    indica o separador de registros do arquivo de saida
 
     awk 'BEGIN {RS="\n\n"; FS="\n"} !/Câmara dos Deputados/ && /TEL/' unix.vcf
 
+==how use shell vars on awk==
+Como usar variáveis do bash/shell no awk
+
+I am figuring out the Ipython shell support. Its seems awk doesn't work i.e following command
+
+    ls -l | awk '{print $1}'
+
+Two dollar signs give you a literal dollar sign, so try:
+
+    ls -l | awk '{print $$1}'
+
 = which OS I am using =
 
     OS=`awk -F= '/DISTRIB_ID/ {print tolower($2)}' /etc/lsb-release`
