@@ -42,6 +42,9 @@ sudo wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysct
 # setando o muse para ser destacado com o ctrl ou não
 gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 
+# android tools
+yaourt -S android-tools
+
 # To load all configuration files manually, execute
 
 sudo ln -sfvn /etc/sysctl.d/99-sysctl.conf /etc/sysctl.conf
@@ -197,7 +200,7 @@ sudo pacman -S community/variety
 yaourt -S sysdig
 
 # remote admin your machine
-sudo pacman -S openssh rsync nmap
+sudo pacman -S openssh rsync nmap lshw
 
 # silver searcher ag
 sudo pacman -S the_silver_searcher

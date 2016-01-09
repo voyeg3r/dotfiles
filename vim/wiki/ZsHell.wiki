@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Seg 19 Out 2015 22:03:43 BRT
+Last Change: Dom 03 Jan 2016 15:22:18 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -9,6 +9,14 @@ email: <voyeg3r at gmail.com>
 {{{ keep this line to see literal text
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+==how delete a history entry==
+
+source: stackoverflow
+
+    LC_ALL=C sed -i '/porn/d' $HISTFILE
+
+    With setopt HIST_IGNORE_SPACE, you can prepend the above command with a space character to prevent it from being writting to $HISTFILE.
 
 == create one folder for each file and movi it into it ==
 
