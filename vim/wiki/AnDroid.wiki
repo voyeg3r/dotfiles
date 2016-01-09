@@ -1,6 +1,8 @@
 ==Como instalar o cynogenmod no moto g==
 https://www.youtube.com/watch?v=m-AkLX_HfFA
 
+https://fralef.me/reroot-android-using-gnulinux-sdk-tools-and-twrp.html
+
 Rom CM13 moto G2 2014 http://adf.ly/1TKTrC
 
 Rom CM13 moto G1 http://adf.ly/1TKTua
