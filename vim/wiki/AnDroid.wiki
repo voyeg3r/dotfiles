@@ -80,3 +80,17 @@ sudo fastboot flash recovery ~/Downloads/openrecovery-twrp-2.8.2.0-hammerhead.im
 sudo fastboot flash recovery twrp-2.8.6.0-titan.img
 
 boot in recover mode
+
+
+== How block fastbook again ==
+
+source: http://forum.cyanogenmod.org/topic/64232-security-benefit-to-fastboot-oem-lock-after-rom-installation/
+
+Initially, I thought to myself, "Oh, I guess this won't work." However, I noticed at least one guide I found on "fastboot oem lock" specified getting into bootloader via ADB, so I tried it again with the following commands:
+
+$ adb reboot bootloader
+$ fastboot oem lock
+...
+(bootloader) Bootloader is locked now.
+OKAY [  1.644s]
+finished. total time: 1.644s

@@ -1,6 +1,6 @@
 =Introdução=
-O comando tee permite que a saída de um comando 
-seja gravada em um arquivo ao mesmo tempo em que 
+O comando tee permite que a saída de um comando
+seja gravada em um arquivo ao mesmo tempo em que
 é exibida na tela.
 
 echo "deb http://packages.medibuntu.org/ hardy free non-free" | sudo tee -a /etc/apt/sources.list
@@ -10,17 +10,23 @@ No caso acima estamos mostrando na tela:
 deb http://packages.medibuntu.org/ hardy free non-free
 
 Ao mesmo tempo em que estamos enviando o mesmo conteúdo para o final
-do arquivo 
+do arquivo
 
 /etc/apt/sources.list
 
 ==Gravando a saida padrão e os erros em um arquivo de log==
 A solução abaixo é especialmente útil para scripts em que você
-não pode estar acompanhando o tempo todo, daí você gera um log, 
+não pode estar acompanhando o tempo todo, daí você gera um log,
 mas se tiver tempo pode ver o que acontece na hora.
 
 comando 2>&1 | tee -a log.txt
 bash -x test.sh 2>&1 | tee out.test
+
+==enviando uma saida para varios arquivos de uma vez==
+
+source: http://stackoverflow.com/questions/34678428/create-multiple-files-in-unix-using-a-script
+
+echo "What you want the files to contain." | tee filename{1..10}.txt
 
 
 ==Gravando logs dos comandos digitados==

@@ -398,7 +398,8 @@ multimedia () {
 		sudo pacman -Syu sox
 		sudo pacman -Syu xorg-utils pavucontrol
 		gnome-{documents,music,maps,photos,tweak-tool,extra} dconf-editor
-		sudo pacman -S --noconfirm audacious audacity
+		sudo pacman -S --noconfirm audacity
+    yaourt -S community/noise-player
 		sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
 		sudo pacman -S --noconfirm rhythmbox
 		sudo yaourt -S --noconfirm codecs

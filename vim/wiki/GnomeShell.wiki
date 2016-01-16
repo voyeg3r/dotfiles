@@ -1,11 +1,25 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: Sáb 02 Jan 2016 14:58:41 BRT
+Last Change: Dom 10 Jan 2016 15:31:43 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 {{{
+
+==fixing audacious open folders error==
+I don't know how it happened but when, eg, I plug in a USB drive or try to open a folder in a firefox extension (or other programs that want to open a folder...), it always wants to open with Audacious which is obnoxious.  Browsing through in Nautilus works fine and normal, but I want to know if I can find out how to get rid of the association with Audacious.
+
+    I've tried deleting ~/.config and ~/.local to no help...
+
+    Create the file
+
+    ~/.local/share/applications/mimeapps.list
+
+    and fill it with
+
+    [Default Applications]
+    inode/directory=nautilus.desktop;
 
 == setting gnome screenshot dir ==
 
