@@ -1,7 +1,7 @@
 [[Wiki]] do Sérgio para fins diversos=
 
 Criado: Dom 17/Out/2010 hs 14:23
-Last Change: Sex 08 Jan 2016 22:40:21 BRT
+Last Change: Sáb 23 Jan 2016 16:04:58 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 
@@ -33,3 +33,4 @@ site: http://vivaotux.blogspot.com
 
  [[DesktopLinux]] [[SofficeCalc]] [[SauDe]] [[LaTex]] [[LatexExemplos]]
 
+[[CertidoesNegativasEdocumentos]]
