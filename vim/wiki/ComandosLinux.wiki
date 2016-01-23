@@ -86,6 +86,7 @@ começando pelo [[VlC]]
 [[ComandoFuser|Fuser]] - identifica qual processo está usando um recurso
 [[ComandoFzf|fzf]] command line fuzzy finder
 [[ComandoGpasswd|Gpasswd]] - adiciona usuário a grupos
+[[ComandoGit|Git]] - adiciona usuário a grupos
 [[ComandoGparted|Gparted]] - particionador de discos
 [[ComandoGrep|Grep]] - filtra textos
 [[ComandoGrin|Grin]] - filtra textos (baseado em python)
