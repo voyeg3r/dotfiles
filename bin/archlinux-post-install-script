@@ -180,18 +180,20 @@ pacman -Syu pydoc
 # developing packages
 yaourt -Syua --devel
 
-pm i aur/firefox-nightly
+yaourt -S aur/firefox-nightly
 
-pm i community/html2text
+yaourt -S opera-developer
+
+yaourt -S community/html2text
 
 # chat, video sms like appear.in
-pm i aur/tox-git
+yaourt -S aur/tox-git
 
 # capture audio stream playlist
-pm i extra/streamripper
+yaourt -S extra/streamripper
 
 # music player
-pm i aur/lollypop
+yaourt -S aur/lollypop
 
 # change wallpaper
 sudo pacman -S community/variety
@@ -206,35 +208,35 @@ sudo pacman -S openssh rsync nmap lshw
 sudo pacman -S the_silver_searcher
 
 # download manager
-pm i aur/jdownloader
+yaourt -S aur/jdownloader
 
 # mega file storage
-pm i megasync
-pm i aur/nautilus-megasync
+yaourt -S megasync
+yaourt -S aur/nautilus-megasync
 
 # patch for terminal transparency
 # https://aur.archlinux.org/packages/gnome-terminal-transparent
 
 # skype alternative
-pm i aur/tox-git
+yaourt -S aur/tox-git
 
 # software manangement
-pm i community/gnome-packagekit
+yaourt -S community/gnome-packagekit
 
 # limitar velocidade do pacman
 # http://www.taringa.net/posts/linux/15314299/Limitar-velocidad-de-Pacman-en-ArchLinux.html
-pm i trickle
+yaourt -S trickle
 # sudo trickle -d 50 pacman -Syuw --noconfirm
 
 # cmd line image viwever
-pm i extra/feh
+yaourt -S extra/feh
 
 # subtitles searcher and downloader
 yaourt aur/periscope nautilus-periscope
 
 installxfceterminal(){
 		#light terminal with transparency support
-		pm i extra/xfce4-terminal
+		yaourt -S extra/xfce4-terminal
 		sed -i.backup '/MiscMenubarDefault/s/TRUE$/FALSE/g' ~/.config/xfce4/terminal/terminalrc
 } && installxfceterminal
 
@@ -243,10 +245,10 @@ installxfceterminal(){
 # http://askubuntu.com/questions/76712/setting-nautilus-open-terminal-to-launch-terminator-rather-than-gnome-terminal
 
 # better performance
-pm i aur/zramswap
+yaourt -S aur/zramswap
 
 # media server similar to xbmpc
-pm i plexmediaserver
+yaourt -S plexmediaserver
 #It may be necessary to run through the Plex basic setup wizard before launching Plex via its systemd unit:
 # /opt/plexmediaserver/start_pms
 #Once completed, you can start Plex at boot with systemd:
@@ -256,13 +258,13 @@ pm i plexmediaserver
 #To begin configuring Plex, browse to http://localhost:32400/manage.
 
 # a beautiful player
-pm i aur/spotify
+yaourt -S aur/spotify
 
 # firefox and chrome profile cleaner
-pm i profile-cleaner
+yaourt -S profile-cleaner
 
 # alternative to firefox
-pm i icecat
+yaourt -S icecat
 
 installpopcorntime(){
 wget -c https://aur.archlinux.org/packages/po/popcorntime-bin/popcorntime-bin.tar.gz
@@ -271,17 +273,17 @@ makepkg -si
 } && installpopcorntime
 
 # anki
-pm i aur/anki-git mplayer aur/python-pyaudio lame sox aur/audio-recorder
+yaourt -S aur/anki-git mplayer aur/python-pyaudio lame sox aur/audio-recorder
 
 # watch movies throug torrents
-pm i aur/popcorntime-git
+yaourt -S aur/popcorntime-git
 
 # kernel optimization to desktop
-pm i ulatencyd
+yaourt -S ulatencyd
 
 # program needed to kill bluetooth
 # https://wiki.archlinux.org/index.php/Power_saving
-pm i rfkill
+yaourt -S rfkill
 
 #
 # edit --> /etc/udev/rules.d/bt.rules
@@ -290,10 +292,10 @@ pm i rfkill
 #   SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"
 
 # \LaTeX\
-pm i texlive-core texlive-langcjk texlive-latexextra texlive-pictures
+yaourt -S texlive-core texlive-langcjk texlive-latexextra texlive-pictures
 haskell-pandoc
 
-pm i community/txt2tags
+yaourt -S community/txt2tags
 
 # to install haskell-pandoc you must add this repo
 #[haskell-core]
@@ -369,7 +371,7 @@ compactadores () {
 # https://bbs.archlinux.org/viewtopic.php?id=127998
 pacman -Sy cabal-install
 cabal update
-pm i ghc
+yaourt -S ghc
 cabal install pandoc
 
 graphictools () {
@@ -405,7 +407,7 @@ multimedia () {
 		sudo yaourt -S --noconfirm codecs
 		sudo pacman -S vlc ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
     sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-pluginscman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins
-pm i extra/sound-juicer
+yaourt -S extra/sound-juicer
 		rm -rf ~/.thumbnails/fail
 		# sucessor do ffmpeg
 		# https://aur.archlinux.org/packages/libav-git/
