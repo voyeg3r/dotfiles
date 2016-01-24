@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Criado em: 01-24-2016
+
+# Last Change: Dom 24 Jan 2016 10:27:20 BRT
+# vim:ft=sh:fdm=syntax:nu:
+# Instituicao: none
+# Proposito do script: convert flac to mp3
+# Autor: Sergio Luiz Araujo Silva
+# site: http://vivaotux.blogspot.com
+# press Ctrl-j to jump placeholders
+
+for a in *.flac; do
+    f="${a[@]/%flac/mp3}"
+    ffmpeg -i "$a" -qscale:a 0 "$f"
+done
