@@ -315,6 +315,8 @@ bindkey "^s" add_sudo
 
 # some radios using mplayer
 alias bbc="mplayer -playlist http://peace.str3am.com:6810/live-96k.mp3.m3u"
+alias klara='mplayer  http://mp3.streampower.be/klara-high.mp3'
+alias radio4='mplayer http://icecast.omroep.nl/radio4-bb-mp3'
 alias wnyc="mplayer -playlist http://www.wnyc.org/stream/wnyc-fm939/mp3.pls"
 alias wfiu="mplayer -playlist http://hannibal.ucs.indiana.edu:8000/wfiu_hi.m3u"
 alias news="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
