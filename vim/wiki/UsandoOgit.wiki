@@ -102,3 +102,9 @@ Atualizando um repositório clonado
 -----------------------------------
 
     git remote update
+
+---------------------------------------------
+Como checar as alterações de um único arquivo
+---------------------------------------------
+
+    git log --follow filename
