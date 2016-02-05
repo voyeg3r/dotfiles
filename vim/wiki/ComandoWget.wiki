@@ -5,6 +5,8 @@ mantém um resumo do que foi baixado
 ==referências==
 * http://codesnippets.joyent.com/tag/wget
 
+wget -m --restrict-file-names=nocontrol --user-agent="direct download -- `uname -a`" --no-parent --referer=http://DigitalK7.com/ "http://digitalk7.com/mus/Brazil/"
+
 
 =baixar licença gplv3=
 
