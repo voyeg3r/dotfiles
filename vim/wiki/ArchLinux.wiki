@@ -1,10 +1,21 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Sáb 19 Set 2015 09:43:21 BRT
+Last Change: Sex 12 Fev 2016 18:47:22 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
+
+==archanywhere==
+Facilitador para instalaçaõ do archlinux
+
+http://arch-anywhere.org/download.html
+
+http://danpla.github.io/fontlink/
+https://askubuntu.com/questions/531479/install-fonts-temporarily/623236#623236
+yaourt -S extra/python2-gobject2
+yaourt -S libappindicator-gtk3
+yaourt -S font-manager
 
 == pdnsd easy dns cache ==
 https://wiki.archlinux.org/index.php/Pdnsd
