@@ -51,6 +51,11 @@ plugins=(git fasd extract history-substring-search systemd.plugin.zsh)
 #eval "$(fasd --init posix-alias zsh-hook )"
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
+# source: http://stackoverflow.com/questions/35524958/push-local-git-repo-with-sub-repos-vim
+make-github-submodule () {
+    git config -f .gitmodules submodule.$1.path $1
+    git config -f .gitmodules submodule.$1.url https://github.com/$2.git
+}
 
 source $HOME/.dotfiles/functions/wrapper_functions.lib
 
