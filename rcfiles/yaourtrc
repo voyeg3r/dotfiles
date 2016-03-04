@@ -1,4 +1,5 @@
 # Sun Jan  2 21:04:01 IST 2011
+# place this file in ~/.yaourtc
 
 #If set to 1, always use the default choice without confirmation.
 NOCONFIRM=1
