@@ -79,6 +79,8 @@ cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
 typeset -U path cdpath fpath manpath
 path=(~/bin $path[@])
 
+fpath=( ~/.dotfiles/rcfiles/zsh/functions "${fpath[@]}" )
+
 source $ZSH/oh-my-zsh.sh
 
 # If you end up using a directory as argument,
@@ -122,7 +124,7 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 # For a full list of active aliases, run `alias`.
 
 source ~/.dotfiles/rcfiles/zsh/aliases
-source ~/.dotfiles/rcfiles/zsh/simplefunctions
+source ~/.dotfiles/rcfiles/zsh/functions/simplefunctions
 
 # alt-s inserts "sudo" at the start of line:
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
@@ -131,8 +133,6 @@ bindkey "^[s" insert-sudo
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
-
-
 
 # source: http://goo.gl/HUXBjG
 globalias() {

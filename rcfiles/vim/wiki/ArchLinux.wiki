@@ -1,6 +1,6 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Sex 12 Fev 2016 18:47:22 BRT
+Last Change: Sáb 05 Mar 2016 08:01:33 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -90,6 +90,10 @@ Another option would be to use the "--noconfirm".
 source: https://bbs.archlinux.org/viewtopic.php?id=151156
 
     sudo systemctl enable gdm.service -f
+
+        or
+
+    sudo systemctl -f enable gdm
 
 ==setting default shell==
 * reference: http://va.mu/hbcr  (superuser)

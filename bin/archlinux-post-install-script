@@ -66,7 +66,7 @@ yaourt -S sub2srt
 # cairo-dock desktop launcher
 yaourt -S cairo-dock cairo-dock-plug-ins
 
-# um bom leitor de feeds enquanto o gnome-news não roda direito
+# um bom leitor de feeds equanto o gnome-news não roda direito
 yaourt -S feedreader
 
 # accessing gooogle drive

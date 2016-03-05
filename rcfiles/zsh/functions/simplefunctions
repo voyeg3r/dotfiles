@@ -1,4 +1,3 @@
-
 # functions
 mktbz () { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/";}
 groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
