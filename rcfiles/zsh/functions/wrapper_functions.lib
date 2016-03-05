@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
+
 # PING WRAPPER ------------------------------------------------
+
 # source: http://www.cyberciti.biz/tips/unix-linux-bash-shell-script-wrapper-examples.html
 _getdomainnameonly(){
 # Name: _getdomainnameonly
@@ -7,7 +9,7 @@ _getdomainnameonly(){
 # Returns: Only domain name
 # Purpose: Get domain name and remove protocol part, username:password and other parts from url
 # get url
-    local h="$1"
+local h="$1"
 # upper to lowercase
         local f="${h:l}"
 # remove protocol part of hostname
@@ -30,11 +32,11 @@ echo "$f"
 # Arg: url/domain/ip
 # Purpose: Send ping request to domain by removing urls, protocol, username:pass using system /usr/bin/ping
 ping(){
-local t="$1"
-local _ping="/usr/bin/ping"
-local c=$(_getdomainnameonly "$t")
-[ "$t" != "$c" ] && echo "Sending ICMP ECHO_REQUEST to \"$c\"..."
-$_ping -n -c 4 -i 0.2 -W1 $c
+    local t="$1"
+    local _ping="/usr/bin/ping"
+    local c=$(_getdomainnameonly "$t")
+    [ "$t" != "$c" ] && echo "Sending ICMP ECHO_REQUEST to \"$c\"..."
+    $_ping -n -c 2 -i 2 -W1 $c
 }
 
 host(){
