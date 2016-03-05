@@ -51,11 +51,6 @@ plugins=(git fasd extract history-substring-search systemd.plugin.zsh)
 #eval "$(fasd --init posix-alias zsh-hook )"
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
-# source: http://stackoverflow.com/questions/35524958/push-local-git-repo-with-sub-repos-vim
-make-github-submodule () {
-    git config -f .gitmodules submodule.$1.path $1
-    git config -f .gitmodules submodule.$1.url https://github.com/$2.git
-}
 
 source $HOME/.dotfiles/rcfiles/zsh/functions/wrapper_functions.lib
 
@@ -127,39 +122,7 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 # For a full list of active aliases, run `alias`.
 
 source ~/.dotfiles/rcfiles/zsh/aliases
-
-background() {
-    "$@" &
-}
-
-mktbz () { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/";}
-groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
-man2pdf () { man -w $1 && man -t $1 | ps2pdf - $1.pdf; }
-
-# functions
-yt () mplayer -fs -quiet $(youtube-dl -g "$1")
-gsend() { git commit -am "$1" && git push ;}
-lowerstring() { echo "${*}" | sed 's/./\L&/g' ;}
-lower (){ echo ${@:l} }  # this versio only works in zsh
-upper (){ echo ${@:u} }  # this versio only works in zsh
-expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; }
-calc(){ echo "scale=2;$@" | bc;}
-alias calc='noglob calc'
-ff () { find . -type f -iname '*'"$@"'*' ; }
-mkcd() { mkdir -p "$@" && cd $_; }
-decToBin () { echo "ibase=10; obase=2; $1" | bc; }
-decTohex () { bc <<< "obase=16; $1"; }
-biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }
-top10 () { history | awk '{print $2}' | sort | uniq -c | sort -rn | head ; }
-beep () { echo -e -n \\a ; }
-dict() { curl "dict://dict.org/d:${1%%/}";}
-cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
-
-youtube-mp3 () {
-    # get mp3 from youtube
-    command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames --extract-audio --audio-format=mp3 --audio-quality 320k "${1}"
-    [[ $? = 1 ]] && echo "instale o programa ffmpeg para poder converter para mp3"
-}
+source ~/.dotfiles/rcfiles/zsh/simplefunctions
 
 # alt-s inserts "sudo" at the start of line:
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
@@ -169,47 +132,7 @@ bindkey "^[s" insert-sudo
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
-# fzf settings ##############################################
-# ZSH keybinding example; ~/.zshrc
-fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^h' fzf_history
-fzf_killps() { zle -I; ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }; zle -N fzf_killps; bindkey '^Q' fzf_killps
-fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" ; }; zle -N fzf_cd; bindkey '^x^d' fzf_cd
 
-# vimf - Open selected file in Vim
-vimf() {
-    FILE=$(fzf) && vim "$FILE"
-}
-
-# fd - cd to selected directory
-fd() {
-    DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR"
-}
-
-# fda - including hidden directories
-fda() {
-    DIR=$(find ${1:-.} -type d 2> /dev/null | fzf) && cd "$DIR"
-}
-
-# fh - repeat history
-fh() {
-    eval $(history | fzf +s | sed 's/ *[0-9]* *//')
-}
-
-# fkill - kill process
-fkill() {
-    ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9}
-}
-
-# End fzf settings
-
-# ctrl-p for zsh (when fzf is setted whith
-# yaourt -S fzf comment these lines
-# # source: https://goo.gl/Tts3vW (reddit)
-ctrlp() {
-    </dev/tty vim -c CtrlP
-}
-zle -N ctrlp
-bindkey "^f" ctrlp
 
 # source: http://goo.gl/HUXBjG
 globalias() {
@@ -226,49 +149,6 @@ bindkey " " globalias
 bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
 
-# como quase nunca uso Ctrl-s linkey ele com o sudo
-add_sudo (){
-    prefix="sudo"
-    BUFFER="$prefix $BUFFER"
-    CURSOR=$(($CURSOR + $#prefix + 1))
-}
-zle -N add_sudo
-bindkey "^s" add_sudo
-
-# some radios using mplayer
-alias bbc="mplayer -playlist http://peace.str3am.com:6810/live-96k.mp3.m3u"
-alias klara='mplayer  http://mp3.streampower.be/klara-high.mp3'
-alias radio4='mplayer http://icecast.omroep.nl/radio4-bb-mp3'
-alias wnyc="mplayer -playlist http://www.wnyc.org/stream/wnyc-fm939/mp3.pls"
-alias wfiu="mplayer -playlist http://hannibal.ucs.indiana.edu:8000/wfiu_hi.m3u"
-alias news="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
-alias npr='mplayer -playlist http://www.npr.org/templates/dmg/dmg.php\?getProgramStream\=true\&NPRMediaPref\=WM'
-alias current="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/the_current.pls" # The Current
-alias classical="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/classical.pls" # Classical MPR
-alias jazz='mplayer http://streamerepsilon.jazz.fm:8000'
-alias beatles='mplayer http://uplink.duplexfx.com:8062'
-alias localcurrent="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/local.pls" # Local Current
-alias heartland="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/radio_heartland.pls" # MPR Radio Heartland
-alias wonderground="mplayer http://wondergroundstream2.publicradio.org/wonderground" # MPR Wonderground Windows Media
-alias choral="mplayer -playlist http://choralstream1.publicradio.org/choral.m3u" # Clasical MPR Choral
-alias wefunk="mplayer -playlist http://www.wefunkradio.com/play/shoutcast.pls" # WEFUNK Radio MP3 64K
-alias sleepbot="mplayer -playlist http://sleepbot.com/ambience/cgi/listen.cgi/listen.pls" # Sleepbot Environmental Broadcast 56K MP3
-alias groovesalad="mplayer -playlist http://somafm.com/groovesalad130.pls" # Soma FM Groove Salad iTunes AAC 128K
-alias dronezone="mplayer -playlist http://somafm.com/dronezone130.pls" # Soma FM Drone Zone iTunes AAC 128K
-alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTunes AAC 128K
-alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
-
-dumpwnyc () {
-    mplayer -playlist "http://www.wnyc.org/stream/wnyc-fm939/mp3.pls" -dumpstream -dumpfile wnyc-`date +%Y-%b-%d--%H.%Mhs`.mp3
-}
-
-record(){
-    # references:
-    # http://mocha.freeshell.org/audio.html
-    # http://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
-    [ -z "$1" ] && name="output.mp3" || name="$1"
-    arecord -v -f cd -t raw | lame -r - $name
-}
 
 # firefox improviments
 # disalbe rendering fonts in firefox to free memory
