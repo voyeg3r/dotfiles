@@ -64,5 +64,6 @@ subslider(){
     #sed -i 's/\x0D$//' "${param:r}_orig.srt"
     # [[ ! -z "$param"  ]] && sed -i 's/\x0D$//' "${param:r}.srt"
     [[ -f "${param:r}_offset.srt"  ]] && sed -i 's/\x0D$//' "${param:r}_offset.srt"
+    mv "${param}" ~/.local/share/Trash/files/"${param:r}-$(date +%H-%M-%S).srt" && mv "${param:r}_offset.srt" "${param}"
 }
 

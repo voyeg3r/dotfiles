@@ -72,6 +72,7 @@ alias v='f -e vim' # open file with vim
 alias v='f -t -e vim -b viminfo'
 alias o='a -e xdg-open' # quick opening files with xdg-open
 alias _!='fc -e "sed -i -e \"s/^/sudo /\""' # sudo last command
+# para abrir um arquivo recem editado com o vim faça: v nome
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
