@@ -150,6 +150,20 @@ bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
 bindkey -s '\eu' 'cd ..^j' # alt-u up dir
 
+# source: http://stackoverflow.com/questions/171563/whats-in-your-zshrc
+# I often build elaborate commands step by step: I run a command,
+# see I need a different option, then use the output of the same
+# command within # $() (the portable version of backquotes) in a
+# for loop or something. The following snippet makes alt-E (I
+# should probably write meta-E?) insert the previous line
+# between $().
+
+insert-history-line() {
+    LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
+}
+zle -N insert-history-line insert-history-line
+bindkey '^[e' insert-history-line
+
 # firefox improviments
 # disalbe rendering fonts in firefox to free memory
 export MOZ_DISABLE_PANGO='1'
