@@ -3,10 +3,11 @@
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias xterm='xterm -rv'
-alias calc='noglob calc'
+# alias calc='noglob calc'
 
 alias path="echo ${PATH//:/$'\n'}"
 alias fpath="echo ${fpath// /$'\n'}"
+alias shell='echo ${SHELL:t}'
 
 alias lvim="vim -c \"normal '0\""
 alias compilalivro='make clean; make && make show'

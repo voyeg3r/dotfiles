@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+# Change file extensions recursively in current directory
+# change-extension erb haml
+#
+# usage: change-extension txt text
+
+function change-extension() {
+  foreach f (**/*.$1)
+    mv $f $f:r.$2
+  end
+}
