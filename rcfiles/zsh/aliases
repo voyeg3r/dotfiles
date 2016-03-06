@@ -9,6 +9,13 @@ alias path="echo ${PATH//:/$'\n'}"
 alias fpath="echo ${fpath// /$'\n'}"
 alias shell='echo ${SHELL:t}'
 
+# vimrc editing
+alias ve='vim ~/.vimrc'
+
+# zsh profile editing
+alias ze='vim ~/.zshrc'
+alias zr='source ~/.zshrc'
+
 alias lvim="vim -c \"normal '0\""
 alias compilalivro='make clean; make && make show'
 alias 4shared='cadaver http://webdav.4shared.com/'
