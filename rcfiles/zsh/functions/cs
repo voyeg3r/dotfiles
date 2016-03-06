@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 function cs {
     cd "$@" && ls -A
 }

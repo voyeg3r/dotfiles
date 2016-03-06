@@ -3,8 +3,10 @@
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias xterm='xterm -rv'
-
 alias calc='noglob calc'
+
+alias path="echo ${PATH//:/$'\n'}"
+alias fpath="echo ${fpath// /$'\n'}"
 
 # Listen to Air Traffic Control, used to be scripts.
 alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
@@ -95,4 +97,5 @@ alias -g LC="| sed 's/./\L&/g'"
 alias -g UL="| sed 's, ,_,g'"
 alias -g ULC="| sed 's/./\L&/g' | sed 's, ,_,g'"
 alias pnf='mpg123 ./**/*(.om[1])'
-alias install='sudo apt-fast -y install'
+#alias install='sudo apt-fast -y install'
+alias install="yaourt -Syua"
