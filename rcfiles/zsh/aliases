@@ -8,6 +8,10 @@ alias calc='noglob calc'
 alias path="echo ${PATH//:/$'\n'}"
 alias fpath="echo ${fpath// /$'\n'}"
 
+alias lvim="vim -c \"normal '0\""
+alias compilalivro='make clean; make && make show'
+alias 4shared='cadaver http://webdav.4shared.com/'
+
 # Listen to Air Traffic Control, used to be scripts.
 alias GIG='mplayer http://rio.radioetvweb.com.br:8246'
 alias GRU='mplayer http://rio.radioetvweb.com.br:8298'
