@@ -1,5 +1,47 @@
 #!/usr/bin/env bash
 # coloque o script changewallpaper.sh no seu path
+# see also changewallpaper script
+
+#### $ systemctl --user list-timers
+
+# SYSTEMDDIR=${HOME}/.config/systemd/user/
+#
+# [[ ! -e "$SYSTEMDDIR" ]] && mkdir -p "$SYSTEMDDIR"
+#
+# SERVICE="${SYSTEMDDIR}"gnome-background-change.service
+# TIMER="${SYSTEMDDIR}"gnome-background-change.timer
+#
+# if  [[ ! -f "${SERVICE}" ]] ; then
+#     cat <<EOF > "${SERVICE}"
+#     [Unit]
+#     Description=Rotate GNOME background
+#
+#     [Service]
+#     Type=oneshot
+#     Environment=DISPLAY=:0
+#     ExecStart=/usr/bin/bash "${HOME}"/bin/changewallpaper.sh
+#
+#     [Install]
+#     WantedBy=basic.target
+#     EOF
+# fi
+#
+# if [[ ! -f "${TIMER}" ]]; then
+#     cat <<EOF > "${TIMER}"
+#     [Unit]
+#     Description=Rotate GNOME wallpaper timer
+#
+#     [Timer]
+#     OnCalendar=*:0/5
+#     Persistent=true
+#     Unit=gnome-background-change.service
+#
+#     [Install]
+#     WantedBy=gnome-background-change.service
+#     EOF
+# fi
 
 systemctl --user enable gnome-background-change.timer
 systemctl --user start gnome-background-change.timer
+
+

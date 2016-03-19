@@ -7,6 +7,7 @@ yt () mplayer -fs -quiet $(youtube-dl -g "$1")
 gsend() { git commit -am "$1" && git push ;}
 lowerstring() { echo "${*}" | sed 's/./\L&/g' ;}
 lower (){ echo ${@:l} }  # this versio only works in zsh
+lcase (){ local var=$(pbpaste); print ${var:l} }
 upper (){ echo ${@:u} }  # this versio only works in zsh
 expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; }
 calc(){ echo "scale=2;$@" | bc;}
