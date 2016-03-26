@@ -1,10 +1,13 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Sáb 26 Mar 2016 18:12:22 BRT
+Last Change: Sáb 26 Mar 2016 18:24:16 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r at gmail.com>
+
+References:
+http://zshwiki.org/home/builtin/functions/zmv
 
 {{{ keep this line to see literal text
 
@@ -392,6 +395,9 @@ autoload -U zmv
     without actualy changing any file.
 
     zmv -n (*) ${(U)1}
+
+    ## in this example we are going to change all to lowercase
+    zmv '(*)' '${(L)1}'
 
 #Replace spaces in filenames with underline
 
