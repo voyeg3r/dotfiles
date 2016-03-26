@@ -67,6 +67,9 @@ plugins+=(zsh-completions)
 autoload -U compinit && compinit
 autoload -Uz url-quote-magic; zle -N self-insert url-quote-magic
 
+autoload -U zmv
+alias mmv='noglob zmv -W'
+
 # User configuration
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 setopt HIST_IGNORE_DUPS

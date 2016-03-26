@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Dom 03 Jan 2016 15:22:18 BRT
+Last Change: Sáb 26 Mar 2016 18:12:22 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -381,15 +381,15 @@ tornar executáveis todos os arquivos de um diretório
 # zmv "programmable rename"
 autoload -U zmv
 
-# rename txt to rb
+    # rename txt to rb
 
     zmv -Wv '*.txt' '*.rb'
 
     # removendo extensão mp4a
     zmv '(*)mp4a' '$f:gs/\.mp4a//'
 
-with the '-n' option you can only see what will happen
-without actualy changing any file.
+    with the '-n' option you can only see what will happen
+    without actualy changing any file.
 
     zmv -n (*) ${(U)1}
 
@@ -400,12 +400,21 @@ without actualy changing any file.
 		zmv '*' '$f:s/hell/heaven/'
 
 
-zmv '(* *)' '${1// /}'
-zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
+    zmv '(* *)' '${1// /}'
+    zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
+
 # Change the suffix from *.sh to *.pl
-zmv -W '*.sh' '*.pl'
+
+    zmv -W '*.sh' '*.pl'
+
 # lowercase/uppercase all files/directories
+
 $ zmv '(*)' '${(L)1}' # lowercase
 $ zmv '(*)' '${(U)1}' # uppercase
+
+# Remove numbers on the filenames begin
+
+    autoload -U zmv
+    zmv '[0-9]## #(*.mp3)' '$1'
 
 }}}
