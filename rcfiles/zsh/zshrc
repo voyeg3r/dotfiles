@@ -89,9 +89,6 @@ source $ZSH/oh-my-zsh.sh
 # this will remove the trailing slash (usefull in ln)
 zstyle ':completion:*' squeeze-slashes true
 
-# cd will never select the parent directory (e.g.: cd ../<TAB>):
-zstyle ’:completion:*:cd:*’ ignore-parents parent pwd
-
 # HISTORY
 HISTSIZE=10000
 SAVEHIST=9000

@@ -45,6 +45,13 @@ gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 # android tools
 yaourt -S android-tools
 
+# you will have a better rename with regex support
+sudo pacman -S perl-rename
+
+# tradutor via linha de comando
+# https://aur.archlinux.org/packages/translate-shell/
+yaourt -Syua translate-shell
+
 # To load all configuration files manually, execute
 
 sudo ln -sfvn /etc/sysctl.d/99-sysctl.conf /etc/sysctl.conf
