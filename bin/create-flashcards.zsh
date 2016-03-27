@@ -23,9 +23,9 @@ zmv '(*)' '${(L)1}'
 
 for i in *(.); touch ${i:r}.txt
 for i in *(.)txt; echo ${i:r} | sed 's/_/ /g' > $i
-#for i in *(.)txt; var=$(echo ${i:r} | sed 's/_/ /g') && trans -b :pt $(echo $var) >> $i
 sed -i 's/\(.\)/\U\1/' *.txt
 for i in *(.)mp3; echo "[sound:${i}]"  >> ${i:r}.txt
 for i in *(.)mp3; mkdir ${i:r} && mv $i ${i:r}
 for i in *(/); mv ${i}.txt ${i}
+
 
