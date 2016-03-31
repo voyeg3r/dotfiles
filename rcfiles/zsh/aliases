@@ -93,6 +93,7 @@ alias newest='ls -lt  **/*(.om[1,20])' # list 20 newest files anywhere in direct
 alias lad='ls -d -- .*(/)'				# only show dot-directories
 alias lsa='ls -a -- .*(.)'				# only show dot-files
 alias lsd='ls -d -- *(/)'				  # only show directories
+alias cd=' cd'
 alias -s {md,txt,text}=vim
 alias -s {wav,mp3,ogg}='background mplayer'
 alias -s pdf=evince

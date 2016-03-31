@@ -21,6 +21,12 @@ beep () { echo -e -n \\a ; }
 dict() { curl "dict://dict.org/d:${1%%/}";}
 cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
 
+foreground-vi() {
+fg %vi
+}
+zle -N foreground-vi
+bindkey '^Z' foreground-vi
+
 youtube-mp3 () {
 # get mp3 from youtube
     command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames --extract-audio --audio-format=mp3 --audio-quality 320k "${1}"
