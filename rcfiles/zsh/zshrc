@@ -53,7 +53,7 @@ plugins=(git fasd extract history-substring-search systemd.plugin.zsh)
 #eval "$(fasd --init posix-alias zsh-hook )"
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
-source $HOME/.dotfiles/rcfiles/zsh/functions/wrapper_functions.lib
+for f in $HOME/.dotfiles/rcfiles/zsh/functions/*; source $f
 
 if [ -f ~/.dotfiles/oh-my-zsh/custom/auto-fu/auto-fu.plugin.zsh ]; then
     source ~/.dotfiles/oh-my-zsh/custom/auto-fu/auto-fu.plugin.zsh ;
