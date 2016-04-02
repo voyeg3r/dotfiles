@@ -8,6 +8,8 @@ export ZSH="${HOME}/.dotfiles/oh-my-zsh"
  ZSH_THEME="bira"
 
 setopt PROMPT_BANG # enables '!' substituition on prompt
+setopt inc_append_history
+setopt share_history
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -66,6 +68,7 @@ fi
 plugins+=(zsh-completions)
 autoload -U compinit && compinit
 autoload -Uz url-quote-magic; zle -N self-insert url-quote-magic
+setopt complete_in_word
 
 autoload -U zmv
 alias mmv='noglob zmv -W'
