@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Sáb 26 Mar 2016 18:24:16 BRT
+Last Change: Sáb 02 Abr 2016 05:16:31 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -422,5 +422,7 @@ $ zmv '(*)' '${(U)1}' # uppercase
 
     autoload -U zmv
     zmv '[0-9]## #(*.mp3)' '$1'
+
+    In this case we can use perl-rename with regex
 
 }}}
