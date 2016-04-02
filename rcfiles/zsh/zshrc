@@ -45,11 +45,15 @@ DISABLE_AUTO_UPDATE="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# sudo pacman -S zsh-syntax-highlighting
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract history-substring-search systemd.plugin.zsh)
+plugins=(git fasd extract history-substring-search systemd.plugin.zsh zsh-syntax-highlighting)
 #eval "$(fasd --init posix-alias zsh-hook )"
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
@@ -169,6 +173,7 @@ insert-history-line() {
 }
 zle -N insert-history-line insert-history-line
 bindkey '^[e' insert-history-line
+
 
 # firefox improviments
 # disalbe rendering fonts in firefox to free memory

@@ -98,6 +98,7 @@ alias -s {md,txt,text}=vim
 alias -s {wav,mp3,ogg}='background mplayer'
 alias -s pdf=evince
 alias gril='grep -irl'
+alias -g gp='| grep -i'
 alias -g CB='| xclip -selection c'
 alias -g C='| wc -l'
 alias -g L='| less -r'
