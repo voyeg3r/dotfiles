@@ -52,7 +52,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract history-substring-search systemd.plugin.zsh)
+plugins=(git fasd extract systemd.plugin.zsh history-substring-search)
 #eval "$(fasd --init posix-alias zsh-hook )"
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
@@ -166,6 +166,7 @@ zle -N insert-history-line insert-history-line
 bindkey '^[e' insert-history-line
 
 # quote pasted URLs
+# it seems kind of uncompatible with substring-search
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 autoload -Uz bracketed-paste-magic

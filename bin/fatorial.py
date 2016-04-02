@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # # -*- coding: UTF-8 -*-
 # Criado em:Qui 11/Mar/2010 hs 13:34
-# Last Change: Qui 11/Mar/2010 hs 13:34
+# Last Change: Sáb 02 Abr 2016 16:54:28 BRT
 # vim:ft=python:nolist:nu:
 # Instituicao: <+nome+>
 # Proposito do script: <+descreva+>

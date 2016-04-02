@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # # -*- coding: UTF-8 -*-
 # Criado em:Qui 11/Mar/2010 hs 08:19
-# Last Change: 2012 Out 07 08:27:27
+# Last Change: Sáb 02 Abr 2016 16:56:30 BRT
 # vim:ft=python:nolist:nu:
 # Instituicao: none
 # Proposito do script: calcular sequencia de fibonacci
