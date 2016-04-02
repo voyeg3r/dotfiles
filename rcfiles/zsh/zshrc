@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.dotfiles/oh-my-zsh"
 
+XDG_CONFIG_HOME="$HOME/.config"
+XDG_CACHE_HOME="$HOME/.cache"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -55,19 +58,11 @@ eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-ins
 
 for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
 
-if [ -f ~/.dotfiles/oh-my-zsh/custom/auto-fu/auto-fu.plugin.zsh ]; then
-    source ~/.dotfiles/oh-my-zsh/custom/auto-fu/auto-fu.plugin.zsh ;
-    function zle-line-init () {
-    auto-fu-init
-}
-zle -N zle-line-init
-fi
-
 # testing completions
 # https://github.com/zsh-users/zsh-completions
 plugins+=(zsh-completions)
 autoload -U compinit && compinit
-autoload -Uz url-quote-magic; zle -N self-insert url-quote-magic
+
 setopt complete_in_word
 
 autoload -U zmv
@@ -84,7 +79,7 @@ cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
 typeset -U path cdpath fpath manpath
 path=(~/bin $path[@])
 
-fpath=( ${HOME}/.dotfiles/rcfiles/zsh/functions "${fpath[@]}" )
+#fpath=( ${HOME}/.dotfiles/rcfiles/zsh/functions "${fpath[@]}" )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,11 +93,11 @@ SAVEHIST=9000
 HISTFILE=~/.zsh_history
 
 # Use caching so that commands like apt and dpkg complete are useable
-#zstyle ':completion::complete:*' use-cache 1
-#zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 
-#ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
-#mkdir -p ${ZSH_CACHE_DIR}
+ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
+mkdir -p ${ZSH_CACHE_DIR}
 
 # Ignore completion functions for commands you don’t have:
 zstyle ':completion:*:functions' ignored-patterns '_*'
@@ -170,6 +165,11 @@ insert-history-line() {
 zle -N insert-history-line insert-history-line
 bindkey '^[e' insert-history-line
 
+# quote pasted URLs
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
 
 # firefox improviments
 # disalbe rendering fonts in firefox to free memory
