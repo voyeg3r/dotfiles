@@ -48,6 +48,9 @@ yaourt -S android-tools
 # you will have a better rename with regex support
 sudo pacman -S perl-rename
 
+# a lightweigh terminal
+sudo pacman -S sakura
+
 # tradutor via linha de comando
 # https://aur.archlinux.org/packages/translate-shell/
 yaourt -Syua translate-shell
