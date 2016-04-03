@@ -13,6 +13,10 @@ KEYTIMEOUT=1
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bira"
 
+setopt COMPLETE_ALIASES
+setopt INTERACTIVE_COMMENTS # allow inline comments like this one
+# allow inline comments like this one
+setopt HIST_VERIFY
 setopt PROMPT_BANG # enables '!' substituition on prompt
 setopt inc_append_history
 setopt share_history
