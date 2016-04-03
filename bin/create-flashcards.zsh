@@ -23,6 +23,7 @@ hash perl-rename 2>/dev/null || { echo >&2 "I require perl-rename but it's not i
 hash detox 2>/dev/null || { echo >&2 "I require detox but it's not installed. Aborting."; exit 1; }
 hash trans 2>/dev/null || { echo >&2 "I require trans but it's not installed. Aborting."; exit 1; }
 
+find -name "*MairoVergara*" -print0 | xargs -0 rm -f
 # detox *
 perl-rename 's/\.\././g' *
 #perl-rename 's/,//g' *

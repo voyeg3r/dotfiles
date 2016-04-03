@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom 06 Mar 2016 10:17:53 BRT
+" Last Change: Sáb 02 Abr 2016 18:55:33 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -66,6 +66,10 @@ filetype plugin indent on    " required
 
 " adding my personal snippets to ultisnippets
 set runtimepath+=~/.vim/snippets
+
+" use this to quickly go to normal mode
+set timeoutlen=1000 ttimeoutlen=0
+
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'

@@ -4,11 +4,14 @@ export ZSH="${HOME}/.dotfiles/oh-my-zsh"
 XDG_CONFIG_HOME="$HOME/.config"
 XDG_CACHE_HOME="$HOME/.cache"
 
+# 10ms for key sequences
+KEYTIMEOUT=1
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
- ZSH_THEME="bira"
+ZSH_THEME="bira"
 
 setopt PROMPT_BANG # enables '!' substituition on prompt
 setopt inc_append_history
