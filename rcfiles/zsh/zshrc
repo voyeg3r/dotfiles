@@ -135,6 +135,10 @@ source ~/.dotfiles/rcfiles/zsh/functions/simplefunctions
 # emacs mode
 bindkey -e
 
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
 bindkey '^b' push-line-or-edit
 bindkey '\eb' push-line-or-edit
 
