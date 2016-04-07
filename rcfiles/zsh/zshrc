@@ -120,9 +120,6 @@ mkdir -p ${ZSH_CACHE_DIR}
 # Ignore completion functions for commands you don’t have:
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
-# cd will never select the parent directory (e.g.: cd ../<TAB>):
-zstyle ':completion:*:cd:*' ignore-parents parent pwd
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -165,7 +162,6 @@ bindkey "^[s" insert-sudo
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
-
 
 # source: http://goo.gl/HUXBjG
 globalias() {
