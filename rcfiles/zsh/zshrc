@@ -62,7 +62,7 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract systemd.plugin.zsh history-substring-search)
 #eval "$(fasd --init posix-alias zsh-hook )"
-eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
+eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
 
@@ -76,9 +76,21 @@ setopt complete_in_word
 autoload -U zmv
 alias mmv='noglob zmv -W'
 
+# In Zsh ^W removes words delimited by whitespace. We are working in shell here though,
+# this should be more fine-grained. I like how it behave in b#ash - slashes,
+# dots and few other things are treated as delimiters too. You can achieve this behaviour in Zsh by simply:
+autoload -U select-word-style
+select-word-style bash
+
 # User configuration
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 setopt HIST_IGNORE_DUPS
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
 
 # export MANPATH="/usr/local/man:$MANPATH"
 #
@@ -107,6 +119,9 @@ mkdir -p ${ZSH_CACHE_DIR}
 
 # Ignore completion functions for commands you don’t have:
 zstyle ':completion:*:functions' ignored-patterns '_*'
+
+# cd will never select the parent directory (e.g.: cd ../<TAB>):
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
