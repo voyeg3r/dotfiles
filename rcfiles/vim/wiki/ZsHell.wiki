@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Sáb 02 Abr 2016 05:16:31 BRT
+Last Change: Dom 03 Abr 2016 20:11:34 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -12,6 +12,27 @@ http://zshwiki.org/home/builtin/functions/zmv
 {{{ keep this line to see literal text
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+== loading zsh clean ==
+
+    zsh -f
+
+    that will start a clean instance of zsh using the
+    default settings.
+
+    You can tell zsh to look for your
+    configuration files in another folder by setting the parameter ZDOTDIR
+    to a directory of your choice in your .zshenv file under $HOME:
+
+    ZDOTDIR=/etc/my_kewl_folder/.zshrc
+
+== aliases are cumulative ==
+
+    alias ls='ls --color=auto'
+    alias la='ls -a'
+
+    The la alias will behave just as if you typed ls --color=auto –a,
+    there's no need to type --color=auto again on your definition.
 
 ==how delete a history entry==
 

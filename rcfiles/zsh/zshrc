@@ -13,6 +13,11 @@ KEYTIMEOUT=1
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 
+setopt NO_FLOW_CONTROL # deactvates XOFF
+setopt COMPLETE_ALIASES
+setopt INTERACTIVE_COMMENTS # allow inline comments like this one
+# allow inline comments like this one
+setopt HIST_VERIFY
 setopt PROMPT_BANG # enables '!' substituition on prompt
 setopt inc_append_history
 setopt share_history
@@ -57,7 +62,7 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract systemd.plugin.zsh history-substring-search)
 #eval "$(fasd --init posix-alias zsh-hook )"
-eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
+eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
 
@@ -71,10 +76,32 @@ setopt complete_in_word
 autoload -U zmv
 alias mmv='noglob zmv -W'
 
+# In Zsh ^W removes words delimited by whitespace. We are working in shell here though,
+# this should be more fine-grained. I like how it behave in b#ash - slashes,
+# dots and few other things are treated as delimiters too. You can achieve this behaviour in Zsh by simply:
+autoload -U select-word-style
+select-word-style bash
+
 # User configuration
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 setopt HIST_IGNORE_DUPS
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
 
+<<<<<<< HEAD
+=======
+# export MANPATH="/usr/local/man:$MANPATH"
+#
+cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
+typeset -U path cdpath fpath manpath
+
+#fpath=( ${HOME}/.dotfiles/rcfiles/zsh/functions "${fpath[@]}" )
+
+>>>>>>> 3c7fe52331ff08c280a3b046a15beaa972e8ea0b
 source $ZSH/oh-my-zsh.sh
 
 # If you end up using a directory as argument,
@@ -120,6 +147,17 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 source ~/.dotfiles/rcfiles/zsh/aliases
 source ~/.dotfiles/rcfiles/zsh/functions/simplefunctions
 
+# emacs mode
+bindkey -e
+
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+bindkey '^xe' edit-command-line
+
+bindkey '^b' push-line-or-edit
+bindkey '\eb' push-line-or-edit
+
 # alt-s inserts "sudo" at the start of line:
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
@@ -127,7 +165,6 @@ bindkey "^[s" insert-sudo
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
-
 
 # source: http://goo.gl/HUXBjG
 globalias() {
