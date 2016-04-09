@@ -11,8 +11,7 @@ KEYTIMEOUT=1
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="agnoster"
-ZSH_THEME="powerline"
+ZSH_THEME="agnoster"
 
 setopt PROMPT_BANG # enables '!' substituition on prompt
 setopt inc_append_history
