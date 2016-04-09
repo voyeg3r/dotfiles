@@ -92,16 +92,7 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
-<<<<<<< HEAD
-=======
-# export MANPATH="/usr/local/man:$MANPATH"
-#
-cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
-typeset -U path cdpath fpath manpath
 
-#fpath=( ${HOME}/.dotfiles/rcfiles/zsh/functions "${fpath[@]}" )
-
->>>>>>> 3c7fe52331ff08c280a3b046a15beaa972e8ea0b
 source $ZSH/oh-my-zsh.sh
 
 # If you end up using a directory as argument,
