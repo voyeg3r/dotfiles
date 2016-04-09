@@ -11,7 +11,8 @@ KEYTIMEOUT=1
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="bira"
+# ZSH_THEME="agnoster"
+ZSH_THEME="powerline"
 
 setopt PROMPT_BANG # enables '!' substituition on prompt
 setopt inc_append_history
@@ -74,15 +75,6 @@ alias mmv='noglob zmv -W'
 # User configuration
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 setopt HIST_IGNORE_DUPS
-
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-# export MANPATH="/usr/local/man:$MANPATH"
-#
-cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
-typeset -U path cdpath fpath manpath
-path=(~/bin $path[@])
-
-#fpath=( ${HOME}/.dotfiles/rcfiles/zsh/functions "${fpath[@]}" )
 
 source $ZSH/oh-my-zsh.sh
 
