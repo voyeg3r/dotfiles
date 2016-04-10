@@ -149,6 +149,12 @@ bindkey '^xe' edit-command-line
 bindkey '^b' push-line-or-edit
 bindkey '\eb' push-line-or-edit
 
+insert-history-line() {
+LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
+}
+zle -N insert-history-line insert-history-line
+bindkey '^[e' insert-history-line
+
 # alt-s inserts "sudo" at the start of line:
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
