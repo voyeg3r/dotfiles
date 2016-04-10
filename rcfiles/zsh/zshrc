@@ -155,6 +155,15 @@ LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
 zle -N insert-history-line insert-history-line
 bindkey '^[e' insert-history-line
 
+# getting git status
+function _git-status {
+zle kill-whole-line
+zle -U "git status"
+zle accept-line
+}
+zle -N _git-status
+bindkey '\eg' _git-status
+
 # alt-s inserts "sudo" at the start of line:
 insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
