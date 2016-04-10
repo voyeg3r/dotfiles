@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # this function show links from a givem html file
 
 getlinks (){

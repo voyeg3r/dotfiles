@@ -1,0 +1,1 @@
+ gif2png() { convert $1 ${1:r}.png && \rm -f $1 }
