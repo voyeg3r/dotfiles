@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sáb 02 Abr 2016 18:55:33 BRT
+" Last Change: Qua 13 Abr 2016 19:19:23 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -59,6 +59,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'vimwiki/vimwiki'
 Plugin 'vim-scripts/VisIncr'
+Plugin 'duythinht/inori'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -118,6 +120,8 @@ function! <SID>SwitchColorSchemes()
     if g:colors_name == 'google'
       colorscheme two2tango
     elseif g:colors_name == 'two2tango'
+      colorscheme inori
+    elseif g:colors_name == 'inori'
       colorscheme darktango
     elseif g:colors_name == 'darktango'
       colorscheme colorful
