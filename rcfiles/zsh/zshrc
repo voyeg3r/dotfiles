@@ -63,7 +63,10 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract systemd.plugin.zsh history-substring-search)
 #eval "$(fasd --init posix-alias zsh-hook )"
-eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
+eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install  zsh-autosuggestions)"
+
+# in order to install auto-suggestions plugin
+# https://github.com/zsh-users/zsh-autosuggestions
 
 for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
 
