@@ -69,6 +69,8 @@ eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp z
 # https://github.com/zsh-users/zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
 
+bindkey '^Xw' expand-word # expande variáveis
+
 for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
 
 # testing completions
