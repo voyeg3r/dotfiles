@@ -9,6 +9,8 @@ alias path="echo ${PATH//:/$'\n'}"
 alias fpath="echo ${fpath// /$'\n'}"
 alias shell='echo ${SHELL:t}'
 
+alias mkdir='mkdir -pv'
+
 type perl-rename >/dev/null 2>&1 && alias prename='perl-rename'
 
 # vimrc editing

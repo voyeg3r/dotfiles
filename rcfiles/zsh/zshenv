@@ -15,7 +15,7 @@ EDITOR=vim
 # ZDOTDIR
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp)
+cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp ~/videos)
 
 typeset -U path cdpath fpath manpath
 path=(~/bin $path[@])
