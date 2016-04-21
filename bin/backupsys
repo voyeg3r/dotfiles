@@ -1,6 +1,6 @@
 #!/bin/bash +x
 # Criado em:Seg 08/Out/2007 hs 10:46
-# Last Change: Sex 15 Out 2010 08:17:32 BRT
+# Last Change: Seg 18 Abr 2016 10:12:02 BRT
 # Proposito do script: criar um backup de algumas configurações
 # do sistema
 # Autor: Sérgio Luiz Araújo Silva
@@ -111,8 +111,8 @@ O arquivo backupsys
 
 	      Dentro da pasta vim há toda a extrutura de configuração
 	      do mesmo até o arquivo do spell, se você quizer instalar
-          um novo plugin basta colocar na pasta ~/.vim/plugin/
-		  e da próxima vez que fizer backup ele será salvo no pacote
+        um novo plugin basta colocar na pasta ~/.vim/plugin/
+		    e da próxima vez que fizer backup ele será salvo no pacote
 
 	* copia a pastas ~/.wiki para a pasta de backup
 	* copia os scripts ~/.bin/backupsys e ~/bin/confsys para a pasta (sys)

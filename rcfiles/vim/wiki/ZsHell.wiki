@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Dom 03 Abr 2016 20:11:34 BRT
+Last Change: Dom 17 Abr 2016 12:33:40 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -8,6 +8,7 @@ email: <voyeg3r at gmail.com>
 
 References:
 http://zshwiki.org/home/builtin/functions/zmv
+http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
 
 {{{ keep this line to see literal text
 

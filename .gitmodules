@@ -4,3 +4,12 @@
 [submodule "prezto"]
 	path = prezto
 	url = git@github.com:voyeg3r/prezto.git
+[submodule "rcfiles/vim/bundle/vundle"]
+	path = rcfiles/vim/bundle/vundle
+	url = http://github.com/gmarik/vundle.git
+[submodule "rcfiles/vim/bundle/Vundle.vim"]
+	path = rcfiles/vim/bundle/Vundle.vim
+	url = https://github.com/gmarik/Vundle.vim.git
+[submodule "rcfiles/zsh/custom/plugins/zsh-autosuggestions"]
+	path = rcfiles/zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git

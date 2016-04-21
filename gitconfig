@@ -28,6 +28,7 @@
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
+	last = log -1 HEAD
 [credential]
 	helper = cache --timeout=3600
 [merge]

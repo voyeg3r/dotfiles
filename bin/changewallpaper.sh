@@ -42,7 +42,7 @@
  TIMER="${SYSTEMDDIR}"gnome-background-change.timer
 
 if  [[ ! -f "${SERVICE}" ]] ; then
-cat <<EOF > "${SERVICE}"
+cat <<-EOF > "${SERVICE}"
 [Unit]
 Description=Rotate GNOME background
 
@@ -57,7 +57,7 @@ EOF
 fi
 
 if [[ ! -f "${TIMER}" ]]; then
-cat <<EOF > "${TIMER}"
+cat <<-EOF > "${TIMER}"
 [Unit]
 Description=Rotate GNOME wallpaper timer
 

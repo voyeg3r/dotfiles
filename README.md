@@ -3,7 +3,7 @@
 clonedotfiles () {
 # Arquivo: Arquivos de configuração de ambiente
 # Criado: Dom 17/Out/2010 hs 15:13
-# Last Change: Seg 19 Out 2015 16:41:15 BRT
+# Last Change: Qui 21 Abr 2016 08:10:34 BRT
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # http://www.twitter.com/voyeg3r
@@ -21,9 +21,13 @@ ssh -T git@github.com
 
 var=`echo 3gmail.com@ | sed 's,\(^3\)\(gmail\.com\)\(\@\),voyeg\1r\3\2,g'`
 git config --global user.name voyeg3r
+git config --global merge.tool vimdiff
 
 # in the line below substitute ${var} by your e-mail
 git config --global user.email ${var}
+
+# add a last command, like this:
+git config --global alias.last 'log -1 HEAD'
 
 git config --global credential.helper cache
 git config --global push.default simple

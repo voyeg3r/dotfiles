@@ -42,12 +42,12 @@ DISABLE_AUTO_UPDATE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -55,13 +55,13 @@ DISABLE_AUTO_UPDATE="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract systemd.plugin.zsh history-substring-search zsh-autosuggestions zsh-completions)
+plugins=(git fasd extract systemd.plugin.zsh history-substring-search zsh-autosuggestions)
 #eval "$(fasd --init posix-alias zsh-hook )"
 eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install )"
 
@@ -112,26 +112,37 @@ SAVEHIST=9000
 HISTFILE=~/.zsh_history
 
 # Use caching so that commands like apt and dpkg complete are useable
-zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+
+# Fuzzy matching of completions for when you mistype them:
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+
+# And if you want the number of errors allowed by _approximate to
+# increase with the length of what you have typed so far:
+zstyle -e ':completion:*:approximate:*' \
+    max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+
+
+zstyle ':completion:*:*:cd:*' ignored-patterns '(*/|)(CVS|SCCS)'
+zstyle ':completion::*:(cvs-add|less|rm|vi):*' ignore-line true
+zstyle ':completion:*' ignore-parents parent pwd
+zstyle ':completion:*:functions' ignored-patterns '_*'
+
+# completions made case insensitive
+#zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+#zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*'
+#zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'm:{a-zA-Z}={A-Za-z}'
+
+#zstyle ':completion:::::' completer _complete _prefix
+#zstyle ':completion::prefix:::' completer _complete
+zstyle ':completion::*:::' completer _complete _prefix
 
 ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
 mkdir -p ${ZSH_CACHE_DIR}
 
-# Ignore completion functions for commands you don’t have:
-zstyle ':completion:*:functions' ignored-patterns '_*'
-
-# This is just to set a custom pattern for the messages belonging to
-# warnings , messages , and descriptions groups. As you can see,
-# warnings will now be reported as No matches for: <argument> ,
-# which is a bit less dronish.
-zstyle ':completion:*:descriptions' format '%B%d%b'
-zstyle ':completion:*:messages' format %d
-zstyle ':completion:*:warnings' format 'No matches for: %d'
-
-#Completion can also correct any misspelled commands that you
-# might have typed.  We'll use the following format for our style:
-zstyle ':completion:*' completer _expand _complete _correct
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -155,7 +166,6 @@ zstyle ':completion:*' completer _expand _complete _correct
 # For a full list of active aliases, run `alias`.
 
 source ~/.dotfiles/rcfiles/zsh/aliases
-source ~/.dotfiles/rcfiles/zsh/functions/simplefunctions
 
 # emacs mode
 bindkey -e
@@ -202,9 +212,9 @@ globalias() {
 
 zle -N globalias
 
-bindkey " " globalias
-bindkey ' ' magic-space           # control-space to bypass completion
-bindkey -M isearch " " magic-space # normal space during searches
+bindkey ' ' globalias               # expande aliases globais
+bindkey '^X ' magic-space           # control-space to bypass completion
+bindkey -M isearch " " magic-space  # normal space during searches
 bindkey -s '\eu' 'cd ..^j' # alt-u up dir
 
 # source: http://stackoverflow.com/questions/171563/whats-in-your-zshrc

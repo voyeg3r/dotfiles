@@ -18,27 +18,27 @@ dia_hoje=`echo "$dia_semana $dia_mes de $mes de $ano"`
 
 # insira arquí o texto que vai ser colocado em cada arquivo
 # se for usar aspas "  proteja com contra barra "\"
-cat <<EOF 
-Este deve ser usado para estudos diversos, experimente
-usar o SED para fazer modificações em todos os arquivos de uma só
-vez, visite a página do Aurélio http://aurelio.net vá na seção
-sobre o sed http://aurelio.net/sed/. Não deixe também de visitar
-o manual sobre Expressões regulares http://guia-er.sourceforge.net/guia-er.html
-visite o site do Thobias ele é o mantenedor das funções zz criadas pelo Aurélio
-a página do Thobias é: http://www.thobias.org/ e as funções zz você
-encontra em: "http://funcoeszz.net/"
-e é claro visite meu blog: "http://vivaotux.blogspot.com"
+cat <<EOF
+    Este deve ser usado para estudos diversos, experimente
+    usar o SED para fazer modificações em todos os arquivos de uma só
+    vez, visite a página do Aurélio http://aurelio.net vá na seção
+    sobre o sed http://aurelio.net/sed/. Não deixe também de visitar
+    o manual sobre Expressões regulares http://guia-er.sourceforge.net/guia-er.html
+    visite o site do Thobias ele é o mantenedor das funções zz criadas pelo Aurélio
+    a página do Thobias é: http://www.thobias.org/ e as funções zz você
+    encontra em: "http://funcoeszz.net/"
+    e é claro visite meu blog: "http://vivaotux.blogspot.com"
 
-    outro bom site é Sed por exemplos:
-    "http://geocities.yahoo.com.br/cesarakg/sed-1.html"
-    "http://geocities.yahoo.com.br/cesarakg/sed-2.html"
-    "http://geocities.yahoo.com.br/cesarakg/sed-3.html"
-    omo o próprio nome diz, estes links dão acesso a uma página com
-    dezenas de exemplos práticos sobre a utilização do SED
+        outro bom site é Sed por exemplos:
+        "http://geocities.yahoo.com.br/cesarakg/sed-1.html"
+        "http://geocities.yahoo.com.br/cesarakg/sed-2.html"
+        "http://geocities.yahoo.com.br/cesarakg/sed-3.html"
+        omo o próprio nome diz, estes links dão acesso a uma página com
+        dezenas de exemplos práticos sobre a utilização do SED
 
-Para exibir cada um dos arquivos gerados com numeração faça:
-cat -n arquivo[1-100].txt, onde [1-100] é qualquer um dos 100
-arquivos gerados pro este script."
+    Para exibir cada um dos arquivos gerados com numeração faça:
+    cat -n arquivo[1-100].txt, onde [1-100] é qualquer um dos 100
+    arquivos gerados pro este script."
 EOF
 
 # Coloque aquí o seu nome
