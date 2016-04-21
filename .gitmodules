@@ -13,3 +13,6 @@
 [submodule "rcfiles/zsh/custom/plugins/zsh-autosuggestions"]
 	path = rcfiles/zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "rcfiles/fasd"]
+	path = rcfiles/fasd
+	url = https://github.com/clvv/fasd.git
