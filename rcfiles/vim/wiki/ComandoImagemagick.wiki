@@ -4,6 +4,17 @@
 Programa para manipulação de imagens. Pode ser usado em scripts. Verifique se
 a sua versão do linux já tem o imagemagick instalado.
 
+==recortando uma imagem grande para impressão==
+
+Primeiro exiba as características da imagem
+
+   identify image.png
+
+Se exportou com 300 divida ambos largura e altura por 3
+
+convert -colorspace CMYK -crop 2415x3425 gameboard.jpg gameboard-tile%03d.tif
+
+
 ==resolvendo o problema das fontes==
 * http://russia.shaps.hawaii.edu/software/add-to-im.html
 

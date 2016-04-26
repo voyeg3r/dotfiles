@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Dom 17 Abr 2016 12:33:40 BRT
+Last Change: Sáb 23 Abr 2016 10:32:53 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -55,6 +55,13 @@ source: stackoverflow
     for i in `ls *`; do
         mkdir ${i%.*}
         mv $i ${i%.*}
+    done
+
+    The same thing done using zsh would be like
+
+    for i in `ls *`; do
+       mkdir ${i:r}
+       mv $i ${i:r}
     done
 
 ==how get pipestatus==

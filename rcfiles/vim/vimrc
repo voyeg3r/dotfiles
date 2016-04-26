@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Qui 21 Abr 2016 09:15:34 BRT
+" Last Change: Dom 24 Abr 2016 08:32:54 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -37,7 +37,6 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ryanoasis/vim-webdevicons'
-Plugin 'ervandew/supertab'
 Plugin 'rking/ag.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'kien/ctrlp.vim'
@@ -71,7 +70,6 @@ set runtimepath+=~/.vim/snippets
 
 " use this to quickly go to normal mode
 set timeoutlen=1000 ttimeoutlen=0
-
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -218,6 +216,7 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 " Ctrl-j next snip -- Ctrl-k previous
 let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsExpandTrigger="<C-Space>"
 let g:UltiSnipsListSnippets="<c-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
