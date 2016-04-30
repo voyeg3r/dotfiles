@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom 24 Abr 2016 08:32:54 BRT
+" Last Change: Sáb 30 Abr 2016 16:37:04 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -509,6 +509,26 @@ fun! CleanSubtitles()
     call setreg('/', old_query)
 endfun
 command! -nargs=0 GetSubs :call CleanSubtitles()
+
+" function to make the first letter of any sentence uppercarse
+" source: http://zurb.com/forrst/posts/Capitalize_the_first_letter_of_every_sentence_in-761
+fun! SetUppercase()
+    :%s/\v(\U)([^\.]*[.!?\n])/\u\1\L\2/g
+    :%s/[.!?]\_s\+\a/\U&\E/g
+
+    "First the easy case: Sentence begining on the same line the last one ended on:
+    "":g/[!?.][]")}]*[ \t"({[]\+[a-z]/s//\U&/g
+
+    "Next the case of a a sentence ending on one line and another starting on the next:
+    ":g/[!?.][]")} \t]*$/+s/^[ ^I"({[]*[a-z]/\U&/
+
+    "Finally the case of any thing begining after a blank line (which is how I seperate *my* paragrahs):
+    ":g/^[ ^I]*$/+s/^[ \t"({[]*[a-z]/\U&/
+
+    "You might also find it useful to capitalize the first letter of the first line:
+    :1g/^[ \t"({[]*[a-z]/s//\U&/
+endfun
+command! -nargs=0 FixSenences :call SetUppercase()
 
 function! JumpToNextPlaceholder()
   let old_query = getreg('/')
