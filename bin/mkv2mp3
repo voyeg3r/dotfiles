@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+# Below is the command for extracting the audio track (you only
+# have to change the colored text codes).
+
+# ffmpeg -i input-file -acodec: copy -vn output-file.extension
+
+# ffmpeg -i $1 -map: 0:0 -acodec: copy -vn ${1:r}'.mp3'
+#
+
+ffmpeg -i $1 ${1:r}'.mp3'
