@@ -104,7 +104,6 @@ yaourt -S zsh-completions
 
 yaourt -S dos2unix
 
-
 #Command-line downloader and uploader for Rapidshare, Mediafire and other
 # file sharing websites.
 # site: https://github.com/mcrapet/plowshare
@@ -250,7 +249,6 @@ installxfceterminal(){
 		sed -i.backup '/MiscMenubarDefault/s/TRUE$/FALSE/g' ~/.config/xfce4/terminal/terminalrc
 } && installxfceterminal
 
-
 # how configure nautilus-open-terminal with xfce4-terminal
 # http://askubuntu.com/questions/76712/setting-nautilus-open-terminal-to-launch-terminator-rather-than-gnome-terminal
 
@@ -368,7 +366,6 @@ configyaourt(){
 		EOF
 } && configyaourt
 
-
 basesystem () {
 		sudo pacman -Syu dbus acpi acpid
 } && basesystem
@@ -390,6 +387,9 @@ graphictools () {
 		sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
 		sudo yaourt --noconfirm -S ttf-source-code-pro
 } && graphictools
+
+# https://github.com/Xaviju/inkscape-open-symbols
+yaourt -S inkscape-open-symbols-git
 
 multimedia () {
 		# corebird is a twitter client
