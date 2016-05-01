@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom 01 Mai 2016 08:14:33 BRT
+" Last Change: Dom 01 Mai 2016 08:41:56 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -540,6 +540,21 @@ function! ToggleHomeZero()
 endfunction
 nnoremap 0 :call ToggleHomeZero()<CR>
 
+" use backspace to call "_ black hole register
+" Add to your .vimrc or init.vim or vim.after or :e $MYVIMRC
+func! BlackHoleDeleteOperator(type)
+    if a:type ==# 'char'
+        execute 'normal! `[v`]"_d'
+    elseif a:type ==# 'line'
+        execute 'normal! `[V`]"_d'
+    else
+        execute 'normal! `<' . a:type . '`>"_d'
+    endif
+endf
+" Map to <BS> because it's under worked in Vim.
+nnoremap <silent> <BS> <Esc>:set opfunc=BlackHoleDeleteOperator<CR>g@
+vnoremap <silent> <BS> :<C-u>call BlackHoleDeleteOperator(visualmode())<CR>
+
 function! JumpToNextPlaceholder()
   let old_query = getreg('/')
   echo search("<+.\\++>")
@@ -666,6 +681,10 @@ nnoremap <S-F11> <ESC>:set hls!<cr>
 inoremap <S-F11> <C-o>:set hls!<cr>
 vnoremap <S-F11> <ESC>:set hls!<cr> <bar> gv
 nnoremap / :set hls<cr>/
+
+" make copying from visual selection more sane
+" source: http://ddrscott.github.io/blog/2016/yank-without-jank/
+vnoremap <expr>y "my\"" . v:register . "y`y"
 
 " map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
 " togle between number nonumber and relativenumber
