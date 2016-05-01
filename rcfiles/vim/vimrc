@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sáb 30 Abr 2016 16:37:04 BRT
+" Last Change: Dom 01 Mai 2016 08:14:33 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -529,6 +529,16 @@ fun! SetUppercase()
     :1g/^[ \t"({[]*[a-z]/s//\U&/
 endfun
 command! -nargs=0 FixSenences :call SetUppercase()
+
+" source: http://ddrscott.github.io/blog/2016/vim-toggle-movement/
+function! ToggleHomeZero()
+    let pos = getpos('.')
+    execute "normal! ^"
+    if pos == getpos('.')
+        execute "normal! 0"
+    endif
+endfunction
+nnoremap 0 :call ToggleHomeZero()<CR>
 
 function! JumpToNextPlaceholder()
   let old_query = getreg('/')
