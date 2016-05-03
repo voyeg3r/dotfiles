@@ -184,6 +184,12 @@ LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
 zle -N insert-history-line insert-history-line
 bindkey '^[e' insert-history-line
 
+insert-history-line() {
+LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
+}
+zle -N insert-history-line insert-history-line
+bindkey '^[e' insert-history-line
+
 # getting git status
 function _git-status {
 zle kill-whole-line

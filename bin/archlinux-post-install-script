@@ -388,6 +388,10 @@ graphictools () {
 		sudo yaourt --noconfirm -S ttf-source-code-pro
 } && graphictools
 
+# gcp is a file copy tool, freely inspired from cp, but with a few
+# high-level functionnality.
+yaourt -S aur/python2-gcp
+
 # https://github.com/Xaviju/inkscape-open-symbols
 yaourt -S inkscape-open-symbols-git
 

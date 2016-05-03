@@ -1,0 +1,5 @@
+# http://www.hecticgeek.com/2012/03/gcp-command-line-file-copy-ubuntu-linux/
+
+if (( $+commands[gcp] )); then
+    alias cp='/usr/bin/gcp -f'
+fi
