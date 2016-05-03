@@ -140,6 +140,9 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 #zstyle ':completion::prefix:::' completer _complete
 zstyle ':completion::*:::' completer _complete _prefix
 
+
+zstyle ':completion:*:warnings' format 'Too bad there is nothing'
+
 ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
 mkdir -p ${ZSH_CACHE_DIR}
 
