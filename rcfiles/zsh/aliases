@@ -81,6 +81,8 @@ alias _!='fc -e "sed -i -e \"s/^/sudo /\""' # sudo last command
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
+alias http-server='python3 -m http.server'
+
 alias flashcard="pbpaste | sed 's, ,-,g' | sed 's/./\L&/g' | sed 's,$,.mp3,g' | xclip -selection cliboard ; exit"
 
 #copy output of last command to clipboard

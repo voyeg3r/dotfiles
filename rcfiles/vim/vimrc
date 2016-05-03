@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom 01 Mai 2016 08:41:56 BRT
+" Last Change: Ter 03 Mai 2016 11:14:48 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -59,6 +59,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'vimwiki/vimwiki'
 Plugin 'vim-scripts/VisIncr'
 Plugin 'duythinht/inori'
+Plugin 'yosiat/oceanic-next-vim'
 
 
 " All of your Plugins must be added before the following line
@@ -171,6 +172,8 @@ function! <SID>SwitchColorSchemes()
       colorscheme ir_black
     elseif g:colors_name == 'ir_black'
       colorscheme google
+    elseif g:colors_name == 'google'
+      colorscheme OceanicNext
     endif
   endif
 endfunction
@@ -287,11 +290,13 @@ set background=dark
 let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-colorscheme vitamins
+"colorscheme vitamins
+colorscheme OceanicNext
 
 if ! has("gui_running")
   set t_Co=256
-  colo wombat
+  "colo wombat
+  colo OceanicNext
 endif
 
 " turn off the toolbar and menubar
