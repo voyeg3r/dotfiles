@@ -392,6 +392,9 @@ graphictools () {
 # high-level functionnality.
 yaourt -S aur/python2-gcp
 
+# convert any media format
+yaourt -S ffmulticonverter
+
 # https://github.com/Xaviju/inkscape-open-symbols
 yaourt -S inkscape-open-symbols-git
 

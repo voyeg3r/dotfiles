@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Ter 03 Mai 2016 11:14:48 BRT
+" Last Change: Qua 04 Mai 2016 20:46:47 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -116,7 +116,9 @@ let g:syntastic_python_python_exec = '/usr/bin/python'
 
 function! <SID>SwitchColorSchemes()
   if exists("g:colors_name")
-    if g:colors_name == 'google'
+    if g:colors_name == 'OceanicNext'
+      colorscheme google
+    elseif g:colors_name == 'google'
       colorscheme two2tango
     elseif g:colors_name == 'two2tango'
       colorscheme inori
