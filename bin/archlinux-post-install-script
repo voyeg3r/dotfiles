@@ -388,6 +388,12 @@ graphictools () {
 		sudo yaourt --noconfirm -S ttf-source-code-pro
 } && graphictools
 
+yaourt -S gimp-plugin-registry
+yaourt -S gimp-plugin-resynthesizer-git
+yaourt -S gimp-plugin-separate+
+yaourt -S gimp-plugin-beautify
+yaourt -S gimp-plugin-lqr
+
 # gcp is a file copy tool, freely inspired from cp, but with a few
 # high-level functionnality.
 yaourt -S aur/python2-gcp
