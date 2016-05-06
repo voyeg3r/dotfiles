@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 # functions
+today(){date +%d-%m-%Y ;}
+now(){ date +%H:%M;}
 mktbz () { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/";}
 groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
 man2pdf () { man -w $1 && man -t $1 | ps2pdf - $1.pdf; }
