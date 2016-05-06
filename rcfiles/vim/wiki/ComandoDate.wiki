@@ -10,6 +10,12 @@ Hora: 21:18:34
  date --date='1 year ago'
 Thu Apr 29 21:24:37 BRT 2010
 
+# um da antes
+
+    date -d "2016-05-01 - 1 day"
+
+    date -d "2016-05-01 - 1 day" +%d-%m-%Y
+
 =data futura=
 # date --date='1 month'
 Sun May 29 21:26:04 BRT 2011
