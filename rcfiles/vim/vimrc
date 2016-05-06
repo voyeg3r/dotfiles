@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sex 06 Mai 2016 15:51:27 BRT
+" Last Change: Sex 06 Mai 2016 16:02:28 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -712,6 +712,7 @@ nmap <leader>/ [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR
 "source: https://www.youtube.com/watch?v=0F4FgiVWvB8
 let pairs = { ":" : ":",
             \ "." : ".",
+            \ "*" : "*",
             \ "<bar>" : "<bar>"}
 for [key, value] in items(pairs)
     exe "nnoremap ci".key." T".key."ct".value
