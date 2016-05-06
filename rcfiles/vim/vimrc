@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Qui 05 Mai 2016 09:34:13 BRT
+" Last Change: Sex 06 Mai 2016 15:51:27 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -182,9 +182,6 @@ endfunction
 "map <silent> <F6> :call <SID>SwitchColorSchemes()<CR> <BAR> :set t_Co=256 <BAR> :echo g:colors_name<cr>
 map <silent> <F6> <esc>:call <SID>SwitchColorSchemes()<CR><bar>:echo g:colors_name<cr>
 map <special> <S-F6> :ec g:colors_name<cr>
-
-" copy the inner paragraph to clipboard
-nmap <F7> vip"+y:echo "parágrafo copiado para o clipboard"<cr>
 
 let g:airline_powerline_fonts=1
 let g:airline_left_sep = '▶'
@@ -709,6 +706,24 @@ map <BS> X
 " mostra as linhas que contém determinado padrão
 " permitindo saltar para uma delas
 nmap <leader>/ [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+
+
+"====== Vim extended text objects ====================
+"source: https://www.youtube.com/watch?v=0F4FgiVWvB8
+let pairs = { ":" : ":",
+            \ "." : ".",
+            \ "<bar>" : "<bar>"}
+for [key, value] in items(pairs)
+    exe "nnoremap ci".key." T".key."ct".value
+    exe "nnoremap ca".key." F".key."cf".value
+    exe "nnoremap vi".key." T".key."vt".value
+    exe "nnoremap va".key." F".key."vf".value
+    exe "nnoremap di".key." T".key."dt".value
+    exe "nnoremap da".key." F".key."df".value
+    exe "nnoremap yi".key." T".key."yt".value
+    exe "nnoremap ya".key." F".key."yf".value
+endfor
+" ====== Vim extended texxt objects end ==============
 
 "Highlight matches without moving
 "http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
