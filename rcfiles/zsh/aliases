@@ -2,6 +2,8 @@
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias aedit="$EDITOR $ZSH_CONFIG/aliases; source $ZSH_CONFIG/aliases"
+
 alias xterm='xterm -rv'
 # alias calc='noglob calc'
 

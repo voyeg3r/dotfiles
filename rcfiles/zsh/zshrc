@@ -4,6 +4,8 @@ export ZSH="${HOME}/.dotfiles/oh-my-zsh"
 XDG_CONFIG_HOME="$HOME/.config"
 XDG_CACHE_HOME="$HOME/.cache"
 
+ZSH_CONFIG=~/.dotfiles/rcfiles/zsh
+
 # 10ms for key sequences
 KEYTIMEOUT=1
 
@@ -23,6 +25,8 @@ setopt PROMPT_BANG # enables '!' substituition on prompt
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
+setopt COMPLETE_IN_WORD     # Allow completion from within a word/phrase
+setopt ALWAYS_TO_END
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -202,10 +206,11 @@ zle accept-line
 zle -N _git-status
 bindkey '\eg' _git-status
 
-# alt-s inserts "sudo" at the start of line:
-insert_sudo () { zle beginning-of-line; zle -U "sudo " }
-zle -N insert-sudo insert_sudo
-bindkey "^[s" insert-sudo
+# strg+x,s adds sudo to the line
+# Zsh Buch p.159 - http://zshbuch.org/
+run-with-sudo() { LBUFFER="sudo $LBUFFER" }
+zle -N run-with-sudo
+bindkey '^Xs' run-with-sudo
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
