@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Qua 30 Set 2015 10:35:07 BRT
+Last Change: Dom 08 Mai 2016 11:48:19 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -157,7 +157,7 @@ mas é fácil de resolver, basta rodar esta função:
 
 ==Dica sobre como debugar vim script==
 
-    :echom 'Cria uma said permanente de echo'
+    :echom 'Cria uma saida permanente de echo'
 
   visivel com o comando
 

@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sex 06 Mai 2016 16:17:51 BRT
+" Last Change: Dom 08 Mai 2016 07:19:13 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -715,6 +715,7 @@ let pairs = { ":" : ":",
             \ "/" : "/",
             \ '\|' : '\|',
             \ "*" : "*",
+            \ "=" : "=",
             \ "-" : "-",
             \ "_" : "_" }
 
