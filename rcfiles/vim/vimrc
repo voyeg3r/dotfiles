@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom 08 Mai 2016 07:19:13 BRT
+" Last Change: Qua 11 Mai 2016 18:07:00 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -708,28 +708,40 @@ map <BS> X
 nmap <leader>/ [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
 
-"====== Vim extended text objects ====================
+" ====== Vim extended text objects ====================
 "source: https://www.youtube.com/watch?v=0F4FgiVWvB8
-let pairs = { ":" : ":",
-            \ "." : ".",
-            \ "/" : "/",
-            \ '\|' : '\|',
-            \ "*" : "*",
-            \ "=" : "=",
-            \ "-" : "-",
-            \ "_" : "_" }
+let keys = [ ":", ".", ",", "+", "#", "/", "<bar>", "<bslash>", "*", "=", "-", "_" ]
 
-for [key, value] in items(pairs)
-    exe "nnoremap ci".key." T".key."ct".value
-    exe "nnoremap ca".key." F".key."cf".value
-    exe "nnoremap vi".key." T".key."vt".value
-    exe "nnoremap va".key." F".key."vf".value
-    exe "nnoremap di".key." T".key."dt".value
-    exe "nnoremap da".key." F".key."df".value
-    exe "nnoremap yi".key." T".key."yt".value
-    exe "nnoremap ya".key." F".key."yf".value
+for key in keys
+    exe "nnoremap ci".key." T".key."ct".key
+    exe "nnoremap ca".key." F".key."cf".key
+    exe "nnoremap vi".key." T".key."vt".key
+    exe "nnoremap va".key." F".key."vf".key
+    exe "nnoremap di".key." T".key."dt".key
+    exe "nnoremap da".key." F".key."df".key
+    exe "nnoremap yi".key." T".key."yt".key
+    exe "nnoremap ya".key." F".key."yf".key
 endfor
+
+onoremap ih :<c-u>execute "normal! ?^=\\+$\r:nohlsearch\rkvg_"<cr>
+xnoremap i% GoggV
+onoremap i% :<C-u>normal vi%<CR>
+
+
+"https://www.reddit.com/r/vim/comments/48e4ci/vimscript_how_to_create_a_new_text_object/
+"for [s:k, s:m] in  [['ie', 'ggVG'], ['il', '^vg_'], ['iz', '[zV]z']]
+"    execute 'onoremap <silent> ' . s:k . ' :normal! ' . s:m . '<CR>'
+"    execute 'vnoremap <silent> ' . s:k . ' :normal! ' . s:m . '<CR>'
+"endfor
+"unlet! s:k s:m
+
+"i*: asterisc block
+"if: Entire file
+"il: Current line (Without whitespace characters).
+"iz: Current fold
+
 " ====== Vim extended texxt objects end ==============
+
 
 "Highlight matches without moving
 "http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches

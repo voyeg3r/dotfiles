@@ -1,12 +1,19 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Dom 08 Mai 2016 11:48:19 BRT
+Last Change: Qua 11 Mai 2016 13:09:18 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
   Search vimgolf chalenges to vim users
+
+= non-greedy search on vim=
+
+    /abc\_.\{-}def
+
+Finds abc followed by any characters or newlines (as few as possible) then def.
+Finds abcdef or abc followed by any characters then def.
 
 == changing modes on ctrl-p ==
 
