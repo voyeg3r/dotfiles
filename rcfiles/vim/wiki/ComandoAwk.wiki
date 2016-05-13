@@ -441,6 +441,8 @@ awk -F":" '{ print "username: " $1 "\t\tuid:" $3" }' /etc/passwd
 
  awk '{ if (length($0) > max) max=length($0) }  END { print max }' texto.txt
 
+ awk '{ l = length($0); a = (a > l) ? a : l } END {print a}' test.txt
+
 ==Imprimir linhas maiores que 80 caracteres==
 
   length($0) > 80
