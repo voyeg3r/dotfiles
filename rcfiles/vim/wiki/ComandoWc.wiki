@@ -17,5 +17,9 @@ Outra opção seria usar a opção -o do grep
 
 grep -o "palavra" file | wc -l
 
+==Show the longest line in a file==
+
+   wc -L file.txt
+
 =Referências=
 * http://www.linuxjournal.com/node/1327/print
