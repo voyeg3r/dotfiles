@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom 15 Mai 2016 21:30:09 BRT
+" Last Change: Ter 17 Mai 2016 11:58:31 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -43,7 +43,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'ompugao/ctrlp-z'
 Plugin 'sjl/gundo.vim'
 Plugin 'edsono/vim-matchit'
-Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'"
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'rstacruz/sparkup'
 Plugin 'scrooloose/syntastic'
@@ -60,7 +60,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'vim-scripts/VisIncr'
 Plugin 'duythinht/inori'
 Plugin 'yosiat/oceanic-next-vim'
-Plugin 'kana/vim-textobj-user'
+Plugin 'wellle/targets.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -291,12 +291,12 @@ let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 "colorscheme vitamins
-colorscheme OceanicNext
+colorscheme inori
 
 if ! has("gui_running")
   set t_Co=256
   "colo wombat
-  colo OceanicNext
+  colo inori
 endif
 
 " turn off the toolbar and menubar
@@ -708,22 +708,6 @@ map <BS> X
 " permitindo saltar para uma delas
 nmap <leader>/ [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
-
-" ====== Vim extended text objects ====================
-"source: https://www.youtube.com/watch?v=0F4FgiVWvB8
-let keys = [ ":", ",", ".", "+", "#", "/", "<bar>", "<bslash>", "*", "=", "-", "_" ]
-"
-"for key in keys
-"    exe "nnoremap ci".key." T".key."ct".key
-"    exe "nnoremap ca".key." F".key."cf".key
-"    exe "nnoremap vi".key." T".key."vt".key
-"    exe "nnoremap va".key." F".key."vf".key
-"    exe "nnoremap di".key." T".key."dt".key
-"    exe "nnoremap da".key." F".key."df".key
-"    exe "nnoremap yi".key." T".key."yt".key
-"    exe "nnoremap ya".key." F".key."yf".key
-"endfor
-
 onoremap ih :<c-u>execute "normal! ?^=\\+$\r:nohlsearch\rkvg_"<cr>
 xnoremap i% GoggV
 onoremap i% :<C-u>normal vi%<CR>
@@ -731,36 +715,47 @@ onoremap i% :<C-u>normal vi%<CR>
 onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F)vi(<cr>
 
-" mapping to change inside ","
-"onoremap i, :<c-u>execute "normal! ?,\r:nohlsearch\rlvNh"<cr>
-
-onoremap i, :<c-u>execute "normal! /,\r:nohlsearch\rhvNl"<cr>
-onoremap i. :<c-u>execute "normal! /.\r:nohlsearch\rhvNl"<cr>
-onoremap i* :<c-u>execute "normal! /*\r:nohlsearch\rhvNl"<cr>
-onoremap i<bar> :<c-u>execute "normal! /\\|\r:nohlsearch\rhvNl"<cr>
-onoremap i+ :<c-u>execute "normal! /+\r:nohlsearch\rhvNl"<cr>
-onoremap i<backslash> :<c-u>execute "normal! /\\/\r:nohlsearch\rhvNl"<cr>
-onoremap i= :<c-u>execute "normal! /=\r:nohlsearch\rhvNl"<cr>
-onoremap i_ :<c-u>execute "normal! /_\r:nohlsearch\rhvNl"<cr>
-onoremap i- :<c-u>execute "normal! /-\r:nohlsearch\rhvNl"<cr>
-onoremap i# :<c-u>execute "normal! /#\r:nohlsearch\rhvNl"<cr>
-
-onoremap a, :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
-onoremap a. :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
-onoremap a* :<c-u>execute "normal! /\\|\r:nohlsearch\rvN"<cr>
-onoremap a<bar> :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
-onoremap a+ :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
-onoremap a<backslash> :<c-u>execute "normal! /\\\r:nohlsearch\rvN"<cr>
-onoremap a= :<c-u>execute "normal! /=\r:nohlsearch\rvN"<cr>
-onoremap a_ :<c-u>execute "normal! /_\r:nohlsearch\rvN"<cr>
-onoremap a- :<c-u>execute "normal! /-\r:nohlsearch\rvN"<cr>
-onoremap a# :<c-u>execute "normal! /#\r:nohlsearch\rvN"<cr>
-
-"let keys = [ ":", ".", "+", "#", "/", "<bar>", "<bslash>", "*", "=", "-", "_" ]
+"let keys = [ ":", ".", ",", "+", "#", "/", "<bar>", "<bslash>", "*", "=", "-", "_" ]
 "
 "for key in keys
-"   exe 'onoremap <silent> i'.key. ':<c-u>normal!  /'.key.'\r:nohlsearch\rhvNl<CR>'
+"    vnoremap i' . key . ' :<c-u>normal! /' . key . '\r:nohlsearch\rhvNl<cr>
+"    onoremap i' . key . ' :<c-u>normal! /' . key . '\r:nohlsearch\rhvNl<cr>
+"    vnoremap a' . key . ' :<c-u>normal! /' . key . '\r:nohlsearch\rvN<cr>
+"    onoremap a' . key . ' :<c-u>normal! /' . key . '\r:nohlsearch\rvN<cr>
 "endfor
+
+"for char in [ "_", ".", ":", ",", ";", "<bar>", "/", "<bslash>", "*" ]
+"    execute "xnoremap i" . char . " :<C-U>silent!normal!/" . char . "\rhvNl<CR>"
+"    execute "onoremap i" . char . " :normal vi" . char . "<CR>"
+"    execute "xnoremap a" . char . " :<C-U>silent!normal!/" . char . "\rhvNl<CR>"
+"    execute "onoremap a" . char . " :normal va" . char . "<CR>"
+"endfor
+
+"xnoremap i, :<c-u>execute "normal! /,\r:nohlsearch\rhvNl"<cr>
+"onoremap i, :<c-u>execute "normal! /,\r:nohlsearch\rhvNl"<cr>
+"onoremap i. :<c-u>execute "normal! /.\r:nohlsearch\rhvNl"<cr>
+"onoremap i* :<c-u>execute "normal! /*\r:nohlsearch\rhvNl"<cr>
+"onoremap i<bar> :<c-u>execute "normal! /\\|\r:nohlsearch\rhvNl"<cr>
+"onoremap i+ :<c-u>execute "normal! /+\r:nohlsearch\rhvNl"<cr>
+"onoremap i<backslash> :<c-u>execute "normal! /\\/\r:nohlsearch\rhvNl"<cr>
+"onoremap i= :<c-u>execute "normal! /=\r:nohlsearch\rhvNl"<cr>
+"onoremap i_ :<c-u>execute "normal! /_\r:nohlsearch\rhvNl"<cr>
+"onoremap i- :<c-u>execute "normal! /-\r:nohlsearch\rhvNl"<cr>
+"onoremap i# :<c-u>execute "normal! /#\r:nohlsearch\rhvNl"<cr>
+"
+"onoremap a, :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
+"onoremap a. :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
+"onoremap a* :<c-u>execute "normal! /\\|\r:nohlsearch\rvN"<cr>
+"onoremap a<bar> :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
+"onoremap a+ :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
+"onoremap a<backslash> :<c-u>execute "normal! /\\\r:nohlsearch\rvN"<cr>
+"onoremap a= :<c-u>execute "normal! /=\r:nohlsearch\rvN"<cr>
+"onoremap a_ :<c-u>execute "normal! /_\r:nohlsearch\rvN"<cr>
+"onoremap a- :<c-u>execute "normal! /-\r:nohlsearch\rvN"<cr>
+"onoremap a# :<c-u>execute "normal! /#\r:nohlsearch\rvN"<cr>
+
+" http://zurb.com/forrst/posts/Adding_a_Next_Adjective_to_Vim_Version_2-C4P:
+
 
 " the below mapping selects function names
 onoremap <silent> F :<C-U>normal! 0f(hviw<CR>
