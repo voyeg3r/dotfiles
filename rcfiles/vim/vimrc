@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Ter 17 Mai 2016 11:58:31 BRT
+" Last Change: Qua 18 Mai 2016 06:56:36 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -191,9 +191,6 @@ let g:airline_right_sep = '◀'
 " configuratin to ag plugin
 let g:agprg="<custom-ag-path-goes-here> --column"
 
-"Enables very magic mode by default
-nnoremap / /\v
-cnoremap %s/ %s/\v
 
 " mappgings for indenting and keep visual selection
 nmap <leader>u <<
@@ -711,9 +708,6 @@ nmap <leader>/ [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR
 onoremap ih :<c-u>execute "normal! ?^=\\+$\r:nohlsearch\rkvg_"<cr>
 xnoremap i% GoggV
 onoremap i% :<C-u>normal vi%<CR>
-
-onoremap in( :<c-u>normal! f(vi(<cr>
-onoremap il( :<c-u>normal! F)vi(<cr>
 
 "let keys = [ ":", ".", ",", "+", "#", "/", "<bar>", "<bslash>", "*", "=", "-", "_" ]
 "

@@ -34,7 +34,12 @@ while true; do
         exit 1
     fi
 
-    while [[ "${response:l}" = r ]]; do
+
+    if [[ "${response:l}" = c ]]; then
+        cp -f $selection ~/tmp/flashcards
+    fi
+
+    if [[ "${response:l}" = r ]]; then
         clear
         echo
         echo "\tREPEATING ${selection:t}"
@@ -42,5 +47,8 @@ while true; do
         #echo -n "\tRepeat? [Y/n] " && read -r response
         #echo -n "\tRepeat sound [R/r]? " && read -r response
         echo "\n\tPress ENTER to continue\n\n\t[X/x] to EXIT\n\n\t[R/r] to REPEAT " && read -r response
-    done
+        response="n"
+    fi
+
+
 done
