@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Qua 18 Mai 2016 06:56:36 BRT
+" Last Change: Ter 24 Mai 2016 11:27:21 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -46,7 +46,6 @@ Plugin 'edsono/vim-matchit'
 Plugin 'scrooloose/nerdtree'"
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'rstacruz/sparkup'
-Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-abolish'
@@ -821,7 +820,7 @@ map ,c :Calc
 
 augroup sh
  au BufNewFile *.sh 0r ~/.vim/skel/template.sh
- au BufWritePost *.sh,*.pl,*.py,*.cgi :silent !chmod a+x <afile>
+ "au BufWritePost *.sh,*.pl,*.py,*.cgi :silent !chmod a+x <afile>
 augroup end
 
 " fix to solarized colorscheme
@@ -853,23 +852,23 @@ nmap g# g#zz
 " :'<,'>normal Q
 " nnoremap Q 0yt=A<C-r>=<C-r>"<CR><Esc>
 
-" autocomandos para python
-augroup python
-  au FileType python set keywordprg=pydoc
-  au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-  au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
-  au! BufWritePre *.py,*.js :call <SID>CleanExtraSpaces()
-  au! BufNewFile *.py 0r ~/.vim/skel/template.py
- au! BufWritePost *.py :silent !chmod a+x <afile>
-  autocmd FileType python set textwidth=79
-  autocmd FileType python filetype indent on
-  let python_highlight_all=1
-  let python_highlight_builtins=0
-  let python_highlight_builtins=1
-  let python_highlight_exceptions=1
-  let python_highlight_numbers=1
-  let python_highlight_space_errors=1
-augroup end
+"" autocomandos para python
+"augroup python
+"  au FileType python set keywordprg=pydoc
+"  au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+"  au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
+"  au! BufWritePre *.py,*.js :call <SID>CleanExtraSpaces()
+"  au! BufNewFile *.py 0r ~/.vim/skel/template.py
+" au! BufWritePost *.py :silent !chmod a+x <afile>
+"  autocmd FileType python set textwidth=79
+"  autocmd FileType python filetype indent on
+"  let python_highlight_all=1
+"  let python_highlight_builtins=0
+"  let python_highlight_builtins=1
+"  let python_highlight_exceptions=1
+"  let python_highlight_numbers=1
+"  let python_highlight_space_errors=1
+"augroup end
 
 " CTRL-X CTRL-F  file names
 " CTRL-X CTRL-L  whole lines

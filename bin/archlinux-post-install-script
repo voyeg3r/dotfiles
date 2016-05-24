@@ -123,6 +123,9 @@ yaourt -S fzf
 # python package installer
 sudo pacman -S python-pip
 
+# python lib to deal system's clipboard
+yaourt -S python-pyperclip
+
 # source: https://www.youtube.com/watch?v=l1lDiCzkjlk
 sudo pacman -S community/aircrack-ng
 
