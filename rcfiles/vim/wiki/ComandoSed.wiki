@@ -1,5 +1,9 @@
 =Introdução=
 
+=Removendo o caratere ' de uma string=
+
+  sed 's/\x27//g'
+
 =separando o ultimo campo de um caminho=
 
 ==O problema==

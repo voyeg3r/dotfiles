@@ -17,6 +17,7 @@ python3 -m http.server
 ==video sobre geração de números randomicos==
 * www.youtube.com/watch?v=6YweJ63XGGo
 * www.youtube.com/watch?v=rp5srgJDozM
+
 ==Módulos para acesso a informações do windows==
 
 * win32api

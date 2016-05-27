@@ -1,0 +1,35 @@
+#!/usr/bin/python
+""" Esse script tem como proósito manipular strings
+    removendo alguns caracteres para facilitar a criação
+    de strings no programa Anki
+
+    Caso não tenha a bibilioteca python-pyperclip instalada
+    o comando no Arch-linux é este:
+
+    yaourt -S python-pyperclip
+
+    TODO: fix a - at end line
+"""
+# uma string's de teste ?@
+
+import string
+import pyperclip
+
+# as we have a string we can lower case it
+text = pyperclip.paste().lower()
+
+
+start='[sound:'
+ending='.mp3]' # extensão desejada
+
+# string.punctuation - contem vários caracteres especiais
+# '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~''"'
+
+middle = str(''.join(x for x in text if x not in string.punctuation).replace(' ','-'))
+
+output = start + middle + ending
+
+print('your clipboard is:\n', output, sep='')
+# print(output)
+
+pyperclip.copy(output)

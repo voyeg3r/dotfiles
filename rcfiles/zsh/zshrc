@@ -80,6 +80,7 @@ for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
 # testing completions
 # https://github.com/zsh-users/zsh-completions
 plugins+=(zsh-completions)
+plugins+=(python)
 autoload -U compinit && compinit
 
 setopt complete_in_word

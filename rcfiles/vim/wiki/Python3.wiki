@@ -12,3 +12,13 @@
    to write changes use -w
 
    2to3 -w python2script.py
+
+= Access to the clipboard =
+
+    import pyperclip
+
+    # print clipboard contente
+    pyperclip.paste()
+
+    var = pyperclip.paste()
+    print(var)
