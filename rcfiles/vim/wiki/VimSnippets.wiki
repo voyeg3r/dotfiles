@@ -1,5 +1,9 @@
 O plugin [[UltiSnips]]
 
+Diretorio dos snippets (dá uma olhada em help Ulti...)
+
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+
 [[Tex.Snippets]]
 
 
