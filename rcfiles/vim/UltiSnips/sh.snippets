@@ -1,5 +1,4 @@
 # Shebang. Executing bash via /usr/bin/env makes scripts more portable.
-
 snippet #!
 	#!/usr/bin/env bash
 	# Created: `system("date +%m-%d-%Y")`
@@ -7,17 +6,19 @@ snippet #!
 	# Author: ${1:`g:snips_author`}
 	# Twitter: ${2:`g:snips_twitter`}
 	${0:# press Ctrl-j to jump placeholders}
+endsnippet
 
 snippet sh
 	#!/usr/bin/env bash
 	# Criado em: `system("date +%m-%d-%Y")`
-	# Last Change: Sun May 03, 2015  12:36PM
+	# Last Change: Dom 29 Mai 2016 14:43:59 BRT
 	# vim:ft=sh:fdm=syntax:nu:
 	# Instituicao: ${1:instituicao}
 	# Proposito do script: ${2:write here the script purpose}
 	# Autor: ${3:`g:snips_author`}
 	# site: ${4:`g:snips_site`}
 	${0:# press Ctrl-j to jump placeholders}
+endsnippet
 
 snippet has
 	NEEDED_COMMANDS="${1:program}"
@@ -33,11 +34,13 @@ snippet has
 		exit 1
 	fi
 	${2}
+endsnippet
 
 snippet here
 	cat <<${1:EOF}
 	${2:type your text here}
 	${1}
+endsnippet
 
 snippet ir "if user is root" w
 	if [ "$(id -u)" != "0" ]; then
@@ -46,35 +49,50 @@ snippet ir "if user is root" w
 		exit  1
 	fi
 	${0:# Press ctrl-j to jump here}
+endsnippet
 
 snippet if
 	if [[ ${1:condition} ]]; then
 		${0:#statements}
 	fi
+endsnippet
+
 snippet elif
 	elif [[ ${1:condition} ]]; then
 		${0:#statements}
+endsnippet
+
 snippet for
 	for (( ${2:i} = 0; $2 < ${1:count}; $2++ )); do
 		${0:#statements}
 	done
+endsnippet
+
 snippet fori
 	for ${1:needle} in ${2:haystack} ; do
 		${0:#statements}
 	done
+endsnippet
+
 snippet wh
 	while [[ ${1:condition} ]]; do
 		${0:#statements}
 	done
+endsnippet
+
 snippet until
 	until [[ ${1:condition} ]]; do
 		${0:#statements}
 	done
+endsnippet
+
 snippet case
 	case ${1:word} in
 		${2:pattern})
 		${0};;
 	esac
+endsnippet
+
 snippet go
 	while getopts '${1:o}' ${2:opts}
 	do
@@ -83,19 +101,28 @@ snippet go
 			${0:#staments};;
 		esac
 	done
+endsnippet
+
 # Set SCRIPT_DIR variable to directory script is located.
 snippet sdir
 	SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+endsnippet
+
 snippet root
 	if [ \$(id -u) -ne 0 ]; then exec sudo \$0; fi
+endsnippet
+
 snippet fun
 	${1:function_name}() {
 		${0:#function_body}
 	}
+endsnippet
+
 snippet ffun
 	function ${1:function_name}() {
 		${0:#function_body}
 	}
+endsnippet
 
 snippet replay "get yes or no from user" w
 	read -p "Type one response [y|n]:" response
@@ -103,25 +130,30 @@ snippet replay "get yes or no from user" w
 		exit 0
 	fi
 	${0:# press c-j}
+endsnippet
 
 snippet ifile "if file exists" w
 	if [ ! -e ${1:filename}  ]; then
 		echo "  file $1 do not exists"
 	fi
-
 	${0}
+endsnippet
 
 snippet isempty "if file is empty" w
 	[ -f "${1:filename}" -a ! -s "$1" ] && echo "$1 is empty'!'"
+
 	${0:# press c-j to exit snippet}
+endsnippet
 
 snippet ifdir "test if dir exists" w
 	[ -d ${1:namedir} ] || mkdir $1 ; cd $1
 	${0:# press c-j}
+endsnippet
 
 snippet "ifprog(ram)?" "test if program is installed" r
 	command -v ${1:prog} >/dev/null || sudo pacman -S $1
 	${0:# press c-j}
+endsnippet
 
 snippet lock
 	LOCK_FILE=/tmp/.lock
@@ -132,13 +164,17 @@ snippet lock
 		exit 1
 	fi
 	${0:# press c-j}
+endsnippet
 
 snippet lower
 	${1:var}=${$1,,}
 	${0:#press ctrl-j}
+endsnippet
+
 snippet upper
 	${1:var}=${$1^^}
 	${0:#press ctrl-j}
+endsnippet
 
 snippet array
 	#ARRAY=( 'Debian Linux' 'Redhat Linux' Ubuntu Linux )
@@ -148,9 +184,11 @@ snippet array
 		${1:echo} ${ARRAY[${i}]}
 	done
 	${0:# press ctrl-j}
+endsnippet
 
 snippet alias
 	alias ${1:name}='${2:action}'
+endsnippet
 
 snippet usage
 	usage()
@@ -158,7 +196,9 @@ snippet usage
 		echo "Usage: $(basename $${1:0}) ${2:argument}"
 		echo "${3:explanation}"
 	}
+endsnippet
 
 # sets default var
 snippet dvar
 	MYVAR=${1:{1:-default}}
+endsnippet

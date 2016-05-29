@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Ter 24 Mai 2016 11:27:21 BRT
+" Last Change: Dom 29 Mai 2016 14:44:13 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -68,6 +68,10 @@ filetype plugin indent on    " required
 
 " adding my personal snippets to ultisnippets
 set runtimepath+=~/.vim/snippets
+
+"let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+"let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/rcfiles/vim/snippets/')
+"let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snippets']
 
 " use this to quickly go to normal mode
 set timeoutlen=1000 ttimeoutlen=0
