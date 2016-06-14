@@ -10,4 +10,4 @@
 # ----------------------------------------------------------
 
 import platform
-print platform.linux_distribution()[0:1]
+print(platform.linux_distribution()[0:1])

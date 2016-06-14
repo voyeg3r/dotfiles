@@ -1,3 +1,7 @@
+Local onde ficam os serviços
+
+  ls /etc/init.d/
+
 iniciar um serviço
 
   systemctrl start nignx.service

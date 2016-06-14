@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom 29 Mai 2016 14:44:13 BRT
+" Last Change: Dom 12 Jun 2016 15:07:30 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -224,7 +224,6 @@ let g:UltiSnipsListSnippets="<c-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-filetype plugin indent on
 syntax on
 set omnifunc=syntaxcomplete#Complete
 set completeopt+=longest
@@ -256,8 +255,8 @@ set fileformats=unix,mac,dos
 set viminfo='10,\"100,:20,%,n~/.viminfo
 set history=1000
 setlocal complete=.,w,k,b,u,t,i
-set clipboard=unnamed
-set clipboard=unnamedplus
+"set clipboard=unnamed
+"set clipboard=unnamedplus
 set complete-=k complete+=kspell
 set spelllang=pt,en
 set nospell
@@ -510,7 +509,7 @@ fun! CleanSubtitles()
     :%j
     :%s/,/, /g
     :%s,\s\+, ,g
-    :%+y
+    :%y+
     call setreg('/', old_query)
 endfun
 command! -nargs=0 GetSubs :call CleanSubtitles()
@@ -611,13 +610,13 @@ set modelines=5
 set tabstop=2
 set shiftwidth=4
 set shiftround
-set copyindent
+"set copyindent
 set softtabstop=4
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
 set scrolloff=3
-set autoindent
+"set autoindent
 set showmode
 set showcmd
 set hidden
@@ -646,7 +645,7 @@ endtry
 set ignorecase
 set smartcase
 set smarttab
-set smartindent
+"set smartindent
 set infercase
 set incsearch
 set showmatch
