@@ -1,6 +1,6 @@
 "=============================================================================
 " FILE: devicons.vim
-" Version: 0.8.2
+" Version: 0.8.3
 " Webpage: https://github.com/ryanoasis/vim-devicons
 " Maintainer: Ryan McIntyre <ryanoasis@gmail.com>
 " License: MIT license  {{{
@@ -71,7 +71,7 @@ function! s:column.define_syntax(context) "{{{
 endfunction"}}}
 
 function! s:column.get(file, context)
-  return WebDevIconsGetFileTypeSymbol(strpart(a:file.action__path, strridx(a:file.action__path, "/")), a:file.vimfiler__is_directory)
+  return WebDevIconsGetFileTypeSymbol(strpart(a:file.action__path, strridx(a:file.action__path, '/')), a:file.vimfiler__is_directory)
 endfunction
 
 let &cpo = s:save_cpo

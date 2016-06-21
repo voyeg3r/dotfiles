@@ -69,6 +69,9 @@ plugins=(git fasd extract systemd.plugin.zsh history-substring-search zsh-autosu
 #eval "$(fasd --init posix-alias zsh-hook )"
 eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install )"
 
+# trying to expand sudo at the begining
+bindkey '^i' expand-or-complete-prefix
+
 # in order to install auto-suggestions plugin
 # https://github.com/zsh-users/zsh-autosuggestions
 bindkey '^ ' autosuggest-accept

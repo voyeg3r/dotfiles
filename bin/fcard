@@ -20,14 +20,15 @@ text = pyperclip.paste().lower()
 
 
 start='[sound:'
-ending='.mp3]' # extensão desejada
+ending='.mp3' # extensão desejada
 
 # string.punctuation - contem vários caracteres especiais
 # '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~''"'
 
 middle = str(''.join(x for x in text if x not in string.punctuation).replace(' ','-'))
 
-output = start + middle + ending
+#output = start + middle + ending
+output = middle + ending
 
 print('your clipboard is:\n', output, sep='')
 # print(output)

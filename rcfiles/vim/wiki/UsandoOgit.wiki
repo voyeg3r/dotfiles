@@ -1,5 +1,9 @@
 [[Dicas]] do comando git
 
+Atualizar um repositório local puxando do servidor
+
+ git pull origin master
+
 ---------------------------------------------
 Clonar um repositório num momento específico
 ---------------------------------------------

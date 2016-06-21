@@ -2,33 +2,35 @@
 	<img src="https://github.com/ryanoasis/vim-devicons/wiki/screenshots/v0.8.x/branding-logo.png" alt="vim-devicons">
 </h1>
 
-***
 [![GitHub version][img-version-badge]][badge-version] [![Join the chat at https://gitter.im/ryanoasis/vim-devicons][img-gitter-badge]][badge-gitter] [![Flattr this git repo][img-flattr-badge]][badge-flattr]
-***
+
+**Vim-Devicons** adds filetype glyphs (icons) to other plugins such as [NERDTree], [vim-airline], [CtrlP], [powerline], [unite], [lightline.vim], [vim-startify], [vimfiler], and [flagship].
+
+<h1 align="center">
+	<img src="https://github.com/ryanoasis/vim-devicons/wiki/screenshots/v0.8.x/overall-screenshot.png" alt="vim-devicons overall screenshot" />
+</h1>
+
+## Quick Links
+
 | **[Screenshots](#screenshots)**| **[API](#api)** | **[Fonts ➶][patched-fonts]** | **[Patcher ➶][nerd-fonts]** |
 |--------------------------------|-----------------|------------------------------|-----------------------------|
 | [![screenshots][img-visual-toc-screenshots]](#screenshots) | [![api][img-visual-toc-api]](#api) | [![patcher-logo-small][img-visual-toc-patched-fonts]][patched-fonts] | [![patcher-logo-small][img-visual-toc-fonts-patcher]][nerd-fonts] |
-***
-
-Adds filetype glyphs (icons) to other plugins such as [NERDTree], [vim-airline], [CtrlP], [powerline], [unite], [lightline.vim], [vim-startify], [vimfiler], and [flagship].
-
-![image](https://github.com/ryanoasis/vim-devicons/wiki/screenshots/v0.8.x/overall-screenshot.png)
-
 
 ## Table of Contents
 
-- [vim-devicons v0.8.2](#)
+- [vim-devicons v0.8.3](#)
 	- [Quick Setup (TL;DR)](#quick-setup)
     - [Installation](#installation)
 	- [Usage](#usage)
 	- [Screenshots](#screenshots)
 	- [Features](#features)
 	- [Extra Configuration](#extra-configuration)
-		- [Character Mappings](#character-mappings)
+	  - [Character Mappings](#character-mappings)
 	- [Lightline Setup](#lightline-setup)
 	- [Powerline Setup](#powerline-setup)
 	- [Vim Plugin Installation](#installation)
-	- [API](#api)
+	- [Methods](#public-methods)
+	  - [API](#api)
 	- [Todo](#todo)
 	- [FAQ / Troubleshooting](#faq--troubleshooting)
 	- [Contributing](#contributing)
@@ -477,8 +479,32 @@ file format segment
 
 for full example see [sample file](https://github.com/ryanoasis/vim-devicons/wiki/samples/v0.8.x/powerline/themes/vim/default.json)
 
+## Public Methods
 
-## API
+```vim
+" returns the current version of the plugin
+webdevicons#version()
+```
+
+```vim
+" calls webdevicons#softRefresh()
+" (basically a backwards compat convenience)
+webdevicons#refresh()
+```
+
+```vim
+" Does a 'hard' refresh of NERDTree
+" resets vim-devicons syntax and closes and reopens NERDTree
+webdevicons#hardRefresh()
+```
+
+```vim
+" Does a 'soft' refresh of NERDTree
+" resets vim-devicons syntax and toggles NERDTree to the same state
+webdevicons#softRefresh()
+```
+
+### API
 
 ```vim
 " returns the font character that represents the icon
@@ -492,7 +518,7 @@ WebDevIconsGetFileTypeSymbol(...)
 WebDevIconsGetFileFormatSymbol()
 ```
 
-### API Examples
+#### API Examples
 
 * todo
 
@@ -616,6 +642,12 @@ WebDevIconsGetFileFormatSymbol()
   autocmd FileType nerdtree setlocal nolist
   ```
   per: https://github.com/ryanoasis/vim-devicons/issues/110#issue-103801335
+
+* Newly created files in NERDTree are slow to show the glyph (icon)
+  * check your current setting of `:updatetime?`
+  * try setting `updatetime` in your `vimrc` to a lower value like `250`,
+  for more info see: https://github.com/ryanoasis/vim-devicons/issues/153
+
 
 ## Contributing
 
