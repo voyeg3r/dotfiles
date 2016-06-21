@@ -1,5 +1,7 @@
 [[Dicas]] do comando git
 
+https://githowto.com/getting_old_versions
+
 Atualizar um repositório local puxando do servidor
 
  git pull origin master
