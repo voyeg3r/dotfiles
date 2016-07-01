@@ -58,6 +58,7 @@ date -I
 
 O formato deve ser definido assim: MMDDHHMM[[CC[YY]]
 O que está entre colchetes é opcional
+
 ==Configurando a data com base em uma string==
 
 date -s "01/31/2009 22:19:53"
@@ -128,6 +129,11 @@ Para configurar a data em 24/03/2008 13:48h
 
     date 032413482008
     Seg Mar 24 13:48:00 BRT 2008
+
+    First use Month
+    after that use Month's day
+    after that hour and minute
+    and finally use Year
 
 
 Você pode omitir século e ano
