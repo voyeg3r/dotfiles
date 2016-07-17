@@ -24,10 +24,11 @@ hash detox 2>/dev/null || { echo >&2 "I require detox but it's not installed. Ab
 hash trans 2>/dev/null || { echo >&2 "I require trans but it's not installed. Aborting."; exit 1; }
 
 find -name "*MairoVergara*" -print0 | xargs -0 rm -f
-# detox *
+
 perl-rename 's/\.\././g' *
-#perl-rename 's/,//g' *
-for i in *(.)mp3; perl-rename 's/^\d+\s-\s//g' $i
+
+# remove digits from the begining
+for i in *(.)mp3; perl-rename 's/^\d+-//g' $i
 
 autoload -U zmv
 # substitui as duas linhas seguintes pelo perl-rename
@@ -37,6 +38,7 @@ zmv '(*)' '${(L)1}'
 
 for i in *(.); touch ${i:r}.txt
 for i in *(.)txt; echo ${i:r} | sed 's/_/ /g' > $i
+for i in *(.)txt; echo ${i:r} | sed 's/-/ /g' > $i
 sed -i 's/\(.\)/\U\1/' *.txt
 for i in *(.)mp3; echo "[sound:${i}]" | sed 's/ /_/g'  >> ${i:r}.txt
 for i in *(.)txt; echo $(trans -b :pt "$(head -1 $i)")'.' >> $i
@@ -44,10 +46,11 @@ for i in *(.)mp3; perl-rename 's/ /_/g' $i
 sed -i '2s/$/;/g' *.txt
 for i in *(.)txt; sed -i 'N;N;s/\n/ /g' $i
 for i in *(.)txt; sed -i 's/\s\[/.[/g' $i
-sed -i 's/Tem sido muito longo/faz muito tempo/g' *.txt
-sed -i 's/Tem sido muito/faz muito/g' *.txt
-sed -i 's/[Tt]em sido \(\d\+)\(dias)/Faz \1 \2/g' *.txt
-sed -i 's/É um longo/Faz muito/g' *.txt
+
+# sed -i 's/Tem sido muito longo/faz muito tempo/g' *.txt
+# sed -i 's/Tem sido muito/faz muito/g' *.txt
+# sed -i 's/[Tt]em sido \(\d\+)\(dias)/Faz \1 \2/g' *.txt
+# sed -i 's/É um longo/Faz muito/g' *.txt
 cat *.txt > deck.csv
 
 
