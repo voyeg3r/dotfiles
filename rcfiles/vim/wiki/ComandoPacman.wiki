@@ -9,6 +9,6 @@ rm /var/lib/pacman/db.lck
 
     pacman-key --init
 
-    pacman-key --populate archlinux
+    pacman-key --populate archlinux antergos
 
     pacman -Syy
