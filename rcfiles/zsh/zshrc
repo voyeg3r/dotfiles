@@ -98,8 +98,10 @@ autoload -U select-word-style
 select-word-style bash
 
 # User configuration
-export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
+# export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
+export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:[bf]g"
 setopt HIST_IGNORE_DUPS
+setopt SHARE_HISTORY
 setopt EXTENDED_HISTORY
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
@@ -259,3 +261,4 @@ zle -N bracketed-paste bracketed-paste-magic
 # firefox improviments
 # disalbe rendering fonts in firefox to free memory
 export MOZ_DISABLE_PANGO='1'
+export OOO_FORCE_DESKTOP=gnome # For OpenOffice to look more gtk-friendly.
