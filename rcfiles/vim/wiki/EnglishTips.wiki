@@ -1,9 +1,11 @@
 Arquivo: dicas de ingles
 Criado: Qua 12/Jan/2011 hs 12:52
-Last Change: Qui 24 Set 2015 07:54:26 BRT
+Last Change: Dom 31 Jul 2016 08:41:56 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+[[collocations]]
 
 {{{
 https://github.com/Anoncheg1/Command-line-translator

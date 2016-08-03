@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Dom 17 Jul 2016 12:43:19 BRT
+" Last Change: Sáb 30 Jul 2016 08:42:11 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -118,6 +118,7 @@ let g:ctrlp_custom_ignore = {
       \ }
 
 let g:syntastic_python_python_exec = '/usr/bin/python'
+
 
 function! <SID>SwitchColorSchemes()
   if exists("g:colors_name")
