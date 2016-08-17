@@ -14,6 +14,10 @@ OBS: Por padrão o youtube-dl irá baixar o video na melhor qualiade possível
 
 	youtube-dl -f 34 "http://www.youtube.com/watch?v=2_VFKqw1q2Q"
 
+==baixando video com legenda==
+
+    youtube-dl --write-srt --sub-lang en LINK
+
 ==convertendo videos do youtube para mp3==
 Fonte:
 
