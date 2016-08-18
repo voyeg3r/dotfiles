@@ -18,6 +18,16 @@ OBS: Por padrão o youtube-dl irá baixar o video na melhor qualiade possível
 
     youtube-dl --write-srt --sub-lang en LINK
 
+    Você pode criar um arquivo de configuração ...
+
+        vim .config/youtube-dl.conf
+
+    e nele colocar as opções que desejar, caso queira ignorar
+    o arquivo de configuração você pode colocar a seguinte opção
+    na linha de comando:
+
+        --ignore-config
+
 ==convertendo videos do youtube para mp3==
 Fonte:
 
