@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: Sáb 30 Jul 2016 08:42:11 BRT
+" Last Change: ter 23 ago 2016 18:13:29 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -119,6 +119,14 @@ let g:ctrlp_custom_ignore = {
 
 let g:syntastic_python_python_exec = '/usr/bin/python'
 
+" this function and command allows you to go back to the
+" position you where before doing a global command
+command! -nargs=* G call s:G(<q-args>)
+function! s:G(args)
+    let saved_position = winsaveview()
+    exe 'g'.a:args
+    call winrestview(saved_position)
+endfunction
 
 function! <SID>SwitchColorSchemes()
   if exists("g:colors_name")
