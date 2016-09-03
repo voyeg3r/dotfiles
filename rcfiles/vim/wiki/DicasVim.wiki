@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: Qua 11 Mai 2016 13:09:18 BRT
+Last Change: sáb 03 set 2016 11:24:03 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -1285,6 +1285,17 @@ Plugin 'vim-scripts/VisIncr'
         call setpos('.', save_cursor)
     endfun
     map <leader>d :call keepjumps DelBlank()<cr>
+
+==adding blank lines  - adding empty lines between lines ==
+
+    :g/.\n\n\@!/norm o
+
+
+    The pattern I use is /.\n\n\@!/. Breaking that down into its component pieces:
+
+    . Matches any character in the line. (used to immediately discard any existing empty lines from consideration)
+    \n Matches a single \n at the end of the character above
+    \n\@! Fails the match if there's another \n immediately after the earlier \n.
 
 = visualizar o histórico de comandos do vim=
 
