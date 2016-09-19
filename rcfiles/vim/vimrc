@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 23 ago 2016 18:13:29 BRT
+" Last Change: seg 19 set 2016 11:42:33 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -486,10 +486,10 @@ map <silent> <F9> <esc>:call Preserve(LastModified())<cr>
 
 
 " map <special> <F4> <esc>:call InsertChangeLog()<cr>
-" mapeamento para inserir códigos especiais em páginas do wikispaces
-imap <special> <F4> [[code format=""]]<enter><+conteudo+><enter>[[code]]<esc>kkf";i
-nmap <special> <F4> i[[code format=""]]<enter><+comteudo+><enter>[[code]]<esc>kkf";i
-xmap <F4> d<F4><esc>p`[v`]vjdd?^[[code<enter>f"a
+" " mapeamento para inserir códigos especiais em páginas do wikispaces
+" imap <special> <F4> [[code format=""]]<enter><+conteudo+><enter>[[code]]<esc>kkf";i
+" nmap <special> <F4> i[[code format=""]]<enter><+comteudo+><enter>[[code]]<esc>kkf";i
+" xmap <F4> d<F4><esc>p`[v`]vjdd?^[[code<enter>f"a
 " addon to firefox edit text areas with your favorite editor
 " https://addons.mozilla.org/pt-BR/firefox/addon/its-all-text/
 
@@ -510,7 +510,7 @@ function! LoadFileTemplate()
 endfunction
 
 " The function must be used in a piece of subtitles
-" in order to clean it, join the lines and put the results
+" in order to cleyan it, join the lines and put the results
 " on clipboard to be pasted on anki
 fun! CleanSubtitles()
     let old_query = getreg('/')
