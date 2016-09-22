@@ -39,7 +39,7 @@ URL=$1
 
 # old url: "http://www.mairovergara.com/rip-off-phrasal-verb-significado/"
 
-wget -O - -o /dev/null "$URL"  | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]*)//g' | sed -re '/Download da Lição/,$d' | sed '/Abaixo temos exemplos/d' | sed '/exemplos abaixo/d' |  sed '/^[0-9][^:]*:/d' > deck.csv > tempdeck.csv
+wget -O - -o /dev/null "$URL"  | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]*)//g' | sed -re '/Download da Lição/,$d' | sed '/Abaixo temos exemplos/d' | sed '/no sentido/d' | sed '/com o sentido/d' | sed '/exemplos abaixo/d' |  sed '/^[0-9][^:]*:/d' > deck.csv > tempdeck.csv
 
 #  cat tempdeck.csv | sed '/^$/d' | sed '1~2s,.*,&[sound:&mp3];,g' | awk '{print}; NR%2==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}'
 #  preciso de um awk para remover espaços de substrings
@@ -74,7 +74,7 @@ perl-rename 's/^\d+-//g' *
 # remover dígitos no começo dos arquivos mp3
 
 # copiar audios para a pasta do anki
- for i in *.mp3; cp $i ~/docs/Anki/sergio/collection.media/
+for i in *.mp3; cp $i ~/docs/Anki/sergio/collection.media/
 cd ..
 
 # documentation
