@@ -223,39 +223,36 @@ cat teste.txt | awk '/teste{/,/}/' | grep -v '{\|}'
 
 ==Imprimir linhas em intervalos específicos (neste caso a cada 3 linhas)==
 
-
-awk 'NR%3==1' file
-
+    awk 'NR%3==1' file
 
 um comentário a cada 5 linhas
 
-ls -l | awk '{if (NR % 5 == 0) print "-- COMMIT --"; print}'
-
+    ls -l | awk '{if (NR % 5 == 0) print "-- COMMIT --"; print}'
 
 ==zerando a primeira coluna==
 
-awk '{$1=""; print}'
+    awk '{$1=""; print}'
 
 ==Substituição de um padrão - usando a função sub==
 
-echo "isto aquilo" | awk '{ sub(/aquilo/, "aquele"); print }'
+    echo "isto aquilo" | awk '{ sub(/aquilo/, "aquele"); print }'
 
 ==Substituindo o terminador de linha==
 **Convert Windows/DOS newlines (CRLF) to Unix newlines (LF) from Unix.**
 
-awk '{ sub(/\r$/,""); print }'
+    awk '{ sub(/\r$/,""); print }'
 
 **Convert Unix newlines (LF) to Windows/DOS newlines (CRLF) from Unix.**
 
-awk '{ sub(/$/,"\r"); print }'
+    awk '{ sub(/$/,"\r"); print }'
 
 **Substitute “foo” with “bar” only on lines that contain “baz”.**
 
-awk '/baz/ { gsub(/foo/, "bar") }; { print }'
+    awk '/baz/ { gsub(/foo/, "bar") }; { print }'
 
 ==imprimir um intervalo==
 
-awk '/start_pattern/,/stop_pattern/' file.txt
+    awk '/start_pattern/,/stop_pattern/' file.txt
 
 ==colocando em maiúsculas==
 

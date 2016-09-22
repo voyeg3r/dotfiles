@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 19 set 2016 11:42:33 BRT
+" Last Change: qua 21 set 2016 13:40:22 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -835,6 +835,9 @@ augroup sh
  au BufNewFile *.sh 0r ~/.vim/skel/template.sh
  "au BufWritePost *.sh,*.pl,*.py,*.cgi :silent !chmod a+x <afile>
 augroup end
+
+" zsh template
+au BufNewFile *.zsh 0r ~/.vim/skel/template.zsh
 
 " fix to solarized colorscheme
 if !has('gui_running')

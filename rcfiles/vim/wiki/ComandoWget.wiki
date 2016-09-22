@@ -7,6 +7,13 @@ mantém um resumo do que foi baixado
 
 wget -m --restrict-file-names=nocontrol --user-agent="direct download -- `uname -a`" --no-parent --referer=http://DigitalK7.com/ "http://digitalk7.com/mus/Brazil/"
 
+==How do I pipe a downloaded file to standard output in bash?==
+source: https://serverfault.com/questions/25779/how-do-i-pipe-a-downloaded-file-to-standard-output-in-bash/25780#25780
+
+How is it possible to pipe out wget's downloaded file? If not what alternatives should I use?
+
+    wget -O - -o /dev/null  http://google.com
+
 
 =baixar licença gplv3=
 

@@ -1,5 +1,12 @@
 =Introdução=
 
+== Imprimir somente as linhas impares==
+
+    sed -n '1~2p'
+
+    Em inglês "odd lines"
+    as pares seriam "even lines"
+
 =Removendo o caratere ' de uma string=
 
   sed 's/\x27//g'
