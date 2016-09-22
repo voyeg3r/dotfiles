@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 # =================================================
 # CREATED:          qua set 21 13:40:53 BRT 2016
-# Last Change: qui 22 set 2016 13:50:32 BRT
+# Last Change: qui 22 set 2016 15:35:56 BRT
 # THIS SCRIPT AIMS: get mairo's vergara flashcards
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
@@ -29,6 +29,10 @@
 setopt nonomatch
 URL=$1
 
+# OBS: Maybe the biggest problem I came across was this stupid
+# unseprable char: \xc2\xa  --> see more on this post:
+# http://askubuntu.com/questions/357248/how-to-remove-special-m-bm-character-with-sed
+
 # URL="http://www.mairovergara.com/come-handy-o-que-significa-esta-expressao/"
 
 
@@ -39,16 +43,19 @@ URL=$1
 
 # old url: "http://www.mairovergara.com/rip-off-phrasal-verb-significado/"
 
-wget -O - -o /dev/null "$URL"  | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]*)//g' | sed -re '/Download da Lição/,$d' | sed '/Abaixo temos exemplos/d' | sed '/no sentido/d' | sed '/com o sentido/d' | sed '/exemplos abaixo/d' |  sed '/^[0-9][^:]*:/d' > deck.csv > tempdeck.csv
+wget -O - -o /dev/null "$URL"  | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]*)//g' | sed -re '/Download da Lição/,$d' | sed '/Abaixo temos exemplos/d' | sed '/no sentido/d' | sed '/com o sentido/d' | sed '/exemplos abaixo/d' |  sed '/^[0-9][^:]*:/d' |  sed "s/&#8217;/'/g" |  sed 's/\xc2\xa0/ /g' > deck.csv
 
-sed -i "s/\&\#8217;/'/g" deck.csv > tempdeck.csv
+cat deck.csv > tempdeck.csv
+
 
 #  cat tempdeck.csv | sed '/^$/d' | sed '1~2s,.*,&[sound:&mp3];,g' | awk '{print}; NR%2==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}'
 #  preciso de um awk para remover espaços de substrings
 
 
-cat deck.csv | sed '/^$/d' | sed '1~2s,.*,&\n[sound:&mp3];,g' | sed '2~3s, ,-,g' | sed '2~3s/,//g' | sed '2~3s,\!\(\mp3\),.\1,g'| \
-     sed '2~3s/\?mp3/.mp3/g' | awk '{print}; NR%3==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}' | sed 's,\.\s\+,.,g' | sed 's/\! /!/g' > deck.csv
+cat deck.csv | sed '/^$/d' | sed '/http.*/d' | sed '1~2s/.*/&\n[sound:&mp3];/g' | sed '2~3s/ /-/g' | sed '2~3s/,//g' | sed '2~3s/\!\(\mp3\)/.\1/g'| sed '2~3s/\?mp3/.mp3/g' | awk '{print}; NR%3==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}' | sed 's/\.\s\+/./g' | sed 's/\! /!/g' > deck.csv
+
+
+# cat deck.csv | sed -i "s/\&\#8217;/'/g" deck.csv > tempdeck.csv
 
 # wget -O - -o /dev/null http://www.mairovergara.com/come-handy-o-que-significa-esta-expressao/ | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]*)//g' | sed '/Download da Lição/,$d' | sed '/^$/d' | sed '1~2s,.*,&\n[sound:&mp3];,g' | awk '{print}; NR%3==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}' | sed 's,\.\s\+,.,g' > deck.csv
 
