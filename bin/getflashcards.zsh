@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 # =================================================
 # CREATED:          qua set 21 13:40:53 BRT 2016
-# Last Change: qui 22 set 2016 13:19:37 BRT
+# Last Change: qui 22 set 2016 13:50:32 BRT
 # THIS SCRIPT AIMS: get mairo's vergara flashcards
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
@@ -41,12 +41,14 @@ URL=$1
 
 wget -O - -o /dev/null "$URL"  | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]*)//g' | sed -re '/Download da Lição/,$d' | sed '/Abaixo temos exemplos/d' | sed '/no sentido/d' | sed '/com o sentido/d' | sed '/exemplos abaixo/d' |  sed '/^[0-9][^:]*:/d' > deck.csv > tempdeck.csv
 
+sed -i "s/\&\#8217;/'/g" deck.csv > tempdeck.csv
+
 #  cat tempdeck.csv | sed '/^$/d' | sed '1~2s,.*,&[sound:&mp3];,g' | awk '{print}; NR%2==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}'
 #  preciso de um awk para remover espaços de substrings
 
 
 cat deck.csv | sed '/^$/d' | sed '1~2s,.*,&\n[sound:&mp3];,g' | sed '2~3s, ,-,g' | sed '2~3s/,//g' | sed '2~3s,\!\(\mp3\),.\1,g'| \
-    sed '2~2s/,//g' | sed '2~2s/\?mp3/.mp3/g' | awk '{print}; NR%3==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}' | sed 's,\.\s\+,.,g' | sed 's/\! /!/g' > deck.csv
+     sed '2~3s/\?mp3/.mp3/g' | awk '{print}; NR%3==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}' | sed 's,\.\s\+,.,g' | sed 's/\! /!/g' > deck.csv
 
 # wget -O - -o /dev/null http://www.mairovergara.com/come-handy-o-que-significa-esta-expressao/ | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]*)//g' | sed '/Download da Lição/,$d' | sed '/^$/d' | sed '1~2s,.*,&\n[sound:&mp3];,g' | awk '{print}; NR%3==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}' | sed 's,\.\s\+,.,g' > deck.csv
 
