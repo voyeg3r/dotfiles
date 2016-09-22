@@ -3,7 +3,7 @@
 clonedotfiles () {
 # Arquivo: Arquivos de configuração de ambiente
 # Criado: Dom 17/Out/2010 hs 15:13
-# Last Change: Ter 21 Jun 2016 10:28:19 BRT
+# Last Change: qui 22 set 2016 13:25:12 BRT
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # http://www.twitter.com/voyeg3r
@@ -51,14 +51,15 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/vim/bundle/Vun
 
 ln -sfvn ~/.dotfiles/vim/vimrc ~/.vimrc
 ln -sfvn ~/.dotfiles/vim ~/.vim
-ln -sfvn ~/.dotfiles/bashrc ~/.bashrc
-ln -sfvn ~/.dotfiles/inputrc ~/.inputrc
+ln -sfvn ~/.dotfiles/rcfiles/bashrc ~/.bashrc
+ln -sfvn ~/.dotfiles/rcfiles/inputrc ~/.inputrc
+ln -sfvn ~/.dotfiles/rcfiles/wgetrc ~/.wgetrc
 ln -sfvn ~/.dotfiles/gitconfig ~/.gitconfig
 ln -sfvn ~/.dotfiles/fonts.conf ~/.fonts.conf
 ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
-ln -sfvn ~/.dotfiles/zshrc ~/.zshrc
+ln -sfvn ~/.dotfiles/rcfiles/zsh/zshrc ~/.zshrc
+ln -sfvn ~/.dotfiles/rcfiles/zsh/zshenv ~/.zshenv
 ln -sfvn ~/.dotfiles/agignore ~/.agignore
-ln -sfvn ~/.dotfiles/zshenv ~/.zshenv
 [ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
 
 sudo chsh -s $(which zsh) $(whoami)

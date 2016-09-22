@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 # =================================================
 # CREATED:          qua set 21 13:40:53 BRT 2016
-# LAST CHANGE:
+# Last Change: qui 22 set 2016 13:19:37 BRT
 # THIS SCRIPT AIMS: get mairo's vergara flashcards
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
