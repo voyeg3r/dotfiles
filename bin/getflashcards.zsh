@@ -45,7 +45,7 @@ wget -O - -o /dev/null "$URL"  | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]
 #  preciso de um awk para remover espaços de substrings
 
 
-cat deck.csv | sed '/^$/d' | sed '1~2s,.*,&\n[sound:&mp3];,g' | sed '2~3s, ,-,g' | sed '2~3s/,//g' | sed '2~2s,\!\(\mp3\),.\1,g'| \
+cat deck.csv | sed '/^$/d' | sed '1~2s,.*,&\n[sound:&mp3];,g' | sed '2~3s, ,-,g' | sed '2~3s/,//g' | sed '2~3s,\!\(\mp3\),.\1,g'| \
     sed '2~2s/,//g' | sed '2~2s/\?mp3/.mp3/g' | awk '{print}; NR%3==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}' | sed 's,\.\s\+,.,g' | sed 's/\! /!/g' > deck.csv
 
 # wget -O - -o /dev/null http://www.mairovergara.com/come-handy-o-que-significa-esta-expressao/ | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]*)//g' | sed '/Download da Lição/,$d' | sed '/^$/d' | sed '1~2s,.*,&\n[sound:&mp3];,g' | awk '{print}; NR%3==0 {print ""}' | awk 'BEGIN {RS=""}; {$1=$1;print}' | sed 's,\.\s\+,.,g' > deck.csv
