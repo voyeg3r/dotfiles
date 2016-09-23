@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 21 set 2016 13:40:22 BRT
+" Last Change: sex 23 set 2016 10:17:02 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -24,6 +24,7 @@
 " div.content>h1.post-title+p{Sample Content}
 " http://peepcode.com/products/smash-into-vim-ii
 " http://snipt.net/public/tag/vim
+" http://dalibornasevic.com/posts/43-12-vim-tips
 
 filetype off
 set rtp+=~/.dotfiles/rcfiles/vim/bundle/Vundle.vim
@@ -320,6 +321,9 @@ xmap <Leader>s <Plug>Vsurround
 " http://vimcasts.org/episodes/bubbling-text/
 " o mapeamento abaixo permite reselecionar texto recem colado ou selecionado
 nmap gV `[v`]
+
+" select last paste in visual mode
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 nmap <special> <F9> <esc>:w<cr>
 inoremap <special> <F9> <C-O>:w<cr>

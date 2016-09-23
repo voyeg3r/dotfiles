@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 # =================================================
 # CREATED:          qua set 21 13:40:53 BRT 2016
-# Last Change: sex 23 set 2016 07:03:57 BRT
+# Last Change: sex 23 set 2016 09:09:03 BRT
 # THIS SCRIPT AIMS: get mairo's vergara flashcards
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
@@ -48,7 +48,7 @@ echo "$URL" > lesson-url.txt
 
 # old url: "http://www.mairovergara.com/rip-off-phrasal-verb-significado/"
 
-wget -O - -o /dev/null "$URL"  | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]*)//g' | sed -re '/Download da Lição/,$d' | sed '/Abaixo temos exemplos/d' | sed '/no sentido/d' | sed '/com o sentido/d' | sed '/exemplos abaixo/d' |  sed '/^[0-9][^:]*:/d' |  sed "s/&#8217;/'/g" |  sed 's/\xc2\xa0/ /g' > deck.csv
+wget -O - -o /dev/null "$URL"  | grep strong | sed 's/<[^>]*>//g' | sed 's/([^)]*)//g' | sed -re '/Download da Lição/,$d' | sed '/Abaixo temos exemplos/d' | sed '/no sentido/d' | sed '/com o sentido/d' | sed '/exemplos abaixo/d' |  sed '/^[0-9][^:]*:/d' | sed 's,&#8220;,,g' |  sed "s/&#8217;/'/g" | sed 's,&#8221;,",g' |  sed 's/\xc2\xa0/ /g' > deck.csv
 
 cat deck.csv > tempdeck.csv
 

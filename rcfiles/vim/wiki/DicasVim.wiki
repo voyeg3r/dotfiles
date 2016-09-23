@@ -1,12 +1,21 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sáb 03 set 2016 11:24:03 BRT
+Last Change: sex 23 set 2016 10:15:10 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
   Search vimgolf chalenges to vim users
+
+==Select yanked and pasted text==
+
+ gv ............ reselects last visual selection
+
+ in order to select previous pasted text put this in your .vimrc
+
+ " select last paste in visual mode
+ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 = non-greedy search on vim=
 
