@@ -1,5 +1,11 @@
 =Introdução=
 
+== remover espaços não separáveis==
+
+source: http://askubuntu.com/questions/357248/how-to-remove-special-m-bm-character-with-sed
+
+    sed -i 's/\xc2\xa0/ /g' file
+
 == Imprimir somente as linhas impares==
 
     sed -n '1~2p'

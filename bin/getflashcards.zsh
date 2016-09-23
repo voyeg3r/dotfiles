@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 # =================================================
 # CREATED:          qua set 21 13:40:53 BRT 2016
-# Last Change: qui 22 set 2016 15:35:56 BRT
+# Last Change: sex 23 set 2016 07:03:57 BRT
 # THIS SCRIPT AIMS: get mairo's vergara flashcards
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
@@ -25,9 +25,14 @@
 #    user_agent = Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
 #    referer = http://www.askapache.com/
 #    robots = off
+#
+#   Dependences to run this script:
+#   zsh perl-rename wget sed grep awk
 
 setopt nonomatch
 URL=$1
+
+echo "$URL" > lesson-url.txt
 
 # OBS: Maybe the biggest problem I came across was this stupid
 # unseprable char: \xc2\xa  --> see more on this post:
