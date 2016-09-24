@@ -43,11 +43,11 @@ curl http://www.commandlinefu.com/commands/browse/sort-by-votes/plaintext/[0-250
 
 ==get external ip==
 
-curl ifconfig.me
+    curl ifconfig.me
 
 ==Save mp3 from stream==
 
-curl -sS -o $outfile -m $showlengthinseconds $streamurl
+    curl -sS -o $outfile -m $showlengthinseconds $streamurl
 
 ==encurtador de urls do google==
 * http://vivaotux.blogspot.com/2010/03/encurtador-de-urls-do-google.html
@@ -86,6 +86,9 @@ curl http://www.phrack.org/archives/tgz/phrack[1-67].tar.gz -o phrack#1.tar.gz
 curl "http://forklift-photos.com.s3.amazonaws.com/[12-48].jpg" -o "#1.jpg"
 
 curl "http://www.ssb.no/english/subjects/06/05/nos_lonn_en/nos_d362_en/tab/tab-[001-131].html" -o "#1.html"
+
+# baixar a transcrição de uma temporada inteira do Two and A Half Men
+curl http://www.springfieldspringfield.co.uk/view_episode_scripts.php\?tv-show\=two-and-a-half-men\&episode\=s01e\[01-24\] -o "two-and-a-half-men_#01.txt"
 
 ==baixando lições de inglês audio e texto==
 
