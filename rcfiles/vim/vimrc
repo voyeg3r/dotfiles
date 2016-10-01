@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 23 set 2016 10:17:02 BRT
+" Last Change: sáb 01 out 2016 14:31:56 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -36,6 +36,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'joom/latex-unicoder.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'rking/ag.vim'

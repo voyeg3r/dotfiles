@@ -369,12 +369,21 @@ function! s:CursorHoldUpdate()
     return
   endif
 
+  " Do not update when a special buffer is selected
+  if !empty(&l:buftype)
+    return
+  endif
+
   " winnr need to make focus go to opened file
   " CursorToTreeWin needed to avoid error on opening file
   let l:winnr = winnr()
+  let l:altwinnr = winnr('#')
+
   call g:NERDTree.CursorToTreeWin()
   call b:NERDTree.root.refreshFlags()
   call NERDTreeRender()
+
+  exec l.altwinnr . 'wincmd w'
   exec l:winnr . 'wincmd w'
 endfunction
 
@@ -480,15 +489,13 @@ function! s:initializeCtrlP()
   let l:ctrlp_warned_file = s:plugin_home . '/status_warned_ctrlp'
 
   if exists('g:loaded_ctrlp') && g:webdevicons_enable_ctrlp
-    let s:glyphASCIIRangeStart = 57344
-    let s:glyphASCIIRangeEnd = 63743
-    let g:ctrlp_open_func = {
-      \ 'mru files': 'webdevicons#ctrlPOpenFunc'
-      \ }
+    let l:forkedCtrlp = exists('g:ctrlp_mruf_map_string')
 
-    if exists('g:ctrlp_mruf_map_string')
-      " logic for ctrlpvim/ctrlp.vim:
-      let g:ctrlp_mruf_map_string = '!stridx(v:val, cwd) ? WebDevIconsGetFileTypeSymbol(strpart(v:val, strridx(v:val, "/"))) . " " . strpart(v:val, idx) : g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol . " " . v:val'
+    if l:forkedCtrlp
+      if !exists('g:ctrlp_formatline_func')
+        " logic for ctrlpvim/ctrlp.vim:
+        let g:ctrlp_formatline_func = 's:formatline(WebDevIconsGetFileTypeSymbol(v:val) . " " . v:val)'
+      endif
     elseif empty(glob(l:ctrlp_warned_file))
       " logic for kien/ctrlp.vim:
       echohl WarningMsg |
@@ -542,21 +549,6 @@ endfunction
 function! webdevicons#softRefresh()
   call s:setSyntax()
   call s:softRefreshNerdTree()
-endfunction
-
-" scope: public
-function! webdevicons#ctrlPOpenFunc(action, line)
-  let line = a:line
-  " Remove non-breaking space which is present (NBSP U+00A0)
-  let line = substitute(line, ' ', '', '')
-  " Trim leading and trailing whitespace and replace private character range characters
-  let glyphASCIICandidate = char2nr(strpart(line, 0, 3))
-
-  if glyphASCIICandidate >= s:glyphASCIIRangeStart && glyphASCIICandidate <= s:glyphASCIIRangeEnd
-    let line = s:strip(strpart(line, 3))
-  endif
-  " Use CtrlP's default file opening function
-  call call('ctrlp#acceptfile', [a:action, line])
 endfunction
 
 " a:1 (bufferName), a:2 (isDirectory)
