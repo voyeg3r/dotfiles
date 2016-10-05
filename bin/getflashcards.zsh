@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 # =================================================
 # CREATED:          qua set 21 13:40:53 BRT 2016
-# Last Change: sex 23 set 2016 09:09:03 BRT
+# Last Change: qua 05 out 2016 08:36:17 BRT
 # THIS SCRIPT AIMS: get mairo's vergara flashcards
 # AUTHOR:           Sérgio Luiz Araújo Silva
 # SITE:             http://vivaotux.blogspot.com
@@ -10,7 +10,7 @@
 # =================================================
 #
 # OBS:
-# ========== Não esqueça do wgetrc ===
+# ==========Do not forget creating your own ~/.wgetrc===
 #
 #    ### Sample Wget initialization file .wgetrc by http://www.askapache.com
 #    ## Local settings (for a user to set in his $HOME/.wgetrc).  It is

@@ -257,6 +257,8 @@ To accomplish the same thing using <span style="font-family: monospace;">sed</sp
     sed -i '1i\
     texto após linha 1' file
 
+    sed -i "1i $SHELL-VARIABLE" filename
+
 
 ==Consertando o resolv.conf por tabela==
 
