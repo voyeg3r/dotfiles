@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 # Created: qua out  5 08:03:59 BRT 2016
-# Last Change: qua 05 out 2016 11:36:13 BRT
+# Last Change: qua 05 out 2016 12:16:42 BRT
 # purpose: Download Tim's podcasts
 #
 
@@ -45,12 +45,15 @@ FOLDERNAME=${AUDIO:t:r}
 echo começando script ...
 echo criando diretório ...
 echo
-mkdir $FOLDERNAME && cd $_
+[ -d $FOLDERNAME ] && cd $FOLDERNAME  || mkdir $FOLDERNAME && cd $_
 echo estamos na pasta: $PWD
 echo ...
 
 # lesson title
-# wget -O - -o /dev/null $URL | awk 'BEGIN{IGNORECASE=1;FS="<title>|</title>";RS=EOF} {print $2}' | sed 's/&.*$//g' | sed '/^$/d' | sed 's/^\s\+//g' > lesson-title.txt
+wget -O - -o /dev/null  $URL | awk 'BEGIN{IGNORECASE=1;FS="<title>|</title>";RS=EOF} {print $2}' | sed 's/&.*$//g' | sed '/^$/d' | sed 's/^\s\+//g' > lesson-title.txt
+
+var=$(cat lesson-title.txt)
+
 # echo ...
 # echo "Título da lição"
 # cat lesson-title.txt
@@ -77,6 +80,7 @@ echo audio file: $(ls *.mp3)
 lynx -dump $URL | sed -n '/FRASES NO/, /\[/p' | sed '/^$/,/$/d' | sed '/./{G;}' |   sed '/^\s\+\[.*/d' | sed '1s/.*/\n&/g' > $LESSONTITLE
 
 sed -i "1i link: ${URL}" $LESSONTITLE
+sed -i "2i $var" $LESSONTITLE
 
 echo lesson phrases:
 cat ${LESSONTITLE}
