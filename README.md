@@ -3,7 +3,7 @@
 clonedotfiles () {
 # Arquivo: Arquivos de configuração de ambiente
 # Criado: Dom 17/Out/2010 hs 15:13
-# Last Change: qui 22 set 2016 13:25:12 BRT
+# Last Change: sex 07 out 2016 08:58:58 BRT
 # autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # http://www.twitter.com/voyeg3r
@@ -34,6 +34,9 @@ git config --global push.default simple
 git config --global credential.helper 'cache --timeout=3600'
 git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+
+Shallow clone:
+    git clone --depth 1 https://github.com/voyeg3r/dotfiles
 
 git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
 
