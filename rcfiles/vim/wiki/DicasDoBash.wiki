@@ -13,6 +13,10 @@ for i in *.jpg; do
     let a=a+1
 done
 
+another option in one line:
+
+count='1'; for i in *.jpg; do mv $i $(printf '%04d'.jpg $count); (( count++ )); done
+
 ==how get pipestatus==
 How to get exit status of process that's piped to another
 
