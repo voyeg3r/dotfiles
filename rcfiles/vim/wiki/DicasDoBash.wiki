@@ -2,6 +2,17 @@
 
 	http://www.bashoneliners.com/?page=1
 
+==how to Renaming files in a folder to sequential numbers==
+
+source: http://stackoverflow.com/questions/3211595/renaming-files-in-a-folder-to-sequential-numbers
+
+a=1
+for i in *.jpg; do
+    new=$(printf "%04d.jpg" "$a") #04 pad to length of 4
+    mv -- "$i" "$new"
+    let a=a+1
+done
+
 ==how get pipestatus==
 How to get exit status of process that's piped to another
 

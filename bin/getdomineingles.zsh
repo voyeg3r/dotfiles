@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 # Created: qua out  5 08:03:59 BRT 2016
-# Last Change: qua 05 out 2016 12:16:42 BRT
+# Last Change: qua 05 out 2016 13:46:57 BRT
 # purpose: Download Tim's podcasts
 #
 
@@ -43,9 +43,12 @@ AUDIO=$(wget  -O - -o /dev/null $URL | grep -o 'https:.*mp3')
 FOLDERNAME=${AUDIO:t:r}
 
 echo começando script ...
-echo criando diretório ...
 echo
 [ -d $FOLDERNAME ] && cd $FOLDERNAME  || mkdir $FOLDERNAME && cd $_
+echo "===================================================="
+echo      entrando no diretório $FOLDERNAME  ...
+echo "===================================================="
+echo
 echo estamos na pasta: $PWD
 echo ...
 
