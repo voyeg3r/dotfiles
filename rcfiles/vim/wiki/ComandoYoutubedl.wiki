@@ -16,6 +16,7 @@ OBS: Por padrão o youtube-dl irá baixar o video na melhor qualiade possível
 
 ==baixando video com legenda==
 
+
     youtube-dl --write-srt --sub-lang en LINK
 
     Você pode criar um arquivo de configuração ...

@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: Sáb 23 Abr 2016 10:32:53 BRT
+Last Change: sex 07 out 2016 09:46:16 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -427,6 +427,9 @@ autoload -U zmv
 
     ## in this example we are going to change all to lowercase
     zmv '(*)' '${(L)1}'
+
+    Adding leading zeros to a filename (1.jpg -> 001.jpg)
+    zmv '(<1->).jpg' '${(l:3::0:)1}.jpg'
 
 #Replace spaces in filenames with underline
 
