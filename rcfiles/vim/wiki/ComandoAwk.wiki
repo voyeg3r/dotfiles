@@ -73,6 +73,27 @@ ORS    indica o separador de registros do arquivo de saida
 
     awk 'BEGIN {RS="\n\n"; FS="\n"} !/Câmara dos Deputados/ && /TEL/' unix.vcf
 
+==Using awk to filter out students in a list==
+{{{
+cat ip.txt
+
+    John Doe Marketing Junior B
+    Betty Metty Engineering Junior A
+    James Names Nursing Sophomore B
+    Bob Nob History Freshman B
+    Hope Nope Engineering C
+
+    awk '$5=="A"{print $1, $2}' file
+
+Output
+
+Betty Metty
+
+Edit, filter engineering :
+
+awk '$5=="A" && $3=="Engineering"{print $1, $2}' file
+
+}}}
 ==how use shell vars on awk==
 Como usar variáveis do bash/shell no awk
 
