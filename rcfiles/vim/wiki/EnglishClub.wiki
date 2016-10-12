@@ -30,6 +30,11 @@ facilitam a interação dos membros do clube.
 
 ==Inglês real, usando metodologias como==
 
+=== Parallel Reading===
+
+ Os textos são apresentados lado a lado
+ uma referência inical é o site: http://paralleltext.io
+
 ==Overlearning==
 
 Trabalhar os materiais de modo repetido, revisitar materiais,
