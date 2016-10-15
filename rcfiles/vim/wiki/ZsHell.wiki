@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: sex 07 out 2016 09:46:16 BRT
+Last Change: sáb 15 out 2016 12:20:41 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -13,6 +13,12 @@ http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
 {{{ keep this line to see literal text
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+== list all possible commands using zsh==
+
+In zsh, you can list the currently available commands of a given type with echo ${(k)aliases}, echo ${(k)functions}, echo ${(k)builtins} and echo ${(k)commands} (that last one lists external commands only).
+
+    echo ${(k)commands} | sed 's, ,\n,g' | wc -l
 
 == loading zsh clean ==
 

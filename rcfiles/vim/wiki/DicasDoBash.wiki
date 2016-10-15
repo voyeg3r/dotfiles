@@ -2,6 +2,17 @@
 
 	http://www.bashoneliners.com/?page=1
 
+==How display all possible commands avaiable==
+
+source (stack overflow): https://goo.gl/PYqI2n
+
+compgen -c will list all the commands you could run.
+compgen -a will list all the aliases you could run.
+compgen -b will list all the built-ins you could run.
+compgen -k will list all the keywords you could run.
+compgen -A function will list all the functions you could run.
+compgen -A function -abck will list all the above in one go.
+
 ==how to Renaming files in a folder to sequential numbers==
 
 source: http://stackoverflow.com/questions/3211595/renaming-files-in-a-folder-to-sequential-numbers
