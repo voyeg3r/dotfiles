@@ -1,4 +1,4 @@
-# Last Change: Thu Apr 30, 2015  05:03PM
+# Last Change: sáb 15 out 2016 13:12:28 BRT
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -39,6 +39,8 @@ function gm() {
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
+
+alias allcomm='whatis `compgen -c` | less' # list all possible commands
 alias x='extract'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
