@@ -1,11 +1,15 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: Dom 10 Jan 2016 15:31:43 BRT
+Last Change: seg 17 out 2016 17:46:51 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 {{{
+
+==setting nautilus auto mount==
+
+    gsettings set org.gnome.desktop.media-handling automount true
 
 ==fixing audacious open folders error==
 I don't know how it happened but when, eg, I plug in a USB drive or try to open a folder in a firefox extension (or other programs that want to open a folder...), it always wants to open with Audacious which is obnoxious.  Browsing through in Nautilus works fine and normal, but I want to know if I can find out how to get rid of the association with Audacious.
