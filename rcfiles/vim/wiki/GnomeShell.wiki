@@ -1,11 +1,15 @@
 Arquivo: Dicas do Gnome-Shell
 Criado: Wed 04/May/2011 hs 17:23
-Last Change: seg 17 out 2016 17:46:51 BRT
+Last Change: qua 19 out 2016 13:30:49 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 {{{
+
+==Show current wallpaper path==
+
+    gsettings get org.gnome.desktop.background picture-uri
 
 ==setting nautilus auto mount==
 
