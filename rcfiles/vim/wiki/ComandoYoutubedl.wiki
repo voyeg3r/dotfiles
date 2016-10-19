@@ -8,6 +8,12 @@
 
 	youtube-dl -t link
 
+== Limiting bandwidth==
+
+    youtube-dl -r 30k https://www.youtube.com/watch\?v\=XnrAM9QZ90U
+
+    youtube-dl  --rate-limit 20k
+
 ==determinando a qualidade do video a ser baixado==
 Pesquise neste link http://en.wikipedia.org/wiki/YouTube#Quality_and_codecs
 OBS: Por padrão o youtube-dl irá baixar o video na melhor qualiade possível
