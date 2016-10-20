@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: sáb 15 out 2016 12:20:41 BRT
+Last Change: qui 20 out 2016 11:25:46 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -13,6 +13,11 @@ http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
 {{{ keep this line to see literal text
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+== avoiding globbing error while compying files==
+
+setopt extendedglob
+cp some_dir/(^0*).jpg dest_dir/
 
 == list all possible commands using zsh==
 
