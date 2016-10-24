@@ -12,3 +12,7 @@ rm /var/lib/pacman/db.lck
     pacman-key --populate archlinux antergos
 
     pacman -Syy
+
+==upgrade all==
+
+    sudo pacman -Syyu

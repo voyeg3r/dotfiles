@@ -1,17 +1,22 @@
-Arquivo: Dicas do Gnome-Shell Criado: Wed 04/May/2011 hs 17:23 Last 
-Change: seg 24 out 2016 13:14:10 BRT autor: Sérgio Luiz Araújo Silva 
-site: http://vivaotux.blogspot.com twitter: 
+Arquivo: Dicas do Gnome-Shell Criado: Wed 04/May/2011 hs 17:23 Last
+Change: seg 24 out 2016 13:14:10 BRT autor: Sérgio Luiz Araújo Silva
+site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 
 {{{
 
 http://askubuntu.com/questions/604462/how-to-set-languages-shortcuts-from-config-files-or-command-line
 
+    gsettings set org.gnome.desktop.interface clock-show-date true
 
-another gsettings command?
+   # do not show meny on terminal
+   gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
 
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), 
-('xkb', 'it'), ('xkb', 'de')]"
+   gsettings set org.gnome.desktop.datetime automatic-timezone true
+
+==Set keyboard language==
+
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', 'us')]"
 
 ==Show current wallpaper path==
 
@@ -21,11 +26,11 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'),
 
     gsettings set org.gnome.desktop.media-handling automount true
 
-==fixing audacious open folders error== I don't know how it happened but 
-when, eg, I plug in a USB drive or try to open a folder in a firefox 
-extension (or other programs that want to open a folder...), it always 
-wants to open with Audacious which is obnoxious.  Browsing through in 
-Nautilus works fine and normal, but I want to know if I can find out how 
+==fixing audacious open folders error== I don't know how it happened but
+when, eg, I plug in a USB drive or try to open a folder in a firefox
+extension (or other programs that want to open a folder...), it always
+wants to open with Audacious which is obnoxious.  Browsing through in
+Nautilus works fine and normal, but I want to know if I can find out how
 to get rid of the association with Audacious.
 
     I've tried deleting ~/.config and ~/.local to no help...
@@ -41,12 +46,12 @@ to get rid of the association with Audacious.
 
 == setting gnome screenshot dir ==
 
-  gsettings set org.gnome.gnome-screenshot auto-save-directory 
+  gsettings set org.gnome.gnome-screenshot auto-save-directory
 "file:///home/$USER/pictures/"
 
 ==setando o muse para ser destacado com o ctrl ou não==
 
-  gsettings set org.gnome.settings-daemon.peripherals.mouse 
+  gsettings set org.gnome.settings-daemon.peripherals.mouse
 locate-pointer false
 
 == accessing ssh throug nautilus ==
@@ -55,28 +60,28 @@ locate-pointer false
 
 ==Alterando o tempo de gravação no gnome shell==
 
-    fonte: 
+    fonte:
 http://www.talesam.org/blog/dica-ampliando-o-tempo-de-gravacao-do-desktop-no-gnome-shell/
 
-    gsettings set org.gnome.settings-daemon.plugins.media-keys 
+    gsettings set org.gnome.settings-daemon.plugins.media-keys
 max-screencast-length 1800
 
     Extensão que permite gravar com audio
     https://extensions.gnome.org/extension/690/easyscreencast/
 
-==how install gnome shell in any distro with jhbuild== 
+==how install gnome shell in any distro with jhbuild==
 http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distro-with-jhbuild/
 
-== performance tweaks == * https://wiki.archlinux.org/index.php/Sysctl * 
-http://penguininside.blogspot.com.br/2009/08/top-10-gnome-performance-tweaks.html 
+== performance tweaks == * https://wiki.archlinux.org/index.php/Sysctl *
+http://penguininside.blogspot.com.br/2009/08/top-10-gnome-performance-tweaks.html
 https://alexcabal.com/disabling-gnomes-recently-used-file-list-the-better-way/
 
 
 -------------------------------
- disable most recent files view --> recently-used-xbel 
+ disable most recent files view --> recently-used-xbel
 -------------------------------
 
-Put the following in ~/.config/gtk-3.0/settings.ini (create the file if 
+Put the following in ~/.config/gtk-3.0/settings.ini (create the file if
 it doesn’t exist):
 
         [Settings]
@@ -103,8 +108,8 @@ Network performance
 
 https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf
 
-If you had customized /etc/sysctl.conf, you need to rename it as 
-/etc/sysctl.d/99-sysctl.conf. If you had e.g. /etc/sysctl.d/foo, you 
+If you had customized /etc/sysctl.conf, you need to rename it as
+/etc/sysctl.d/99-sysctl.conf. If you had e.g. /etc/sysctl.d/foo, you
 need to rename is to /etc/sysctl.d/foo.conf
 
 
@@ -129,13 +134,13 @@ gsettings reset org.gnome.shell.recorder pipeline
 
 == text expander for linux ==
 
-https://bbs.archlinux.org/viewtopic.php?id=71938 
-https://github.com/Dieterbe/snip/ 
+https://bbs.archlinux.org/viewtopic.php?id=71938
+https://github.com/Dieterbe/snip/
 https://github.com/Dieterbe/snip/tree/master
 
 = beste addons to gnome-shell =
 
-Replacement of Alt-Tab, iterates through windows in a cover-flow manner. 
+Replacement of Alt-Tab, iterates through windows in a cover-flow manner.
 https://extensions.gnome.org/extension/97/coverflow-alt-tab/
 
 =como instalar o gnome-shell no ubuntu 11.04=
@@ -149,8 +154,8 @@ https://extensions.gnome.org/extension/97/coverflow-alt-tab/
 
   Basta pressionar a tecla windows
 
-==best gnome shell addons == 
-https://extensions.gnome.org/extension/549/web-search-dialog/ 
+==best gnome shell addons ==
+https://extensions.gnome.org/extension/549/web-search-dialog/
 https://extensions.gnome.org/extension/277/impatience/
 
 }}}
