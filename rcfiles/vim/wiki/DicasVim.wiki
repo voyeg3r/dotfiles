@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sex 23 set 2016 10:15:10 BRT
+Last Change: seg 24 out 2016 14:37:02 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -1296,6 +1296,8 @@ Plugin 'vim-scripts/VisIncr'
     map <leader>d :call keepjumps DelBlank()<cr>
 
 ==adding blank lines  - adding empty lines between lines ==
+
+source: http://superuser.com/questions/592503/vim-adding-empty-line-between-lines/592508
 
     :g/.\n\n\@!/norm o
 

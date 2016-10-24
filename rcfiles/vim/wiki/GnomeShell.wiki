@@ -14,6 +14,11 @@ http://askubuntu.com/questions/604462/how-to-set-languages-shortcuts-from-config
 
    gsettings set org.gnome.desktop.datetime automatic-timezone true
 
+
+==touche to click on touchpad==
+
+    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+
 ==Set keyboard language==
 
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', 'us')]"
