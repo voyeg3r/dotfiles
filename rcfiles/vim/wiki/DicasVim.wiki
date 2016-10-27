@@ -1,12 +1,14 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: seg 24 out 2016 14:37:02 BRT
+Last Change: qui 27 out 2016 08:18:06 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
   Search vimgolf chalenges to vim users
+
+  See also [[VimBestTips]]
 
 ==Select yanked and pasted text==
 

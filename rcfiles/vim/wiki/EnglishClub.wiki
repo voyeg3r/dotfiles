@@ -123,6 +123,10 @@ This way our brain learn more fast and easyest
 * Não aprenda palavras, aprenda frases:
 Aprender por sentenças é mais produtivo poque a gramática já está embutida, se aprende também as contrações e ligações entre palavras.
 
+As 1000 frases mais comuns do inglês (troque o número final para
+acessar as outras letras do alfabeto - z=26)
+http://www.englishspeak.com/english-phrases.cfm?sortby=1
+
 =alterando o tempo de legendas com o script subslider.py=
 O script subslider.py altera o tempo de legendas, adiantando ou
 atrasando o tempo de exibição das memas assim:

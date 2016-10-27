@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 24 out 2016 14:49:14 BRT
+" Last Change: qui 27 out 2016 09:47:18 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -423,6 +423,26 @@ fun! Dos2unixFunction()
  set fileencoding=utf-8
 endfun
 com! Dos2Unix call Preserve(Dos2unixFunction())
+
+" this function does more tha camel case
+" it makes some changes needed to my flashcards
+fun! CamelCaseLine()
+  normal jyypk
+  .s,.*,\L&,ge
+  .s/ \([a-z]\)/\u\1/ge
+  .s/.$/.mp3/g
+  .s/.*/[sound:&];/ge
+  .s/[,' ]//ge
+  normal kJJ
+  "normal 0
+  .s,\s\+, ,ge
+  .s,\s\[,[,ge
+  .s,\;\s,;,ge
+  .s,\(:\)\(.\),\1\U\2,ge
+  normal gj
+endfun
+com! CamelCase call Preserve(CamelCaseLine())
+nmap <silent> <leader>k :keepjumps call CamelCaseLine()<cr>
 
 " remove linhas duplicadas
 " remove duplicated lines

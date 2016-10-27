@@ -1,5 +1,29 @@
 =Introdução=
 
+   Sed é um editor de streams, ou seja, ele manipula fluxos
+   de texto que podem ser pipeados fazendo deleções, inserções
+   substituições, etc.
+
+== apagando toda terceira linha ==
+
+  sed -i '1~2d' file
+
+  A ação acima ocorre diretamente no arquivo devido a opção '-i'
+  que permite ao sed editar diretamente o arquivo, caso contrário
+  a mágica não ocorre.
+
+  o numeral 1 indica o ponto onde se inicia
+  o numeral 2 indica que toda segunda linha receberá a ação
+  indicada que no caso é deleção 'd'
+
+== operadores do sed ==
+
+  =  .......... insere um número entre cada linha
+  G ........... insere uma linha em branco entre cada linha
+
+  sed '=;G' annoying.txt
+
+
 == remover espaços não separáveis==
 
 source: http://askubuntu.com/questions/357248/how-to-remove-special-m-bm-character-with-sed
