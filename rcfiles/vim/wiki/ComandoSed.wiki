@@ -4,7 +4,7 @@
    de texto que podem ser pipeados fazendo deleções, inserções
    substituições, etc.
 
-== apagando toda terceira linha ==
+== apagando toda segunda linha ==
 
   sed -i '1~2d' file
 
@@ -15,6 +15,10 @@
   o numeral 1 indica o ponto onde se inicia
   o numeral 2 indica que toda segunda linha receberá a ação
   indicada que no caso é deleção 'd'
+
+== juntando três linhas consecutivas ==
+
+    sed 'N;N;s/\n/ /g' file
 
 == operadores do sed ==
 

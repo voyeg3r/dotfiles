@@ -1,7 +1,11 @@
-=Introdução= 
+=Introdução=
 O comando tr faz troca de caracteres
 
  tr 'A-Z' 'a-z' <<< "CASA"
+
+ ==Remover pontuação - remove punctuation ==
+
+    tr -d '[:punct:]'
 
 ==Remover ^M==
 
@@ -28,4 +32,4 @@ Output:
 -2434
 -33
 
- 
+

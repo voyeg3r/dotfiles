@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 27 out 2016 12:15:33 BRT
+" Last Change: sex 28 out 2016 12:51:25 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -426,28 +426,26 @@ com! Dos2Unix call Preserve(Dos2unixFunction())
 
 " this function does more tha camel case
 " it makes some changes needed to my flashcards
-fun! CamelCaseLine()
+fun! CreateDeck()
   normal jyyp
   .s, *([^)]*),,ge
   .s,.*,\L&,ge
-  .s/ \([a-z]\)/\u\1/ge
-  .s/^./\U&/ge
+  ".s/ \([a-z]\)/\u\1/ge
+  ".s/^./\U&/ge
   .s/.$/.mp3/g
   .s/.*/[sound:&]/ge
   .s/[,' ]//ge
-  .s/Hes/HeS/ge
-  .s/Hows/HowS/ge
-  .s/IdLike/IDLike/ge
-  .s,:W,:w,ge
   .s/-//ge
   normal kk
   .s,$,;,g
   normal JJ
   .s,\s\+\[,[,ge
+  .s,[?!],,ge
+  .s,\.\.,.,ge
   normal jj
 endfun
-com! CamelCase call Preserve(CamelCaseLine())
-nmap <silent> <c-k> :keepjumps call CamelCaseLine()<cr>
+com! CamelCase call Preserve(CreateDeck())
+nmap <silent> <c-k> :keepjumps call CreateDeck()<cr>
 
 " remove linhas duplicadas
 " remove duplicated lines
