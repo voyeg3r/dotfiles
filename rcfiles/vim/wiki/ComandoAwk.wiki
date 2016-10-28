@@ -73,6 +73,12 @@ ORS    indica o separador de registros do arquivo de saida
 
     awk 'BEGIN {RS="\n\n"; FS="\n"} !/Câmara dos Deputados/ && /TEL/' unix.vcf
 
+==deleting blank lines - apagando linhas em branco ==
+
+    awk 'NF' filename
+
+    awk 'NF > 0' filename
+
 ==Using awk to filter out students in a list==
 {{{
 cat ip.txt
