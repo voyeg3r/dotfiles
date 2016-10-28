@@ -74,4 +74,21 @@ for ((i=1;i<=18;i++)){
  }
 
 
-
+ mv folder-001 Expressões-comuns
+ mv folder-002 Cumprimentos
+ mv folder-003 Viagens-e-direções
+ mv folder-004 Numeros-e-dinheiro
+ mv folder-005 Localização
+ mv folder-006 Telefone-inernet-correio
+ mv folder-007 Data-e-hora
+ mv folder-008 No-hotel
+ mv folder-009 Hora-da-refeição
+ mv folder-010 Fazendo-amigos
+ mv folder-011 Se divertindo
+ mv folder-012 Nas-compras
+ mv folder-013 Dificuldades-na-comunicação
+ mv folder-014 Emergência-e-saude
+ mv folder-015 Expressões-e-termos-culturais
+ mv folder-016 Questões-gerais
+ mv folder-017 No-trabalho
+ mv folder-018 O-tempo
