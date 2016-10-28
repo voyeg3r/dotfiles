@@ -1,3 +1,6 @@
+
+{{{
+
 =Introdução=
 ==fonte consolas no linux==
 * http://igordevlog.blogspot.com/2007/05/how-to-consolas-font-in-linux.html
@@ -8,6 +11,10 @@ mkdir ~/.vim/bundle/neocomplcache
 
 :let g:vimball_home="~/.vim/bundle/neocomplcache"
 :so %
+
+==inserindo uma linha em branco após cada seguda linha ==
+
+    :%s,.*\n.*\n,\0\r,g
 
 =Formatando css no vim=
 * http://stackoverflow.com/questions/1422866/using-vi-how-can-i-make-css-rules-into-one-liners
