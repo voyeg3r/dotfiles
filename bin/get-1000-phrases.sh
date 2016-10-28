@@ -31,6 +31,8 @@
 # URL='http://www.englishspeak.com/pt/english-phrases.cfm\?newCategoryShowed\='
 # COMPLEMENT='\&sortBy\=28'
 
+echo site: http://www.englishspeak.com/pt/english-phrases.cfm > link.txt
+
 clear
 
 for ((i=1;i<=18;i++)){
