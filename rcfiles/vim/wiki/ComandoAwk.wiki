@@ -79,6 +79,10 @@ ORS    indica o separador de registros do arquivo de saida
 
     awk 'NF > 0' filename
 
+== adding a new line after each second line ==
+
+    awk ' {print;} NR % 2 == 0 { print ""; }' file.txt
+
 ==Using awk to filter out students in a list==
 {{{
 cat ip.txt

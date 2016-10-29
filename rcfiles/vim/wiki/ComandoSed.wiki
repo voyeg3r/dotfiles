@@ -16,6 +16,11 @@
   o numeral 2 indica que toda segunda linha receberá a ação
   indicada que no caso é deleção 'd'
 
+== adicionando uma linha em branco após toda segunda linha ==
+    adding a new line after each second line
+
+    sed '0~2 a\\' inputfile
+
 == juntando três linhas consecutivas ==
 
     sed 'N;N;s/\n/ /g' file

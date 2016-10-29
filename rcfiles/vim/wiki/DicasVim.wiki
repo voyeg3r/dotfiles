@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: qui 27 out 2016 08:18:06 BRT
+Last Change: sáb 29 out 2016 14:06:14 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -449,7 +449,7 @@ be omitted.
 
 =How add a line after every few lines in vim=
 
-:%s/^/\=line(".")%4==0?"\n":"")/g
+    :%s/^/\=line(".")%4==0?"\n":"")/g
 
 =How add a new line after a pattern=
 
