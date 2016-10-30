@@ -48,11 +48,14 @@ for ((i=1;i<=18;i++)){
      mkdir folder-$NUMBER && cd $_
 
       echo "Baixando $ADDRESS"
-      lynx -dump -display_charset UTF-8 $ADDRESS | sed 's/\[[^]]*\]//g' | sed -ne '/Esconder/,/[Hh]ome/p' | sed '/Sentanças mais comuns/d' | awk 'NF > 0' > text-${NUMBER}.txt
+      #lynx -dump -display_charset UTF-8 $ADDRESS | sed 's/\[[^]]*\]//g' | sed -ne '/Esconder/,/[Hh]ome/p' | sed '/Sentanças mais comuns/d' | awk 'NF > 0' > text-${NUMBER}.txt
 
-       echo removendo as cinco primeiras linhas
-       sed -i '1,5d' text-${NUMBER}.txt
-       sed -i 's/^\s\+//g' text-${NUMBER}.txt
+      wget -O - -o /dev/null $ADDRESS | sed 's/<[^>]*>//g' | sed 's,\s\+, ,g' | sed '1,/\s\+(Normal)/d' | sed '/populateDrop/,$d' | sed '/^$/d' | awk 'NF > 0' > text-${NUMBER}.txt
+
+
+       #echo removendo as cinco primeiras linhas
+       #sed -i '1,5d' text-${NUMBER}.txt
+       #sed -i 's/^\s\+//g' text-${NUMBER}.txt
 
        cat text-${NUMBER}.txt | sed '2~2p' | sed '3~3s/\(.*\)/\L\1/' | sed '3~3s/[[:punct:]]//g ; 3~3s/ //g ; 3~3s/$/.mp3/g ; 3~3s/.*/[sound:&]/g' | sed '1~3s/$/;/g' | sed 'N;N;s/\n/ /g' > deck.csv
 
@@ -74,21 +77,21 @@ for ((i=1;i<=18;i++)){
  }
 
 
- mv folder-001 Expressões-comuns
- mv folder-002 Cumprimentos
- mv folder-003 Viagens-e-direções
- mv folder-004 Numeros-e-dinheiro
- mv folder-005 Localização
- mv folder-006 Telefone-inernet-correio
- mv folder-007 Data-e-hora
- mv folder-008 No-hotel
- mv folder-009 Hora-da-refeição
- mv folder-010 Fazendo-amigos
- mv folder-011 Se-divertindo
- mv folder-012 Nas-compras
- mv folder-013 Dificuldades-na-comunicação
- mv folder-014 Emergência-e-saude
- mv folder-015 Expressões-e-termos-culturais
- mv folder-016 Questões-gerais
- mv folder-017 No-trabalho
- mv folder-018 O-tempo
+ # mv folder-001 Expressões-comuns
+ # mv folder-002 Cumprimentos
+ # mv folder-003 Viagens-e-direções
+ # mv folder-004 Numeros-e-dinheiro
+ # mv folder-005 Localização
+ # mv folder-006 Telefone-inernet-correio
+ # mv folder-007 Data-e-hora
+ # mv folder-008 No-hotel
+ # mv folder-009 Hora-da-refeição
+ # mv folder-010 Fazendo-amigos
+ # mv folder-011 Se-divertindo
+ # mv folder-012 Nas-compras
+ # mv folder-013 Dificuldades-na-comunicação
+ # mv folder-014 Emergência-e-saude
+ # mv folder-015 Expressões-e-termos-culturais
+ # mv folder-016 Questões-gerais
+ # mv folder-017 No-trabalho
+ # mv folder-018 O-tempo

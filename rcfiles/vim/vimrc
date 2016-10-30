@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 28 out 2016 12:51:25 BRT
+" Last Change: sáb 29 out 2016 16:43:07 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -62,6 +62,7 @@ Plugin 'duythinht/inori'
 Plugin 'yosiat/oceanic-next-vim'
 Plugin 'wellle/targets.vim'
 Plugin 'wincent/loupe'
+Plugin 'lifepillar/vim-mucomplete'
 
 
 " All of your Plugins must be added before the following line
