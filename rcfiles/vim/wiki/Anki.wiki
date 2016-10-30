@@ -7,7 +7,7 @@ E um programa de aprendizado baseado na repetição espaçada
 as 1000 primeiras frases em ingles
 https://ankiweb.net/shared/info/2009669666
 
-
+Awesome TTS text to speech  301952613
 Bigger Show Answer Button  1867966335
 Expand and Collapse Decks 2554066128
 Flip cards with shortcut key "0". 844452602
