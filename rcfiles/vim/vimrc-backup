@@ -1,0 +1,1187 @@
+" Arquivo de configuração do vim
+" Criado: Qua 02/Ago/2006 hs 09:19
+" Last Change: qua 02 nov 2016 11:26:12 BRT
+" Autor: Sergio Luiz Araujo Silva
+" Codificação: utf-8
+" Site: http://vivaotux.blogspot.com
+" Mail: voyeg3r  gmail
+" Twitter: http://www.twitter.com/voyeg3r
+" Licence: Licença: Este arquivo é de domínio público
+" Garantia: O autor não se responsabiliza por eventuais danos
+" causados pelo uso deste arquivo.
+"
+"                 ( O O )
+"  +===========oOO==(_)==OOo==============+
+"  |                                      |
+"  |    °v°    Sergio Luiz Araujo Silva   |
+"  |   /(_)\  Linux User #423493          |
+"  |   ^ ^    voyeg3r   gmail.com        |
+"  +======================================+
+"
+" Referencias: http://stevelosh.com/blog/2010/09/coming-home-to-vim
+" vimcasts: http://vimcasts.org/episodes/tabs-and-spaces/
+" para usar o plugin sparkup use o atlho Ctrl-e (lembre-se que é para html)
+" div.content>h1.post-title+p{Sample Content}
+" http://peepcode.com/products/smash-into-vim-ii
+" http://snipt.net/public/tag/vim
+" http://dalibornasevic.com/posts/43-12-vim-tips
+
+filetype off
+set rtp+=~/.dotfiles/rcfiles/vim/bundle/Vundle.vim
+call vundle#begin()
+
+" config for silversearcher ag
+"let g:agprg="ag --column"
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'ryanoasis/vim-webdevicons'
+Plugin 'rking/ag.vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ompugao/ctrlp-z'
+Plugin 'sjl/gundo.vim'
+Plugin 'edsono/vim-matchit'
+Plugin 'scrooloose/nerdtree'"
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'rstacruz/sparkup'
+Plugin 'godlygeek/tabular'
+Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-abolish'
+Plugin 'bling/vim-airline'
+Plugin 'eparreno/vim-l9'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-repeat'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
+Plugin 'vimwiki/vimwiki'
+Plugin 'vim-scripts/VisIncr'
+Plugin 'duythinht/inori'
+Plugin 'yosiat/oceanic-next-vim'
+Plugin 'wellle/targets.vim'
+Plugin 'wincent/loupe'
+Plugin 'lifepillar/vim-mucomplete'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" adding my personal snippets to ultisnippets
+set runtimepath+=~/.vim/snippets
+
+"let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+"let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/rcfiles/vim/snippets/')
+"let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snippets']
+
+" use this to quickly go to normal mode
+set timeoutlen=1000 ttimeoutlen=0
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_clear_cache_on_exit = 0
+
+" ctrlp-z allow use fasd with ctrlp
+" once opened ctrlp plugin window use ctrl-r to change modes
+let g:ctrlp_extensions = ['Z', 'F']
+nnoremap sz :CtrlPZ<Cr>
+nnoremap sf :CtrlPF<Cr>
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+" my id
+let g:snips_author = "Sergio Luiz Araujo Silva"
+let g:snips_site = "http://vivaotux.blogspot.com"
+let g:snips_twitter = "http://www.twitter.com/voyeg3r"
+
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --ignore ''.git'' --ignore ''.DS_Store'' --ignore ''node_modules'' --hidden -g ""'
+endif
+
+" PyMatcher for CtrlP
+if !has('python')
+  echo 'In order to use pymatcher plugin, you need +python compiled vim'
+else
+  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+endif
+
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_show_hidden = 1
+
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+      \ 'file': '\v\.(mp3|mkv|avi|mp4)$',
+      \ }
+
+let g:syntastic_python_python_exec = '/usr/bin/python'
+
+" this function and command allows you to go back to the
+" position you where before doing a global command
+command! -nargs=* G call s:G(<q-args>)
+function! s:G(args)
+    let saved_position = winsaveview()
+    exe 'g'.a:args
+    call winrestview(saved_position)
+endfunction
+
+function! <SID>SwitchColorSchemes()
+  if exists("g:colors_name")
+    if g:colors_name == 'OceanicNext'
+      colorscheme google
+    elseif g:colors_name == 'google'
+      colorscheme two2tango
+    elseif g:colors_name == 'two2tango'
+      colorscheme inori
+    elseif g:colors_name == 'inori'
+      colorscheme darktango
+    elseif g:colors_name == 'darktango'
+      colorscheme colorful
+    elseif g:colors_name == 'colorful'
+      colorscheme solarized
+    elseif g:colors_name == 'solarized'
+      colorscheme github
+    elseif g:colors_name == 'github'
+      colorscheme iceberg
+    elseif g:colors_name == 'iceberg'
+      colorscheme guepardo
+    elseif g:colors_name == 'guepardo'
+      colorscheme whyspoignant
+    elseif g:colors_name == 'whyspoignant'
+      colorscheme herokudoc
+    elseif g:colors_name == 'herokudoc'
+      colorscheme tango
+    elseif g:colors_name == 'tango'
+      colorscheme softblue
+    elseif g:colors_name == 'softblue'
+      colorscheme vividchalk
+    elseif g:colors_name == 'vividchalk'
+      colorscheme neverness
+    elseif g:colors_name == 'neverness'
+      colorscheme vydark
+    elseif g:colors_name == 'vydark'
+      colorscheme underwater-mod
+    elseif g:colors_name == 'underwater-mod'
+      colorscheme maroloccio
+    elseif g:colors_name == 'maroloccio'
+      colorscheme wombat
+    elseif g:colors_name == 'wombat'
+      colorscheme chrysoprase
+    elseif g:colors_name == 'chrysoprase'
+      colorscheme quagmire
+    elseif g:colors_name == 'quagmire'
+      colorscheme digerati
+    elseif g:colors_name == 'digerati'
+      colorscheme vitamins
+    elseif g:colors_name == 'vitamins'
+      colorscheme rdark
+    elseif g:colors_name == 'rdark'
+      colorscheme native
+    elseif g:colors_name == 'native'
+      colorscheme vibrantink
+    elseif g:colors_name == 'vibrantink'
+      colorscheme Fluidvision
+    elseif g:colors_name == 'Fluidvision'
+      colorscheme ir_black
+    elseif g:colors_name == 'ir_black'
+      colorscheme google
+    elseif g:colors_name == 'google'
+      colorscheme OceanicNext
+    endif
+  endif
+endfunction
+"map <silent> <F6> :call <SID>SwitchColorSchemes()<CR> <BAR> :set t_Co=256 <BAR> :echo g:colors_name<cr>
+map <silent> <F6> <esc>:call <SID>SwitchColorSchemes()<CR><bar>:echo g:colors_name<cr>
+map <special> <S-F6> :ec g:colors_name<cr>
+
+let g:airline_powerline_fonts=1
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+
+" configuratin to ag plugin
+let g:agprg="<custom-ag-path-goes-here> --column"
+
+
+" mappgings for indenting and keep visual selection
+nmap <leader>u <<
+nmap <leader>i >>
+vmap <leader>u <gv
+vmap <leader>i >gv
+
+" countable changes
+" nnoremap Q @='n.'<CR>
+nnoremap Q :normal n.<CR>
+
+"http://vimcasts.org/episodes/creating-mappings-that-accept-a-count/
+nnoremap Q :normal n.
+
+" map to paste from clipboard with Ctrl-Alt-p
+nmap <C-M-P> "+p
+imap <C-M-P> <esc>"+pA
+
+" auto reload vimrc when editing it
+autocmd! bufwritepost .vimrc source ~/.vimrc
+
+" configurações so plugin ultisnips
+" Ctrl-j next snip -- Ctrl-k previous
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsExpandTrigger="<C-Space>"
+let g:UltiSnipsListSnippets="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+syntax on
+set omnifunc=syntaxcomplete#Complete
+set completeopt+=longest
+set cot-=preview "disable doc preview in omnicomplete
+
+" para que o shell exiba as variáveis corretamente
+" http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=552108
+let g:is_posix = 1
+
+" http://www.hazaah.com/programming/textmate-and-vim/
+" :find file
+set path+=**
+
+" omini completion for python
+" autocmd FileType python set omnifunc=pythoncomplete#Complete
+" autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+" autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+" autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+" autocmd FileType c set omnifunc=ccomplete#Complete
+
+autocmd fileType vim set keywordprg=:help
+
+set fileformats=unix,mac,dos
+" remember some stuff after quiting vim:
+" marks, registers, searches, buffer list
+"set viminfo='20,<50,s10,h,%
+set viminfo='10,\"100,:20,%,n~/.viminfo
+set history=1000
+setlocal complete=.,w,k,b,u,t,i
+"set clipboard=unnamed
+"set clipboard=unnamedplus
+set complete-=k complete+=kspell
+set spelllang=pt,en
+set nospell
+"highlight clear SpellBad
+"highlight SpellBad term=reverse cterm=underline
+set spellsuggest=8
+map <special> <s-F7> <esc>:set spell!<cr>
+"set grepprg=grin
+"set grepprg=grep\ -r\ --exclude=*.svn
+set grepformat=%f:%l:%m
+"set grepprg=grep\ -rinsE
+" como usar o grep dentro do vim
+" :vim /\cbash/gj ~/.vim/**/*.wiki
+" :cn ......... abre o próximo
+" :cp ......... abre o prévio
+map <S-F2> :copen<CR>
+
+" fold text object
+" http://vim.wikia.com/wiki/Creating_new_text_objects
+vnoremap af :<C-U>silent! normal! [zV]z<CR>
+omap af :normal Vaf<CR>
+set fdm=marker
+
+map <special><F3> :NERDTreeToggle<cr>
+
+" To set the toolbars off (icons on top of the screen)
+set mouse=a
+
+set background=dark
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+"colorscheme vitamins
+colorscheme inori
+
+if ! has("gui_running")
+  set t_Co=256
+  "colo wombat
+  colo inori
+endif
+
+" turn off the toolbar and menubar
+if has('gui_running')
+ set anti gfn=Ubuntu\ Mono\ 13,Monaco\ 10,Bpmono\ 11,\ Envy\ Code\ R\ 10
+end
+
+" correção do plugin surround para a letra 's'
+xmap <Leader>s <Plug>Vsurround
+
+" http://stackoverflow.com/questions/4312664/is-there-a-vim-command-to-select-pasted-text
+" http://vimcasts.org/episodes/bubbling-text/
+" o mapeamento abaixo permite reselecionar texto recem colado ou selecionado
+nmap gV `[v`]
+
+" select last paste in visual mode
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+nmap <special> <F9> <esc>:w<cr>
+inoremap <special> <F9> <C-O>:w<cr>
+
+" Fechamento automático de parênteses
+"imap { {}<left>
+"imap ( ()<left>
+"imap [ []<left>
+" os mapeamentos abaixo funcionam com o ultisnips
+vmap ( <tab>(<tab>
+vmap { <tab>{<tab>
+vmap [ <tab>[<tab>
+
+" este mapeamente permite criar cloze deletions para o anki de forma simplificada
+vmap \c "adi{{c1::<c-r>a}}<esc>
+
+cab W  w
+cab Wq wq
+cab Q  q
+
+" Highlight redundant whitespace and tabs.
+highlight RedundantWhitespace ctermbg=red guibg=red
+"match RedundantWhitespace /\s\+$\| \+\ze\t/
+
+" Create a red/red scheme
+highlight Problem ctermbg=red guibg=red
+" Highlight leading tabs - tab misturado com espaço
+match Problem /^\s\*\t\+\s\*/
+
+" this function gets last 20 cmds to new buffer
+fun! s:RedirHistoryCommands()
+  set paste
+  redir @r
+  history : -20,
+  redir End
+  new
+  put r
+  set nopaste
+endfun
+command! -nargs=0 GetHistory call s:RedirHistoryCommands()
+" q:22kyG ctrl-w-q p
+
+" Eesta função guarda o local do cursor em 'save_cursor' e como
+" executa uma substituição armazena antes o ultimo
+" registro de buscas em 'old_query'
+fun! CleanExtraSpaces()
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  :%s/\s\+$//e
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
+endfun
+nmap <silent> <leader>c :keepjumps call CleanExtraSpaces()<cr>
+autocmd BufWritePre * :keepjumps call CleanExtraSpaces()
+
+" Utility function that save last search and cursor position
+" http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
+" video from vimcasts.org: http://vimcasts.org/episodes/tidying-whitespace
+function! Preserve(command)
+ let _s=@/
+ let l = line(".")
+ let c = col(".")
+ " Do the business
+ execute a:command
+ " Restore previous search history and cursor position
+ let @/=_s
+ call cursor(l, c)
+endfunction
+
+fun! Setutf8()
+  " source: http://stackoverflow.com/questions/9310274/how-can-i-use-vim-to-convert-my-file-to-utf8
+  :set fileencoding=utf8
+  :w!
+endfunction
+
+fun! Keeponlymp3()
+" this function keeps only mp3 urls in current text
+  :%s/mp3/mp3\r/g
+ :%s/.*\(http.*.mp3\).*/\1/g
+ :g!/\.mp3/d
+endfun
+com! KeepMp3 call Preserve(Keeponlymp3())
+
+fun! Keeponlypdf()
+" this function keeps only pdf urls in current text
+ :%s/.*\(http.*.pdf\).*/\1/g
+ :g!/\.pdf/d
+endfun
+com! KeepPdf call Preserve(Keeponlymp3())
+
+" Para inserir o simbolo use ^v ^M  ou ^v Enter
+" dos2unix ^M
+fun! Dos2unixFunction()
+ :%s/\%x0d$//e
+ set ff=unix
+ set encoding=utf-8
+ set fileencoding=utf-8
+endfun
+com! Dos2Unix call Preserve(Dos2unixFunction())
+
+" this function does more tha camel case
+" it makes some changes needed to my flashcards
+fun! CreateDeck()
+  normal jyyp
+  .s, *([^)]*),,ge
+  .s,.*,\L&,ge
+  ".s/ \([a-z]\)/\u\1/ge
+  ".s/^./\U&/ge
+  .s/.$/.mp3/g
+  .s/.*/[sound:&]/ge
+  .s/[,' ]//ge
+  .s/-//ge
+  normal kk
+  .s,$,;,g
+  normal JJ
+  .s,\s\+\[,[,ge
+  .s,[?!],,ge
+  .s,\.\.,.,ge
+  normal jj
+endfun
+com! CamelCase call Preserve(CreateDeck())
+nmap <silent> <c-k> :keepjumps call CreateDeck()<cr>
+
+" remove linhas duplicadas
+" remove duplicated lines
+" see Preserve function definition
+fun! DelBlank()
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    :g/^\n\{2,}/d
+    let @/=_s
+    call cursor(l, c)
+endfun
+map <special> <leader>d :call DelBlank()<cr>
+
+map <special> <s-F8> :call Preserve(ReinDent())<cr>
+
+" marca como erro duas palavras identicas duplicadas
+syntax match DoubleWordErr "\c\<\(\a\+\)\_s\+\1\>"
+hi def link DoubleWordErr Error
+
+syntax keyword WordError teh
+
+" Esta função testa as 5 primeiras linhas do arquivo
+" se nelas não houver "Last Change" ele passa batido
+" ou seja não insere o cabeçalho
+" usr_41.txt
+fun! InsertChangeLog()
+  let l:flag=0
+  for i in range(1,5)
+    if getline(i) !~ '.*Last Change.*'
+      let l:flag = l:flag + 1
+    endif
+  endfor
+  if l:flag >= 5
+    normal(1G)
+    call append(0, "Arquivo: <+Description+>")
+    call append(1, "Criado: " . strftime("%a %d/%b/%Y hs %H:%M"))
+    call append(2, "Last Change: " . strftime("%a %d/%b/%Y hs %H:%M"))
+    call append(3, "autor: <+digite seu nome+>")
+    call append(4, "site: <+digite o endereço de seu site+>")
+    call append(5, "twitter: <+your twitter here+>")
+    call append(6, "email: <+seu email+>")
+    normal gg
+  endif
+endfun
+
+" If buffer modified, update any 'Last modified: ' in the first 20 lines.
+" 'Last modified: ' can have up to 10 characters before (they are retained).
+" Restores cursor and window position using save_cursor variable.
+" source: http://vim.wikia.com/wiki/Insert_current_date_or_time
+function! LastModified()
+    if &modified
+        let _s=@/
+        let save_cursor = getpos(".")
+        let n = min([20, line("$")])
+        keepjumps exe '1,' . n . 's#^\(.\{,10}Last Change: \).*#\1' .
+                    \ strftime('%c') . '#e'
+        let @/=_s
+        "call histdel('search', -1)
+        call setpos('.', save_cursor)
+    endif
+endfun
+autocmd BufWritePre * :call Preserve(LastModified())
+map <silent> <F9> <esc>:call Preserve(LastModified())<cr>
+
+
+" map <special> <F4> <esc>:call InsertChangeLog()<cr>
+" " mapeamento para inserir códigos especiais em páginas do wikispaces
+" imap <special> <F4> [[code format=""]]<enter><+conteudo+><enter>[[code]]<esc>kkf";i
+" nmap <special> <F4> i[[code format=""]]<enter><+comteudo+><enter>[[code]]<esc>kkf";i
+" xmap <F4> d<F4><esc>p`[v`]vjdd?^[[code<enter>f"a
+" addon to firefox edit text areas with your favorite editor
+" https://addons.mozilla.org/pt-BR/firefox/addon/its-all-text/
+
+" for bash-support
+let g:BASH_AuthorName = 'Sergio Luiz Araujo Silva'
+let g:BASH_Email = 'voyeg3r at gmail'
+let g:BASH_Company = ''
+
+" place holders snippets
+" File Templates
+" --------------
+"  <leader>j jumps to the next marker
+" iabbr <buffer> for for <+i+> in <+intervalo+>:<cr><tab><+i+>
+function! LoadFileTemplate()
+  "silent! 0r ~/.vim/templates/%:e.tmpl
+  syn match vimTemplateMarker "<+.\++>" containedin=ALL
+  hi vimTemplateMarker guifg=#67a42c guibg=#112300 gui=bold
+endfunction
+
+" The function must be used in a piece of subtitles
+" in order to cleyan it, join the lines and put the results
+" on clipboard to be pasted on anki
+fun! CleanSubtitles()
+    let old_query = getreg('/')
+    :g/^\(\s\+\)\=\d\+$/d
+    :g/^\(\s\+\)\=\d\+.*-->\s\d[^,]*,\d\d\d$/d
+    :%j
+    :%s/,/, /g
+    :%s,\s\+, ,g
+    :%y+
+    call setreg('/', old_query)
+endfun
+command! -nargs=0 GetSubs :call CleanSubtitles()
+
+" function to make the first letter of any sentence uppercarse
+" source: http://zurb.com/forrst/posts/Capitalize_the_first_letter_of_every_sentence_in-761
+fun! SetUppercase()
+    :%s/\v(\U)([^\.]*[.!?\n])/\u\1\L\2/g
+    :%s/[.!?]\_s\+\a/\U&\E/g
+
+    "First the easy case: Sentence begining on the same line the last one ended on:
+    "":g/[!?.][]")}]*[ \t"({[]\+[a-z]/s//\U&/g
+
+    "Next the case of a a sentence ending on one line and another starting on the next:
+    ":g/[!?.][]")} \t]*$/+s/^[ ^I"({[]*[a-z]/\U&/
+
+    "Finally the case of any thing begining after a blank line (which is how I seperate *my* paragrahs):
+    ":g/^[ ^I]*$/+s/^[ \t"({[]*[a-z]/\U&/
+
+    "You might also find it useful to capitalize the first letter of the first line:
+    :1g/^[ \t"({[]*[a-z]/s//\U&/
+endfun
+command! -nargs=0 FixSenences :call SetUppercase()
+
+" source: http://ddrscott.github.io/blog/2016/vim-toggle-movement/
+function! ToggleHomeZero()
+    let pos = getpos('.')
+    execute "normal! ^"
+    if pos == getpos('.')
+        execute "normal! 0"
+    endif
+endfunction
+nnoremap 0 :call ToggleHomeZero()<CR>
+
+" use backspace to call "_ black hole register
+" Add to your .vimrc or init.vim or vim.after or :e $MYVIMRC
+func! BlackHoleDeleteOperator(type)
+    if a:type ==# 'char'
+        execute 'normal! `[v`]"_d'
+    elseif a:type ==# 'line'
+        execute 'normal! `[V`]"_d'
+    else
+        execute 'normal! `<' . a:type . '`>"_d'
+    endif
+endf
+" Map to <BS> because it's under worked in Vim.
+nnoremap <silent> <BS> <Esc>:set opfunc=BlackHoleDeleteOperator<CR>g@
+vnoremap <silent> <BS> :<C-u>call BlackHoleDeleteOperator(visualmode())<CR>
+
+function! JumpToNextPlaceholder()
+  let old_query = getreg('/')
+  echo search("<+.\\++>")
+  exec "norm! c/+>/e\<CR>"
+  call setreg('/', old_query)
+endfunction
+autocmd BufNewFile * :call LoadFileTemplate()
+nnoremap <special> <leader>j :keepjumps call JumpToNextPlaceholder()<CR>a
+inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a
+
+inoremap jj <esc>
+
+" index do vim wiki
+let g:vimwiki_list = [{'path': '~/.vim/wiki/', 'index': 'main'}]
+
+" Buble single lines - mover linhas
+" http://vimcasts.org/episodes/bubbling-text/
+nmap <special> <c-up> ddkP
+nmap <special> <c-down> ddp
+"buble multiple lines
+xmap <c-up> xkP`[V`]
+xmap <c-down> xp`[V`]
+" se houver um trecho com seleção visual pode-se copiar
+" usando Ctrl-c graças ao mapeamento abaixo
+xmap <c-c> "+y
+
+" clear search register
+" source: http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
+nmap \r :let @/ = ""<cr>
+
+" http://vimcasts.org/episodes/creating-colorschemes-for-vim/
+" Show syntax highlighting groups for word under cursor
+nmap <special> <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+ if !exists("*synstack")
+  return
+ endif
+ echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+" para mostrar cores de valores hexadecimais
+if exists('*HexHighlight()')
+ nmap <leader>h :call HexHighlight()<Return>
+endif
+
+set nocompatible
+set modeline
+set modelines=5
+set tabstop=2
+set shiftwidth=4
+set shiftround
+"set copyindent
+set softtabstop=4
+set expandtab
+set encoding=utf-8
+set fileencoding=utf-8
+set scrolloff=3
+"set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest,full
+set visualbell
+"set cursorline "destaca linha atual
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set relativenumber
+set number
+set undofile
+set undodir=~/.vimundo
+au BufWritePre /tmp/* setlocal noundofile
+
+" Persistent undo
+" source: http://stackoverflow.com/questions/5700389/using-vims-persistent-undo
+try
+    set undodir=$HOME/.undodir
+    set undofile
+catch
+endtry
+
+set ignorecase
+set smartcase
+set smarttab
+"set smartindent
+set infercase
+set incsearch
+set showmatch
+set hlsearch
+set wrap
+set linebreak
+set nolist       " list disables linebreak
+set autoread      " recarrega arquivos alterados fora do vim
+
+set textwidth=66
+"set formatoptions+=a
+set formatoptions+=l
+set formatoptions+=t
+"set formatprg=par\ -w70j
+"set colorcolumn=85
+set listchars=tab:▸\ ,eol:¬
+set matchpairs+=<:>
+
+" ==== make the 81st column stand out ===
+" highlight Colorcolumn ctermbg=magenta
+" call matchadd('Colorcolumn', '\%81v', 100)
+
+set wildignore+=.hg,.git,.svn           " Version control
+set wildignore+=*.aux,*.out,*.toc         " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg  " binary images
+set wildignore+=*.jpeg,*.mp3,*.mp4        " binary images
+set wildignore+=*.luac              " Lua byte code
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.pyc               " Python byte code
+set wildignore+=*.spl               " compiled spelling word lists
+set wildignore+=*.sw?               " Vim swap files
+set wildignore+=*.DS_Store?            " OSX bullshit
+
+map <leader>l :set list! <cr>
+" to reselect use gv in normal mode
+nnoremap <S-F11> <ESC>:set hls!<cr>
+inoremap <S-F11> <C-o>:set hls!<cr>
+vnoremap <S-F11> <ESC>:set hls!<cr> <bar> gv
+"nnoremap / :set hls<cr>/
+
+" make copying from visual selection more sane
+" source: http://ddrscott.github.io/blog/2016/yank-without-jank/
+vnoremap <expr>y "my\"" . v:register . "y`y"
+
+" map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
+" togle between number nonumber and relativenumber
+" source: http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key
+" source: http://superuser.com/questions/339593/vim-toggle-number-with-relativenumber
+nmap <silent> <F11> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
+
+" for txt, autoformat and wrap text at 70 chars.
+autocmd BufNewFile,BufRead,BufEnter *.txt set fo+=t tw=60
+autocmd BufNewFile,BufRead,BufEnter *.txt setf txt
+autocmd FileType make setlocal noexpandtab
+
+map <BS> X
+
+" mostra as linhas que contém determinado padrão
+" permitindo saltar para uma delas
+nmap <leader>/ [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+
+onoremap ih :<c-u>execute "normal! ?^=\\+$\r:nohlsearch\rkvg_"<cr>
+xnoremap i% GoggV
+onoremap i% :<C-u>normal vi%<CR>
+
+"let keys = [ ":", ".", ",", "+", "#", "/", "<bar>", "<bslash>", "*", "=", "-", "_" ]
+"
+"for key in keys
+"    vnoremap i' . key . ' :<c-u>normal! /' . key . '\r:nohlsearch\rhvNl<cr>
+"    onoremap i' . key . ' :<c-u>normal! /' . key . '\r:nohlsearch\rhvNl<cr>
+"    vnoremap a' . key . ' :<c-u>normal! /' . key . '\r:nohlsearch\rvN<cr>
+"    onoremap a' . key . ' :<c-u>normal! /' . key . '\r:nohlsearch\rvN<cr>
+"endfor
+
+"for char in [ "_", ".", ":", ",", ";", "<bar>", "/", "<bslash>", "*" ]
+"    execute "xnoremap i" . char . " :<C-U>silent!normal!/" . char . "\rhvNl<CR>"
+"    execute "onoremap i" . char . " :normal vi" . char . "<CR>"
+"    execute "xnoremap a" . char . " :<C-U>silent!normal!/" . char . "\rhvNl<CR>"
+"    execute "onoremap a" . char . " :normal va" . char . "<CR>"
+"endfor
+
+"xnoremap i, :<c-u>execute "normal! /,\r:nohlsearch\rhvNl"<cr>
+"onoremap i, :<c-u>execute "normal! /,\r:nohlsearch\rhvNl"<cr>
+"onoremap i. :<c-u>execute "normal! /.\r:nohlsearch\rhvNl"<cr>
+"onoremap i* :<c-u>execute "normal! /*\r:nohlsearch\rhvNl"<cr>
+"onoremap i<bar> :<c-u>execute "normal! /\\|\r:nohlsearch\rhvNl"<cr>
+"onoremap i+ :<c-u>execute "normal! /+\r:nohlsearch\rhvNl"<cr>
+"onoremap i<backslash> :<c-u>execute "normal! /\\/\r:nohlsearch\rhvNl"<cr>
+"onoremap i= :<c-u>execute "normal! /=\r:nohlsearch\rhvNl"<cr>
+"onoremap i_ :<c-u>execute "normal! /_\r:nohlsearch\rhvNl"<cr>
+"onoremap i- :<c-u>execute "normal! /-\r:nohlsearch\rhvNl"<cr>
+"onoremap i# :<c-u>execute "normal! /#\r:nohlsearch\rhvNl"<cr>
+"
+"onoremap a, :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
+"onoremap a. :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
+"onoremap a* :<c-u>execute "normal! /\\|\r:nohlsearch\rvN"<cr>
+"onoremap a<bar> :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
+"onoremap a+ :<c-u>execute "normal! /,\r:nohlsearch\rvN"<cr>
+"onoremap a<backslash> :<c-u>execute "normal! /\\\r:nohlsearch\rvN"<cr>
+"onoremap a= :<c-u>execute "normal! /=\r:nohlsearch\rvN"<cr>
+"onoremap a_ :<c-u>execute "normal! /_\r:nohlsearch\rvN"<cr>
+"onoremap a- :<c-u>execute "normal! /-\r:nohlsearch\rvN"<cr>
+"onoremap a# :<c-u>execute "normal! /#\r:nohlsearch\rvN"<cr>
+
+" http://zurb.com/forrst/posts/Adding_a_Next_Adjective_to_Vim_Version_2-C4P:
+
+
+" the below mapping selects function names
+onoremap <silent> F :<C-U>normal! 0f(hviw<CR>
+
+"https://www.reddit.com/r/vim/comments/48e4ci/vimscript_how_to_create_a_new_text_object/
+"for [s:k, s:m] in  [['ie', 'ggVG'], ['il', '^vg_'], ['iz', '[zV]z']]
+"   execute 'onoremap <silent> ' . s:k . ' :normal! ' . s:m . '<CR>'
+"   execute 'vnoremap <silent> ' . s:k . ' :normal! ' . s:m . '<CR>'
+"endfor
+"unlet! s:k s:m
+
+"i*: asterisc block
+"if: Entire file
+"il: Current line (Without whitespace characters).
+"iz: Current fold
+
+" ====== Vim extended texxt objects end ==============
+
+
+"Highlight matches without moving
+"http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
+nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+set guioptions+=a
+function! MakePattern(text)
+ let pat = escape(a:text, '\')
+ let pat = substitute(pat, '\_s\+$', '\\s\\*', '')
+ let pat = substitute(pat, '^\_s\+', '\\s\\*', '')
+ let pat = substitute(pat, '\_s\+', '\\_s\\+', 'g')
+ return '\\V' . escape(pat, '\"')
+endfunction
+vnoremap <silent> <F8> :<C-U>let @/="<C-R>=MakePattern(@*)<CR>"<CR>:set hls<CR>
+
+set nopaste
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+" source hacking-vim p-138
+nnoremap p p=`]
+nnoremap <c-p> p
+
+nnoremap <F5> :GundoToggle<CR>
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" Sudo to write
+cmap w!! w !sudo tee % >/dev/null
+command! SaveAsRoot w !sudo tee %
+
+" mapping to reload ~/.vimrc
+map <silent> <M-v> :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+map <silent> <leader>v :e ~/.vimrc<cr>
+map <silent> <leader>z :e ~/.zshrc<cr>
+" copy current buffer to clipboard
+nmap <leader>b :%y+<cr>
+
+autocmd! BufWritePost .vimrc source %
+
+nnoremap <leader>w :set wrap! wrap?<cr>
+
+au! VimEnter * match ErrorMsg /^\t\+/
+au! VimEnter * match ErrorMsg / $/
+
+" calculadora científica usando python
+command! -nargs=+ Calc :py print <args>
+py from math import *
+map ,c :Calc
+
+augroup sh
+ au BufNewFile *.sh 0r ~/.vim/skel/template.sh
+ "au BufWritePost *.sh,*.pl,*.py,*.cgi :silent !chmod a+x <afile>
+augroup end
+
+" zsh template
+au BufNewFile *.zsh 0r ~/.vim/skel/template.zsh
+
+" fix to solarized colorscheme
+if !has('gui_running')
+  " Compatibility for Terminal
+  let g:solarized_termtrans=1
+
+  " Make Solarized use 16 colors for Terminal support
+  let g:solarized_termcolors=16
+endif
+
+"map <special> <S-F6> :ec g:colors_name<cr>
+
+" statusline configuration
+set statusline=%f
+set statusline+=%=
+set statusline+=%l
+set statusline+=/
+set statusline+=%L
+
+nmap n nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+" efetuar cálculos com o registro de expressões
+" you can make a visual selection and then
+" :'<,'>normal Q
+" nnoremap Q 0yt=A<C-r>=<C-r>"<CR><Esc>
+
+"" autocomandos para python
+"augroup python
+"  au FileType python set keywordprg=pydoc
+"  au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+"  au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
+"  au! BufWritePre *.py,*.js :call <SID>CleanExtraSpaces()
+"  au! BufNewFile *.py 0r ~/.vim/skel/template.py
+" au! BufWritePost *.py :silent !chmod a+x <afile>
+"  autocmd FileType python set textwidth=79
+"  autocmd FileType python filetype indent on
+"  let python_highlight_all=1
+"  let python_highlight_builtins=0
+"  let python_highlight_builtins=1
+"  let python_highlight_exceptions=1
+"  let python_highlight_numbers=1
+"  let python_highlight_space_errors=1
+"augroup end
+
+" CTRL-X CTRL-F  file names
+" CTRL-X CTRL-L  whole lines
+" CTRL-X CTRL-D  macro definitions (also in included files)
+" CTRL-X CTRL-I  current and included files
+" CTRL-X CTRL-K  words from a dictionary
+" CTRL-X CTRL-T  words from a thesaurus
+" CTRL-X CTRL-]  tags
+" CTRL-X CTRL-V  Vim command line
+" CTRL-X CTRL-O    códigos
+
+au FileType * exe('setl dict+='.$VIMRUNTIME.'/syntax/'.&filetype.'.vim')
+
+" setando o path do python
+python << EOF
+import os
+import sys
+import vim
+for p in sys.path:
+ # Add each directory in sys.path, if it exists.
+ if os.path.isdir(p):
+  # Command 'set' needs backslash before each space.
+  vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+EOF
+" fim da seção do path do python
+
+augroup html
+" au! <--> Remove all html autocommands
+au!
+ au BufNewFile,BufRead *.html,*.shtml,*.htm set ft=html
+ "au BufNewFile,BufRead,BufEnter  *.html,*.shtml,*.htm so ~/.vim/skel/skel.html
+ au BufNewFile *.html 0r ~/.vim/skel/skel.html
+ "au BufNewFile *.html,*.shtml,*.htm /body/+
+ au BufNewFile,BufRead *.html,*.shtml,*.htm set noautoindent
+ au BufNewFile,BufRead *.html,*.shtml,*.htm set nolist
+ au BufNewFile,BufRead *.html,*.shtml,*.htm call LastModified()
+ " needed one line with 'Created:' in firsts 5 lines
+ au Bufnewfile,BufRead *.html,*.shtml,*.htm 1,5s/\s*Created:\s*\zs.*/\="" . strftime("%Y %b %d %X")/ge
+augroup end
+
+augroup css
+  au Bufnewfile,BufRead *.css set ft=css
+  au BufNewFile *.css 0r ~/.vim/skel/template.css
+  autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+augroup end
+
+augroup tex
+  au Bufnewfile,BufRead *.tex set ft=tex
+  au BufNewFile *.tex 0r ~/.vim/skel/template.tex
+ vmap e <tab>em<tab>
+ vmap ' <tab>'<tab>
+  iab latex \LaTeX\
+augroup end
+
+if has("autocmd") && exists("+omnifunc")
+ autocmd Filetype *
+  \  if &omnifunc == "" |
+  \  setlocal omnifunc=syntaxcomplete#Complete |
+  \ endif
+endif
+
+" um destaque especial para MinhasNotas
+highlight MinhasNotas ctermbg=Yellow ctermfg=red guibg=Yellow guifg=red
+match MinhasNotas /[Nn]otas\?:\?/
+
+" mapeamento para abrir e fechar folders em modo normal usando
+" a barra de espaços -- zR abre todos os folders
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+"nmap <space> :
+" para colocar um atalho para abrir e fechar folders faça:
+" set foldcolumn=1
+
+" insert blank line before/after
+" http://va.mu/Tjvu
+nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>
+nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>
+
+if exists('+autochdir')
+ set autochdir
+else
+ autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+endif
+"autocmd BufEnter * lcd %:p:h
+
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+"if has("autocmd")
+"    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+"endif
+
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+iab idate <c-r>=strftime("%A %d/%m/%Y")<cr>
+iab ihora <c-r>=strftime("%H:%M:%S")<cr>
+
+iab -> →
+iab tambem também
+iab fro for
+iab ,m <voyeg3r  gmail.com>
+iab mymail <voyeg3r  gmail.com>
+iab slas Sérgio Luiz Araújo Silva
+iab vc você
+iab teh the
+iab a. ª
+iab analize análise
+iab angulo ângulo
+iab apos após
+iab apra para
+iab aqeule aquele
+iab aqiulo aquilo
+iab arcoíris arco-íris
+iab aré até
+iab asim assim
+iab aspeto aspecto
+iab assenção ascenção
+iab assin assim
+iab assougue açougue
+iab aue que
+iab augum algum
+iab augun algum
+iab ben bem
+iab beringela berinjela
+iab bon bom
+iab cafe café
+iab caichote caixote
+iab capitões capitães
+iab cidadães cidadãos
+iab ckaro claro
+iab cliche clichê
+iab compreenssão compreensão
+iab comprensão compreensão
+iab comun comum
+iab con com
+iab contezto contexto
+iab corrijir corrigir
+iab coxixar cochichar
+iab cpm com
+iab cppara para
+iab dai daí
+iab danca dança
+iab decer descer
+iab definitamente definitivamente
+iab deshonestidade desonestidade
+iab deshonesto desonesto
+iab detale detalhe
+iab deven devem
+iab díficil difícil
+iab distingeu distingue
+iab dsa das
+iab dze dez
+iab ecessão exceção
+iab ecessões exceções
+iab eentão e então
+iab emb bem
+iab ems sem
+iab emu meu
+iab en em
+iab enbora embora
+iab equ que
+iab ero erro
+iab erv ver
+iab ese esse
+iab esselência excelência
+iab esu seu
+iab excessão exceção
+iab Excesões exceções
+iab excurção excursão
+iab Exenplo exemplo
+iab exeplo exemplo
+iab exijência exigência
+iab exijir exigir
+iab expontâneo espontâneo
+iab ezemplo exemplo
+iab ezercício exercício
+iab faciu fácil
+iab fas faz
+iab fente gente
+iab ferias férias
+iab geito jeito
+iab gibóia jibóia
+iab gipe jipe
+iab ha há
+iab hezitação hesitação
+iab hezitar hesitar
+iab http:\\ http:
+iab iigor igor
+iab interesado interessado
+iab interese interesse
+iab Irria Iria
+iab isot isto
+iab ítens itens
+iab ja já
+iab jente gente
+iab linguiça lingüiça
+iab masi mais
+iab maz mas
+iab con com
+iab mema mesma
+iab mes mês
+iab muinto muito
+iab nao não
+iab nehum nenhum
+iab nenina menina
+iab noã não
+iab no. nº
+iab N. Nº
+iab o. º
+iab obiter obter
+iab observacao observação
+iab ons nos
+iab orijem origem
+iab ospital hospital
+iab poden podem
+iab portugu6es português
+iab potuguês português
+iab precisan precisam
+iab própio próprio
+iab quado quando
+iab quiz quis
+iab recizão rescisão
+iab sanque sangue
+iab sao são
+iab sen sem
+iab sensivel sensível
+iab sequéncia seqüência
+iab significatimente significativam
+iab sinceranete sinceramente
+iab sovre sobre
+iab susseder suceder
+iab tanbem também
+iab testo texto
+iab téxtil têxtil
+iab tydo tudo
+iab tuiter http://www.twitter.com/voyeg3r
+iab una uma
+iab unico único
+iab utilise utilize
+iab vega veja
+iab vivaotux http://vivaotux.blogspot.com
+iab vja veja
+iab voc6e você
+iab wue que
+iab xave chave
+
+iab 1a. 1ª
+iab 2a. 2ª
+iab 3a. 3ª
+iab 4a. 4ª
+iab 5a. 5ª
+iab 6a. 6ª
+iab 7a. 7ª
+iab 8a. 8ª
+iab 9a. 9ª
+iab 10a. 10ª
+iab 11a. 11ª
+iab 12a. 12ª
+iab 13a. 13ª
+iab 14a. 14ª
+iab 15a. 15ª
+
+" caso o teclado esteja desconfigurado use:
+"iab 'a á
+"iab 'e é
+"iab 'i í
+"iab 'o ó
+"iab ~a ã
+"iab ^a â
+"iab `a à
+"iab ,c ç
+"iab ^e ê
+"iab ^o ô
+"iab ~o õ
+"iab 'u ú
