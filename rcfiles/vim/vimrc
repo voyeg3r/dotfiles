@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 03 nov 2016 08:35:18 BRT
+" Last Change: qui 03 nov 2016 09:45:30 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -49,7 +49,7 @@ Plugin 'rking/ag.vim'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'ompugao/ctrlp-z'
 Plugin 'sjl/gundo.vim'
-"Plugin 'edsono/vim-matchit'
+Plugin 'tmhedberg/matchit'
 Plugin 'scrooloose/nerdtree'"
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'rstacruz/sparkup'
@@ -67,7 +67,6 @@ Plugin 'vim-scripts/VisIncr'
 Plugin 'duythinht/inori'
 Plugin 'yosiat/oceanic-next-vim'
 Plugin 'wellle/targets.vim'
-Plugin 'lifepillar/vim-mucomplete'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'rhysd/clever-f.vim'
 
@@ -270,7 +269,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 syntax on
 set omnifunc=syntaxcomplete#Complete
-set completeopt+=longest
+"set completeopt+=longest
 set cot-=preview "disable doc preview in omnicomplete
 
 " para que o shell exiba as variáveis corretamente
@@ -335,7 +334,7 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 
 syntax enable
-colorscheme solarized
+colorscheme badwolf
 
 if has('gui_running')
     set background=light
