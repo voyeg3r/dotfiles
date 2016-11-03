@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 03 nov 2016 08:21:41 BRT
+" Last Change: qui 03 nov 2016 08:35:18 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -70,6 +70,9 @@ Plugin 'wellle/targets.vim'
 Plugin 'lifepillar/vim-mucomplete'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'rhysd/clever-f.vim'
+
+" Color themes
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -330,14 +333,21 @@ set background=dark
 let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
-"colorscheme vitamins
-colorscheme badwolf
 
-if ! has("gui_running")
-  set t_Co=256
-  "colo wombat
-  colo badwolf
+syntax enable
+colorscheme solarized
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
 endif
+
+"if ! has("gui_running")
+"  set t_Co=256
+"  "colo wombat
+"  colo badwolf
+"endif
 
 " turn off the toolbar and menubar
 if has('gui_running')
