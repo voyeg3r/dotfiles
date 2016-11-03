@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 02 nov 2016 16:58:57 BRT
+" Last Change: qui 03 nov 2016 08:12:17 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -25,6 +25,12 @@
 " http://peepcode.com/products/smash-into-vim-ii
 " http://snipt.net/public/tag/vim
 " http://dalibornasevic.com/posts/43-12-vim-tips
+"
+"Vundle bootstrap - Install Vundle if it is not already installed
+" source: https://www.reddit.com/r/vim/comments/43ufir/should_i_install_vundle_as_a_submodule_in_my/
+if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/Vundle.vim/.git/config') && confirm("Clone Vundle?","Y\nn") == 1
+    exec '!git clone https://github.com/gmarik/Vundle.vim $HOME/.dotfiles/rcfiles/vim/bundle/Vundle.vim/'
+endif
 
 filetype off
 set rtp+=~/.dotfiles/rcfiles/vim/bundle/Vundle.vim
@@ -37,13 +43,13 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 "Plugin 'Raimondi/delimitMate'
-"Plugin 'ryanoasis/vim-webdevicons'
-"Plugin 'rking/ag.vim'
+Plugin 'ryanoasis/vim-webdevicons'
+Plugin 'rking/ag.vim'
 "Plugin 'FelikZ/ctrlp-py-matcher'
 "Plugin 'kien/ctrlp.vim'
 "Plugin 'ompugao/ctrlp-z'
 Plugin 'sjl/gundo.vim'
-Plugin 'edsono/vim-matchit'
+"Plugin 'edsono/vim-matchit'
 Plugin 'scrooloose/nerdtree'"
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'rstacruz/sparkup'
@@ -61,7 +67,6 @@ Plugin 'vim-scripts/VisIncr'
 Plugin 'duythinht/inori'
 Plugin 'yosiat/oceanic-next-vim'
 Plugin 'wellle/targets.vim'
-"Plugin 'wincent/loupe'
 Plugin 'lifepillar/vim-mucomplete'
 Plugin 'haya14busa/incsearch.vim'
 
@@ -156,6 +161,8 @@ function! <SID>SwitchColorSchemes()
     if g:colors_name == 'OceanicNext'
       colorscheme google
     elseif g:colors_name == 'google'
+          colorscheme badwolf
+    elseif g:colors_name == 'badwolf'
       colorscheme two2tango
     elseif g:colors_name == 'two2tango'
       colorscheme inori
@@ -323,12 +330,12 @@ let g:solarized_termcolors = 256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 "colorscheme vitamins
-colorscheme inori
+colorscheme badwolf
 
 if ! has("gui_running")
   set t_Co=256
   "colo wombat
-  colo inori
+  colo badwolf
 endif
 
 " turn off the toolbar and menubar

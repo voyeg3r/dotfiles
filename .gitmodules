@@ -16,3 +16,12 @@
 [submodule "rcfiles/fasd"]
 	path = rcfiles/fasd
 	url = https://github.com/clvv/fasd.git
+[submodule "rcfiles/vim/bundle/VisIncr"]
+	path = rcfiles/vim/bundle/VisIncr
+	url = https://github.com/vim-scripts/VisIncr.git
+[submodule "rcfiles/vim/bundle/vim-l9"]
+	path = rcfiles/vim/bundle/vim-l9
+	url = https://github.com/vim-scripts/L9.git
+[submodule "rcfiles/vim/bundle/ctrlp-cmatcher"]
+	path = rcfiles/vim/bundle/ctrlp-cmatcher
+	url = https://github.com/JazzCore/ctrlp-cmatcher.git
