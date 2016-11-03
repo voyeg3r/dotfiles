@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 03 nov 2016 08:12:17 BRT
+" Last Change: qui 03 nov 2016 08:21:41 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -69,6 +69,7 @@ Plugin 'yosiat/oceanic-next-vim'
 Plugin 'wellle/targets.vim'
 Plugin 'lifepillar/vim-mucomplete'
 Plugin 'haya14busa/incsearch.vim'
+Plugin 'rhysd/clever-f.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
