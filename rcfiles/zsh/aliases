@@ -11,6 +11,8 @@ alias path="echo ${PATH//:/$'\n'}"
 alias fpath="echo ${fpath// /$'\n'}"
 alias shell='echo ${SHELL:t}'
 
+alias dairy='vim +VimwikiMakeDiaryNote'
+
 alias mkdir='mkdir -pv'
 
 alias youtube-srt='youtube-dl --write-srt --sub-lang en '

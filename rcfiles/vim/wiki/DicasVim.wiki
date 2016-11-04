@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sáb 29 out 2016 14:06:14 BRT
+Last Change: sex 04 nov 2016 10:51:17 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -9,6 +9,12 @@ twitter: http://www.twitter.com/voyeg3r
   Search vimgolf chalenges to vim users
 
   See also [[VimBestTips]]
+
+== como criar um diário no vim usando o vimwiki ==
+
+source: http://stackoverflow.com/questions/40414720/execute-plug-map-for-vim-through-terminal-command-line-as-startup-arguments
+
+    vim +VimwikiMakeDiaryNote
 
 ==Select yanked and pasted text==
 
