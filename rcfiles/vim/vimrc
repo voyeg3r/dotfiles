@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 03 nov 2016 09:45:30 BRT
+" Last Change: sex 04 nov 2016 09:41:59 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -28,54 +28,71 @@
 "
 "Vundle bootstrap - Install Vundle if it is not already installed
 " source: https://www.reddit.com/r/vim/comments/43ufir/should_i_install_vundle_as_a_submodule_in_my/
-if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/Vundle.vim/.git/config') && confirm("Clone Vundle?","Y\nn") == 1
-    exec '!git clone https://github.com/gmarik/Vundle.vim $HOME/.dotfiles/rcfiles/vim/bundle/Vundle.vim/'
-endif
-
-filetype off
-set rtp+=~/.dotfiles/rcfiles/vim/bundle/Vundle.vim
-call vundle#begin()
+"if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/Vundle.vim/.git/config') && confirm("Clone Vundle?","Y\nn") == 1
+"    exec '!git clone https://github.com/gmarik/Vundle.vim $HOME/.dotfiles/rcfiles/vim/bundle/Vundle.vim/'
+"endif
 
 " config for silversearcher ag
-"let g:agprg="ag --column"
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" "let g:agprg="ag --column"
+" let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-"Plugin 'Raimondi/delimitMate'
-Plugin 'ryanoasis/vim-webdevicons'
-Plugin 'rking/ag.vim'
-"Plugin 'FelikZ/ctrlp-py-matcher'
-"Plugin 'kien/ctrlp.vim'
-"Plugin 'ompugao/ctrlp-z'
-Plugin 'sjl/gundo.vim'
-Plugin 'tmhedberg/matchit'
-Plugin 'scrooloose/nerdtree'"
-Plugin 'chrisbra/NrrwRgn'
-Plugin 'rstacruz/sparkup'
-Plugin 'godlygeek/tabular'
-Plugin 'SirVer/ultisnips'
-Plugin 'tpope/vim-abolish'
-Plugin 'bling/vim-airline'
-Plugin 'eparreno/vim-l9'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-repeat'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-surround'
-Plugin 'vimwiki/vimwiki'
-Plugin 'vim-scripts/VisIncr'
-Plugin 'duythinht/inori'
-Plugin 'yosiat/oceanic-next-vim'
-Plugin 'wellle/targets.vim'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'rhysd/clever-f.vim'
+filetype off
+
+call plug#begin('~/.dotfiles/rcfiles/vim/bundle')
+
+"Plug 'Raimondi/delimitMate'
+Plug 'ryanoasis/vim-webdevicons'
+Plug 'rking/ag.vim'
+"Plug 'FelikZ/ctrlp-py-matcher'
+"Plug 'kien/ctrlp.vim'
+"Plug 'ompugao/ctrlp-z'
+Plug 'sjl/gundo.vim'
+Plug 'tmhedberg/matchit'
+Plug 'scrooloose/nerdtree'"
+Plug 'chrisbra/NrrwRgn'
+Plug 'rstacruz/sparkup'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-abolish'
+"Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'eparreno/vim-l9'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-repeat'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'vimwiki/vimwiki'
+Plug 'vim-scripts/VisIncr'
+Plug 'duythinht/inori'
+Plug 'yosiat/oceanic-next-vim'
+Plug 'wellle/targets.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'rhysd/clever-f.vim'
+Plug 'Shougo/unite.vim'
 
 " Color themes
-Plugin 'altercation/vim-colors-solarized'
-
+Plug 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Add plugins to &runtimepath
+call plug#end()
+
+"unite mappings
+"nnoremap <leader>f :<C-u>Unite file<CR>
+nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
+
+"nnoremap <leader>r :<C-u>Unite -start-insert file_rec<CR>
+nnoremap <c-r> :<C-u>Unite -start-insert file_rec/async:!<CR>
+nnoremap <silent> <c-b> :<C-u>Unite buffer bookmark<CR>
+nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
+
+" Unite like CtrlP search
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#custom#source('file_rec/async','sorters','sorter_rank')
+" replacing unite with ctrl-p
+noremap <silent> <C-p> :Unite -start-insert -buffer-name=files -winheight=10 file_rec/async<cr>
 
 
 " mapping for incsearch plugin
@@ -269,7 +286,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 syntax on
 set omnifunc=syntaxcomplete#Complete
-"set completeopt+=longest
+set completeopt+=longest
 set cot-=preview "disable doc preview in omnicomplete
 
 " para que o shell exiba as variáveis corretamente
