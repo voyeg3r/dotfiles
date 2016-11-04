@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 04 nov 2016 09:41:59 BRT
+" Last Change: sex 04 nov 2016 10:37:20 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -26,11 +26,11 @@
 " http://snipt.net/public/tag/vim
 " http://dalibornasevic.com/posts/43-12-vim-tips
 "
-"Vundle bootstrap - Install Vundle if it is not already installed
+"Plug bootstrap - Install Plug if it is not already installed
 " source: https://www.reddit.com/r/vim/comments/43ufir/should_i_install_vundle_as_a_submodule_in_my/
-"if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/Vundle.vim/.git/config') && confirm("Clone Vundle?","Y\nn") == 1
-"    exec '!git clone https://github.com/gmarik/Vundle.vim $HOME/.dotfiles/rcfiles/vim/bundle/Vundle.vim/'
-"endif
+if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/vim-plug/.git/config') && confirm("Clone Plug?","Y\nn") == 1
+     exec '!git clone https://github.com/junegunn/vim-plug.git $HOME/.dotfiles/rcfiles/vim/bundle/vim-plug/'
+endif
 
 " config for silversearcher ag
 " "let g:agprg="ag --column"
@@ -53,7 +53,6 @@ Plug 'chrisbra/NrrwRgn'
 Plug 'rstacruz/sparkup'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-abolish'
-"Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'eparreno/vim-l9'
@@ -63,37 +62,35 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/VisIncr'
-Plug 'duythinht/inori'
-Plug 'yosiat/oceanic-next-vim'
 Plug 'wellle/targets.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'Shougo/unite.vim'
 
 " Color themes
+Plug 'yosiat/oceanic-next-vim'
 Plug 'altercation/vim-colors-solarized'
-" All of your Plugins must be added before the following line
+Plug 'duythinht/inori'
+
 filetype plugin indent on    " required
 
+" All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
 call plug#end()
 
-"unite mappings
-"nnoremap <leader>f :<C-u>Unite file<CR>
+" ============ Unite plugin config =================
+"any typing will filter the candidate list:
 nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
 
-"nnoremap <leader>r :<C-u>Unite -start-insert file_rec<CR>
-nnoremap <c-r> :<C-u>Unite -start-insert file_rec/async:!<CR>
-nnoremap <silent> <c-b> :<C-u>Unite buffer bookmark<CR>
-nnoremap <silent> <Leader>m :Unite -buffer-name=recent -winheight=10 file_mru<cr>
+"The popular recursive file search, starting insert automatically and using
+    "fuzzy file matching:
 
-" Unite like CtrlP search
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#custom#source('file_rec/async','sorters','sorter_rank')
-" replacing unite with ctrl-p
-noremap <silent> <C-p> :Unite -start-insert -buffer-name=files -winheight=10 file_rec/async<cr>
+"nnoremap <leader>r :<C-u>Unite -start-insert file_rec<CR>
+nnoremap <leader>r :<C-u>Unite -start-insert file_rec/async:!<CR>
+nnoremap <silent> <leader>b :<C-u>Unite buffer bookmark<CR>
 
+" ============ End of Unite plugin config ==========
 
 " mapping for incsearch plugin
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
@@ -247,9 +244,35 @@ endfunction
 map <silent> <F6> <esc>:call <SID>SwitchColorSchemes()<CR><bar>:echo g:colors_name<cr>
 map <special> <S-F6> :ec g:colors_name<cr>
 
-let g:airline_powerline_fonts=1
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 " configuratin to ag plugin
 let g:agprg="<custom-ag-path-goes-here> --column"
@@ -680,7 +703,7 @@ xmap <c-c> "+y
 
 " clear search register
 " source: http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting
-nmap \r :let @/ = ""<cr>
+" nmap \r :let @/ = ""<cr>
 
 " http://vimcasts.org/episodes/creating-colorschemes-for-vim/
 " Show syntax highlighting groups for word under cursor
@@ -899,8 +922,9 @@ command! SaveAsRoot w !sudo tee %
 map <silent> <M-v> :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 map <silent> <leader>v :e ~/.vimrc<cr>
 map <silent> <leader>z :e ~/.zshrc<cr>
+
 " copy current buffer to clipboard
-nmap <leader>b :%y+<cr>
+" nmap <leader>b :%y+<cr>
 
 autocmd! BufWritePost .vimrc source %
 
