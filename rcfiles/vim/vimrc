@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 04 nov 2016 10:37:20 BRT
+" Last Change: sex 04 nov 2016 12:09:44 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -41,6 +41,7 @@ filetype off
 call plug#begin('~/.dotfiles/rcfiles/vim/bundle')
 
 "Plug 'Raimondi/delimitMate'
+Plug 'chrisbra/NrrwRgn'
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'rking/ag.vim'
 "Plug 'FelikZ/ctrlp-py-matcher'
