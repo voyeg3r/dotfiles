@@ -105,6 +105,9 @@ yaourt -S zukitwo-themes
 
 yaourt -S zsh-completions
 
+# check your shell script syntax
+sudo pacman -S shellcheck
+
 yaourt -S dos2unix
 
 #Command-line downloader and uploader for Rapidshare, Mediafire and other

@@ -11,7 +11,7 @@ endsnippet
 snippet sh
 #!/usr/bin/env bash
 # Criado em: `system("date +%m-%d-%Y")`
-# Last Change: Ter 21 Jun 2016 10:19:12 BRT
+# Last Change: sex 04 nov 2016 16:02:43 BRT
 # vim:ft=sh:fdm=syntax:nu:
 # Instituicao: ${1:instituicao}
 # Proposito do script: ${2:write here the script purpose}
@@ -38,8 +38,9 @@ endsnippet
 
 snippet here
 cat <<${1:EOF}
-${2:type your text here}
-${1}
+${1:Type your text here}
+EOF
+${0:# Press ctrl-j to jump here}
 endsnippet
 
 snippet ir "if user is root" w
@@ -202,3 +203,15 @@ endsnippet
 snippet dvar
 MYVAR=${1:{1:-default}}
 endsnippet
+
+snippet	seds
+sed ${1:options} 's/${2:foo}/${3:bar}/g'
+${0:press Ctrl-j to leave}
+endsnippet
+
+
+snippet	sedd
+sed ${1:options} 's/${1:what}/d'
+${0:press Ctrl-j to leave}
+endsnippet
+
