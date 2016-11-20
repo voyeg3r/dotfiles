@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 04 nov 2016 13:06:52 BRT
+" Last Change: dom 20 nov 2016 10:38:45 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -25,11 +25,11 @@
 " http://peepcode.com/products/smash-into-vim-ii
 " http://snipt.net/public/tag/vim
 " http://dalibornasevic.com/posts/43-12-vim-tips
-"
-"Plug bootstrap - Install Plug if it is not already installed
+
+" Plug bootstrap - Install Plug if it is not already installed
 " source: https://www.reddit.com/r/vim/comments/43ufir/should_i_install_vundle_as_a_submodule_in_my/
-if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/vim-plug/.git/config') && confirm("Clone Plug?","Y\nn") == 1
-     exec '!git clone https://github.com/junegunn/vim-plug.git $HOME/.dotfiles/rcfiles/vim/bundle/vim-plug/'
+if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/vim-plug/README.md') && confirm("Clone Plug?","Y\nn") == 1
+     exec '!git clone --depth 1 https://github.com/junegunn/vim-plug.git $HOME/.dotfiles/rcfiles/vim/bundle/vim-plug/'
 endif
 
 " config for silversearcher ag
@@ -41,6 +41,7 @@ filetype off
 call plug#begin('~/.dotfiles/rcfiles/vim/bundle')
 
 "Plug 'Raimondi/delimitMate'
+Plug 'terryma/vim-expand-region'
 Plug 'chrisbra/NrrwRgn'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'ryanoasis/vim-webdevicons'
@@ -287,6 +288,13 @@ nmap <leader>u <<
 nmap <leader>i >>
 vmap <leader>u <gv
 vmap <leader>i >gv
+
+" I use terryma/vim-expand-region with following mapping:
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" paste current_reg on visual selection
+vnoremap p :let current_reg = @"
 
 " countable changes
 " nnoremap Q @='n.'<CR>
