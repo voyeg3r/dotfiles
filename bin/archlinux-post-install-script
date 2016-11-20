@@ -420,6 +420,9 @@ yaourt -S aur/python2-gcp
 # convert any media format
 yaourt -S ffmulticonverter
 
+# numix circle icon theme
+yaourt -S numix-circle-icon-theme-git
+
 # https://github.com/Xaviju/inkscape-open-symbols
 yaourt -S inkscape-open-symbols-git
 
@@ -449,8 +452,8 @@ multimedia () {
 		sudo yaourt -S --noconfirm codecs
 		sudo pacman -S vlc ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
     sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-pluginscman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins
-yaourt -S extra/sound-juicer
 		rm -rf ~/.thumbnails/fail
+    yaourt -S extra/sound-juicer
 		# sucessor do ffmpeg
 		# https://aur.archlinux.org/packages/libav-git/
 } && multimedia

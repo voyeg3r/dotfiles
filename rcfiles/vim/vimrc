@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: dom 20 nov 2016 12:28:19 BRT
+" Last Change: dom 20 nov 2016 18:09:18 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -46,9 +46,7 @@ Plug 'chrisbra/NrrwRgn'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'rking/ag.vim'
-"Plug 'FelikZ/ctrlp-py-matcher'
-"Plug 'kien/ctrlp.vim'
-"Plug 'ompugao/ctrlp-z'
+Plug 'vim-scripts/FuzzyFinder'
 Plug 'sjl/gundo.vim'
 Plug 'tmhedberg/matchit'
 Plug 'scrooloose/nerdtree'"
@@ -69,7 +67,6 @@ Plug 'vim-scripts/VisIncr'
 Plug 'wellle/targets.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'rhysd/clever-f.vim'
-Plug 'Shougo/unite.vim'
 
 " Color themes
 Plug 'yosiat/oceanic-next-vim'
