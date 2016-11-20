@@ -45,8 +45,18 @@ gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 # android tools
 yaourt -S android-tools
 
+# a great calendar for gnome
+yaourt -S california
+
+# command not found support
+yaourt -Ss command-not-found
+
 # leitor de rss
 yaourt -S feedreader-git
+
+# in order to use the plugin command-not-found you must have
+# read this also: https://wiki.archlinux.org/index.php/Pkgfile
+sudo pacman -S pkgfile && sudo pkgfile -u
 
 # you will have a better rename with regex support
 sudo pacman -S perl-rename

@@ -66,16 +66,13 @@ ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract systemd.plugin.zsh history-substring-search zsh-autosuggestions)
-#eval "$(fasd --init posix-alias zsh-hook )"
-eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install )"
+plugins=(zsh-autosuggestions git fasd extract systemd.plugin.zsh command-not-found history-substring-search )
+
+eval "$(fasd --init auto)"
+eval "$(fasd --init posix-alias zsh-hook)"
 
 # trying to expand sudo at the begining
 bindkey '^i' expand-or-complete-prefix
-
-# in order to install auto-suggestions plugin
-# https://github.com/zsh-users/zsh-autosuggestions
-bindkey '^ ' autosuggest-accept
 
 bindkey '^Xw' expand-word # expande variáveis
 
@@ -233,8 +230,8 @@ globalias() {
 
 zle -N globalias
 
-bindkey ' ' globalias               # expande aliases globais
-bindkey '^X ' magic-space           # control-space to bypass completion
+#bindkey ' ' globalias               # expande aliases globais
+#bindkey '^X ' magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space  # normal space during searches
 bindkey -s '\eu' 'cd ..^j' # alt-u up dir
 
@@ -258,6 +255,12 @@ autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
+
+# in order to install auto-suggestions plugin
+# https://github.com/zsh-users/zsh-autosuggestions
+# this key binding must be here at the end because of something I dont know yet
+bindkey '^ ' autosuggest-accept
+
 
 # firefox improviments
 # disalbe rendering fonts in firefox to free memory

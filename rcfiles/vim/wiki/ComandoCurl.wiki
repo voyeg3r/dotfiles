@@ -26,6 +26,10 @@ instalação por meio do gerenciador de pacotes de sua distribuição, cURL est�
 presente na maioria das distribuições Linux. Se você usar o gerenciador de
 pacotes não será necessário fazer este download.
 
+= measuring a iso size before downloading it=
+
+curl -sI https://static.apricityos.com/iso/apricity_os-09.2016-dev-gnome-i686.iso | grep Content-Length | awk '{print $2}'
+
 =using curl with proxy=
 
 # add this line in your ~/.bashrc
