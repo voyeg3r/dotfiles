@@ -189,6 +189,10 @@ bindkey '^xe' edit-command-line
 bindkey '^b' push-line-or-edit
 bindkey '\eb' push-line-or-edit
 
+# Grep anywhere with ^G
+# don't try to type ^G instead use Ctrl-v Ctrl-g
+bindkey -s '' ' | grep '
+
 insert-history-line() {
 LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
 }
