@@ -326,6 +326,8 @@ yaourt -S rfkill
 yaourt -S texlive-core texlive-langcjk texlive-latexextra texlive-pictures
 haskell-pandoc
 
+yaourt -S haskell-pandoc
+
 yaourt -S community/txt2tags
 
 # to install haskell-pandoc you must add this repo
