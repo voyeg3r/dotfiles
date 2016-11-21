@@ -26,3 +26,6 @@
 [submodule "fasd"]
 	path = fasd
 	url = https://github.com/clvv/fasd.git
+[submodule "/home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions"]
+	path = /home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions
+	url = git://github.com/zsh-users/zsh-autosuggestions
