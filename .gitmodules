@@ -7,6 +7,9 @@
 [submodule "rcfiles/vim/bundle/vundle"]
 	path = rcfiles/vim/bundle/vundle
 	url = http://github.com/gmarik/vundle.git
+[submodule "rcfiles/vim/bundle/NrrwRgn"]
+  path = rcfiles/vim/bundle/NrrwRgn
+  url = https://github.com/chrisbra/NrrwRgn.git
 [submodule "rcfiles/vim/bundle/Vundle.vim"]
 	path = rcfiles/vim/bundle/Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim.git
@@ -29,3 +32,6 @@
 [submodule "/home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions"]
 	path = /home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions
 	url = git://github.com/zsh-users/zsh-autosuggestions
+[submodule "/home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-completions"]
+	path = /home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-completions
+	url = git://github.com/zsh-users/zsh-completions.git

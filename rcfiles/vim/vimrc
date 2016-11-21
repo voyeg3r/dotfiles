@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 21 nov 2016 12:53:28 BRT
+" Last Change: seg 21 nov 2016 14:25:03 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -68,6 +68,12 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'rhysd/clever-f.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'kien/ctrlp.vim'
+"function! BuildYCM(info)
+"    if a:info.status == 'installed' || a:info.force
+"        !./install.py
+"    endif
+"endfunction
+"Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 " Color themes
 Plug 'yosiat/oceanic-next-vim'
