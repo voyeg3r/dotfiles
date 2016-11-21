@@ -1,6 +1,6 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: Sáb 05 Mar 2016 08:01:33 BRT
+Last Change: seg 21 nov 2016 13:00:16 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -149,7 +149,7 @@ SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="
 ==yaourt without confirmation==
 config-yaourt(){
 [ -f ~/.yaourtrc ] || touch ~/.yaourtrc
-cat <<-EOF> ~/.yaourtrc
+cat <<EOF> ~/.yaourtrc
 #Yaourt Configuration File
 
  	# Sun Jan  2 21:04:01 IST 2011

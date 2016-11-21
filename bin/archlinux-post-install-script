@@ -42,6 +42,10 @@ sudo wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysct
 # setando o muse para ser destacado com o ctrl ou não
 gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 
+# apricity update fix
+sudo pacman -S --force ttf-dejavu
+sudo pacman -Syu
+
 # android tools
 yaourt -S android-tools
 

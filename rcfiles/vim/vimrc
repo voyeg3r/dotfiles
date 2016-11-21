@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: dom 20 nov 2016 19:24:37 BRT
+" Last Change: seg 21 nov 2016 12:53:28 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -196,8 +196,6 @@ function! <SID>SwitchColorSchemes()
     if g:colors_name == 'OceanicNext'
       colorscheme google
     elseif g:colors_name == 'google'
-          colorscheme badwolf
-    elseif g:colors_name == 'badwolf'
       colorscheme two2tango
     elseif g:colors_name == 'two2tango'
       colorscheme inori
@@ -396,7 +394,7 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 
 syntax enable
-colorscheme badwolf
+colorscheme ir_black
 
 if has('gui_running')
     set background=light
@@ -445,14 +443,6 @@ cab W  w
 cab Wq wq
 cab Q  q
 
-" Highlight redundant whitespace and tabs.
-highlight RedundantWhitespace ctermbg=red guibg=red
-"match RedundantWhitespace /\s\+$\| \+\ze\t/
-autocmd BufWinEnter * match RedundantWhitespace /\s+$/
-autocmd InsertEnter * match RedundantWhitespace /\s+%#@<!$/
-autocmd InsertLeave * match RedundantWhitespace /\s+$/
-autocmd BufWinLeave * call CleanExtraSpaces()
-
 " Eesta função guarda o local do cursor em 'save_cursor' e como
 " executa uma substituição armazena antes o ultimo
 " registro de buscas em 'old_query'
@@ -465,6 +455,15 @@ fun! CleanExtraSpaces()
 endfun
 nmap <silent> <leader>c :keepjumps call CleanExtraSpaces()<cr>
 autocmd BufWritePre * :keepjumps call CleanExtraSpaces()
+
+" Highlight redundant whitespace and tabs.
+highlight RedundantWhitespace ctermbg=red guibg=red
+" match RedundantWhitespace /\s\+$\| \+\ze\t/
+autocmd BufWinEnter * match RedundantWhitespace /\s+$/
+autocmd InsertEnter * match RedundantWhitespace /\s+%#@<!$/
+autocmd InsertLeave * match RedundantWhitespace /\s+$/
+autocmd BufWinLeave * call CleanExtraSpaces()
+
 
 " Create a red/red scheme
 highlight Problem ctermbg=red guibg=red

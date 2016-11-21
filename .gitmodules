@@ -13,6 +13,7 @@
 [submodule "rcfiles/zsh/custom/plugins/zsh-autosuggestions"]
 	path = rcfiles/zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+    ignore = dirty
 [submodule "rcfiles/vim/bundle/VisIncr"]
 	path = rcfiles/vim/bundle/VisIncr
 	url = https://github.com/vim-scripts/VisIncr.git
