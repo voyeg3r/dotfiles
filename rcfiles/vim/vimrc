@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 22 nov 2016 20:11:55 BRT
+" Last Change: ter 22 nov 2016 20:38:35 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -33,10 +33,10 @@ if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/vim-plug/README.md') && 
 endif
 
 " autoload vimrc
-augroup reload_vimrc " {
+augroup reload_vimrc
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+augroup END
 
 " config for silversearcher ag
 " "let g:agprg="ag --column"
@@ -105,6 +105,9 @@ filetype plugin indent on    " required
 " All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
 call plug#end()
+
+" I don't know why I should do this, when i figure out...
+source ~/.vim/bundle/setcolors/setcolors.vim
 
 " syntastic configuration
 set statusline+=%#warningmsg#
