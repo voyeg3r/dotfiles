@@ -85,9 +85,6 @@ plugins=(zsh-autosuggestions git fasd extract systemd.plugin.zsh command-not-fou
 eval "$(fasd --init auto)"
 eval "$(fasd --init posix-alias zsh-hook)"
 
-bindkey '^X^A' fasd-complete
-bindkey '^X^F' fasd-complete-f
-bindkey '^X^D' fasd-complete-d
 
 # trying to expand sudo at the begining
 bindkey '^i' expand-or-complete-prefix
@@ -283,6 +280,9 @@ zle -N bracketed-paste bracketed-paste-magic
 # this key binding must be here at the end because of something I dont know yet
 bindkey '^ ' autosuggest-accept
 
+bindkey '^X^A' fasd-complete
+bindkey '^X^F' fasd-complete-f
+bindkey '^X^D' fasd-complete-d
 
 # firefox improviments
 # disalbe rendering fonts in firefox to free memory
