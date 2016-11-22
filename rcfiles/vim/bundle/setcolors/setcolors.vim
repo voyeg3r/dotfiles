@@ -46,4 +46,4 @@ endfunction
 
 nnoremap <F6> :call SwitchColorForward()<CR>
 nnoremap <S-F6> :call SwitchColorBackward()<CR>
-nnoremap <A-F8> :call SwitchColorRandom()<CR>
+nnoremap <c-F8> :call SwitchColorRandom()<CR>

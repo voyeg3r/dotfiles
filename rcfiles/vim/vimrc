@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 22 nov 2016 16:16:26 BRT
+" Last Change: ter 22 nov 2016 19:11:45 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -70,6 +70,8 @@ Plug 'rhysd/clever-f.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'kien/ctrlp.vim'
 Plug 'skywind3000/asyncrun.vim'
+" manually installed
+Plug '~/.vim/bundle/setcolors/setcolors.vim'
 
 "function! BuildYCM(info)
 "    if a:info.status == 'installed' || a:info.force
