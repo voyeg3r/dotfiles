@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 22 nov 2016 19:11:45 BRT
+" Last Change: ter 22 nov 2016 20:11:55 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -32,11 +32,23 @@ if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/vim-plug/README.md') && 
      exec '!git clone --depth 1 https://github.com/junegunn/vim-plug.git $HOME/.dotfiles/rcfiles/vim/bundle/vim-plug/'
 endif
 
+" autoload vimrc
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
 " config for silversearcher ag
 " "let g:agprg="ag --column"
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 
 filetype off
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.dotfiles/rcfiles/vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
 call plug#begin('~/.dotfiles/rcfiles/vim/bundle')
 
@@ -93,13 +105,6 @@ filetype plugin indent on    " required
 " All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
 call plug#end()
-
-
-" ColorStepper Keys
-nmap <S-F6> :source ~/.vim/bundle/setcolors/setcolors.vim<cr>
-nmap <F6> <Plug>ColorstepPrev
-nmap <F7> <Plug>ColorstepNext
-nmap <S-F7> <Plug>ColorstepReload
 
 " syntastic configuration
 set statusline+=%#warningmsg#

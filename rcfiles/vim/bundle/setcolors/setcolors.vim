@@ -4,7 +4,7 @@
 " Usage:
 "       F6 Switches to next Color Scheme
 "       Shift-F6 Switches to previous one
-"       Alt-F8 Switches to a random one
+"       Shift-F7 Switches to a random one
 "
 
 if v:version < 700 || exists('loaded_schemes')
@@ -46,4 +46,4 @@ endfunction
 
 nnoremap <F6> :call SwitchColorForward()<CR>
 nnoremap <S-F6> :call SwitchColorBackward()<CR>
-nnoremap <c-F8> :call SwitchColorRandom()<CR>
+nnoremap <S-F7> :call SwitchColorRandom()<CR>
