@@ -328,6 +328,9 @@ haskell-pandoc
 
 yaourt -S haskell-pandoc
 
+# dns cache
+sudo pacman -S dnsmasq
+
 yaourt -S community/txt2tags
 
 # to install haskell-pandoc you must add this repo
@@ -432,6 +435,8 @@ yaourt -S numix-circle-icon-theme-git
 # https://github.com/Xaviju/inkscape-open-symbols
 yaourt -S inkscape-open-symbols-git
 
+yaourt -S gnome-clocks
+
 multimedia () {
 		# corebird is a twitter client
 		# simplescreenrecorder: https://aur.archlinux.org/packages/simplescreenrecorder/
@@ -446,7 +451,7 @@ multimedia () {
 		yaourt -S subtitleeditor python-pysrt
 		yaourt -S font-manager
 		sudo yaourt -S corebird-git
-		sudo yaourt -S youtube-dl gcap
+		sudo yaourt -S youtube-dl
 		sudo pacman -Syu
 		sudo pacman -Syu sox
 		sudo pacman -Syu xorg-utils pavucontrol

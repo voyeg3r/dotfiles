@@ -4,7 +4,21 @@ export ZSH="${HOME}/.dotfiles/oh-my-zsh"
 XDG_CONFIG_HOME="$HOME/.config"
 XDG_CACHE_HOME="$HOME/.cache"
 
+
 ZSH_CONFIG=~/.dotfiles/rcfiles/zsh
+
+# sources:
+# https://codegists.com/code/fasd/
+# http://www.inmotionhosting.com/support/website/ssh/speed-up-grep-searches-with-lc-all
+function add_locale() {
+    if [[ -z "$($GREP __LC_CTYPE $RC)" ]]; then
+        cat >>$RC <<HERE
+
+        # __LC_CTYPE
+        export LC_CTYPE=\$LANG
+HERE
+    fi
+}
 
 # 10ms for key sequences
 KEYTIMEOUT=1
@@ -70,6 +84,10 @@ plugins=(zsh-autosuggestions git fasd extract systemd.plugin.zsh command-not-fou
 
 eval "$(fasd --init auto)"
 eval "$(fasd --init posix-alias zsh-hook)"
+
+bindkey '^X^A' fasd-complete
+bindkey '^X^F' fasd-complete-f
+bindkey '^X^D' fasd-complete-d
 
 # trying to expand sudo at the begining
 bindkey '^i' expand-or-complete-prefix

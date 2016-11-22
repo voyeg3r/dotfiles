@@ -33,7 +33,6 @@
 #You can use systemctl to query the timer we just activated:
 
 #$ systemctl --user list-timers
-
  SYSTEMDDIR=${HOME}/.config/systemd/user/
 
  [[ ! -e "$SYSTEMDDIR" ]] && mkdir -p "$SYSTEMDDIR"
@@ -72,12 +71,11 @@ EOF
 fi
 
 
-USER=$(whoami)
-PID=$(pgrep -u $USER gnome-session)
+PID=$(pgrep  gnome-session)
 export DBUS_SESSION_BUS_ADDRESS=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$PID/environ|cut -d= -f2-)
 
-walls_dir="$HOME"/pictures/new-wallpapers
-selection=$(find "$walls_dir" | shuf -n1)
+walls_dir="$HOME"/img/wallpapers
+selection=$(find "${walls_dir}" -type f | shuf -n1)
 gsettings set org.gnome.desktop.background picture-uri "file://$selection"
 
 

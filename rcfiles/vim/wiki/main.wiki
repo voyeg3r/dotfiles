@@ -1,7 +1,7 @@
 [[Wiki]] do Sérgio para fins diversos=
 
 Criado: Dom 17/Out/2010 hs 14:23
-Last Change: Sáb 23 Jan 2016 16:04:58 BRT
+Last Change: seg 21 nov 2016 17:04:49 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 
@@ -23,7 +23,7 @@ site: http://vivaotux.blogspot.com
 
  [[UsandoOmercurial]] hg WebdoisPontoZero [[DicasPython]]
 
- [[DicasVim]] [[HaCk]] [[DicasGnome]] [[GnomeShell]] [[VimSnippets]] [[UltiSnips]] [[AnDroid]]
+ [[DicasVim]] [[HaCk]] [[DicasGnome]] [[GnomeShell]] [[VimSnippets]] [[UltiSnips]] [[AnDroid]] [[Inkscape]]
 
  S5criandoSlides FluxBox [[DicasGoogle]] [[DicasWindows]]
 

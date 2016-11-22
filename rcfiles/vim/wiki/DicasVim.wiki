@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sex 04 nov 2016 10:51:17 BRT
+Last Change: ter 22 nov 2016 05:53:10 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -9,6 +9,17 @@ twitter: http://www.twitter.com/voyeg3r
   Search vimgolf chalenges to vim users
 
   See also [[VimBestTips]]
+
+== clipboard manipulation ==
+
+Faster way to paste data into vim than with paste mode?
+When I try to paste hundreds of lines or more into Vim, even in paste mode, it takes much longer (10 times or more?)
+
+If your Vim is compiled with clipboard support
+
+    (:echo has('clipboard') returns 1)
+
+you can simply use "+p or "*p
 
 == como criar um diário no vim usando o vimwiki ==
 

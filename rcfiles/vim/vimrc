@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 21 nov 2016 16:27:13 BRT
+" Last Change: seg 21 nov 2016 19:21:16 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -41,6 +41,7 @@ filetype off
 call plug#begin('~/.dotfiles/rcfiles/vim/bundle')
 
 "Plug 'Raimondi/delimitMate'
+Plug 'vim-syntastic/syntastic'
 Plug 'terryma/vim-expand-region'
 Plug 'chrisbra/NrrwRgn'
 Plug 'vim-scripts/AutoComplPop'
@@ -88,6 +89,16 @@ filetype plugin indent on    " required
 " All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
 call plug#end()
+
+" syntastic configuration
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " PyMatcher for CtrlP
 if !has('python')
