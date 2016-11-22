@@ -414,7 +414,7 @@ graphictools () {
 		sudo pacman -Syu inkscape extra/python2-lxml gimp imagemagick xclip
 		sudo yaourt -S --noconfirm gloobus-sushi-bzr
 		sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
-		sudo yaourt --noconfirm -S ttf-source-code-pro
+		sudo yaourt --noconfirm -S ttf-ubuntu-font-family
 } && graphictools
 
 yaourt -S gimp-plugin-registry
