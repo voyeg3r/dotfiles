@@ -2,8 +2,8 @@
 " Author:       Rahul Janak
 " Version:      0.1 (updated 21/01/2012)
 " Usage:
-"       F8 Switches to next Color Scheme
-"       Shift-F8 Switches to previous one
+"       F6 Switches to next Color Scheme
+"       Shift-F6 Switches to previous one
 "       Alt-F8 Switches to a random one
 "
 
@@ -44,6 +44,6 @@ function! SwitchColorBackward()
     endif
 endfunction
 
-nnoremap <F8> :call SwitchColorForward()<CR>
-nnoremap <S-F8> :call SwitchColorBackward()<CR>
+nnoremap <F6> :call SwitchColorForward()<CR>
+nnoremap <S-F6> :call SwitchColorBackward()<CR>
 nnoremap <A-F8> :call SwitchColorRandom()<CR>
