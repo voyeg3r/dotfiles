@@ -124,10 +124,11 @@ sudo pacman -S shellcheck
 
 yaourt -S dos2unix
 
-#Command-line downloader and uploader for Rapidshare, Mediafire and other
+# Command-line downloader and uploader for Rapidshare, Mediafire and other
 # file sharing websites.
 # site: https://github.com/mcrapet/plowshare
 yaourt -S plowshare
+plowmod --install
 
 # mediafire fuse
 # https://github.com/MediaFire/mediafire-fuse
@@ -431,6 +432,7 @@ yaourt -S ffmulticonverter
 
 # numix circle icon theme
 yaourt -S numix-circle-icon-theme-git
+yaourt -S adapta-gtk-theme
 
 # https://github.com/Xaviju/inkscape-open-symbols
 yaourt -S inkscape-open-symbols-git
