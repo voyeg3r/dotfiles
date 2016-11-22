@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 22 nov 2016 16:09:44 BRT
+" Last Change: ter 22 nov 2016 16:16:26 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -92,7 +92,9 @@ filetype plugin indent on    " required
 " Add plugins to &runtimepath
 call plug#end()
 
+
 " ColorStepper Keys
+nmap <S-F6> :source ~/.vim/bundle/setcolors/setcolors.vim<cr>
 nmap <F6> <Plug>ColorstepPrev
 nmap <F7> <Plug>ColorstepNext
 nmap <S-F7> <Plug>ColorstepReload
