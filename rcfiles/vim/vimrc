@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 23 nov 2016 06:23:09 BRT
+" Last Change: qua 23 nov 2016 07:48:05 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -56,6 +56,7 @@ filetype off
 call plug#begin('~/.dotfiles/rcfiles/vim/bundle')
 
 "Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
 Plug 'terryma/vim-expand-region'
 Plug 'chrisbra/NrrwRgn'
@@ -398,15 +399,6 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 nmap <special> <F9> <esc>:w<cr>
 inoremap <special> <F9> <C-O>:w<cr>
-
-" Fechamento automático de parênteses
-"imap { {}<left>
-"imap ( ()<left>
-"imap [ []<left>
-" os mapeamentos abaixo funcionam com o ultisnips
-vmap ( <tab>(<tab>
-vmap { <tab>{<tab>
-vmap [ <tab>[<tab>
 
 " este mapeamente permite criar cloze deletions para o anki de forma simplificada
 vmap \c "adi{{c1::<c-r>a}}<esc>

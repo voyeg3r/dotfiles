@@ -95,6 +95,7 @@ yaourt -S cairo-dock cairo-dock-plug-ins
 
 # um bom leitor de feeds equanto o gnome-news não roda direito
 yaourt -S feedreader
+yaourt -S gnome-news-git
 
 # accessing gooogle drive
 yaourt -S gvfs gvfs-goa gvfs-google
