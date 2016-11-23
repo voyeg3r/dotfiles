@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 22 nov 2016 20:38:35 BRT
+" Last Change: qua 23 nov 2016 06:23:09 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -28,8 +28,15 @@
 
 " Plug bootstrap - Install Plug if it is not already installed
 " source: https://www.reddit.com/r/vim/comments/43ufir/should_i_install_vundle_as_a_submodule_in_my/
-if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/vim-plug/README.md') && confirm("Clone Plug?","Y\nn") == 1
-     exec '!git clone --depth 1 https://github.com/junegunn/vim-plug.git $HOME/.dotfiles/rcfiles/vim/bundle/vim-plug/'
+" if !filereadable($HOME . '/.dotfiles/rcfiles/vim/bundle/vim-plug/README.md') && confirm("Clone Plug?","Y\nn") == 1
+"      exec '!git clone --depth 1 https://github.com/junegunn/vim-plug.git $HOME/.dotfiles/rcfiles/vim/bundle/vim-plug/'
+" endif
+
+" Plug bootstrap - Install Plug if it is not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.dotfiles/rcfiles/vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 " autoload vimrc
@@ -37,6 +44,7 @@ augroup reload_vimrc
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
+command! -nargs=0 ReloadVimrc source $MYVIMRC
 
 " config for silversearcher ag
 " "let g:agprg="ag --column"
@@ -44,11 +52,6 @@ augroup END
 
 filetype off
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.dotfiles/rcfiles/vim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
 
 call plug#begin('~/.dotfiles/rcfiles/vim/bundle')
 

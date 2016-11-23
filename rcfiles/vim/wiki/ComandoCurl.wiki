@@ -1,6 +1,7 @@
 =Referências=
-* [[@http://bemvindoaolinux.blogspot.com/2009/01/downloads-por-linha-de-comando-curl.html]]
+* [[@http://bemvindoaolinux.blogspot.com/2009/01/downloads-por-linha-de-comando-curl.html|Download por linha de comando com o curl]]
 * IBM [[http://www.ibm.com/developerworks/br/opensource/library/os-curl/index.html]]
+* https://curl.haxx.se/docs/manpage.html
 
 cURL é uma ferramenta desenvolvida para a transferência de arquivos pela
 Internet pelo próprio terminal de comandos do sistema (Xterm, Konsole, Consola,
@@ -25,6 +26,40 @@ pode baixar centenas ou milhares de links de só uma vez.  Recomendo fazer a
 instalação por meio do gerenciador de pacotes de sua distribuição, cURL está
 presente na maioria das distribuições Linux. Se você usar o gerenciador de
 pacotes não será necessário fazer este download.
+
+You can specify multiple URLs or parts of URLs by writing part
+sets within braces as in:
+
+    http://site.{one,two,three}.com
+
+or you can get sequences of alphanumeric series by using [] as in:
+
+    ftp://ftp.example.com/file[1-100].txt
+
+    ftp://ftp.example.com/file[001-100].txt (with leading zeros)
+
+    ftp://ftp.example.com/file[a-z].txt
+
+Nested sequences are not supported, but you can use several ones next to each other:
+
+    http://example.com/archive[1996-1999]/vol[1-4]/part{a,b,c}.html
+
+You can specify any amount of URLs on the command line. They will
+be fetched in a sequential manner in the specified order.
+
+You can specify a step counter for the ranges to get every Nth number or letter:
+
+    http://example.com/file[1-100:10].txt
+
+    http://example.com/file[a-z:2].txt
+
+    --create-dirs
+
+    When used in conjunction with the -o option, curl will create
+    the necessary local directory hierarchy as needed. This option
+    creates the dirs mentioned with the -o option, nothing else.
+    If the -o file name uses no dir or if the dirs it mentions
+    already exist, no dir will be created.
 
 = measuring a iso size before downloading it=
 
