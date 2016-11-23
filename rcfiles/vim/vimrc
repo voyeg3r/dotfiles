@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 23 nov 2016 09:54:02 BRT
+" Last Change: qua 23 nov 2016 10:25:17 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -272,6 +272,9 @@ nmap <leader>u <<
 nmap <leader>i >>
 vmap <leader>u <gv
 vmap <leader>i >gv
+
+" mapeamento pra inserir quebra de linha em modo normal
+map <leader><cr> a<cr><esc>
 
 map <S-F12> :exec '!'.getline('.')<cr>
 
