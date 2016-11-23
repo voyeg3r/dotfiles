@@ -329,6 +329,7 @@ yaourt -S texlive-core texlive-langcjk texlive-latexextra texlive-pictures
 haskell-pandoc
 
 yaourt -S haskell-pandoc
+sudo pacman -S pandoc
 
 # dns cache
 sudo pacman -S dnsmasq

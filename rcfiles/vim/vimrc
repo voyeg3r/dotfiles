@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 23 nov 2016 07:48:05 BRT
+" Last Change: qua 23 nov 2016 09:54:02 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -417,17 +417,18 @@ fun! CleanExtraSpaces()
     call setpos('.', save_cursor)
     call setreg('/', old_query)
 endfun
-nmap <silent> <leader>c :keepjumps call CleanExtraSpaces()<cr>
-autocmd BufWritePre * :keepjumps call CleanExtraSpaces()
+nmap <silent> <leader>c :call CleanExtraSpaces()<cr>
+autocmd BufWritePre * :call CleanExtraSpaces()
 
 " Highlight redundant whitespace and tabs.
-highlight RedundantWhitespace ctermbg=red guibg=red
-" match RedundantWhitespace /\s\+$\| \+\ze\t/
-autocmd BufWinEnter * match RedundantWhitespace /\s+$/
-autocmd InsertEnter * match RedundantWhitespace /\s+%#@<!$/
-autocmd InsertLeave * match RedundantWhitespace /\s+$/
-autocmd BufWinLeave * call CleanExtraSpaces()
-
+" This has the advantage of not highlighting each space you type at
+" the end of the line, only when you open a file or leave insert
+" mode. Very neat."
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
 " Create a red/red scheme
 highlight Problem ctermbg=red guibg=red
