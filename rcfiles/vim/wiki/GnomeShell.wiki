@@ -148,6 +148,12 @@ https://github.com/Dieterbe/snip/tree/master
 Replacement of Alt-Tab, iterates through windows in a cover-flow manner.
 https://extensions.gnome.org/extension/97/coverflow-alt-tab/
 
+Extensão para trocar papel de parede automaticamente
+https://extensions.gnome.org/extension/543/backslide/
+
+Readme sobre a extensão acima
+https://bitbucket.org/LukasKnuth/backslide
+
 =como instalar o gnome-shell no ubuntu 11.04=
 
     sudo add-apt-repository ppa:gnome3-team/gnome3
