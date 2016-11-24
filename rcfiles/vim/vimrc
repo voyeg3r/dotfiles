@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 23 nov 2016 12:35:01 BRT
+" Last Change: qui 24 nov 2016 15:25:59 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -51,7 +51,6 @@ command! -nargs=0 ReloadVimrc source $MYVIMRC
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 
 filetype off
-
 
 call plug#begin('~/.dotfiles/rcfiles/vim/bundle')
 
@@ -265,7 +264,6 @@ let g:airline_symbols.linenr = ''
 " configuratin to ag plugin
 let g:agprg="<custom-ag-path-goes-here> --column"
 
-
 " mappgings for indenting and keep visual selection
 nmap <leader>u <<
 nmap <leader>i >>
@@ -412,15 +410,32 @@ cab Q  q
 " Eesta função guarda o local do cursor em 'save_cursor' e como
 " executa uma substituição armazena antes o ultimo
 " registro de buscas em 'old_query'
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    :%s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfun
-nmap <silent> <leader>c :call CleanExtraSpaces()<cr>
-autocmd BufWritePre * :call CleanExtraSpaces()
+" fun! CleanExtraSpaces()
+"     let save_cursor = getpos(".")
+"     let old_query = getreg('/')
+"     :%s/\s\+$//e
+"     call setpos('.', save_cursor)
+"     call setreg('/', old_query)
+" endfun
+
+" remove linhas duplicadas
+" remove duplicated lines
+" see Preserve function definition
+ fun! DelBlank()
+     let _s=@/
+     let l = line(".")
+     let c = col(".")
+     :g/^\n\{2,}/d
+     let @/=_s
+     call cursor(l, c)
+ endfun
+map <special> <leader>d :call Preserve(DelBlank())<cr>
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap _= :call Preserve("normal gg=G")<CR>
+
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py :call CleanExtraSpaces()
+endif
 
 " Highlight redundant whitespace and tabs.
 " This has the advantage of not highlighting each space you type at
@@ -449,7 +464,6 @@ fun! s:RedirHistoryCommands()
 endfun
 command! -nargs=0 GetHistory call s:RedirHistoryCommands()
 " q:22kyG ctrl-w-q p
-
 
 " Utility function that save last search and cursor position
 " http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
@@ -519,21 +533,6 @@ endfun
 com! CamelCase call Preserve(CreateDeck())
 nmap <silent> <c-k> :keepjumps call CreateDeck()<cr>
 
-" remove linhas duplicadas
-" remove duplicated lines
-" see Preserve function definition
-fun! DelBlank()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    :g/^\n\{2,}/d
-    let @/=_s
-    call cursor(l, c)
-endfun
-map <special> <leader>d :call DelBlank()<cr>
-
-map <special> <s-F8> :call Preserve(ReinDent())<cr>
-
 " marca como erro duas palavras identicas duplicadas
 syntax match DoubleWordErr "\c\<\(\a\+\)\_s\+\1\>"
 hi def link DoubleWordErr Error
@@ -576,13 +575,13 @@ function! LastModified()
         keepjumps exe '1,' . n . 's#^\(.\{,10}Last Change: \).*#\1' .
                     \ strftime('%c') . '#e'
         let @/=_s
-        "call histdel('search', -1)
+        call histdel('search', -1)
         call setpos('.', save_cursor)
     endif
 endfun
+
 autocmd BufWritePre * :call Preserve(LastModified())
 map <silent> <F9> <esc>:call Preserve(LastModified())<cr>
-
 
 " map <special> <F4> <esc>:call InsertChangeLog()<cr>
 " " mapeamento para inserir códigos especiais em páginas do wikispaces
@@ -861,7 +860,6 @@ onoremap i% :<C-u>normal vi%<CR>
 
 " http://zurb.com/forrst/posts/Adding_a_Next_Adjective_to_Vim_Version_2-C4P:
 
-
 " the below mapping selects function names
 onoremap <silent> F :<C-U>normal! 0f(hviw<CR>
 
@@ -878,7 +876,6 @@ onoremap <silent> F :<C-U>normal! 0f(hviw<CR>
 "iz: Current fold
 
 " ====== Vim extended texxt objects end ==============
-
 
 ""Highlight matches without moving
 ""http://vim.wikia.com/wiki/Highlight_all_search_pattern_matches
