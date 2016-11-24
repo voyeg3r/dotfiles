@@ -1,12 +1,17 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: ter 22 nov 2016 05:53:10 BRT
+Last Change: qua 23 nov 2016 15:08:35 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
   Search vimgolf chalenges to vim users
+  ao instalar o vimgolf como recomenda o site digite
+
+  gem list
+
+  PATH=$PATH:/home/sergio/.gem/ruby/2.3.0/bin
 
   See also [[VimBestTips]]
 
