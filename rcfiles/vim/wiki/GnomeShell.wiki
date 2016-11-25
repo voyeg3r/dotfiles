@@ -97,6 +97,10 @@ gsettings set org.gnome.desktop.peripherals-touchpad disable-while-typing true
 
 gconftool-2 --toggle /desktop/gnome/peripherals/touchpad/touchpad-enabled
 
+habilitar a rolagem pela borda to touchpad
+
+    gsettings set org.gnome.desktop.peripherals.touchpad scroll-method "edge-scrolling"
+
 == accessing ssh throug nautilus ==
 
     sftp://user@address/folder/
