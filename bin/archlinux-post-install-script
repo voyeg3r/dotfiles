@@ -110,7 +110,7 @@ yaourt -S mkvtoolnix-cli
 # gnome with transparency support
 yaourt -S gnome-terminal-fedora
 
-yaourt gnome-session-properties
+yaourt -S gnome-session-properties
 
 # messenger do facebook
 yaourt -S messengerfordesktop
