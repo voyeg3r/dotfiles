@@ -26,6 +26,9 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', '
 ==Show current wallpaper path==
 
     gsettings get org.gnome.desktop.background picture-uri
+    
+    Script to change wallpaper automatically
+    https://github.com/mattwilmott/Gnome3-Auto-Wallpaper-Changer
 
 ==setting nautilus auto mount==
 

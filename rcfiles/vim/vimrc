@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 24 nov 2016 15:25:59 BRT
+" Last Change: sex 25 nov 2016 08:24:37 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -410,13 +410,13 @@ cab Q  q
 " Eesta função guarda o local do cursor em 'save_cursor' e como
 " executa uma substituição armazena antes o ultimo
 " registro de buscas em 'old_query'
-" fun! CleanExtraSpaces()
-"     let save_cursor = getpos(".")
-"     let old_query = getreg('/')
-"     :%s/\s\+$//e
-"     call setpos('.', save_cursor)
-"     call setreg('/', old_query)
-" endfun
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    :preserve("%s/\s\+$//e")
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
 
 " remove linhas duplicadas
 " remove duplicated lines
@@ -434,7 +434,7 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 
 if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py :call CleanExtraSpaces()
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh :silent! call CleanExtraSpaces()
 endif
 
 " Highlight redundant whitespace and tabs.

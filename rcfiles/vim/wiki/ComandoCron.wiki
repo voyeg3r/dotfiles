@@ -52,6 +52,14 @@ três dias de acesso.
 
 crontab -l
 
+== algumas dicas sobre o cron ==
+
+Mudando o papel de parede
+
+Apparently gsettings needs some variables to be set. Because CRON uses only a very restricted set of environment variables you must set them before your script. Use the following code in your CRON line.
+
+30 */2 * * * DISPLAY=:0 GSETTINGS_BACKEND=dconf /your/path/your-script.sh
+
 
 ==editando a tabela do cron==
 

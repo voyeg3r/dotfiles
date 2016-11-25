@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: qua 23 nov 2016 15:08:35 BRT
+Last Change: sex 25 nov 2016 08:30:53 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -14,6 +14,11 @@ twitter: http://www.twitter.com/voyeg3r
   PATH=$PATH:/home/sergio/.gem/ruby/2.3.0/bin
 
   See also [[VimBestTips]]
+  
+== avoiding error messages on vim substituitions ==
+
+    :%s/\s\+$//e
+    :silent! %s/\s\+$//  
 
 == clipboard manipulation ==
 
