@@ -23,6 +23,10 @@ http://askubuntu.com/questions/604462/how-to-set-languages-shortcuts-from-config
 
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', 'us')]"
 
+==change wallpaper every so many minutes ==
+
+http://thornton2.com/How_To_Shuffle_Your_Desktop_Background_Every_So_Many_Minutes_in_GNOME_and_MATE
+
 ==Show current wallpaper path==
 
     gsettings get org.gnome.desktop.background picture-uri
