@@ -110,7 +110,10 @@ yaourt -S mkvtoolnix-cli
 # gnome with transparency support
 yaourt -S gnome-terminal-fedora
 
-yaourt -S gnome-session-properties
+sudo pacman -S archlinux-wallpaper
+
+# wallpaper changer for linux 
+yaourt variety
 
 # messenger do facebook
 yaourt -S messengerfordesktop
