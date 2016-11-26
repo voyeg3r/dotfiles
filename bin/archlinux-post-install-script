@@ -74,6 +74,9 @@ yaourt -Syua translate-shell
 
 # To load all configuration files manually, execute
 
+# systemctl improvements
+sudo wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf -O /etc/sysctl.d/99-sysctl.conf
+
 sudo ln -sfvn /etc/sysctl.d/99-sysctl.conf /etc/sysctl.conf
 sudo sysctl --system
 
