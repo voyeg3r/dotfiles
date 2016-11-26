@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 26 nov 2016 08:54:39 BRT
+" Last Change: sáb 26 nov 2016 09:23:42 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -44,7 +44,6 @@ augroup reload_vimrc
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
-command! -nargs=0 ReloadVimrc source $MYVIMRC
 
 " config for silversearcher ag
 " "let g:agprg="ag --column"
