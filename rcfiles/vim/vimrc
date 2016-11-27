@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 26 nov 2016 10:24:00 BRT
+" Last Change: dom 27 nov 2016 07:23:00 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -65,7 +65,8 @@ Plug 'sjl/gundo.vim'
 Plug 'tmhedberg/matchit'
 Plug 'scrooloose/nerdtree'"
 Plug 'chrisbra/NrrwRgn'
-Plug 'rstacruz/sparkup'
+"Plug 'rstacruz/sparkup'
+Plug 'mattn/emmet-vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-abolish'
 Plug 'vim-airline/vim-airline-themes'
@@ -84,8 +85,6 @@ Plug 'rhysd/clever-f.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'kien/ctrlp.vim'
 Plug 'skywind3000/asyncrun.vim'
-" manually installed
-Plug '~/.vim/bundle/setcolors/setcolors.vim'
 
 "function! BuildYCM(info)
 "    if a:info.status == 'installed' || a:info.force
@@ -101,15 +100,13 @@ Plug 'duythinht/inori'
 Plug 'wesgibbs/vim-irblack'
 Plug 'morhetz/gruvbox'
 Plug 'alessandroyorba/despacio'
+Plug 'jacoborus/tender.vim'
 
 filetype plugin indent on    " required
 
 " All of your Plugins must be added before the following line
 " Add plugins to &runtimepath
 call plug#end()
-
-" I don't know why I should do this, when i figure out...
-source ~/.vim/bundle/setcolors/setcolors.vim
 
 " syntastic configuration
 set statusline+=%#warningmsg#
@@ -385,6 +382,7 @@ if ! has("gui_running")
   colo wombat
   colo badwolf
 endif
+
 
 " turn off the toolbar and menubar
 if has('gui_running')
@@ -973,22 +971,22 @@ nmap g# g#zz
 " nnoremap Q 0yt=A<C-r>=<C-r>"<CR><Esc>
 
 "" autocomandos para python
-"augroup python
-"  au FileType python set keywordprg=pydoc
-"  au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-"  au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
-"  au! BufWritePre *.py,*.js :call <SID>CleanExtraSpaces()
-"  au! BufNewFile *.py 0r ~/.vim/skel/template.py
-" au! BufWritePost *.py :silent !chmod a+x <afile>
-"  autocmd FileType python set textwidth=79
-"  autocmd FileType python filetype indent on
-"  let python_highlight_all=1
-"  let python_highlight_builtins=0
-"  let python_highlight_builtins=1
-"  let python_highlight_exceptions=1
-"  let python_highlight_numbers=1
-"  let python_highlight_space_errors=1
-"augroup end
+augroup python
+  au FileType python set keywordprg=pydoc
+  au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+  au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
+  au! BufWritePre *.py,*.js :call <SID>CleanExtraSpaces()
+  au! BufNewFile *.py 0r ~/.vim/skel/template.py
+  au! BufWritePost *.py :silent !chmod a+x <afile>
+  autocmd FileType python set textwidth=79
+  autocmd FileType python filetype indent on
+  let python_highlight_all=1
+  let python_highlight_builtins=0
+  let python_highlight_builtins=1
+  let python_highlight_exceptions=1
+  let python_highlight_numbers=1
+  let python_highlight_space_errors=1
+augroup end
 
 " CTRL-X CTRL-F  file names
 " CTRL-X CTRL-L  whole lines
