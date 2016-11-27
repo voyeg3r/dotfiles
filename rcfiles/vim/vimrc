@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: dom 27 nov 2016 11:20:16 BRT
+" Last Change: dom 27 nov 2016 12:03:45 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -431,12 +431,14 @@ nmap _= :call Preserve("normal gg=G")<CR>
 " Eesta função guarda o local do cursor em 'save_cursor' e como
 " executa uma substituição armazena antes o ultimo
 " registro de buscas em 'old_query'
-fun! CleanExtraSpaces()
-    :silent! %s/\s\+$//e
+fun! CleanExtraSpacesFunction()
+    :call Preserve("%s/\\s\\+$//e")
 endfun
+com! CleanESpaces call CleanExtraSpacesFunction()
+nmap <leader>e call CleanExtraSpacesFunction()
 
 if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh :call CleanExtraSpaces()
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh :call CleanExtraSpacesFunction()
 endif
 
 " Highlight redundant whitespace and tabs.
@@ -504,11 +506,14 @@ com! KeepPdf call Preserve(Keeponlymp3())
 " Para inserir o simbolo use ^v ^M  ou ^v Enter
 " dos2unix ^M
 fun! Dos2unixFunction()
- :%s/\%x0d$//e
- "Preserve(%s/\%x0d$//e)
- set ff=unix
- set encoding=utf-8
- set fileencoding=utf-8
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    %s/\%x0d$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+    set ff=unix
+    set encoding=utf-8
+    set fileencoding=utf-8
 endfun
 com! Dos2Unix call Dos2unixFunction()
 
@@ -973,7 +978,7 @@ augroup python
   au FileType python set keywordprg=pydoc
   au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
   au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
-  au! BufWritePre *.py,*.js :call <SID>CleanExtraSpaces()
+  au! BufWritePre *.py,*.js :call <SID>CleanExtraSpacesFunction()
   au! BufNewFile *.py 0r ~/.vim/skel/template.py
   au! BufWritePost *.py :silent !chmod a+x <afile>
   autocmd FileType python set textwidth=79
