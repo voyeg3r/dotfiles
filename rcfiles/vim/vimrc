@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: dom 27 nov 2016 15:00:35 BRT
+" Last Change: dom 27 nov 2016 15:28:44 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -420,7 +420,6 @@ endfun
 com! DelBlank call DelBlankFunction()
 map <special> <leader>d :call DelBlankFunction()<cr>
 
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 
 
@@ -430,6 +429,7 @@ nmap _= :call Preserve("normal gg=G")<CR>
 fun! CleanExtraSpacesFunction()
     :call Preserve("%s/\\s\\+$//e")
 endfun
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 com! CleanESpaces call CleanExtraSpacesFunction()
 
 if has("autocmd")
@@ -485,7 +485,7 @@ endfunction
 
 fun! Keeponlymp3()
 " this function keeps only mp3 urls in current text
-  :%s/mp3/mp3\r/g
+ :%s/mp3/mp3\r/g
  :%s/.*\(http.*.mp3\).*/\1/g
  :g!/\.mp3/d
 endfun
@@ -501,11 +501,7 @@ com! KeepPdf call Preserve(Keeponlymp3())
 " To insert ^M do this:  ^v ^M  ou ^v Enter
 " dos2unix ^M
 fun! Dos2unixFunction()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    %s/\%x0d$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
+    call Preserve("%s/$//g")
     set ff=unix
     set encoding=utf-8
     set fileencoding=utf-8
@@ -771,7 +767,7 @@ set formatoptions+=t
 "set formatprg=par\ -w70j
 "set colorcolumn=85
 "set listchars=tab:▸\ ,eol:¬
-set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
 set matchpairs+=<:>
 
 " ==== make the 81st column stand out ===
