@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: dom 27 nov 2016 07:23:00 BRT
+" Last Change: dom 27 nov 2016 11:20:16 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -415,26 +415,24 @@ cab Q  q
 " remove duplicated lines
 " see Preserve function definition
  fun! DelBlank()
-     let _s=@/
-     let l = line(".")
-     let c = col(".")
+     " Preparation: save last search, and cursor position.
+     let save_cursor = getpos(".")
+     let old_query = getreg('/')
      :g/^\n\{2,}/d
-     let @/=_s
-     call cursor(l, c)
+     " Clean up: restore previous search history, and cursor position
+     call setpos('.', save_cursor)
+     call setreg('/', old_query)
  endfun
 map <special> <leader>d :call Preserve(DelBlank())<cr>
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 
+
 " Eesta função guarda o local do cursor em 'save_cursor' e como
 " executa uma substituição armazena antes o ultimo
 " registro de buscas em 'old_query'
 fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
+    :silent! %s/\s\+$//e
 endfun
 
 if has("autocmd")
@@ -473,14 +471,13 @@ command! -nargs=0 GetHistory call s:RedirHistoryCommands()
 " http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
 " video from vimcasts.org: http://vimcasts.org/episodes/tidying-whitespace
 function! Preserve(command)
- let _s=@/
- let l = line(".")
- let c = col(".")
- " Do the business
- execute a:command
- " Restore previous search history and cursor position
- let @/=_s
- call cursor(l, c)
+    " Preparation: save last search, and cursor position.
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    execute a:command
+    " Clean up: restore previous search history, and cursor position
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
 endfunction
 
 fun! Setutf8()
@@ -508,11 +505,12 @@ com! KeepPdf call Preserve(Keeponlymp3())
 " dos2unix ^M
 fun! Dos2unixFunction()
  :%s/\%x0d$//e
+ "Preserve(%s/\%x0d$//e)
  set ff=unix
  set encoding=utf-8
  set fileencoding=utf-8
 endfun
-com! Dos2Unix call Preserve(Dos2unixFunction())
+com! Dos2Unix call Dos2unixFunction()
 
 " this function does more tha camel case
 " it makes some changes needed to my flashcards
