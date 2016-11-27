@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: dom 27 nov 2016 12:03:45 BRT
+" Last Change: dom 27 nov 2016 15:00:35 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -414,16 +414,12 @@ cab Q  q
 " remove linhas duplicadas
 " remove duplicated lines
 " see Preserve function definition
- fun! DelBlank()
-     " Preparation: save last search, and cursor position.
-     let save_cursor = getpos(".")
-     let old_query = getreg('/')
-     :g/^\n\{2,}/d
-     " Clean up: restore previous search history, and cursor position
-     call setpos('.', save_cursor)
-     call setreg('/', old_query)
- endfun
-map <special> <leader>d :call Preserve(DelBlank())<cr>
+fun! DelBlankFunction()
+    call Preserve("g/^$/,/./-j")
+endfun
+com! DelBlank call DelBlankFunction()
+map <special> <leader>d :call DelBlankFunction()<cr>
+
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 
@@ -435,7 +431,6 @@ fun! CleanExtraSpacesFunction()
     :call Preserve("%s/\\s\\+$//e")
 endfun
 com! CleanESpaces call CleanExtraSpacesFunction()
-nmap <leader>e call CleanExtraSpacesFunction()
 
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh :call CleanExtraSpacesFunction()
@@ -503,7 +498,7 @@ fun! Keeponlypdf()
 endfun
 com! KeepPdf call Preserve(Keeponlymp3())
 
-" Para inserir o simbolo use ^v ^M  ou ^v Enter
+" To insert ^M do this:  ^v ^M  ou ^v Enter
 " dos2unix ^M
 fun! Dos2unixFunction()
     let save_cursor = getpos(".")
@@ -586,9 +581,8 @@ function! LastModified()
         call setpos('.', save_cursor)
     endif
 endfun
+autocmd BufWritePre * :call LastModified()
 
-autocmd BufWritePre * :call Preserve(LastModified())
-map <silent> <F9> <esc>:call Preserve(LastModified())<cr>
 
 " map <special> <F4> <esc>:call InsertChangeLog()<cr>
 " " mapeamento para inserir códigos especiais em páginas do wikispaces
