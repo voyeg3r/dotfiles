@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: dom 27 nov 2016 15:28:44 BRT
+" Last Change: dom 27 nov 2016 15:33:15 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -659,7 +659,8 @@ func! BlackHoleDeleteOperator(type)
     else
         execute 'normal! `<' . a:type . '`>"_d'
     endif
-endf
+endfunction
+
 " Map to <BS> because it's under worked in Vim.
 nnoremap <silent> <BS> <Esc>:set opfunc=BlackHoleDeleteOperator<CR>g@
 vnoremap <silent> <BS> :<C-u>call BlackHoleDeleteOperator(visualmode())<CR>

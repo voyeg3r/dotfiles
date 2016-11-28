@@ -46,6 +46,9 @@ gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 sudo pacman -S --force ttf-dejavu
 sudo pacman -Syu
 
+# GUI manager for systemd services, using GTK+3
+yaourt systemd-manager
+
 # gmail desktop client
 yaourt wmail
 

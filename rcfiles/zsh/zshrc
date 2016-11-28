@@ -231,6 +231,18 @@ zle accept-line
 zle -N _git-status
 bindkey '\eg' _git-status
 
+# define widget function
+function cursor-after-first-word {
+    zle up-history
+    zle beginning-of-line
+    zle forward-word
+    RBUFFER=" $RBUFFER"
+}
+# create widget from function
+zle -N cursor-after-first-word
+# bind widget to ESC-o
+bindkey '^[o' cursor-after-first-word
+
 # strg+x,s adds sudo to the line
 # Zsh Buch p.159 - http://zshbuch.org/
 run-with-sudo() { LBUFFER="sudo $LBUFFER" }
