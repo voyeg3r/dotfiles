@@ -318,7 +318,7 @@ makepkg -si
 } && installpopcorntime
 
 # anki
-yaourt -S aur/anki-git mplayer aur/python-pyaudio lame sox aur/audio-recorder
+yaourt -S  mplayer aur/python-pyaudio lame sox aur/audio-recorder
 
 # watch movies throug torrents
 yaourt -S aur/popcorntime-git

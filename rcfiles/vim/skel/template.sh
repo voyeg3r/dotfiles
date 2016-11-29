@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # =================================================
-# CREATED:          Sáb 29/Dez/2012 hs 10:25
-# LAST CHANGE:      2012 Dez 29 10:25:13
-# THIS SCRIPT AIMS: describe here
-# AUTHOR:           Sérgio Luiz Araújo Silva
-# SITE:             http://vivaotux.blogspot.com
-# TWITTER:          @voyeg3r
-# SKYPE:            sergioaraujosilva
+# Creation Date:    <+type creation's date+>
+# Last Change:      ter 29 nov 2016 12:25:15 BRT
+# this script aims: <+describe here+>
+# author:           sérgio luiz araújo silva
+# site:             http://vivaotux.blogspot.com
+# twitter:          @voyeg3r
+# skype:            sergioaraujosilva
 # =================================================
 
 
