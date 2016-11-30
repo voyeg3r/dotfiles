@@ -1,6 +1,7 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
 " Last Change: ter 29 nov 2016 14:14:26 BRT
+" Last Change: qua 30 nov 2016 09:38:06 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -9,8 +10,6 @@
 " Licence: Licença: Este arquivo é de domínio público
 " Garantia: O autor não se responsabiliza por eventuais danos
 " causados pelo uso deste arquivo.
-"
-"
 "
 "                 ( O O )
 "  +===========oOO==(_)==OOo==============+
@@ -35,6 +34,13 @@ augroup reload_vimrc
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 
+" Function SafeLineDelete()
+function! SafeLineDelete()
+    exec "normal \"_dd"
+endfunction
+imap <C-D> <Esc>:call SafeLineDelete()<CR>i
+
+
 " config for silversearcher ag
 " "let g:agprg="ag --column"
 " let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -44,6 +50,7 @@ filetype off
 call plug#begin('~/.dotfiles/rcfiles/vim/bundle')
 
 "Plug 'Raimondi/delimitMate'
+Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
 Plug 'terryma/vim-expand-region'
@@ -72,9 +79,9 @@ Plug 'vim-scripts/VisIncr'
 Plug 'wellle/targets.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'rhysd/clever-f.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'kien/ctrlp.vim'
 Plug 'skywind3000/asyncrun.vim'
+" manually installed
+"Plug '~/.vim/bundle/setcolors/setcolors.vim'
 
 "function! BuildYCM(info)
 "    if a:info.status == 'installed' || a:info.force
@@ -100,8 +107,23 @@ filetype plugin indent on    " required
 " Add plugins to &runtimepath
 call plug#end()
 
+" I don't know why I should do this, when i figure out...
+"source ~/.vim/bundle/setcolors/setcolors.vim
+
+" syntastic configuration
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+
 " mapping for incsearch plugin
-nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
+"nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
@@ -122,6 +144,336 @@ if v:version > 703 || v:version == 703 && has("patch541")
     set formatoptions+=j " Delete comment character when joining commented lines
 endif
 "
+
+" mapping for incsearch plugin
+
+" adding my personal snippets to ultisnippets
+set runtimepath+=~/.vim/snippets
+
+"let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+"let g:UltiSnipsSnippetsDir=expand('~/.dotfiles/rcfiles/vim/snippets/')
+"let g:UltiSnipsSnippetDirectories=['UltiSnips', 'snippets']
+
+" use this to quickly go to normal mode
+set timeoutlen=1000 ttimeoutlen=0
+
+" my id
+let g:snips_author = "Sergio Luiz Araujo Silva"
+let g:snips_site = "http://vivaotux.blogspot.com"
+let g:snips_twitter = "http://www.twitter.com/voyeg3r"
+
+let g:syntastic_python_python_exec = '/usr/bin/python'
+
+" this function and command allows you to go back to the
+" position you where before doing a global command
+command! -nargs=* G call s:G(<q-args>)
+function! s:G(args)
+    let saved_position = winsaveview()
+    exe 'g'.a:args
+    call winrestview(saved_position)
+endfunction
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+" configuratin to ag plugin
+let g:agprg="<custom-ag-path-goes-here> --column"
+
+" mappgings for indenting and keep visual selection
+nmap <leader>u <<
+nmap <leader>i >>
+vmap <leader>u <gv
+vmap <leader>i >gv
+
+" mapeamento pra inserir quebra de linha em modo normal
+map <leader><cr> a<cr><esc>
+
+map <S-F12> :exec '!'.getline('.')<cr>
+
+" I use terryma/vim-expand-region with following mapping:
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" http://vimcasts.org/episodes/creating-mappings-that-accept-a-count/
+" countable changes
+" nnoremap Q @='n.'<CR>
+nnoremap Q :normal n.<CR>
+
+" map to paste from clipboard with Ctrl-Alt-p
+nmap <C-M-P> "+p
+imap <C-M-P> <esc>"+pA
+
+" auto reload vimrc when editing it
+autocmd! bufwritepost .vimrc source ~/.vimrc
+
+" configurações so plugin ultisnips
+" Ctrl-j next snip -- Ctrl-k previous
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsExpandTrigger="<C-Space>"
+let g:UltiSnipsListSnippets="<c-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+syntax on
+set omnifunc=syntaxcomplete#Complete
+set completeopt+=longest
+set cot-=preview "disable doc preview in omnicomplete
+
+" para que o shell exiba as variáveis corretamente
+" http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=552108
+let g:is_posix = 1
+
+" http://www.hazaah.com/programming/textmate-and-vim/
+" :find file
+set path+=**
+
+" omini completion for python
+" autocmd FileType python set omnifunc=pythoncomplete#Complete
+" autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+" autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+" autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+" autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+" autocmd FileType c set omnifunc=ccomplete#Complete
+
+autocmd fileType vim set keywordprg=:help
+
+set fileformats=unix,mac,dos
+" remember some stuff after quiting vim:
+" marks, registers, searches, buffer list
+"set viminfo='20,<50,s10,h,%
+set viminfo='10,\"100,:20,%,n~/.viminfo
+set history=1000
+setlocal complete=.,w,k,b,u,t,i
+"set clipboard=unnamed
+"set clipboard=unnamedplus
+set complete-=k complete+=kspell
+set spelllang=pt,en
+set nospell
+"highlight clear SpellBad
+"highlight SpellBad term=reverse cterm=underline
+set spellsuggest=8
+"map <special> <s-F7> <esc>:set spell!<cr>
+"set grepprg=grin
+"set grepprg=grep\ -r\ --exclude=*.svn
+set grepformat=%f:%l:%m
+"set grepprg=grep\ -rinsE
+" como usar o grep dentro do vim
+" :vim /\cbash/gj ~/.vim/**/*.wiki
+" :cn ......... abre o próximo
+" :cp ......... abre o prévio
+map <S-F2> :copen<CR>
+
+" fold text object
+" http://vim.wikia.com/wiki/Creating_new_text_objects
+vnoremap af :<C-U>silent! normal! [zV]z<CR>
+omap af :normal Vaf<CR>
+set fdm=marker
+
+map <special><F3> :NERDTreeToggle<cr>
+
+" To set the toolbars off (icons on top of the screen)
+set mouse=a
+
+set background=dark
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+
+syntax enable
+colorscheme badwolf
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
+if ! has("gui_running")
+  set t_Co=256
+  colo wombat
+  colo badwolf
+endif
+
+" turn off the toolbar and menubar
+if has('gui_running')
+ set anti gfn=Ubuntu\ Mono\ 13,Monaco\ 10,Bpmono\ 11,\ Envy\ Code\ R\ 10
+end
+
+" correção do plugin surround para a letra 's'
+xmap <Leader>s <Plug>Vsurround
+
+" http://stackoverflow.com/questions/4312664/is-there-a-vim-command-to-select-pasted-text
+" http://vimcasts.org/episodes/bubbling-text/
+" o mapeamento abaixo permite reselecionar texto recem colado ou selecionado
+nmap gV `[v`]
+
+" select last paste in visual mode
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+nmap <special> <F9> <esc>:w<cr>
+inoremap <special> <F9> <C-O>:w<cr>
+
+" este mapeamente permite criar cloze deletions para o anki de forma simplificada
+vmap \c "adi{{c1::<c-r>a}}<esc>
+
+cab W  w
+cab Wq wq
+cab Q  q
+
+
+" remove linhas duplicadas
+" remove duplicated lines
+" see Preserve function definition
+
+fun! DelBlank()
+    "call Preserve("g/^\\n\\{2,}/d")
+    call Preserve("g/^$/,/./-j")
+endfun
+map <special> <leader>d :silent! call DelBlank()<cr>
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap _= :call Preserve("normal gg=G")<CR>
+
+" Eesta função guarda o local do cursor em 'save_cursor' e como
+" executa uma substituição armazena antes o ultimo
+" registro de buscas em 'old_query'
+fun! CleanExtraSpaces()
+    call Preserve("%s/\\s\\+$//e")
+endfun
+com! Cls :call Preserve("%s/\\s\\+$//e")<CR>
+
+if has("autocmd")
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh :call CleanExtraSpaces()
+endif
+
+" Highlight redundant whitespace and tabs.
+" This has the advantage of not highlighting each space you type at
+" the end of the line, only when you open a file or leave insert
+" mode. Very neat."
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+" Create a red/red scheme
+highlight Problem ctermbg=red guibg=red
+" Highlight leading tabs - tab misturado com espaço
+match Problem /^\s\*\t\+\s\*/
+
+" this function gets last 20 cmds to new buffer
+fun! s:RedirHistoryCommands()
+  set paste
+  redir @r
+  history : -20,
+  redir End
+  new
+  put r
+  set nopaste
+endfun
+command! -nargs=0 GetHistory call s:RedirHistoryCommands()
+" q:22kyG ctrl-w-q p
+
+" Utility function that save last search and cursor position
+" http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
+" video from vimcasts.org: http://vimcasts.org/episodes/tidying-whitespace
+function! Preserve(command)
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    " Do the business
+    execute a:command
+    " Restore previous search history and cursor position
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfunction
+
+fun! Setutf8()
+  " source: http://stackoverflow.com/questions/9310274/how-can-i-use-vim-to-convert-my-file-to-utf8
+  :set fileencoding=utf8
+  :w!
+endfunction
+
+fun! Keeponlymp3()
+" this function keeps only mp3 urls in current text
+  :%s/mp3/mp3\r/g
+ :%s/.*\(http.*.mp3\).*/\1/g
+ :g!/\.mp3/d
+endfun
+com! KeepMp3 call Preserve(Keeponlymp3())
+
+fun! Keeponlypdf()
+" this function keeps only pdf urls in current text
+ :%s/.*\(http.*.pdf\).*/\1/g
+ :g!/\.pdf/d
+endfun
+com! KeepPdf call Preserve(Keeponlymp3())
+
+" dos2unix ^M
+fun! Dos2unixFunction()
+    call Preserve("%s/$//g")
+    set ff=unix
+    set encoding=utf-8
+    set fileencoding=utf-8
+endfun
+com! Dos2Unix call Dos2unixFunction()
+
+" this function does more tha camel case
+" it makes some changes needed to my flashcards
+fun! CreateDeck()
+  normal jyyp
+  .s, *([^)]*),,ge
+  .s,.*,\L&,ge
+  ".s/ \([a-z]\)/\u\1/ge
+  ".s/^./\U&/ge
+  .s/.$/.mp3/g
+  .s/.*/[sound:&]/ge
+  .s/[,' ]//ge
+  .s/-//ge
+  normal kk
+  .s,$,;,g
+  normal JJ
+  .s,\s\+\[,[,ge
+  .s,[?!],,ge
+  .s,\.\.,.,ge
+  normal jj
+endfun
+com! CamelCase call Preserve(CreateDeck())
+nmap <silent> <c-k> :keepjumps call CreateDeck()<cr>
+
+" marca como erro duas palavras identicas duplicadas
+syntax match DoubleWordErr "\c\<\(\a\+\)\_s\+\1\>"
+hi def link DoubleWordErr Error
+
+syntax keyword WordError teh
+
 " Esta função testa as 5 primeiras linhas do arquivo
 " se nelas não houver "Last Change" ele passa batido
 " ou seja não insere o cabeçalho
@@ -366,6 +718,12 @@ vnoremap <S-F11> <ESC>:set hls!<cr> <bar> gv
 " source: http://ddrscott.github.io/blog/2016/yank-without-jank/
 vnoremap <expr>y "my\"" . v:register . "y`y"
 nmap <silent> <F11> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
+
+" map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
+" togle between number nonumber and relativenumber
+" source: http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key
+" source: http://superuser.com/questions/339593/vim-toggle-number-with-relativenumber
+nmap silent> <F11> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 
 map <BS> X
 
