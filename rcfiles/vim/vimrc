@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 30 nov 2016 14:18:11 BRT
+" Last Change: qua 30 nov 2016 15:25:12 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -31,6 +31,9 @@ if has('vim_starting')
   set nocompatible               " Be iMproved
 endif
 
+" http://www.hazaah.com/programming/textmate-and-vim/
+" :find file
+set path+=**
 
 map <S-F12> :exec '!'.getline('.')<cr>
 
@@ -69,11 +72,11 @@ let g:vim_bootstrap_langs = "html,perl,python"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 
 " Required:
-call plug#begin(expand('~/.dotfiles/vim/bundle'))
+call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
-"*****************************************************************************
+"***************************************************************************
 "" Plug install packages
-"*****************************************************************************
+"***************************************************************************
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -85,18 +88,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
-Plug 'majutsushi/tagbar'
-Plug 'neomake/neomake'
-Plug 'Yggdroot/indentLine'
-Plug 'avelino/vim-bootstrap-updater'
 Plug 'rking/ag.vim'
-Plug 'rstacruz/sparkup'
 Plug 'eparreno/vim-l9'
 Plug 'terryma/vim-multiple-cursors'
 
@@ -128,9 +124,9 @@ Plug 'rhysd/clever-f.vim'
 "" Color
 Plug 'tomasr/molokai'
 
-"*****************************************************************************
+"***************************************************************************
 "" Custom bundles
-"*****************************************************************************
+"***************************************************************************
 
 " html
 "" HTML Bundle
@@ -152,8 +148,8 @@ Plug 'c9s/perlomni.vim'
 Plug 'davidhalter/jedi-vim'
 
 
-"*****************************************************************************
-"*****************************************************************************
+"***************************************************************************
+"***************************************************************************
 
 "" Include user's extra bundle
 if filereadable(expand("~/.config/nvimrc.local.bundles"))
@@ -169,17 +165,15 @@ filetype plugin indent on
 let g:vimwiki_list = [{'path': '~/.dotfiles/rcfiles/vim/wiki', 'index': 'main'}]
 
 
-"*****************************************************************************
+"***************************************************************************
 "" Basic Setup
-"*****************************************************************************"
+"***************************************************************************
 "" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 set bomb
 set binary
-
-
 
 "" Fix backspace indent
 set backspace=indent,eol,start
