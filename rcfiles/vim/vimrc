@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 30 nov 2016 15:25:12 BRT
+" Last Change: qui 01 dez 2016 07:07:00 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -222,6 +222,9 @@ if !exists('g:not_finish_vimplug')
 endif
 
 set mousemodel=popup
+
+" enable mouse 
+set mouse=a
 set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
@@ -339,6 +342,32 @@ if !exists('*s:setupWrapping')
   endfunction
 endif
 
+" ****************************************************************************
+" Função para comentar vários arquivos de acordo com o tipo
+" URL: http://vim.wikia.com/wiki/Comment_Lines_according_to_a_given_filetype
+" ****************************************************************************
+fu! CommentLines()
+    "let Comment="#" " shell, tcl, php, perl
+    exe ":s@^@".g:Comment."@g"
+    exe ":s@$@".g:EndComment."@g"
+endfu
+" mapeando a função no modo visual com a combinação 'co'
+vmap co :call CommentLines()<CR>a
+" definindo os comentários por tipo de arquivo (a primeira linha é um padrão)
+au BufRead,BufNewFile * let Comment="# " | let EndComment=""
+au BufRead,BufNewFile *.inc,*.ihtml,*.html,*.tpl,*.class 
+            \ let Comment="<!-- " | let EndComment=" -->"
+au BufRead,BufNewFile *.sh,*.pl,*.tcl let Comment="# " | let EndComment=""
+au BufRead,BufNewFile *.js set | let Comment="// " | let EndComment=""
+au BufRead,BufNewFile *.cc,*.php,*.cxx,*.cpp 
+            \ let Comment="// " | let EndComment=""
+au BufRead,BufNewFile *.c,*.h let Comment="/* " | let EndComment=" */"
+au BufRead,BufNewFile *.f90,*.f95 let Comment="! " | let EndComment=""
+au BufRead,BufNewFile *.f let Comment="C " | let EndComment=""
+au BufRead,BufNewFile *.tex,*.bib let Comment="% " | let EndComment=""
+au BufRead,BufNewFile *.vim,.vimrc let Comment="\" " | let EndComment="" 
+"******************************************************************************
+
 "******************************************************************************
 " this function gets last 20 cmds to new buffer
 "******************************************************************************
@@ -396,7 +425,9 @@ function! LastModified()
         call setreg('/', old_query)
     endif
 endfun
-
+autocmd BufWritePre * :call Preserve(LastModified())
+map <silent> <F9> <esc>:call Preserve(LastModified())<cr>
+"*****************************************************************************
 
 function! JumpToNextPlaceholder()
     let old_query = getreg('/')
@@ -438,8 +469,6 @@ if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh :call CleanExtraSpaces()
 endif
 
-autocmd BufWritePre * :call Preserve(LastModified())
-map <silent> <F9> <esc>:call Preserve(LastModified())<cr>
 
 "*****************************************************************************
 " Utility function that save last search and cursor position
@@ -669,9 +698,16 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 
-"" Vmap for maintain Visual Mode after shifting > and <
-vmap < <gv
-vmap > >gv
+" ----------------------------------------------------------------------------
+" Identação de textos e códigos com o TAB no modo visual
+" URL: http://gustavodutra.com/post/72/
+"               \ dicas-de-movimentacao-e-identacao-no-gvim/
+" ----------------------------------------------------------------------------
+vnoremap < <gv
+vnoremap > >gv
+vmap  <TAB> >
+vmap  <S-TAB> <
+imap <S-TAB> <ESC><<i
 
 "" Move visual block
 vnoremap J :m '>+1<CR>gv=gv
