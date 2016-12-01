@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 01 dez 2016 07:41:03 BRT
+" Last Change: qui 01 dez 2016 17:17:54 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -34,6 +34,7 @@ endif
 " http://www.hazaah.com/programming/textmate-and-vim/
 " :find file
 set path+=**
+set rtp+=~/.fzf
 
 map <S-F12> :exec '!'.getline('.')<cr>
 
@@ -68,6 +69,8 @@ let g:fzf_action = {
       \ }
 nnoremap <c-p> :FZF<cr>
 
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+
 let g:vim_bootstrap_langs = "html,perl,python"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 
@@ -77,6 +80,14 @@ call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 "***************************************************************************
 "" Plug install packages
 "***************************************************************************
+Plug 'kana/vim-textobj-user'
+Plug 'lucapette/vim-textobj-underscore' | Plug 'kana/vim-textobj-user'
+Plug 'jceb/vim-textobj-uri'             | Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'          | Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'            | Plug 'kana/vim-textobj-user'
+Plug 'beloglazov/vim-textobj-quotes'    | Plug 'kana/vim-textobj-user'
+" Plugin to move lines and selections up and down
+Plug 'matze/vim-move'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -157,6 +168,15 @@ if filereadable(expand("~/.config/nvimrc.local.bundles"))
 endif
 
 call plug#end()
+
+" text-object uri open
+nmap gx mxviugx<Esc>`x
+
+" Use g:move_key_modifier set a custom modifier for key bindings. For example,
+"which will create the following key bindings:
+"<C-k>   Move current line/selections up
+"<C-j>   Move current line/selections down
+let g:move_key_modifier = 'C'
 
 " Required:
 filetype plugin indent on
@@ -559,11 +579,11 @@ nmap <silent> <F11> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 
 " Buble single lines - mover linhas
 " http://vimcasts.org/episodes/bubbling-text/
-nmap <special> <c-up> ddkP
-nmap <special> <c-down> ddp
+"nmap <special> <c-up> ddkP
+"nmap <special> <c-down> ddp
 "buble multiple lines
-xmap <c-up> xkP`[V`]
-xmap <c-down> xp`[V`]
+"xmap <c-up> xkP`[V`]
+"xmap <c-down> xp`[V`]
 
 "*****************************************************************************
 "" Autocmd Rules
@@ -680,6 +700,18 @@ noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
 
+" use leader to interact with the system clipboard
+nnoremap <Leader>p "*]p
+nnoremap <Leader>P "*]P
+
+nnoremap <Leader>y :y*<cr>
+nnoremap <Leader>c ^"*c$
+nnoremap <Leader>d ^"*d$
+
+vnoremap <Leader>y "*y
+vnoremap <Leader>c "*c
+vnoremap <Leader>d "*d
+
 if has('macunix')
   " pbcopy for OSX copy/paste
   vmap <C-x> :!pbcopy<CR>
@@ -718,6 +750,11 @@ imap <S-TAB> <ESC><<i
 "" Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+
+" Make the dot command work as expected in visual mode (via
+" https://www.reddit.com/r/vim/comments/3y2mgt/do_you_have_any_minor_customizationsmappings_that/cya0x04)
+vnoremap . :norm.<CR>
 
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>

@@ -1,4 +1,4 @@
 # arquivos python compilados
 *.pyc
-.zcompdump
 .zhistory
+.zcompdump

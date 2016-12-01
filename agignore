@@ -1,4 +1,7 @@
+/docs/Anki
 *.adobe*
+*.pdf
+*.mp3
 *.avi
 *.directory
 *.exe
@@ -6,9 +9,7 @@
 *.iso
 *.jar
 *.jpg
-*.mp3
 *.mp4
-*.pdf
 *.png
 *.pyc
 *.so

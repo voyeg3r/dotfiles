@@ -306,6 +306,7 @@ export MOZ_DISABLE_PANGO='1'
 export OOO_FORCE_DESKTOP=gnome # For OpenOffice to look more gtk-friendly.
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 bindkey '^ ' autosuggest-accept
-
