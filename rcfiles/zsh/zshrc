@@ -231,17 +231,17 @@ zle accept-line
 zle -N _git-status
 bindkey '\eg' _git-status
 
-# define widget function
-function cursor-after-first-word {
-    zle up-history
-    zle beginning-of-line
-    zle forward-word
-    RBUFFER=" $RBUFFER"
-}
+# # define widget function
+# function cursor-after-first-word {
+#     zle up-history
+#     zle beginning-of-line
+#     zle forward-word
+#     RBUFFER=" $RBUFFER"
+# }
 # create widget from function
-zle -N cursor-after-first-word
+#zle -N cursor-after-first-word
 # bind widget to ESC-o
-bindkey '^[o' cursor-after-first-word
+#bindkey '^[o' cursor-after-first-word
 
 # strg+x,s adds sudo to the line
 # Zsh Buch p.159 - http://zshbuch.org/
@@ -265,8 +265,8 @@ zle -N globalias
 
 #bindkey ' ' globalias               # expande aliases globais
 #bindkey '^X ' magic-space           # control-space to bypass completion
-bindkey -M isearch " " magic-space  # normal space during searches
-bindkey -s '\eu' 'cd ..^j' # alt-u up dir
+#bindkey -M isearch " " magic-space  # normal space during searches
+#bindkey -s '\eu' 'cd ..^j' # alt-u up dir
 
 # source: http://stackoverflow.com/questions/171563/whats-in-your-zshrc
 # I often build elaborate commands step by step: I run a command,
@@ -293,6 +293,8 @@ zle -N bracketed-paste bracketed-paste-magic
 # https://github.com/zsh-users/zsh-autosuggestions
 # this key binding must be here at the end because of something I dont know yet
 bindkey '^ ' autosuggest-accept
+source ~/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 
 bindkey '^X^A' fasd-complete
 bindkey '^X^F' fasd-complete-f
@@ -305,3 +307,5 @@ export OOO_FORCE_DESKTOP=gnome # For OpenOffice to look more gtk-friendly.
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+bindkey '^ ' autosuggest-accept
+

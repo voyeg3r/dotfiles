@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 01 dez 2016 07:07:00 BRT
+" Last Change: qui 01 dez 2016 07:41:03 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -427,8 +427,9 @@ function! LastModified()
 endfun
 autocmd BufWritePre * :call Preserve(LastModified())
 map <silent> <F9> <esc>:call Preserve(LastModified())<cr>
-"*****************************************************************************
+"***************************************************************************
 
+"***************************************************************************
 function! JumpToNextPlaceholder()
     let old_query = getreg('/')
     echo search("<+.\\++>")
@@ -439,7 +440,12 @@ autocmd BufNewFile * :call LoadFileTemplate()
 nnoremap <special> <leader>j :keepjumps call JumpToNextPlaceholder()<CR>a
 inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a
 
+
+"***************************************************************************
+" Esta função faz o zero funcionar como zero e como ^ em modo normal ao
+" mesmo tempo
 " source: http://ddrscott.github.io/blog/2016/vim-toggle-movement/
+"***************************************************************************
 function! ToggleHomeZero()
     let pos = getpos('.')
     execute "normal! ^"

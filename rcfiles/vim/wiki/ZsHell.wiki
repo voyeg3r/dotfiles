@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: qui 20 out 2016 11:25:46 BRT
+Last Change: qui 01 dez 2016 10:52:24 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -13,6 +13,43 @@ http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
 {{{ keep this line to see literal text
 
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+== zim zsh framework ==
+
+#/usr/bin/env zsh
+# zim framework
+# https://github.com/Eriner/zim
+
+# define here where are your dotfiles
+ZDOTDIR=~/.dotfiles/rcfiles/zsh
+
+git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR}/zim
+
+setopt extended_glob
+for template_file ( ${ZDOTDIR}/zim/templates/* ); do
+	ln -sfvn ${template_file} ~/.${template_file:t}
+done
+
+source ${ZDOTDIR:-${HOME}}/.zlogin
+# end zim framework setup
+
+==defining ZDOTDIR ==
+This var is used in many zsh frameworks during git clone
+
+    ZDOTDIR=~/.dotfiles/rcfiles/zsh
+
+==removing only certain dirs ==
+
+emoving all directories except some:
+
+    rm -rf ^(vim-colors-solarized|vim-airline)
+
+== Check the Existence of a Command in Bash and Zsh
+source: https://www.topbug.net/blog/2016/10/11/speed-test-check-the-existence-of-a-command-in-bash-and-zsh/
+
+ the fastest way is this:
+
+     (( $+commands[foobar] ))
 
 == avoiding globbing error while compying files==
 
