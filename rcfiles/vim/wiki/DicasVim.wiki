@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: qua 30 nov 2016 14:25:22 BRT
+Last Change: sex 02 dez 2016 11:00:50 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -92,6 +92,28 @@ Finds abcdef or abc followed by any characters then def.
 
     Para colocar o texto abaixo entre parênteses
 
+==fixing subtitles with vim==
+
+  My problem: subtitles whithout space
+
+  like this;
+
+
+  133
+  00:06:36,398 --> 00:06:37,398
+  Com licença.
+  134
+  00:06:37,910 --> 00:06:39,538
+  Me explique o
+  sistema organizacional
+
+  The solution
+
+    \v([^0-9]$\n)([0-9]+)
+    :%s//\1\r\2/g
+
+   References: http://vim.wikia.com/wiki/Search_across_multiple_lines
+
             one two
             three
 
@@ -133,7 +155,7 @@ Finds abcdef or abc followed by any characters then def.
 
 ==jumping to edit positions and insert position==
 
-   gi ................. start insert mode at the latest inert position
+   gi ................. start insert mode at the latest insert position
    g; ................. go to the position of the older edit positon
    g, ................. go to the previous change position
 
@@ -145,14 +167,12 @@ Finds abcdef or abc followed by any characters then def.
 
    Registro de expressões
 
-    A<c-r>=         "inserts result at the cursor point
-
     21 * 12  =
     12 * 12  =
     156 / 12 =
     35 * 19  =
 
-    nnoremap <leader>q 0yt=A<C-r>=<C-r>"<CR><Esc>
+    nnoremap <leader>q 0yt= A<C-r>=<C-r>"<CR><Esc>
 
     Para o trecho acima usamos
 
@@ -411,7 +431,7 @@ installvim () {
 
   repetir ultima substituição  &
 
-=simplest way to show number of lines=
+=simplest way to show current colorschem=
 
   :colo
 
@@ -607,7 +627,7 @@ http://stackoverflow.com/questions/6303882/vim-append-to-clipboard
 =como colar texto posicionando o cursor depois do texto?=
 
    Em modo insert <Ctrl>r +
-   em modo norma "+gp
+   em modo normal "+gp
 
 =como fechar o arquivo sem fechar o vim?=
 
@@ -683,6 +703,16 @@ FUNÇÃO PARA DECREMENTAR A SEQUÊNCIA ACIMA
         endfu
 
     :%s/.star_10/\=".star_" . Decr()/
+
+
+   -------------------------------------
+   Outro modo de fazer é rodar o comado:
+
+   '<,'>g/star/ normal<c-v><c-a>
+
+
+    Lembrando que o Control-v é para inserir o Control-x
+    que decrementa em modo normal
 
 =como selecionar texto recém colado=
 {{{

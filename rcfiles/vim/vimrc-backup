@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 30 nov 2016 15:18:49 BRT
+" Last Change: sex 02 dez 2016 11:22:23 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -727,7 +727,7 @@ nmap <silent> <F11> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 " togle between number nonumber and relativenumber
 " source: http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key
 " source: http://superuser.com/questions/339593/vim-toggle-number-with-relativenumber
-nmap silent> <F11> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
+nmap silent> <F10> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 
 map <BS> X
 

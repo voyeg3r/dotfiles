@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 01 dez 2016 17:17:54 BRT
+" Last Change: sex 02 dez 2016 11:22:30 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -42,6 +42,21 @@ map <S-F12> :exec '!'.getline('.')<cr>
 " <C-p> or <C-t> to search files
 nnoremap <silent> <C-t> :FZF -m<cr>
 nnoremap <silent> <C-p> :FZF -m<cr>
+
+" fold text object
+" http://vim.wikia.com/wiki/Creating_new_text_objects
+vnoremap af :<C-U>silent! normal! [zV]z<CR>
+omap af :normal Vaf<CR>
+set fdm=marker
+
+" http://stackoverflow.com/questions/4312664/is-there-a-vim-command-to-select-pasted-text
+" http://vimcasts.org/episodes/bubbling-text/
+" o mapeamento abaixo permite reselecionar texto recem colado ou selecionado
+nmap gV `[v`]
+
+cab W  w
+cab Wq wq
+cab Q  q
 
 " <M-p> for open buffers
 nnoremap <silent> <M-p> :Buffers<cr>
@@ -111,15 +126,10 @@ let g:make = 'gmake'
 if system('uname -o') =~ '^GNU/'
         let g:make = 'make'
 endif
-Plug 'Shougo/vimproc.vim', {'do': g:make}
 
 "" Vim-Session
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-
-if v:version >= 703
-  Plug 'Shougo/vimshell.vim'
-endif
 
 if v:version >= 704
   "" Snippets
@@ -153,14 +163,9 @@ Plug 'mattn/emmet-vim'
 Plug 'vim-perl/vim-perl'
 Plug 'c9s/perlomni.vim'
 
-
 " python
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
-
-
-"***************************************************************************
-"***************************************************************************
 
 "" Include user's extra bundle
 if filereadable(expand("~/.config/nvimrc.local.bundles"))
@@ -334,6 +339,95 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
+" alterna entre numeração não numeração ou relative number
+nmap silent> <F10> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
+
+" desativar o hightlight search
+nnoremap <leader>h :set hls!<cr>
+
+map <S-F12> :exec '!'.getline('.')<cr>
+
+" when searching next patter put it in the middle of screen
+nnoremap n nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+augroup sh
+    au BufNewFile *.sh 0r ~/.vim/skel/template.sh
+    au BufNewFile *.sh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
+    "au BufWritePost *.sh :silent !chmod a+x <afile>
+augroup end
+
+augroup zsh "{{{
+    au BufNewFile *.zsh 0r ~/.vim/skel/template.zsh
+    au BufNewFile *.zsh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
+    au BufWritePost *.zsh :silent !chmod a+x <afile>
+augroup end "}}}
+
+"" autocomandos para python"{{{
+augroup python
+    au FileType python set keywordprg=pydoc
+    au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+    au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
+    au! BufWritePre *.py,*.js :call <SID>CleanExtraSpacesFunction()
+    au! BufNewFile *.py 0r ~/.vim/skel/template.py
+    au BufNewFile *.py exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
+    au! BufWritePost *.py :silent !chmod a+x <afile>
+    autocmd FileType python set textwidth=79
+    autocmd FileType python filetype indent on
+    let python_highlight_all=1
+    let python_highlight_builtins=0
+    let python_highlight_builtins=1
+    let python_highlight_exceptions=1
+    let python_highlight_numbers=1
+    let python_highlight_space_errors=1
+augroup end"}}}
+
+augroup html"{{{
+    " au! <--> Remove all html autocommands
+    au!
+    au BufNewFile,BufRead *.html,*.shtml,*.htm set ft=html
+    "au BufNewFile,BufRead,BufEnter  *.html,*.shtml,*.htm so ~/.vim/skel/skel.html
+    au BufNewFile *.html 0r ~/.vim/skel/skel.html | let IndentStyle = "html"
+    "au BufNewFile *.html,*.shtml,*.htm /body/+
+    au BufNewFile,BufRead *.html,*.shtml,*.htm set noautoindent
+    au BufNewFile,BufRead *.html,*.shtml,*.htm set nolist
+    au BufNewFile,BufRead *.html,*.shtml,*.htm call LastModified()
+    " needed one line with 'Created:' in firsts 5 lines
+    "au Bufnewfile,BufRead *.html,*.shtml,*.htm 1,5s/\s*Created:\s*\zs.*/\="" . strftime("%Y %b %d %X")/ge
+    au BufNewFile,BufRead *.html,*.shtml,*.htm exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
+augroup end"}}}
+
+augroup css"{{{
+    au Bufnewfile,BufRead *.css set ft=css
+    au BufNewFile *.css 0r ~/.vim/skel/template.css
+    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+    "au BufNewFile *.css exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
+    au BufNewFile *.css exe "1," . 10 . "s/Creation Date:.*/Creation Date: " .strftime("%c")
+augroup end"}}}
+
+augroup tex"{{{
+    au Bufnewfile,BufRead *.tex set ft=tex
+    au BufNewFile *.tex 0r ~/.vim/skel/template.tex
+    au BufNewFile *.tex exe "1," . 10 . "s/Creation Date:.*/Creation Date: " .strftime("%c")
+    vmap e <tab>em<tab>
+    vmap ' <tab>'<tab>
+    iab latex \LaTeX\
+    normal gg
+augroup end"}}}
+
+if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype *
+                \  if &omnifunc == "" |
+                \  setlocal omnifunc=syntaxcomplete#Complete |
+                \ endif
+endif
+
+" select last paste in visual mode
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+
 " grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
 let Grep_Default_Options = '-IR'
@@ -392,13 +486,13 @@ au BufRead,BufNewFile *.vim,.vimrc let Comment="\" " | let EndComment=""
 " this function gets last 20 cmds to new buffer
 "******************************************************************************
 fun! s:RedirHistoryCommands()
-  set paste
-  redir @r
-  history : -20,
-  redir End
-  new
-  put r
-  set nopaste
+    set paste
+    redir @r
+    history : -20,
+    redir End
+    new
+    put r
+    set nopaste
 endfun
 command! -nargs=0 GetHistory call s:RedirHistoryCommands()
 
@@ -551,6 +645,8 @@ nnoremap p p=`]
 nnoremap <c-p> p
 
 nnoremap <F5> :GundoToggle<CR>
+
+" toggle hightli
 
 " move vertically by visual line
 nnoremap j gj
