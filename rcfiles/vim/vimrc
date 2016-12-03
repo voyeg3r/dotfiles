@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 02 dez 2016 11:22:30 BRT
+" Last Change: sáb 03 dez 2016 08:32:33 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -19,6 +19,11 @@
 "  |   /(_)\  Linux User #423493          |
 "  |   ^ ^    voyeg3r   gmail.com        |
 "  +======================================+
+"
+"
+if executable('zsh')
+    set shell=zsh\ -l
+endif
 
 " Plug bootstrap - Install Plug if it is not already installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -27,9 +32,35 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
+augroup vimsave
+        autocmd! BufWritePost .vimrc call VimReloadFunction()
+augroup END
+
+if !exists("*VimReloadFunction")
+    fun! VimReloadFunction()
+        let save_cursor = getpos(".")
+        let old_query = getreg('/')
+        source $MYVIMRC
+        call setpos('.', save_cursor)
+        call setreg('/', old_query)
+        execute "normal! zz"
+    endfu
+endif
+com! ReloadVim call VimReloadFunction()
+
 if has('vim_starting')
   set nocompatible               " Be iMproved
 endif
+
+" Cursorline
+" Only show cursorline in the current window and in normal mode.
+"augroup cline
+"    au!
+"    au WinLeave * set nocursorline
+"    au WinEnter * set cursorline
+"    au InsertEnter * set nocursorline
+"    au InsertLeave * set cursorline
+"augroup END
 
 " http://www.hazaah.com/programming/textmate-and-vim/
 " :find file
@@ -37,6 +68,9 @@ set path+=**
 set rtp+=~/.fzf
 
 map <S-F12> :exec '!'.getline('.')<cr>
+
+" this allows you to save files easier
+nnoremap ; :
 
 " FZF
 " <C-p> or <C-t> to search files
@@ -224,9 +258,9 @@ set noswapfile
 
 set fileformats=unix,dos,mac
 set showcmd
-set shell=/bin/sh
 
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
+
 
 " session management
 let g:session_directory = "~/.config/nvim/session"
@@ -689,8 +723,6 @@ augroup vimrc-sync-fromstart
   autocmd!
   autocmd BufEnter * :syntax sync fromstart
 augroup END
-
-autocmd! BufWritePost .vimrc source %
 
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
