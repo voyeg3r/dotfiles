@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 03 dez 2016 08:32:33 BRT
+" Last Change: sáb 03 dez 2016 09:01:53 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -25,19 +25,23 @@ if executable('zsh')
     set shell=zsh\ -l
 endif
 
-" Plug bootstrap - Install Plug if it is not already installed
+" Plug bootstrap - Install Plug if it is not already installed"{{{
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.dotfiles/rcfiles/vim/autoload/plug.vim --create-dirs
                 \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
+endif"}}}
 
+" reload vim automatically and preserve cursor position"{{{
 augroup vimsave
         autocmd! BufWritePost .vimrc call VimReloadFunction()
 augroup END
 
 if !exists("*VimReloadFunction")
     fun! VimReloadFunction()
+        " the idea for this function happened when I realized
+        " that every time I reload vim it put the cursor at the
+        " begginingbeggining of the file
         let save_cursor = getpos(".")
         let old_query = getreg('/')
         source $MYVIMRC
@@ -46,7 +50,7 @@ if !exists("*VimReloadFunction")
         execute "normal! zz"
     endfu
 endif
-com! ReloadVim call VimReloadFunction()
+com! ReloadVim call VimReloadFunction()"}}}
 
 if has('vim_starting')
   set nocompatible               " Be iMproved
@@ -67,6 +71,7 @@ endif
 set path+=**
 set rtp+=~/.fzf
 
+" execute current line on shell
 map <S-F12> :exec '!'.getline('.')<cr>
 
 " this allows you to save files easier
@@ -123,12 +128,13 @@ let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 let g:vim_bootstrap_langs = "html,perl,python"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
 
-" Required:
+" Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
 "***************************************************************************
 "" Plug install packages
 "***************************************************************************
+Plug 'sjl/gundo.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'lucapette/vim-textobj-underscore' | Plug 'kana/vim-textobj-user'
 Plug 'jceb/vim-textobj-uri'             | Plug 'kana/vim-textobj-user'
@@ -381,18 +387,63 @@ nnoremap <leader>h :set hls!<cr>
 
 map <S-F12> :exec '!'.getline('.')<cr>
 
-" when searching next patter put it in the middle of screen
-nnoremap n nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
+"  when searching next patter put it in the middle of screen
+"nnoremap n nzz
+"nmap * *zz
+"nmap # #zz
+"nmap g* g*zz
+"nmap g# g#zz
 
-augroup sh
+" Pulse Line Cursor ---------------------------------------------------------- {{{
+
+function! PulseCursorLine()
+    let current_window = winnr()
+
+    windo set nocursorline
+    execute current_window . 'wincmd w'
+
+    setlocal cursorline
+
+    redir => old_hi
+    silent execute 'hi CursorLine'
+    redir END
+    let old_hi = split(old_hi, '\n')[0]
+    let old_hi = substitute(old_hi, 'xxx', '', '')
+
+    hi CursorLine guibg=#3a3a3a
+    redraw
+    sleep 20m
+
+    hi CursorLine guibg=#4a4a4a
+    redraw
+    sleep 30m
+
+    hi CursorLine guibg=#3a3a3a
+    redraw
+    sleep 30m
+
+    hi CursorLine guibg=#2a2a2a
+    redraw
+    sleep 20m
+
+    execute 'hi ' . old_hi
+
+    windo set cursorline
+    execute current_window . 'wincmd w'
+endfunction
+
+" Keep search matches in the middle of the window and pulse the line when moving
+" to them.
+nnoremap n n:call PulseCursorLine()<cr>
+nnoremap N N:call PulseCursorLine()<cr>
+
+" }}}
+
+augroup sh"{{{
     au BufNewFile *.sh 0r ~/.vim/skel/template.sh
     au BufNewFile *.sh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
     "au BufWritePost *.sh :silent !chmod a+x <afile>
-augroup end
+augroup end"}}}
 
 augroup zsh "{{{
     au BufNewFile *.zsh 0r ~/.vim/skel/template.zsh
@@ -604,7 +655,7 @@ endfunction
 nnoremap 0 :call ToggleHomeZero()<CR>
 
 " The function must be used in a piece of subtitles
-" in order to cleyan it, join the lines and put the results
+" in order to clean it, join the lines and put the results
 " on clipboard to be pasted on anki
 fun! CleanSubtitles()
     let old_query = getreg('/')
@@ -706,6 +757,9 @@ vnoremap <S-F11> <ESC>:set hls!<cr> <bar> gv
 " source: http://ddrscott.github.io/blog/2016/yank-without-jank/
 vnoremap <expr>y "my\"" . v:register . "y`y"
 nmap <silent> <F11> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
+
+" make p in Visual mode replace the selected text with the yank register
+vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 " Buble single lines - mover linhas
 " http://vimcasts.org/episodes/bubbling-text/
@@ -894,10 +948,6 @@ nnoremap <Leader>o :.Gbrowse<CR>
 " html
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
-
-
-" perl
-
 
 " python
 " vim-python
