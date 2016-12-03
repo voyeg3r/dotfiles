@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 03 dez 2016 09:01:53 BRT
+" Last Change: sáb 03 dez 2016 12:39:01 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -182,6 +182,8 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'rhysd/clever-f.vim'
 
 
+
+
 "" Color
 Plug 'tomasr/molokai'
 
@@ -213,6 +215,11 @@ if filereadable(expand("~/.config/nvimrc.local.bundles"))
 endif
 
 call plug#end()
+
+" settings for incsearch plugin
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 " text-object uri open
 nmap gx mxviugx<Esc>`x
