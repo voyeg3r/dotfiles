@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 03 dez 2016 16:00:01 BRT
+" Last Change: dom 04 dez 2016 06:00:30 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -77,9 +77,6 @@ map <S-F12> :exec '!'.getline('.')<cr>
 " this allows you to save files easier
 nnoremap ; :
 
-" asteris now keeps its position
-nnoremap * *``cgn
-nnoremap # #``cgN
 
 " FZF
 " <C-p> or <C-t> to search files
@@ -411,6 +408,10 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+" asteris now keeps its position
+nnoremap <leader>* *``cgn
+nnoremap <leader># #``cgN
 
 augroup sh"{{{
     au BufNewFile *.sh 0r ~/.vim/skel/template.sh
@@ -930,6 +931,12 @@ augroup vimrc-python
       \ formatoptions+=croq softtabstop=4 smartindent
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
+
+" formatoptions for vim (disable autocomment) Press Ctrl-u if
+" you want to delete from start of the line till the cursor
+" https://goo.gl/k1Q7Rk
+" https://goo.gl/ozggyu
+" au FileType vim setlocal fo-=c fo-=r fo-=o
 
 " jedi-vim
 let g:jedi#popup_on_dot = 0

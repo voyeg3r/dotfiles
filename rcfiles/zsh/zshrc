@@ -222,6 +222,20 @@ LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
 zle -N insert-history-line insert-history-line
 bindkey '^[e' insert-history-line
 
+# allows me to bring vim back atter pressing ctrl-z 
+# by pressint it agaia
+fancy-ctrl-z () {
+if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+else
+    zle push-input
+    zle clear-screen
+fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 # getting git status
 function _git-status {
 zle kill-whole-line
