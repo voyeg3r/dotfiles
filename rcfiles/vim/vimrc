@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 05 dez 2016 15:02:25 BRT
+" Last Change: seg 05 dez 2016 15:34:34 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -391,6 +391,9 @@ set rnu nu
 
 " desativar o hightlight search
 nnoremap <leader>h :set hls!<cr>
+
+" join lines keeping cursor position
+nnoremap <silent> J :let p=getpos('.')<bar>join<bar>call setpos('.', p)<cr>
 
 map <S-F12> :exec '!'.getline('.')<cr>
 
