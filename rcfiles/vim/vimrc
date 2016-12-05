@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: dom 04 dez 2016 06:00:30 BRT
+" Last Change: seg 05 dez 2016 15:02:25 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -385,7 +385,9 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
 " alterna entre numeração não numeração ou relative number
+" bellow, setting both relative number and number magic happens
 nmap silent> <F10> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
+set rnu nu
 
 " desativar o hightlight search
 nnoremap <leader>h :set hls!<cr>
