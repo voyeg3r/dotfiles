@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 05 dez 2016 15:34:34 BRT
+" Last Change: ter 06 dez 2016 07:27:28 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -33,9 +33,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif"}}}
 
 " reload vim automatically and preserve cursor position"{{{
-augroup vimsave
-        autocmd! BufWritePost .vimrc call VimReloadFunction()
-augroup END
+"augroup vimsave
+"        autocmd! BufWritePost .vimrc call VimReloadFunction()
+"augroup END
 
 if !exists("*VimReloadFunction")
     fun! VimReloadFunction()
@@ -56,15 +56,6 @@ if has('vim_starting')
   set nocompatible               " Be iMproved
 endif
 
-" Cursorline
-" Only show cursorline in the current window and in normal mode.
-"augroup cline
-"    au!
-"    au WinLeave * set nocursorline
-"    au WinEnter * set cursorline
-"    au InsertEnter * set nocursorline
-"    au InsertLeave * set cursorline
-"augroup END
 
 " http://www.hazaah.com/programming/textmate-and-vim/
 " :find file
@@ -75,8 +66,7 @@ set rtp+=~/.fzf
 map <S-F12> :exec '!'.getline('.')<cr>
 
 " this allows you to save files easier
-nnoremap ; :
-
+noremap <CR> :
 
 " FZF
 " <C-p> or <C-t> to search files
@@ -98,14 +88,6 @@ cab W  w
 cab Wq wq
 cab Q  q
 
-" <M-p> for open buffers
-nnoremap <silent> <M-p> :Buffers<cr>
-
-nmap <silent> <leader>m :History<CR>
-
-" <M-S-p> for MRU
-nnoremap <silent> <M-S-p> :History<cr>
-
 " Use fuzzy completion relative filepaths across directory
 imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
 
@@ -124,7 +106,25 @@ let g:fzf_action = {
       \ }
 nnoremap <c-p> :FZF<cr>
 
-let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+command! -bang -nargs=* Rg
+            \ call fzf#vim#grep(
+            \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+            \   <bang>0 ? fzf#vim#with_preview('up:60%')
+            \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+            \   <bang>0)
 
 let g:vim_bootstrap_langs = "html,perl,python"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
@@ -143,7 +143,6 @@ Plug 'kana/vim-textobj-indent'          | Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'            | Plug 'kana/vim-textobj-user'
 Plug 'beloglazov/vim-textobj-quotes'    | Plug 'kana/vim-textobj-user'
 " Plugin to move lines and selections up and down
-Plug 'matze/vim-move'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -167,10 +166,6 @@ let g:make = 'gmake'
 if system('uname -o') =~ '^GNU/'
         let g:make = 'make'
 endif
-
-"" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
 
 if v:version >= 704
   "" Snippets
@@ -207,11 +202,6 @@ Plug 'c9s/perlomni.vim'
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
 
-"" Include user's extra bundle
-if filereadable(expand("~/.config/nvimrc.local.bundles"))
-  source ~/.config/nvimrc.local.bundles
-endif
-
 call plug#end()
 
 " settings for incsearch plugin
@@ -220,20 +210,17 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " text-object uri open
-nmap gx mxviugx<Esc>`x
-
-" Use g:move_key_modifier set a custom modifier for key bindings. For example,
-"which will create the following key bindings:
-"<C-k>   Move current line/selections up
-"<C-j>   Move current line/selections down
-let g:move_key_modifier = 'C'
+"nmap gx mxviugx<Esc>`x
+" Use whole "words" when opening URLs.
+" This avoids cutting off parameters (after '?') and anchors (after '#').
+" See http://vi.stackexchange.com/q/2801/1631
+let g:netrw_gx="<cWORD>"
 
 " Required:
 filetype plugin indent on
 
 " index do vim wiki
 let g:vimwiki_list = [{'path': '~/.dotfiles/rcfiles/vim/wiki', 'index': 'main'}]
-
 
 "***************************************************************************
 "" Basic Setup
@@ -272,13 +259,6 @@ set showcmd
 
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
 
-
-" session management
-let g:session_directory = "~/.config/nvim/session"
-let g:session_autoload = "no"
-let g:session_autosave = "no"
-let g:session_command_aliases = 1
-
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
@@ -298,20 +278,6 @@ set mouse=a
 set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
-
-if has("gui_running")
-    if has("gui_mac") || has("gui_macvim")
-        set guifont=Menlo:h12
-        set transparency=7
-    endif
-else
-    let g:CSApprox_loaded = 1
-    " IndentLine
-    let g:indentLine_enabled = 1
-    let g:indentLine_concealcursor = 0
-    let g:indentLine_char = '┆'
-    let g:indentLine_faster = 1
-endif
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
@@ -384,17 +350,13 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
 
-" alterna entre numeração não numeração ou relative number
-" bellow, setting both relative number and number magic happens
-nmap silent> <F10> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 set rnu nu
 
-" desativar o hightlight search
-nnoremap <leader>h :set hls!<cr>
-
 " join lines keeping cursor position
+" source: http://stackoverflow.com/questions/9505198/join-two-lines-in-vim-without-moving-cursor
 nnoremap <silent> J :let p=getpos('.')<bar>join<bar>call setpos('.', p)<cr>
 
+" executes current line on shell
 map <S-F12> :exec '!'.getline('.')<cr>
 
 "  when searching next patter put it in the middle of screen
@@ -498,16 +460,14 @@ let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
-" vimshell.vim
-let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-let g:vimshell_prompt =  '$ '
-
-" terminal emulation
-if g:vim_bootstrap_editor == 'nvim'
-  nnoremap <silent> <leader>sh :terminal<CR>
-else
-  nnoremap <silent> <leader>sh :VimShellCreate<CR>
-endif
+function! SuperTab()
+    if (strpart(getline('.'),col('.')-2,1)=~'^\W\?$')
+        return "\<Tab>"
+    else
+        return "\<C-n>"
+    endif
+endfunction
+imap <Tab> <C-R>=SuperTab()<CR>
 
 "*****************************************************************************
 "" Functions
@@ -519,32 +479,6 @@ if !exists('*s:setupWrapping')
     set textwidth=79
   endfunction
 endif
-
-" ****************************************************************************
-" Função para comentar vários arquivos de acordo com o tipo
-" URL: http://vim.wikia.com/wiki/Comment_Lines_according_to_a_given_filetype
-" ****************************************************************************
-fu! CommentLines()
-    "let Comment="#" " shell, tcl, php, perl
-    exe ":s@^@".g:Comment."@g"
-    exe ":s@$@".g:EndComment."@g"
-endfu
-" mapeando a função no modo visual com a combinação 'co'
-vmap co :call CommentLines()<CR>a
-" definindo os comentários por tipo de arquivo (a primeira linha é um padrão)
-au BufRead,BufNewFile * let Comment="# " | let EndComment=""
-au BufRead,BufNewFile *.inc,*.ihtml,*.html,*.tpl,*.class 
-            \ let Comment="<!-- " | let EndComment=" -->"
-au BufRead,BufNewFile *.sh,*.pl,*.tcl let Comment="# " | let EndComment=""
-au BufRead,BufNewFile *.js set | let Comment="// " | let EndComment=""
-au BufRead,BufNewFile *.cc,*.php,*.cxx,*.cpp 
-            \ let Comment="// " | let EndComment=""
-au BufRead,BufNewFile *.c,*.h let Comment="/* " | let EndComment=" */"
-au BufRead,BufNewFile *.f90,*.f95 let Comment="! " | let EndComment=""
-au BufRead,BufNewFile *.f let Comment="C " | let EndComment=""
-au BufRead,BufNewFile *.tex,*.bib let Comment="% " | let EndComment=""
-au BufRead,BufNewFile *.vim,.vimrc let Comment="\" " | let EndComment="" 
-"******************************************************************************
 
 "******************************************************************************
 " this function gets last 20 cmds to new buffer
@@ -607,6 +541,8 @@ autocmd BufWritePre * :call Preserve(LastModified())
 map <silent> <F9> <esc>:call Preserve(LastModified())<cr>
 "***************************************************************************
 
+"***************************************************************************
+" jump to next place holder
 "***************************************************************************
 function! JumpToNextPlaceholder()
     let old_query = getreg('/')
@@ -723,19 +659,18 @@ command! SaveAsRoot w !sudo tee %
 " map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
 " togle between number nonumber and relativenumber
 " source: http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key
-" source: http://superuser.com/questions/339593/vim-toggle-number-with-relativenumber
-nmap silent> <F11> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 
 " to reselect use gv in normal mode
 nnoremap <S-F11> <ESC>:set hls!<cr>
 inoremap <S-F11> <C-o>:set hls!<cr>
 vnoremap <S-F11> <ESC>:set hls!<cr> <bar> gv
 "nnoremap / :set hls<cr>/
+" desativar o hightlight search
+nnoremap <leader>h :set hls!<cr>
 
 " make copying from visual selection more sane
 " source: http://ddrscott.github.io/blog/2016/yank-without-jank/
 vnoremap <expr>y "my\"" . v:register . "y`y"
-nmap <silent> <F11> :exec &nu==&rnu? "se nu!" : "se rnu!"<CR>
 
 " make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
