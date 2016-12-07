@@ -92,6 +92,10 @@ The syntax is:
 
     [[ ${REPLY^} == N ]] && exit
 
+    Para capturar qualquer tecla, tipo "pressione qualquer tecla pra continuar faça:"
+
+        read -n 1 -s -p "Press any key to continue"
+
 Veja também InputRc
 
 Para acessar rapidamente um comando recem digitado basta

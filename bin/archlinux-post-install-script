@@ -354,15 +354,24 @@ sudo pacman -S dnsmasq
 yaourt -S community/txt2tags
 
 # to install haskell-pandoc you must add this repo
-#[haskell-core]
-#Server = http://xsounds.org/~haskell/core/$arch
+# [haskell-core]
+# Server = http://xsounds.org/~haskell/core/$arch
 
 admintools () {
-		yaourt -S gparted nmap arp-scan unetbootin polkit-gnome curl rsync \
-				git gksu gksudo lsof openssh dnsmasq python-setuptools gvim terminator aria2 zsh aur/detox
-		# davfs2 in order to access webdav services
-		# dav://webdav.4shared.com
-		pacman -U https://www.archlinux.org/packages/extra/i686/davfs2/download/
+    local programs
+    programs=( gparted nmap arp-scan unetbootin polkit-gnome curl \
+        rsync git gksu gksudo lsof ssh dnsmasq python-setuptools gvim terminator aria2c zsh detox )
+
+    for program in ${programs[@]}; do
+        #read -n 1 -s -p "Press any key to continue"
+        if ! [ "$(command -v ${program})" ]; then
+            read -r -p "Install ${program}? [Y/n] " response
+            response=${response,,} # tolower
+            if [[ $response =~ ^(yes|y| ) ]] || [ -z $response ]; then
+                yaourt ${program}
+            fi
+        fi
+    done
 } && admintools
 
 # terminal with transparence and more responsive

@@ -1,6 +1,6 @@
-" Arquivo de configuração do vim
+" Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 06 dez 2016 07:27:28 BRT
+" Last Change: qua 07 dez 2016 08:31:03 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -18,9 +18,8 @@
 "  |    °v°    Sergio Luiz Araujo Silva   |
 "  |   /(_)\  Linux User #423493          |
 "  |   ^ ^    voyeg3r   gmail.com        |
-"  +======================================+
-"
-"
+"  +======================================+"}}}
+
 if executable('zsh')
     set shell=zsh\ -l
 endif
@@ -32,12 +31,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif"}}}
 
-" reload vim automatically and preserve cursor position"{{{
-"augroup vimsave
-"        autocmd! BufWritePost .vimrc call VimReloadFunction()
-"augroup END
-
-if !exists("*VimReloadFunction")
+if !exists("*VimReloadFunction")"{{{
     fun! VimReloadFunction()
         " the idea for this function happened when I realized
         " that every time I reload vim it put the cursor at the
@@ -50,7 +44,7 @@ if !exists("*VimReloadFunction")
         execute "normal! zz"
     endfu
 endif
-com! ReloadVim call VimReloadFunction()"}}}
+com! ReloadVim call VimReloadFunction()"}}}"}}}
 
 if has('vim_starting')
   set nocompatible               " Be iMproved
@@ -73,39 +67,43 @@ noremap <CR> :
 nnoremap <silent> <C-t> :FZF -m<cr>
 nnoremap <silent> <C-p> :FZF -m<cr>
 
-" fold text object
+" fold text object"{{{
 " http://vim.wikia.com/wiki/Creating_new_text_objects
 vnoremap af :<C-U>silent! normal! [zV]z<CR>
 omap af :normal Vaf<CR>
-set fdm=marker
+set foldlevel=0
+set fdm=marker"}}}
 
+" select text you just pasted"{{{
 " http://stackoverflow.com/questions/4312664/is-there-a-vim-command-to-select-pasted-text
 " http://vimcasts.org/episodes/bubbling-text/
 " o mapeamento abaixo permite reselecionar texto recem colado ou selecionado
-nmap gV `[v`]
+nmap gV `[v`]"}}}
 
+" some command line Abbreviations"{{{
 cab W  w
 cab Wq wq
-cab Q  q
+cab Q  q"}}}
 
 " Use fuzzy completion relative filepaths across directory
 imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
 
-" Better command history with q:
+" Better command history with q:"{{{
 command! CmdHist call fzf#vim#command_history({'right': '40'})
-nnoremap q: :CmdHist<CR>
+nnoremap q: :CmdHist<CR>"}}}
 
-" Better search history
+" Better search history"{{{
 command! QHist call fzf#vim#search_history({'right': '40'})
-nnoremap q/ :QHist<CR>
+nnoremap q/ :QHist<CR>"}}}
 
-" fzf configuration
+" fzf configuration"{{{
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
       \ }
-nnoremap <c-p> :FZF<cr>
+nnoremap <c-p> :FZF<cr>"}}}
 
+" some ripgrep settings"{{{
 " --column: Show column number
 " --line-number: Show line number
 " --no-heading: Do not show file headings in results
@@ -124,19 +122,17 @@ command! -bang -nargs=* Rg
             \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
             \   <bang>0 ? fzf#vim#with_preview('up:60%')
             \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-            \   <bang>0)
+            \   <bang>0)"}}}
 
-let g:vim_bootstrap_langs = "html,perl,python"
-let g:vim_bootstrap_editor = "nvim"				" nvim or vim
-
-" Required to start Plug:
+" Required to start Plug:"{{{
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
-"***************************************************************************
+"**************************************************************************
 "" Plug install packages
-"***************************************************************************
+"**************************************************************************
 Plug 'sjl/gundo.vim'
 Plug 'kana/vim-textobj-user'
+Plug 'https://github.com/kana/vim-textobj-function'
 Plug 'lucapette/vim-textobj-underscore' | Plug 'kana/vim-textobj-user'
 Plug 'jceb/vim-textobj-uri'             | Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'          | Plug 'kana/vim-textobj-user'
@@ -148,6 +144,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/NrrwRgn'
 Plug 'ryanoasis/vim-webdevicons'
+Plug 'https://github.com/ryanoasis/vim-devicons'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -202,19 +199,19 @@ Plug 'c9s/perlomni.vim'
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
 
-call plug#end()
+call plug#end()"}}}
 
-" settings for incsearch plugin
+" settings for incsearch plugin"{{{
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+map g/ <Plug>(incsearch-stay)"}}}
 
-" text-object uri open
-"nmap gx mxviugx<Esc>`x
+" text-object uri open"{{{
+" nmap gx mxviugx<Esc>`x
 " Use whole "words" when opening URLs.
 " This avoids cutting off parameters (after '?') and anchors (after '#').
 " See http://vi.stackexchange.com/q/2801/1631
-let g:netrw_gx="<cWORD>"
+let g:netrw_gx="<cWORD>""}}}
 
 " Required:
 filetype plugin indent on
@@ -222,46 +219,29 @@ filetype plugin indent on
 " index do vim wiki
 let g:vimwiki_list = [{'path': '~/.dotfiles/rcfiles/vim/wiki', 'index': 'main'}]
 
-"***************************************************************************
-"" Basic Setup
-"***************************************************************************
-"" Encoding
+" Basic Setup"{{{
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 set bomb
 set binary
-
-"" Fix backspace indent
 set backspace=indent,eol,start
-
-"" Tabs. May be overriten by autocmd rules
 set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
-
-"" Enable hidden buffers
 set hidden
-
-"" Searching
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-
-"" Directories for swp files
 set nobackup
 set noswapfile
-
 set fileformats=unix,dos,mac
 set showcmd
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ "}}}
 
-set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
-
-"*****************************************************************************
-"" Visual Settings
-"*****************************************************************************
+" Visual Settings"{{{
 syntax on
 set ruler
 set number
@@ -273,7 +253,7 @@ endif
 
 set mousemodel=popup
 
-" enable mouse 
+" enable mouse
 set mouse=a
 set t_Co=256
 set guioptions=egmrti
@@ -306,9 +286,9 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
+let g:airline_skip_empty_sections = 1"}}}
 
-" Highlight redundant whitespace and tabs.
+" Highlight redundant whitespace and tabs."{{{
 " This has the advantage of not highlighting each space you type at
 " the end of the line, only when you open a file or leave insert
 " mode. Very neat."
@@ -321,12 +301,9 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 " Create a red/red scheme
 highlight Problem ctermbg=red guibg=red
 " Highlight leading tabs - tab misturado com espaço
-match Problem /^\s\*\t\+\s\*/
+match Problem /^\s\*\t\+\s\*/"}}}
 
-"*****************************************************************************
-"" Abbreviations
-"*****************************************************************************
-"" no one is really happy until you have this shortcuts
+" more command line Abbreviations"{{{
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -336,9 +313,9 @@ cnoreabbrev wQ wq
 cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
-cnoreabbrev Qall qall
+cnoreabbrev Qall qall"}}}
 
-"" NERDTree configuration
+"" NERDTree configuration"{{{
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
@@ -348,25 +325,25 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>
+noremap <F3> :NERDTreeToggle<CR>"}}}
 
 set rnu nu
 
-" join lines keeping cursor position
+" join lines keeping cursor position"{{{
 " source: http://stackoverflow.com/questions/9505198/join-two-lines-in-vim-without-moving-cursor
-nnoremap <silent> J :let p=getpos('.')<bar>join<bar>call setpos('.', p)<cr>
+nnoremap <silent> J :let p=getpos('.')<bar>join<bar>call setpos('.', p)<cr>"}}}
 
 " executes current line on shell
 map <S-F12> :exec '!'.getline('.')<cr>
 
-"  when searching next patter put it in the middle of screen
+"  when searching next patter put it in the middle of screen"{{{
 nnoremap n nzz
 nmap * *zz
 nmap # #zz
 nmap g* g*zz
-nmap g# g#zz
+nmap g# g#zz"}}}
 
-" :h g:incsearch#auto_nohlsearch
+" :h g:incsearch#auto_nohlsearch"{{{
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
@@ -374,7 +351,7 @@ map N  <Plug>(incsearch-nohl-N)
 map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
+map g# <Plug>(incsearch-nohl-g#)"}}}
 
 " asteris now keeps its position
 nnoremap <leader>* *``cgn
@@ -397,7 +374,7 @@ augroup python
     au FileType python set keywordprg=pydoc
     au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
     au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
-    au! BufWritePre *.py,*.js :call <SID>CleanExtraSpacesFunction()
+    au! BufWritePre *.py,*.js,*.sh :call <SID>CleanExtraSpacesFunction()
     au! BufNewFile *.py 0r ~/.vim/skel/template.py
     au BufNewFile *.py exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
     au! BufWritePost *.py :silent !chmod a+x <afile>
@@ -444,22 +421,24 @@ augroup tex"{{{
     normal gg
 augroup end"}}}
 
+" omnifunc settings"{{{
 if has("autocmd") && exists("+omnifunc")
     autocmd Filetype *
                 \  if &omnifunc == "" |
                 \  setlocal omnifunc=syntaxcomplete#Complete |
                 \ endif
-endif
+endif"}}}
 
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
-" grep.vim
+" grep.vim"{{{
 nnoremap <silent> <leader>f :Rgrep<CR>
 let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
-let Grep_Skip_Dirs = '.git node_modules'
+let Grep_Skip_Dirs = '.git node_modules'"}}}
 
+" supertab completion"{{{
 function! SuperTab()
     if (strpart(getline('.'),col('.')-2,1)=~'^\W\?$')
         return "\<Tab>"
@@ -467,22 +446,18 @@ function! SuperTab()
         return "\<C-n>"
     endif
 endfunction
-imap <Tab> <C-R>=SuperTab()<CR>
+imap <Tab> <C-R>=SuperTab()<CR>"}}}
 
-"*****************************************************************************
-"" Functions
-"*****************************************************************************
+"" set wrapping"{{{
 if !exists('*s:setupWrapping')
   function s:setupWrapping()
     set wrap
     set wm=2
     set textwidth=79
   endfunction
-endif
+endif"}}}
 
-"******************************************************************************
-" this function gets last 20 cmds to new buffer
-"******************************************************************************
+" this function gets last 20 cmds to new buffer"{{{
 fun! s:RedirHistoryCommands()
     set paste
     redir @r
@@ -492,11 +467,9 @@ fun! s:RedirHistoryCommands()
     put r
     set nopaste
 endfun
-command! -nargs=0 GetHistory call s:RedirHistoryCommands()
+command! -nargs=0 GetHistory call s:RedirHistoryCommands()"}}}
 
-"*****************************************************************************
-" Esta função insere um change log
-"*****************************************************************************
+" Esta função insere um change log"{{{
 " se nelas não houver "Last Change" ele passa batido
 " ou seja não insere o cabeçalho
 " usr_41.txt
@@ -518,12 +491,9 @@ fun! InsertChangeLog()
     call append(6, "email: <+seu email+>")
     normal gg
   endif
-endfun
+endfun"}}}
 
-"*****************************************************************************
-" Esta função Modifica o change log
-"*****************************************************************************
-
+" Esta função Modifica o change log"{{{
 " If buffer modified, update any 'Last modified: ' in the first 20 lines.
 " 'Last modified: ' can have up to 10 characters before (they are retained).
 " Restores cursor and window position using save_cursor variable.
@@ -538,12 +508,9 @@ function! LastModified()
     endif
 endfun
 autocmd BufWritePre * :call Preserve(LastModified())
-map <silent> <F9> <esc>:call Preserve(LastModified())<cr>
-"***************************************************************************
+map <silent> <F9> <esc>:call Preserve(LastModified())<cr>"}}}
 
-"***************************************************************************
-" jump to next place holder
-"***************************************************************************
+" jump to next place holder"{{{
 function! JumpToNextPlaceholder()
     let old_query = getreg('/')
     echo search("<+.\\++>")
@@ -552,14 +519,10 @@ function! JumpToNextPlaceholder()
 endfunction
 autocmd BufNewFile * :call LoadFileTemplate()
 nnoremap <special> <leader>j :keepjumps call JumpToNextPlaceholder()<CR>a
-inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a
+inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a"}}}
 
-
-"***************************************************************************
-" Esta função faz o zero funcionar como zero e como ^ em modo normal ao
-" mesmo tempo
+" Toggle 0 and ^"{{{
 " source: http://ddrscott.github.io/blog/2016/vim-toggle-movement/
-"***************************************************************************
 function! ToggleHomeZero()
     let pos = getpos('.')
     execute "normal! ^"
@@ -567,9 +530,9 @@ function! ToggleHomeZero()
         execute "normal! 0"
     endif
 endfunction
-nnoremap 0 :call ToggleHomeZero()<CR>
+nnoremap 0 :call ToggleHomeZero()<CR>"}}}
 
-" The function must be used in a piece of subtitles
+" The function must be used in a piece of subtitles"{{{
 " in order to clean it, join the lines and put the results
 " on clipboard to be pasted on anki
 fun! CleanSubtitles()
@@ -582,17 +545,13 @@ fun! CleanSubtitles()
     :%y+
     call setreg('/', old_query)
 endfun
-command! -nargs=0 GetSubs :call CleanSubtitles()
-
+command! -nargs=0 GetSubs :call CleanSubtitles()"}}}
 
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh :call CleanExtraSpaces()
 endif
 
-
-"*****************************************************************************
-" Utility function that save last search and cursor position
-"*****************************************************************************
+" Utility function that save last search and cursor position"{{{
 " http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
 " video from vimcasts.org: http://vimcasts.org/episodes/tidying-whitespace
 function! Preserve(command)
@@ -603,36 +562,35 @@ function! Preserve(command)
     " Clean up: restore previous search history, and cursor position
     call setpos('.', save_cursor)
     call setreg('/', old_query)
-endfunction
+endfunction"}}}
 
-"*************************************************************
-"    dos2unix ^M
-"*************************************************************
+"    dos2unix ^M"{{{
 fun! Dos2unixFunction()
     call Preserve("%s/$//g")
     set ff=unix
     set encoding=utf-8
     set fileencoding=utf-8
 endfun
-com! Dos2Unix call Dos2unixFunction()
+com! Dos2Unix call Dos2unixFunction()"}}}
 
-"*****************************************************************************
-" remove linhas em branco sussessivas
-"*****************************************************************************
+" source: http://stackoverflow.com/questions/1205286/renaming-the-current-file-in-vim
+command! -nargs=1 Rename try | saveas <args> | call delete(expand('#')) | bd # | endtry
+
+" remove consecutive blank lines"{{{
 " see Preserve function definition
 fun! DelBlank()
     "call Preserve("g/^\\n\\{2,}/d")
     keepjumps call Preserve("g/^$/,/./-j")
-endfun
+endfun"}}}
 
 map <special> <leader>d :call Preserve(DelBlank())<cr>
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>
 
-fun! CleanExtraSpaces()
+fun! CleanExtraSpaces()"{{{
     call Preserve("%s/\\s\\+$//e")
 endfun
-com! Cls :call Preserve("%s/\\s\\+$//e")<CR>
+com! Cls :call Preserve("%s/\\s\\+$//e")<CR>"}}}
 
 " ************************ End functions *****************
 
@@ -652,21 +610,21 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap j gj
 nnoremap k gk
 
-" Sudo to write
+" Sudo to write"{{{
 cmap w!! w !sudo tee % >/dev/null
-command! SaveAsRoot w !sudo tee %
+command! SaveAsRoot w !sudo tee %"}}}
 
-" map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
+" map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®"{{{
 " togle between number nonumber and relativenumber
-" source: http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key
+" source: http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key"}}}
 
-" to reselect use gv in normal mode
+" to reselect use gv in normal mode"{{{
 nnoremap <S-F11> <ESC>:set hls!<cr>
 inoremap <S-F11> <C-o>:set hls!<cr>
 vnoremap <S-F11> <ESC>:set hls!<cr> <bar> gv
 "nnoremap / :set hls<cr>/
 " desativar o hightlight search
-nnoremap <leader>h :set hls!<cr>
+nnoremap <leader>h :set hls!<cr>"}}}
 
 " make copying from visual selection more sane
 " source: http://ddrscott.github.io/blog/2016/yank-without-jank/
@@ -675,54 +633,47 @@ vnoremap <expr>y "my\"" . v:register . "y`y"
 " make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
-" Buble single lines - mover linhas
+" Buble single lines - mover linhas"{{{
 " http://vimcasts.org/episodes/bubbling-text/
 "nmap <special> <c-up> ddkP
 "nmap <special> <c-down> ddp
 "buble multiple lines
 "xmap <c-up> xkP`[V`]
-"xmap <c-down> xp`[V`]
+"xmap <c-down> xp`[V`]"}}}
 
-"*****************************************************************************
 "" Autocmd Rules
-"*****************************************************************************
-"" The PC is fast enough, do syntax highlight syncing from start
+
+"" The PC is fast enough, do syntax highlight syncing from start"{{{
 augroup vimrc-sync-fromstart
   autocmd!
   autocmd BufEnter * :syntax sync fromstart
-augroup END
+augroup END"}}}
 
-"" Remember cursor position
+"" Remember cursor position"{{{
 augroup vimrc-remember-cursor-position
   autocmd!
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-augroup END
+augroup END"}}}
 
-"" txt
+" txt wrap setting"{{{
 augroup vimrc-wrapping
   autocmd!
   autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
-augroup END
+augroup END"}}}
 
-"" make/cmake
+"" make/cmake"{{{
 augroup vimrc-make-cmake
   autocmd!
   autocmd FileType make setlocal noexpandtab
   autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
-augroup END
+augroup END"}}}
 
 set autoread
-
-
-
-"*****************************************************************************
-"" Mappings
-"*****************************************************************************
 
 map <silent> <leader>v :e ~/.vimrc<cr>
 map <silent> <leader>z :e ~/.zshrc<cr>
 
-"" Git
+"" Git stuff"{{{
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gsh :Gpush<CR>
@@ -730,7 +681,7 @@ noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
+noremap <Leader>gr :Gremove<CR>"}}}
 
 nnoremap <silent> <leader>O :pu! _<cr>:']+1<cr>
 nnoremap <silent> <leader>o :pu _<cr>:'[-1<cr>
@@ -742,18 +693,9 @@ else
 endif
 "autocmd BufEnter * lcd %:p:h
 
-" mapeamento para abrir e fechar folders em modo normal usando
+" mapeamento para abrir e fechar folders em modo normal usando"{{{
 " a barra de espaços -- zR abre todos os folders
-nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-"nmap <space> :
-" para colocar um atalho para abrir e fechar folders faça:
-" set foldcolumn=1
-
-" session management
-nnoremap <leader>so :OpenSession<Space>
-nnoremap <leader>ss :SaveSession<Space>
-nnoremap <leader>sd :DeleteSession<CR>
-nnoremap <leader>sc :CloseSession<CR>
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>"}}}
 
 "" Tabs
 nnoremap <Tab> gt
@@ -769,13 +711,11 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-
-" snippets
+" snippets settings"{{{
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
-
+let g:UltiSnipsEditSplit="vertical""}}}
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -814,34 +754,20 @@ if has('macunix')
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
 
-"" Buffer nav
-noremap <leader>z :bp<CR>
-noremap <leader>q :bp<CR>
-noremap <leader>x :bn<CR>
-noremap <leader>w :bn<CR>
-
-"" Close buffer
-noremap <leader>c :bd<CR>
-
-"" Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
-
-"" Switching windows
+" mappings for Switching windows"{{{
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
+noremap <C-h> <C-w>h"}}}
 
-" ----------------------------------------------------------------------------
-" Identação de textos e códigos com o TAB no modo visual
+" Identação de textos e códigos com o TAB no modo visual"{{{
 " URL: http://gustavodutra.com/post/72/
 "               \ dicas-de-movimentacao-e-identacao-no-gvim/
-" ----------------------------------------------------------------------------
 vnoremap < <gv
 vnoremap > >gv
 vmap  <TAB> >
 vmap  <S-TAB> <
-imap <S-TAB> <ESC><<i
+imap <S-TAB> <ESC><<i"}}}
 
 "" Move visual block
 vnoremap J :m '>+1<CR>gv=gv
@@ -855,30 +781,24 @@ vnoremap . :norm.<CR>
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
 
-"*****************************************************************************
+"***************************************************************************
 "" Custom configs
-"*****************************************************************************
+"***************************************************************************
 
 " html
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
-" python
+" python"{{{
 " vim-python
 augroup vimrc-python
   autocmd!
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
       \ formatoptions+=croq softtabstop=4 smartindent
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-augroup END
+augroup END"}}}
 
-" formatoptions for vim (disable autocomment) Press Ctrl-u if
-" you want to delete from start of the line till the cursor
-" https://goo.gl/k1Q7Rk
-" https://goo.gl/ozggyu
-" au FileType vim setlocal fo-=c fo-=r fo-=o
-
-" jedi-vim
+" jedi-vim"{{{
 let g:jedi#popup_on_dot = 0
 let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_definitions_command = "<leader>d"
@@ -887,7 +807,7 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
-let g:jedi#smart_auto_mappings = 0
+let g:jedi#smart_auto_mappings = 0"}}}
 
 " syntastic
 let g:syntastic_python_checkers=['python', 'flake8']
@@ -895,20 +815,13 @@ let g:syntastic_python_checkers=['python', 'flake8']
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
 
-
-"*****************************************************************************
-"*****************************************************************************
-
 "" Include user's local vim config
 if filereadable(expand("~/.config/nvimrc.local"))
   source ~/.config/nvimrc.local
 endif
 
-"*****************************************************************************
-"" Convenience variables
-"*****************************************************************************
 
-" vim-airline
+" vim-airline"{{{
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -942,5 +855,5 @@ else
   let g:airline_symbols.branch = ''
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
-endif
+endif"}}}
 
