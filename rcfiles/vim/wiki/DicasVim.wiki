@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sex 02 dez 2016 11:00:50 BRT
+Last Change: qui 08 dez 2016 14:51:00 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -87,6 +87,27 @@ Finds abcdef or abc followed by any characters then def.
 ==appending registers with global command==
 
    :g/TODO/yank A
+
+   if you have a function like:
+
+   if (isFoo)
+        bar();
+
+   and want something like:
+
+    if (isfoo) { bar(); }
+
+    you can do:
+
+    :g/if/normal A {^v^cJA}
+
+    this is a normal mode move being applied to lines matching an specific pattern.
+    We are opening a curly brackets in the end of the line (A {), getting back to
+    normal mode (ctrl+v ctrl+c or ctrl+v esc), bringing up the line below it (J)
+    and adding the closing curly brackets (A })
+
+If you are wondering, the ctrl+v allows us to type a non-digit literally in
+command line (in our case the ESC or Ctrl+C).
 
 ==insert mode tricks==
 

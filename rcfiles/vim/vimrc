@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 07 dez 2016 08:31:03 BRT
+" Last Change: qui 08 dez 2016 15:02:10 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -20,9 +20,10 @@
 "  |   ^ ^    voyeg3r   gmail.com        |
 "  +======================================+"}}}
 
+" if there is zsh use it"{{{
 if executable('zsh')
     set shell=zsh\ -l
-endif
+endif"}}}
 
 " Plug bootstrap - Install Plug if it is not already installed"{{{
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -46,18 +47,19 @@ if !exists("*VimReloadFunction")"{{{
 endif
 com! ReloadVim call VimReloadFunction()"}}}"}}}
 
+" nocompatible"{{{
 if has('vim_starting')
   set nocompatible               " Be iMproved
-endif
+endif"}}}
 
-
+" we can open files in path just pressing gf"{{{
 " http://www.hazaah.com/programming/textmate-and-vim/
 " :find file
 set path+=**
-set rtp+=~/.fzf
+set rtp+=~/.fzf"}}}
 
-" execute current line on shell
-map <S-F12> :exec '!'.getline('.')<cr>
+" execute current line on shell"{{{
+map <S-F12> :exec '!'.getline('.')<cr>"}}}
 
 " this allows you to save files easier
 noremap <CR> :
@@ -132,7 +134,7 @@ call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 "**************************************************************************
 Plug 'sjl/gundo.vim'
 Plug 'kana/vim-textobj-user'
-Plug 'https://github.com/kana/vim-textobj-function'
+Plug 'kana/vim-textobj-function'
 Plug 'lucapette/vim-textobj-underscore' | Plug 'kana/vim-textobj-user'
 Plug 'jceb/vim-textobj-uri'             | Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'          | Plug 'kana/vim-textobj-user'
@@ -141,7 +143,6 @@ Plug 'beloglazov/vim-textobj-quotes'    | Plug 'kana/vim-textobj-user'
 " Plugin to move lines and selections up and down
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'chrisbra/NrrwRgn'
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'https://github.com/ryanoasis/vim-devicons'
@@ -547,9 +548,10 @@ fun! CleanSubtitles()
 endfun
 command! -nargs=0 GetSubs :call CleanSubtitles()"}}}
 
+" auto clean trailing spaces"{{{
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh :call CleanExtraSpaces()
-endif
+endif"}}}
 
 " Utility function that save last search and cursor position"{{{
 " http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
@@ -568,13 +570,15 @@ endfunction"}}}
 fun! Dos2unixFunction()
     call Preserve("%s/$//g")
     set ff=unix
+    set bomb
     set encoding=utf-8
     set fileencoding=utf-8
 endfun
 com! Dos2Unix call Dos2unixFunction()"}}}
 
+" one liner rename file"{{{
 " source: http://stackoverflow.com/questions/1205286/renaming-the-current-file-in-vim
-command! -nargs=1 Rename try | saveas <args> | call delete(expand('#')) | bd # | endtry
+command! -nargs=1 Rename try | saveas <args> | call delete(expand('#')) | bd # | endtry"}}}
 
 " remove consecutive blank lines"{{{
 " see Preserve function definition
@@ -583,9 +587,10 @@ fun! DelBlank()
     keepjumps call Preserve("g/^$/,/./-j")
 endfun"}}}
 
+" delete sucessive blank lines and trailing spces"{{{
 map <special> <leader>d :call Preserve(DelBlank())<cr>
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
-nmap _= :call Preserve("normal gg=G")<CR>
+nmap _= :call Preserve("normal gg=G")<CR>"}}}
 
 fun! CleanExtraSpaces()"{{{
     call Preserve("%s/\\s\\+$//e")

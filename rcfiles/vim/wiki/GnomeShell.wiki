@@ -1,19 +1,27 @@
-Arquivo: Dicas do Gnome-Shell Criado: Wed 04/May/2011 hs 17:23 Last
-Change: seg 24 out 2016 13:14:10 BRT autor: Sérgio Luiz Araújo Silva
+Arquivo: Dicas do Gnome-Shell Criado: Wed 04/May/2011 hs 17:23
+Last Change: sex 09 dez 2016 09:10:28 BRT
+autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 
-{{{
 
 http://askubuntu.com/questions/604462/how-to-set-languages-shortcuts-from-config-files-or-command-line
 
     gsettings set org.gnome.desktop.interface clock-show-date true
 
-   # do not show meny on terminal
+   # do not show menu on terminal
+
    gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
 
    gsettings set org.gnome.desktop.datetime automatic-timezone true
 
+==Increasing the sound through command line==
+
+    pactl set-sink-volume 0 +10%
+
+    And to make the volume go down by the same amount, the command would be:
+
+    pactl set-sink-volume 0 -- -10%
 
 ==touche to click on touchpad==
 
@@ -39,7 +47,7 @@ Change the file permissions to executable.  To do that in a shell, use the comma
 chmod a+x ~/bin/login-script.sh
 
 # dentro de .config/autostart coloque
- 
+
     [Desktop Entry]
     Name=MyScript
     GenericName=A descriptive name
@@ -52,7 +60,7 @@ chmod a+x ~/bin/login-script.sh
 ==Show current wallpaper path==
 
     gsettings get org.gnome.desktop.background picture-uri
-    
+
     Script to change wallpaper automatically
     https://github.com/mattwilmott/Gnome3-Auto-Wallpaper-Changer
 
@@ -60,7 +68,9 @@ chmod a+x ~/bin/login-script.sh
 
     gsettings set org.gnome.desktop.media-handling automount true
 
-==fixing audacious open folders error== I don't know how it happened but
+==fixing audacious open folders error==
+
+I don't know how it happened but
 when, eg, I plug in a USB drive or try to open a folder in a firefox
 extension (or other programs that want to open a folder...), it always
 wants to open with Audacious which is obnoxious.  Browsing through in
@@ -80,13 +90,11 @@ to get rid of the association with Audacious.
 
 == setting gnome screenshot dir ==
 
-  gsettings set org.gnome.gnome-screenshot auto-save-directory
-"file:///home/$USER/pictures/"
+  gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/$USER/pictures/"
 
 ==setando o muse para ser destacado com o ctrl ou não==
 
-  gsettings set org.gnome.settings-daemon.peripherals.mouse
-locate-pointer false
+  gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 
 == habilitando o click to tap no mouse ==
 
@@ -211,5 +219,4 @@ https://bitbucket.org/LukasKnuth/backslide
 https://extensions.gnome.org/extension/549/web-search-dialog/
 https://extensions.gnome.org/extension/277/impatience/
 
-}}}
 
