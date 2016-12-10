@@ -1,4 +1,4 @@
-=Introdução= 
+=Introdução=
 Este é um comando para criação de pastas
 
   mkdir pasta
@@ -9,23 +9,22 @@ Este é um comando para criação de pastas
 
 ==criando com permissão==
 
-mkdir -m 755 /shared
+    mkdir -m 755 /shared
 
 ==criando uma pasta com data==
 
-mkdir $(date +%d-%m-%Y)
+    mkdir $(date +%d-%m-%Y)
 
-# outra opção 
-mkdir backup-`date -I`
+# outra opção
+
+    mkdir backup-`date -I`
 
 Para mais detalhes veja o comando [[date]]
-==Criando uma extrutura completa== 
+==Criando uma extrutura completa==
 [[image:pastas.png]]
 
 
   mkdir -p docs/{img/{fotos,icons,wallpapers,svg},textos/{artigos,man},tmp}
-
-
 
 mkdir -p backups/{sales,development,hr}/{jan,fev,mar,abr,mai,jun,jul,ago,set,out,nov,dez}/{dom,seg,ter,qua,qui,sex,sab}
 
@@ -71,4 +70,4 @@ for i in `seq -w 100`; {
 
 ==veja também==
 * O comando [[install]]
-* http://br.groups.yahoo.com/group/shell-script/message/31892 
+* http://br.groups.yahoo.com/group/shell-script/message/31892

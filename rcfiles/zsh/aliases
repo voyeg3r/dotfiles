@@ -13,7 +13,8 @@ alias shell='echo ${SHELL:t}'
 
 # increase gnome-shell sound
 alias upsnd='pactl set-sink-volume 0 +10%'
-alias downsnd='pactl set-sink-volume 0 -- -10%'
+alias fullsnd='pactl set-sink-volume 0 +100%'
+alias downsnd='pactl set-sink-volume 0 -10%'
 
 alias dairy='vim +VimwikiMakeDiaryNote'
 

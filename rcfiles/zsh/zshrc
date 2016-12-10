@@ -88,7 +88,7 @@ eval "$(fasd --init auto)"
 eval "$(fasd --init posix-alias zsh-hook)"
 
 
-# trying to expand sudo at the begining
+# trying to expand gudo at the begining
 bindkey '^i' expand-or-complete-prefix
 
 bindkey '^Xw' expand-word # expande variáveis
