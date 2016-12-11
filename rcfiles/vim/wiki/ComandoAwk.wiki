@@ -41,6 +41,11 @@ FS     indica o separador de campos
 RS     indica o separador de registros
 OFS    indica o separador de campo do arquivo de saida
 ORS    indica o separador de registros do arquivo de saida
+FNR    refers to the record number (typically the line number)
+
+= How to determine the line number of the last occurrence of a string in a file =
+
+    awk '/Fedora/ { ln = FNR } END { print ln }'
 
 = convert DOS file to Unix file =
 
