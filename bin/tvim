@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 1 ]
+then
+    echo "Sem arquivos para editar."
+    exit
+fi
+
+vim --servername $(vim --serverlist | head -1) --remote-tab $1
