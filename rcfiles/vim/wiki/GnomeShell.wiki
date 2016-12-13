@@ -1,5 +1,5 @@
 Arquivo: Dicas do Gnome-Shell Criado: Wed 04/May/2011 hs 17:23
-Last Change: sex 09 dez 2016 09:10:28 BRT
+Last Change: ter 13 dez 2016 11:17:30 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
@@ -14,6 +14,10 @@ http://askubuntu.com/questions/604462/how-to-set-languages-shortcuts-from-config
    gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
 
    gsettings set org.gnome.desktop.datetime automatic-timezone true
+
+==cleaning cached thumbnails ==
+
+    find .cache/thumbnails -type f | xargs rm -f
 
 ==Increasing the sound through command line==
 

@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: qui 08 dez 2016 14:51:00 BRT
+Last Change: ter 13 dez 2016 10:05:34 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -817,6 +817,10 @@ map <leader>h :set hls!<cr>
 
   /<c-r>%
 
+ ==some regex tips==
+
+ if \(\(then\)\@!.\)*$	"if " not followed by "then"
+
 =Regex para pegar aspas simples=
 
 source: http://vimcasts.org/episodes/refining-search-patterns-with-the-command-line-window/
@@ -1020,7 +1024,8 @@ map <S-F5> :call SignLines()<CR>
 
     Após a instalação do dicionário, para habilitar o corretor ortográfico (em português) no vim, basta digitar:
 
-  set spell spelllang=pt
+  :set spell spelllang=pt
+  :setlocal spell spelllang=en_us
 
     Uma vez no vim, com o corretor ligado, basta digitas os seguintes comandos para as tarefas mais básicas:
 
