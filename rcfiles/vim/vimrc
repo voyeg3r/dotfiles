@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: dom 11 dez 2016 12:02:06 BRT
+" Last Change: qua 14 dez 2016 08:38:18 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -56,18 +56,12 @@ endif"}}}
 " http://www.hazaah.com/programming/textmate-and-vim/
 " :find file
 set path+=**
-set rtp+=~/.fzf"}}}
 
 " execute current line on shell"{{{
 map <S-F12> :exec '!'.getline('.')<cr>"}}}
 
 " this allows you to save files easier
 noremap <CR> :
-
-" FZF
-" <C-p> or <C-t> to search files
-nnoremap <silent> <C-t> :FZF -m<cr>
-nnoremap <silent> <C-p> :FZF -m<cr>
 
 " fold text object"{{{
 " http://vim.wikia.com/wiki/Creating_new_text_objects
@@ -87,9 +81,6 @@ cab W  w
 cab Wq wq
 cab Q  q"}}}
 
-" Use fuzzy completion relative filepaths across directory
-imap <expr> <c-x><c-f> fzf#vim#complete#path('git ls-files $(git rev-parse --show-toplevel)')
-
 " Better command history with q:"{{{
 command! CmdHist call fzf#vim#command_history({'right': '40'})
 nnoremap q: :CmdHist<CR>"}}}
@@ -98,66 +89,17 @@ nnoremap q: :CmdHist<CR>"}}}
 command! QHist call fzf#vim#search_history({'right': '40'})
 nnoremap q/ :QHist<CR>"}}}
 
-" fzf configuration"{{{
-let g:fzf_action = {
-      \ 'ctrl-s': 'split',
-      \ 'ctrl-v': 'vsplit'
-      \ }
-nnoremap <c-p> :FZF<cr>"}}}
-
-" some ripgrep settings"{{{
-" --column: Show column number
-" --line-number: Show line number
-" --no-heading: Do not show file headings in results
-" --fixed-strings: Search term as a literal string
-" --ignore-case: Case insensitive search
-" --no-ignore: Do not respect .gitignore, etc...
-" --hidden: Search hidden files and folders
-" --follow: Follow symlinks
-" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-" --color: Search color options
-
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-
-command! -bang -nargs=* Rg
-            \ call fzf#vim#grep(
-            \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-            \   <bang>0 ? fzf#vim#with_preview('up:60%')
-            \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-            \   <bang>0)"}}}
-
 " Required to start Plug:"{{{
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
-"**************************************************************************
-"" Plug install packages
-"**************************************************************************
+Plug 'jiangmiao/auto-pairs'
 Plug 'sjl/gundo.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-line'            | Plug 'kana/vim-textobj-user'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'chrisbra/NrrwRgn'
-Plug 'ryanoasis/vim-webdevicons'
-Plug 'https://github.com/ryanoasis/vim-devicons'
-Plug 'vim-scripts/AutoComplPop'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/grep.vim'
-Plug 'rking/ag.vim'
 Plug 'eparreno/vim-l9'
-Plug 'terryma/vim-multiple-cursors'
-
-let g:make = 'gmake'
-if system('uname -o') =~ '^GNU/'
-        let g:make = 'make'
-endif
-
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/VisIncr'
 Plug 'haya14busa/incsearch.vim'
@@ -166,21 +108,8 @@ Plug 'rhysd/clever-f.vim'
 "" Color
 Plug 'tomasr/molokai'
 
-"***************************************************************************
-"" Custom bundles
-"***************************************************************************
-
-" html
-"" HTML Bundle
-Plug 'amirh/HTML-AutoCloseTag'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'gorodinskiy/vim-coloresque'
-Plug 'tpope/vim-haml'
+" HTML Bundle
 Plug 'mattn/emmet-vim'
-
-" python
-"" Python Bundle
-Plug 'davidhalter/jedi-vim'
 
 call plug#end()"}}}
 
@@ -188,13 +117,6 @@ call plug#end()"}}}
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)"}}}
-
-" text-object uri open"{{{
-" nmap gx mxviugx<Esc>`x
-" Use whole "words" when opening URLs.
-" This avoids cutting off parameters (after '?') and anchors (after '#').
-" See http://vi.stackexchange.com/q/2801/1631
-let g:netrw_gx="<cWORD>""}}}
 
 " Required:
 filetype plugin indent on
@@ -311,10 +233,6 @@ nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>"}}}
 
 set rnu nu
-
-" join lines keeping cursor position"{{{
-" source: http://stackoverflow.com/questions/9505198/join-two-lines-in-vim-without-moving-cursor
-nnoremap <silent> J :let p=getpos('.')<bar>join<bar>call setpos('.', p)<cr>"}}}
 
 " executes current line on shell
 map <S-F12> :exec '!'.getline('.')<cr>
