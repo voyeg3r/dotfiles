@@ -186,6 +186,11 @@ yaourt -S aur/zattoo
 yaourt -S aur/neovim-git aur/atom-editor-git
 yaourt -S aspell-pt aspell-en 
 
+# to understand what the bellow command does see this:
+# http://stackoverflow.com/questions/14040351/filtering-zsh-history-by-command
+#https://github.com/mooz/percol#zsh-history-search
+sudo pip install percol
+
 # ramlog
 yaourt -S ramlog
 

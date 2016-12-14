@@ -22,6 +22,7 @@ HERE
     fi
 }
 
+
 # 10ms for key sequences
 KEYTIMEOUT=1
 
@@ -246,6 +247,23 @@ zle accept-line
 zle -N _git-status
 bindkey '\eg' _git-status
 
+# history search
+# see: http://stackoverflow.com/questions/14040351/filtering-zsh-history-by-command
+#function exists { which $1 &> /dev/null }
+
+# if exists percol; then
+#     function percol_select_history() {
+#         local tac
+#         exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+#         BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+#         CURSOR=$#BUFFER         # move cursor
+#         zle -R -c               # refresh
+#     }
+# 
+#     zle -N percol_select_history
+#     bindkey '^R' percol_select_history
+# fi
+
 # # define widget function
 # function cursor-after-first-word {
 #     zle up-history
@@ -329,3 +347,5 @@ export OOO_FORCE_DESKTOP=gnome # For OpenOffice to look more gtk-friendly.
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden  --follow --glob "!.git/*"'
 
 bindkey '^ ' autosuggest-accept
+source /home/sergio/.dotfiles/rcfiles/zsh/zaw/zaw.zsh
+bindkey '^R' zaw-history
