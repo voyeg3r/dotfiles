@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: ter 13 dez 2016 10:05:34 BRT
+Last Change: qui 15 dez 2016 10:38:21 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -19,6 +19,36 @@ twitter: http://www.twitter.com/voyeg3r
 
     vim -u NONE
     vim -u NONE fileyouwantopen
+
+== yank text object on multiple lines ==
+
+ Let's say you have:
+
+ - 'autoindent' is set by default
+ - 'autoread' is set by default
+ - 'backspace' defaults to "indent,eol,start"
+ - 'backupdir' defaults to .,~/.local/share/nvim/backup (|xdg|)
+ - 'complete' doesn't include "i"
+ - 'directory' defaults to ~/.local/share/nvim/swap// (|xdg|), auto-created
+
+ And you want to get the names at the beginning like 'autoindent' and grab
+ them into a register 'z'
+
+ you cand do
+
+  :%norm f'"Zya'
+
+  and to paste it into a file you can do:
+
+  :put Z
+
+  To make it available outside of Vim you can do:
+
+  :let @+ = @z
+
+  if your register z is not clean you can clear it by doing
+
+  qzq
 
 == avoiding error messages on vim substituitions ==
 
