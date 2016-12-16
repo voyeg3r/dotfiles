@@ -1,6 +1,7 @@
+" vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 16 dez 2016 06:19:54 BRT
+" Last Change: sex 16 dez 2016 07:48:56 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -559,11 +560,11 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 " Buble single lines - mover linhas"{{{
 " http://vimcasts.org/episodes/bubbling-text/
-"nmap <special> <c-up> ddkP
-"nmap <special> <c-down> ddp
-"buble multiple lines
-"xmap <c-up> xkP`[V`]
-"xmap <c-down> xp`[V`]"}}}
+nmap <special> <c-up> ddkP
+nmap <special> <c-down> ddp
+buble multiple lines
+xmap <c-up> xkP`[V`]
+xmap <c-down> xp`[V`]"}}}
 
 "" Autocmd Rules
 
