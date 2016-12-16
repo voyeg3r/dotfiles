@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: qui 15 dez 2016 10:38:21 BRT
+Last Change: sex 16 dez 2016 07:11:03 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -80,6 +80,9 @@ source: http://stackoverflow.com/questions/40414720/execute-plug-map-for-vim-thr
 
  " select last paste in visual mode
  nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+ to select the same ammount of lines for example
+ use 1v
 
 = non-greedy search on vim=
 
@@ -177,20 +180,28 @@ command line (in our case the ESC or Ctrl+C).
 
 ==command line tricks==
 
-   :9 copy 13
+    :9 copy 13
 
-      copia a linha 9 para a linha 13
+    copia a linha 9 para a linha 13
 
     :9t16
 
     does the same faster
 
     :[range]copy {address}
+
     :9t.
 
     Usando relative numbers
 
     :-7t.
+
+    command 	action
+    :9t. 	    copy line 9 placing a duplicate below the current line
+    :t5 	    copy the current line placing a duplicate below the line 5 (and moving the cursor)
+    :-7t. 	    copy the line 7 before the current cursor position placing a duplicate below the current line
+    :+4t. 	    copy the line 4 after the current cursor position placing a duplicate below the current line
+    :9,11t. 	copy the lines 9 to 11 placing the duplicate lines below the current cursor position
 
 ==formating text on vim==
 

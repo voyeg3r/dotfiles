@@ -348,8 +348,7 @@ yaourt -S rfkill
 #   SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"
 
 # \LaTeX\
-yaourt -S texlive-core texlive-langcjk texlive-latexextra texlive-pictures
-haskell-pandoc
+yaourt -S texlive-core texlive-langcjk texlive-latexextra texlive-pictures haskell-pandoc xelatex
 
 yaourt -S haskell-pandoc
 sudo pacman -S pandoc

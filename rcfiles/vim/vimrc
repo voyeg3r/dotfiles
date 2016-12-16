@@ -1,6 +1,6 @@
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 15 dez 2016 09:38:52 BRT
+" Last Change: sex 16 dez 2016 06:19:54 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -337,6 +337,7 @@ augroup tex"{{{
     vmap e <tab>em<tab>
     vmap ' <tab>'<tab>
     iab latex \LaTeX\
+    iab tex \Tex\
     normal gg
 augroup end"}}}
 
