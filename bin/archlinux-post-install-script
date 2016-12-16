@@ -356,6 +356,14 @@ yaourt -S texlive-core texlive-langcjk texlive-latexextra texlive-pictures haske
 #[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
 sudo pacman -S asciinema
 
+# A terminal-to-gif recorder minus the headaches
+# https://github.com/chjj/ttystudio
+yaourt ttystudio
+
+# https://github.com/pettarin/asciicast2gif
+yaourt gifsicle
+yaourt phantomjs
+
 yaourt -S haskell-pandoc
 sudo pacman -S pandoc
 
