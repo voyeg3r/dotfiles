@@ -350,6 +350,12 @@ yaourt -S rfkill
 # \LaTeX\
 yaourt -S texlive-core texlive-langcjk texlive-latexextra texlive-pictures haskell-pandoc xelatex
 
+# record your tty
+# asciinema -rec filename -c command
+# to insert command at stackExchange
+#[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
+sudo pacman -S asciinema
+
 yaourt -S haskell-pandoc
 sudo pacman -S pandoc
 

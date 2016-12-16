@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sex 16 dez 2016 07:11:03 BRT
+Last Change: sex 16 dez 2016 12:42:03 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -49,6 +49,11 @@ twitter: http://www.twitter.com/voyeg3r
   if your register z is not clean you can clear it by doing
 
   qzq
+
+==Inserting ttyrecordings at stackexchange==
+
+[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
+https://asciinema.org/docs/embedding
 
 == avoiding error messages on vim substituitions ==
 
@@ -522,6 +527,11 @@ In orde to insert digraphs you have:
    how insert one arrow - type  →
 
    to view the code of carachter below of cursor type 'ga'
+
+
+   To paste text from the system clipbo ard use Shift + Ins in Insert mode or
+   "*p in Normal mode.  Conversely, "+y yanks the current selection to the system
+   clipbo ard.
 
 =dealig with previous yank register=
 http://stackoverflow.com/questions/12547369/vim-yank-replace-in-a-sequence
