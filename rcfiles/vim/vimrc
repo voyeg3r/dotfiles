@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 16 dez 2016 08:03:54 BRT
+" Last Change: sáb 17 dez 2016 07:41:15 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -68,7 +68,7 @@ noremap <CR> :
 " http://vim.wikia.com/wiki/Creating_new_text_objects
 vnoremap af :<C-U>silent! normal! [zV]z<CR>
 omap af :normal Vaf<CR>
-set foldlevel=1
+set foldlevel=3
 set fdm=marker"}}}
 
 " select text you just pasted"{{{
@@ -444,14 +444,15 @@ inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a"}
 
 " Toggle 0 and ^"{{{
 " source: http://ddrscott.github.io/blog/2016/vim-toggle-movement/
-function! ToggleHomeZero()
-    let pos = getpos('.')
-    execute "normal! ^"
-    if pos == getpos('.')
-        execute "normal! 0"
-    endif
-endfunction
-nnoremap 0 :call ToggleHomeZero()<CR>"}}}
+"function! ToggleHomeZero()
+"    let pos = getpos('.')
+"    execute "normal! ^"
+"    if pos == getpos('.')
+"        execute "normal! 0"
+"    endif
+"endfunction
+"nnoremap 0 :call ToggleHomeZero()<CR>"}}}
+nmap 0 ^
 
 " The function must be used in a piece of subtitles"{{{
 " in order to clean it, join the lines and put the results

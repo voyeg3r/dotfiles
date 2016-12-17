@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sex 16 dez 2016 12:42:03 BRT
+Last Change: sáb 17 dez 2016 07:38:03 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -52,8 +52,7 @@ twitter: http://www.twitter.com/voyeg3r
 
 ==Inserting ttyrecordings at stackexchange==
 
-[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
-https://asciinema.org/docs/embedding
+[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14) https://asciinema.org/docs/embedding
 
 == avoiding error messages on vim substituitions ==
 
