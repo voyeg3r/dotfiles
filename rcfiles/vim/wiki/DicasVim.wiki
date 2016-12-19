@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: seg 19 dez 2016 11:57:32 BRT
+Last Change: seg 19 dez 2016 19:09:42 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -21,9 +21,21 @@ twitter: http://www.twitter.com/voyeg3r
     vim -u NONE fileyouwantopen
 
 ==Insert a command rnnge easily==
-
+Reference: http://stackoverflow.com/questions/35693335/what-is-this-just-the-middle-vimgolf-challenge-doing
 
    4:   equals to :.,.+3
+
+   for example if you want to save only the next three lines
+   you cand do this:
+
+   3:   then vim will show this:
+   :.,.+2  what means the current line "." plus the next two lines
+
+   and finally you type wq!
+
+   the entire line will be:
+
+       :.,.+2wq!
 
 ==adjusting columns of text on vim==
 
