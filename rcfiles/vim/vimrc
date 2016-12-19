@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 19 dez 2016 16:07:36 BRT
+" Last Change: seg 19 dez 2016 16:35:43 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -101,6 +101,7 @@ Plug 'rhysd/clever-f.vim'
 "" Color
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
+Plug 'endel/vim-github-colorscheme'
 
 " HTML Bundle
 Plug 'mattn/emmet-vim'
@@ -258,6 +259,10 @@ nmap * *zz
 nmap # #zz
 nmap g* g*zz
 nmap g# g#zz"}}}
+
+" easy way to underline a row
+nmap <silent> ,= :t.<cr>Vr=k
+nmap <silent> ,- :t.<cr>Vr-k
 
 " :h g:incsearch#auto_nohlsearch"{{{
 set hlsearch
