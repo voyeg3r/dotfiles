@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 17 dez 2016 07:41:15 BRT
+" Last Change: seg 19 dez 2016 11:09:54 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -82,14 +82,6 @@ cab W  w
 cab Wq wq
 cab Q  q"}}}
 
-" Better command history with q:"{{{
-command! CmdHist call fzf#vim#command_history({'right': '40'})
-nnoremap q: :CmdHist<CR>"}}}
-
-" Better search history"{{{
-command! QHist call fzf#vim#search_history({'right': '40'})
-nnoremap q/ :QHist<CR>"}}}
-
 " Required to start Plug:"{{{
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
@@ -108,6 +100,7 @@ Plug 'rhysd/clever-f.vim'
 
 "" Color
 Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 
 " HTML Bundle
 Plug 'mattn/emmet-vim'
@@ -172,7 +165,8 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
-  colorscheme molokai
+  colorscheme gruvbox
+  set background=dark
 endif
 
 set mousemodel=popup
@@ -274,8 +268,8 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)"}}}
 
 " asteris now keeps its position
-nnoremap <leader>* *``cgn
-nnoremap <leader># #``cgN
+"nnoremap <leader>* *``cgn
+"nnoremap <leader># #``cgN
 
 augroup sh"{{{
     au BufNewFile *.sh 0r ~/.vim/skel/template.sh
@@ -378,6 +372,18 @@ if !exists('*s:setupWrapping')
   endfunction
 endif"}}}
 
+" function to clear all registers
+" http://stackoverflow.com/questions/19430200/how-to-clear-vim-registers-effectively
+fun! s:ClearRegs()
+    "let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+    "for r in regs
+    "    call setreg(r, [])
+
+    "endfor
+    for i in range(34,122) | silent! call setreg(nr2char(i), [])  | endfor
+endfun
+command! -nargs=0 Cregs call s:ClearRegs()
+
 " this function gets last 20 cmds to new buffer"{{{
 fun! s:RedirHistoryCommands()
     set paste
@@ -452,7 +458,7 @@ inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a"}
 "    endif
 "endfunction
 "nnoremap 0 :call ToggleHomeZero()<CR>"}}}
-nmap 0 ^
+" if you would like to go to the first column just press g0
 
 " The function must be used in a piece of subtitles"{{{
 " in order to clean it, join the lines and put the results
@@ -689,10 +695,12 @@ noremap <C-h> <C-w>h"}}}
 " Identação de textos e códigos com o TAB no modo visual"{{{
 " URL: http://gustavodutra.com/post/72/
 "               \ dicas-de-movimentacao-e-identacao-no-gvim/
+
+" To increase indentation you can you in insert mode
+" Ctrl-t and to decrease use Ctrl-d
 vnoremap < <gv
 vnoremap > >gv
-vmap  <TAB> >
-vmap  <S-TAB> <
+
 imap <S-TAB> <ESC><<i"}}}
 
 "" Move visual block

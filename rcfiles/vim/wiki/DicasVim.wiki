@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sáb 17 dez 2016 07:38:03 BRT
+Last Change: seg 19 dez 2016 11:49:14 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -19,6 +19,10 @@ twitter: http://www.twitter.com/voyeg3r
 
     vim -u NONE
     vim -u NONE fileyouwantopen
+
+==Insert a command rnnge easily==
+
+   4:   equals to :.,.+3
 
 == yank text object on multiple lines ==
 
@@ -1454,6 +1458,8 @@ source: http://superuser.com/questions/592503/vim-adding-empty-line-between-line
  :history : -20,
  :redir END
  "ap
+
+ Outro modo de colar o regitro "a" é pressionar Ctrl-r Ctrl-r a
 
  Comando para colar o histórico dos ultimos 22 comandos
  q:22kyG Ctrl-w-q p
