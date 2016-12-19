@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 19 dez 2016 11:09:54 BRT
+" Last Change: seg 19 dez 2016 16:07:36 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -120,10 +120,10 @@ if executable('ag')
 endif
 
 " bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+"nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap ,ag :Ag<SPACE>
+"command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+"nnoremap ,ag :Ag<SPACE>
 
 " settings for incsearch plugin"{{{
 map /  <Plug>(incsearch-forward)
@@ -162,6 +162,8 @@ set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ "}}}
 syntax on
 set ruler
 set number
+
+let mapleader = ","
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
@@ -383,6 +385,18 @@ fun! s:ClearRegs()
     for i in range(34,122) | silent! call setreg(nr2char(i), [])  | endfor
 endfun
 command! -nargs=0 Cregs call s:ClearRegs()
+
+" reference: https://sanctum.geek.nz/arabesque/advanced-vim-macros/
+fun! s:CalculateAge()
+    normal 0f1yiwea age (=strftime("%Y")-")0j
+endfun
+command! -nargs=0 Age call s:CalculateAge()
+nmap <leader>a :Age<cr>
+
+" mappings to repeat last command and last substituition
+" if you want to repeat the last substituition globally g&
+nmap <leader>r @:
+nmap <leader>s &
 
 " this function gets last 20 cmds to new buffer"{{{
 fun! s:RedirHistoryCommands()

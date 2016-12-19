@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: seg 19 dez 2016 11:49:14 BRT
+Last Change: seg 19 dez 2016 11:57:32 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -22,7 +22,35 @@ twitter: http://www.twitter.com/voyeg3r
 
 ==Insert a command rnnge easily==
 
+
    4:   equals to :.,.+3
+
+==adjusting columns of text on vim==
+
+Stallman  Richard GNU 1953  USA
+Wall  Larry   Perl  1954  USA
+Moolenar  Bram  Vim 1961  Netherlands
+Tridgell  Andrew  Samba  1967  Australia
+Matsumoto  Yukihiro  Ruby  1965  Japan
+Ritchie  Dennis  C  1941  USA
+Thompson  Ken  Unix  1943  USA
+
+Stallman   Richard   GNU    1953  USA
+Wall       Larry     Perl   1954  USA
+Moolenar   Bram      Vim    1961  Netherlands
+Tridgell   Andrew    Samba  1967  Australia
+Matsumoto  Yukihiro  Ruby   1965  Japan
+Ritchie    Dennis    C      1941  USA
+Thompson   Ken       Unix   1943  USA
+
+
+the command typed to perform the above change was:
+
+    :'<,'>!column -t
+
+to sort by surname just do this:
+
+    :%!sort -k1
 
 == yank text object on multiple lines ==
 
