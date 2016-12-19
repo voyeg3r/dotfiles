@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: seg 19 dez 2016 19:09:42 BRT
+Last Change: seg 19 dez 2016 19:57:43 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -19,6 +19,10 @@ twitter: http://www.twitter.com/voyeg3r
 
     vim -u NONE
     vim -u NONE fileyouwantopen
+
+==How to knwo if vim has python support==
+
+    vim --version | grep python
 
 ==Insert a command rnnge easily==
 Reference: http://stackoverflow.com/questions/35693335/what-is-this-just-the-middle-vimgolf-challenge-doing

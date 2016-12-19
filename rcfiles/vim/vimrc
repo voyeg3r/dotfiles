@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 19 dez 2016 16:35:43 BRT
+" Last Change: seg 19 dez 2016 20:08:26 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -378,6 +378,10 @@ if !exists('*s:setupWrapping')
     set textwidth=79
   endfunction
 endif"}}}
+
+" Scientifc Calculator using python3 -->  :Calc sin(30)
+command! -nargs=+ Calc :py print(<args>)
+py from math import *
 
 " function to clear all registers
 " http://stackoverflow.com/questions/19430200/how-to-clear-vim-registers-effectively
