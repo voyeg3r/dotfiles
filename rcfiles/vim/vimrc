@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 19 dez 2016 20:08:26 BRT
+" Last Change: seg 19 dez 2016 20:09:57 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -380,6 +380,7 @@ if !exists('*s:setupWrapping')
 endif"}}}
 
 " Scientifc Calculator using python3 -->  :Calc sin(30)
+" :Calc sum([x^2 for x in range(100)])
 command! -nargs=+ Calc :py print(<args>)
 py from math import *
 
