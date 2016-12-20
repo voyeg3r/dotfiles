@@ -4,6 +4,9 @@
 
 alias aedit="$EDITOR $ZSH_CONFIG/aliases; source $ZSH_CONFIG/aliases"
 
+# source: https://www.reddit.com/r/linux/comments/3ly2zl/lpt_use_python_interpreter_as_an_advanced/
+alias calc='python3 -ic "from math import *; import cmath"'
+
 alias xterm='xterm -rv'
 # alias calc='noglob calc'
 

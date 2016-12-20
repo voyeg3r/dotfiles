@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 19 dez 2016 20:09:57 BRT
+" Last Change: ter 20 dez 2016 07:13:10 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -85,6 +85,8 @@ cab Q  q"}}}
 " Required to start Plug:"{{{
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'sjl/gundo.vim'
 Plug 'ggreer/the_silver_searcher'
 Plug 'chrisbra/NrrwRgn'
@@ -171,6 +173,9 @@ if !exists('g:not_finish_vimplug')
   colorscheme gruvbox
   set background=dark
 endif
+
+" source: http://tilvim.com/2013/07/31/swapping-bg.html
+nmap <F7> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 set mousemodel=popup
 
