@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 21 dez 2016 07:45:11 BRT
+" Last Change: qua 21 dez 2016 19:54:12 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -58,11 +58,11 @@ endif"}}}
 " :find file
 set path+=**
 
+set wildmode=longest,list,full
+set wildmenu
+
 " execute current line on shell"{{{
 map <S-F12> :exec '!'.getline('.')<cr>"}}}
-
-" this allows you to save files easier
-noremap <CR> :
 
 " fold text object"{{{
 " http://vim.wikia.com/wiki/Creating_new_text_objects
@@ -99,6 +99,9 @@ Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/VisIncr'
 Plug 'haya14busa/incsearch.vim'
 Plug 'rhysd/clever-f.vim'
+Plug 'vim-scripts/PopupBuffer.vim'
+Plug 'vim-scripts/AutoComplPop'
+"Plug 'kshenoy/vim-signature' "Plugin to toggle, display and navigate marks
 
 "" Color
 Plug 'tomasr/molokai'
@@ -536,22 +539,30 @@ com! Dos2Unix call Dos2unixFunction()"}}}
 " source: http://stackoverflow.com/questions/1205286/renaming-the-current-file-in-vim
 command! -nargs=1 Rename try | saveas <args> | call delete(expand('#')) | bd # | endtry"}}}
 
+"source: http://stackoverflow.com/questions/2284556/how-do-i-use-variables-in-my-vimrc
+function! SetTabSize(size)
+    execute "set tabstop=".a:size
+    execute "set shiftwidth=".a:size
+    execute "set softtabstop=".a:size
+endfunction
+command! -nargs=1 Sts call SetTabSize(<f-args>)
+
 " remove consecutive blank lines"{{{
 " see Preserve function definition
 fun! DelBlank()
-    "call Preserve("g/^\\n\\{2,}/d")
-    keepjumps call Preserve("g/^$/,/./-j")
+    keepjumps call Preserve("g/^\\n\\{2,}/d")
+    "keepjumps call Preserve("g/^$/,/./-j")
 endfun"}}}
 
 " delete sucessive blank lines and trailing spces"{{{
-map <special> <leader>d :call Preserve(DelBlank())<cr>
+nnoremap <special> <leader>d :call Preserve(DelBlank())<cr>
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>"}}}
 
 fun! CleanExtraSpaces()"{{{
     call Preserve("%s/\\s\\+$//e")
 endfun
-com! Cls :call Preserve("%s/\\s\\+$//e")<CR>"}}}
+com! Cls :silent! call Preserve("%s/\\s\\+$//e")<CR>"}}}
 
 " ************************ End functions *****************
 
@@ -694,18 +705,6 @@ endif
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
-
-" use leader to interact with the system clipboard
-nnoremap <Leader>p "*]p
-nnoremap <Leader>P "*]P
-
-nnoremap <Leader>y :y*<cr>
-nnoremap <Leader>c ^"*c$
-nnoremap <Leader>d ^"*d$
-
-vnoremap <Leader>y "*y
-vnoremap <Leader>c "*c
-vnoremap <Leader>d "*d
 
 if has('macunix')
   " pbcopy for OSX copy/paste

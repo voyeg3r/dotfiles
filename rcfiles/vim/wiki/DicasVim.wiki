@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: seg 19 dez 2016 19:57:43 BRT
+Last Change: qua 21 dez 2016 20:10:23 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -19,6 +19,32 @@ twitter: http://www.twitter.com/voyeg3r
 
     vim -u NONE
     vim -u NONE fileyouwantopen
+
+==Viewing where maps are setted ==
+
+   :verbose map
+
+   :redir! > vim_keys.txt
+   :silent verbose map
+   :redir END
+
+==Setting and getting position on vim ==
+
+    call setpos('.',[0,6,10,0])
+
+    let pos = getpos("'a")
+
+    call setpos("'a", pos)
+
+    if  getpos("'a")[1] == 0
+        mark a
+    else
+        process calculate
+    endif
+
+    exec "'a"
+
+    :ec getpos("'a")[1]  --> returns line number of mark 'a'
 
 ==How to knwo if vim has python support==
 
@@ -1478,10 +1504,23 @@ Plugin 'vim-scripts/VisIncr'
 
     fun! DelBlank()
         let save_cursor = getpos(".")
+        let old_query = getreg('/')
         :g/^\n\{2,}/d
         call setpos('.', save_cursor)
+        call setreg('/', old_query)
     endfun
     map <leader>d :call keepjumps DelBlank()<cr>
+
+
+    function! Preserve(command)
+        " Preparation: save last search, and cursor position.
+        let save_cursor = getpos(".")
+        let old_query = getreg('/')
+            execute a:command
+        " Clean up: restore previous search history, and cursor position
+        call setpos('.', save_cursor)
+        call setreg('/', old_query)
+    endfunction"}}}
 
 ==adding blank lines  - adding empty lines between lines ==
 
