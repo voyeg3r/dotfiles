@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 20 dez 2016 07:13:10 BRT
+" Last Change: qua 21 dez 2016 07:45:11 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -412,6 +412,7 @@ nmap <leader>a :Age<cr>
 " if you want to repeat the last substituition globally g&
 nmap <leader>r @:
 nmap <leader>s &
+nmap <leader>qs q/
 
 " this function gets last 20 cmds to new buffer"{{{
 fun! s:RedirHistoryCommands()
@@ -473,7 +474,6 @@ function! JumpToNextPlaceholder()
     exec "norm! c/+>/e\<CR>"
     call setreg('/', old_query)
 endfunction
-autocmd BufNewFile * :call LoadFileTemplate()
 nnoremap <special> <leader>j :keepjumps call JumpToNextPlaceholder()<CR>a
 inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a"}}}
 
@@ -583,9 +583,7 @@ command! SaveAsRoot w !sudo tee %"}}}
 nnoremap <S-F11> <ESC>:set hls!<cr>
 inoremap <S-F11> <C-o>:set hls!<cr>
 vnoremap <S-F11> <ESC>:set hls!<cr> <bar> gv
-"nnoremap / :set hls<cr>/
-" desativar o hightlight search
-nnoremap <leader>h :set hls!<cr>"}}}
+"}}}
 
 " make copying from visual selection more sane
 " source: http://ddrscott.github.io/blog/2016/yank-without-jank/

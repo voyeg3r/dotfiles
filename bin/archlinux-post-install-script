@@ -356,6 +356,9 @@ yaourt -S texlive-core texlive-langcjk texlive-latexextra texlive-pictures haske
 #[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
 sudo pacman -S asciinema
 
+# googler google in text mode
+sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/jarun/googler/v2.9/googler && sudo chmod +x /usr/local/bin/googler
+
 # A terminal-to-gif recorder minus the headaches
 # https://github.com/chjj/ttystudio
 yaourt ttystudio
