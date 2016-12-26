@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 21 dez 2016 19:54:12 BRT
+" Last Change: qua 21 dez 2016 20:16:06 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -524,6 +524,15 @@ function! Preserve(command)
     call setpos('.', save_cursor)
     call setreg('/', old_query)
 endfunction"}}}
+
+"http://vi.stackexchange.com/questions/9646/how-do-i-capitalize-the-first-word-after-each-period-question-mark-or-exclamati
+fun! UpperCaseSentences()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    %s;[.?!]\_s*\zs\<\w\+\>;\U&;g
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
 
 "    dos2unix ^M"{{{
 fun! Dos2unixFunction()

@@ -1,7 +1,7 @@
 =Manual de dicas do vim=
 
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: qua 21 dez 2016 20:10:23 BRT
+Last Change: seg 26 dez 2016 15:53:32 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -22,11 +22,28 @@ twitter: http://www.twitter.com/voyeg3r
 
 ==Viewing where maps are setted ==
 
+
    :verbose map
 
    :redir! > vim_keys.txt
    :silent verbose map
    :redir END
+
+
+==copy from one buffer to another==
+
+source: http://stackoverflow.com/questions/41259890/gvim-yank-lines-between-buffers
+
+ I try to copy the lines 7,11 from buffer 2 to my buffer 3 without leaving
+ buffer 3. Is it possible to do that with a simple command?
+
+ Usually I go to B2, yank the lines come back to B3 and paste them. I will be interest to do that using range but I do not succeed.
+
+
+There is the getbufline() function that allows you to obtain lines from another
+buffer. You can :put that into the current buffer via the expression register:
+
+ :put =getbufline(2, 7, 11)
 
 ==Setting and getting position on vim ==
 
