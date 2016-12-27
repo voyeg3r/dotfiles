@@ -36,6 +36,11 @@ alias ne='nvim ~/.config/nvim/init.vim'
 alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
 
+# pipe a download file to standard output on shell
+alias wgetn='wget -O - -o /dev/null'
+
+alias lynx='lynx -dump -display_charset=utf-8'
+
 alias lvim="vim -c \"normal '0\""
 alias compilalivro='make clean; make && make show'
 alias 4shared='cadaver http://webdav.4shared.com/'

@@ -1,17 +1,29 @@
-#!/bin/bash
-# Criado em:Qua 30/Mar/2011 hs 09:20
-# Last Change: 2012 Jul 06 19:59:34
+#!/usr/bin/env zsh
 # vim:ft=sh:fdm=syntax:nu:
-# Instituicao: none
-# Proposito do script: salvar video em flash
-# Autor: Sérgio Luiz Araújo Silva
+# Created: Qua 30/Mar/2011 hs 09:20
+# Last Change: ter 27 dez 2016 11:09:06 BRT
+# This script aims to: download youtube video and creates playlist file
+# Author: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
 # twitter: http://www.twitter.com/voyeg3r
-# source: http://blog.liquuid.net/2011/03/26/como-salvar-um-video-do-youtube-no-novo-flash-plugin/
+# references: https://www.cyberciti.biz/tips/unix-linux-bash-shell-script-wrapper-examples.html
 
-processo=`lsof | grep deleted | grep /tmp/Flash | awk '{print $2}' | uniq`
-link=`ls -l /proc/${processo}/fd/ | grep '/tmp/Flash' | awk '{print $8}'`
+_youtubedl="/usr/bin/youtube-dl"
+params=($@)
 
-for i in ${link}; do
-cp /proc/${processo}/fd/$i .
-done
+echo "programa: $_youtubedl"
+echo "url: $params[-1]"
+echo "parametros: $params"
+
+url="$params[-1]"
+
+[[ ! -f links.txt ]] && touch links.txt
+
+filename=$(youtube-dl --get-filename ${url})
+echo "filename: $filenme"
+
+echo "$filename $url" >> links.txt
+sort -u links.txt -o links.txt
+
+
+$_youtubedl $params

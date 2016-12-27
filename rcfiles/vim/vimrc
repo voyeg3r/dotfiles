@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qua 21 dez 2016 20:16:06 BRT
+" Last Change: ter 27 dez 2016 08:44:08 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -61,8 +61,15 @@ set path+=**
 set wildmode=longest,list,full
 set wildmenu
 
-" execute current line on shell"{{{
+" execute current line on shell zsh or bash"{{{
 map <S-F12> :exec '!'.getline('.')<cr>"}}}
+
+" this map reads shell commands into current file
+" and clean extra spaces due Preserve funtion call
+nnoremap <F12> !!$SHELL <cr> <bar> :silent! call Preserve("%s/\\s\\+$//e")<cr>
+
+" this map executes the currente line as a vim command ":"
+nnoremap <space>l yy:@" <cr>
 
 " fold text object"{{{
 " http://vim.wikia.com/wiki/Creating_new_text_objects
@@ -288,13 +295,13 @@ map g# <Plug>(incsearch-nohl-g#)"}}}
 
 augroup sh"{{{
     au BufNewFile *.sh 0r ~/.vim/skel/template.sh
-    au BufNewFile *.sh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
+    au BufNewFile *.sh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " . strftime("%d-%m-%Y")/e
     "au BufWritePost *.sh :silent !chmod a+x <afile>
 augroup end"}}}
 
 augroup zsh "{{{
     au BufNewFile *.zsh 0r ~/.vim/skel/template.zsh
-    au BufNewFile *.zsh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
+    au BufNewFile *.zsh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")/e
     au BufWritePost *.zsh :silent !chmod a+x <afile>
 augroup end "}}}
 
@@ -303,7 +310,6 @@ augroup python
     au FileType python set keywordprg=pydoc
     au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
     au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
-    au! BufWritePre *.py,*.js,*.sh :call <SID>CleanExtraSpacesFunction()
     au! BufNewFile *.py 0r ~/.vim/skel/template.py
     au BufNewFile *.py exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
     au! BufWritePost *.py :silent !chmod a+x <afile>
@@ -443,7 +449,7 @@ fun! InsertChangeLog()
   if l:flag >= 5
     normal(1G)
     call append(0, "Arquivo: <+Description+>")
-    call append(1, "Criado: " . strftime("%a %d/%b/%Y hs %H:%M"))
+    call append(1, "Created: " . strftime("%a %d/%b/%Y hs %H:%M"))
     call append(2, "Last Change: " . strftime("%a %d/%b/%Y hs %H:%M"))
     call append(3, "autor: <+digite seu nome+>")
     call append(4, "site: <+digite o endereço de seu site+>")

@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: qui 01 dez 2016 10:52:24 BRT
+Last Change: ter 27 dez 2016 08:09:24 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -10,9 +10,17 @@ References:
 http://zshwiki.org/home/builtin/functions/zmv
 http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
 
-{{{ keep this line to see literal text
-
 References: http://chneukirchen.org/dotfiles/.zshrc
+
+== arrays in zshell ==
+
+Create an array of lines from a file
+
+ buffer=("${(f)$(< /etc/hosts)}")
+ echo $buffer[1]
+ 127.0.0.1       eva-O1.linagora.com     eva-01
+
+
 
 == zim zsh framework ==
 

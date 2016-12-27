@@ -1,4 +1,13 @@
 #!/usr/bin/env zsh
+# vim: ft=sh
+# Arquivo: wrapper for ping and host
+# Criado: ter 27/dez/2016 hs 07:12
+# Last Change: ter 27 dez 2016 07:14:26 BRT
+# autor: Sérgio Luiz Araújo Silva 
+# site: http://vivaotux.blogspot.com
+# twitter: @voyeg3r
+# email: <voyeg3r  gmail.com> 
+# source: https://www.cyberciti.biz/tips/unix-linux-bash-shell-script-wrapper-examples.html
 
 # PING WRAPPER ------------------------------------------------
 
