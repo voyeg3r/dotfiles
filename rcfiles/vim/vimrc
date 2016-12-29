@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 29 dez 2016 13:24:43 BRT
+" Last Change: qui 29 dez 2016 15:57:22 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -192,13 +192,16 @@ set incsearch
 set ignorecase
 set smartcase
 set nobackup
-set noswapfile
 set fileformats=unix,dos,mac
 set showcmd
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ "}}}
 
 " Visual Settings"{{{
-syntax on
+" Notice: syntax enable is better than syntax on
+if !exists("g:syntax_on")
+    syntax enable
+endif
+
 set ruler
 set number
 

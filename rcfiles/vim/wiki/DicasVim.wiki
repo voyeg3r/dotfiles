@@ -1,6 +1,6 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: qui 29 dez 2016 08:49:41 BRT
+Last Change: qui 29 dez 2016 18:23:26 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -26,6 +26,7 @@ https://pragprog.com/book/dnvim2/practical-vim-second-edition
     up without loading a vimrc file, it reverts to vi compatible mode, which causes
     many useful features to be disabled. The -N flag prevents this by setting the
     ‘nocompatible’ option.
+
 
 ==magic with expression register==
 
@@ -1021,6 +1022,32 @@ interpret the tilde as the value of your last replacement. So, if you already ex
 replaced the pattern matched with the characters +++ but realized you made a mistake and the +++ should have been
 !!!, you can quickly rectify the problem by executing another substitution, like so: :%s/~/!!!/g.
 
+  Anoter approach to similar situation
+  ------------------------------------
+
+  If you have to change or copy only quoted text but
+  not want to catch quotes you can make use of this vim resource:
+
+  /\v"\zs[^"]+\ze"
+
+  / ................... starts searching
+  \v .................. very magic (avoid scapes)
+  " ................... literal quote
+  \zs ................. tells vim to start selecting from this point
+  [^"]+ ............... non quote followed at least for one non quote
+  \ze ................. tells vim to stop selecting at this point
+
+== Regex to uppercase multiple patterns at once ==
+
+Let's say you have these lines:
+
+    class XhtmlDocument < XmlDocument; end
+    class XhtmlTag < XmlTag; end
+
+And you want to uppercase "Xhtml" "Xml" at once
+
+    :%s,\vX(ht)?ml,\U&,g
+
 =Regex para pegar aspas simples=
 
 source: http://vimcasts.org/episodes/refining-search-patterns-with-the-command-line-window/
@@ -1066,6 +1093,12 @@ set foldcolumn=3
 zi .............  opens and closes all folders
 zO ................  open all folders
 zM ................  close all folders
+
+==colando o que foi selecionado com o mouse==
+
+   Ctrl-r *
+
+   Or "*p
 
 
 =artigos e links legais sobre o vim=
