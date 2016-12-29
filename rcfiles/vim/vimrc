@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 29 dez 2016 11:36:19 BRT
+" Last Change: qui 29 dez 2016 13:24:43 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -855,10 +855,9 @@ else
   let g:airline_symbols.linenr = ''
 endif"}}}
 
-
-
-iab idate <c-r>=strftime("%c")<cr>
-iab ihora <c-r>=strftime("%c")<cr>
+"iab idate <c-r>=strftime("%c")<cr>
+iab idate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
+iab ihora <c-r>=strftime("%H:%M:%S")<cr>
 
 iab -> →
 iab tambem também

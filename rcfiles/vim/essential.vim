@@ -6,4 +6,5 @@
 set nocompatible
 set rnu nu
 filetype plugin on
+syntax on
 

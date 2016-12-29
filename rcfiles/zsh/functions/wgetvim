@@ -1,0 +1,16 @@
+# This files download a given file and throws it into vim
+# Created: qui 29 dez 2016 13:18:21 BRT
+# Last Change: qui 29 dez 2016 13:20:17 BRT
+
+# essential.vim is a minimum vimrc file who disables most plugins
+# in order to test some features provided on the web or suggested
+# in articles I have created it, it is based on "Drew Neil's" suggestions
+# published on his practical vim book.
+# https://pragprog.com/book/dnvim2/practical-vim-second-edition
+
+# the idea is to open the link directly into vim
+# without downloading the file
+
+wgetvim () {
+    wget -qO- ${1} | vim -u ~/.dotfiles/rcfiles/vim/essential.vim -
+}
