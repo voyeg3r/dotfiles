@@ -6,9 +6,9 @@
 
 #Exemplo:
 
-    #Fulano Taltal - meu@email.com.br
-    #Sicrana  - sicrana@hotmail.com
-    #Beltrana Gatinha - com-cam@tal.com.br
+    #  Fulano Taltal - meu@email.com.br
+    #  Sicrana  - sicrana@hotmail.com
+    #  Beltrana Gatinha - com-cam@tal.com.br
 
 from random import shuffle
 import os

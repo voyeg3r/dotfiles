@@ -1,6 +1,6 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: qui 29 dez 2016 07:47:29 BRT
+Last Change: qui 29 dez 2016 08:49:41 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -343,6 +343,11 @@ Finds abcdef or abc followed by any characters then def.
    Which means "@" register, : command
 
    @@  --> repeat last register easily
+
+   Following the same logic you can repeat last search
+   by pressing @/ or just //
+
+   Repeating the last substituition using &
 
 ==jumping to edit positions and insert position==
 

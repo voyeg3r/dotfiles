@@ -1,7 +1,7 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # # -*- coding: UTF-8 -*-
 # Criado em:Sex 12/Mar/2010 hs 07:34
-# Last Change: 2012 Out 07 08:12:31
+# Last Change: qui 29 dez 2016 09:16:35 BRT
 # vim:ft=python:nolist:nu:
 # Instituicao: none
 # Proposito do script: gerar sequencia de numeros aleatórios
