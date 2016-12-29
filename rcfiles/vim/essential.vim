@@ -4,5 +4,6 @@
 " vim -u NONE -N
 
 set nocompatible
+set rnu nu
 filetype plugin on
 
