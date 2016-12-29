@@ -1,7 +1,6 @@
 =Manual de dicas do vim=
-
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: seg 26 dez 2016 15:53:32 BRT
+Last Change: qui 29 dez 2016 07:47:29 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -16,12 +15,27 @@ twitter: http://www.twitter.com/voyeg3r
   See also [[VimBestTips]]
 
 =start vim with no plugins=
+source: Book practical vim
+https://pragprog.com/book/dnvim2/practical-vim-second-edition
 
-    vim -u NONE
-    vim -u NONE fileyouwantopen
+    vim -u NONE -N
+    vim -u NONE -N fileyouwantopen
+
+    The -u NONE flag tells Vim not to source your vimrc on startup. That way, your
+    customizations won’t be applied and plugins will be disabled. When Vim starts
+    up without loading a vimrc file, it reverts to vi compatible mode, which causes
+    many useful features to be disabled. The -N flag prevents this by setting the
+    ‘nocompatible’ option.
+
+==magic with expression register==
+
+    6 chairs, each costing $35, totals $
+
+    A ............... start insert mode at the end of line
+    Ctrl-r = ........ starts expression register (cursor at the bottom)
+    6 * 35 <enter> .. inserts the result
 
 ==Viewing where maps are setted ==
-
 
    :verbose map
 
@@ -29,16 +43,19 @@ twitter: http://www.twitter.com/voyeg3r
    :silent verbose map
    :redir END
 
+== reopen previous buffer in a new window ==
+
+   Ctrl-w Ctrl-6
 
 ==copy from one buffer to another==
 
 source: http://stackoverflow.com/questions/41259890/gvim-yank-lines-between-buffers
 
- I try to copy the lines 7,11 from buffer 2 to my buffer 3 without leaving
- buffer 3. Is it possible to do that with a simple command?
+I try to copy the lines 7,11 from buffer 2 to my buffer 3 without leaving
+buffer 3. Is it possible to do that with a simple command?
 
- Usually I go to B2, yank the lines come back to B3 and paste them. I will be interest to do that using range but I do not succeed.
-
+Usually I go to B2, yank the lines come back to B3 and paste them. I will be
+interest to do that using range but I do not succeed.
 
 There is the getbufline() function that allows you to obtain lines from another
 buffer. You can :put that into the current buffer via the expression register:
@@ -46,6 +63,9 @@ buffer. You can :put that into the current buffer via the expression register:
  :put =getbufline(2, 7, 11)
 
 ==Setting and getting position on vim ==
+
+References: http://vi.stackexchange.com/questions/6208/how-to-search-for-lines-matching-current-line-in-vim
+http://stackoverflow.com/questions/3922384/use-a-register-value-as-search-pattern
 
     call setpos('.',[0,6,10,0])
 
@@ -62,6 +82,25 @@ buffer. You can :put that into the current buffer via the expression register:
     exec "'a"
 
     :ec getpos("'a")[1]  --> returns line number of mark 'a'
+
+    :put =getbufline(1,1)
+
+    o comand acima pega o buffer 1 linha 1 e cola na linha atual
+
+    ec expand(getline('.'))
+    o comando acima ecoa na tela a string da linha atual
+
+    let var = expand(getline('.'))
+
+    to search for lines equal to current line do this:
+
+    exec '/' . getline('.')
+
+    /<C-r>=getline('.')<CR>
+
+    Using a "register" on search
+
+    :exe '%s/' . @a . '/foo/g'
 
 ==How to knwo if vim has python support==
 
@@ -157,9 +196,9 @@ When I try to paste hundreds of lines or more into Vim, even in paste mode, it t
 
 If your Vim is compiled with clipboard support
 
-    (:echo has('clipboard') returns 1)
+    :echo has('clipboard') returns 1
 
-you can simply use "+p or "*p
+    you can simply use "+p or "*p
 
 == como criar um diário no vim usando o vimwiki ==
 
@@ -169,7 +208,7 @@ source: http://stackoverflow.com/questions/40414720/execute-plug-map-for-vim-thr
 
 ==Select yanked and pasted text==
 
- gv ............ reselects last visual selection
+     gv ............ reselects last visual selection
 
  in order to select previous pasted text put this in your .vimrc
 
@@ -195,7 +234,6 @@ Finds abcdef or abc followed by any characters then def.
   My problem: subtitles whithout space
 
   like this;
-
 
   133
   00:06:36,398 --> 00:06:37,398
@@ -234,19 +272,14 @@ Finds abcdef or abc followed by any characters then def.
     normal mode (ctrl+v ctrl+c or ctrl+v esc), bringing up the line below it (J)
     and adding the closing curly brackets (A })
 
-If you are wondering, the ctrl+v allows us to type a non-digit literally in
-command line (in our case the ESC or Ctrl+C).
-
-==insert mode tricks==
-
-    Para colocar o texto abaixo entre parênteses
+    If you are wondering, the ctrl+v allows us to type a non-digit literally in
+    command line (in our case the ESC or Ctrl+C).
 
 ==fixing subtitles with vim==
 
   My problem: subtitles whithout space
 
   like this;
-
 
   133
   00:06:36,398 --> 00:06:37,398
@@ -297,6 +330,7 @@ command line (in our case the ESC or Ctrl+C).
     :-7t. 	    copy the line 7 before the current cursor position placing a duplicate below the current line
     :+4t. 	    copy the line 4 after the current cursor position placing a duplicate below the current line
     :9,11t. 	copy the lines 9 to 11 placing the duplicate lines below the current cursor position
+    :-5t.       copy the line 5 rows above to the current line
 
 ==formating text on vim==
 
@@ -960,7 +994,27 @@ map <leader>h :set hls!<cr>
 
  ==some regex tips==
 
- if \(\(then\)\@!.\)*$	"if " not followed by "then"
+ "if " not followed by "then"
+
+     if \(\(then\)\@!.\)*$
+
+
+Let's say I have some lines like below and I want to find bar
+only if it is preceded by foo
+
+ foobar
+ bazbar
+ foobar
+ quxbar
+
+ The solution search pattern would seems like this:
+
+    /\v(foo)@<=bar
+
+You can also use the tilde character (~) as your search pattern, and when running your substitution, Vim will
+interpret the tilde as the value of your last replacement. So, if you already executed a substitution in which you
+replaced the pattern matched with the characters +++ but realized you made a mistake and the +++ should have been
+!!!, you can quickly rectify the problem by executing another substitution, like so: :%s/~/!!!/g.
 
 =Regex para pegar aspas simples=
 
@@ -1079,7 +1133,17 @@ zM ................  close all folders
 
    o comando :lw equivale a :cope
 
-    map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+    nnoremap <F4> :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<CR>
+
+    :vimgrep /{searchTerm}/[gj] {/path/to/project/**/*.rb}
+
+    Para visualizar buscas prévias use:
+
+        :colder
+
+        ou para buscas mais antigas:
+
+        :cnewer
 
 =como exibir as opções de formatação?=
 
@@ -1134,7 +1198,11 @@ map <S-F5> :call SignLines()<CR>
 
    ou abra a linha de comando e pressione
 
-      Ctrl-f
+    Ctrl-f
+
+   Outro modo é digitar o comando:
+
+    :cedit
 
    Para fechar a janela do histórico
 
@@ -1145,9 +1213,9 @@ map <S-F5> :call SignLines()<CR>
 
 =Limpando um registro de forma fácil=
 
-  qaq .......... limpa o registro 'a'
+      qaq .......... limpa o registro 'a'
 
-  let @a=''
+      let @a=''
 
 =Corretor ortográfico do vim=
 
@@ -1262,12 +1330,12 @@ map <S-F5> :call SignLines()<CR>
     map <Leader>rv Yo<C-O>:set revins<cr><C-R>"<esc>:set norevins<cr>
 
 = comando para inverter palavras de uma linha=
-inverter uma string por palavras
 
-source: http://stackoverflow.com/questions/5532431/vim-invert-string-by-words
+    inverter uma string por palavras
 
-command! ReverseLine call setline('.', join(reverse(split(getline('.')))))
+    source: http://stackoverflow.com/questions/5532431/vim-invert-string-by-words
 
+    command! ReverseLine call setline('.', join(reverse(split(getline('.')))))
 
 = Como definir a fonte no vim=
 
@@ -1553,6 +1621,8 @@ source: http://superuser.com/questions/592503/vim-adding-empty-line-between-line
     \n\@! Fails the match if there's another \n immediately after the earlier \n.
 
 = visualizar o histórico de comandos do vim=
+
+  Com o cursor na linha de comandos do vim pressione <C-f>
 
  :redir @a>  ......... redireciona para o registro 'a'
  :history : -20,

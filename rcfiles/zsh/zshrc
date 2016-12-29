@@ -359,3 +359,5 @@ zstyle ':filter-select' escape-descriptions no # display literal newlines, not \
 bindkey '^ ' autosuggest-accept
 source /home/sergio/.dotfiles/rcfiles/zsh/zaw/zaw.zsh
 bindkey '^R' zaw-history
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

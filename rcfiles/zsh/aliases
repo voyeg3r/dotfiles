@@ -42,6 +42,7 @@ alias wgetn='wget -O - -o /dev/null'
 alias lynx='lynx -dump -display_charset=utf-8'
 
 alias lvim="vim -c \"normal '0\""
+alias vimessential='vim -u ~/.dotfiles/rcfiles/vim/essential.vim'
 alias compilalivro='make clean; make && make show'
 alias 4shared='cadaver http://webdav.4shared.com/'
 

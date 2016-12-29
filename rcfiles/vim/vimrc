@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 27 dez 2016 08:44:08 BRT
+" Last Change: qua 28 dez 2016 21:32:45 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -60,6 +60,9 @@ set path+=**
 
 set wildmode=longest,list,full
 set wildmenu
+set completeopt=menu,preview
+set complete=.,w,k
+setlocal complete=.,w,k,b,u
 
 " execute current line on shell zsh or bash"{{{
 map <S-F12> :exec '!'.getline('.')<cr>"}}}
@@ -84,6 +87,9 @@ set fdm=marker"}}}
 " o mapeamento abaixo permite reselecionar texto recem colado ou selecionado
 nmap gV `[v`]"}}}
 
+" entrar no modo comando mais rápido
+nnoremap ç :
+
 " some command line Abbreviations"{{{
 cab W  w
 cab Wq wq
@@ -92,6 +98,7 @@ cab Q  q"}}}
 " Required to start Plug:"{{{
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+Plug 'vim-scripts/CmdlineComplete'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sjl/gundo.vim'
@@ -105,10 +112,10 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/VisIncr'
 Plug 'haya14busa/incsearch.vim'
-Plug 'rhysd/clever-f.vim'
+"Plug 'rhysd/clever-f.vim'
 Plug 'vim-scripts/PopupBuffer.vim'
 Plug 'vim-scripts/AutoComplPop'
-"Plug 'kshenoy/vim-signature' "Plugin to toggle, display and navigate marks
+Plug 'kshenoy/vim-signature' "Plugin to toggle, display and navigate marks
 
 "" Color
 Plug 'tomasr/molokai'
@@ -468,7 +475,7 @@ function! LastModified()
     if &modified
         let save_cursor = getpos(".")
         let old_query = getreg('/')
-        keepjumps exe  '1,10s/Change:.*/Change: ' . strftime('%c') . '/e'
+        keepjumps silent! exe  '1,10s/Change:.*/Change: ' . strftime('%c') . '/e'
         call setpos('.', save_cursor)
         call setreg('/', old_query)
     endif
@@ -657,6 +664,9 @@ set autoread
 
 map <silent> <leader>v :e ~/.vimrc<cr>
 map <silent> <leader>z :e ~/.zshrc<cr>
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 "" Git stuff"{{{
 noremap <Leader>ga :Gwrite<CR>
@@ -702,9 +712,8 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical""}}}
 
-" Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
+" open quickfix window with word under cursor as search pattern
+nnoremap <F4> :execute "vimgrep /" . expand("<cword>") . "/gji **" <Bar> cw<CR>
 
 " Disable visualbell
 set noerrorbells visualbell t_vb=

@@ -68,6 +68,7 @@ autocmd BufNewFile,BufRead *.py,*.pl,*.sh vmap c :-1/^/s//#/<CR>
 
 ==Editando o histórico de comandos do vim==
 
+Com o cursor posicionado na linha de comandos do vim pressione:
 <ctrl-f> abre o histórico de comandos do vim para edição
 
 ==tirando linhas em branco duplicadas==
