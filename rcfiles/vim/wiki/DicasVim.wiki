@@ -1,6 +1,6 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: qui 29 dez 2016 18:23:26 BRT
+Last Change: sex 30 dez 2016 09:27:51 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -349,6 +349,7 @@ Finds abcdef or abc followed by any characters then def.
    by pressing @/ or just //
 
    Repeating the last substituition using &
+   Repeat last substituition over whole file g&
 
 ==jumping to edit positions and insert position==
 

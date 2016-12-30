@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 29 dez 2016 15:57:22 BRT
+" Last Change: sex 30 dez 2016 10:07:58 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -79,6 +79,10 @@ map <S-F12> :exec '!'.getline('.')<cr>"}}}
 " this map reads shell commands into current file
 " and clean extra spaces due Preserve funtion call
 nnoremap <F12> !!$SHELL <cr> <bar> :silent! call Preserve("%s/\\s\\+$//e")<cr>
+
+" redo the last substituition keeping the flags
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
 
 " this map executes the currente line as a vim command ":"
 nnoremap <space>l yy:@" <cr>
