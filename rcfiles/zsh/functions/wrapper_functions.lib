@@ -2,7 +2,7 @@
 # vim: ft=sh
 # Arquivo: wrapper for ping and host
 # Criado: ter 27/dez/2016 hs 07:12
-# Last Change: ter 27 dez 2016 07:14:26 BRT
+# Last Change: sex 30 dez 2016 08:45:55 BRT
 # autor: Sérgio Luiz Araújo Silva 
 # site: http://vivaotux.blogspot.com
 # twitter: @voyeg3r
@@ -41,10 +41,15 @@ echo "$f"
 # Arg: url/domain/ip
 # Purpose: Send ping request to domain by removing urls, protocol, username:pass using system /usr/bin/ping
 ping(){
-    local t="$1"
+    local array=( $@ )  		# get all args in an array
+	local host=${array[-1]}     # get the last arg
+    local args=${array[1,-2]}   # get all args before last arg in $@
     local _ping="/usr/bin/ping"
-    local c=$(_getdomainnameonly "$t")
-    [ "$t" != "$c" ] && echo "Sending ICMP ECHO_REQUEST to \"$c\"..."
+    local c=$(_getdomainnameonly "$host")
+    [ "$host" != "$c" ] && echo "Sending ICMP ECHO_REQUEST to \"$c\"..."
+    # pass args and host
+	# $_ping $args $c
+    # default args for ping
     $_ping -n -c 2 -i 1 -W1 $c
 }
 
