@@ -1,6 +1,6 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sex 30 dez 2016 09:27:51 BRT
+Last Change: sex 30 dez 2016 10:16:56 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -350,6 +350,23 @@ Finds abcdef or abc followed by any characters then def.
 
    Repeating the last substituition using &
    Repeat last substituition over whole file g&
+
+== using submatch in vim search ==
+
+Supose you have these lines:
+
+    <h2>Heading number 1</h2>
+    <h3>Number 2 heading</h3>
+    <h4>Another heading</h4>
+
+
+" highlight only digits inside html tags
+
+        \v<\/?h\zs\d\ze
+
+" promote each digit matched in the above search
+
+        :%s//\=submatch(0)-1/g
 
 ==jumping to edit positions and insert position==
 
