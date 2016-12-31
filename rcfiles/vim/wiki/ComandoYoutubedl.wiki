@@ -4,6 +4,11 @@
 
   sudo pip3 install youtube-dl --upgrade
 
+== Baixando de uma lista ==
+   Se você tem um arquivo com as url's use:
+
+     youtube-dl -a links.txt
+
 ==preservando o título do vídeo==
 
 	youtube-dl -t link
