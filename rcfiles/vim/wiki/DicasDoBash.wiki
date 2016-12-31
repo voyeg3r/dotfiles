@@ -25,7 +25,7 @@ compgen -A function -abck will list all the above in one go.
 
 ==how to Renaming files in a folder to sequential numbers==
 
-source: http://stackoverflow.com/questions/3211595/renaming-files-in-a-folder-to-sequential-numbers
+source: http://stackoverflow.com/questions/3211595/
 
 a=1
 for i in *.jpg; do

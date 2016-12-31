@@ -2,7 +2,7 @@
 
 Arquivo: Como usar o mercurial ( controle de versões )
 Criado: Qua 03/Nov/2010 hs 21:54
-Last Change: 2012 Jul 28 05:04:29
+Last Change: sex 30 dez 2016 20:02:55 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -96,7 +96,7 @@ Arquivos de Configuração
 
     # arquivo ~/.hgrc
     # referência sobre erro no certificado
-    # http://kiln.stackexchange.com/questions/2816/mercurial-certificate-warning-certificate-not-verified-web-cacerts
+    # http://kiln.stackexchange.com/questions/2816/
 
         HashKnownHosts no
         Compression yes

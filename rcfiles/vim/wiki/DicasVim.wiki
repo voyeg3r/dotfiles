@@ -1,6 +1,6 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sex 30 dez 2016 10:16:56 BRT
+Last Change: sex 30 dez 2016 20:02:50 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -50,7 +50,7 @@ https://pragprog.com/book/dnvim2/practical-vim-second-edition
 
 ==copy from one buffer to another==
 
-source: http://stackoverflow.com/questions/41259890/gvim-yank-lines-between-buffers
+source: http://stackoverflow.com/questions/41259890/
 
 I try to copy the lines 7,11 from buffer 2 to my buffer 3 without leaving
 buffer 3. Is it possible to do that with a simple command?
@@ -65,8 +65,8 @@ buffer. You can :put that into the current buffer via the expression register:
 
 ==Setting and getting position on vim ==
 
-References: http://vi.stackexchange.com/questions/6208/how-to-search-for-lines-matching-current-line-in-vim
-http://stackoverflow.com/questions/3922384/use-a-register-value-as-search-pattern
+References: http://vi.stackexchange.com/questions/6208/
+http://stackoverflow.com/questions/3922384/
 
     call setpos('.',[0,6,10,0])
 
@@ -108,7 +108,7 @@ http://stackoverflow.com/questions/3922384/use-a-register-value-as-search-patter
     vim --version | grep python
 
 ==Insert a command rnnge easily==
-Reference: http://stackoverflow.com/questions/35693335/what-is-this-just-the-middle-vimgolf-challenge-doing
+Reference: http://stackoverflow.com/questions/35693335/
 
    4:   equals to :.,.+3
 
@@ -203,7 +203,7 @@ If your Vim is compiled with clipboard support
 
 == como criar um diário no vim usando o vimwiki ==
 
-source: http://stackoverflow.com/questions/40414720/execute-plug-map-for-vim-through-terminal-command-line-as-startup-arguments
+source: http://stackoverflow.com/questions/40414720/
 
     vim +VimwikiMakeDiaryNote
 
@@ -450,7 +450,7 @@ mas é fácil de resolver, basta rodar esta função:
 
 ==gerando os helptag para navegar na ajuda==
 
-http://stackoverflow.com/questions/4180590/vim-helptag-generation
+http://stackoverflow.com/questions/4180590/
 
     cd <plugindir>
     vim -c "helptags doc/"
@@ -682,7 +682,7 @@ In orde to insert digraphs you have:
    clipbo ard.
 
 =dealig with previous yank register=
-http://stackoverflow.com/questions/12547369/vim-yank-replace-in-a-sequence
+http://stackoverflow.com/questions/12547369/
 
 EDIT 1: repeating using a macro
 
@@ -739,7 +739,7 @@ start a search typing /  then you press Ctrl-r 0
 This tip was copied in stackoverflow in this link http://va.mu/UIs6
 
 =How do condicional replace on vim=
-# from: http://stackoverflow.com/questions/8814069/how-to-do-conditional-replacing-using-vim
+# from: http://stackoverflow.com/questions/8814069/
 
 " como substituir uma palavra em uma linha que começa com -
 :%g/^-/s/word/WORD/g
@@ -755,7 +755,7 @@ fg
 ==Apagando linhas intercaladas==
 Vim: how to delete every second row?
 
-reference: http://stackoverflow.com/questions/1946738/vim-how-to-delete-every-second-row
+reference: http://stackoverflow.com/questions/1946738/
 
 g/^/+d
 
@@ -816,7 +816,7 @@ See :help registers for the full reference.
 
 =VIM: append to clipboard=
 
-http://stackoverflow.com/questions/6303882/vim-append-to-clipboard
+http://stackoverflow.com/questions/6303882/
 
 	let @+ = @+ . my_expression
 
@@ -855,7 +855,7 @@ http://stackoverflow.com/questions/6303882/vim-append-to-clipboard
 
   :enew .......... é melhor porque preserva o arquivo anterior na lista de buffers
 
-  Source: http://stackoverflow.com/questions/256204/close-file-without-quitting-vim-application
+  Source: http://stackoverflow.com/questions/256204/
 
 =Para executar uma função do vim que está na área de transferência=
 
@@ -878,7 +878,7 @@ http://stackoverflow.com/questions/6303882/vim-append-to-clipboard
 
 =Incrementando números ou decrementando com uma função=
 
-source: http://stackoverflow.com/questions/4951533/search-and-replace-with-incremented-values-in-vim
+source: http://stackoverflow.com/questions/4951533/
 
 Se eu tiver um arquivo assim:
 
@@ -1096,7 +1096,7 @@ This string doesn't contain any quotes, isn't it.
 
 
 =numerando linhas com novo comando=
-source: http://stackoverflow.com/questions/4224410/macro-for-making-numbered-lists-in-vim
+source: http://stackoverflow.com/questions/4224410/
 
 command! -nargs=0 -range=% Number <line1>,<line2>s/^\zs/\=(line('.') - <line1>+1).' '
 
@@ -1389,7 +1389,7 @@ map <S-F5> :call SignLines()<CR>
 
     inverter uma string por palavras
 
-    source: http://stackoverflow.com/questions/5532431/vim-invert-string-by-words
+    source: http://stackoverflow.com/questions/5532431/
 
     command! ReverseLine call setline('.', join(reverse(split(getline('.')))))
 

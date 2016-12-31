@@ -24,7 +24,7 @@ bash -x test.sh 2>&1 | tee out.test
 
 ==enviando uma saida para varios arquivos de uma vez==
 
-source: http://stackoverflow.com/questions/34678428/create-multiple-files-in-unix-using-a-script
+source: http://stackoverflow.com/questions/34678428/
 
 echo "What you want the files to contain." | tee filename{1..10}.txt
 

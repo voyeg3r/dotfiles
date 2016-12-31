@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: ter 27 dez 2016 08:09:24 BRT
+Last Change: sex 30 dez 2016 20:03:01 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -134,7 +134,7 @@ The syntax is:
     echo "${PIPESTATUS[0]} ${PIPESTATUS[1]}"
 
 ==how to run a secret series of commands==
-source: http://unix.stackexchange.com/questions/6094/is-there-any-way-to-keep-a-command-from-being-added-to-your-history/6141#6141
+[[source]]: http://unix.stackexchange.com/questions/6094/
 
     % fc -p
     % secret-command

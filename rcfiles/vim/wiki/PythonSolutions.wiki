@@ -48,7 +48,7 @@ Python 2.5.2 (r252:60911, Jul 22 2009, 15:35:03)
 		[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
 
 ==contar linhas de um arquivo==
-* http://stackoverflow.com/questions/845058/how-to-get-line-count-cheaply-in-python
+* http://stackoverflow.com/questions/845058/
 
 def file_len(fname):
   counts = itertools.count()
@@ -193,7 +193,7 @@ easy_install -z http://pydelicious.googlecode.com/files/pydelicious%2Btools-0.5.
 
 =Limpando a tela=
 
-# source: http://stackoverflow.com/questions/517970/how-to-clear-python-interpreter-console
+# source: http://stackoverflow.com/questions/517970/
 
 import os
 def cls():
@@ -449,7 +449,7 @@ def get_memory_size():
      print "aprenda a usar GNU/Linux"
 
 ==detectar arquivos duplicados==
-fonte: http://stackoverflow.com/questions/748675/finding-duplicate-files-and-removing-them
+fonte: http://stackoverflow.com/questions/748675/
 
 import sys
 import os
@@ -524,7 +524,7 @@ outro exemplo
 [ (x,y) for x in palavra for y in palavra if x != y ]
 
 ==Mais um exemplo usando a biblioteca itertools==
-* http://stackoverflow.com/questions/104420/how-to-generate-all-permutations-of-a-list-in-python
+* http://stackoverflow.com/questions/104420/
 
 import itertools
 

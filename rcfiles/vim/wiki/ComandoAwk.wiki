@@ -783,5 +783,5 @@ awk '{printf("%s%s", $0, (NR%5 ? " " : "\n"))}'
 * http://teknowlogic.org/soft/linux-tips/awk-oneliners/
 * http://www.rberaldo.com.br/blog/2009/05/07/tutorial-awk/
 * http://www.vivaolinux.com.br/dica/Awk-Uma-poderosa-ferramenta-de-analise/
-* http://stackoverflow.com/questions/2332252/extracting-data-from-a-file
+* http://stackoverflow.com/questions/2332252/
 * http://goo.gl/zwJ5

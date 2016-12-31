@@ -17,7 +17,7 @@ mkdir ~/.vim/bundle/neocomplcache
     :%s,.*\n.*\n,\0\r,g
 
 =Formatando css no vim=
-* http://stackoverflow.com/questions/1422866/using-vi-how-can-i-make-css-rules-into-one-liners
+* http://stackoverflow.com/questions/1422866/
 
 #main {
       padding:0;

@@ -416,7 +416,7 @@ sed -i 's|\("browser.startup.homepage",\) "\(.*\)"|\1 "http://www.google.com"|' 
    sed '/./,/^$/!d'
 
 ==como mover parte de um arquivo para o seu final==
-fonte: http://stackoverflow.com/questions/1286883/how-to-move-part-of-file-to-its-end
+fonte: http://stackoverflow.com/questions/1286883/
 
 sed '/\(pattern\)/,+4 { H; d; }; $ { p; x; }' file
 
@@ -582,4 +582,4 @@ Referências:
 * http://pt.wikisource.org/wiki/Dominando_o_SED
 * http://aurelio.net/sed/sed-HOWTO/index.html
 * http://sed.sourceforge.net/local/docs/emulating_unix.txt
-* http://stackoverflow.com/questions/2372719/using-sed-to-mass-rename-files
+* http://stackoverflow.com/questions/2372719/

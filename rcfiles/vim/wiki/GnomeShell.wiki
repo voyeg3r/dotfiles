@@ -1,11 +1,32 @@
 Arquivo: Dicas do Gnome-Shell Criado: Wed 04/May/2011 hs 17:23
-Last Change: ter 13 dez 2016 11:17:30 BRT
+Last Change: sáb 31 dez 2016 06:42:49 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 
+== save alsamixer settings ==
+source: http://askubuntu.com/a/465641/3798
 
-http://askubuntu.com/questions/604462/how-to-set-languages-shortcuts-from-config-files-or-command-line
+    alsactl --file ~/.config/asound.state store
+
+    reloading:
+
+    alsactl --file ~/.config/asound.state restore
+
+    Another user of askubuntu posted this:
+    Obs: The top answer didn't work for me but this did! I created a config
+    file and placed it at /etc/asound.state and added the reload line to my
+    /etc/rc.local
+
+    The first sugestion I got was this:
+
+    sudo alsactl store
+
+    This should save alsamixer configurations to /etc/asound.state which gets
+    loaded every startup.
+
+== how to set languages shortcuts from config files or command line ==
+http://askubuntu.com/questions/604462/
 
     gsettings set org.gnome.desktop.interface clock-show-date true
 

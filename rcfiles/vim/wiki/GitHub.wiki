@@ -1,12 +1,17 @@
 Dicas sobre o github
 
-referências: http://stackoverflow.com/questions/23821235/how-to-link-to-specific-line-number-on-github
+referências: http://stackoverflow.com/questions/23821235/
 
 Para especificar um range de linhas no github coloque
 
-#L18-L20
+    #L18-L20
 
-No final da url
+    No final da url
+
+    Para gerar uma url canônica (como uma foto do projeto como ele está agora)
+    use o atalho
+
+      y
 
 Para pegar mais facilmente ainda um range de linhas faça o
 seguinte:

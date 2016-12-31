@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 30 dez 2016 10:07:58 BRT
+" Last Change: sex 30 dez 2016 19:41:03 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -149,9 +149,6 @@ if executable('ag')
     " ag is fast enough that CtrlP doesn't need to cache
     let g:ctrlp_use_caching = 0
 endif
-
-" setting starting folders
-cd $HOME
 
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
@@ -451,7 +448,7 @@ nmap <leader>a :Age<cr>
 " mappings to repeat last command and last substituition
 " if you want to repeat the last substituition globally g&
 nmap <leader>r @:
-nmap <leader>s &
+nmap <leader>s :&&<cr>
 nmap <leader>qs q/
 
 " this function gets last 20 cmds to new buffer"{{{
@@ -803,16 +800,6 @@ augroup vimrc-python
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END"}}}
 
-" jedi-vim"{{{
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "0"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#smart_auto_mappings = 0"}}}
 
 " syntastic
 let g:syntastic_python_checkers=['python', 'flake8']

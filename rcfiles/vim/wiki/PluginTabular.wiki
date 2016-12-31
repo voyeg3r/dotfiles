@@ -1,12 +1,12 @@
 Arquivo: plugin tabular
 Criado: Seg 24/Jan/2011 hs 13:18
-Last Change: 2011 Mar 28 10:28:28
+Last Change: sex 30 dez 2016 20:02:53 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 veja essa discussão no stackoverflow
-http://stackoverflow.com/questions/4796721/using-tabularize-plugin
+http://stackoverflow.com/questions/4796721/
 
 O plugin tabular faz tabulações de modo bem interessante no vim
 
