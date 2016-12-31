@@ -1,9 +1,13 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sáb 31 dez 2016 15:30:21 BRT
+Last Change: sáb 31 dez 2016 17:46:53 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+== tips about ultisnips ==
+
+   :UltiSnipsEdit
 
 == quickfix list manipulations and :cdo command ==
 
