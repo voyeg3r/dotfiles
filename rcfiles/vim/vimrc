@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 31 dez 2016 15:14:30 BRT
+" Last Change: sáb 31 dez 2016 15:42:55 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -747,28 +747,18 @@ noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
 
-if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
-endif
+nnoremap <silent> <c-j> :cnext<CR>
+nnoremap <silent> <c-k> :cprevious<CR>
 
-" mappings for Switching windows"{{{
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h"}}}
-
-" Identação de textos e códigos com o TAB no modo visual"{{{
-" URL: http://gustavodutra.com/post/72/
-"               \ dicas-de-movimentacao-e-identacao-no-gvim/
+" Identação de textos e códigos com o TAB no modo visual
+" URL: http://gustavodutra.com/post/72/dicas-de-movimentacao-e-identacao-no-gvim/
 
 " To increase indentation you can you in insert mode
 " Ctrl-t and to decrease use Ctrl-d
 vnoremap < <gv
 vnoremap > >gv
 
-imap <S-TAB> <ESC><<i"}}}
+imap <S-TAB> <ESC><<i
 
 "" Move visual block
 vnoremap J :m '>+1<CR>gv=gv
