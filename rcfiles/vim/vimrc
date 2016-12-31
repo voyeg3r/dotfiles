@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 31 dez 2016 17:48:30 BRT
+" Last Change: sáb 31 dez 2016 18:25:40 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -730,9 +730,17 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsUsePythonVersion = 3
-let g:UltiSnipsSnippetsDir = expand("~/.dotfiles/rcfiles/vim/UltiSnips/")
+let g:UltiSnipsSnippetsDir = expand("~/.dotfiles/rcfiles/vim/snips/")
+let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]
 map <leader>u :UltiSnipsEdit<cr>
-let g:UltiSnipsEditSplit="vertical""}}}
+" Snippets variables
+let g:snips_author='Sergio Araujo'
+let g:author='Sergio Araujo'
+let g:snips_email='<voyeg3r  gmail.com>'
+let g:email='<voyeg3r  gmail.com>'
+let g:snips_github='https://github.com/voyeg3r'
+let g:github='https://github.com/voyeg3r'
+let g:UltiSnipsEditSplit="horizontal""}}}
 
 " open quickfix window with word under cursor as search pattern
 nnoremap <F4> :execute "vimgrep /" . expand("<cword>") . "/gji **" <Bar> cw<CR>
@@ -751,9 +759,6 @@ endif
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
-
-nnoremap <silent> <c-j> :cnext<CR>
-nnoremap <silent> <c-k> :cprevious<CR>
 
 " Identação de textos e códigos com o TAB no modo visual
 " URL: http://gustavodutra.com/post/72/dicas-de-movimentacao-e-identacao-no-gvim/
