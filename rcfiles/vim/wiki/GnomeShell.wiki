@@ -1,5 +1,5 @@
 Arquivo: Dicas do Gnome-Shell Criado: Wed 04/May/2011 hs 17:23
-Last Change: sáb 31 dez 2016 06:48:22 BRT
+Last Change: sáb 31 dez 2016 06:52:01 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
@@ -41,6 +41,18 @@ source: http://askubuntu.com/a/465641/3798
 
     This should save alsamixer configurations to /etc/asound.state which gets
     loaded every startup.
+
+    another attempt:
+
+    After 2 months of trying to make "sudo alsactl store" to work, I finally
+    managed to do it. Firstly type in terminal "alsamixer" to enter the
+    alsamixer UI. Then make the configurations you need(e.g increase
+    speakers/headphones level or unmute something pressing "m" on keyboard).
+    Now the most important part. Before you exit alsamixer, open a new terminal
+    and do : "sudo su" to get high privileges (Be very careful with commands
+    you use in "sudo su" mode because you may destroy your system) and then do
+    "alsactl store" to save alsa settings. Then close both terminals and
+    restart your computer. This will do the job.
 
 == how to set languages shortcuts from config files or command line ==
 http://askubuntu.com/questions/604462/

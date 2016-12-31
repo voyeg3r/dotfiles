@@ -1,9 +1,15 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sex 30 dez 2016 20:02:50 BRT
+Last Change: sáb 31 dez 2016 10:22:49 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+==links or worth clicking ==
+
+    http://www.mileszs.com/vimlinks.html
+
+== vimgolf ==
 
   Search vimgolf chalenges to vim users
   ao instalar o vimgolf como recomenda o site digite

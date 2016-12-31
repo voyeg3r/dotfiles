@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 30 dez 2016 19:41:03 BRT
+" Last Change: sáb 31 dez 2016 10:45:17 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -401,6 +401,19 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
+
+function! SmartHome()
+  let first_nonblank = match(getline('.'), '\S') + 1
+  if first_nonblank == 0
+    return col('.') + 1 >= col('$') ? '0' : '^'
+  endif
+  if col('.') == first_nonblank
+    return '0'  " if at first nonblank, go to start line
+  endif
+  return &wrap && wincol() > 1 ? 'g^' : '^'
+endfunction
+noremap <expr> <silent> 0 SmartHome()
+imap <silent> 0 <C-O><Home>
 
 " supertab completion"{{{
 function! SuperTab()
