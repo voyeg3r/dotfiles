@@ -1,9 +1,45 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sáb 31 dez 2016 10:22:49 BRT
+Last Change: sáb 31 dez 2016 15:30:21 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+
+== quickfix list manipulations and :cdo command ==
+
+  copen
+  ccl
+
+Um exemplo de fluxo de trabalho com o comando :cdo
+
+  Primeiro usar o grep para popular o quickfixlist
+
+        grep arquivo
+
+  Abrir o quickfixlist pra ver se a busca casou
+
+        copen
+
+  Pra fechar o quickfixlist apenas :ccl
+
+        ccl
+
+  No meu caso adicionei uma linha no começo de todos os arquivos
+
+        cdo normal ggOthis is only a test^[
+
+  Depois eu apaguei a linha adicionada
+
+        cdo normal ggdd
+
+  Gravei todos os arquivos depois do teste
+
+        cdo write
+
+  Fechei  todos os arquivos
+
+        qall
+
 
 ==links or worth clicking ==
 

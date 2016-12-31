@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 31 dez 2016 14:35:51 BRT
+" Last Change: sáb 31 dez 2016 15:14:30 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -154,8 +154,7 @@ map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
 
 " fzf configuration
-" <C-p> or <C-t> to search files
-nnoremap <silent> <c-t> :FZF -m<cr>
+" <C-p> to search files
 nnoremap <silent> <c-p> :FZF -m<cr>
 " end - fzf configuration
 
