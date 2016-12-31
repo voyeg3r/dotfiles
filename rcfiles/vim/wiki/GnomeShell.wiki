@@ -1,5 +1,5 @@
 Arquivo: Dicas do Gnome-Shell Criado: Wed 04/May/2011 hs 17:23
-Last Change: sáb 31 dez 2016 06:42:49 BRT
+Last Change: sáb 31 dez 2016 06:48:22 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
@@ -12,6 +12,23 @@ source: http://askubuntu.com/a/465641/3798
     reloading:
 
     alsactl --file ~/.config/asound.state restore
+
+    vim ~/.config/autostart/alsarestore.desktop
+
+    Entries in ~/.config/autostart/ directory are used to autostart programs
+    and services for specific user on startup/graphical login.
+
+    The contents of the .desktop file should be the following:
+
+    [Desktop Entry]
+    Type=Application
+    Terminal=false
+    Name=alsarestore
+    Exec=alsactl --file ~/.config/asound.state restore
+
+    Among other things, you could store your config in /etc/asound.state and
+    symlink it to /var/lib/alsa/asound.state, but this one is more of a suggestion
+    rather than tested solution
 
     Another user of askubuntu posted this:
     Obs: The top answer didn't work for me but this did! I created a config
