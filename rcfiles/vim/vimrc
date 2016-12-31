@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 31 dez 2016 15:42:55 BRT
+" Last Change: sáb 31 dez 2016 16:33:28 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -446,6 +446,8 @@ nmap <leader>a :Age<cr>
 
 " mappings to repeat last command and last substituition
 " if you want to repeat the last substituition globally g&
+nmap <leader>l :exec getline('.')<cr>
+nmap <leader>c q:
 nmap <leader>r @:
 nmap <leader>s :&&<cr>
 nmap <leader>qs q/
@@ -727,6 +729,8 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsSnippetsDir = expand("~/.dotfiles/rcfiles/vim/UltiSnips/")
 let g:UltiSnipsEditSplit="vertical""}}}
 
 " open quickfix window with word under cursor as search pattern
