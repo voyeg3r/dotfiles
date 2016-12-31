@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 31 dez 2016 18:25:40 BRT
+" Last Change: sáb 31 dez 2016 20:15:15 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -401,16 +401,6 @@ let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
-" supertab completion"{{{
-function! SuperTab()
-    if (strpart(getline('.'),col('.')-2,1)=~'^\W\?$')
-        return "\<Tab>"
-    else
-        return "\<C-n>"
-    endif
-endfunction
-imap <Tab> <C-R>=SuperTab()<CR>"}}}
-
 "" set wrapping"{{{
 if !exists('*s:setupWrapping')
   function s:setupWrapping()
@@ -711,10 +701,6 @@ endif
 " a barra de espaços -- zR abre todos os folders
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>"}}}
 
-"" Tabs
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
-nnoremap <silent> <S-t> :tabnew<CR>
 
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
@@ -727,19 +713,18 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " snippets settings"{{{
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsSnippetsDir = expand("~/.dotfiles/rcfiles/vim/snips/")
 let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]
 map <leader>u :UltiSnipsEdit<cr>
 " Snippets variables
 let g:snips_author='Sergio Araujo'
-let g:author='Sergio Araujo'
+let g:snips_site='http://vivaotux.blogspot.com'
 let g:snips_email='<voyeg3r  gmail.com>'
-let g:email='<voyeg3r  gmail.com>'
 let g:snips_github='https://github.com/voyeg3r'
-let g:github='https://github.com/voyeg3r'
+let g:snips_twitter='@voyeg3r'
 let g:UltiSnipsEditSplit="horizontal""}}}
 
 " open quickfix window with word under cursor as search pattern
@@ -767,8 +752,6 @@ noremap XX "+x<CR>
 " Ctrl-t and to decrease use Ctrl-d
 vnoremap < <gv
 vnoremap > >gv
-
-imap <S-TAB> <ESC><<i
 
 "" Move visual block
 vnoremap J :m '>+1<CR>gv=gv

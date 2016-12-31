@@ -1,8 +1,8 @@
 # Shebang. Executing bash via /usr/bin/env makes scripts more portable.
 snippet #!
 #!/usr/bin/env bash
-# Created: `system("date +%m-%d-%Y")`
-# Last Change: sáb 31 dez 2016 18:11:29 BRT
+# Created: `date %+c`
+# Last Change: sáb 31 dez 2016 20:17:19 BRT
 # Author: ${1:`g:snips_author`}
 # Twitter: ${2:`g:snips_twitter`}
 ${0:# press Ctrl-j to jump placeholders}
@@ -10,13 +10,16 @@ endsnippet
 
 snippet sh
 #!/usr/bin/env bash
-# Created: `system("date +%m-%d-%Y")`
+# Created: `!v strftime('%Y-%m-%d')`
 # Last Change: sex 04 nov 2016 16:02:43 BRT
 # vim:ft=sh:fdm=syntax:nu:
 # Instituicao: ${1:instituicao}
 # Proposito do script: ${2:write here the script purpose}
-# Autor: ${3:`g:snips_author`}
-# site: ${4:`g:snips_site`}
+# Autor: `!v g:snips_author`
+# site: `!v g:snips_site`
+# github: `!v g:snips_twitter`
+# e-mail: `!v g:snips_email`
+
 ${0:# press Ctrl-j to jump placeholders}
 endsnippet
 
