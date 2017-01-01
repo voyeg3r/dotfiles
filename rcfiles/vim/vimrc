@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 31 dez 2016 20:15:15 BRT
+" Last Change: sáb 31 dez 2016 21:14:56 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -330,7 +330,7 @@ augroup end"}}}
 
 augroup zsh "{{{
     au BufNewFile *.zsh 0r ~/.vim/skel/template.zsh
-    au BufNewFile *.zsh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")/e
+    au BufNewFile *.zsh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " . strftime("%d-%m-%Y")/e
     au BufWritePost *.zsh :silent !chmod a+x <afile>
 augroup end "}}}
 

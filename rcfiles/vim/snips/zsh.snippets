@@ -1,15 +1,22 @@
 # #!/bin/zsh
-snippet #! "#!"
+priority 1
+
+snippet zh "zsh header"
 #!/usr/bin/env zsh
-# Created: ${1:`date +%Y-%m-%d %H:%M`}
-# Last Change: sáb 31 dez 2016 18:06:53 BRT
-# Author: ${1:`g:snips_author`}
-# Twitter: ${2:`g:snips_twitter`}
+# Created: `date +%c`
+# Last Change: sáb 31 dez 2016 21:40:41 BRT
+# Author: ${1:`!v g:snips_author`}
+# Twitter: ${2:`!v g:snips_twitter`}
+
 ${0:# press Ctrl-j to jump placeholders}
 endsnippet
 
 snippet alias
 alias ${1:name}='${2:action}'
+endsnippet
+
+snippet lower "lower case var"
+${${1:var}:l} ${0:ctrl-j to get here}
 endsnippet
 
 snippet galias
@@ -157,3 +164,23 @@ function ${1:name} (${2:args}) {
 }
 endsnippet
 
+snippet array "esay array creation"
+local array=( ${1:@} )
+${0: ctrl-j}
+endsnippet
+
+
+snippet larray "last array item"
+local ${1:last}=${${2:array}[-1]}
+${0: ctrl-j}
+endsnippet
+
+snippet arrayargs "return array args"
+${1:args}=${${2:array}[1,-2]}
+${0: ctrl-j}
+endsnippet
+
+snippet which "test if program exists"
+which ${1:program name}
+${0: ctrl-j}
+endsnippet

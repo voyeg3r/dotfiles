@@ -1,13 +1,25 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sáb 31 dez 2016 17:46:53 BRT
+Last Change: sáb 31 dez 2016 20:46:48 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 == tips about ultisnips ==
+source: http://vimcasts.org/episodes/ultisnips-visual-placeholder/
 
    :UltiSnipsEdit
+
+   As interpolações tem que estar dentro de crases
+   ou backtickets in English
+
+  "insere a data usando interpolação do vim
+   `!v strftime('%Y-%m-%d')
+
+   !p  interpolação python
+
+   !p snip.rv = "return value"
+   t[1] --> tabstop 1
 
 == quickfix list manipulations and :cdo command ==
 
