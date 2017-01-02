@@ -4,7 +4,7 @@ priority 1
 snippet zh "zsh header"
 #!/usr/bin/env zsh
 # Created: `date +%c`
-# Last Change: seg 02 jan 2017 10:08:09 BRT
+# Last Change: seg 02 jan 2017 13:04:48 BRT
 # Author: ${1:`!v g:snips_author`}
 # Twitter: ${2:`!v g:snips_twitter`}
 
@@ -16,7 +16,7 @@ alias ${1:name}='${2:action}'
 endsnippet
 
 snippet lower "lower case var"
-${${1:var}:l} ${0:ctrl-j to get here}
+${${1:var}:l} ${0:#ctrl-j to get here}
 endsnippet
 
 snippet galias
@@ -49,13 +49,14 @@ fi
 ${0}
 endsnippet
 
-snippet fun
-${1:function_name}() {
-${0:#function_body}
+snippet 'fun(ction)?' "function" !r
+${1:function_name}(${2:args}) {
+${3:#function_body}
 }
+${0:# jump out ctrl-j}
 endsnippet
 
-snippet ir "if user is root" w
+snippet '\bi(f)?root' "if user is root" !r
 if [ "$(id -u)" != "0" ]; then
     echo "  Need be root"
     sleep 2
@@ -111,7 +112,7 @@ for ${1:item} in ${2:list}; do
 done
 endsnippet
 
-snippet wh "wh"
+snippet 'wh(ile)?' "wh" !r
 while ${1:condition}; do
 	${2:# statements}
 done
@@ -158,12 +159,6 @@ snippet always "always"
 { ${1:try} } always { ${2:always} }
 endsnippet
 
-snippet fun "fun"
-function ${1:name} (${2:args}) {
-	${3:# body}
-}
-endsnippet
-
 snippet array "esay array creation"
 local array=( ${1:@} )
 ${0: ctrl-j}
@@ -204,4 +199,25 @@ endsnippet
 
 snippet todo "what we need to do"
 # TODO ${1:Things to be done} {`date +%Y-%m-%d\ %H:%M` `!v g:snips_author`}
+endsnippet
+
+snippet gt "compare two variables" w
+if [[ "${1:foo}" -gt "${2:bar}" ]]; then
+   ${3:statements}
+fi
+${0:# jump outside - ctrl-j}
+endsnippet
+
+snippet newer "says if file is newer than" w
+if [[ "${1:foo}" -nt "${2:bar}" ]]; then
+        printf 'file %s is newer than %s\n' "$$1" "$$2"
+fi
+${0:# jump outside ctrl-j}
+endsnippet
+
+snippet = "compare strings" b
+if [[ "${1:foo}" == "${2:bar}" ]]; then
+    ${3:echo "$1" is equal to "$2"}
+fi
+${0:# ctrl-j}
 endsnippet

@@ -1,6 +1,6 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: sáb 31 dez 2016 20:46:48 BRT
+Last Change: seg 02 jan 2017 10:12:53 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -8,7 +8,18 @@ twitter: http://www.twitter.com/voyeg3r
 == tips about ultisnips ==
 source: http://vimcasts.org/episodes/ultisnips-visual-placeholder/
 
+   If you wnat to overwrite a snippet definition just put
+   at the beginning of your file
+
+   priority 1
+
+===editing your snippets quickly ===
+
    :UltiSnipsEdit
+
+   In my case I have a vim map:
+
+   nnoremap <leader>u :call UltiSnipsEdit<cr>
 
    As interpolações tem que estar dentro de crases
    ou backtickets in English

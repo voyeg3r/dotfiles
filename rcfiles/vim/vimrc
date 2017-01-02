@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 02 jan 2017 09:52:03 BRT
+" Last Change: seg 02 jan 2017 13:23:16 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -72,6 +72,8 @@ set wildmode=full
 set completeopt=menu,preview
 set complete=.,w,k
 setlocal complete=.,w,k,b,u
+set completeopt+=noinsert
+autocmd CursorHoldI * call feedkeys("\<c-n>")
 
 " execute current line on shell zsh or bash"{{{
 map <S-F12> :exec '!'.getline('.')<cr>"}}}
