@@ -2,7 +2,7 @@
 snippet #!
 #!/usr/bin/env bash
 # Created: `date +%Y-%m-%d\ %H:%M`
-# Last Change: sáb 31 dez 2016 20:57:33 BRT
+# Last Change: dom 01 jan 2017 18:02:08 BRT
 # Author: ${1:`!v g:snips_author`}
 # Twitter: ${2:`!v g:snips_twitter`}
 ${0:# press Ctrl-j to jump placeholders}
@@ -219,3 +219,24 @@ sed ${1:options} 's/${1:what}/d'
 ${0:press Ctrl-j to leave}
 endsnippet
 
+
+snippet lic "gpl3 licence"
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+${0: press ctrl-j}
+endsnippet
+
+snippet todo "what we need to do"
+# TODO ${1:Things to be done} {`date +%Y-%m-%d\ %H:%M` `!v g:snips_author`}
+endsnippet
