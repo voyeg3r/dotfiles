@@ -1,0 +1,9 @@
+priority 1
+
+# snippet plug "new plugin" b
+# Plug '${1:plugin repo}'
+# endsnippet
+
+snippet plug "Install new plugin" w
+Plug '${1:`xclip -selection clipboard -o`}'
+endsnippet

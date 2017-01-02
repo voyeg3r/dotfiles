@@ -26,7 +26,15 @@ ${0}
 `echo endsnippet`
 endsnippet
 
+snippet 'clip(board)?' "past clipboard" !r
+`xclip -selection clipboard -o`
+endsnippet
 
+snippet 75wrds "Log a 750words.com session" b
+750words.com: ${1:750} words in ${2:20} minutes - `!p
+snip.rv = fraction(t[1], t[2])
+` wpm.
+endsnippet
 
 # vim:ft=snippets:
 
