@@ -1,7 +1,7 @@
 # Arquivo: zshell tips and tricks
 
     Criado: Sáb 04/Jan/2014 hs 07:23
-    Last Change: ter 03 jan 2017 15:57:00 BRT
+    Last Change: ter 03 jan 2017 16:24:00 BRT
     autor: Sérgio Luiz Araújo Silva
     site: http://vivaotux.blogspot.com
     twitter: http://www.twitter.com/voyeg3r
@@ -222,18 +222,18 @@ you can use =command instead $(which command)
 
 ## one-liners
 
-# lowcase filenames 
+# lowcase filenames
 source: http://lorenzod8n.wordpress.com/category/zsh/
 
     for file in *; do mv $file ${file:l}; done
     for p in ~/pictures/**/*[A-Z]*; do mv $p ${p:l}; done
 
-                            An application of modifiers is !:t, which results into the basename of
-                            the last argument. Very useful when working with URLs, for example.
-                            You’ll never have to strip the path manually again:
+    An application of modifiers is !:t, which results into the basename of
+    the last argument. Very useful when working with URLs, for example.
+    You’ll never have to strip the path manually again:
 
-                            % wget ftp://ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p330.tar.gz
-                            % tar xzvf !:t
+    % wget ftp://ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p330.tar.gz
+    % tar xzvf !:t
 
 # this command
 
@@ -294,31 +294,31 @@ Nevertheless, you could also check for either
     changed at more than 3 weeks (mw+3)
     (Lm+5) —larger than five megabytes.
 
-     ls **/*(.) .......... regular files
-     ls **/*(^.) ......... not regular files
-     ls **/*(@) .......... simbolic links
-     ls **/*(*) .......... executable files
-     ls **/*(rwx) ........ readable writable and executable by user
-     ls **/*(m-1) ........ modification time -1 24h
-     ls **/*(mm-1) ....... modification minute -1
-     ls **/*(M-1) ........ modification time -1 month
-     ls **/*(mh-1) ....... modification hour
-     ls **/*(a+1) ....... acces more than one day
-     ls **/*(aM+1) ....... acces more than one month
-     ls **/*(.DmM+12) .... regular files older thant one year
-     ls **/*(L+10M) ...... file more than 10M
-     ls **/*(*Lk-5) ...... executable files less than 5kb
+    ls **/*(.) .......... regular files
+    ls **/*(^.) ......... not regular files
+    ls **/*(@) .......... simbolic links
+    ls **/*(*) .......... executable files
+    ls **/*(rwx) ........ readable writable and executable by user
+    ls **/*(m-1) ........ modification time -1 24h
+    ls **/*(mm-1) ....... modification minute -1
+    ls **/*(M-1) ........ modification time -1 month
+    ls **/*(mh-1) ....... modification hour
+    ls **/*(a+1) ....... acces more than one day
+    ls **/*(aM+1) ....... acces more than one month
+    ls **/*(.DmM+12) .... regular files older thant one year
+    ls **/*(L+10M) ...... file more than 10M
+    ls **/*(*Lk-5) ...... executable files less than 5kb
 
-     ls *(.D) ........... D dotfiles '.' regular files
+    ls *(.D) ........... D dotfiles '.' regular files
 
-                                                                                                      ls -l **/*(.Lm-2mh-1om[1,3])
-                                                                                                      Lm-2 # <2mbs
-                                                                                                      mh-1 # less 1 hr
-                                                                                                      om[1,3] most recent 3
+    ls -l **/*(.Lm-2mh-1om[1,3])
+    Lm-2 # <2mbs
+    mh-1 # less 1 hr
+    om[1,3] most recent 3
 
-                                                                                                      (om) tells the glob to sort the remaining files by their modification date.
+(om) tells the glob to sort the remaining files by their modification date.
 
-                                                                                                      Note that the default unit for this qualifier is days, so (m-1) will mean a day ago or, more precisely, up to 24 hours before the current system time.
+                                                                             Note that the default unit for this qualifier is days, so (m-1) will mean a day ago or, more precisely, up to 24 hours before the current system time.
 
 ##zsh completions for yaourt
 

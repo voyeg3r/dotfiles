@@ -1,5 +1,4 @@
 
-
 snippet 'h1|#|=' "create header 1" r
 # ${1:header content}
 ${0: ctrl-j}
@@ -12,6 +11,10 @@ endsnippet
 
 snippet 'code|verb(ose)?' "wiki verbose code" r
 	${0:${VISUAL:assertions ...}}
+endsnippet
+
+snippet 'back(ticks)?' "code inline" r
+${0:${VISUAL:type here ...}}
 endsnippet
 
 snippet bold "*markdown bold*" w
