@@ -1,5 +1,5 @@
 //{$revisionyear}//
-=Introdução= Vc pode usar o comando trap para impedir que os
+##Introdução Vc pode usar o comando trap para impedir que os
 ctrl+c/ctrl+z te causem problemas.  A sintaxe do comando trap é a
 seguinte: 
 

@@ -16,7 +16,7 @@ os textos literais ficam entre backtickets assim:
 
 ``` codigo literal ```
 
-==Encurtando urls to StackExchange ==
+##Encurtando urls to StackExchange 
 
 {{{
 Urls do tipo:

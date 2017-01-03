@@ -1,4 +1,4 @@
-=Introdução= 
+##Introdução 
 Para abrir outro modo gráfico
 
 startx -- :1

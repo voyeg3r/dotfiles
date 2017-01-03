@@ -22,7 +22,7 @@ http://stackoverflow.com/questions/3489173/
 
     :Git checkout %
 
-==add current file to git==
+##add current file to git
 
  :Git add %
 
@@ -90,11 +90,11 @@ Como adicionar sua chave ssh ao github
 	git remote add origin git@github.com:voyeg3r/dotfiles.git
 	git push -u origin master
 
-= Git - easy way pull latest of all submodules=
+## Git - easy way pull latest of all submodules
 
     git submodule foreach git pull
 
-= how checkout from a particular revison point =
+## how checkout from a particular revison point 
 
 		Git clone particular version of remote repository
 

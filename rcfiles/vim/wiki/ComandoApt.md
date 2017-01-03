@@ -1,4 +1,4 @@
-=Introdução=
+##Introdução
 efetua uma comparação entre os pacotes que estão
 instalados em sua maquina e se na lista houver um pacote com a versão
 mais nova ele faz o download a faz a atualização.
@@ -7,11 +7,11 @@ apt-get upgrade
 # /usr/share/debconf/fix_db.pl --> fix debconf
 #
 
-= how install apt-proz e prozila =
+## how install apt-proz e prozila 
 http://ppa.launchpad.net/tahutek-team/prozilla/ubuntu/pool/main/
 
 
-= Instalar apt-fast e apt-metalink=
+## Instalar apt-fast e apt-metalink
 
 apt-get install -y aria2
 
@@ -28,14 +28,14 @@ fi
 
 wget -c https://raw.github.com/tatsuhiro-t/apt-metalink/master/apt-metalink -O /usr/bin/apt-metalink && chmod +x $_
 
-=ativar a possibilidade de instalar pacotes de repositórios não oficiais via synaptic=
+##ativar a possibilidade de instalar pacotes de repositórios não oficiais via synaptic
 
 sudo update-apt-xapian-index
 
-==resolvendo problemas no apt-get==
+##resolvendo problemas no apt-get
 * http://www.ubuntu-ac.org/archives/319
 
-==atualizar a distribuição==
+##atualizar a distribuição
 
 sudo su -
 
@@ -64,7 +64,7 @@ Then download it using wget
 wget -ci downlist -P ~/mydebs
 
 
-==listar dependências==
+##listar dependências
 
 sudo apt-get –print-uris –yes install PACKAGE_NAME | grep ^\’ | cut -d\’ -f2 >mydownload.txt
 
@@ -97,12 +97,12 @@ You're done. That's 10 easy steps to install software and add packages to Ubuntu
 
 To update your system follow the same above procedures but instead of 'step 2' Go to Edit and Mark all Upgrades.
 
-==cache do apt==
+##cache do apt
 * http://www.linuxjournal.com/content/presenting-squid-deb-proxy-speed-your-update-downloads
 
 sudo apt-get install squid-deb-proxy avahi-tools
 
-==Como instalar pacotes contendo um padrão no nome?==
+##Como instalar pacotes contendo um padrão no nome?
 
 # como instalar todos os estilos de ícones disponíveis para o openoffice?
 
@@ -117,15 +117,15 @@ sudo apt-get install squid-deb-proxy avahi-tools
 
 apt-get install `apt-cache search openoffice.org-style.* | awk '{print $1}'`
 
-==Para atualizar os repositórios consumindo pouca banda==
+##Para atualizar os repositórios consumindo pouca banda
 
 sudo apt-get -o Acquire::http::Dl-Limit=30 upgrade
 
-==Instalar um pacote consumindo pouca banda==
+##Instalar um pacote consumindo pouca banda
 
 sudo apt-get -o Acquire::http::Dl-Limit=25 install <package>
 
-=Referências:=
+##Referências:
 * [[@http://www.gdhpress.com.br/blog/dicas-apt-get-aptitude/]]
 
 
@@ -134,13 +134,13 @@ wget http://archive.ubuntustudio.org/ubuntustudio.gpg -O- | sudo apt-key add -
 ubuntustudio-icon-theme
 
 
-==Mostrar meta informação de um pacote (distribuições derivadas do debian) (dependências, status etc)==
+##Mostrar meta informação de um pacote (distribuições derivadas do debian) (dependências, status etc)
 
 
 apt-cache show Your_package
 
 
-==listar pacotes instalados==
+##listar pacotes instalados
 
 dpkg --get-selections > pacotes.txt
 
@@ -149,12 +149,12 @@ Para instala todos os pacotes de uma lista prévia faça:
 dpkg --set-selections < pacotes.txt
 
 
-==descomentando os repositórios universe e multiverse==
+##descomentando os repositórios universe e multiverse
 
 sed -i.backup -r '/^#\s?deb\s?(http|ftp|-src).*(partner|multiverse|universe)/s/^#\s?//g' /etc/apt/sources.list
 
 
-==Limitar download do apt==
+##Limitar download do apt
 * fonte: http://fredim.wordpress.com/2008/11/10/limitar-banda-do-apt/
 Primeiramente edite o arquivo /etc/apt/apt.conf ,
 acrescentando os seguintes dados:
@@ -173,18 +173,18 @@ Dl-Limit "x";        // x Kb/sec maximum download rate
 
 * Onde x é a quantidade de Kb/sec máxima de download.
 
-==via comando direto==
+##via comando direto
 
 sudo apt-get -o Acquire::http::Dl-Limit=25 install <package>
 
 
-==Resolvendo problema com o aptitude==
+##Resolvendo problema com o aptitude
 * fonte: http://andregondim.eti.br/?p=574
 
 wget http://launchpadlibrarian.net/19491146/aptitude-defaults.pt_BR -O /usr/share/aptitude/aptitude-defaults.pt_BR
 
 
-==auto apt==
+##auto apt
 * fonte: http://www.linuxacessivel.org/2008/05/26/usando-o-auto-apt/
 
 O que é o auto-apt?
@@ -230,7 +230,7 @@ para instalar o que se está faltando para a compilação do programa.
 Obs: em alguns casos o auto-apt fica meio perdido, mas, de modo geral ele funciona bem!
 
 
-==Adicionando chaves gpg ao apt-get==
+##Adicionando chaves gpg ao apt-get
 No ubuntu karmic
 
 sudo add-apt-repository ppa:<Repository_Name>
@@ -294,7 +294,7 @@ rm -f /tmp/.lock
 
 
 
-==Códigos ainda não prontos para uso==
+##Códigos ainda não prontos para uso
 
 
 #!/bin/bash
@@ -361,7 +361,7 @@ exit 0
 
 
 
-==Adicionando repositórios ao apt==
+##Adicionando repositórios ao apt
 No ubuntu karmic há uma nova opção
 
 udo add-apt-repository ppa:<Repository_Name>
@@ -382,7 +382,7 @@ gpg --export --armor 1135D466 | sudo apt-key add -
 
 Note que no final da linha existe um - (traço)
 
-==Testes para scripts==
+##Testes para scripts
 
 # permite só uma instância de um script
  LOCK_FILE=/tmp/.lock
@@ -402,7 +402,7 @@ fi
 
 
 
-=Aptviaproxy=
+##Aptviaproxy
 
 sudo vim /etc/apt/apt.conf.d/02proxy
 
@@ -541,7 +541,7 @@ exit
 
 
 
-=HowTo: See Contents of A .DEB Debian / Ubuntu Package File=
+##HowTo: See Contents of A .DEB Debian / Ubuntu Package File
 * http://www.cyberciti.biz/faq/view-contents-of-deb-file/
 
 apt-get update && apt-get install apt-file
@@ -549,7 +549,7 @@ apt-get update && apt-get install apt-file
 # apt-file list packageName
 # apt-file list wget
 
-==How Do I See foo.deb Contents?==
+##How Do I See foo.deb Contents?
 
 # dpkg-deb -c foo.deb
 # dpkg-deb -c acct_6.4~pre1-6_amd64.deb
@@ -558,7 +558,7 @@ You read the contents of a installed package:
 
 # dpkg -L packageName
 
-=Referências=
+##Referências
 * http://www.mariusb.net/blog/2009/10/apt-get-performance-improvement/
 * http://www.webupd8.org/2009/11/get-list-of-packages-and-dependencies.html
 * http://techspalace.blogspot.com/2009/04/offline-update-ubuntu.html

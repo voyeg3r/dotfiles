@@ -8,6 +8,6 @@ Ctrl-f ...... desce uma página
 Ctrl-b ...... volta uma página
 
 
-==exibindo um arquivo com números de linha==
+##exibindo um arquivo com números de linha
 
 less -N file

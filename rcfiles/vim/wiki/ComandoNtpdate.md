@@ -5,7 +5,7 @@ Escolheremos como fornecedor de hor´ario confi´avel o seguinte servidor: ntp.u
 # ntpdate -s ntp.usp.br
 # date
 
-==usando o cron para ativar o ntpdate==
+##usando o cron para ativar o ntpdate
 
 
 # manter o relogio certo

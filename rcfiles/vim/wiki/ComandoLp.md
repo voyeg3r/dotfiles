@@ -1,12 +1,12 @@
 Arquivo: dicas do comando lp
 Criado: Qui 11/Out/2012 hs 15:51
-Last Change: 2013 Jan 18 03:11:28 PM
+Last Change: ter 03 jan 2017 14:42:32 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
-= como enviar um echo para a impressora via linha de comandos=
+## como enviar um echo para a impressora via linha de comandos
 
 	echo "um teste" | lp -d Brother_DCP-7065DN
 
@@ -14,13 +14,13 @@ If you normally use a particular printer, you can tell CUPS to use it by default
 
 	lpoptions -d printer
 
-= como limpar o spool de impressao=
+## como limpar o spool de impressao
 
 	sudo service cups stop
 	sudo rm -rf /var/spool/cups/*
 	sudo service cups start
 
-== instalando a impressora brother ==
+## instalando a impressora brother 
 
 sudo apt-fast install brother*
 

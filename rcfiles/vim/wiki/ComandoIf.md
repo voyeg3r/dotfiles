@@ -1,5 +1,5 @@
 O comando if testa condições
-=Introdução=
+##Introdução
 
 # testa se o usuário é root
 # != significa diferente
@@ -27,12 +27,12 @@ if( isset($var) )
 else
         $var = 10;
 
-==Testando com opcionais ou expressõs regulares==
+##Testando com opcionais ou expressõs regulares
 
 if [[ expression1 || expression2 ]]; then do_something; fi
 if [[ string =~ regex ]]; then do_something; fi
 
-==um modo inusitado de testar==
+##um modo inusitado de testar
 
 [ "$1" ] || { echo "Uso: $0 parâmetro" ; exit 1 ; }
 

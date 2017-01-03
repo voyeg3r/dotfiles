@@ -1,4 +1,4 @@
-==opções==
+##opções
 
 -i : determina a interface
 -p, --nopromisc : não faz uso do modo promiscuo
@@ -6,7 +6,7 @@
 -T, --text : imprime os dados no formato texto puro 
 
 
-==capturando pacotes remotos==
+##capturando pacotes remotos
 
 ettercap -Tq -i eth0 -M arp:remote /192.168.1.1/ //
 
@@ -14,5 +14,5 @@ Let 192.168.1.1 is the gateway of our network,then all the
 packets between the gateway and all the machines in the subnet 
 will be going through our machine (i.e we are the gateway for all the machines
 
-==Referências==
+##Referências
 * http://lrodrigo.lncc.br/index.php/Ettercap

@@ -1,12 +1,12 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: seg 21 nov 2016 13:00:16 BRT
+Last Change: ter 03 jan 2017 14:41:49 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
-==archanywhere==
+##archanywhere
 Facilitador para instalaçaõ do archlinux
 
 http://arch-anywhere.org/download.html
@@ -17,10 +17,10 @@ yaourt -S extra/python2-gobject2
 yaourt -S libappindicator-gtk3
 yaourt -S font-manager
 
-== pdnsd easy dns cache ==
+## pdnsd easy dns cache 
 https://wiki.archlinux.org/index.php/Pdnsd
 
-==acessando ssh==
+##acessando ssh
 https://wiki.archlinux.org/index.php/Secure_Shell#Installing_OpenSSH
 
 
@@ -42,7 +42,7 @@ To allow access only for some groups:
     # systemctl enable sshd.service
 
 
-== configurando o touchpad para colar com toque de dois dedos==
+## configurando o touchpad para colar com toque de dois dedos
 
 # source:
 # https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Buttonless_TouchPads_.28aka_ClickPads.29
@@ -52,7 +52,7 @@ To allow access only for some groups:
 sudo cp /usr/share/X11/xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d/
 
 
-==usando seu pendrive como memória swap==
+##usando seu pendrive como memória swap
 
  Formate ele usando o gparted
  depois descubra onde está a partição com o comando
@@ -66,14 +66,14 @@ sudo cp /usr/share/X11/xorg.conf.d/50-synaptics.conf /etc/X11/xorg.conf.d/
   a opção -p 1000 aumenta a prioridade de seu uso
   e opção -v mostra a saída do comando mais detalhada
 
-==delete pacman lock file==
+##delete pacman lock file
 
     If pacman is not running and has a lock package avoiding
     other instalations, run this:
 
     rm /var/lib/pacman/db.lck
 
-==updating the system without confirmation==
+##updating the system without confirmation
 
 You can create a file ~/.yaourtrc and put this in it:
 
@@ -85,7 +85,7 @@ Another option would be to use the "--noconfirm".
 
     yaourt -Syua --noconfirm
 
-==enable gdm as default display manager==
+##enable gdm as default display manager
 
 source: https://bbs.archlinux.org/viewtopic.php?id=151156
 
@@ -95,12 +95,12 @@ source: https://bbs.archlinux.org/viewtopic.php?id=151156
 
     sudo systemctl -f enable gdm
 
-==setting default shell==
+##setting default shell
 * reference: http://va.mu/hbcr  (superuser)
 
 sudo chsh -s $(which zsh) john
 
-==Restasting network==
+##Restasting network
 
     systemctl restart network
 
@@ -108,7 +108,7 @@ sudo chsh -s $(which zsh) john
 
     $ systemctl is-enabled unit
 
-==improving network speed==
+##improving network speed
 
 wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf -O /etc/sysctl.d/99-sysctrl.conf
 
@@ -118,14 +118,14 @@ if [ ! -L /etc/sysctl.d/99-sysctl.conf -a -e /etc/sysctl.conf ]; then
 		/usr/bin/ln -sf /etc/sysctl.conf /etc/sysctl.d/99-sysctl.conf || :
 fi
 
-==stopping services==
+##stopping services
 # https://wiki.archlinux.org/index.php/Systemd#Basic_systemctl_usage
 
  systemctl disable bluetooth
 
  systemctl start sshd
 
-==Backlight==
+##Backlight
 
 When system starts, screen backlight is set to maximum by default. This can be fixed by specifying backlight level in the following udev rule:
 
@@ -134,19 +134,19 @@ When system starts, screen backlight is set to maximum by default. This can be f
 ## SET BACKLIGHT
 SUBSYSTEM=="backlight", ACTION=="add", KERNEL=="acpi_video0", ATTR{brightness}="1"
 
-==update firefox-nightly==
+##update firefox-nightly
 
 		yaourt -Syua firefox-nightly
 
-==how restore your usb stick==
+##how restore your usb stick
 
   # dd count=1 bs=512 if=/dev/zero of=/dev/sdx && sync
 
-== how create bootable antergos ==
+## how create bootable antergos 
 
   # dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx && sync
 
-==yaourt without confirmation==
+##yaourt without confirmation
 config-yaourt(){
 [ -f ~/.yaourtrc ] || touch ~/.yaourtrc
 cat <<EOF> ~/.yaourtrc
@@ -165,7 +165,7 @@ cat <<EOF> ~/.yaourtrc
 EOF
 } && config-yaourt
 
-=pacman=
+##pacman
 
    # optimize
 		pacman-optimize && sync
@@ -209,7 +209,7 @@ EOF
     -s  instalar dependências caso tiver
     -c  limpar arquivos desnecessários após o fim do processo
 
-== load keymap ==
+## load keymap 
 
 	loadkeys br-abnt2
 
@@ -235,16 +235,16 @@ Para remover todos os pacotes orfãos use o comando
 
    pacman -Syu bash-completion
 
-==conky colors -easyer way to config conky ==
+##conky colors -easyer way to config conky 
 {{{
 https://aur.archlinux.org/packages/conky-colors/?setlang=pt_BR
 }}}
 
-==fontes micro$oft==
+##fontes micro$oft
 
 https://aur.archlinux.org/packages/ttf-ms-fonts/
 
-== how use aur packages ==
+## how use aur packages 
 
 Installing packages from the AUR is a relatively simple process. Essentially:
 
@@ -267,14 +267,14 @@ Installing packages from the AUR is a relatively simple process. Essentially:
 
     # pacman -U /path/to/pkg.tar.xz
 
-== Arch Linux Deprecates /etc/sysctl.conf, User Intervention Required ==
+## Arch Linux Deprecates /etc/sysctl.conf, User Intervention Required 
 
 	pacman -Syu
 	mv /etc/sysctl.conf.pacsave /etc/sysctl.d/99-sysctl.conf
 
     wget -c https://gist.github.com/voyeg3r/368407/raw/ -O /etc/sysctl.d/99-sysctl.conf
 
-=systemd and network interface names=
+##systemd and network interface names
 
 {{{
 

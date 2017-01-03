@@ -1,6 +1,6 @@
-=Introdução=
+##Introdução
 Particionador gráfico, site oficial: http://gparted.sourceforge.net/
 
-==Veja também==
+##Veja também
 * Clonezilla: http://clonezilla.org/download/sourceforge/
  

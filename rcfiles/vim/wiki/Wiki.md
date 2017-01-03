@@ -20,4 +20,12 @@
     perl-rename 's/\.wiki/.md/g' *.wiki
 
 
+# alterando a sintaxe dos títulos no vimwiki
 
+    command! -nargs=0 Chead2 :.s/^==\([^=].*\)==/## \1/g
+    command! -nargs=0 Chead1 :.s/^=\([^=].*\)=/# \1/g
+    
+    nmap ,2 :%s/^==\([^=].*\)==/##\1/g
+    nmap ,1 :%s/^=\([^=].*\)=/#\1/g
+
+    :%s/^==\([^=].*\)==/##\1/g

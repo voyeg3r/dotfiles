@@ -1,4 +1,4 @@
-==converter wav para ogg==
+##converter wav para ogg
 
 oggenc *.wav
 

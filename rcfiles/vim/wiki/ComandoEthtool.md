@@ -1,17 +1,17 @@
 Arquivo: ethtool
 Criado: Sun 18/Jan/2015 hs 09:50
-Last Change: Sun Jan 18, 2015  09:51AM
+Last Change: ter 03 jan 2017 14:42:17 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
 
-==speed up the Ethernet==
+##speed up the Ethernet
 
     sudo ethtool -s eth0 speed 100 duplex full
 
-==como forçar a placa de rede para full duplex==
+##como forçar a placa de rede para full duplex
 
 
 # instale o programa ethtool

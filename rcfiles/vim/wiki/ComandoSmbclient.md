@@ -1,4 +1,4 @@
-=Introdução= 
+##Introdução 
 fonte: http://pt-br.gentoo-wiki.com/Tutorial_Samba
 
 smbclient e smbmount
@@ -14,7 +14,7 @@ Código: Compartilhamentos
         IPC$            IPC       IPC Service
         ADMIN$          IPC       IPC Service
 
-=Linux <span class="highlightedSearchTerm">client</span>e de uma rede Windows= 
+##Linux <span class="highlightedSearchTerm">client</span>e de uma rede Windows 
 Corpo do texto:
 **Colaboração:** Rafael Henrique da Silva Correia
 
@@ -174,7 +174,7 @@ do Rwindows) e compartilhar o servidor cups do Linux para poder imprimir em
 impressoras da rede Windows!
 
 
-==Referências== 
+##Referências 
 Acho prudente ler sobre gvfs:
 * http://syph0s.wordpress.com/2008/04/09/usando-o-gnomevfs-para-manipular-arquivos/
 * http://www.leonardomiranda.com.br/dicas/linux-cliente-de-uma-rede-windows/

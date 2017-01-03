@@ -1,4 +1,4 @@
-=Introdução=
+##Introdução
 fonte: http://ivanix.wordpress.com/2009/01/17/ferramentas-que-auxiliam-na-monitoracao-de-processos/
 
 O comando pidof, assim como o comando pgrep, localiza o ID de um processo. A diferença entre esses dois comandos, é que o pidof somente localiza o PID do processo através do nome; já o comando pgrep, além de localizar o PID pelo nome, também localiza por outros atributos, como usuário, por exemplo.
@@ -16,7 +16,7 @@ Usando o [[pkill]] é mais prático
 
 pkill firefox-bin
 
-==testando se um programa está rodando==
+##testando se um programa está rodando
 
 if ! pidof program; then
     echo "program not found"

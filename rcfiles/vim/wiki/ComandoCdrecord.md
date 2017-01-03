@@ -1,13 +1,13 @@
-=Introdução=
+##Introdução
 Para detectar o local do cd no ubuntu
 
   cdrecord -scanbus -dev=/dev/cdrom
 
-==Comando usado para gravar cds via linha de comando==
+##Comando usado para gravar cds via linha de comando
 
   cdrecord -v -fs=16M speed=8 dev=0,0,0 -data nome_da_imagem.iso
 
-==Comando para gerar uma imagem.iso de um diretório==
+##Comando para gerar uma imagem.iso de um diretório
 como root faça:
 
   mkisofs -r -J -o diretorio.iso diretorio
@@ -16,11 +16,11 @@ No meu caso aconteceu de ter que usar dev=ATAPI:0,1,0
 
  cdrecord -v dev=ATAPI:0,1,0 speed=16 foresight_9918_foresight-1.2.1-x86-disc1.iso
 
-==Gravar uma iso==
+##Gravar uma iso
 
 cdrecord -v dev=/dev/cdrom yourimage.iso
 
-==apagar cdrw==
+##apagar cdrw
 
 cdrecord -v -blank=all -force
 
@@ -34,18 +34,18 @@ cdrecord -v -blank=all -force
 Para gerar uma imagem de cd faça
   dd if=/dev/cdrom of=imagem.iso
 
-==Dica==
+##Dica
 Seguindo o artigo do site [http://www.slackware-brasil.com.br/web_site/artigos/artigo_completo.php?aid=102
 slackware-brasil] para detectar o seu drive faça
 
  cdrecord dev=ATAPI -scanbus
 
-==Gravando um CD multiseção==
+##Gravando um CD multiseção
 Fonte: http://www.vivaolinux.com.br/artigos/impressora.php?codigo=603
 Autor: Rogerio Acquadro <rogerio.acquadro at pc2consultoria.com>
 Data: 19/01/2004
 
-==O que é multiseção?==
+##O que é multiseção?
 
 Um CD multiseção é um formato de CD gravável, que permite a gravação
 em CD ser continuada em mais de uma etapa de gravação. Se há espaço
@@ -57,7 +57,7 @@ dados de uma só vez.
 Há alguns anos, apenas alguns drives de CD-ROM eram capazes de ler CDs
 multiseção. Hoje em dia, não há mais este tipo de inconveniente.
 
-==A primeira seção==
+##A primeira seção
 Este artigo usa os softwares mkisofs e cdrecord e parte do princípio
 que o leitor já esteja habituado com os comandos mais comuns destes
 softwares. Se o leitor não teve ainda contato com estes, é
@@ -90,7 +90,7 @@ Uma vez gravado o CD, está pronta a primeira seção. O CD deve ser lido
 sem problemas em qualquer leitor moderno de CD-ROM e em qualquer
 sistema operacional de maneira totalmente transparente.
 
-=Multi-session CDs==
+##Multi-session CDs=
 
     If doing multi-session CDs, make sure you read the README provided with cdrecord.
 
@@ -104,7 +104,7 @@ sistema operacional de maneira totalmente transparente.
 
     Also you will need to carefully structure the dir path. You can add directories, but not overwrite existing files or dirs on the CD.
 
-==Continuando o CD==
+##Continuando o CD
 Deseja-se agora continuar a gravação com novos dados. A imagem para a
 segunda (e as demais seções) é um pouco diferente para ser gerada. O
 mkisofs deve saber onde o espaço em branco do CD-R começa. Esta

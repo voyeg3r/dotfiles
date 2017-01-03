@@ -1,11 +1,11 @@
-=Introdução= 
+##Introdução 
 O comando abaixo guarda a senha sem exibi-la
 
   echo -n "Digite sua senha: "
   read -s senha
 
 
-=bash - Preenchimento de variáveis= 
+##bash - Preenchimento de variáveis 
 **//Colaboração: Rubens Queiroz de Almeida//**
 **//fonte: http://www.dicas-l.com.br/print/20091228.html//**
 **//Data de Publicação: 28 de December de 2009//**

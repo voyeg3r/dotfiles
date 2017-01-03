@@ -1,34 +1,34 @@
-=Introdução= 
+##Introdução 
 
 
-==Consertando permissões==
+##Consertando permissões
 Usando a opção -0 do find e do xargs delimitamos os arquivos, isso 
 é útil para nomes de arquivos com espaços
 
 find . -type f -print0 | xargs -0 chmod +w
 
 
-==Apagando thumbnails==
+##Apagando thumbnails
 
  xargs rm -f <(find ~/.thumbnails -type f -ctime +3)
 
 
-==Para arquivos com espaços no nome==
+##Para arquivos com espaços no nome
 Do manual do próprio xargs
 
 find /tmp -name core -type f -print0 | xargs -0 /bin/rm -f
 
 
-==Testes !!!!!!!==
+##Testes !!!!!!!
 
 find -type f | xargs -i iconv -f iso-8859-1 -t utf-8 {} -o {}
 
 
-==indicando um delimitador==
+##indicando um delimitador
 
 find /media/disk-1/mp3 -iname "*.db" | xargs -d '\n' rm -rf
 
-==juntando linhas a cada 5 linhas ==
+##juntando linhas a cada 5 linhas 
 * fonte: http://br.groups.yahoo.com/group/shell-script/message/31367
 
 Pessoal,

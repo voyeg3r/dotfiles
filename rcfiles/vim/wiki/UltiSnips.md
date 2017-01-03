@@ -26,7 +26,7 @@ http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
 
       Ctrl-k
 
-== Conditional replacements ==
+## Conditional replacements 
 
 One feature that I didn't mention in the screencast are conditional
 replacements. When you capture a group in the search part of a

@@ -1,4 +1,4 @@
-=atalhos legais do fuzzyfind=
+##atalhos legais do fuzzyfind
 
   Ctrl-t ........... altera o modo do plugin
   Ctrl-y ........... retrocede o modo (altera)

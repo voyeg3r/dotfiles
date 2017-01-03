@@ -1,4 +1,4 @@
-=Introdução= 
+##Introdução 
 
 * http://designix.wordpress.com/2007/02/03/introducao-ao-screen/
 * http://listas.cipsga.org.br/pipermail/linux-sbo/2004-August/000278.html
@@ -52,7 +52,7 @@ screen -x sergio ..... conecta à seção 'sergio'
 
 
 
-==screenrc==
+##screenrc
 
 vbell off
 hardstatus off

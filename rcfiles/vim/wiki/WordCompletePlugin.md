@@ -1,6 +1,6 @@
 Arquivo: sobre o plugin wordcomplete
 Criado: Ter 09/Nov/2010 hs 10:45
-Last Change: 2010 Nov 09 10:50:08
+Last Change: ter 03 jan 2017 14:32:45 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -11,7 +11,7 @@ digitada sem ser muito intrusivo
 Você pode acessa-lo neste link:
 http://www.vim.org/scripts/script.php?script_id=73
 
-= Para ativar o plugin =
+# Para ativar o plugin 
 
  :call dowordcomplete()
 

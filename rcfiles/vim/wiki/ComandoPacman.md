@@ -5,7 +5,7 @@ other instalations, run this:
 
 rm /var/lib/pacman/db.lck
 
-= Fixing pacman database =
+## Fixing pacman database 
 
     pacman-key --init
 
@@ -13,6 +13,6 @@ rm /var/lib/pacman/db.lck
 
     pacman -Syy
 
-==upgrade all==
+##upgrade all
 
     sudo pacman -Syyu

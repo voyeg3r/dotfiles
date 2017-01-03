@@ -1,4 +1,4 @@
-=Este comando tem que ser executado como root=
+##Este comando tem que ser executado como root
 
 blkid - command-line utility to locate/print block device attributes
 

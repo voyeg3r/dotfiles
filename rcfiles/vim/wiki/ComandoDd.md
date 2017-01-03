@@ -1,9 +1,9 @@
-=Introdução=
+##Introdução
 O comando dd pode ser usado para gerar imagens de cd:
 
 	dd if=/dev/cdrom of=imagem.iso
 
-=Gerando um pendrive bootavel=
+##Gerando um pendrive bootavel
 
 Como root rode o comando //**fdisk -l**// para saber em que partição está o pendrive se ele mostrar /dev/sdb1 anote e desmonte o pendrive, em seguida faça
 
@@ -18,7 +18,7 @@ Como root rode o comando //**fdisk -l**// para saber em que partição está o p
 Obs: não precisa indicar sdb1 por exemplo basta indicar sdb, e outra coisa tem que desmontar a
 unidade antes de rodar o comando
 
-== How to restore USB flash after installing ==
+## How to restore USB flash after installing 
 
     dd count=1 bs=512 if=/dev/zero of=/dev/sdx && sync
 
@@ -27,7 +27,7 @@ unidade antes de rodar o comando
     Where sdc represents your usbdrive partition
     after that format your usbdrive using gparted
 
-==veja também==
+##veja também
 o comando cdrecord
 
 Comando mais apropriado para criar uma iso
@@ -55,18 +55,18 @@ netcat
 
 O NetCat é um utilitário que lê e escreve através de conexões de rede usando protocolos TCP e UDP.
 
-==converter imagem do nero para iso==
+##converter imagem do nero para iso
 This line removes the 300k header from a Nero image file converting it to ISO format
 
 	dd bs=1k if=image.nrg of=image.iso skip=300
 
 
-==convertendo para minúsculos==
+##convertendo para minúsculos
 
 	echo "Ação" | dd conv=lcase
 
 
-=Clonando sistemas via rede=
+##Clonando sistemas via rede
 
 
 	slave% nc -l -p 9000 | dd of=/dev/hda
@@ -80,7 +80,7 @@ clonando com alguns parâmetros a mais (compressão etc)
 	nc 192.168.1.1 5000 | gzip -cd | dd of=/dev/hda bs=64k
 
 
-==Como limpara a MBR==
+##Como limpara a MBR
 font: http://www.debianfordummies.org/wiki/index.php/Limpando_a_mbr
 Para remover a mbr (apenas a mbr) iremos usar o comando abaixo (supondo que seu hd esteja em /dev/hda)
 
@@ -95,5 +95,5 @@ Obs2: na máquina cliente, ou seja a que vai receber a imagem você deve usar um
 	dd if=/dev/fd0/imagem-mbr of=/dev/hda
 
 
-==Veja também==
+##Veja também
 * http://www.cgsecurity.org/wiki/TestDisk

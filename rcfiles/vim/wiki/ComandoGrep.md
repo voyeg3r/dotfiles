@@ -1,12 +1,12 @@
-=Introdução=
+##Introdução
 filtrar strings em textos
 
-==filtrar um arquivo pelo outro ==
+##filtrar um arquivo pelo outro 
 
    grep -f file1.txt file2.txt
 
 
-==pegar ocorrência exata==
+##pegar ocorrência exata
 
 grep -w '172.17.4.1' file.txt
 
@@ -17,11 +17,11 @@ man aria2c | grep -Ew -- '-{1,2}[a-zA-Z][^ ] ' -
 -{1,2}[][a-zA-Z][^ ]*
  -{1,2}[^ ][a-zA-Z-]*(\=[a-zA-Z-]*|[ ][A-Z])?
 
-==Como dizer ao grep para tratar "-L" como string==
+##Como dizer ao grep para tratar "-L" como string
 
 grep -- '-L' <(man gcc)
 
-==testar quais scripts tem o famigerado final de linha DOS ^M==
+##testar quais scripts tem o famigerado final de linha DOS ^M
 
 grep -ril '[\x0d]' /scripts
 
@@ -30,7 +30,7 @@ grep -rl $'\r' /scripts
 
 Obs: ainda não testei porque estou no rwindows
 
-==Apenas listar arquivos que contém um padrão==
+##Apenas listar arquivos que contém um padrão
 A opção 'l' do grep faz com que ao invés de listar as linhas encontradas o grep
 liste apenas os arquivos que correpondem ao padrão.
 
@@ -40,11 +40,11 @@ Usando esta dica podemos fazer uma busca com o grep e em seguida
 
 vim `!!`
 
-=listar linhas do arquivo 1 que não estão no arquivo 2=
+##listar linhas do arquivo 1 que não estão no arquivo 2
 
 grep -Fxv -f file1 file2
 
-=listar somente trechos que correspondem ao padrão buscado=
+##listar somente trechos que correspondem ao padrão buscado
 Neste caso não imprime a linha que contém o padrão, por exemplo, mostrar palavras entre aspas
 se você tiver um arquivo assim:
 
@@ -59,24 +59,24 @@ grep -o '"[^"]*"' teste.txt
 # para pegar a primeira ocorrência entre parênteses (incluindo os parênteses)
 cat texto | grep -o '[(][^)]*[)]' | head -1
 
-==filtrar comandos no histórico==
+##filtrar comandos no histórico
 O comando abaixo filtra comandos que começam com a palavra man dentro do histórico.
 
 history | grep ' [0-9]* man'
 
 
-==Imprimir texto na vertical==
+##Imprimir texto na vertical
 
 echo "vertical text" | grep -o '.'
 
-==Processar listagens de arquivos==
+##Processar listagens de arquivos
 Se houverem muitos arquivos fora do padrão unix, ou seja, com espaços no nome
 e desejar-mos copiar estes arquivo poderia-mos fazer algo assim
 
 grep -lZ "pattern" * | xargs -0 cp -t /target-dir
 grep -Hrli 'foo' * | xargs vim
 
-==filtrando caracteres de controle==
+##filtrando caracteres de controle
 * fonte: http://unstableme.blogspot.com/2009/10/grep-and-print-control-characters-in.html
 
 $ grep --version
@@ -101,7 +101,7 @@ Para imprimir caracteres não imprimiveis usando o comando cat faça
 
 $ cat -v -e -t /tmp/s
 
-==remover linhas em branco==
+##remover linhas em branco
 
 grep -v '^$' input.txt > output.txt
 
@@ -120,7 +120,7 @@ linha com texto
 linha
 EOF
 
-==contador do grep==
+##contador do grep
 A opção "-c" do grep apenas exibe a contagem
 
 file -i * | grep -ic 'text/plain'
@@ -147,7 +147,7 @@ acrescentamos a diretiva "-w":
   $ grep -wc be AsPalavrasMaisComunsdaLinguaInglesa.txt
   97
 
-==Mostrar linhas anteriores ou posteriores==
+##Mostrar linhas anteriores ou posteriores
 Use as opções -A ou -B do grep. O "-A" mostra linhas após "after" e o "-B" mostra linhas anteriores "before"
 
 grep -in -A 2 "postfix" /etc/passwd
@@ -156,20 +156,20 @@ grep -in -A 2 "postfix" /etc/passwd
 35-nx:x:115:65534::/usr/NX/home/nx:/usr/NX/bin/nxserver
 36-clamav:x:116:125::/var/lib/clamav:/bin/false
 
-==Opção de contexto==
+##Opção de contexto
 Para exibir as linhas anteriores e posteriores a um padrão
 
 grep --context=5 'pattern' file
 
 
-==Para usar expressões regulares extendidas==
+##Para usar expressões regulares extendidas
 Use a opção -E do grep
-==filtrando uma palavra em um tipo de arquivo específico==
+##filtrando uma palavra em um tipo de arquivo específico
 
 grep -r --include="*.[ch]" pattern .
 find . -name "*.[ch]" | xargs grep "TODO"
 
-==Intercessão entre dois arquivos==
+##Intercessão entre dois arquivos
 
 
 Tenho dois arquivos txt:
@@ -203,7 +203,7 @@ outro modo de fazer
 grep -f <(cat arq1.txt | xargs -i echo ^{}) arq2.txt
 
 
-==Mostrar linhas próximas a um padrão==
+##Mostrar linhas próximas a um padrão
 
 > Uma dúvida amigos tenho o seguinte:
 >
@@ -230,7 +230,7 @@ Filtra ocorrência de palavras em arquivos
 
    grep -rn --color "\<vim\>" ~/
 
-==Contar ocorrências repetidas==
+##Contar ocorrências repetidas
 
  Tenho um arquivo que tem a seguinte saida:
 
@@ -256,11 +256,11 @@ $ grep -co 29 arq.txt
 2
 
 
-==contar ocorrências de um nome em um diretório==
+##contar ocorrências de um nome em um diretório
 
  grep -icr "sergio" .wiki | awk -F":" '{total=total + $2} END {print total}'
 
-==Mais exemplos==
+##Mais exemplos
 
 cat -v -e -t dump                        # show non-printing characters too
  grep BOB tmpfile                        # search 'tmpfile' for 'BOB' anywhere in a line

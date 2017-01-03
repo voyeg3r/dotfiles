@@ -1,4 +1,4 @@
-==sintaxe==
+##sintaxe
 
 ln [opções] alvo linkname
 

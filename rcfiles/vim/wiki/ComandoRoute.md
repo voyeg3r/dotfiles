@@ -1,6 +1,6 @@
-=Introdução=
+##Introdução
 
-=Adicionando rotas permanentes no linux=
+##Adicionando rotas permanentes no linux
 fonte: http://ubuntuforums.org/showthread.php?p=217263
 
 sudo vi /etc/network/interfaces
@@ -9,7 +9,7 @@ sudo /etc/init.d/networking restart
 
 
 
-==route no windows==
+##route no windows
 
 route -p add 172.17.0.0 mask 255.255.0.0 172.30.34.150
 route -p add 172.19.0.0 mask 255.255.0.0 172.30.34.150

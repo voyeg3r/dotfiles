@@ -1,4 +1,4 @@
-=Introdução=
+##Introdução
 O rsync sincroniza dados via rede
 
 Script de backup http://va.mu/XteF
@@ -20,18 +20,18 @@ Script de backup http://va.mu/XteF
   a opcao - -delete ira remover em /bak/dir arquivos não existentes em /dir
 
 
-==rsync + find==
+##rsync + find
 
 find . -name "whatever.*" -print0 | rsync -av --files-from=- --from0 ./ ./destination/
 
-==backups incrementais com --link-dest==
+##backups incrementais com --link-dest
 A opção "--link-dest" do rsync cria hard links para arquivos de outro
 backup, os arquivos antigos não modificados são apenas linkados, em geral
 se aponta para o último backup.
 
 --link-dest=${BACKUP-ULTIMO}
 
-==apenas exibindo o conteúdo da origem==
+##apenas exibindo o conteúdo da origem
 fonte: http://www.vivaolinux.com.br/artigos/impressora.php?codigo=338
 
 Se você deseja listar o diretório /etc do servidor, pode usar o comando:
@@ -41,7 +41,7 @@ $ rsync -Cravzp fabio@10.0.0.5:/etc/
 
 O "pulo do gato" dessa situação é a omissão do diretório de destino.
 
-==sincronizando e consertando a codificação==
+##sincronizando e consertando a codificação
 À partir da versão 3.0.0 do rsync há um recurso muito útil para sysadmins,
 a capacidade de fazer a codificação de caracteres, ou seja, se no windows tenho
 iso8859-1 e no ubuntu utf8 posso usar um parâmetro como abaixo:
@@ -50,19 +50,19 @@ rsync --iconv=utf8,iso88591 /origem /destino
 
 rsync -va --iconv=utf8,iso88591 /source/latin1/ /destination/utf8
 
-=Copie pastas mantendo sua extrutura=
+##Copie pastas mantendo sua extrutura
 
 
 rsync -vd --files-from=<(find .  -name entries -print ) .   ../target_directory
 
 
-==Sincronizar mediante uma condição==
+##Sincronizar mediante uma condição
 Sincronizar apenas arquivos modificados em um determinado período
 
 rsync -avz -e ssh --files-from=<(find -mtime +30 -mtime -60) origem destino
 
 
-==Opções do rsync==
+##Opções do rsync
 
  -u ou --update .......................... ignora os arquivos que forem mais novos no destino
  --delete ................................ deleta no destino os arquivos inexistentes na origem
@@ -85,7 +85,7 @@ ele pega a pasta e seu conteúdo, já se usar:
   /pasta/
 
 ele copia apenas o conteúdo da pasta
-=Restaurando as configurações do home=
+##Restaurando as configurações do home
 * fonte: http://www.ubuntu-ac.org/archives/445
 
 **Passo 1**

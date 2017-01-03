@@ -1,4 +1,4 @@
-=Plugin para completar códigos python=
+##Plugin para completar códigos python
 
 snipMate does not come with a setting to customize the trigger key, but you
 can remap it easily in the two lines it's defined in the 'after' directory

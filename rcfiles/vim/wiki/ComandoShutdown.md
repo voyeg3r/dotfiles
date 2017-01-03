@@ -1,4 +1,4 @@
-=Introdução=
+##Introdução
 
  # reiniciar agora
  shutdown -r 0
@@ -9,7 +9,7 @@
  # desligar em 30 segundos
  shutdown -h +30
 
-==Desligar máquina windows remotamente==
+##Desligar máquina windows remotamente
 
 net rpc shutdown -I ipAddressOfWindowsPC -U username%password
 net rpc shutdown -r : reboot the Windows machine

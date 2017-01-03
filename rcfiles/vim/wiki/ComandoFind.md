@@ -1,29 +1,29 @@
 [[toc]]
-=Introdução=
+##Introdução
 O comando find é extremamente poderoso veja algumas construções do mesmo
 
-==procurando arquivos ocultos==
+##procurando arquivos ocultos
 
   find -iname \.\*
 
-==limpando a pasta /tmp==
+##limpando a pasta /tmp
 
 find /tmp -type f -atime +1 -delete
 
-==busca arquivos no path==
+##busca arquivos no path
 
 find ${PATH//:/ } -iname "*admin*" -executable -type f
 find ${PATH//:/ } -executable -type f -printf "%f\n" #exibe só o nome
 
-==Editar o arquivo mais recentemente criado==
+##Editar o arquivo mais recentemente criado
 
 vim `find -type f -cmin -10 | head -n1`
 
-==doc ou odt?==
+##doc ou odt?
 
 find ~/ -iregex ".*\(doc\|odt\)"
 
-==localizando arquivos de hoje==
+##localizando arquivos de hoje
 
  find . -type f -ctime -1
 
@@ -33,20 +33,20 @@ Uma variação possível - Mostrando de forma detalhada
  find . -type f -ctime -1 -ls
 
 
-==localizando arquivos modificados em um intervalo de tempo==
+##localizando arquivos modificados em um intervalo de tempo
 
 find ./ -mtime +6 -mtime -8 -print
 
-==combinando o find com o xargs==
+##combinando o find com o xargs
 
  find . -type f -maxdepth 1 -name '*.ext' -print0 | \
       xargs -0 comando
 
-==copiando estrutura de pastas (somente pastas)==
+##copiando estrutura de pastas (somente pastas)
 
 (cd /home/user/source/; find -type d -print0) | xargs -0 mkdir -p
 
-==Atribuindo propriedade==
+##Atribuindo propriedade
 isto tem que ser feito como root
 
 find ~ ! -user fulano -print0 | xargs -0 chown fulano:fulano
@@ -56,31 +56,31 @@ Outra opção seria
 chown -R fulano.fulano
 
 
-==melhorar desempenho do firefox==
+##melhorar desempenho do firefox
 
 find ~ -name '*.sqlite' -exec sqlite3 '{}' 'VACUUM;' \;
 
-==deletar diretórios vazios==
+##deletar diretórios vazios
 
 find . -type d -empty -delete
 
 find <top_level_dir> -depth -type d -empty -exec rmdir -v {} \;
 
 
-==adicionando extensão a arquivos==
+##adicionando extensão a arquivos
 Eu tinha um monte de arquivos sem extensão e queria colocar
 no final txt, segue a solução.
 
 find ./ -maxdepth 1 -type f -print0 | xargs -0 -i mv ./{} ./{}.txt
 
 
-==Procurando por um padrão no $PATH==
+##Procurando por um padrão no $PATH
 
 
 find ${PATH//:/ } -iname "*pattern*"
 
 
-==Apagando somente arquivos de um tipo==
+##Apagando somente arquivos de um tipo
 
 find ./clipart -type f -iregex '.*\.[^svg]$' | xargs -rm f
 
@@ -88,7 +88,7 @@ Se a intenção é apagar apenas
 
 find . -name '*' -print0 | xargs -0 rm
 
-==localizando arquivos duplicados usando [[md5sum]]==
+##localizando arquivos duplicados usando [[md5sum]]
 
 find -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 33 | cut -c 35-
 
@@ -102,30 +102,30 @@ find "$@" -type f -print0 | xargs -0 -n1 md5sum | sort --key=1,32 | uniq -w 32 -
 4) Which will sort the output based on the first 32 characters (the checksum) and pipe the output to uniq.
 5) Which will find the unique checksums by only looking at the first 32 characters. The options to the uniq command cause it to print each duplicate (and only duplicates) on a separate line.
 
-==usando alternativas==
+##usando alternativas
 
 find -iname *.doc -o -iname *.odt
 find -atime +5 \( -name "*.o" -o -name "*.tmp" \)
 
 
-==find + tar==
+##find + tar
 
 find /home/zago/guiaz -mtime -1 -type f -print | tar jcvf meusarq.tar.bz2 -T -
 
 
-==Localizando arquivos maiores que 3G==
+##Localizando arquivos maiores que 3G
 
 
 find . -type f -size +3G | xargs -I% du -sh %
 
 
-==find + rsync==
+##find + rsync
 
 rsync -avz -e ssh --files-from=<(find -mtime +30 -mtime -60) origem destino
 find . -name "whatever.*" -print0 | rsync -av --files-from=- --from0 ./ .
 
 
-==copiar arquivos==
+##copiar arquivos
 
 find /originalPath/ -iname \*.mp3 -print0 | xargs -0 -i cp ./{} /destinationPath/
 
@@ -414,6 +414,6 @@ vai filtrar apenas os que tem 32 caracteres ou mais.
 
 
 
-==Referências==
+##Referências
 * http://ubuntuforums.org/showthread.php?t=330093
 * http://www.dicas-l.com.br/dicas-l/20050226.php → Artigo do Júlio César Neves

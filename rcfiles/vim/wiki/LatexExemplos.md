@@ -1,4 +1,4 @@
-==macro para imagens ==
+##macro para imagens 
 
 \newcommand{\myfig}[3] %label, caption, filename
 {
@@ -10,11 +10,11 @@
 \end{figure}
 }
 
-== Quebra de linha com distância definida em valor ==
+## Quebra de linha com distância definida em valor 
 
 	\textsc{\LARGE University Name}\\[1.5cm]
 
-== texto ao redor de figura ==
+## texto ao redor de figura 
 
 %Preamble
 \usepackage{wrapfig, graphicx}
@@ -27,7 +27,7 @@
 \label{fig:wrapfig}
 \end{wrapfigure}
 
-== dimensão correta do papel no pdflatex ==
+## dimensão correta do papel no pdflatex 
 
 \ifx\pdfoutput\undefined
 \else

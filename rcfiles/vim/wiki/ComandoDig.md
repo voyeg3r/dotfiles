@@ -1,4 +1,4 @@
-=Introdução=
+##Introdução
 
 Listando a saida complea do comando dig
 
@@ -7,7 +7,7 @@ dig www.google.com
 Se o tamanho do resultado torná-lo impraticável, você poderá usar a opção
 +short para remover todas as respostas prolixas:
 
-= retornando o ip de um host dado=
+## retornando o ip de um host dado
 
      dig +short oracle.com
      141.146.8.66

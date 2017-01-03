@@ -1,4 +1,4 @@
-==from dicas-l== 
+##from dicas-l 
 Uma facilidade bastante interessante existente em sistemas Unix é o comando apropos. Este comando consulta um banco de dados consistindo da descrição do comando. É bastante útil em situações em que se deseja executar determinada tarefa e não se conhece o nome do comando. Por exemplo, caso eu queira descobrir obter informação a respeito de compiladores instalados em meu sistema, eu poderia digitar:
 
 apropos compiler
@@ -22,6 +22,6 @@ Para construir este banco de dados emitir o comando
 
 
 Uma vez criado o banco de dados o comando apropos (ou man -k) poderá então ser utilizado. 
-==comandos de rede no linux== 
+##comandos de rede no linux 
 
 apropos network | less

@@ -11,16 +11,16 @@ Para pegar somente os nomes dos pacotes instalados
 
   dpkg -l | awk '{print $2}'
 
-==listar pacotes instalados==
+##listar pacotes instalados
 
 dpkg --get-selections | grep -v deinstall | cut -f 1
 
-==remover kernels antigos==
+##remover kernels antigos
 * Referência: http://andregondim.eti.br/?p=1162
 
 dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
 
-==manual completo==
+##manual completo
 fonte: http://www.guiadohardware.net/comunidade/comandos-lista/870632/
 
 

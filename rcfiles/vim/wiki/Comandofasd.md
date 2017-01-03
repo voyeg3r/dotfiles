@@ -1,6 +1,6 @@
 Site oficial -->  https://github.com/clvv/fasd
 
-=O que é o comando fasd?=
+##O que é o comando fasd?
 
 Fasd (pronounced similar to "fast") is a command-line productivity booster. Fasd offers quick access to files and directories for POSIX shells. It is inspired by tools like autojump, z and v. Fasd keeps track of files and directories you have accessed, so that you can quickly reference them in the command line.
 
@@ -8,7 +8,7 @@ The name fasd comes from the default suggested aliases f(files), a(files/directo
 
 Fasd ranks files and directories by "frecency," that is, by both "frequency" and "recency." The term "frecency" was first coined by Mozilla and used in Firefox (link). https://goo.gl/Ps1d2B
 
-=Como instalar o fasd=
+##Como instalar o fasd
 
 Para instalar basta clonar o repositório
 
@@ -50,7 +50,7 @@ Daí você só vai ter que digitar os comandos tipo...
    z 17   (note que 17 faz parte do caminho digitado acima)
 
 
-==Comandos úteis do fasd_cd==
+##Comandos úteis do fasd_cd
 
    cp `f .vimrc` `d 17`
 

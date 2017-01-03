@@ -2,7 +2,7 @@ in order to remember that key read this
 this is related with your mail account
 my: brand new password and birth year
 
-==como cancelar mensagens das operadoras de celular ==
+##como cancelar mensagens das operadoras de celular 
 
 Passo 1. Abra o aplicativo de mensagens do seu celular e envie a palavra “sair” para sua operadora:
 
@@ -36,14 +36,14 @@ passwrd airos -->
 user = ubnt
 password =ubnt
 
-=conection to education network Madalena=
+##conection to education network Madalena
 192.168.0.25
 netmask 255.255.255.0
 gateway 192.168.0.1
 dns 8.8.8.8, 4.4.4.4
 
 
-= android =
+## android 
 códico para resetar a instalação do android
 *2767*3855#
 
@@ -75,7 +75,7 @@ network name: madanet
 encryption: AES
 connection type: ESS
 
-==some google secrets==
+##some google secrets
 
 Manipulate the google engine by using it to locate mp3 files online as well as some free software, and more! Using Google, and some finely crafted searches we can find a lot of interesting information.
 

@@ -1,7 +1,7 @@
 {{{
-=English Club=
+##English Club
 
-=Introdução=
+##Introdução
 
 Um clube de inglês, no qual alunos mais adiantados no estudo
 da lingua inglesa organizam reuniões semanais para praticar
@@ -13,7 +13,7 @@ professores ou local, uma vez que na nternet existem
 inúmeros recursos como skype, twitter, e-mais etc. que
 facilitam a interação dos membros do clube.
 
-=Metodologia=
+##Metodologia
 
 
 		HAVE SOMETHING TO SAY, KNOW HOW TO SAY IT AND HAVE SOMEONE TO SAY IT TO
@@ -28,14 +28,14 @@ facilitam a interação dos membros do clube.
 
 		Are you going...?
 
-==Inglês real, usando metodologias como==
+##Inglês real, usando metodologias como
 
 === Parallel Reading===
 
  Os textos são apresentados lado a lado
  uma referência inical é o site: http://paralleltext.io
 
-==Overlearning==
+##Overlearning
 
 Trabalhar os materiais de modo repetido, revisitar materiais,
 pois a repetição, especialmente a repetição espaçada, gera um
@@ -67,7 +67,7 @@ fazem perguntas sobre a mesma, em seguida a mesma estória é
 recontada em outro tempo, com alterações. Visa melhorar a
 desenvoltura e naturalidade dos membros.
 
-==spaced repetition==
+##spaced repetition
 
  * anki
  * http://www.memrise.com
@@ -90,7 +90,7 @@ Spaced repetition was invented back in 1932 by Professor C. A. Mace, so it’s
 a very old concept. Pimsleur language courses were developed after cassette
 tape technology became widespread in the 1970s.
 
-==Ingles 200 horas==
+##Ingles 200 horas
 
   1700 frases
   Aplicação da gramática e não explicação da gramática
@@ -101,7 +101,7 @@ tape technology became widespread in the 1970s.
 
   Ensino por mapeamento 1200% mas de aprendizado em 1/4 do tempo
 
-==Lexical approach==
+##Lexical approach
 
 
 ===English dictation channel on youtube===
@@ -127,7 +127,7 @@ As 1000 frases mais comuns do inglês (troque o número final para
 acessar as outras letras do alfabeto - z=26)
 http://www.englishspeak.com/english-phrases.cfm?sortby=1
 
-=alterando o tempo de legendas com o script subslider.py=
+##alterando o tempo de legendas com o script subslider.py
 O script subslider.py altera o tempo de legendas, adiantando ou
 atrasando o tempo de exibição das memas assim:
 
@@ -135,7 +135,7 @@ atrasando o tempo de exibição das memas assim:
 
    isso aumentará o tempo de cada legenda em 19 segundos
 
-=Why study phases?=
+##Why study phases?
 
 “People don’t speak a language well just by learning single
 words and grammar points. Instead, fluent speakser remember
@@ -213,7 +213,7 @@ what to say next.” Girias da da Internet
 * YW – You’re welcome! (De nada!)
 * ZOMG – Oh, my God! (Aí, meu Deus) [usado para expressar sarcasmo]
 
-=Técnicas para Aprender Inglês e Ampliar Vocabulário pt.1=
+##Técnicas para Aprender Inglês e Ampliar Vocabulário pt.1
 
 Publicado em 08/05/2010
 
@@ -291,7 +291,7 @@ desnorteados cada vez que escutam uma palavra sendo
 pronunciada de um jeito diferente ou quando vêem um nativo
 usando uma regra de gramática incorretamente.
 
-=Ler em voz alta ativa o lóbulo frontal do cérebro=
+##Ler em voz alta ativa o lóbulo frontal do cérebro
 
 Narrow Reading/ Listening
 Você pode usar essa técnica para
@@ -309,7 +309,7 @@ goste. Encontre vários artigos, livros, podcasts, enfim,
 materiais em geral relacionados com esse tema. Dê prioridade
 aos que forem mais fáceis de entender. E divirta-se!
 
-=A Técnica para Aprender Inglês que Muitos Subestimam=
+##A Técnica para Aprender Inglês que Muitos Subestimam
 
 Parte do segredo para se adquirir um vocabulário amplo, em
 qualquer idioma, é a repetição. Eu não conheço nenhum
@@ -326,7 +326,7 @@ Porém enquanto você é iniciante ou intermediário a repetição
 é vital, pois você ainda está construindo a sua base naquele
 idioma. Para aprender mais dicas simples e eficientes:
 
-==Conclusão==
+##Conclusão
 
 Por experiência própria e por relatos de outros estudantes
 que utilizaram esses mesmos métodos eu te garanto que
@@ -341,14 +341,14 @@ você tem que repetir o último nível que você cursou.  O
 curioso é que depois que você termina o curso, eles garantem
 que você nunca mais esquece… interessante, não acha???
 
-=Onde eu Aprendi Essas Técnicas?=
+##Onde eu Aprendi Essas Técnicas?
 
 Essas dicas vem da Newsletter do site Effortless English e
 das experiências que eu tive colocando o método deles em
 ação. Tem mais dicas nessa newsletter, cadastre-se e
 confira: Effortless English Newsletter
 
-=Seven rules to learn english fastest=
+##Seven rules to learn english fastest
 
 Hi, I’m A.J. Hoge, the director of "Effortless English" and
 welcome to the Free 7 Rules e-mail course. Today is rule 1.
@@ -389,7 +389,7 @@ ice-cream". You write down the whole phrase. Why do we do
 this? What's the power of phrases? Well, phrases give you a
 lot of information, much more information.
 
-==Number 1==
+##Number 1
 
 Phrases are easier to remember, because they have meaning,
 they have a kind of a picture, a story, especially when you
@@ -402,7 +402,7 @@ information, all this extra information helps you remember
 the meaning of the phrase and the meaning of that word. So
 it helps your memory. Much easier to remember.
 
-==Number 2==
+##Number 2
 
 There's a bonus. When you learn phrases, you are learning
 grammar also. You are not only learning an individual word,
@@ -465,7 +465,7 @@ with rule number 2. So I will see you tomorrow. Bye-bye.
 
 Click here to go to the official Effortless English website!
 
-==Rule 2==
+##Rule 2
 
 Hi! This is A.J. Hoge again, the director of "Effortless
 English" and today we're gonna learn about Rule Number 2.
@@ -547,7 +547,7 @@ rule number three tomorrow. So I hope you enjoyed this
 e-mail course and these videos and I'll see you next time.
 Bye-bye.
 
-==Rule 3==
+##Rule 3
 
 Hi, I'm A.J. Hoge, the director of "Effortless English",
 welcome to Rule Number 3. So rule number three is very
@@ -598,7 +598,7 @@ Americans who are 13, 14, 15 years old. If that's too
 difficult, find something easier. You can listen to
 programmes for very small children.
 
-=audio books links=
+##audio books links
 * http://etc.usf.edu/lit2go/books/
 
 Now, if something's more difficult you can still use it, but
@@ -626,7 +626,7 @@ see you then. Bye-bye.
 
 Click here to check Effortless English lessons for yourself!
 
-==Rule 4==
+##Rule 4
 
 Hi, this is A.J. again, director of "Effortless English".
 Welcome to the fourth rule for speaking excellent English.
@@ -734,7 +734,7 @@ learning, repeat everything a lot, repeat it many times. So
 I'll see you tomorrow for rule number 5. Have a great day.
 Take care. Bye-bye.
 
-==Rule 5==
+##Rule 5
 
 Hi, this is A.J. Hoge, the director of "Effortless English".
 Welcome to day 5 of the seven rules to excellent speaking
@@ -846,7 +846,7 @@ Alright? That's the end of today's rule, I will see you
 tomorrow for our next rule. Take care and have a great day.
 Bye-bye.
 
-==Rule 6==
+##Rule 6
 
 Hi, this is A.J. Hoge, director of "Effortless English", and
 today we have rule number 6 to speak excellent English.
@@ -950,7 +950,7 @@ OK. So that's rule number 6. I hope you enjoyed it. Tomorrow
 rule nuber 7, our last rule. Alright, I'll see you tomorrow.
 Have a great day. Bye-bye.
 
-==Rule 7==
+##Rule 7
 
 Hi, this is A.J. Hoge, the director of "Effortless English"
 and today is the last rule, rule number 7. And rule number 7
@@ -1037,7 +1037,7 @@ all of them so that you will learn much more quickly, so
 that you will understand English very quickly and so that
 you will speak English easily, quickly and automatically.
 
-==publicity==
+##publicity
 
 So, what's your next step? Well, first you wanna use all 7
 rules. Every time you study English use all of the 7 rules.
@@ -1235,7 +1235,7 @@ http://www.talkenglish.com/Speaking/Idioms/Category6.aspx
 Phrases with sound
 http://www.englishspeak.com/english-phrases.cfm?newCategoryShowed=1&sortBy=28
 
-=Impotant skills to a poliglot=
+##Impotant skills to a poliglot
 Noticing
 Processing
 Guessing
@@ -1275,18 +1275,18 @@ will find all tenses.
 
 “Neural tissue required to learn and understand a new language will develop automatically from simple exposure to the language—which is how babies learn their first language,” Dr Sulzberger says.
 
-=Livros=
+##Livros
  * Como dizer tudo em ingles
  * Applied English Phonology
 
-=apps=
+##apps
 Some applications to improve your lerning speed
 
 		* Lingua.ly
 		* duolingo
 		* UnlockYourBrain http://va.mu/Aw9AE
 
-=podcasts=
+##podcasts
 
 * http://www.theosgoodfile.com/
 * https://soundcloud.com/english-audio/sets

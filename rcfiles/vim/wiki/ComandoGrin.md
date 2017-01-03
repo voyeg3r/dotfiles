@@ -1,3 +1,3 @@
-=para instalar o grin=
+##para instalar o grin
 
     sudo easy_install grin

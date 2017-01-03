@@ -1,4 +1,4 @@
-=Introdução=
+##Introdução
 ===Exibe os discos disponíveis===
 Execute como root
 
@@ -21,5 +21,5 @@ faz o redimensionamento
 ntfsresize -v -f -b -s 30G /dev/sda2
 
 
-==Referências==
+##Referências
 * http://www.everlinux.com/blog/2009/03/10/redimencionando-um-ntfs-com-bad-blocks

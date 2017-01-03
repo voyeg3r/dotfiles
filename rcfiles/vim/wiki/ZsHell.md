@@ -1,6 +1,6 @@
 Arquivo: zshell tips and tricks
 Criado: Sáb 04/Jan/2014 hs 07:23
-Last Change: sex 30 dez 2016 20:03:01 BRT
+Last Change: ter 03 jan 2017 14:47:59 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -12,7 +12,7 @@ http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
 
 References: http://chneukirchen.org/dotfiles/.zshrc
 
-== arrays in zshell ==
+## arrays in zshell 
 
 Create an array of lines from a file
 
@@ -20,9 +20,7 @@ Create an array of lines from a file
  echo $buffer[1]
  127.0.0.1       eva-O1.linagora.com     eva-01
 
-
-
-== zim zsh framework ==
+## zim zsh framework 
 
 #/usr/bin/env zsh
 # zim framework
@@ -41,36 +39,36 @@ done
 source ${ZDOTDIR:-${HOME}}/.zlogin
 # end zim framework setup
 
-==defining ZDOTDIR ==
+##defining ZDOTDIR 
 This var is used in many zsh frameworks during git clone
 
     ZDOTDIR=~/.dotfiles/rcfiles/zsh
 
-==removing only certain dirs ==
+##removing only certain dirs 
 
-emoving all directories except some:
+    removing all directories except some:
 
     rm -rf ^(vim-colors-solarized|vim-airline)
 
-== Check the Existence of a Command in Bash and Zsh
+# Check the Existence of a Command in Bash and Zsh
 source: https://www.topbug.net/blog/2016/10/11/speed-test-check-the-existence-of-a-command-in-bash-and-zsh/
 
  the fastest way is this:
 
      (( $+commands[foobar] ))
 
-== avoiding globbing error while compying files==
+## avoiding globbing error while compying files
 
 setopt extendedglob
 cp some_dir/(^0*).jpg dest_dir/
 
-== list all possible commands using zsh==
+## list all possible commands using zsh
 
 In zsh, you can list the currently available commands of a given type with echo ${(k)aliases}, echo ${(k)functions}, echo ${(k)builtins} and echo ${(k)commands} (that last one lists external commands only).
 
     echo ${(k)commands} | sed 's, ,\n,g' | wc -l
 
-== loading zsh clean ==
+## loading zsh clean 
 
     zsh -f
 
@@ -83,7 +81,7 @@ In zsh, you can list the currently available commands of a given type with echo 
 
     ZDOTDIR=/etc/my_kewl_folder/.zshrc
 
-== aliases are cumulative ==
+## aliases are cumulative 
 
     alias ls='ls --color=auto'
     alias la='ls -a'
@@ -91,7 +89,7 @@ In zsh, you can list the currently available commands of a given type with echo 
     The la alias will behave just as if you typed ls --color=auto –a,
     there's no need to type --color=auto again on your definition.
 
-==how delete a history entry==
+##how delete a history entry
 
 source: stackoverflow
 
@@ -99,7 +97,7 @@ source: stackoverflow
 
     With setopt HIST_IGNORE_SPACE, you can prepend the above command with a space character to prevent it from being writting to $HISTFILE.
 
-== create one folder for each file and movi it into it ==
+## create one folder for each file and movi it into it 
 
 # first you have to know something about filename
 # and file's extensions when it comes to shell script
@@ -120,7 +118,7 @@ source: stackoverflow
        mv $i ${i:r}
     done
 
-==how get pipestatus==
+##how get pipestatus
 How to get exit status of process that's piped to another
 
 The syntax is:
@@ -133,21 +131,21 @@ The syntax is:
     command1 | command2
     echo "${PIPESTATUS[0]} ${PIPESTATUS[1]}"
 
-==how to run a secret series of commands==
+##how to run a secret series of commands
 [[source]]: http://unix.stackexchange.com/questions/6094/
 
     % fc -p
     % secret-command
     % fc -P
 
-==how to show a function definition==
+##how to show a function definition
 reference: http://va.mu/BLEHZ
 
   functions func_name
 
 you can use =command instead $(which command)
 
-==Just found this little gem==
+##Just found this little gem
 
 cd old new
 
@@ -157,8 +155,7 @@ For example, if your working directory is /home/larry/code/backrub/server and yo
 
 cd larry sergei
 
-
-==zsh buffer stack==
+##zsh buffer stack
 
   If you type
 
@@ -171,8 +168,7 @@ cd larry sergei
   you are in the middle of a typed command, zsh will show you
   the required manual
 
-==how upgrade oh-my-zsh==
-
+##how upgrade oh-my-zsh
 
     Open up Terminal
 
@@ -193,7 +189,7 @@ cd larry sergei
 
 				git stash pop
 
-=fasd tool shortcuts==
+##fasd tool shortcuts=
 
   fasd is a tools installed in zsh environment
 
@@ -217,11 +213,11 @@ cd larry sergei
 	alias v='f -e vim'       # open file with vim
 	alias o='a -e xdg-open'  # quick opening files with xdg-open#
 
-= changing the shell =
+## changing the shell 
 
 	sudo chsh -s $(which zsh) $(whoami)
 
-= one-liners =
+## one-liners 
 
 # lowcase filenames - source: http://lorenzod8n.wordpress.com/category/zsh/
 
@@ -234,7 +230,6 @@ You’ll never have to strip the path manually again:
 
 % wget ftp://ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p330.tar.gz
 % tar xzvf !:t
-
 
 # this command
 
@@ -257,7 +252,6 @@ You’ll never have to strip the path manually again:
     ls *(.mh-1) | wc -l
 
     ls *.*(^mh3)   # all files not 3 hours  old
-
 
 #  find all files with size larger than 10 megabytes
 
@@ -323,7 +317,7 @@ Nevertheless, you could also check for either
 
 Note that the default unit for this qualifier is days, so (m-1) will mean a day ago or, more precisely, up to 24 hours before the current system time.
 
-=zsh completions for yaourt=
+##zsh completions for yaourt
 
 http://youtu.be/mCHwb_TD4ng
 
@@ -340,49 +334,46 @@ _yaourt() {
 '_localaur'
 }
 
-
 _yaourt "$@"
 
 # -----8<------------------------
 
 and put it in a directory other then the default functions directory for zsh ( I am using $HOME/.zsh/functions ).
 
-
 3) Add a directory to your fpath in your .zshrc so as not to conflict with the original completion script for yaourt.
 
 fpath=( $HOME/.zsh/functions $fpath )
-
 
 Now tab away and enjoy.
 
 That's it. Thanks for watching.
 
-=use r to repeat the last command - with substituition =
+##use r to repeat the last command - with substituition 
 
   echo one two
   r two=three
   one three
 
-= print var in lowcase =
+## print var in lowcase 
 
 		echo $var:l
 
-= print file name without extension =
+## print file name without extension 
 
     echo $filename:r
 
-    # Remove the suffix from each file (*.sh in this example)
+# Remove the suffix from each file (*.sh in this example)
     $f:e is $f file extension
     :h --> head (dirname)
     :t --> tail (basename)
     :r --> rest (extension removed)
     $ for f (*.sh) mv $f $f:r
 
-=how set up 'command not found'=
+## how set up 'command not found'
 
 [ -r /etc/profile.d/cnf.sh ] && . /etc/profile.d/cnf.sh
 
-== some funtions ==
+## some funtions 
 
 shell () {
   ps | grep `echo $$` | awk '{ print $4 }'
@@ -422,44 +413,39 @@ ls -l foldero/**/*(om[1,3])
     # vi newest file
 		vi *(.om[1])
 
-show all files with extension .pdf in current directory and all subdirectory
+# show all files with extension .pdf in current directory and all subdirectory
 
-ls **/*.pdf
+    ls **/*.pdf
 
-make all files executable (recursively)
+# make all files executable (recursively)
 
 		chmod -x **/*(.)
 
-show all regular files with the word “test” in their name in current directory and all subdirectory
-
+# show all regular files with the word “test” in their name in current directory and all subdirectory
 
 		ls **/*test*(.)
 
-find all executable files in current directory and all subdirectory
-
+# find all executable files in current directory and all subdirectory
 
 				ls -l **/*(.x)
 
-find all files of user tomcat
+# find all files of user tomcat
 
 		ls -l **/*(u:tomcat:)
 
-find all files you accessed within the last month:
-
+# find all files you accessed within the last month:
 
 		ls **/*(.aM-1)
 
-find all files with size larger than 10 megabytes
+# find all files with size larger than 10 megabytes
 
 		ls **/*(.Lm+10)
 
-
-show only executable files
+# show only executable files
 
    ls -l **/*(*)
 
 tornar executáveis todos os arquivos de um diretório
-
 
     o ponto "." é um qualificador que indica arquio
 
@@ -492,7 +478,6 @@ autoload -U zmv
 		zmv '* *' '$f:gs/ /_'
 
 		zmv '*' '$f:s/hell/heaven/'
-
 
     zmv '(* *)' '${1// /}'
     zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"

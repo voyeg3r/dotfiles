@@ -1,4 +1,4 @@
-=Introdução=
+##Introdução
 
 O comando sort ordena um arquivo assim:
 
@@ -8,7 +8,7 @@ No caso estou indicando que o arquivo que receberá as alterações será
 o próprio
 
 Obs: Caso queira ordenar números use a opção 'n' do sort
-==Ordenar numericamente (-n) usando o campo 2==
+##Ordenar numericamente (-n) usando o campo 2
 
 alunos:~/scripts$ sort -n -t ":" -k 2 sorttest
 a:1:3.2
@@ -17,7 +17,7 @@ b:2:0.3
 c:9:1.2
 
 
-==Ordenando e retirando linhas duplicadas==
+##Ordenando e retirando linhas duplicadas
 
 cat *.txt | sort | uniq > arquivao.txt
 
@@ -87,19 +87,19 @@ pode ser feita numericamente, do maior para o menor valor:
   1:0:3:4:5:6
 
 
-==mostrar uma linha aleatória de um arquivo==
+##mostrar uma linha aleatória de um arquivo
 
 sort -R /etc/passwd | head -1
 
-==randomize lines in some file==
+##randomize lines in some file
 
 sort -R SOMEFILE
 
 
-==Mostrar opções avançadas do sort==
+##Mostrar opções avançadas do sort
 
 alias sorth='sort --help|sed -n "/^ *-[^-]/s/^ *\(-[^ ]* -[^ ]*\) *\(.*\)/\1:\2/p"|column -ts":"'
 
-==Referências==
+##Referências
 * http://www.dicas-l.com.br/dicas-l/19970623.php
 * [[http://www.commandlinefu.com/commands/view/5814/view-advanced-sort-options-quick-reference-help-alias|show sort options]]

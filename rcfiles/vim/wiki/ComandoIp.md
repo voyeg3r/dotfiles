@@ -1,4 +1,4 @@
-=Introdução= 
+##Introdução 
 O ip é utilizado para atribuir endereços IP para as interfaces de rede, mostrar configuração do TCP/IP, entre outras coisas.
 
 O comando abaixo mostra as rotas ativas
@@ -12,7 +12,7 @@ ip route show
 ip addr show
 
 
-==Mostrar o gateway padrão==
+##Mostrar o gateway padrão
 
 ip route list | awk '/default/ {print $3}'
 

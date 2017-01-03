@@ -1,18 +1,18 @@
-=Introdução=
+##Introdução
 
 ping -c1 www.google.com  &> /dev/null && echo "rede ok" || echo rede fora
 
-==desabilitar o ping==
+##desabilitar o ping
 
 sudo -s "echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all"
 #If you want to enable it you can use:
 sudo -s "echo 0 > /proc/sys/net/ipv4/icmp_echo_ignore_all"
 
-==pingar no gateway==
+##pingar no gateway
 
 ping -c 2 `route -n | awk '/UG/ {print $2}'`
 
-==como pingar em um MAC==
+##como pingar em um MAC
 Primeiro descubra o MAC ADDRESS do host que deseja pingar com ifconfig na
 própria máquina ou com
 
@@ -24,11 +24,11 @@ como abaixo.
 
 ping -c 2 `arp-scan 10.1.1.0/24 | awk '/00:1b:11:dc:a9:65/ {print $1}'`
 
-=Testar uma interface de rede=
+##Testar uma interface de rede
 
 ping -I eth0 www.yahoo.com
 
-=identificando o SO=
+##identificando o SO
 * fonte: http://www.dicas-l.com.br/dicas-l/20100509.php
 * http://www.dicas-l.com.br/dicas-l/20100615.php
 O comando ping retorna algo como:
@@ -39,7 +39,7 @@ O campo ttl retorna:
 || ttl || 128 || windows ||
 || ttl || 64 || linux ||
 || ttl || 255 || unix ||
-=Ping em um range de máquinas=
+##Ping em um range de máquinas
 veja também [[ComandoNmap]]
 
 

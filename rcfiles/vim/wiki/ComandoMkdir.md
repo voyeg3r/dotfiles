@@ -1,17 +1,17 @@
-=Introdução=
+##Introdução
 Este é um comando para criação de pastas
 
   mkdir pasta
 
-==copiando uma estrutura de pastas (somente pastas) ==
+##copiando uma estrutura de pastas (somente pastas) 
 
 (cd /home/user/source/; find -type d -print0) | xargs -0 mkdir -p
 
-==criando com permissão==
+##criando com permissão
 
     mkdir -m 755 /shared
 
-==criando uma pasta com data==
+##criando uma pasta com data
 
     mkdir $(date +%d-%m-%Y)
 
@@ -20,7 +20,7 @@ Este é um comando para criação de pastas
     mkdir backup-`date -I`
 
 Para mais detalhes veja o comando [[date]]
-==Criando uma extrutura completa==
+##Criando uma extrutura completa
 [[image:pastas.png]]
 
 
@@ -39,7 +39,7 @@ Podemos criar pastas sob demanda
   # existe ~/tmp? se não crie, em seguida entre na mesma
 
 
-==se obtiver erro ao entrar numa pasta==
+##se obtiver erro ao entrar numa pasta
 
 $ cd /home/user/foo
 
@@ -50,11 +50,11 @@ $ mkdir !*
 mkdir /home/user/foo
 
 
-==criando uma pasta e entrando na mesma==
+##criando uma pasta e entrando na mesma
 
 function md () { mkdir -p "$@" && cd "$@"; }
 
-==cirando 100 pastas de 000 a 100==
+##cirando 100 pastas de 000 a 100
 
 mkdir $(printf "%03d " {1..100})
 
@@ -68,6 +68,6 @@ for i in `seq -w 100`; {
    mkdir $i
 }
 
-==veja também==
+##veja também
 * O comando [[install]]
 * http://br.groups.yahoo.com/group/shell-script/message/31892

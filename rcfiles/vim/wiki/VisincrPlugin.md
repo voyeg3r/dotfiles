@@ -1,4 +1,4 @@
-=Plugin para incrementar sequencias de números=
+##Plugin para incrementar sequencias de números
 
 Help is included, too -- check out  :he visincr-examples to see
 even more examples of each command in action.

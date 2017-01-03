@@ -1,4 +1,4 @@
-==apagar dados de um hd de forma segura==
+##apagar dados de um hd de forma segura
 
 shred -n 5 -z /dev/xxx
 

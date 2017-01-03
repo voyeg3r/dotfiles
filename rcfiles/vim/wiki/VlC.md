@@ -1,6 +1,6 @@
 Arquivo: dicas e atalhos sobre o vlc
 Criado: Dom 07/Out/2012 hs 06:28
-Last Change: qui 29 dez 2016 08:01:12 BRT
+Last Change: ter 03 jan 2017 14:43:54 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -28,7 +28,7 @@ email: <voyeg3r  gmail.com>
     f ...................... full screen
     show playlist .......... <ctrl>l
 
-== Consertando o download de legendas no Vlc==
+## Consertando o download de legendas no Vlc
 
 On windows edit: c:\windows\System32\drivers\etc\hosts
 

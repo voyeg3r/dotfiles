@@ -1,4 +1,4 @@
-==removendo espaços no nome==
+##removendo espaços no nome
 
 rename 'y/ /_/' *
 
@@ -11,25 +11,25 @@ rename 'y/ /_/' *
 }}}
 
 
-==modificando a extensão==
+##modificando a extensão
 
  rename 's/\.html$/.htm/' *.html
  rename .oldextension .newextension *.oldextension
 
 
-==Se tirver hifem no começo pode dar erro==
+##Se tirver hifem no começo pode dar erro
 Esta solução para arquivos com hifen no começo
 
 find . -print0 | xargs -0 rename 's/-//g'
 
 
-==removendo espaços no nome==
+##removendo espaços no nome
 
   rename "s/ *//g" *.jpg
   rename 's/ /_/g' *.htm
 
 
-==Adicionando extensão==
+##Adicionando extensão
 
   rename 's/$/.txt/g' *
 

@@ -3,6 +3,6 @@
 
   :!tidy -mi -css %
 
-=Adding formatting to an xml document for easier reading=
+##Adding formatting to an xml document for easier reading
 
   tidy -i -xml <inputfile>

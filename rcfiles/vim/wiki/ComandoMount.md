@@ -1,6 +1,6 @@
-=Introdução=
+##Introdução
 
-==Como montar a pasta /tmp com as opções nodev, nosuid, e noexec ==
+##Como montar a pasta /tmp com as opções nodev, nosuid, e noexec 
 
   vim /etc/fstab
 
@@ -35,7 +35,7 @@ Set nodev, nosuid, and noexec options without rebooting the Linux server
 
 
 
-==Recuperar senha de root sem live-cd==
+##Recuperar senha de root sem live-cd
 * http://www.dicas-l.com.br/dicas-l/20100604.php
 * http://www.vivaolinux.com.br/dica/Recuperando-a-senha-de-root-no-Debian
 
@@ -60,11 +60,11 @@ Se esse recurso não tiver habilitado altere o /etc/passwd. Apague o conteúdo q
   # passwd #Depois altere a senha do root
 
 
-==remontar unidade com permissões de leitura e escrita==
+##remontar unidade com permissões de leitura e escrita
 
 mount -o remount rw /
 
-==Montar iso em loop==
+##Montar iso em loop
 Digamos que você tem uma imagem de cd e quer ver as pastas contidas na mesma,
 você poderia descompactar a iso (uma solução possível) mas [[http://vivaotux.blogspot.com/2007/09/usando-o-jigdo-para-obter-nova-verso-do.html|há casos]] em que você precisa mantar a iso para que o sistsema reconheça a mesma como se fosse um cd normal
 
@@ -76,7 +76,7 @@ A barra invertida é um recurso que permite digitar comandos
 longos em várias linhas (legibiligade) faz parte de uma [[http://www.ibm.com/developerworks/aix/library/au-badunixhabits.html|série de dicas]]
 que eu recomendo.
 
-==descobrindo qual processo impede a desmontagem de um dispositivo==
+##descobrindo qual processo impede a desmontagem de um dispositivo
 
 $ fuser -v /media/cdrom
 
@@ -95,18 +95,18 @@ Agora sim podemos desmontar o dispositivo:
 # eject
 
 
-==remontando com permissão de leitura e escrita==
+##remontando com permissão de leitura e escrita
 
 sudo mount -o remount,rw /
 
 
-=Montando uma imagem iso para leitura de seu conteúdo=
+##Montando uma imagem iso para leitura de seu conteúdo
 
   mount -t iso9660 /caminho/da/imagem/gutsy-7.10-alternate-i386.iso \
 /media/cdrom -o loop
 
 
-==Montando partições windows==
+##Montando partições windows
 
 sudo mount /dev/hda1 /media/windows/ -t ntfs -o nls=utf8,umask=0222
 
@@ -115,14 +115,14 @@ sudo mount /dev/hda1 /media/windows/ -t ntfs -o nls=utf8,umask=0222
 
 
 
-==Usando o ntfs-3g==
+##Usando o ntfs-3g
 
 /dev/<a sua partição> /media/<local de montagem> ntfs-3g silent,umask=0,locale=utf8 0 0
 
 
-==Recuperando sessoes de cd==
+##Recuperando sessoes de cd
 fonte: http://ubuntuforum-br.org/index.php/topic,16765.0.html
-==Montando compartilhamento samba==
+##Montando compartilhamento samba
 You want to use cifs instead of smbfs. smbfs breaks on newer implementations of SMB on win32, and has been deprecated for a while.
 
 mount -t cifs //$server/share /local/mount -o rw,username=$USER
@@ -130,7 +130,7 @@ mount -t cifs //$server/share /local/mount -o rw,username=$USER
 sudo mount -t cifs -o credentials=/path/to/credenials //hostname/sharename /mount/point
 
 
-==exibe os sistemas montados atualmente em um layout agradável==
+##exibe os sistemas montados atualmente em um layout agradável
 
 mount | column -t
 
@@ -150,7 +150,7 @@ mount -t iso9660 -o ro,session=0 /dev/XXX /mnt/iso
 *0 representa a primeira sessão, 1 a segunda e assim vai..
 
 
-==Remontando um dispositivo como somente-leitura==
+##Remontando um dispositivo como somente-leitura
 fonte: [[http://www.dicas-l.com.br/dicas-l/20080310.php]]
 
 Esta é muito útil quando se desejar ter um //backup// de um sistema de arquivos de um servidor em produção. Nesse caso, para a realização do //backup//, pode-se remontar o sistema de arquivos como somente-leitura, de modo que ninguém possa escrever na partição enquanto o backup estiver acontecendo. Por exemplo, pode-se remontar uma partição já montada /dev/hda5 como somente-leitura executando o seguinte comando:
@@ -163,5 +163,5 @@ Uma vez terminado o //backup//, pode-se remontá-la novamente como leitura-e-esc
   # mount -o remount,rw /dev/hda5 /mnt/C/
 
 
-==Referências==
+##Referências
 * http://www.guiaubuntupt.org/wiki/index.php?title=Ntfs_suporte_com_leitura_e_escrita_ntfs-3g

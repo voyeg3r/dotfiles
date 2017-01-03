@@ -1,21 +1,21 @@
 Arquivo: dicas sobre o imputrc e atalhos do bash
 Criado: Sáb 29/Jan/2011 hs 09:32
-Last Change: 2011 Jan 29 09:36:01
+Last Change: ter 03 jan 2017 14:43:31 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
-=O arquivo inputrc=
+##O arquivo inputrc
 
 Controla atalhos de teclado do bash, com uma configuração adequada
 somada às configurações do /etc/bash_completion.d/ temos um terminal
 bastante amigável
 
-=Como listar os atalhos do terminal=
+##Como listar os atalhos do terminal
 
   bind -p
 
-= Magic space=
+## Magic space
 
 Digitando
 

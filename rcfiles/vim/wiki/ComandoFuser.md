@@ -1,4 +1,4 @@
-=Introdução= 
+##Introdução 
 Mata processos associados a um arquivo ou dispositivo
 
 fuser -k filename
@@ -14,5 +14,5 @@ não permite o use do comando de desmontagem, ou seja, dá uma mensagem de erro 
 
 fuser -mkv /media/cdrom0
 
-==Referências==
+##Referências
 * http://debtux.co.cc/?p=7

@@ -1,4 +1,4 @@
-=Guia de comandos linux=
+##Guia de comandos linux
 
 Alem dos comandos abaixo estão listados Atalhos de programas
 começando pelo [[VlC]]

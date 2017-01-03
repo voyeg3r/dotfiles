@@ -1,6 +1,6 @@
 
 
-  O plugin abolish permite abreviações mais complexas como:
+# O plugin abolish permite abreviações mais complexas como:
 
   :Abolish! {col,hon}our{,s,ed,ing} {}or{}
 

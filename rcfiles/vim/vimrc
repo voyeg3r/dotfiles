@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 03 jan 2017 13:11:20 BRT
+" Last Change: ter 03 jan 2017 14:47:23 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -595,10 +595,12 @@ command! -nargs=1 Sts call SetTabSize(<f-args>)
 
 " remove consecutive blank lines"{{{
 " see Preserve function definition
-fun! DelBlank()
+fun! DelBlankLines()
     keepjumps call Preserve("g/^\\n\\{2,}/d")
     "keepjumps call Preserve("g/^$/,/./-j")
-endfun"}}}
+endfun
+command! -nargs=0 DelBlank :call DelBlankLines()
+"}}}
 
 " delete sucessive blank lines and trailing spces"{{{
 nnoremap <special> <leader>d :call Preserve(DelBlank())<cr>

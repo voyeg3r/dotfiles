@@ -1,6 +1,6 @@
 Arquivo: dicas windows
 Criado: Ter 11/Dez/2012 hs 15:31
-Last Change: Seg 08 Fev 2016 14:48:45 BRT
+Last Change: ter 03 jan 2017 14:43:20 BRT
 autor: sergio
 site: vivaotux
 twitter: voyeg3r
@@ -23,13 +23,13 @@ Exibe os programas que estão abertos (possibilitando mata-los)
     Matar programa pelo nome:
     taskkill /IM utorrent.exe /F
 
-== Recording a desktop session ==
+## Recording a desktop session 
 
     http://goo.gl/lbwM9G
     On execute menu open:  psr.exe
     In English "Step recorder" em portugues Gravador de passos
 
-== adding a new dir to windows path ==
+## adding a new dir to windows path 
 
   first to see the path
 
@@ -37,7 +37,7 @@ Exibe os programas que estão abertos (possibilitando mata-los)
 
     setx /M PATH "%PATH%;C:\Program Files\MySQL\MySQL Server 5.5\bin"
 
-= todos os atalhos de configuração em uma única pasta =
+## todos os atalhos de configuração em uma única pasta 
 
 1. Crie uma pasta em qualquer lugar;
 2. De a essa pasta o seguinte nome (sem aspas):
@@ -46,7 +46,7 @@ Exibe os programas que estão abertos (possibilitando mata-los)
 
 3. O ícone da pasta deve mudar, indicante que o processo foi realizado com sucesso.
 
-= Limpando o spool de de impressão =
+## Limpando o spool de de impressão 
 
 net stop spooler
 cd %systemroot%\system32\spool\PRINTERS
@@ -55,11 +55,11 @@ del /f /s *.SPL
 net start spooler
 exit
 
-=colar na linha de comando do windows=
+##colar na linha de comando do windows
 
 alt + espaço + e + l
 
-= consertando pastas ocultas no pendrive =
+## consertando pastas ocultas no pendrive 
 
 (considere neste caso o pendrive como sendo letra 'g')
 attrib -h -r -s /s /d g:\*.*
@@ -98,7 +98,7 @@ attrib -h -r -s /s /d g:\*.*
     start explorer %letter%:
     taskkill /im cmd.exe /f
 
-=comandos do windows=
+##comandos do windows
 
 control userpasswords2
 Abre filtro AC3 (se instalado) = ac3filter.cpl

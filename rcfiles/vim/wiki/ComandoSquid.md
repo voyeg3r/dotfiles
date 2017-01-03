@@ -1,14 +1,14 @@
-=Introdução= 
+##Introdução 
 O squid é um excelente filtro de conteúdo para intranets, com ele podemos restringir
 extensões de arquivos, [[expressões regulares]], além disto ele é uma forma de manter
 em cache (armazenados) sites frequentemente visitados, recurso que se bem configurado
 aumenta a velocidade da navegação numa intranet.
-==cache do apt==
+##cache do apt
 * http://www.linuxjournal.com/content/presenting-squid-deb-proxy-speed-your-update-downloads
 
 sudo apt-get install squid-deb-proxy avahi-tools
 
-=Cache de videos do youtube= 
+##Cache de videos do youtube 
 Para que seu squid possa fazer cache dos vídeos do YouTube, adicione as linhas abaixo ao seu squid.conf, essa alteração não só faz cache do youtube, mas qualquer site que utilize a mesma tecnologia flash com extensão .flv
 
 ########### Cache Videos ###########
@@ -27,14 +27,14 @@ maximum_object_size 102400 KB (100MB)
 * http://lucianopinheiro.net/portal/?q=node/115
 
 
-==balanceamento de carga== 
+##balanceamento de carga 
 * http://www.gulbf.com.br/?q=node/28
 
-==dicas== 
+##dicas 
 * http://linuxadm.blogspot.com/2008/06/squid-tuning-mais-dicas-aumentando.html
 * local das páginas de erro /usr/share/squid/errors/English
 
-==bloqueio do emeesseene== 
+##bloqueio do emeesseene 
 
 gpedit.msc >> modelos administrativos >> sistema
 
@@ -70,9 +70,9 @@ Depois de reiniciar o PC , vá em: Iniciar\ Painel de controle\ Adicionar ou rem
  programas \Adicionar ou remover componentes do Windows Remova o Windows messenger
 
 
-==proxy transparente== 
+##proxy transparente 
 
-==Redirecionmento de portas no iptables== 
+##Redirecionmento de portas no iptables 
 da porta 80 do navegador para 3128
 
 Adicone as linhas abaixo ao final do arquivo
@@ -97,12 +97,12 @@ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 31
 iptables -t nat -A PREROUTING -i eth0 -p udp --dport 80 -j REDIRECT --to-port 3128
 
 
-=Ativando o proxy transparente no squid= 
+##Ativando o proxy transparente no squid 
 na linha http_port do arquivo 'squid.conf' adicione 'transparent'
 
 http_port 3128 trasnparent
 
-=squid.conf= 
+##squid.conf 
 
 #1. /etc/squid/squid.conf
 
@@ -264,10 +264,10 @@ http_access allow redelocal
 http_access deny all
 
 
-=sites para bloqueio= 
+##sites para bloqueio 
 http://www.mrjogos.com.br/
 
-==bloquear msn no próprio windows==
+##bloquear msn no próprio windows
 [[code] format="bash"]
 edite c:\windows\system32\drivers\etc\hosts
 
@@ -279,14 +279,14 @@ echo 127.0.0.1 www.youtube.com >> %SystemRoot%\system32\drivers\etc\hosts
 Attrib +r +h %WINDIR%\system32\drivers\etc\hosts
 code
 
-==zerando o cache== 
+##zerando o cache 
 
 /etc/init.d/squid stop
 rm -rf /var/spool/squid/*
 squid -z
 /etc/init.d/squid start
 
-==Filtrando os logs do squid==
+##Filtrando os logs do squid
 
 tail -f /var/log/squid/access.log | awk '{print $3" "$7}'
 
@@ -315,7 +315,7 @@ header_access Referer deny all
 
 
  ==Sites bloqueados== [[bloqueados]]
-==desempenho do squid== 
+##desempenho do squid 
 * http://linuxadm.blogspot.com/2008/06/squid-tuning-mais-dicas-aumentando.html
 * http://www.vivaolinux.com.br/dicas/impressora.php?codigo=9192
 
@@ -350,7 +350,7 @@ cache_dir diskd /var/squid/cache/4 2900 128 512 Q1=64 Q2=72
 cache_dir diskd /var/squid/cache/5 2900 128 512 Q1=64 Q2=72
 
 
-=Configurando o squid para não fazer cache de alguns sites= 
+##Configurando o squid para não fazer cache de alguns sites 
  fonte: http://brfedora.wordpress.com/2008/05/18/configurando-squid-para-nao-fazer-cache-para-alguns-sites/
  Adicione as linhas abaixo no arquivo {{/etc/squid/squid.conf}}:
 
@@ -368,7 +368,7 @@ http://www.redhat.com/ - DIRECT/209.132.177.50 text/html
 
 
 
-==Dicas== 
+##Dicas 
  Durante a configuração do squid você pode ter que habilitar
  o proxy ou não no navegador, usa uma extenão para desabilitar:
 * https://addons.mozilla.org/pt-BR/firefox/addon/1557
@@ -393,7 +393,7 @@ application/zip zip
 
 
 
-==Zerar o cache do squid== 
+##Zerar o cache do squid 
 
 procedimento q eu sigo pra zerar o cache é o seguinte:
 
@@ -405,7 +405,7 @@ procedimento q eu sigo pra zerar o cache é o seguinte:
 
 
 
-==squid.conf== 
+##squid.conf 
 
 1. /etc/squid/squid.conf
 2. cache_dir ufs /var/cache/squid3 512 16 256
@@ -433,7 +433,7 @@ acl redeslocais src 172.20.19.0/255.255.254.0 192.168.254.0/24
 
 
 
-==squidGuard.conf== 
+##squidGuard.conf 
 
  Para verificar:
 
@@ -543,7 +543,7 @@ redirect http://www.google.com.br
 
 
 
-==Personalizando a mensagem de erro== 
+##Personalizando a mensagem de erro 
 * http://www.cybershark.net/tutoriais/squid/
 
 
@@ -572,13 +572,13 @@ Email: voyeg3r no gmail <br>
 
 
 
-==Criando regras== 
+##Criando regras 
 
 acl nome src 192.168.254.0/24
 http_access allow nome
 
 
-==Bloqueando pelo tipo mime== 
+##Bloqueando pelo tipo mime 
 * http://www.squid-cache.org/mail-archive/squid-users/200511/0534.html
 
 acl downloads req_mime_type application/octet-stream application/zip
@@ -592,7 +592,7 @@ acl downloads application/octet-stream application/zip video/.* audio/.* msi/.*
 acl msnmime req_mime_type -i ^application/x-msn-messenger$
 
 
-==Exemplos de acl's - regras== 
+##Exemplos de acl's - regras 
  acl HORARIO_ALMOCO time MTWHF 12:00-13:30
 
  Segue tabela de abreviação dos dias.
@@ -606,7 +606,7 @@ acl msnmime req_mime_type -i ^application/x-msn-messenger$
 || F || sexta-feira ||
 || A || sábado ||
 
-==Limpando os comentários do squid== 
+##Limpando os comentários do squid 
  Usando o vim:
 
 :%g/^#\|^$/d
@@ -617,7 +617,7 @@ acl msnmime req_mime_type -i ^application/x-msn-messenger$
 sed -i.backup '/^#\|^$/d' /etc/squid/squid.conf
 
 
-==Links para estudo== 
+##Links para estudo 
 * http://www.guiadohardware.net/comunidade/squid-autentica/246578/
 * http://www.linuxman.pro.br/squid/
 
@@ -626,12 +626,12 @@ sed -i.backup '/^#\|^$/d' /etc/squid/squid.conf
 * http://www.linuxchix.org.br/?q=node/15
 * http://www.andersonleite.net/tutoriais/squid_ad.htm
 
-==bloqueando no próprio windows== 
+##bloqueando no próprio windows 
  coloque cada entrada descrita abaixo precedidade de 0.0.0.0
  em c:\windows\system32\drivers\etc\hosts
 
 
-=Referências= 
+##Referências 
 * http://under-linux.org/forums/proxy-nat-firewall/111431-windows-vista-spk1-nao-acessa-atraves-de-proxy-transparente-3.html
 * http://www.guiadohardware.net/comunidade/regras-criando/205856/
 * [[http://www.squid-cache.org.br/]]

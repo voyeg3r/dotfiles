@@ -1,8 +1,8 @@
-==Extrair audio de avi, flv, mpeg, etc...==
+##Extrair audio de avi, flv, mpeg, etc...
 
 mplayer -dumpaudio NOMEDOVIDEO.avi -dumpfile NOMEDOVIDEO.mp3
 
-==Extrair audio de dvd==
+##Extrair audio de dvd
 Abra um terminal e digite
 
 mkfifo
@@ -12,7 +12,7 @@ Abra outro terminal no mesmo diretório e digite
 
 lame -b 192 --resample 44100 -o titulo-1.mp3
 
-==converter video flv para gif animado==
+##converter video flv para gif animado
 
 mplayer -vo gif89a yourvideosfilename.flv
 
@@ -52,11 +52,11 @@ alias dronezone="mplayer -playlist http://somafm.com/dronezone130.pls" # Soma FM
 alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTunes AAC 128K
 alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
 
-=play a movie or song slower=
+##play a movie or song slower
 
     mplayer -af scaletempo -speed .7 filename
 
-==Referências==
+##Referências
 * http://ubuntudicas.blogspot.com/2008/11/extraindo-udio-de-vdeos-avi-flv-mpeg.html
 * http://ubuntuforum-pt.org/index.php/topic,42984.0/topicseen.html
 
