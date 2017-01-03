@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: seg 02 jan 2017 15:03:44 BRT
+" Last Change: ter 03 jan 2017 07:20:19 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -151,6 +151,17 @@ if executable('ag')
     let g:ctrlp_use_caching = 0
 endif
 
+function! MySearchFunction()
+  let grep_term = input("Enter search term: ")
+  if !empty(grep_term)
+    execute 'silent grep' grep_term | copen
+  else
+    echo "Empty search term"
+  endif
+  redraw!
+endfunction
+command! -nargs=0 MySearch :call MySearchFunction()
+
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>
 
@@ -225,8 +236,6 @@ set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
 
-"" Disable the blinking cursor.
-set gcr=a:blinkon0
 set scrolloff=3
 
 "" Status bar
