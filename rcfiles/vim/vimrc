@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 03 jan 2017 08:34:01 BRT
+" Last Change: ter 03 jan 2017 13:11:20 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -163,7 +163,7 @@ nnoremap <silent> <c-p> :FZF -m<cr>
 "nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " bind \ (backward slash) to grep shortcut
 "command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-"nnoremap ,ag :Ag<SPACE>
+nnoremap ,ag :Ag<SPACE>
 
 " settings for incsearch plugin"{{{
 map /  <Plug>(incsearch-forward)
@@ -174,7 +174,17 @@ map g/ <Plug>(incsearch-stay)"}}}
 filetype plugin indent on
 
 " index do vim wiki
-let g:vimwiki_list = [{'path': '~/.dotfiles/rcfiles/vim/wiki', 'index': 'main'}]
+let g:vimwiki_list = [{'path': '~/.dotfiles/rcfiles/vim/wiki',
+                     \ 'index': 'main', 'syntax': 'markdown', 'ext': '.md'}]
+nmap == <Plug>VimwikiAddHeaderLevel
+nmap -- <Plug>VimwikiRemoveHeaderLevel
+"*:VimwikiSearch* /pattern/
+"*:VWS* /pattern/
+"    Search for /pattern/ in all files of current wiki.
+"    To display all matches use |:lopen| command.
+"    To display next match use |:lnext| command.
+"    To display previous match use |:lprevious| command.
+let g:vimwiki_table_mappings = 0
 
 " Basic Setup"{{{
 set encoding=utf-8

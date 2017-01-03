@@ -1,6 +1,6 @@
 =Manual de dicas do vim=
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: seg 02 jan 2017 10:12:53 BRT
+Last Change: ter 03 jan 2017 12:25:33 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -31,6 +31,28 @@ source: http://vimcasts.org/episodes/ultisnips-visual-placeholder/
 
    !p snip.rv = "return value"
    t[1] --> tabstop 1
+
+   Usando snippets espelho ou não
+{{{
+        snippet req "require a module" b
+        let ${1:${VISUAL}} = require('${2:$1}');
+        ${0}
+        endsnippet
+}}}
+    O snippet acima repete na posição 2 o valor da posição 1
+    e permite que o segundo possa ser alterado
+
+ Outro snippet com conceitos interessantes:
+
+{{{
+    snippet us "replace specials with underscores" w
+    `!p
+    import re
+    snip.rv = re.sub("[^0-9a-zA-Z]", "_", snip.v.text)
+`
+endsnippet
+
+}}}
 
 == quickfix list manipulations and :cdo command ==
 

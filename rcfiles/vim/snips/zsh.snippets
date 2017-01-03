@@ -4,7 +4,7 @@ priority 1
 snippet zh "zsh header"
 #!/usr/bin/env zsh
 # Created: `date +%c`
-# Last Change: seg 02 jan 2017 13:04:48 BRT
+# Last Change: ter 03 jan 2017 09:22:35 BRT
 # Author: ${1:`!v g:snips_author`}
 # Twitter: ${2:`!v g:snips_twitter`}
 
@@ -56,7 +56,7 @@ ${3:#function_body}
 ${0:# jump out ctrl-j}
 endsnippet
 
-snippet '\bi(f)?root' "if user is root" !r
+snippet '\b(if)?root' "if user is root" !r
 if [ "$(id -u)" != "0" ]; then
     echo "  Need be root"
     sleep 2

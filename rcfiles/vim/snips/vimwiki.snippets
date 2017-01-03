@@ -1,0 +1,26 @@
+
+
+snippet 'h1|#|=' "create header 1" r
+# ${1:header content}
+${0: ctrl-j}
+endsnippet
+
+snippet 'h2|##|==' "create header 2" r
+## ${1:header content}
+${0: ctrl-j}
+endsnippet
+
+snippet 'code|verb(ose)?' "wiki verbose code" r
+	${0:${VISUAL:assertions ...}}
+endsnippet
+
+snippet bold "*markdown bold*" w
+*${1:text}*
+endsnippet
+
+snippet 'it(alic)?' "md italic" r
+_${1:text}_
+endsnippet
+
+
+
