@@ -1,7 +1,7 @@
 # Arquivo: zshell tips and tricks
 
     Criado: Sáb 04/Jan/2014 hs 07:23
-    Last Change: ter 03 jan 2017 15:53:34 BRT
+    Last Change: ter 03 jan 2017 15:57:00 BRT
     autor: Sérgio Luiz Araújo Silva
     site: http://vivaotux.blogspot.com
     twitter: http://www.twitter.com/voyeg3r
@@ -192,7 +192,7 @@ you can use =command instead $(which command)
 
     git stash pop
 
-##fasd tool shortcuts=
+##fasd tool shortcuts
 
     fasd is a tools installed in zsh environment
 
@@ -222,7 +222,8 @@ you can use =command instead $(which command)
 
 ## one-liners
 
-# lowcase filenames - source: http://lorenzod8n.wordpress.com/category/zsh/
+# lowcase filenames 
+source: http://lorenzod8n.wordpress.com/category/zsh/
 
     for file in *; do mv $file ${file:l}; done
     for p in ~/pictures/**/*[A-Z]*; do mv $p ${p:l}; done
