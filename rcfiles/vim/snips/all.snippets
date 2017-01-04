@@ -161,11 +161,34 @@ snip.rv = fraction(t[1], t[2])
 ` wpm.
 endsnippet
 
-
 snippet uline "Subsection" b
 ${1:${VISUAL:Subsection name}}
 `!p snip.rv = rst_char_len(t[1])*'-'`
 endsnippet
 
+snippet test "test" w
+${1:yout text}
+`echo $1 | sed 's/.*/_/'`
+endsnippet
+
+snippet ( "parenteses" w
+(${1:${VISUAL}})${0}
+endsnippet
+
+snippet [ "colchetes" w
+[${1:${VISUAL}}]${0}
+endsnippet
+
+snippet { "chaves" w
+{${1:${VISUAL}}}${0}
+endsnippet
+
+snippet ' "aspas simples" w
+'${1:${VISUAL}}'${0}
+endsnippet
+
+snippet " "aspas duplas" w
+"${1:${VISUAL}}"${0}
+endsnippet
 
 # vim:ft=snippets:

@@ -1,7 +1,7 @@
 " New voyeg3r's ~/.vimrc file
 " vim:foldmethod=marker:foldlevel=0
 " Created: 2016-12-29 15:25:15
-" Last Change: qui 29 dez 2016 15:57:43 BRT
+" Last Change: qua 04 jan 2017 07:14:58 BRT
 
 " if you want to load vim without plugins but
 " with nocompatible mode try this
@@ -56,3 +56,8 @@ if has("autocmd")
 endif
 
 
+" to reselect use gv in normal mode"{{{
+nnoremap <S-F11> <ESC>:set hls!<cr>
+inoremap <S-F11> <C-o>:set hls!<cr>
+vnoremap <S-F11> <ESC>:set hls!<cr> <bar> gv
+"}}}
