@@ -4,7 +4,7 @@ priority 1
 snippet zh "zsh header"
 #!/usr/bin/env zsh
 # Created: `date +%c`
-# Last Change: qui 05 jan 2017 09:59:20 BRT
+# Last Change: qui 05 jan 2017 14:07:11 BRT
 # Author: ${1:`!v g:snips_author`}
 # Twitter: ${2:`!v g:snips_twitter`}
 
@@ -222,4 +222,10 @@ fi
 ${0:# ctrl-j}
 endsnippet
 
+snippet here "here document (here)"
+<<-${2:'${1:TOKEN}'}
+    $0
+    ${1/['"`](.+)['"`]/$1/}
+endsnippet
 
+# vim: set ft=zsh ts=8 sw=4 tw=0 noet :

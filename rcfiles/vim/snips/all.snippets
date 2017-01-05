@@ -56,6 +56,20 @@ snippet " "aspas duplas" w
 "${1:${VISUAL}}"${0}
 endsnippet
 
+# snippet modeline "Modeline" b
+# vim: set ft=${1:vim} ts=${2:8} sw=${3:4} tw=${4:0} noet :$0
+# endsnippet
+
+##########################
+# VIM MODELINE GENERATOR #
+##########################
+# See advice on `:help 'tabstop'` for why these values are set. Uses second
+# modeline form ('set') to work in languages with comment terminators
+# (/* like C */).
+snippet modeline "Vim modeline"
+vim`!v ':set '. (&expandtab ? printf('et sw=%i ts=%i', &sw, &ts) : printf('noet sts=%i sw=%i ts=%i', &sts, &sw, &ts)) . (&tw ? ' tw='. &tw : '') . ':'`
+endsnippet
+
 snippet '\bul(ine)?' "underline" r
 ${1:your text here}
 `!p snip.rv = len(t[1])*'-'`
@@ -66,4 +80,16 @@ endsnippet
 # package ${1:main}
 # endsnippet
 
-# vim:ft=snippets:
+snippet 'sig|head' "my signature" r
+------------------------------------------
+File:		 ${1:file_name}
+Created:	 `!v strftime("%c")`
+Last Change: `!v strftime("%c")`
+Author:		 `!v g:snips_author`
+Site:		 `!v g:snips_site`
+e-mail:      `!v g:snips_email`
+Twitter:	 `!v g:snips_twitter`
+Github:      `!v g:snips_github`
+------------------------------------------
+${0}
+endsnippet

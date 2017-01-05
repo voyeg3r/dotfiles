@@ -2,6 +2,28 @@ priority -50
 
 extends texmath
 
+global !p
+def create_row_placeholders(snip):
+    # retrieving singlee line from current string and treat it like tabstops
+    # count
+    placeholders_amount = int(snip.buffer[snip.line].strip())
+
+    # erase current line
+    snip.buffer[snip.line] = ''
+
+    # create anonymous snippet with expected content and number of tabstops
+    anon_snippet_body = ' & '.join(['$' + str(i+1)
+                                    for i in range(placeholders_amount)])
+
+    # expand anonymous snippet
+    snip.expand_anon(anon_snippet_body)
+endglobal
+
+post_jump "create_row_placeholders(snip)"
+snippet "tr(\d+)" "latex table row variable" br
+`!p snip.rv = match.group(1)`
+endsnippet
+
 snippet "b(egin)?" "begin{} / end{}" br
 \begin{${1:something}}
 	${0:${VISUAL}}
