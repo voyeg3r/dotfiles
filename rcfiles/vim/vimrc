@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: ter 03 jan 2017 14:47:23 BRT
+" Last Change: qui 05 jan 2017 10:26:26 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -80,6 +80,10 @@ nnoremap <F12> !!$SHELL <cr> <bar> :silent! call Preserve("%s/\\s\\+$//e")<cr>
 " redo the last substituition keeping the flags
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
+
+" Expand %% to current directory
+" http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%')<cr>
 
 " this map executes the currente line as a vim command ":"
 nnoremap <space>l yy:@" <cr>

@@ -8,6 +8,13 @@
 
  [d-snippets](https://github.com/kiith-sa/DSnips)
 
+## Inserir texto com underline usando ultisnips
+
+    snippet '\bul(ine)?' "underline" r
+    ${1:your text here}
+    `!p snip.rv = len(t[1])*'-'`
+    endsnippet
+
 ##  Para mostrar uma lista das complementações possíveis
 
 pressione no modo insert

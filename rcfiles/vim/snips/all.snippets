@@ -1,131 +1,5 @@
 priority 1
 
-
-###########################################################################
-#							   General Stuff							  #
-###########################################################################
-global !p
-import vim
-from os import path as ospath
-from string import Template
-import re
-from collections import Counter
-
-from vimsnippets import complete
-
-#http://docutils.sourceforge.net/docs/ref/rst/roles.html
-TEXT_ROLES = ['emphasis','literal','code','math',
-			  'pep-reference','rfc-reference',
-			  'strong','subscript','superscript',
-			  'title-reference','raw']
-TEXT_ROLES_REGEX = r'\.\.\srole::?\s(w+)'
-
-#http://docutils.sourceforge.net/docs/ref/rst/directives.html#specific-admonitions
-SPECIFIC_ADMONITIONS = ["attention", "caution", "danger",
-						"error", "hint", "important", "note",
-						"tip", "warning"]
-#http://docutils.sourceforge.net/docs/ref/rst/directives.html
-DIRECTIVES = ['topic','sidebar','math','epigraph',
-			  'parsed-literal','code','highlights',
-			  'pull-quote','compound','container','table','csv-table',
-			  'list-table','class','sectnum',
-			  'role','default-role','unicode',
-			  'raw']
-
-NONE_CONTENT_DIRECTIVES = ['rubric', 'contents', 'header',
-						   'footer', 'date', 'include', 'title']
-
-INCLUDABLE_DIRECTIVES = ['image', 'figure', 'include']
-# CJK chars
-# http://stackoverflow.com/questions/2718196/find-all-chinese-text-in-a-string-using-python-and-regex
-CJK_RE = re.compile(u'[⺀-⺙⺛-⻳⼀-⿕々〇〡-〩〸-〺〻㐀-䶵一-鿃豈-鶴侮-頻並-龎]', re.UNICODE)
-
-
-def has_cjk(s):
-	"""Detect if s contains CJK characters."""
-	return CJK_RE.search(s) is not None
-
-def real_filename(filename):
-	"""pealeextension name off if possible
-	# i.e. "foo.bar.png will return "foo.bar"
-	"""
-	return ospath.splitext(filename)[0]
-
-def check_file_exist(rst_path, relative_path):
-	"""
-	For RST file, it can just include files as relative path.
-
-	:param rst_path: absolute path to rst file
-	:param relative_path: path related to rst file
-	:return: relative file's absolute path if file exist
-	"""
-	abs_path = ospath.join(ospath.dirname(rst_path), relative_path)
-	if ospath.isfile(abs_path):
-		return abs_path
-
-
-try:
-	rst_char_len = vim.strwidth  # Requires Vim 7.3+
-except AttributeError:
-	from unicodedata import east_asian_width
-	def rst_char_len(s):
-		"""Return the required over-/underline length for s."""
-		result = 0
-		for c in s:
-			result += 2 if east_asian_width(c) in ('W', 'F') else 1
-		return result
-
-
-def	make_items(times, leading='+'):
-	"""
-	make lines with leading char multitimes
-
-	:param: times, how many times you need
-	:param: leading, leading character
-	"""
-	times = int(times)
-	if leading == 1:
-		msg = ""
-		for x in range(1, times+1):
-			msg += "%s. Item\n" % x
-		return msg
-	else:
-		return ("%s Item\n" % leading) * times
-
-
-def look_up_directives(regex, fpath):
-	"""
-	find all directive args in given file
-	:param: regex, the regex that needs to match
-	:param: path, to path to rst file
-
-	:return: list, empty list if nothing match
-	"""
-	try:
-		with open(fpath) as source:
-			match = re.findall(regex, source.read())
-	except IOError:
-		match = []
-	return match
-
-
-def get_popular_code_type():
-	"""
-	find most popular code type in the given rst
-
-	:param path: file to detect
-
-	:return: string, most popular code type in file
-	"""
-	buf = "".join(vim.current.buffer)
-	types = re.findall(r'[:|\.\.\s]code::?\s(\w+)', buf)
-	try:
-		popular_type = Counter(types).most_common()[0][0]
-	except IndexError:
-		popular_type = "lua" # Don't break default
-	return popular_type
-endglobal
-
 snippet today
 Today is the `date +%Y-%m-%d`
 endsnippet
@@ -162,11 +36,6 @@ snip.rv = fraction(t[1], t[2])
 ` wpm.
 endsnippet
 
-snippet uline "Subsection" b
-${1:${VISUAL:Subsection name}}
-`!p snip.rv = rst_char_len(t[1])*'-'`
-endsnippet
-
 snippet ( "parenteses" w
 (${1:${VISUAL}})${0}
 endsnippet
@@ -187,5 +56,9 @@ snippet " "aspas duplas" w
 "${1:${VISUAL}}"${0}
 endsnippet
 
+snippet '\bul(ine)?' "underline" r
+${1:your text here}
+`!p snip.rv = len(t[1])*'-'`
+endsnippet
 
 # vim:ft=snippets:
