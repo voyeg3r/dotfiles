@@ -17,6 +17,28 @@ endfun
 "${0: placeholder ctrl-j}
 endsnippet
 
+snippet var "define a variable" w
+let ${1:var_name} = ${2:assignments} ${0}
+endsnippet
 
+snippet gvar "global variable" w
+let g:${1:var_name} = ${2:assignments} ${0}
+endsnippet
 
+# clearsnippets if
+
+snippet if "conditional test" w
+if ${1:test}
+	${2:options}
+endif
+${0:"}
+endsnippet
+
+snippet '\bau(tocmd)?' "set new autocmd" r
+autocmd! ${1:events} ${2:pattern} ${3:command}
+endsnippet
+
+snippet com "new command" w
+command! -nargs=${1:number_of_args} ${2:other_params} ${2:name} ${2:command}
+endsnippet
 
