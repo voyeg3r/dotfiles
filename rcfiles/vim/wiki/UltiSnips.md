@@ -6,8 +6,11 @@
  [generic html snippets](https://medium.com/@shxfee/generic-html-snippets-with-vim-and-ultisnips-8cc369390cb9#.rheutidju)
  [why snippets](http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/)
 
+ [d-snippets](https://github.com/kiith-sa/DSnips)
+
 ##  Para mostrar uma lista das complementações possíveis
-  pressione no modo insert
+
+pressione no modo insert
 
 		Ctrl-Tab
 
