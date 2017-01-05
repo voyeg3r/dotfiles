@@ -1,0 +1,5 @@
+snippet '<[a-z]+[0–9]*' "Generic HTML tag builder multi-line" r
+<`!p snip.rv = match.group()[1:]`$1>
+ $0
+</`!p snip.rv = match.group()[1:]`>
+endsnippet

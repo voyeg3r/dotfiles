@@ -1,7 +1,7 @@
 # Arquivo: zshell tips and tricks
 
     Criado: Sáb 04/Jan/2014 hs 07:23
-    Last Change: ter 03 jan 2017 16:24:00 BRT
+    Last Change: qua 04 jan 2017 09:31:11 BRT
     autor: Sérgio Luiz Araújo Silva
     site: http://vivaotux.blogspot.com
     twitter: http://www.twitter.com/voyeg3r
@@ -466,6 +466,10 @@ The above shortuc will put the most recent file name in command line
 
     `#zmv "programmable rename"`
     autoload -U zmv
+    
+## rename all files to lowercase
+
+    zmv -o-i '(**/)(*)' '$1${2:l}'
 
 ## rename txt to rb
 

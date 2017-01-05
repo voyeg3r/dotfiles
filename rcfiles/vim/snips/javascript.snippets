@@ -1,0 +1,76 @@
+
+# source: https://goo.gl/ww2h9z
+
+# In this snippet, I added some Python that grabs the list of arguments in the
+# function definition and automatically creates JSDoc @param tags from them.
+# (Disclaimer: I am far from a Python expert, so there is probably a much better
+# way to do this.)
+
+snippet fun "function with dynamic docblock" b
+`!p
+# Currently Ultisnips does not support dynamic tabstops, so we cannot add
+# tabstops to the datatype for these param tags until that feature is added.
+def formatTag(argument):
+    return " * @param {{}} {0}".format(argument)
+
+arguments = t[2].split(',')
+arguments = [argument.strip() for argument in arguments if argument]
+
+if len(arguments):
+    tags = map(formatTag, arguments)
+    snip.rv = "/**"
+    for tag in tags:
+        snip += tag
+    snip += ' */'
+    snip += ''
+else:
+    snip.rv = ''
+`${1}: function(${2}) {
+    ${0:${VISUAL}}
+},
+endsnippet
+
+# We are using CommonJS with a little help from webpack (more info), and we have
+# been naming most of our files as snake_cased versions of the CamelCased
+# variable names they export. This snippet uses a bit of Python to grab the
+# snake_cased filename from the require statement and CamelCase it in the
+# variable name as I type it.
+
+snippet '\breq?(uire)?' "require" r
+var `!p
+def formatVariableName(path):
+    lastPart = path.split('/')[-1]
+    if lastPart == 'underscore':
+        return '_'
+    elif lastPart == 'jquery':
+        return '$'
+    else:
+        return re.sub(r'[_\-]', '', lastPart.title())
+snip.rv = formatVariableName(t[1])
+` = require('${1}');$0
+endsnippet
+
+# Similarly this snippet will automatically grab the snake_cased filename of the
+# current file and CamelCase it for the module.exports line.
+snippet me "module.exports" b
+module.exports = ${1:`!p snip.rv = ''.join(x.title() for x in re.sub('\.js$', '', snip.basename or 'ModuleName').split('_'))`};$0
+endsnippet
+
+# This snippet will give you the boilerplate code for a new component, seeding
+# the name of the component and exported variable as the CamelCased version of
+# the snake_cased filename.
+snippet cc "createClass" b
+var ${1:`!p snip.rv = ''.join(x.title() for x in re.sub('\.js$', '', snip.basename or 'ModuleName').split('_'))`} = React.createClass({
+    /**
+    * @return {Object}
+    */
+    render: function() {
+        return (
+            $0
+        );
+    }
+});
+
+module.exports = $1;
+endsnippet
+

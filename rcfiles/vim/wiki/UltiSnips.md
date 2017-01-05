@@ -1,32 +1,37 @@
-link oficial
-http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/
+# link oficial
+[github repo](https://github.com/SirVer/ultisnips)
 
-  Para mostrar uma lista das complementações possíveis
+## argigos a respeito:
+ [sharpen your vim with snippets](https://brigade.engineering/sharpen-your-vim-with-snippets-767b693886db#.qq0y0kthk)
+ [generic html snippets](https://medium.com/@shxfee/generic-html-snippets-with-vim-and-ultisnips-8cc369390cb9#.rheutidju)
+ [why snippets](http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/)
+
+##  Para mostrar uma lista das complementações possíveis
   pressione no modo insert
 
 		Ctrl-Tab
 
-  Para editar snippets use o comandos
+## Para editar snippets use o comandos
 
        :UltisnipsEdit
 
-  Para definir um snippet novo digite
+## Para definir um snippet novo digite
 
        snip<tab>
 
-  Para expandir um snip digite
+## Para expandir um snip digite
 
       palavra<tab>
 
-  Para pular para o próximo snippet
+## Para pular para o próximo snippet
 
       Ctrl-j
 
-  Para voltar para o snippet anterior
+## Para voltar para o snippet anterior
 
       Ctrl-k
 
-## Conditional replacements 
+## Conditional replacements
 
 One feature that I didn't mention in the screencast are conditional
 replacements. When you capture a group in the search part of a

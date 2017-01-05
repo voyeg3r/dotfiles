@@ -1,6 +1,6 @@
 ##Manual de dicas do vim
 Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: ter 03 jan 2017 14:43:20 BRT
+Last Change: qua 04 jan 2017 09:07:49 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -1755,17 +1755,16 @@ Plugin 'vim-scripts/VisIncr'
     endfunction"}}}
 
 ##adding blank lines  - adding empty lines between lines 
-
-source: http://superuser.com/questions/592503/vim-adding-empty-line-between-lines/592508
+source: [superuser.com](http://superuser.com/questions/592503/)
 
     :g/.\n\n\@!/norm o
 
-
     The pattern I use is /.\n\n\@!/. Breaking that down into its component pieces:
 
-    . Matches any character in the line. (used to immediately discard any existing empty lines from consideration)
-    \n Matches a single \n at the end of the character above
-    \n\@! Fails the match if there's another \n immediately after the earlier \n.
+    . Matches any character in the line. (used to immediately discard any
+    existing empty lines from consideration) \n Matches a single \n at the end
+    of the character above \n\@! Fails the match if there's another \n
+    immediately after the earlier \n.
 
 ## visualizar o histórico de comandos do vim
 

@@ -165,6 +165,7 @@ InstallMon 13 Jul 2015 07:52:17 PM BRT - copia arquivos e configura atributos
 [[ComandoPasswd|Passwd]] - modifica a senha
 [[ComandoPaste|Paste]] - descricao
 [[ComandoPerl|Perl]] - linguagem de programação interpretada
+[[ComandoPerlRename|Perl-rename]] - renomeia arquivos facilmente
 [[ComandoPidof|Pidof]] - mostra o pid de um processo
 [[ComandoPing|Ping]] - testa se um host está ativo
 [[ComandoPkill|Pkill]] - mata processos pelo nome
