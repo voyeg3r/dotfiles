@@ -1,7 +1,7 @@
 # Arquivo: zshell tips and tricks
 
     Criado: Sáb 04/Jan/2014 hs 07:23
-    Last Change: sex 06 jan 2017 10:04:16 BRT
+    Last Change: sex 06 jan 2017 10:10:50 BRT
     autor: Sérgio Luiz Araújo Silva
     site: http://vivaotux.blogspot.com
     twitter: http://www.twitter.com/voyeg3r
@@ -14,7 +14,7 @@
 ## References:
 http://chneukirchen.org/dotfiles/.zshrc
 
-# arrays in zshell
+## arrays in zshell
 
 ## Create an array of lines from a file
 
@@ -53,7 +53,7 @@ removing all directories except some:
 
     rm -rf ^(vim-colors-solarized|vim-airline)
 
-# Check the Existence of a Command in Bash and Zsh
+## Check the Existence of a Command in Bash and Zsh
 source: https://www.topbug.net/blog/2016/10/11/speed-test-check-the-existence-of-a-command-in-bash-and-zsh/
 
     the fastest way is this:
@@ -208,7 +208,7 @@ you can use =command instead $(which command)
     z foo           # cd into the most frecent directory matching foo
     open `sf pdf`   # interactively select a file matching pdf and launch `open`
 
-# aliases para fasd
+## aliases para fasd
     alias a='fasd -a'        # any
     alias s='fasd -si'       # show / search / select
     alias d='fasd -d'        # directory
@@ -226,7 +226,7 @@ you can use =command instead $(which command)
 
 ## one-liners
 
-# lowcase filenames
+## lowcase filenames
 source: http://lorenzod8n.wordpress.com/category/zsh/
 
     for file in *; do mv $file ${file:l}; done
@@ -239,15 +239,15 @@ source: http://lorenzod8n.wordpress.com/category/zsh/
     % wget ftp://ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p330.tar.gz
     % tar xzvf !:t
 
-# this command
+## this command
 
     ls -1 */**/*.sh
 
-# is equivalent to:
+## is equivalent to:
 
     find -iname "*.sh" -printf "\n%f"
 
-# to show files created less than one day
+## to show files created less than one day
 
     ls -1 *(.m-1)
 
@@ -255,29 +255,29 @@ the option -1 sets one result per line
 and the dot '.' alows only regular files
 the 'm-1' asks modifications at less than one day
 
-# show files modified in the last hour
+## show files modified in the last hour
 
     ls *(.mh-1) | wc -l
 
     ls *.*(^mh3)   # all files not 3 hours  old
 
-#  find all files with size larger than 10 megabytes
+##  find all files with size larger than 10 megabytes
 
     ls **/*(.Lm+10)
 
-# find all files you accessed within the last month:
+## find all files you accessed within the last month:
 
     ls **/*(.aM-1)
 
-# list files not ending with 'o'
+## list files not ending with 'o'
 
     echo *.[^o]
 
-# avoinding files that start with uppercase
+## avoinding files that start with uppercase
 
     echo [^[:upper:]]*
 
-# files changed in the last hour
+## files changed in the last hour
 
     echo *(mh-1)
 
@@ -331,7 +331,7 @@ http://youtu.be/mCHwb_TD4ng
 1) First install aur-git and run sudo aur to build local database.
 2) Grab this function I sloppily put together:
 
-# http://pastebin.com/EJrzSh5A
+## http://pastebin.com/EJrzSh5A
 
     -----8<------------------------
     #compdef yaourt
@@ -370,7 +370,7 @@ That's it. Thanks for watching.
 
     echo $filename:r
 
-# Remove the suffix from each file (*.sh in this example)
+## Remove the suffix from each file (*.sh in this example)
 
     $f:e is $f file extension
     :h --> head (dirname)
@@ -388,71 +388,71 @@ That's it. Thanks for watching.
     ps | grep `echo $$` | awk '{ print $4 }'
     }
 
-# show only directories
+## show only directories
 
     print -l foldero/**/*(/)
 
-# show only regular files
+## show only regular files
 
     print -l foldero/**/*(.)
 
     changed in last three days
     ls -l */**(.m3)
 
-# show empty files
+## show empty files
 
     ls -l foldero/**/*(L0)
 
-# show files greater than 3 KB
+## show files greater than 3 KB
 
     ls -l foldero/**/*(Lk+3)
 
-# show files modified in the last hour
+## show files modified in the last hour
 
     print -l foldero/**/*(mh-1)
 
-# shortcut to show or manipulate most recent file
+## shortcut to show or manipulate most recent file
 for example
 
     ls Ctrl-x Ctrl-m
 
 The above shortuc will put the most recent file name in command line
 
-# sort files from most to least recently modified and show the last 3
+## sort files from most to least recently modified and show the last 3
     ls -l foldero/**/*(om[1,3])
 
     list the most recent file
     ls -l */**(.om[1])
 
-# vi newest file
+## vi newest file
 
     vi *(.om[1])
 
-# show all files with extension .pdf in current directory and all subdirectory
+## show all files with extension .pdf in current directory and all subdirectory
 
     ls **/*.pdf
 
-# make all files executable (recursively)
+## make all files executable (recursively)
 
     chmod -x **/*(.)
 
-# show all regular files with the word “test” in their name in current directory and all subdirectory
+## show all regular files with the word “test” in their name in current directory and all subdirectory
 
     ls **/*test*(.)
 
-# find all executable files in current directory and all subdirectory
+## find all executable files in current directory and all subdirectory
 
     ls -l **/*(.x)
 
-# find all files of user tomcat
+## find all files of user tomcat
 
     ls -l **/*(u:tomcat:)
 
-# find all files you accessed within the last month:
+## find all files you accessed within the last month:
 
     ls **/*(.aM-1)
 
-# find all files with size larger than 10 megabytes
+## find all files with size larger than 10 megabytes
 
     ls **/*(.Lm+10)
 
@@ -502,16 +502,16 @@ The above shortuc will put the most recent file name in command line
     zmv '(* *)' '${1// /}'
     zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
 
-# Change the suffix from *.sh to *.pl
+## Change the suffix from *.sh to *.pl
 
     zmv -W '*.sh' '*.pl'
 
-# lowercase/uppercase all files/directories
+## lowercase/uppercase all files/directories
 
     $ zmv '(*)' '${(L)1}' # lowercase
     $ zmv '(*)' '${(U)1}' # uppercase
 
-# Remove numbers on the filenames begin
+## Remove numbers on the filenames begin
 
     autoload -U zmv
     zmv '[0-9]## #(*.mp3)' '$1'
