@@ -1,14 +1,14 @@
 # Arquivo: zshell tips and tricks
-    ------------------------------------------
+
     File:		 ZsHell.md
     Created:	 sex 06 jan 2017 10:18:17 BRT
-    Last Change: sex 06 jan 2017 10:19:20 BRT
+    Last Change: sex 06 jan 2017 10:20:47 BRT
     Author:		 Sergio Araujo
     Site:		 http://vivaotux.blogspot.com
     e-mail:      <voyeg3r ✉ gmail.com>
     Twitter:	 @voyeg3r
     Github:      https://github.com/voyeg3r
-    ------------------------------------------
+
 
 References:
 http://zshwiki.org/home/builtin/functions/zmv
@@ -17,7 +17,7 @@ http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
 ### References:
 http://chneukirchen.org/dotfiles/.zshrc
 
-### arrays in zshell
+## arrays in zshell
 
 ### Create an array of lines from a file
 
@@ -43,7 +43,6 @@ http://chneukirchen.org/dotfiles/.zshrc
     done
     source ${ZDOTDIR:-${HOME}}/.zlogin
 
-### end zim framework setup
 
 ### defining ZDOTDIR
 This var is used in many zsh frameworks during git clone
