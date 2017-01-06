@@ -1,10 +1,10 @@
 # #!/bin/zsh
 priority 1
 
-snippet zh "zsh header"
+snippet zsh "zsh header" bA
 #!/usr/bin/env zsh
 # Created: `date +%c`
-# Last Change: qui 05 jan 2017 14:07:11 BRT
+# Last Change: sex 06 jan 2017 10:01:44 BRT
 # Author: ${1:`!v g:snips_author`}
 # Twitter: ${2:`!v g:snips_twitter`}
 
@@ -50,7 +50,7 @@ ${0}
 endsnippet
 
 snippet 'fun(ction)?' "function" !r
-${1:function_name}(${2:args}) {
+${1:function_name}(${2:${@}}) {
 ${3:#function_body}
 }
 ${0:# jump out ctrl-j}
@@ -100,10 +100,16 @@ elif ${1:condition} ; then
 	${2:# statements}
 endsnippet
 
-snippet for "for"
-for (( ${2:i} = 0; $2 < ${1:count}; $2++ )); do
+snippet for "for" b
+for (( ${1:i} = 0; $1 < ${2:count}; $1++ )); do
 	${3:# statements}
 done
+endsnippet
+
+# in this snippet you can perform an action on each file
+# like this: --> for file in *; do mv $file ${file:l}; done
+snippet fori "Description" Options
+for file in *; do ${1:cmd} ${2:options}; done
 endsnippet
 
 snippet fore "fore"
@@ -143,29 +149,17 @@ select ${1:answer} in ${2:choices}; do
 done
 endsnippet
 
-snippet ( "("
-( ${1:#statements} )
-endsnippet
-
-snippet { "{"
-{ ${1:#statements} }
-endsnippet
-
-snippet [ "["
-[[ ${1:test} ]]
-endsnippet
-
 snippet always "always"
 { ${1:try} } always { ${2:always} }
 endsnippet
 
-snippet array "esay array creation"
+snippet array "esay array creation" w
 local array=( ${1:@} )
 ${0: ctrl-j}
 endsnippet
 
 
-snippet larray "last array item"
+snippet larray "last array item" w
 local ${1:last}=${${2:array}[-1]}
 ${0: ctrl-j}
 endsnippet
@@ -180,7 +174,7 @@ which ${1:program name}
 ${0: ctrl-j}
 endsnippet
 
-snippet lic "gpl3 licence"
+snippet '\lic(ence)?' "gpl3 licence" r
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -222,10 +216,18 @@ fi
 ${0:# ctrl-j}
 endsnippet
 
-snippet here "here document (here)"
-<<-${2:'${1:TOKEN}'}
-    $0
-    ${1/['"`](.+)['"`]/$1/}
+# this snippet allows you to do things like
+# ls -l */**/*.txt
+snippet '\bre(cursive)?' "perform recursive action" r
+${1:cmd} ${2:options} */**/*.${3:file_extension}
+${0}
+endsnippet
+
+snippet here "here documment" w
+${1:cat} <<-EOF
+${2:your_text}
+EOF
+${0}
 endsnippet
 
 # vim: set ft=zsh ts=8 sw=4 tw=0 noet :

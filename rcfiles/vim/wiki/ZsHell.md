@@ -1,7 +1,7 @@
 # Arquivo: zshell tips and tricks
 
     Criado: Sáb 04/Jan/2014 hs 07:23
-    Last Change: qua 04 jan 2017 09:31:11 BRT
+    Last Change: sex 06 jan 2017 10:04:16 BRT
     autor: Sérgio Luiz Araújo Silva
     site: http://vivaotux.blogspot.com
     twitter: http://www.twitter.com/voyeg3r
@@ -100,7 +100,7 @@ source: stackoverflow
 
 With setopt HIST_IGNORE_SPACE, you can prepend the above command with a space character to prevent it from being writting to $HISTFILE.
 
-## create one folder for each file and movi it into it
+## create one folder for each file and move it into it
 
 first you have to know something about filename
 and file's extensions when it comes to shell script
@@ -110,15 +110,15 @@ and file's extensions when it comes to shell script
     filename="${filename%.*}"
 
     for i in `ls *`; do
-    mkdir ${i%.*}
-    mv $i ${i%.*}
+        mkdir ${i%.*}
+        mv $i ${i%.*}
     done
 
 The same thing done using zsh would be like
 
     for i in `ls *`; do
-    mkdir ${i:r}
-    mv $i ${i:r}
+        mkdir ${i:r}
+        mv $i ${i:r}
     done
 
 ##how get pipestatus
@@ -152,9 +152,13 @@ you can use =command instead $(which command)
 
     cd old new
 
-    This form of cd replaces all occurences of old in the full path of the present directory with new and tries to change the working directory to the resulting path.
+    This form of cd replaces all occurences of old in the full path of the
+    present directory with new and tries to change the working directory to the
+    resulting path.
 
-    For example, if your working directory is /home/larry/code/backrub/server and you want to switch to /home/sergei/code/backrub/server, all you need to do is:
+    For example, if your working directory is /home/larry/code/backrub/server
+    and you want to switch to /home/sergei/code/backrub/server, all you need to
+    do is:
 
     cd larry sergei
 
@@ -466,7 +470,7 @@ The above shortuc will put the most recent file name in command line
 
     `#zmv "programmable rename"`
     autoload -U zmv
-    
+
 ## rename all files to lowercase
 
     zmv -o-i '(**/)(*)' '$1${2:l}'
