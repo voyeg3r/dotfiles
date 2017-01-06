@@ -1,15 +1,18 @@
 # Arquivo: zshell tips and tricks
+------------------------------------------
+File:		 ZsHell.md
+Created:	 sex 06 jan 2017 10:18:17 BRT
+Last Change: sex 06 jan 2017 10:18:30 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+------------------------------------------
 
-    Criado: Sáb 04/Jan/2014 hs 07:23
-    Last Change: sex 06 jan 2017 10:13:47 BRT
-    autor: Sérgio Luiz Araújo Silva
-    site: http://vivaotux.blogspot.com
-    twitter: http://www.twitter.com/voyeg3r
-    email: <voyeg3r at gmail.com>
-
-    References:
-    http://zshwiki.org/home/builtin/functions/zmv
-    http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
+References:
+http://zshwiki.org/home/builtin/functions/zmv
+http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
 
 ### References:
 http://chneukirchen.org/dotfiles/.zshrc
@@ -54,7 +57,7 @@ removing all directories except some:
     rm -rf ^(vim-colors-solarized|vim-airline)
 
 ### Check the Existence of a Command in Bash and Zsh
-source: https://www.topbug.net/blog/2016/10/11/speed-test-check-the-existence-of-a-command-in-bash-and-zsh/
+[source](https://www.topbug.net/blog/2016/10/11/speed-test-check-the-existence-of-a-command-in-bash-and-zsh/)
 
     the fastest way is this:
 
@@ -135,7 +138,7 @@ OR
     echo "${PIPESTATUS[0]} ${PIPESTATUS[1]}"
 
 ###how to run a secret series of commands
-[[source]]: http://unix.stackexchange.com/questions/6094/
+[[source]](http://unix.stackexchange.com/questions/6094/)
 
     % fc -p
     % secret-command
