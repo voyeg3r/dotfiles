@@ -1,60 +1,75 @@
-##Manual de dicas do vim
-Criado: Sáb 06/Nov/2010 hs 18:10
-Last Change: qua 04 jan 2017 09:07:49 BRT
-autor: Sérgio Luiz Araújo Silva
-site: http://vivaotux.blogspot.com
-twitter: http://www.twitter.com/voyeg3r
+# Manual de dicas do vim
+------------------------------------------
+File:		 DicasVim.md
+Created:     Sáb 06/Nov/2010 hs 18:10
+Last Change: sex 06 jan 2017 07:04:41 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+------------------------------------------
 
-## tips about ultisnips 
+## tips about ultisnips
 source: http://vimcasts.org/episodes/ultisnips-visual-placeholder/
 
-   If you wnat to overwrite a snippet definition just put
-   at the beginning of your file
+If you wnat to overwrite a snippet definition just put
+at the beginning of your file
 
-   priority 1
+    priority 1
 
-===editing your snippets quickly ===
+### editing your snippets quickly
 
-   :UltiSnipsEdit
+    :UltiSnipsEdit
 
-   In my case I have a vim map:
+    In my case I have a vim map:
 
-   nnoremap <leader>u :call UltiSnipsEdit<cr>
+    nnoremap <leader>u :call UltiSnipsEdit<cr>
 
-   As interpolações tem que estar dentro de crases
-   ou backtickets in English
+    As interpolações tem que estar dentro de crases
+    ou backtickets in English
 
-  "insere a data usando interpolação do vim
-   `!v strftime('%Y-%m-%d')
+"insere a data usando interpolação do vim
+    !v strftime('%Y-%m-%d')
 
-   !p  interpolação python
+    !p  interpolação python
 
-   !p snip.rv = "return value"
-   t[1] --> tabstop 1
+    !p snip.rv = "return value"
+    t[1] --> tabstop 1
 
-   Usando snippets espelho ou não
-{{{
+### Usando snippets espelho ou não
+
         snippet req "require a module" b
         let ${1:${VISUAL}} = require('${2:$1}');
         ${0}
         endsnippet
-}}}
-    O snippet acima repete na posição 2 o valor da posição 1
-    e permite que o segundo possa ser alterado
+
+O snippet acima repete na posição 2 o valor da posição 1
+e permite que o segundo possa ser alterado
 
  Outro snippet com conceitos interessantes:
 
-{{{
     snippet us "replace specials with underscores" w
     `!p
     import re
     snip.rv = re.sub("[^0-9a-zA-Z]", "_", snip.v.text)
-`
-endsnippet
+    `
+    endsnippet
 
-}}}
 
-## quickfix list manipulations and :cdo command 
+## Remove parenthesis of current line
+
+    %s/(\([^)]\+\))/\1/g
+
+    ( ................... patenthesis
+    \( .................. start group 1
+    [^)] ................ denied (
+    \+   ................ at least once
+    \) .................. end group 1
+    ) ................... close parenthesis
+
+
+## quickfix list manipulations and :cdo command
 
   copen
   ccl
@@ -90,11 +105,11 @@ Um exemplo de fluxo de trabalho com o comando :cdo
         qall
 
 
-##links or worth clicking 
+##links or worth clicking
 
     http://www.mileszs.com/vimlinks.html
 
-## vimgolf 
+## vimgolf
 
   Search vimgolf chalenges to vim users
   ao instalar o vimgolf como recomenda o site digite
@@ -127,7 +142,7 @@ https://pragprog.com/book/dnvim2/practical-vim-second-edition
     Ctrl-r = ........ starts expression register (cursor at the bottom)
     6 * 35 <enter> .. inserts the result
 
-##Viewing where maps are setted 
+##Viewing where maps are setted
 
    :verbose map
 
@@ -135,7 +150,7 @@ https://pragprog.com/book/dnvim2/practical-vim-second-edition
    :silent verbose map
    :redir END
 
-## reopen previous buffer in a new window 
+## reopen previous buffer in a new window
 
    Ctrl-w Ctrl-6
 
@@ -154,7 +169,7 @@ buffer. You can :put that into the current buffer via the expression register:
 
  :put =getbufline(2, 7, 11)
 
-##Setting and getting position on vim 
+##Setting and getting position on vim
 
 References: http://vi.stackexchange.com/questions/6208/
 http://stackoverflow.com/questions/3922384/
@@ -242,7 +257,7 @@ to sort by surname just do this:
 
     :%!sort -k1
 
-## yank text object on multiple lines 
+## yank text object on multiple lines
 
  Let's say you have:
 
@@ -276,12 +291,12 @@ to sort by surname just do this:
 
 [![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14) https://asciinema.org/docs/embedding
 
-## avoiding error messages on vim substituitions 
+## avoiding error messages on vim substituitions
 
     :%s/\s\+$//e
     :silent! %s/\s\+$//
 
-## clipboard manipulation 
+## clipboard manipulation
 
 Faster way to paste data into vim than with paste mode?
 When I try to paste hundreds of lines or more into Vim, even in paste mode, it takes much longer (10 times or more?)
@@ -292,7 +307,7 @@ If your Vim is compiled with clipboard support
 
     you can simply use "+p or "*p
 
-## como criar um diário no vim usando o vimwiki 
+## como criar um diário no vim usando o vimwiki
 
 source: http://stackoverflow.com/questions/40414720/
 
@@ -317,7 +332,7 @@ source: http://stackoverflow.com/questions/40414720/
 Finds abc followed by any characters or newlines (as few as possible) then def.
 Finds abcdef or abc followed by any characters then def.
 
-## changing modes on ctrl-p 
+## changing modes on ctrl-p
 
    just press Ctrl-f or Ctrl-b
 
@@ -442,7 +457,7 @@ Finds abcdef or abc followed by any characters then def.
    Repeating the last substituition using &
    Repeat last substituition over whole file g&
 
-## using submatch in vim search 
+## using submatch in vim search
 
 Supose you have these lines:
 
@@ -469,7 +484,7 @@ Supose you have these lines:
    Ctrl-i ............. go forward in the jumplist
 
 
-## Registros 
+## Registros
 
    Registro de expressões
 
@@ -601,7 +616,7 @@ Caso queira que o corretor seja habilitado automaticamente sempre que acessar o 
 
    Para inserir  use o atalho Ctrl-v Ctrl-m no modo [[insert]]
 
-##colocando o nome do arquivo no proprio 
+##colocando o nome do arquivo no proprio
 
   :put =expand('%:p')
 
@@ -609,7 +624,7 @@ Caso queira que o corretor seja habilitado automaticamente sempre que acessar o 
 
      1 Ctrl-g   (em modo normal)
 
-## como limpar os cartões exportados do anki 
+## como limpar os cartões exportados do anki
 
    Primeiro remover as tags html
    :%s,<[^>]*>,,g
@@ -628,7 +643,7 @@ Caso queira que o corretor seja habilitado automaticamente sempre que acessar o 
 		sound: .......... a palavra sound seguida de dois pontos
 		[^]]*] .......... uma lista negada que pega tudo dentro dos colchetes em qualquer quantidade
 
-##como apagar tags do tipo </font*> no vim 
+##como apagar tags do tipo </font*> no vim
 
 Toda vez que for fazer uma ação de substituição complexa no
 vim recomendamos primeiro fazer uma busca incremental pela ocorrência
@@ -719,7 +734,7 @@ installvim () {
 	vim --version
 } && installvim
 
-## how extract urls 
+## how extract urls
 
 {{{
 		%s/.*\(http.*.mp3\).*/\1/g
@@ -727,7 +742,7 @@ installvim () {
 
 }}}
 
-## How to append to clipboard? 
+## How to append to clipboard?
 
 	let @+ .= my_expression
 
@@ -754,7 +769,7 @@ information u can do this
 
 or even map some keystroke to this result
 
-## how insert digraphs in vim 
+## how insert digraphs in vim
 first we explain what are digraphs - are simbols,
 to see a complete list of them type  :dig<enter>
 
@@ -850,7 +865,7 @@ reference: http://stackoverflow.com/questions/1946738/
 
 g/^/+d
 
-## Como saber onde um atalho de teclas foi definido no vim 
+## Como saber onde um atalho de teclas foi definido no vim
 
 :verbose map atalho
 :verbose command Dos2Unix
@@ -1091,7 +1106,7 @@ abaixo.
     Ao invés de usar <Esc> para sair do insert use:
     Ctrl + [
 
-## retirando a syntaxe das buscas 
+## retirando a syntaxe das buscas
 
 :noh
 
@@ -1146,7 +1161,7 @@ replaced the pattern matched with the characters +++ but realized you made a mis
   [^"]+ ............... non quote followed at least for one non quote
   \ze ................. tells vim to stop selecting at this point
 
-## Regex to uppercase multiple patterns at once 
+## Regex to uppercase multiple patterns at once
 
 Let's say you have these lines:
 
@@ -1432,7 +1447,7 @@ map <S-F5> :call SignLines()<CR>
   gf ........... go to file
   gd ........... go to definition
 
-## completar caminhos no modo insert 
+## completar caminhos no modo insert
 
     Ctrl-x Ctrl-f
 
@@ -1457,7 +1472,7 @@ map <S-F5> :call SignLines()<CR>
     :bd  .............. tira o buffer atual da lista
     :bufdo ............ executa um comando para todos os buffers
 
-## função para inverte strings no vim 
+## função para inverte strings no vim
 
     function! InvertString(str)
         " Courtesy of Preben "Peppe" Guldberg
@@ -1500,7 +1515,7 @@ map <S-F5> :call SignLines()<CR>
 
     :set anti gfn=Ubuntu\ Mono\ for\ PowerLine:h13
 
-## contando quantas vezes uma palavra ocorre 
+## contando quantas vezes uma palavra ocorre
 
 You can use the following set of commands to count the number of times a
 particular word occurs in a buffer: >
@@ -1540,7 +1555,7 @@ specified by what is prepended:
 
   :%s/<c-r><c-w>//gn
 
-## dicas para substituições 
+## dicas para substituições
 
  A opção \zs quando usada em uma substituição faz com
 que tudo que estiver a sua esquerda seja ignorado na substituição
@@ -1548,7 +1563,7 @@ evitando o uso de \1 \2 (back references das expressões regulares)
 
 Para mais detalhes :h zs
 
-## Como instalar plugins com a extensão vba no vim 
+## Como instalar plugins com a extensão vba no vim
 
 Plugins com a extensão vba usam o seguinte método:
 você baixa o plugin, abre ele com o vim e executa este comando
@@ -1575,7 +1590,7 @@ quais arquivos serão instalados assim:
     :let g:vimball_home="/home/sergio/.vim/bundle/plugin"
     :so %
 
-## manipulando visualização da janela e lista de saltos 
+## manipulando visualização da janela e lista de saltos
 
     let a = winsaveview()
     call winrestview(a)
@@ -1590,7 +1605,7 @@ quais arquivos serão instalados assim:
    há uma discussão na web a respeito desta função
    http://tech.groups.yahoo.com/group/vim/message/51005
 
-## exibindo o histórico de comandos no vim 
+## exibindo o histórico de comandos no vim
 
      :history : -20,
      :his / -20,
@@ -1642,7 +1657,7 @@ Plugin 'vim-scripts/VisIncr'
 
    Ctrl-w_^ .......... divide a janela atual e edita arquivo alternativo
 
-## Colando do clipboard em modo insert 
+## Colando do clipboard em modo insert
 
    Em modo normal colamos o conteúdo da área de transferência
    usando o clássico "+p já em modo insert faça:
@@ -1724,15 +1739,15 @@ Plugin 'vim-scripts/VisIncr'
 
     :g/^\(.*\)\n\ze\%(.*\n\)*\1$/#
 
-## pegar linha que começa com palavra e sublinhar 
+## pegar linha que começa com palavra e sublinhar
 
     g/^\w/t.|s/./=/g
 
-## adicionar uma linha em branco após linhas que começam com espaço 
+## adicionar uma linha em branco após linhas que começam com espaço
 
    :g/^\s*-/normal O
 
-## função para deletar linhas em branco duplicadas 
+## função para deletar linhas em branco duplicadas
 
     fun! DelBlank()
         let save_cursor = getpos(".")
@@ -1754,7 +1769,7 @@ Plugin 'vim-scripts/VisIncr'
         call setreg('/', old_query)
     endfunction"}}}
 
-##adding blank lines  - adding empty lines between lines 
+##adding blank lines  - adding empty lines between lines
 source: [superuser.com](http://superuser.com/questions/592503/)
 
     :g/.\n\n\@!/norm o

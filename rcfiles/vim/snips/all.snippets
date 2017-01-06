@@ -36,23 +36,23 @@ snip.rv = fraction(t[1], t[2])
 ` wpm.
 endsnippet
 
-snippet ( "parenteses" w
+snippet ( "parenteses" iA
 (${1:${VISUAL}})${0}
 endsnippet
 
-snippet [ "colchetes" w
+snippet [ "colchetes" iA
 [${1:${VISUAL}}]${0}
 endsnippet
 
-snippet { "chaves" w
+snippet { "chaves" iA
 {${1:${VISUAL}}}${0}
 endsnippet
 
-snippet ' "aspas simples" w
+snippet ' "aspas simples" iA
 '${1:${VISUAL}}'${0}
 endsnippet
 
-snippet " "aspas duplas" w
+snippet " "aspas duplas" iA
 "${1:${VISUAL}}"${0}
 endsnippet
 
@@ -80,9 +80,12 @@ endsnippet
 # package ${1:main}
 # endsnippet
 
+
+# in order to use this nippet define these vars
+# in your vimrc like --> let g:snip_author="Author Name"
 snippet 'sig|head' "my signature" r
 ------------------------------------------
-File:		 ${1:file_name}
+File:		 ${1:`!p snip.rv = snip.fn`}
 Created:	 `!v strftime("%c")`
 Last Change: `!v strftime("%c")`
 Author:		 `!v g:snips_author`

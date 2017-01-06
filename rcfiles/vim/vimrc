@@ -1,11 +1,11 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: qui 05 jan 2017 20:19:00 BRT
+" Last Change: sex 06 jan 2017 08:57:57 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
-" Mail: voyeg3r  gmail
+" Mail: voyeg3r ✉ gmail
 " Twitter: http://www.twitter.com/voyeg3r
 " Licence: Licença: Este arquivo é de domínio público
 " Garantia: O autor não se responsabiliza por eventuais danos
@@ -18,7 +18,7 @@
 "  |                                      |
 "  |    °v°    Sergio Luiz Araujo Silva   |
 "  |   /(_)\  Linux User #423493          |
-"  |   ^ ^    voyeg3r   gmail.com        |
+"  |   ^ ^    voyeg3r ✉ gmail.com        |
 "  +======================================+"}}}
 
 " if there is zsh use it"{{{
@@ -140,6 +140,7 @@ Plug 'endel/vim-github-colorscheme'
 Plug 'mattn/emmet-vim'
 
 call plug#end()"}}}
+
 
 " The Silver Searcher
 if executable('ag')
@@ -764,7 +765,7 @@ map <leader>u :UltiSnipsEdit<cr>
 " Snippets variables
 let g:snips_author='Sergio Araujo'
 let g:snips_site='http://vivaotux.blogspot.com'
-let g:snips_email='<voyeg3r  gmail.com>'
+let g:snips_email='<voyeg3r ✉ gmail.com>'
 let g:snips_github='https://github.com/voyeg3r'
 let g:snips_twitter='@voyeg3r'
 let g:UltiSnipsEditSplit="horizontal""}}}
