@@ -1,14 +1,14 @@
 # Arquivo: zshell tips and tricks
-------------------------------------------
-File:		 ZsHell.md
-Created:	 sex 06 jan 2017 10:18:17 BRT
-Last Change: sex 06 jan 2017 10:18:30 BRT
-Author:		 Sergio Araujo
-Site:		 http://vivaotux.blogspot.com
-e-mail:      <voyeg3r ✉ gmail.com>
-Twitter:	 @voyeg3r
-Github:      https://github.com/voyeg3r
-------------------------------------------
+    ------------------------------------------
+    File:		 ZsHell.md
+    Created:	 sex 06 jan 2017 10:18:17 BRT
+    Last Change: sex 06 jan 2017 10:19:20 BRT
+    Author:		 Sergio Araujo
+    Site:		 http://vivaotux.blogspot.com
+    e-mail:      <voyeg3r ✉ gmail.com>
+    Twitter:	 @voyeg3r
+    Github:      https://github.com/voyeg3r
+    ------------------------------------------
 
 References:
 http://zshwiki.org/home/builtin/functions/zmv
