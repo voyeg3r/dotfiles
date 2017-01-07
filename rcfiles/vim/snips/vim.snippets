@@ -38,6 +38,15 @@ snippet '\bau(tocmd)?' "set new autocmd" r
 autocmd! ${1:events} ${2:pattern} ${3:command}
 endsnippet
 
+# if you want to delete ! just press space and go to the next
+# placeholder
+snippet '\ex(ists)?' "test if something exists" r
+if ${1:!}exists("${2:condition}")
+	${3:statements}
+endif
+${0}
+endsnippet
+
 snippet com "new command" w
 command! -nargs=${1:number_of_args} ${2:other_params} ${2:name} ${2:command}
 endsnippet

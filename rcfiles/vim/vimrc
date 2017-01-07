@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 06 jan 2017 08:57:57 BRT
+" Last Change: sex 06 jan 2017 13:33:24 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -112,10 +112,11 @@ cab Q  q"}}}
 " Required to start Plug:"{{{
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+Plug 'jiangmiao/auto-pairs'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-markdown'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
 Plug 'sjl/gundo.vim'
 Plug 'ggreer/the_silver_searcher'
 Plug 'chrisbra/NrrwRgn'
@@ -754,11 +755,17 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " snippets settings"{{{
 "let g:UltiSnips#ListSnippets="<C-tab>"
+let g:syntastic_python_python_exec = '/usr/bin/python'
 let g:UltiSnipsListSnippets = "<c-tab>"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsUsePythonVersion = 3
+
+if exists(":python3")
+   let g:_uspy=":python3"
+    let g:ultisnipsusepythonversion = 3
+endif
+
 let g:UltiSnipsSnippetsDir = expand("~/.dotfiles/rcfiles/vim/snips/")
 let g:UltiSnipsSnippetDirectories=["snips", "UltiSnips"]
 map <leader>u :UltiSnipsEdit<cr>
