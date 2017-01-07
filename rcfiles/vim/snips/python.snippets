@@ -3,16 +3,31 @@ snippet #!
 # -*- coding: utf-8 -*-
 endsnippet
 
-snippet imp
+snippet py "python header" w
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim: ai ts=4 sts=4 et sw=4
+# Author:       `!v g:snips_author `
+# Last Change:  `!v strftime("%c")`
+# Created:      `!v strftime("%c")`
+# email:        `!v g:snips_email`
+# Github:       `!v g:snips_github`
+# twitter:      `!v g:snips_twitter`
+
+
+${0}
+endsnippet
+
+snippet imp "module import" w
 import ${0:module}
 endsnippet
 
 snippet uni
 def __unicode__(self):
-        ${0:representation}
+    ${0:representation}
 endsnippet
 
-snippet from
+snippet from "import from a given module" w
 from ${1:package} import ${0:module}
 endsnippet
 
@@ -316,5 +331,7 @@ snippet akw
 *args, **kwargs${1:,}${0}
 endsnippet
 
-
+snippet modeline "python modeline" w
+# vim: ai ts=4 sts=4 et sw=4
+endsnippet
 

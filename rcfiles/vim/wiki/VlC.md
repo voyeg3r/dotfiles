@@ -1,6 +1,6 @@
 Arquivo: dicas e atalhos sobre o vlc
 Criado: Dom 07/Out/2012 hs 06:28
-Last Change: ter 03 jan 2017 14:43:54 BRT
+Last Change: sáb 07 jan 2017 18:38:27 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -35,4 +35,15 @@ On windows edit: c:\windows\System32\drivers\etc\hosts
 and add this line:
 92.240.234.122 api.opensubtitles.org
 
+### ajustando o brilho
 
+    Ctrl-e ............. agre janela de ajustes
+
+### Advanced subtitle syncronization
+
+When subtitles are late compared to the audio, and only in this case, you can use the advance synchronisation functionality of VLC :
+
+    Step 1 : Detect (“hear and see”) that subtitles are out of sync
+    Step 2 : Press Shift H when you hear a sentence that you will be able to easily recognize
+    Step 3 : Press Shift J when you read the same sentence in the subtitle
+    Step 4 : Press Shift K to correct the sync

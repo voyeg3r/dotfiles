@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sex 06 jan 2017 13:33:24 BRT
+" Last Change: sáb 07 jan 2017 15:54:12 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -112,6 +112,8 @@ cab Q  q"}}}
 " Required to start Plug:"{{{
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+"Plug 'klen/python-mode'
+Plug 'phillipberndt/python-imports.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-markdown'
@@ -142,6 +144,9 @@ Plug 'mattn/emmet-vim'
 
 call plug#end()"}}}
 
+" python auto imports
+" https://github.com/phillipberndt/python-imports.vim
+let g:PythonAutoAddImports=1
 
 " The Silver Searcher
 if executable('ag')

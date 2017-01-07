@@ -1,0 +1,15 @@
+== python-imports.vim ==
+
+This VIM plugin automates the insertion of <code>import</code> statements at the top of a file.
+
+=== Example usage ===
+In an empty file, type
+ sys.exit(1)
+Place the cursor over the function call and press Strg + f. The plugin will insert the statement
+ import sys
+above this line.
+
+It checks if the module was already imported and tries to maintain the import
+statements at the file's top in order.
+
+See [http://vim.sourceforge.net/scripts/script.php?script_id=4007 the VIM homepage] for further information.
