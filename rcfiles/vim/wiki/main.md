@@ -1,7 +1,9 @@
-# [[Wiki]](Wiki.md) do Sérgio para fins diversos
+# [[Wiki|Dicas sobre o vim wiki]](Wiki.md) do Sérgio para fins diversos
+
+[Wiki](Wiki.md)
 
 Criado: Dom 17/Out/2010 hs 14:23
-Last Change: dom 08 jan 2017 10:51:31 BRT
+Last Change: dom 08 jan 2017 10:56:19 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 
