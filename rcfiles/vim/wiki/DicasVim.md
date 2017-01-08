@@ -2,7 +2,7 @@
 
     File:		 DicasVim.md
     Created:     Sáb 06/Nov/2010 hs 18:10
-    Last Change: dom 08 jan 2017 15:02:25 BRT
+    Last Change: dom 08 jan 2017 19:24:41 BRT
     Author:		 Sergio Araujo
     Site:		 http://vivaotux.blogspot.com
     e-mail:      <voyeg3r ✉ gmail.com>
@@ -1828,3 +1828,11 @@ source: [superuser.com](http://superuser.com/questions/592503/)
 
     Obs: os caracteres ^[ são obtidos digitando-se Ctrl-v + [
 
+### Delet the character before cursor
+
+Let's say you have:
+
+    sales_tax: row["sales tax"] ,
+
+And you wnat to delete the space before caret, in command mode
+just press X

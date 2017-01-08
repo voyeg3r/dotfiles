@@ -34,13 +34,10 @@ endif
 ${0:"}
 endsnippet
 
-snippet '\bau(tocmd)?' "set new autocmd" r
-autocmd! ${1:events} ${2:pattern} ${3:command}
-endsnippet
 
 # if you want to delete ! just press space and go to the next
 # placeholder
-snippet '\ex(ists)?' "test if something exists" r
+snippet 'ex' "test if something exists" w
 if ${1:!}exists("${2:condition}")
 	${3:statements}
 endif

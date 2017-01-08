@@ -1,7 +1,7 @@
 # Arquivo: dicas sobre o google
 
     Criado: Sex 05/Out/2012 hs 07:45
-    Last Change: dom 08 jan 2017 15:02:38 BRT
+    Last Change: dom 08 jan 2017 19:16:40 BRT
     autor: Sérgio Luiz Araújo Silva
     site: http://vivaotux.blogspot.com
     twitter: http://www.twitter.com/voyeg3r
@@ -16,15 +16,16 @@
 
 ## # Link direto pra baixar filmes
 
-To find direct download link for movies, search “[movie name] -inurl:(htm|html|php|pls|txt) intitle:index.of “last modified” (mkv|mp4|avi)”.
+    To find direct download link for movies, search “[movie name] -inurl:(htm|html|php|pls|txt) intitle:index.of “last modified” (mkv|mp4|avi)”.
 
 ### Como buscar fontes, livros e mp3 no google?
 
--inurl:htm -inurl:html intitle:"index of" +("/ebooks""/book")
--inurl:htm -inurl:html intitle:"index of" "Last modified" mp3
+    -inurl:htm -inurl:html intitle:"index of" +("/ebooks""/book")
+    -inurl:htm -inurl:html intitle:"index of" "Last modified" mp3
 
-## # Achar câmeras online
-inurl:"view/index.shtml"
+### Achar câmeras online
+
+    inurl:"view/index.shtml"
 
 ### google em inglês
 * http://www.google.com/webhp?hl=options
@@ -37,7 +38,7 @@ inurl:"view/index.shtml"
 
    time in fortaleza
 
-# #  tamanho das imagens
+###  tamanho das imagens
 
     nordeste imagesize:1600x1200
 

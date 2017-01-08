@@ -1,7 +1,7 @@
 " vim: set fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: sáb 07 jan 2017 15:54:12 BRT
+" Last Change: dom 08 jan 2017 19:38:40 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -382,7 +382,7 @@ augroup python
     au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
     au! BufNewFile *.py 0r ~/.vim/skel/template.py
     au BufNewFile *.py exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
-    au! BufWritePost *.py :silent !chmod a+x <afile>
+    au! Buf *.py :silent !chmod a+x <afile>
     autocmd FileType python set textwidth=79
     autocmd FileType python filetype indent on
     let python_highlight_all=1
@@ -573,6 +573,8 @@ fun! CleanSubtitles()
 endfun
 command! -nargs=0 GetSubs :call CleanSubtitles()"}}}
 
+au! BufwritePre * :call CleanExtraSpaces()
+
 " auto clean trailing spaces"{{{
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh :call CleanExtraSpaces()
@@ -641,9 +643,13 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap _= :call Preserve("normal gg=G")<CR>"}}}
 
 fun! CleanExtraSpaces()"{{{
-    call Preserve("%s/\\s\\+$//e")
+        let save_cursor = getpos(".")
+        let old_query = getreg('/')
+        %s/\s\+$//e
+        call setpos('.', save_cursor)
+        call setreg('/', old_query)
 endfun
-com! Cls :silent! call Preserve("%s/\\s\\+$//e")<CR>"}}}
+com! Cls :silent! call CleanExtraSpaces<CR>"}}}
 
 " ************************ End functions *****************
 
@@ -845,7 +851,7 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
 augroup vimrc-python
   autocmd!
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ formatoptions+=croq softtabstop=4 smartindent
+      \ formatoption=croq softtabstop=4 smartindent
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END"}}}
 
