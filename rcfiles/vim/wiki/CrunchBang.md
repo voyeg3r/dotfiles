@@ -2,7 +2,7 @@ Post installation script
 
 	cb-wellcome
 
-##app launcher synapse
+###app launcher synapse
 
  Is one awesome app to lauch outher apps
  easy configuration and fast work

@@ -17,7 +17,7 @@ com o comando abaixo você também pode detectar conflitos de IP
     duplicate lines of file.
 
 
-##como pingar em um MAC
+###como pingar em um MAC
 Primeiro descubra o MAC ADDRESS do host que deseja pingar com ifconfig na
 própria máquina ou com
 

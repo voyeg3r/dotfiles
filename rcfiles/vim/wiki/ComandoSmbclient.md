@@ -14,7 +14,7 @@ Código: Compartilhamentos
         IPC$            IPC       IPC Service
         ADMIN$          IPC       IPC Service
 
-##Linux <span class="highlightedSearchTerm">client</span>e de uma rede Windows 
+###Linux <span class="highlightedSearchTerm">client</span>e de uma rede Windows 
 Corpo do texto:
 **Colaboração:** Rafael Henrique da Silva Correia
 

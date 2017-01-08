@@ -3,7 +3,7 @@ O comando dd pode ser usado para gerar imagens de cd:
 
 	dd if=/dev/cdrom of=imagem.iso
 
-##Gerando um pendrive bootavel
+###Gerando um pendrive bootavel
 
 Como root rode o comando //**fdisk -l**// para saber em que partição está o pendrive se ele mostrar /dev/sdb1 anote e desmonte o pendrive, em seguida faça
 

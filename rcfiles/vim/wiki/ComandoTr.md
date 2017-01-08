@@ -7,7 +7,7 @@ O comando tr faz troca de caracteres
 
     tr -d '[:punct:]'
 
-##Remover ^M
+###Remover ^M
 
 tr -d "\n\r" < arquivo.velho > arquivo.novo
 

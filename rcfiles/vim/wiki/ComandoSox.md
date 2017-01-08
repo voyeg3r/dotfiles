@@ -7,7 +7,7 @@ for n in E2 A2 D3 G3 B3 E4;do play -n synth 4 pluck $n repeat 2;done
 play -n synth 4 pluck E4 repeat 2
 
 
-##emitir um som simples (cancela com ctrl-c)
+###emitir um som simples (cancela com ctrl-c)
 
     play -n synth sine 220
 

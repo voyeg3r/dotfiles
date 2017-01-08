@@ -1,4 +1,4 @@
-##renaming old files iso8859 from windows
+###renaming old files iso8859 from windows
 
 This command is a powerful "detoxifier" that eliminates special chars,
 spaces and all those little chars we don't like. It support several

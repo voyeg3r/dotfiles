@@ -2,7 +2,7 @@
 
  Loop for, used to perform repetitive tasks
 
-## creating many folders 
+### creating many folders 
 
     for ((i=1;i<=7;i++)){
         mkdir $(printf "%03d\n" $i)

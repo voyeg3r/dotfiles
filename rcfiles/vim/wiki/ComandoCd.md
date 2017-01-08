@@ -9,7 +9,7 @@ Um exemplo mais complexo
 
 cd $(dirname $(find ~ -iname image.png))
 
-##ir para o diretório usado no último comando
+###ir para o diretório usado no último comando
 * referência: http://www.commandlinefu.com/commands/view/862/bash-shortcut-3-h-and-t
 
 cd !$:h

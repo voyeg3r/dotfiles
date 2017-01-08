@@ -8,7 +8,7 @@ When you run a memory intensive application (VirtualBox, large java application,
 Both swapoff and swapon require root privileges.
 
 
-##usando seu pendrive como memória swap
+###usando seu pendrive como memória swap
 
 Formate ele usando o gparted
 depois descubra onde está a partição com o comando

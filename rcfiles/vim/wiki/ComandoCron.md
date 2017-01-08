@@ -23,7 +23,7 @@ O cron (vem de cronologia) funciona assim:
 O comando acima limpará a pasta /tmp
 todos os dias às 03:00h
 
-##sempre usar caminho completo no cron
+###sempre usar caminho completo no cron
 
 quando referenciar scripts use o caminho completo, no cron não há como definir path
 

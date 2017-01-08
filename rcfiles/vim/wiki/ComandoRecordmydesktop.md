@@ -24,7 +24,7 @@ xwininfo  | awk '/Window id:/ {print $4}'
 recordmydesktop --windowid $(xwininfo | awk '/Window id:/ {print $4}')
 recordmydesktop --windowid "id-da-janela"
 
-##Script para capturar video de janela
+###Script para capturar video de janela
 
 #!/bin/bash
 # Criado em:Sex 29/Jan/2010 hs 17:18

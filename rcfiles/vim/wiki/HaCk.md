@@ -2,7 +2,7 @@ in order to remember that key read this
 this is related with your mail account
 my: brand new password and birth year
 
-##como cancelar mensagens das operadoras de celular 
+###como cancelar mensagens das operadoras de celular 
 
 Passo 1. Abra o aplicativo de mensagens do seu celular e envie a palavra “sair” para sua operadora:
 

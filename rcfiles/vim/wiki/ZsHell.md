@@ -2,7 +2,7 @@
 
     File:		 ZsHell.md
     Created:	 sex 06 jan 2017 10:18:17 BRT
-    Last Change: sex 06 jan 2017 10:20:47 BRT
+    Last Change: dom 08 jan 2017 12:03:36 BRT
     Author:		 Sergio Araujo
     Site:		 http://vivaotux.blogspot.com
     e-mail:      <voyeg3r ✉ gmail.com>
@@ -17,7 +17,7 @@ http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
 ### References:
 http://chneukirchen.org/dotfiles/.zshrc
 
-## arrays in zshell
+### arrays in zshell
 
 ### Create an array of lines from a file
 

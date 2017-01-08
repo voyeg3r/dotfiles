@@ -12,7 +12,7 @@ url: http://www.vim.org/scripts/script.php?script_id=1697
 artigo: http://www.catonmat.net/blog/vim-plugins-surround-vim/
 video: http://vimeo.com/6093081
 
-##deletando surround
+###deletando surround
 
  ds' ........ apaga aspas simples
  ds( ........ apaga parenteses

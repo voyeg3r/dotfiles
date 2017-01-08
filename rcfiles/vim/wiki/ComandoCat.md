@@ -12,7 +12,7 @@ Podemos criar um arquivo com o cat assim:
   linhas no arquivo e control-c
   para finalizar a edição
 
-##Here documents
+###Here documents
 
 cat <<-EOT
   List and/or delete all stale links in directory trees.

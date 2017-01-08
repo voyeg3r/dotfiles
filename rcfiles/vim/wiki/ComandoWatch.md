@@ -11,7 +11,7 @@ A cada dois segundos mostra o tamanho da pasta atual
 watch -n 2 "du -sh | awk '{print $1}'"
 
 
-##Acompanhando logs
+###Acompanhando logs
 
 
 watch -n60 du /var/log/messages

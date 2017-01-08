@@ -1,6 +1,6 @@
 ##Introdução
 
-##Adicionando rotas permanentes no linux
+###Adicionando rotas permanentes no linux
 fonte: http://ubuntuforums.org/showthread.php?p=217263
 
 sudo vi /etc/network/interfaces

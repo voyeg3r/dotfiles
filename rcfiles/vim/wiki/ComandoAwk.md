@@ -33,7 +33,7 @@ usadas aspas simples o shell tentará interpretar primeiro
 buscando alí uma variável que na verdade não existe.
 
 
-##Variáveis do awk
+###Variáveis do awk
 
 NR     Contém o número do registro atual (linha)
 NF     contém o número de campos por registro (coluna)

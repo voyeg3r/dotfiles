@@ -1,12 +1,12 @@
 Arquivo: ifconfig.wiki
 Criado: Sun 18/Jan/2015 hs 09:41
-Last Change: ter 03 jan 2017 14:42:26 BRT
+Last Change: dom 08 jan 2017 12:02:57 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
-##ifconfig
+###ifconfig
 Configura a interface de rede no caso de ip fixo - veja também [[ethtool]]
 
    ifconfig eth0 172.30.10.116 netmask 255.255.255.0 up

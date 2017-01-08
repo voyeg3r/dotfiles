@@ -4,7 +4,7 @@
    de texto que podem ser pipeados fazendo deleções, inserções
    substituições, etc.
 
-## apagando toda segunda linha 
+### apagando toda segunda linha 
 
   sed -i '1~2d' file
 

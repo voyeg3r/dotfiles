@@ -52,7 +52,7 @@ screen -x sergio ..... conecta à seção 'sergio'
 
 
 
-##screenrc
+###screenrc
 
 vbell off
 hardstatus off

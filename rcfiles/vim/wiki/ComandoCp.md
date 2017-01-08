@@ -8,7 +8,7 @@ A opção -u faz update
  cp -uvfa origem destino
 
 Update, verbose, force, a=dpR
-##copiando estrutura de pastas (somente a extrutura) 
+###copiando estrutura de pastas (somente a extrutura) 
 
 (cd /home/user/source/; find -type d -print0) | xargs -0 mkdir -p
 

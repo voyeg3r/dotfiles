@@ -11,7 +11,7 @@ O mesmo resultado com o [[awk]]
 
 awk -F: '{print $1}' /etc/passwd
 
-##imprimir tudo exceto primeira coluna
+###imprimir tudo exceto primeira coluna
 
 cut -f 2- -d " "
 

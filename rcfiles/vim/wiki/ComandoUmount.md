@@ -1,5 +1,5 @@
 
-##Desmonta dispositivo ocupado
+###Desmonta dispositivo ocupado
 
 
 umount -l /media/smb

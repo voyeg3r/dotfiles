@@ -1,41 +1,78 @@
 # [Wiki](Wiki.md) do Sérgio para fins diversos
 
     Criado: Dom 17/Out/2010 hs 14:23
-    Last Change: dom 08 jan 2017 11:40:11 BRT
+    Last Change: dom 08 jan 2017 11:45:41 BRT
     autor: Sérgio Luiz Araújo Silva
     site: http://vivaotux.blogspot.com
 
- [EnglishNeurolinguistics](EnglishNeurolinguistics.md) [EnglishClub](EnglishClub.md) [ConCurso](ConCurso.md) [PanDoc](PanDoc.md)
- [BritisAndAmerican](BritisAndAmerican.md) [RaDios](RaDios.md)  [Libras2kg](Libras2kg.md) [Hh0](Hh0.md)  [GitHub](GitHub.md) [MarkDown](MarkDown.md)
-
- [ArTigos](ArTigos.md) [EnglishTips](EnglishTips.md) [EnglishLyrics](EnglishLyrics.md)
-
- [SunTzu](SunTzu.md) [TaticaEestrategi](TaticaEestrategi.md)
-
- [IdiomaticExpressions](IdiomaticExpressions.md) [DicasLinux](DicasLinux.md) [MegaSena](MegaSena.md) [CrunchBang](CrunchBang.md)
-
- [ArchLinux](ArchLinux.md)  [ZsHell](ZsHell.md)  [espiritismo](espiritismo.md) [GrUb](GrUb.md) [Anki](Anki.md) [PlowShare](PlowShare.md)
-
- [ComandosLinux](ComandosLinux.md) [DicasDoBash](DicasDoBash.md) [AwkNewieTutorial](AwkNewieTutorial.md) [ReCeitas](ReCeitas.md)
-
- [CodecsMaverick](CodecsMaverick) [DicasUbuntu](DicasUbuntu.md) [ConTatos](ConTatos.md) [UsandoOgit](UsandoOgit.md)
-
- [PythonSolutions](PythonSolutions.md)  [Python3](Python3.md) [XbMc](XbMc.md) [GiMp](GiMp.md) [SegundaVia](SegundaVia.md)
-
- [UsandoOmercurial](UsandoOmercurial.md) [hg](hg.md) [WebdoisPontoZero](WebdoisPontoZero.md) [DicasPython](DicasPython.md)
-
- [DicasVim](DicasVim.md) [HaCk](HaCk.md) [DicasGnome](DicasGnome.md) [GnomeShell](GnomeShell.md) [VimSnippets](VimSnippets.md) [UltiSnips](UltiSnips.md) [AnDroid](AnDroid.md) [Inkscape](Inkscape.md)
-
- [S5criandoSlides](S5criandoSlides) [FluxBox](FluxBox) [DicasGoogle](DicasGoogle.md) [DicasWindows](DicasWindows.md)
-
- [DicasFirefox](DicasFirefox.md) [FreeSoftware](FreeSoftware) [FraSes](FraSes.md) [EnglishTexts](EnglishTexts.md) [GeneralEnglishTips](GeneralEnglishTips.md)
-
- [OraCoes](OraCoes) [WingChun](WingChun.md) [GetWallbaseWallpapers](GetWallbaseWallpapers.md) [AnDroid](AnDroid.md)
-
- [DesktopLinux](DesktopLinux.md) [SofficeCalc](SofficeCalc.md) [SauDe](SauDe.md) [LaTex](LaTex.md) [LatexExemplos](LatexExemplos.md)
-
-[CertidoesNegativasEdocumentos](CertidoesNegativasEdocumentos.md) [StackExchange](StackExchange.md)
-
-[CertidoesNegativasEdocumentos](CertidoesNegativasEdocumentos.md) [StackExchange](StackExchange.md)
-
-.s/\[\[\([^]]*\)\]\]/\1.md/g
+[AnDroid](AnDroid.md)
+[Anki](Anki.md)
+[ArTigos](ArTigos.md)
+[ArchLinux](ArchLinux.md)
+[AwkNewieTutorial](AwkNewieTutorial.md)
+[BritisAndAmerican](BritisAndAmerican.md)
+[CertidoesNegativasEdocumentos](CertidoesNegativasEdocumentos.md)
+[CertidoesNegativasEdocumentos](CertidoesNegativasEdocumentos.md)
+[CodecsMaverick](CodecsMaverick)
+[ComandosLinux](ComandosLinux.md)
+[ConCurso](ConCurso.md)
+[ConTatos](ConTatos.md)
+[CrunchBang](CrunchBang.md)
+[DesktopLinux](DesktopLinux.md)
+[DicasDoBash](DicasDoBash.md)
+[DicasFirefox](DicasFirefox.md)
+[DicasGnome](DicasGnome.md)
+[DicasGoogle](DicasGoogle.md)
+[DicasLinux](DicasLinux.md)
+[DicasPython](DicasPython.md)
+[DicasUbuntu](DicasUbuntu.md)
+[DicasVim](DicasVim.md)
+[DicasWindows](DicasWindows.md)
+[EnglishClub](EnglishClub.md)
+[EnglishLyrics](EnglishLyrics.md)
+[EnglishNeurolinguistics](EnglishNeurolinguistics.md)
+[EnglishTexts](EnglishTexts.md)
+[EnglishTips](EnglishTips.md)
+[FluxBox](FluxBox)
+[FraSes](FraSes.md)
+[FreeSoftware](FreeSoftware)
+[GeneralEnglishTips](GeneralEnglishTips.md)
+[GetWallbaseWallpapers](GetWallbaseWallpapers.md)
+[GiMp](GiMp.md)
+[GitHub](GitHub.md)
+[GnomeShell](GnomeShell.md)
+[GrUb](GrUb.md)
+[HaCk](HaCk.md)
+[Hh0](Hh0.md)
+[IdiomaticExpressions](IdiomaticExpressions.md)
+[Inkscape](Inkscape.md)
+[LaTex](LaTex.md)
+[LatexExemplos](LatexExemplos.md)
+[Libras2kg](Libras2kg.md)
+[MarkDown](MarkDown.md)
+[MegaSena](MegaSena.md)
+[OraCoes](OraCoes)
+[PanDoc](PanDoc.md)
+[PlowShare](PlowShare.md)
+[Python3](Python3.md)
+[PythonSolutions](PythonSolutions.md)
+[RaDios](RaDios.md)
+[ReCeitas](ReCeitas.md)
+[S5criandoSlides](S5criandoSlides)
+[SauDe](SauDe.md)
+[SegundaVia](SegundaVia.md)
+[SofficeCalc](SofficeCalc.md)
+[StackExchange](StackExchange.md)
+[StackExchange](StackExchange.md)
+[SunTzu](SunTzu.md)
+[TaticaEestrategi](TaticaEestrategi.md)
+[UltiSnips](UltiSnips.md)
+[UsandoOgit](UsandoOgit.md)
+[UsandoOmercurial](UsandoOmercurial.md)
+[VimSnippets](VimSnippets.md)
+[WebdoisPontoZero](WebdoisPontoZero.md)
+[WingChun](WingChun.md)
+[XbMc](XbMc.md)
+[ZsHell](ZsHell.md)
+[espiritismo](espiritismo.md)
+[hg](hg.md)

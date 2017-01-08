@@ -1,11 +1,11 @@
 Arquivo: dicas firefox
 Criado: Ter 04/Jan/2011 hs 20:21
-Last Change: ter 03 jan 2017 14:43:18 BRT
+Last Change: dom 08 jan 2017 12:03:27 BRT
 autor: slas
 site: vivaotux
 twitter: voyeg3r
 
-##clear firefox memory usage
+###clear firefox memory usage
 
 source: http://www.online-tech-tips.com/computer-tips/speed-up-mozilla-firefox/
 

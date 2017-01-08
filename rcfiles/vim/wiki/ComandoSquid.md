@@ -3,7 +3,7 @@ O squid é um excelente filtro de conteúdo para intranets, com ele podemos rest
 extensões de arquivos, [[expressões regulares]], além disto ele é uma forma de manter
 em cache (armazenados) sites frequentemente visitados, recurso que se bem configurado
 aumenta a velocidade da navegação numa intranet.
-##cache do apt
+###cache do apt
 * http://www.linuxjournal.com/content/presenting-squid-deb-proxy-speed-your-update-downloads
 
 sudo apt-get install squid-deb-proxy avahi-tools

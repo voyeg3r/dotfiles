@@ -6,7 +6,7 @@
 -T, --text : imprime os dados no formato texto puro 
 
 
-##capturando pacotes remotos
+###capturando pacotes remotos
 
 ettercap -Tq -i eth0 -M arp:remote /192.168.1.1/ //
 

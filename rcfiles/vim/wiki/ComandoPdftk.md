@@ -1,14 +1,16 @@
 Arquivo: manual do comando pdftk
-Criado: Sex 04/Nov/2011 hs 19:25
-Last Change: ter 03 jan 2017 14:42:45 BRT
-autor: Sérgio Luiz Araújo Silva
-site: http://vivaotux.blogspot.com
-twitter: http://www.twitter.com/voyeg3r
-email: <voyeg3r  gmail.com>
 
-##Pdftk - manipulando pdfs por linha de comando
+    Criado: Sex 04/Nov/2011 hs 19:25
+    Last Change: dom 08 jan 2017 12:34:46 BRT
+    autor: Sérgio Luiz Araújo Silva
+    site: http://vivaotux.blogspot.com
+    twitter: http://www.twitter.com/voyeg3r
+    email: <voyeg3r  gmail.com>
+
+###Pdftk - manipulando pdfs por linha de comando
 * source: http://www.vivaolinux.com.br/dica/Manipulando-arquivos-PDF-com-pdftk
-##Concatenando dois arquivos em um
+
+###Concatenando dois arquivos em um
 
 	pdftk Arquivo1.pdf Arquivo2.pdf cat output Concatenado1e2.pdf
 

@@ -45,7 +45,7 @@ dá erro, o que fazer então?
 ssh-keygen -R ip
 ssh-keygen -R 192.168.1.217
 
-##descobrindo servidores ssh ativos na rede local
+###descobrindo servidores ssh ativos na rede local
 
     nmap -p 22 --open -sV 192.168.0/24
     nmap -p 22 10.3.1.1/16 | grep -B 4 "open"

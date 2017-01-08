@@ -11,7 +11,7 @@ Para pegar somente os nomes dos pacotes instalados
 
   dpkg -l | awk '{print $2}'
 
-##listar pacotes instalados
+###listar pacotes instalados
 
 dpkg --get-selections | grep -v deinstall | cut -f 1
 

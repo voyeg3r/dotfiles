@@ -5,7 +5,7 @@ seq 2 2 10
 
 O comando acima diz:
 	comece em 2, de dois em dois, até 10
-##contagem regressiva de 10 até zero
+###contagem regressiva de 10 até zero
 
 seq 10 -1 0
 

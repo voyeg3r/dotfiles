@@ -30,7 +30,7 @@ for i in `find . ; do
 done
 
 
-##alias para o bashrc
+###alias para o bashrc
 dica do Mitre: http://jfmitre.com/2006/05/convertendo-arquivos-utf-8-em-iso-8859.html
 
 alias iso2utf='iconv -f iso-8859-1 -t utf-8'

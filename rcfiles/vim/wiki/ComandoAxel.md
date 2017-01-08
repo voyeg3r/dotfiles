@@ -13,7 +13,7 @@ on byte-critical systems.
 
 sudo apt-get install -y axel
 
-##Parâmetros
+###Parâmetros
 
 -s speed
 –num-connections=x, -n x

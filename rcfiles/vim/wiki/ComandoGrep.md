@@ -1,7 +1,7 @@
 ##Introdução
 filtrar strings em textos
 
-##filtrar um arquivo pelo outro 
+###filtrar um arquivo pelo outro 
 
    grep -f file1.txt file2.txt
 

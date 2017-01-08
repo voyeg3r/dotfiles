@@ -1,7 +1,7 @@
 ##Introdução 
 
 
-##Consertando permissões
+###Consertando permissões
 Usando a opção -0 do find e do xargs delimitamos os arquivos, isso 
 é útil para nomes de arquivos com espaços
 

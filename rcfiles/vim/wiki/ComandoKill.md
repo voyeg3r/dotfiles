@@ -15,7 +15,7 @@ ou
 
 pkill firefox-bin
 
-##Matando todos os processos de um usuário específico
+###Matando todos os processos de um usuário específico
 fonte: http://www.ataliba.eti.br/node/1771
 
 su - username -c 'kill -9 -1'

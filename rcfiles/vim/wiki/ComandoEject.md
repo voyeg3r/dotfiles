@@ -2,7 +2,7 @@
 
 eject /dev/sdb; sleep 1; eject -t /dev/sdb
 
-##abrir bandeja de cd
+###abrir bandeja de cd
 
 eject
 

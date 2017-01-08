@@ -1,6 +1,6 @@
 Arquivo: plugin tabular
 Criado: Seg 24/Jan/2011 hs 13:18
-Last Change: ter 03 jan 2017 14:43:42 BRT
+Last Change: dom 08 jan 2017 12:03:32 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -48,7 +48,7 @@ background-color:  white;
 border:            1px solid #999999;
 
 
-## como alinhar isto 
+### como alinhar isto 
 
     john,betty,wally,beth
     walter,george,thomas,john

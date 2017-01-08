@@ -21,7 +21,7 @@ não converter arquivos que estejam na codificação de destino.
 find . -type f -print0 | xargs -0 -i% convmv -f UTF-8 -t ISO-8859-1 % --notest
 
 
-##converter recursivamente
+###converter recursivamente
 
 convmv -r -f iso8859-1 -t utf8 seu_diretório
 

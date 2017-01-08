@@ -3,7 +3,7 @@ MEncoder é uma ferramenta que usa linha de comando para codificação de vídeo
 O MEncoder é distribuido juntamente com o MPlayer e permite converter de todos os formatos de vídeo aceitos pelo MPlayer para um grande número de outros. Possui diversos filtros de aúdio e vídeo para a manipulação dos arquivos.
 Devido a enorme quantidade de opções o MEncoder pode parecer pouco amigável no começo, mas ele é uma ferramenta extremamente poderosa para conversão de vídeo. Alguns frontends foram desenvolvidos para torná-lo mais acessível. fonte Wikipedia.
 
-## fix corrupted avi index 
+### fix corrupted avi index 
 
 mencoder -forceidx -oac copy -ovc copy corruptvideo.avi -o fixedvideo.avi
 

@@ -3,7 +3,7 @@
     man cp | col -b > man-cp.txt
 
 
-##listar todas as opções de um comando qualquer
+###listar todas as opções de um comando qualquer
 
 man find | sed  -e '/-\{1,2\}/!d' -e 's/.*\(-\{1,2\}\)\([^ ]*\).*/\1\2/' | grep ^"$2" | sort -u
 

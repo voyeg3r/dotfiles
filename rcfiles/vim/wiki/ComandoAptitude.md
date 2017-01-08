@@ -23,7 +23,7 @@ H: meio-instalado
   g  ............... vai para a primeira linha de uma lista
   G  ............... vai para a última linha de uma lista
 
-##Listar pacotes instalados
+###Listar pacotes instalados
 
     aptitude search -F '%100p' '~i!~M'
 

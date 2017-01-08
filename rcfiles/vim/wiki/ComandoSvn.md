@@ -8,7 +8,7 @@ Para:
 
 store-passwords = no
 
-##criando um repositório
+###criando um repositório
 
   svn create <caminho_do_diretorio>
 

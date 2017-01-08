@@ -3,7 +3,7 @@ Este é um comando para criação de pastas
 
   mkdir pasta
 
-##copiando uma estrutura de pastas (somente pastas) 
+###copiando uma estrutura de pastas (somente pastas) 
 
 (cd /home/user/source/; find -type d -print0) | xargs -0 mkdir -p
 

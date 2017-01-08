@@ -28,7 +28,7 @@ twitter https://twitter.com/brunorock2015
 Comunidade https://plus.google.com/communities/1...
 ===================================
 
-## como saber a versão do android 
+### como saber a versão do android 
 
 We recommended to use firmware version from your own region.
 To check phone version you can follow two way :

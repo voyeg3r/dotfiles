@@ -14,7 +14,7 @@ do arquivo
 
 /etc/apt/sources.list
 
-##Gravando a saida padrão e os erros em um arquivo de log
+###Gravando a saida padrão e os erros em um arquivo de log
 A solução abaixo é especialmente útil para scripts em que você
 não pode estar acompanhando o tempo todo, daí você gera um log,
 mas se tiver tempo pode ver o que acontece na hora.

@@ -12,7 +12,7 @@ ip route show
 ip addr show
 
 
-##Mostrar o gateway padrão
+###Mostrar o gateway padrão
 
 ip route list | awk '/default/ {print $3}'
 

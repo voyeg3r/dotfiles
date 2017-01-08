@@ -15,7 +15,7 @@
     `!p snip.rv = len(t[1])*'-'`
     endsnippet
 
-##  Para mostrar uma lista das complementações possíveis
+###  Para mostrar uma lista das complementações possíveis
 
 pressione no modo insert
 

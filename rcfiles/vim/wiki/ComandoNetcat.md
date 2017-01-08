@@ -2,7 +2,7 @@
 O <span class="searchhilitepage">[[http://sergioaraujo.pbworks.com/NetCat|NetCat]]</span> é um utilitário que lê e escreve através de conexões de rede usando protocolos TCP e UDP.
 
 
-##Clonando sistemas via rede 
+###Clonando sistemas via rede 
 
 slave% nc -l -p 9000 | dd of=/dev/hda
 master% dd if=/dev/hda | nc 192.168.0.254 9000

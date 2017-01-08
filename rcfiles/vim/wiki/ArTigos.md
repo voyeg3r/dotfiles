@@ -1,8 +1,8 @@
 
 [[ApropagandaIdeologicaDoPig]]
-VidaAposaVida
-OparadoxoPython
-PythonEocaminhoDoMeio
+[VidaAposaVida](VidaAposaVida)
+[OparadoxoPython](OparadoxoPython)
+[PythonEocaminhoDoMeio](PythonEocaminhoDoMeio)
 [[YouDontGrokVi]]
 [[DicaTedTalks]]
 [[TheFreeSoftwareEcoSystem]]

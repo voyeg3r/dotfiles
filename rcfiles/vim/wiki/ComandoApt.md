@@ -7,7 +7,7 @@ apt-get upgrade
 # /usr/share/debconf/fix_db.pl --> fix debconf
 #
 
-## how install apt-proz e prozila 
+### how install apt-proz e prozila 
 http://ppa.launchpad.net/tahutek-team/prozilla/ubuntu/pool/main/
 
 

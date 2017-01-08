@@ -5,7 +5,7 @@ O programa aria2 suporta vários protocolos
 * torrents
 * metalink
 
-##sobre metalink 
+###sobre metalink 
 "Metalink é um padrão aberto que engloba as várias maneiras (FTP/HTTP/P2P)
 de baixar arquivos em determinado formato com downloads mais fáceis.
 ##baixar de dois links simultaneamente 

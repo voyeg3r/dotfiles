@@ -1,12 +1,12 @@
 Arquivo: dicas sobre o google
 Criado: Sex 05/Out/2012 hs 07:45
-Last Change: ter 03 jan 2017 14:43:18 BRT
+Last Change: dom 08 jan 2017 12:03:28 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: mymail
 
-## Como encontrar fontes no google
+### Como encontrar fontes no google
 
 	intitle "index of" (ttf | otf) meridean -html -htm -php -asp -cf -jsp
 

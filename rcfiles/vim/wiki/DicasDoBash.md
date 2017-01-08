@@ -2,7 +2,7 @@
 
 	http://www.bashoneliners.com/?page=1
 
-##How display all possible commands avaiable
+###How display all possible commands avaiable
 
 source: forun ubuntu https://goo.gl/cJDkp4
 

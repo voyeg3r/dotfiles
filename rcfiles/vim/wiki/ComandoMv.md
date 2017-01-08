@@ -3,7 +3,7 @@ mover um arquivo para um nível acima
 
   mv arquivo ..
 
-##combinando o mv com o [[find]]
+###combinando o mv com o [[find]]
 
 # adicionando extensão
 find ./ -maxdepth 1 -type f -print0 | xargs -0 -i mv ./{} ./{}.txt

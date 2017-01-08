@@ -1,6 +1,6 @@
 Arquivo: dicas sobre saude
 Criado: Sáb 29/Set/2012 hs 15:10
-Last Change: ter 03 jan 2017 14:43:46 BRT
+Last Change: dom 08 jan 2017 12:03:33 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -9,7 +9,7 @@ email: <voyeg3r  gmail.com>
 como evitar [[AtaqueCardiaco]]
 cerveja e agua [[CervejaEagua]]
 
-## 5 componentes essenciais para a saude 
+### 5 componentes essenciais para a saude 
 http://www.youtube.com/watch?v=MFp5QLR6xpE&feature=watch-vrec
 
    Vitamina D  (evita câncer) tomar sol

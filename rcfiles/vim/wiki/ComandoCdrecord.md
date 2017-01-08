@@ -3,7 +3,7 @@ Para detectar o local do cd no ubuntu
 
   cdrecord -scanbus -dev=/dev/cdrom
 
-##Comando usado para gravar cds via linha de comando
+###Comando usado para gravar cds via linha de comando
 
   cdrecord -v -fs=16M speed=8 dev=0,0,0 -data nome_da_imagem.iso
 

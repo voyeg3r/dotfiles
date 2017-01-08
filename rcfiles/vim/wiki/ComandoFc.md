@@ -3,7 +3,7 @@ O comando fc edita o último comando digitado mas também pode receber um parâm
 
 fc grep
 
-##Para listar os últimos 5 comandos
+###Para listar os últimos 5 comandos
 
 fc -l -5
 

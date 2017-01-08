@@ -1,6 +1,6 @@
 ##Introdução
 
-##Como montar a pasta /tmp com as opções nodev, nosuid, e noexec 
+###Como montar a pasta /tmp com as opções nodev, nosuid, e noexec 
 
   vim /etc/fstab
 

@@ -1,6 +1,6 @@
 ##Introdução
 
-##Imagemagick
+###Imagemagick
 Programa para manipulação de imagens. Pode ser usado em scripts. Verifique se
 a sua versão do linux já tem o imagemagick instalado.
 

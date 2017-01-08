@@ -1,5 +1,5 @@
 
-##Para saber onde está instalado o comando find
+###Para saber onde está instalado o comando find
 
 
 whereis find

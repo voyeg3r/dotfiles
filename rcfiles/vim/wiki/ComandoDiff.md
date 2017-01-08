@@ -13,7 +13,7 @@ diff -Naur dir1/ dir2/
     The -r option recurses through all subdirectories
     The -N and -a options are really only necessary if you wanted to create a patch file.
 
-##comparando o conteúdo de duas variáveis
+###comparando o conteúdo de duas variáveis
 
 diff <(echo "$a") <(echo "$b")
 

@@ -2,7 +2,7 @@
 
 history 10
 
-##exibir todas as ocorrências do find no histórico
+###exibir todas as ocorrências do find no histórico
 
 history | grep find
 

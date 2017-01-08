@@ -14,7 +14,7 @@ dessa forma eu posso agora usar somente
 
   sshsergio
 
-##Como saber se um comando tem aliases?
+###Como saber se um comando tem aliases?
 fonte: http://www.commandlinefu.com/commands/view/2299/find-if-the-command-has-an-alias
 
 type -all comando

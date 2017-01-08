@@ -1,11 +1,11 @@
 Arquivo: dicas do ubuntu
 Criado: Seg 10/Jan/2011 hs 16:41
-Last Change: ter 03 jan 2017 14:43:19 BRT
+Last Change: dom 08 jan 2017 12:03:28 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
-##setting abnt2 keyboard
+###setting abnt2 keyboard
 
     setxkbmap -model abnt2 -layout br
 

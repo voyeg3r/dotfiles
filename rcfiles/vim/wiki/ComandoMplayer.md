@@ -2,7 +2,7 @@
 
 mplayer -dumpaudio NOMEDOVIDEO.avi -dumpfile NOMEDOVIDEO.mp3
 
-##Extrair audio de dvd
+###Extrair audio de dvd
 Abra um terminal e digite
 
 mkfifo

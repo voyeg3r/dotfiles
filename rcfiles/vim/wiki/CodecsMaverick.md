@@ -209,7 +209,7 @@ apt-fast install -y sox
 #net.core.wmem_max = 524288
 #net.core.optmem_max = 57344
 #net.core.netdev_max_backlog = 5000
-##net.ipv4.tcp_wmem = 4096 87380 524288
+###net.ipv4.tcp_wmem = 4096 87380 524288
 ##net.ipv4.tcp_rmem = 4096 87380 524288
 #net.ipv4.tcp_rmem= 10240 87380 12582912
 #net.ipv4.tcp_wmem= 10240 87380 12582912

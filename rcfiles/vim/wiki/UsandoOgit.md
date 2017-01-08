@@ -22,7 +22,7 @@ http://stackoverflow.com/questions/3489173/
 
     :Git checkout %
 
-##add current file to git
+###add current file to git
 
  :Git add %
 

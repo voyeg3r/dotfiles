@@ -18,7 +18,7 @@ usando basename tería-mos
   echo "arquivo `basename $0`"
   arquivo brilho
 
-##script de exemplo
+###script de exemplo
 
 # Criado em:Dom 26/Out/2008 hs 12:11
 # Last Change: Dom 26/Out/2008 hs 12:11

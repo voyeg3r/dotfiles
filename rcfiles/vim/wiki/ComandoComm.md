@@ -13,7 +13,7 @@ comm -12 <(sort file1) <(sort file2)
 # subtraction of file1 from file2
 comm -13 <(sort file1) <(sort file2)
 
-## lines that are in file1 that not are in file2 
+### lines that are in file1 that not are in file2 
 
 comm -23 <(sort name-that-i-have.txt) <(sort nome-sige.txt)
 

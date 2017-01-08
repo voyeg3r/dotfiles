@@ -1,7 +1,7 @@
 ##Introdução
 compactador e descompactador do linux
 
-## Descompactar durante um download 
+### Descompactar durante um download 
 
     wget http://example.com/archive.tar.bz2 -O - | tar -xj
 

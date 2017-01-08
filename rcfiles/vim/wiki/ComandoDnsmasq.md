@@ -1,5 +1,5 @@
 ===[[http://ligadeblogs.blogspot.com/2008/09/configurar-dns-no-ubuntulinux.html|Configurar DNS no Ubuntu/Linux]]=== 
-##Domingo, Setembro 21 
+###Domingo, Setembro 21 
 Só não é melhor que chá de mel com canela e cravo da Índia!
 Obs.: Funciona apenas para quem usa IP fixo na máquina. Dúvidas aqui => [[http://www.google.com/|Google]].
 

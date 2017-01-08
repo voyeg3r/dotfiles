@@ -10,7 +10,7 @@ a versão do sistema use este comando:
    Release:        7.10
    Codename:       gutsy
 
-##Exibir somente o codinome da versão
+###Exibir somente o codinome da versão
 
 lsb_release -cs
 

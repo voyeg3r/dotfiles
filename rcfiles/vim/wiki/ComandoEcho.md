@@ -10,7 +10,7 @@ echo 172.30.40.{1,255} | tr " " "\n"
 
 o código acima imprime todos os ips da faixa 172.30.40
 de 1 a 255, um por linha.
-##notificador de mensagens
+###notificador de mensagens
 
 echo notify-send test | at now+1minute
 

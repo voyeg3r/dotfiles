@@ -8,7 +8,7 @@ No caso estou indicando que o arquivo que receberá as alterações será
 o próprio
 
 Obs: Caso queira ordenar números use a opção 'n' do sort
-##Ordenar numericamente (-n) usando o campo 2
+###Ordenar numericamente (-n) usando o campo 2
 
 alunos:~/scripts$ sort -n -t ":" -k 2 sorttest
 a:1:3.2

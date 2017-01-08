@@ -10,7 +10,7 @@
 \end{figure}
 }
 
-## Quebra de linha com distância definida em valor 
+### Quebra de linha com distância definida em valor 
 
 	\textsc{\LARGE University Name}\\[1.5cm]
 

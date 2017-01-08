@@ -1,7 +1,7 @@
 ##descrição
 Coloca o diretório atual em uma pilha de modo que você pode voltar a este
 mesmo diretório com o comando [[popd]]
-##como usar
+###como usar
 Digamos que você entre em
 
 /var/cache/apt/archives 

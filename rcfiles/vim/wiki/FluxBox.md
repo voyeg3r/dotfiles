@@ -1,12 +1,12 @@
 Arquivo: dicas do fluxbox
 Criado: Thu 12/May/2011 hs 14:31
-Last Change: ter 03 jan 2017 14:43:26 BRT
+Last Change: dom 08 jan 2017 12:03:30 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 
-##Criar pasta de backgrounds do fluxbox
+###Criar pasta de backgrounds do fluxbox
 
 ln -s ~/Dropbox/img/wallpapers/ ~/.backgrounds/
 

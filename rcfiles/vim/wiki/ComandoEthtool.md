@@ -1,13 +1,13 @@
 Arquivo: ethtool
 Criado: Sun 18/Jan/2015 hs 09:50
-Last Change: ter 03 jan 2017 14:42:17 BRT
+Last Change: dom 08 jan 2017 12:02:51 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
 
-##speed up the Ethernet
+###speed up the Ethernet
 
     sudo ethtool -s eth0 speed 100 duplex full
 

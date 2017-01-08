@@ -1,14 +1,14 @@
 # Manual de dicas do vim
-------------------------------------------
+
 File:		 DicasVim.md
 Created:     Sáb 06/Nov/2010 hs 18:10
-Last Change: dom 08 jan 2017 08:45:01 BRT
+Last Change: dom 08 jan 2017 12:26:06 BRT
 Author:		 Sergio Araujo
 Site:		 http://vivaotux.blogspot.com
 e-mail:      <voyeg3r ✉ gmail.com>
 Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
-------------------------------------------
+
 
 ### Getting rid of '-' on html links
 [source: stackoverflow](http://stackoverflow.com/questions/41529264/)
@@ -17,7 +17,7 @@ Github:      https://github.com/voyeg3r
 
     :s/\%V-\%V/ /g
 
-## tips about ultisnips
+### tips about ultisnips
 source: http://vimcasts.org/episodes/ultisnips-visual-placeholder/
 
 If you wnat to overwrite a snippet definition just put
@@ -112,7 +112,7 @@ Um exemplo de fluxo de trabalho com o comando :cdo
         qall
 
 
-##links or worth clicking
+## links or worth clicking
 
     http://www.mileszs.com/vimlinks.html
 
@@ -1806,3 +1806,15 @@ source: [superuser.com](http://superuser.com/questions/592503/)
 
     imap <leader>r <C-r>=system('echo "$(($RANDOM % 100))"')<cr>
 
+### Adicionado espaços em títulos markdown
+
+   Se você tem um título ou subtitulo markdown com o texto
+   colado no titulo como em  ##titulo
+
+   podemos adicionar um espaço assim:
+
+
+   :%s/\(^#\+\)\([^# ]\)/\1 \2/g
+
+   grupo 1 ---> comço de linha # ou mais
+   grup 2  ---> tudo menos # e espaço

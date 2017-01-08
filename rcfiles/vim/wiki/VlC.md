@@ -1,12 +1,12 @@
 Arquivo: dicas e atalhos sobre o vlc
 Criado: Dom 07/Out/2012 hs 06:28
-Last Change: sáb 07 jan 2017 18:38:27 BRT
+Last Change: dom 08 jan 2017 12:03:36 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
-## Reprodução
+### Reprodução
 
     Shift-left ............. atrazo muito pequeno
     Alt-left ............... pequeno atrazo

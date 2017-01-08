@@ -2,7 +2,7 @@
 
 sort namesd.txt | uniq –c
 
-##Exibir somente as entradas duplicadas
+###Exibir somente as entradas duplicadas
 
 sort namesd.txt | uniq –cd
 

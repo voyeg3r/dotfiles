@@ -1,4 +1,4 @@
-##comando para dividir arquivos
+###comando para dividir arquivos
 
 split -b 1m arquivo nome.pdf-
 

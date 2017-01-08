@@ -1,4 +1,4 @@
-##Introdução
+###Introdução
 Este comando recodifica caracteres entre formatos. Para recodificar de utf-8 para iso faça:
 
 recode -d u8..l1 arquivo   (mais adequador para arquivos latex)

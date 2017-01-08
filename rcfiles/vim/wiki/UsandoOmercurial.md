@@ -2,14 +2,14 @@
 
 Arquivo: Como usar o mercurial ( controle de versões )
 Criado: Qua 03/Nov/2010 hs 21:54
-Last Change: ter 03 jan 2017 14:43:51 BRT
+Last Change: dom 08 jan 2017 12:03:35 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 Meu usuário no bitbucket é 'sergio'
 
-## Referência: 
+### Referência: 
 http://mercurial.selenic.com/wiki/QuickStartPtBr
 http://hgbook.red-bean.com/read/mercurial-in-daily-use.html
 

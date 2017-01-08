@@ -8,7 +8,7 @@ Por exemplo, agendar o download de uma distro
 echo "wget -c http://mirrors.uol.com.br/pub/kurumin/kurumin-7.0.iso" | at 01:00 tomorrow
 
 
-##exibir mensagem visual temporizada
+###exibir mensagem visual temporizada
 
 echo "DISPLAY=$DISPLAY xmessage cooker" | at "NOW + 30 minutes"
 

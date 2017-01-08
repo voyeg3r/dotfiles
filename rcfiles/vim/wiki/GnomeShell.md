@@ -1,10 +1,10 @@
 Arquivo: Dicas do Gnome-Shell Criado: Wed 04/May/2011 hs 17:23
-Last Change: ter 03 jan 2017 14:43:29 BRT
+Last Change: dom 08 jan 2017 12:03:30 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 
-## save alsamixer settings 
+### save alsamixer settings 
 source: http://askubuntu.com/a/465641/3798
 
     alsactl --file ~/.config/asound.state store

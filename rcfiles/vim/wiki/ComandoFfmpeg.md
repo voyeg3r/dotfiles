@@ -1,7 +1,7 @@
 ##Recording your screen cam
 https://trac.ffmpeg.org/wiki/Capture/Webcam
 
-##substituir o audio de um video
+###substituir o audio de um video
 ffmpeg -i audio.mp3 -i video.mp4 -c copy final-video.mp4
 
 List devices

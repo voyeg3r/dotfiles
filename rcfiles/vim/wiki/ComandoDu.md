@@ -7,7 +7,7 @@ A cada dois segundos mostra o tamanho da pasta atual
 
 watch -n 2 "du -sh | awk '{print $1}'"
 
-##medindo espaço apenas na pasta atual 
+###medindo espaço apenas na pasta atual 
 
 du --max-depth=1
 

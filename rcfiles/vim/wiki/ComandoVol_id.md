@@ -13,7 +13,7 @@ em seu fstab
 
 Este artigo só foi possível ao ilustre amigo → [[http://jfmitre.blogspot.com/2006/11/descobrindo-o-cdigo-uuid-de-uma-partio.html|J. F. Mitre]]
 
-##um exemplo 
+###um exemplo 
 
 # /dev/hdb1
 UUID=EE0CFEFE0CFEC09F /media/hdb1 ntfs defaults,umask=007,gid=46 0 1

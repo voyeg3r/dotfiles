@@ -1,4 +1,4 @@
-##pegar todos os links de uma página
+###pegar todos os links de uma página
 
 lynx -dump http://www.domain.com | awk '/http/{print $2}'
 

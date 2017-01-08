@@ -8,7 +8,7 @@ Em geral este comando é usado em combinação com o ls
 
 ls | wc -l
 
-##Não use o wc para contar saidas do grep
+###Não use o wc para contar saidas do grep
 Para contar quantidade de linhas que contém um padrão faça:
 
 grep -c "palavra" file

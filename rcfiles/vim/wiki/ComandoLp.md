@@ -1,12 +1,12 @@
 Arquivo: dicas do comando lp
 Criado: Qui 11/Out/2012 hs 15:51
-Last Change: ter 03 jan 2017 14:42:32 BRT
+Last Change: dom 08 jan 2017 12:03:00 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
-## como enviar um echo para a impressora via linha de comandos
+### como enviar um echo para a impressora via linha de comandos
 
 	echo "um teste" | lp -d Brother_DCP-7065DN
 

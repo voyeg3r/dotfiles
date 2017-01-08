@@ -22,6 +22,6 @@ Para construir este banco de dados emitir o comando
 
 
 Uma vez criado o banco de dados o comando apropos (ou man -k) poderá então ser utilizado. 
-##comandos de rede no linux 
+###comandos de rede no linux 
 
 apropos network | less

@@ -1,6 +1,6 @@
 Arquivo: dicas sobre python
 Criado: Ter 18/Dez/2012 hs 18:57
-Last Change: ter 03 jan 2017 14:43:19 BRT
+Last Change: dom 08 jan 2017 12:03:28 BRT
 autor: Sérgio Luiz Araújo Silva
 site: vivaotux
 twitter: voyeg3r
@@ -10,7 +10,7 @@ email: voyeg3r -- gmail
 
 Curso do professor Ronaldo Ramos no Youtube: http://goo.gl/n4NxP
 
-##Consertando legengas srt com python
+###Consertando legengas srt com python
 
 source: http://tuxbalaji.wordpress.com/2013/10/05/how-to-fix-subtitles-delay-or-ealier-with-your-movies-by-python-code/
 

@@ -1,7 +1,7 @@
 O comando wodim grava imagens em discos
 ou seja grava cds e dvds
 
-##Detectar dispositivos
+###Detectar dispositivos
 
    wodim --devices
 

@@ -1,4 +1,4 @@
-##Breaking up a string is what IFS is used for:
+###Breaking up a string is what IFS is used for:
 
 OLDIFS=$IFS
 IFS=. read -a ip_elements <<< "127.0.0.1"

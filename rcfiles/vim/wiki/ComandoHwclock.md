@@ -12,5 +12,5 @@
 || **Observações** ||
 <span style="font-family: arial;">Na realidade, o comando **hwclock** é uma versão melhorada do antigo comando **clock**. Normalmente, o comando **clock** é apenas um link para o comando **hwclock**. </span>
 
-##fonte
+###fonte
 * http://www.uniriotec.br/~morganna/guia/hwclock.html

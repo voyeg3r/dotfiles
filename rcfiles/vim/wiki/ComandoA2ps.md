@@ -19,6 +19,6 @@ saída deve-se utilizar as opções -o arquivo_ps ou --output=arquivo_ps
 echo "teste" | a2ps -R  -1 -o teste.ps - && ps2pdf teste.ps; rm -f teste.ps
 
 
-##opção para o cups-pdf
+###opção para o cups-pdf
 
 sudo dpkg-statoverride –update –add root root 4755 /usr/lib/cups/backend/cups-pdf

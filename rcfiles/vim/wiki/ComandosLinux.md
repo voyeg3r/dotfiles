@@ -1,37 +1,37 @@
-##Guia de comandos linux
+###Guia de comandos linux
 
 Alem dos comandos abaixo estão listados Atalhos de programas
 começando pelo [[VlC]]
 
-[[ComandoAck|Ack]] - Fitra textos como o grep
-[[ComandoAddgroup|Addgroup]] - adiciona grupos de usuários
-[[ComandoAdduser|Adduser]] - adiciona usuários ao sistema
-[[ComandoAg|Ag]] - parecido com o grep só que mai rápido
-[[ComandoAircrack-NG|Aircrack-NG]] - ferramenta hacker para redes wi-fi
-[[ComandoAlias|Alias]] - cria um atalho para um comando
-[[ComandoAlsaconf|Alsaconf]] - configura o som através do sistema alsa
-[[ComandoApropos|Apropos]] - busca manuais
-[[ComandoApt|Apt]] - instala programas
-[[ComandoAria2c|Aria2c]] - programa acelerador de downloads
-[[ComandoArpscan|Arpscan]] - diagnóstico de rede
-[[ComandoArp-scan|Arp-scan]] - diganóstico de rede (como root)
-[[ComandoA2ps|A2ps]] - gera arquivos ps de uma entrada
-[[ComandoAptitude|Aptitude]] - gerenciador de pacotes
-[[ComandoAt|At]] - agenda comandos
-[[ComandoAvconv|avconv]] - video converter
-[[ComandoAwk|Awk]] - manipula textos
-[[ComandoAxel|Axel]] - acelerador de downloads
-[[ComandoBasename|Basename]] - retorna o nome do arquivo sem o caminho
-[[ComandoBadblocks|Badblocks]] - Comando para recuperação de hds
-[[ComandoBc|Bc]] - calculadora de linha de comando
-[[ComandoBeep|Beep]] - emite um som no terminal
-[[ComandoBlkid|Blkid]] - exibe o 'uuid' volume id das partições
-[[ComandoCadaver|Cadaver]] - permite fazer downloads e uploads via webdav
-[[ComandoCase|Case]] - extrutura para escolhas múltiplas
-[[ComandoCat|Cat]] - mostra na tela arquivos
-[[ComandoCancel|Cancel]] - cancela trabalhos de impressão
-[[ComandoCd|Cd]] - entra em diretórios
-[[ComandoCdrecord|Cdrecord]] - grava cds e dvds em modo texto
+[ComandoAck|Ack](ComandoAck|Ack.md) - Fitra textos como o grep
+[ComandoAddgroup|Addgroup](ComandoAddgroup|Addgroup.md) - adiciona grupos de usuários
+[ComandoAdduser|Adduser](ComandoAdduser|Adduser.md) - adiciona usuários ao sistema
+[ComandoAg|Ag](ComandoAg|Ag.md) - parecido com o grep só que mai rápido
+[ComandoAircrack-NG|Aircrack-NG](ComandoAircrack-NG|Aircrack-NG.md) - ferramenta hacker para redes wi-fi
+[ComandoAlias|Alias](ComandoAlias|Alias.md) - cria um atalho para um comando
+[ComandoAlsaconf|Alsaconf](ComandoAlsaconf|Alsaconf.md) - configura o som através do sistema alsa
+[ComandoApropos|Apropos](ComandoApropos|Apropos.md) - busca manuais
+[ComandoApt|Apt](ComandoApt|Apt.md) - instala programas
+[ComandoAria2c|Aria2c](ComandoAria2c|Aria2c.md) - programa acelerador de downloads
+[ComandoArpscan|Arpscan](ComandoArpscan|Arpscan.md) - diagnóstico de rede
+[ComandoArp-scan|Arp-scan](ComandoArp-scan|Arp-scan.md) - diganóstico de rede (como root)
+[ComandoA2ps|A2ps](ComandoA2ps|A2ps.md) - gera arquivos ps de uma entrada
+[ComandoAptitude|Aptitude](ComandoAptitude|Aptitude.md) - gerenciador de pacotes
+[ComandoAt|At](ComandoAt|At.md) - agenda comandos
+[ComandoAvconv|avconv](ComandoAvconv|avconv.md) - video converter
+[ComandoAwk|Awk](ComandoAwk|Awk.md) - manipula textos
+[ComandoAxel|Axel](ComandoAxel|Axel.md) - acelerador de downloads
+[ComandoBasename|Basename](ComandoBasename|Basename.md) - retorna o nome do arquivo sem o caminho
+[ComandoBadblocks|Badblocks](ComandoBadblocks|Badblocks.md) - Comando para recuperação de hds
+[ComandoBc|Bc](ComandoBc|Bc.md) - calculadora de linha de comando
+[ComandoBeep|Beep](ComandoBeep|Beep.md) - emite um som no terminal
+[ComandoBlkid|Blkid](ComandoBlkid|Blkid.md) - exibe o 'uuid' volume id das partições
+[ComandoCadaver|Cadaver](ComandoCadaver|Cadaver.md) - permite fazer downloads e uploads via webdav
+[ComandoCase|Case](ComandoCase|Case.md) - extrutura para escolhas múltiplas
+[ComandoCat|Cat](ComandoCat|Cat.md) - mostra na tela arquivos
+[ComandoCancel|Cancel](ComandoCancel|Cancel.md) - cancela trabalhos de impressão
+[ComandoCd|Cd](ComandoCd|Cd.md) - entra em diretórios
+[ComandoCdrecord|Cdrecord](ComandoCdrecord|Cdrecord.md) - grava cds e dvds em modo texto
 [[ComandoCdparanoia|Cdparanoia]] - extrai faixas de cd
 [[ComandoCfdisk|Cfdisk]] - particionador de discos
 [[ComandoChkconfig|Chkconfig]] - gerenciar serviços no linux

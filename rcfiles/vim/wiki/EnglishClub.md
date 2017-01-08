@@ -1,6 +1,6 @@
-##English Club
+### English Club
 
-##Introdução
+### Introdução
 
 Um clube de inglês, no qual alunos mais adiantados no estudo
 da lingua inglesa organizam reuniões semanais para praticar
@@ -12,7 +12,7 @@ professores ou local, uma vez que na nternet existem
 inúmeros recursos como skype, twitter, e-mais etc. que
 facilitam a interação dos membros do clube.
 
-##Metodologia
+### Metodologia
 
 
 		HAVE SOMETHING TO SAY, KNOW HOW TO SAY IT AND HAVE SOMEONE TO SAY IT TO
@@ -27,7 +27,7 @@ facilitam a interação dos membros do clube.
 
 		Are you going...?
 
-##Inglês real, usando metodologias como
+### Inglês real, usando metodologias como
 
 ### Parallel Reading
 
@@ -66,7 +66,7 @@ fazem perguntas sobre a mesma, em seguida a mesma estória é
 recontada em outro tempo, com alterações. Visa melhorar a
 desenvoltura e naturalidade dos membros.
 
-##spaced repetition
+### spaced repetition
 
  * anki
  * http://www.memrise.com
@@ -89,7 +89,7 @@ Spaced repetition was invented back in 1932 by Professor C. A. Mace, so it’s
 a very old concept. Pimsleur language courses were developed after cassette
 tape technology became widespread in the 1970s.
 
-##Ingles 200 horas
+### Ingles 200 horas
 
   1700 frases
   Aplicação da gramática e não explicação da gramática
@@ -100,7 +100,7 @@ tape technology became widespread in the 1970s.
 
   Ensino por mapeamento 1200% mas de aprendizado em 1/4 do tempo
 
-##Lexical approach
+### Lexical approach
 
 
 ### English dictation channel on youtube
@@ -126,7 +126,7 @@ As 1000 frases mais comuns do inglês (troque o número final para
 acessar as outras letras do alfabeto - z=26)
 http://www.englishspeak.com/english-phrases.cfm?sortby=1
 
-##alterando o tempo de legendas com o script subslider.py
+### alterando o tempo de legendas com o script subslider.py
 O script subslider.py altera o tempo de legendas, adiantando ou
 atrasando o tempo de exibição das memas assim:
 
@@ -134,7 +134,7 @@ atrasando o tempo de exibição das memas assim:
 
    isso aumentará o tempo de cada legenda em 19 segundos
 
-##Why study phases?
+### Why study phases?
 
 “People don’t speak a language well just by learning single
 words and grammar points. Instead, fluent speakser remember
@@ -216,16 +216,20 @@ what to say next.” Girias da da Internet
 
 Publicado em 08/05/2010
 
-Esse texto aborda algumas técnicas para aprender inglês muito simples, que talvez você jamais tenha ouvido falar, mas que podem fazer uma grande diferença na eficiência do seu aprendizado.
+Esse texto aborda algumas técnicas para aprender inglês muito simples, que
+talvez você jamais tenha ouvido falar, mas que podem fazer uma grande diferença
+na eficiência do seu aprendizado.
 
 “The great aim of education is not knowledge but action.”
 “O principal propósito da educação não é o conhecimento, mas a ação.”
 Herbert Spencer
 
-O objetivo desse artigo é propor um método de estudo que você possa começar a colocar em prática imediatamente. Afinal, quem você acha que aprende mais rápido:
-Aquele que conhece todas as dicas e atalhos para aprender – mas nunca as coloca em prática;
-Ou aquele que separa 1 hora por dia para estudar e vai aperfeiçoando o seu método de estudo ao longo do tempo?
-Portanto, AÇÃO é a palavra-chave.
+O objetivo desse artigo é propor um método de estudo que você possa começar a
+colocar em prática imediatamente. Afinal, quem você acha que aprende mais
+rápido: Aquele que conhece todas as dicas e atalhos para aprender – mas nunca
+as coloca em prática; Ou aquele que separa 1 hora por dia para estudar e vai
+aperfeiçoando o seu método de estudo ao longo do tempo?  Portanto, AÇÃO é a
+palavra-chave.
 
 Como Tirar o Máximo desse Artigo Se você quer obter um
 aproveitamento real e duradouro desse artigo, não pense que
@@ -270,12 +274,38 @@ gesto que tenha alguma relação com o significado da palavra
 e toda vez que você escuta ou usa a palavra durante as suas
 sessões de estudo você faz o gesto.
 
-Comprehensible Input
+## Comprehensible Input
+
 Técnica para Aprender Inglês Comprovada por Pesquisas
-Você aprende muito mais rápido se concentrando em materiais que sejam de fácil entendimento. Esse é um dos pilares do método desenvolvido pelo especialista em aprendizagem de idiomas, Dr. Stephen Krashen. Muitos acreditam que se aprende mais estudando um material difícil de entender. De acordo com as pesquisas do Dr. Krashen, esse jeito não só é mesmo eficiente, como também diminui a motivação do estudante.
-Pense bem, qualquer sessão de estudo rende muito mais quando já dominamos parte do conteúdo e já temos capacidade de pensar sozinhos e tirar nossas próprias conclusões. Um material que você nunca viu na vida ou então, que está repleto de coisas novas passa a impressão que vai demorar uma eternidade para ser assimilado. Se você lê um texto no qual você só consegue entender 50% do que está escrito, você perdeu metade do seu tempo. Por outro lado, um texto com cerca de 5% de palavras novas é tão fácil que é possível focar totalmente no conteúdo e até mesmo se esquecer que o material está em outro idioma. Isso permite uma repetição natural de várias palavras conhecidas. Você vai ter a oportunidade de revê-las em contextos variados garantindo-lhes uma vaga cativa na sua memória a longo prazo. Se você é um iniciante, essa é a fórmula mais simples para construir o seu vocabulário inicial e aprender as palavras mais freqüentes no idioma.
-Num contexto tão familiar, é possível determinar o significado da maioria das palavras novas através do contexto, sem ter que interromper seu estudo para usar o dicionário. Ou pior, ficar sem entender.
-E esse é um ponto muito importante. Já vi discussões entre estudantes de idiomas sobre qual tipo de dicionário usar: monolíngue, bilíngüe, os dois… O bom mesmo é NÃO PRECISAR DE DICIONÁRIO. Pode parecer útil no momento, mas é muito fácil se esquecer do significado da palavra tão logo você fecha o dicionário. Além disso, existem expressões difíceis de se traduzir, mesmo utilizando um dicionário online. É útil também para se distinguir entre os vários significados que uma palavra pode ter. Em pouco tempo você vai ver o seu vocabulário aumentar absurdamente.
+
+Você aprende muito mais rápido se concentrando em materiais que sejam de fácil
+entendimento. Esse é um dos pilares do método desenvolvido pelo especialista em
+aprendizagem de idiomas, Dr. Stephen Krashen. Muitos acreditam que se aprende
+mais estudando um material difícil de entender. De acordo com as pesquisas do
+Dr. Krashen, esse jeito não só é mesmo eficiente, como também diminui a
+motivação do estudante.  Pense bem, qualquer sessão de estudo rende muito mais
+quando já dominamos parte do conteúdo e já temos capacidade de pensar sozinhos
+e tirar nossas próprias conclusões. Um material que você nunca viu na vida ou
+então, que está repleto de coisas novas passa a impressão que vai demorar uma
+eternidade para ser assimilado. Se você lê um texto no qual você só consegue
+entender 50% do que está escrito, você perdeu metade do seu tempo. Por outro
+lado, um texto com cerca de 5% de palavras novas é tão fácil que é possível
+focar totalmente no conteúdo e até mesmo se esquecer que o material está em
+outro idioma. Isso permite uma repetição natural de várias palavras conhecidas.
+Você vai ter a oportunidade de revê-las em contextos variados garantindo-lhes
+uma vaga cativa na sua memória a longo prazo. Se você é um iniciante, essa é a
+fórmula mais simples para construir o seu vocabulário inicial e aprender as
+palavras mais freqüentes no idioma.  Num contexto tão familiar, é possível
+determinar o significado da maioria das palavras novas através do contexto, sem
+ter que interromper seu estudo para usar o dicionário. Ou pior, ficar sem
+entender.  E esse é um ponto muito importante. Já vi discussões entre
+estudantes de idiomas sobre qual tipo de dicionário usar: monolíngue, bilíngüe,
+os dois… O bom mesmo é NÃO PRECISAR DE DICIONÁRIO. Pode parecer útil no
+momento, mas é muito fácil se esquecer do significado da palavra tão logo você
+fecha o dicionário. Além disso, existem expressões difíceis de se traduzir,
+mesmo utilizando um dicionário online. É útil também para se distinguir entre
+os vários significados que uma palavra pode ter. Em pouco tempo você vai ver o
+seu vocabulário aumentar absurdamente.
 
 “Education is the ability to meet life’s situations.”
 “Educação é a habilidade de enfrentar as situações da vida.”
@@ -293,6 +323,7 @@ usando uma regra de gramática incorretamente.
 ### Ler em voz alta ativa o lóbulo frontal do cérebro
 
 Narrow Reading/ Listening
+
 Você pode usar essa técnica para
 aprender inglês para construir o seu vocabulário sobre os
 temas que te motivaram a começar a estudar esse idioma. Cada
@@ -347,7 +378,7 @@ das experiências que eu tive colocando o método deles em
 ação. Tem mais dicas nessa newsletter, cadastre-se e
 confira: Effortless English Newsletter
 
-##Seven rules to learn english fastest
+### Seven rules to learn english fastest
 
 Hi, I’m A.J. Hoge, the director of "Effortless English" and
 welcome to the Free 7 Rules e-mail course. Today is rule 1.
@@ -388,7 +419,7 @@ ice-cream". You write down the whole phrase. Why do we do
 this? What's the power of phrases? Well, phrases give you a
 lot of information, much more information.
 
-##Number 1
+### Number 1
 
 Phrases are easier to remember, because they have meaning,
 they have a kind of a picture, a story, especially when you
@@ -401,7 +432,7 @@ information, all this extra information helps you remember
 the meaning of the phrase and the meaning of that word. So
 it helps your memory. Much easier to remember.
 
-##Number 2
+### Number 2
 
 There's a bonus. When you learn phrases, you are learning
 grammar also. You are not only learning an individual word,
@@ -464,7 +495,7 @@ with rule number 2. So I will see you tomorrow. Bye-bye.
 
 Click here to go to the official Effortless English website!
 
-##Rule 2
+### Rule 2
 
 Hi! This is A.J. Hoge again, the director of "Effortless
 English" and today we're gonna learn about Rule Number 2.
@@ -512,15 +543,15 @@ How do native speakers learn grammar? Well, I'm an English
 native speaker and I can tell you I never studied grammar
 rules. Not until high school, and we studied grammar rules
 for writing. In college native speakers study grammar rules
-		again. Why? For writing. But for speaking, we don't. So
-		how do we learn grammar rules? Well, we learn through
-		listening, through hearing correct grammar, again and
-		again and again and again. A lot of correct grammar. So
-		the best way to learn English grammar is through input.
-		In other words, English coming in, mostly through your
-		ears but reading is also ok, but don't read text books,
-		don't read grammar books, just read easy English books,
-		easy novels. But most of all you'll be listening.
+again. Why? For writing. But for speaking, we don't. So
+how do we learn grammar rules? Well, we learn through
+listening, through hearing correct grammar, again and
+again and again and again. A lot of correct grammar. So
+the best way to learn English grammar is through input.
+In other words, English coming in, mostly through your
+ears but reading is also ok, but don't read text books,
+don't read grammar books, just read easy English books,
+easy novels. But most of all you'll be listening.
 
 Now, in the next e-mails that you get, I'll tell you exactly
 how to learn grammar in an easy way, in an effortless way,
@@ -546,7 +577,7 @@ rule number three tomorrow. So I hope you enjoyed this
 e-mail course and these videos and I'll see you next time.
 Bye-bye.
 
-##Rule 3
+### Rule 3
 
 Hi, I'm A.J. Hoge, the director of "Effortless English",
 welcome to Rule Number 3. So rule number three is very
@@ -597,7 +628,7 @@ Americans who are 13, 14, 15 years old. If that's too
 difficult, find something easier. You can listen to
 programmes for very small children.
 
-##audio books links
+### audio books links
 * http://etc.usf.edu/lit2go/books/
 
 Now, if something's more difficult you can still use it, but
@@ -625,7 +656,7 @@ see you then. Bye-bye.
 
 Click here to check Effortless English lessons for yourself!
 
-##Rule 4
+### Rule 4
 
 Hi, this is A.J. again, director of "Effortless English".
 Welcome to the fourth rule for speaking excellent English.
@@ -733,7 +764,7 @@ learning, repeat everything a lot, repeat it many times. So
 I'll see you tomorrow for rule number 5. Have a great day.
 Take care. Bye-bye.
 
-##Rule 5
+### Rule 5
 
 Hi, this is A.J. Hoge, the director of "Effortless English".
 Welcome to day 5 of the seven rules to excellent speaking
@@ -845,7 +876,7 @@ Alright? That's the end of today's rule, I will see you
 tomorrow for our next rule. Take care and have a great day.
 Bye-bye.
 
-##Rule 6
+### Rule 6
 
 Hi, this is A.J. Hoge, director of "Effortless English", and
 today we have rule number 6 to speak excellent English.
@@ -949,7 +980,7 @@ OK. So that's rule number 6. I hope you enjoyed it. Tomorrow
 rule nuber 7, our last rule. Alright, I'll see you tomorrow.
 Have a great day. Bye-bye.
 
-##Rule 7
+### Rule 7
 
 Hi, this is A.J. Hoge, the director of "Effortless English"
 and today is the last rule, rule number 7. And rule number 7
@@ -1036,7 +1067,7 @@ all of them so that you will learn much more quickly, so
 that you will understand English very quickly and so that
 you will speak English easily, quickly and automatically.
 
-##publicity
+### publicity
 
 So, what's your next step? Well, first you wanna use all 7
 rules. Every time you study English use all of the 7 rules.
@@ -1125,9 +1156,9 @@ http://translate.google.com/translate_tts?tl=en&q="hello world"
 
 Another good tts site: http://www.lumenvox.com/products/tts/
 
-#1. Estudar pelo menos 10 palavras novas por dia
-#2. Estudar um novo conceito de gramática por dia
-#3. Escrever 10 frases que aplicam a nova gramática e o novo vocabulário que você aprendeu nos passos #1 e #2.
+# 1. Estudar pelo menos 10 palavras novas por dia
+# 2. Estudar um novo conceito de gramática por dia
+# 3. Escrever 10 frases que aplicam a nova gramática e o novo vocabulário que você aprendeu nos passos #1 e #2.
 
 Portuguese is sillabe-timed
 English is stress-timed
@@ -1234,7 +1265,7 @@ http://www.talkenglish.com/Speaking/Idioms/Category6.aspx
 Phrases with sound
 http://www.englishspeak.com/english-phrases.cfm?newCategoryShowed=1&sortBy=28
 
-##Impotant skills to a poliglot
+### Impotant skills to a poliglot
 Noticing
 Processing
 Guessing
@@ -1274,18 +1305,18 @@ will find all tenses.
 
 “Neural tissue required to learn and understand a new language will develop automatically from simple exposure to the language—which is how babies learn their first language,” Dr Sulzberger says.
 
-##Livros
+### Livros
  * Como dizer tudo em ingles
  * Applied English Phonology
 
-##apps
+### apps
 Some applications to improve your lerning speed
 
 		* Lingua.ly
 		* duolingo
 		* UnlockYourBrain http://va.mu/Aw9AE
 
-##podcasts
+### podcasts
 
 * http://www.theosgoodfile.com/
 * https://soundcloud.com/english-audio/sets

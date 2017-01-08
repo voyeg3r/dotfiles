@@ -1,6 +1,6 @@
 ##como baixar videos do youtube com melhor qualidade?
 *
-##comando para atualizar o youtube-dl
+###comando para atualizar o youtube-dl
 
   sudo pip3 install youtube-dl --upgrade
 

@@ -2,7 +2,7 @@
 Permite baixar arquivos sem riscos, ou seja,
 mantém um resumo do que foi baixado
 
-##referências
+###referências
 * http://codesnippets.joyent.com/tag/wget
 
 wget -m --restrict-file-names=nocontrol --user-agent="direct download -- `uname -a`" --no-parent --referer=http://DigitalK7.com/ "http://digitalk7.com/mus/Brazil/"

@@ -1,7 +1,7 @@
 ##Introdução
 O comando lsof é utilizado para mostrar os arquivos que
 estão abertos no sistema. Sozinho o comando lsof mostra todos os arquivos abertos,
-##Listar todos os programas que usam internet atualmente
+###Listar todos os programas que usam internet atualmente
 
 lsof -P -i -n | cut -f 1 -d " "| uniq | tail -n +2
 

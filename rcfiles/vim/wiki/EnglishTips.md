@@ -1,6 +1,6 @@
 Arquivo: dicas de ingles
 Criado: Qua 12/Jan/2011 hs 12:52
-Last Change: ter 03 jan 2017 14:43:24 BRT
+Last Change: dom 08 jan 2017 12:03:29 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
@@ -51,7 +51,7 @@ other word, wich is "line"
      I got another line from another movie
      this yis an old movie ...
 
-##What means ...
+###What means ...
 
 -STARE --------------------------------------------------------
  You wear a brain-wave monitoring device and you

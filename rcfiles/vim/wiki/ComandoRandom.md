@@ -1,5 +1,4 @@
-randomize lines
+# randomize lines
 
-
-random -f <file>
+    random -f <file>
 

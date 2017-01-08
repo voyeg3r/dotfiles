@@ -4,7 +4,7 @@ Resolve o hostname à partir de um IP
 nmbloockup -A 172.30.34.5
 
 
-##Script para pegar hostnames
+###Script para pegar hostnames
 
 #!/bin/bash
 # Criado em:ter 04/nov/2008 hs 08:34

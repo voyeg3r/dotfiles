@@ -5,7 +5,7 @@ sistema, esta funcionalidade nos possibilita coisas como:
 * recuperar senha de root
 * criar uma raiz falsa para um site web
 
-##Recuperando a senha de root com o chroot
+###Recuperando a senha de root com o chroot
 Carregue um lice-cd qualquer, torne-se root com
 
 sudo su -

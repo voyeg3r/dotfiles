@@ -7,7 +7,7 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 [[Tex.Snippets]]
 
 
-##como apagar tags do tipo </font*> no vim 
+###como apagar tags do tipo </font*> no vim 
 
 <\/\?font[^<]*>
 

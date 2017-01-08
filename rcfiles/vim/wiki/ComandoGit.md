@@ -1,7 +1,7 @@
 
 Comandos git
 
-##update local repo with github updates
+###update local repo with github updates
 
     git pull origin master
 

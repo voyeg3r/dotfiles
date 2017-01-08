@@ -61,7 +61,7 @@ You can specify a step counter for the ranges to get every Nth number or letter:
     If the -o file name uses no dir or if the dirs it mentions
     already exist, no dir will be created.
 
-## measuring a iso size before downloading it
+### measuring a iso size before downloading it
 
 curl -sI https://static.apricityos.com/iso/apricity_os-09.2016-dev-gnome-i686.iso | grep Content-Length | awk '{print $2}'
 

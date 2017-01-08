@@ -20,7 +20,7 @@ Script de backup http://va.mu/XteF
   a opcao - -delete ira remover em /bak/dir arquivos não existentes em /dir
 
 
-##rsync + find
+###rsync + find
 
 find . -name "whatever.*" -print0 | rsync -av --files-from=- --from0 ./ ./destination/
 

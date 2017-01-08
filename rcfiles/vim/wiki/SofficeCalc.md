@@ -1,13 +1,13 @@
 Arquivo: dicas sobre planilhas calc (excel)
 Criado: Sex 28/Set/2012 hs 09:33
-Last Change: ter 03 jan 2017 14:43:47 BRT
+Last Change: dom 08 jan 2017 12:03:34 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
 
-##Formatação condicional
+###Formatação condicional
 
 Crie um estilo e formate com o fundo cinza
 

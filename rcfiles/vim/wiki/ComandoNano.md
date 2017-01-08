@@ -1,7 +1,7 @@
 ##Referências: 
 * [[@http://manpages.ubuntu.com/manpages/dapper/man5/nanorc.5.html]]
 
-##Como habilitar a syntax no editor nano 
+###Como habilitar a syntax no editor nano 
 edite o arquivo nanorc
 
 include "/usr/share/nano/c.nanorc"

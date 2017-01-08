@@ -2,6 +2,6 @@
 
 locate .mp4
 
-##como atualizar o banco de dados do locate?
+###como atualizar o banco de dados do locate?
 
 locatedb

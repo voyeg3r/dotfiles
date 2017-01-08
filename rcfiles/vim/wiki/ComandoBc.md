@@ -2,7 +2,7 @@
 
 seq 1 100 | paste -sd+ | bc
 
-##somando os numeros de 1 a 100 
+###somando os numeros de 1 a 100 
 
 seq -s+ 100 | bc
 

@@ -19,7 +19,7 @@ pandoc will fetch the content using HTTP:
 
     pandoc -f html -t markdown http://www.fsf.org
 
-## Paragraphs
+### Paragraphs
 
 A paragraph is one or more lines of text followed by one or more blank line.
 Newlines are treated as spaces, so you can reflow your paragraphs as you like.

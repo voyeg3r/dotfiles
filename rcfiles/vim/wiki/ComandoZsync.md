@@ -1,7 +1,7 @@
 zsync is another implementation of the same algorithm that rsync uses, but does not require special software
 To download or update an image with zsync:
 
-##atualizando a iso do ubuntu para 10.04
+###atualizando a iso do ubuntu para 10.04
 Ideal para o caso de você já ter a versão beta, ele atualiza uma pequena parte e pronto
 
 zsync http://mirror.globo.com/ubuntu/releases/10.04/ubuntu-10.04-desktop-i386.iso.zsync

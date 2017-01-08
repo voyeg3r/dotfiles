@@ -1,12 +1,12 @@
 Arquivo: archlinux.wiki
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: ter 03 jan 2017 14:41:49 BRT
+Last Change: dom 08 jan 2017 12:02:36 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
-##archanywhere
+###archanywhere
 Facilitador para instalaçaõ do archlinux
 
 http://arch-anywhere.org/download.html

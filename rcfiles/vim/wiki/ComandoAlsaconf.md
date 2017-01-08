@@ -1,6 +1,6 @@
 fonte: http://www.dicas-l.com.br/print/20090406.html
 
-##Configurar som no Linux através do ALSA 
+###Configurar som no Linux através do ALSA 
 **//Colaboração: Sérgio Abrantes//**
 **//Data de Publicação: 06 de April de 2009//**
 Vejo muita gente passando dificuldade para configurar o som do computador no Linux. Nessa dica vou mostrar como é fácil fazer essa configuração.

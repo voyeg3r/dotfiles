@@ -1,12 +1,12 @@
 Arquivo: Dicas sobre ambientes de trabalho no linux
 Criado: Sáb 11/Ago/2012 hs 11:14
-Last Change: ter 03 jan 2017 14:43:17 BRT
+Last Change: dom 08 jan 2017 12:03:27 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
-##altere o modo de escalonamento dos discos para desempenho
+###altere o modo de escalonamento dos discos para desempenho
 
 fonte ibm develop networks: http://www.readability.com/articles/q2jiwjfe
 

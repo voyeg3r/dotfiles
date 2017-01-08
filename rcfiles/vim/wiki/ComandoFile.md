@@ -21,7 +21,7 @@ querido wc que fará a contagem para você.
 file -i * | grep 'text/plain' | wc -l
 file -i * | grep -c 'text/plain'
 
-##Editar todos os arquivos de texto excluindo binários
+###Editar todos os arquivos de texto excluindo binários
 
 gedit $(file * | grep text | sed 's/:.*//')
 

@@ -5,7 +5,7 @@ como a lista pode ser muito longa use em combinação com o comando [[less]]
 
    lshw | less
 
-##para saber se o sistema é 32 ou 64 bits
+###para saber se o sistema é 32 ou 64 bits
 
 sudo lshw -C cpu|grep width
 

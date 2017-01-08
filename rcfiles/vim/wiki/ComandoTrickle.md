@@ -2,7 +2,7 @@
 
 trickle -s -d11 apt-get update 
 
-##Limitando downloads no firefox a 15k
+###Limitando downloads no firefox a 15k
 
 trickle -s -d15 firefox 
 
