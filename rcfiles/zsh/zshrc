@@ -88,7 +88,6 @@ plugins=(zsh-autosuggestions git fasd extract systemd.plugin.zsh command-not-fou
 eval "$(fasd --init auto)"
 eval "$(fasd --init posix-alias zsh-hook)"
 
-
 # trying to expand gudo at the begining
 bindkey '^i' expand-or-complete-prefix
 
