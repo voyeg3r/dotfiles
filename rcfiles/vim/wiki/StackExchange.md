@@ -2,7 +2,7 @@
 
     File:		 StackExchange.md
     Created:	 dom 08 jan 2017 09:29:38 BRT
-    Last Change: dom 08 jan 2017 09:30:31 BRT
+    Last Change: dom 08 jan 2017 10:40:20 BRT
     Author:		 Sergio Araujo
     Site:		 http://vivaotux.blogspot.com
     e-mail:      <voyeg3r ✉ gmail.com>
@@ -37,5 +37,9 @@ Urls do tipo:
 
 Podem ter títulos apagados e ainda assim vão apontar pro mesmo endereço
 
-    http://meta.stackexchange.com/questions/23834/
+    http://meta.stackexchange.com/q/23834/
+
+    e a palavra question pode ser abreviada para "q"
+
+    quando se tratar de uma resposta "answer" pode-se abreviar para "a"
 

@@ -1,7 +1,7 @@
-[[Wiki]] do Sérgio para fins diversos=
+# [[Wiki]](Wiki.md) do Sérgio para fins diversos
 
 Criado: Dom 17/Out/2010 hs 14:23
-Last Change: sex 16 dez 2016 07:39:09 BRT
+Last Change: dom 08 jan 2017 10:51:31 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 
