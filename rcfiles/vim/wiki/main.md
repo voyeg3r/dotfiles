@@ -1,39 +1,40 @@
 # [Wiki](Wiki.md) do Sérgio para fins diversos
 
     Criado: Dom 17/Out/2010 hs 14:23
-    Last Change: dom 08 jan 2017 11:32:32 BRT
+    Last Change: dom 08 jan 2017 11:40:11 BRT
     autor: Sérgio Luiz Araújo Silva
     site: http://vivaotux.blogspot.com
 
- [[EnglishNeurolinguistics]] [[EnglishClub]] [[ConCurso]] [[PanDoc]]
+ [EnglishNeurolinguistics](EnglishNeurolinguistics.md) [EnglishClub](EnglishClub.md) [ConCurso](ConCurso.md) [PanDoc](PanDoc.md)
+ [BritisAndAmerican](BritisAndAmerican.md) [RaDios](RaDios.md)  [Libras2kg](Libras2kg.md) [Hh0](Hh0.md)  [GitHub](GitHub.md) [MarkDown](MarkDown.md)
 
- [[BritisAndAmerican]] [[RaDios]]  [[Libras2kg]] [[Hh0]]  [[GitHub]] [[MarkDown]]
+ [ArTigos](ArTigos.md) [EnglishTips](EnglishTips.md) [EnglishLyrics](EnglishLyrics.md)
 
- [[ArTigos]] [[EnglishTips]] [[EnglishLyrics]] SunTzu TaticaEestrategi
+ [SunTzu](SunTzu.md) [TaticaEestrategi](TaticaEestrategi.md)
 
- [[IdiomaticExpressions]] [[DicasLinux]] [[MegaSena]] [[CrunchBang]]
+ [IdiomaticExpressions](IdiomaticExpressions.md) [DicasLinux](DicasLinux.md) [MegaSena](MegaSena.md) [CrunchBang](CrunchBang.md)
 
- [[ArchLinux]]  [[ZsHell]]  [[espiritismo]] [[GrUb]] [[Anki]] [[PlowShare]]
+ [ArchLinux](ArchLinux.md)  [ZsHell](ZsHell.md)  [espiritismo](espiritismo.md) [GrUb](GrUb.md) [Anki](Anki.md) [PlowShare](PlowShare.md)
 
- [[ComandosLinux]] [[DicasDoBash]] [[AwkNewieTutorial]] [[ReCeitas]]
+ [ComandosLinux](ComandosLinux.md) [DicasDoBash](DicasDoBash.md) [AwkNewieTutorial](AwkNewieTutorial.md) [ReCeitas](ReCeitas.md)
 
- CodecsMaverick [[DicasUbuntu]] [[ConTatos]] [[UsandoOgit]]
+ [CodecsMaverick](CodecsMaverick) [DicasUbuntu](DicasUbuntu.md) [ConTatos](ConTatos.md) [UsandoOgit](UsandoOgit.md)
 
- [[PythonSolutions]]  [[Python3]] [[XbMc]] [[GiMp]] [[SegundaVia]]
+ [PythonSolutions](PythonSolutions.md)  [Python3](Python3.md) [XbMc](XbMc.md) [GiMp](GiMp.md) [SegundaVia](SegundaVia.md)
 
- [[UsandoOmercurial]] hg WebdoisPontoZero [[DicasPython]]
+ [UsandoOmercurial](UsandoOmercurial.md) [hg](hg.md) [WebdoisPontoZero](WebdoisPontoZero.md) [DicasPython](DicasPython.md)
 
- [[DicasVim]] [[HaCk]] [[DicasGnome]] [[GnomeShell]] [[VimSnippets]] [[UltiSnips]] [[AnDroid]] [[Inkscape]]
+ [DicasVim](DicasVim.md) [HaCk](HaCk.md) [DicasGnome](DicasGnome.md) [GnomeShell](GnomeShell.md) [VimSnippets](VimSnippets.md) [UltiSnips](UltiSnips.md) [AnDroid](AnDroid.md) [Inkscape](Inkscape.md)
 
- S5criandoSlides FluxBox [[DicasGoogle]] [[DicasWindows]]
+ [S5criandoSlides](S5criandoSlides) [FluxBox](FluxBox) [DicasGoogle](DicasGoogle.md) [DicasWindows](DicasWindows.md)
 
- [[DicasFirefox]] FreeSoftware [[FraSes]] [[EnglishTexts]] [[GeneralEnglishTips]]
+ [DicasFirefox](DicasFirefox.md) [FreeSoftware](FreeSoftware) [FraSes](FraSes.md) [EnglishTexts](EnglishTexts.md) [GeneralEnglishTips](GeneralEnglishTips.md)
 
- OraCoes [[WingChun]] [[GetWallbaseWallpapers]] [[AnDroid]]
+ [OraCoes](OraCoes) [WingChun](WingChun.md) [GetWallbaseWallpapers](GetWallbaseWallpapers.md) [AnDroid](AnDroid.md)
 
- [[DesktopLinux]] [[SofficeCalc]] [[SauDe]] [[LaTex]] [[LatexExemplos]]
+ [DesktopLinux](DesktopLinux.md) [SofficeCalc](SofficeCalc.md) [SauDe](SauDe.md) [LaTex](LaTex.md) [LatexExemplos](LatexExemplos.md)
 
-[[CertidoesNegativasEdocumentos]] [[StackExchange]]
+[CertidoesNegativasEdocumentos](CertidoesNegativasEdocumentos.md) [StackExchange](StackExchange.md)
 
 [CertidoesNegativasEdocumentos](CertidoesNegativasEdocumentos.md) [StackExchange](StackExchange.md)
 
