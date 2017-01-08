@@ -1,4 +1,3 @@
-{{{
 ##English Club
 
 ##Introdução
@@ -30,18 +29,18 @@ facilitam a interação dos membros do clube.
 
 ##Inglês real, usando metodologias como
 
-=== Parallel Reading===
+### Parallel Reading
 
  Os textos são apresentados lado a lado
  uma referência inical é o site: http://paralleltext.io
 
-##Overlearning
+### O verlearning
 
 Trabalhar os materiais de modo repetido, revisitar materiais,
 pois a repetição, especialmente a repetição espaçada, gera um
 nível de retenção incrível no cérebro.
 
-===Total Physical Response===
+### Total Physical Response
 
 Neste método o professor ou tutor da turma representa ações
 como: (caminhar, cantar, pular, pegar um copo, sentar em uma
@@ -51,14 +50,14 @@ de percepção no momento da aquisição de um conheicimento
 mais rápido o aprendizado. Isto também ajuda a romper a
 barreira da timidêz.
 
-===Callan Method.===
+### Callan Method.
 
 Este método é um pouco parecido com o Total Physical
 Response, com a diferença que ao invés de representar as
 ações as pessoas acompanham figuras das ações e objetos, e
 interagem com as afirmações do professor.
 
-===Mini-stories===
+### Mini-stories
 
 http://www.englishclub.com/reading/short-stories.htm
 
@@ -72,7 +71,7 @@ desenvoltura e naturalidade dos membros.
  * anki
  * http://www.memrise.com
 
-===Pimsleur approach===
+### Pimsleur approach
 
 spaced repetition -  First you will be told a foreign
 language phrase and then asked to repeat it.  Next, you will
@@ -104,7 +103,7 @@ tape technology became widespread in the 1970s.
 ##Lexical approach
 
 
-===English dictation channel on youtube===
+### English dictation channel on youtube
 
 That’s a great channel and one of the most important discoveries that I have made lately
 because in order to grow up in hability on english we have be able to listen precisely all sounds -- to get all videos do this:
@@ -213,7 +212,7 @@ what to say next.” Girias da da Internet
 * YW – You’re welcome! (De nada!)
 * ZOMG – Oh, my God! (Aí, meu Deus) [usado para expressar sarcasmo]
 
-##Técnicas para Aprender Inglês e Ampliar Vocabulário pt.1
+### Técnicas para Aprender Inglês e Ampliar Vocabulário pt.1
 
 Publicado em 08/05/2010
 
@@ -291,7 +290,7 @@ desnorteados cada vez que escutam uma palavra sendo
 pronunciada de um jeito diferente ou quando vêem um nativo
 usando uma regra de gramática incorretamente.
 
-##Ler em voz alta ativa o lóbulo frontal do cérebro
+### Ler em voz alta ativa o lóbulo frontal do cérebro
 
 Narrow Reading/ Listening
 Você pode usar essa técnica para
@@ -309,7 +308,7 @@ goste. Encontre vários artigos, livros, podcasts, enfim,
 materiais em geral relacionados com esse tema. Dê prioridade
 aos que forem mais fáceis de entender. E divirta-se!
 
-##A Técnica para Aprender Inglês que Muitos Subestimam
+### A Técnica para Aprender Inglês que Muitos Subestimam
 
 Parte do segredo para se adquirir um vocabulário amplo, em
 qualquer idioma, é a repetição. Eu não conheço nenhum
@@ -326,7 +325,7 @@ Porém enquanto você é iniciante ou intermediário a repetição
 é vital, pois você ainda está construindo a sua base naquele
 idioma. Para aprender mais dicas simples e eficientes:
 
-##Conclusão
+### Conclusão
 
 Por experiência própria e por relatos de outros estudantes
 que utilizaram esses mesmos métodos eu te garanto que
@@ -341,7 +340,7 @@ você tem que repetir o último nível que você cursou.  O
 curioso é que depois que você termina o curso, eles garantem
 que você nunca mais esquece… interessante, não acha???
 
-##Onde eu Aprendi Essas Técnicas?
+### Onde eu Aprendi Essas Técnicas?
 
 Essas dicas vem da Newsletter do site Effortless English e
 das experiências que eu tive colocando o método deles em

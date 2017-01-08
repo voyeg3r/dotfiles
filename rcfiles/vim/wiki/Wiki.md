@@ -24,8 +24,19 @@
 
     command! -nargs=0 Chead2 :.s/^==\([^=].*\)==/## \1/g
     command! -nargs=0 Chead1 :.s/^=\([^=].*\)=/# \1/g
-    
+
     nmap ,2 :%s/^==\([^=].*\)==/##\1/g
     nmap ,1 :%s/^=\([^=].*\)=/#\1/g
 
     :%s/^==\([^=].*\)==/##\1/g
+
+### mapeamento para mudar os links para a notação markdown
+
+     Os links do vimwiki são assim [[Wiki.md|Wiki]]
+     mas esse formato não é bem interpretado pelo github
+     e portante a notação --> [Wiki](Main.md)
+     será usada:
+
+     o comando abaixo faz isso na linha corrente
+
+    .s/\[\[\([^]]*\)\]\]/[\1](\1.md)/g
