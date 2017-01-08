@@ -1,17 +1,13 @@
 priority 1
 
-
 snippet today
-Today is the `date +%Y-%m-%d`
+`date +%c`
 endsnippet
 
 snippet date
 ${2:`date +%Y-%m-%d`}
 endsnippet
 
-snippet "(\w+).par" "Parenthesis (postfix)" r
-(`!p snip.rv = match.group(1)`$1)$0
-endsnippet
 
 snippet lorem "Lorem Ipsum - 50 Words" b
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod

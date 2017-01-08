@@ -1,29 +1,41 @@
+# Dicas sobre o StackExchange e StackOverFlow
+
+    File:		 StackExchange.md
+    Created:	 dom 08 jan 2017 09:29:38 BRT
+    Last Change: dom 08 jan 2017 09:30:31 BRT
+    Author:		 Sergio Araujo
+    Site:		 http://vivaotux.blogspot.com
+    e-mail:      <voyeg3r ✉ gmail.com>
+    Twitter:	 @voyeg3r
+    Github:      https://github.com/voyeg3r
+
 O Stack Exchange tem vários canais de discussão
 sobre diversos assuntos: vim, bash, zsh, awk, sed
 e por aí vai.
 
+### Listar todos os gits no github
+
+    https://gist.github.com/voyeg3r/
+
+
+### Atalhos de teclas nos posts
+
 Quando necessitamos postar uma resposta os atalhos de tecla
 podem ser referenciados da seguinte forma:
-{{{
 
-`:%norm df`<kbd>Ctrl+V</kbd><kbd>Tab</kbd>`x`
+    `:%norm df`<kbd>Ctrl+V</kbd><kbd>Tab</kbd>`x`
 
-}}}
 
 ou seja usando a marcação <kbd> Ctrl-V </kbd>
 
-os textos literais ficam entre backtickets assim:
 
-``` codigo literal ```
+# #Encurtando urls to StackExchange
 
-##Encurtando urls to StackExchange 
-
-{{{
 Urls do tipo:
-http://meta.stackexchange.com/questions/23834/
+
+    http://meta.stackexchange.com/questions/23834/official-shortened-url-service
 
 Podem ter títulos apagados e ainda assim vão apontar pro mesmo endereço
 
-http://meta.stackexchange.com/questions/23834/
+    http://meta.stackexchange.com/questions/23834/
 
-}}}

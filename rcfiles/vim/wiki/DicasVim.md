@@ -2,13 +2,20 @@
 ------------------------------------------
 File:		 DicasVim.md
 Created:     Sáb 06/Nov/2010 hs 18:10
-Last Change: sex 06 jan 2017 07:04:41 BRT
+Last Change: dom 08 jan 2017 08:45:01 BRT
 Author:		 Sergio Araujo
 Site:		 http://vivaotux.blogspot.com
 e-mail:      <voyeg3r ✉ gmail.com>
 Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ------------------------------------------
+
+### Getting rid of '-' on html links
+[source: stackoverflow](http://stackoverflow.com/questions/41529264/)
+
+    <a href="https://example.com/hello world hi">hello-world-hi</a>
+
+    :s/\%V-\%V/ /g
 
 ## tips about ultisnips
 source: http://vimcasts.org/episodes/ultisnips-visual-placeholder/
