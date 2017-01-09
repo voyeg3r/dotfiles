@@ -382,7 +382,7 @@ augroup python
     au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
     au! BufNewFile *.py 0r ~/.vim/skel/template.py
     au BufNewFile *.py exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
-    au! Buf *.py :silent !chmod a+x <afile>
+    au! BufWritePost *.py :silent !chmod a+x <afile>
     autocmd FileType python set textwidth=79
     autocmd FileType python filetype indent on
     let python_highlight_all=1
