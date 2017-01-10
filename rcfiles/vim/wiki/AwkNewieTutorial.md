@@ -28,7 +28,7 @@ FILENAME : Name of current input file
 
     A)
 
-#Print 'line number' NR and 'Number of fields' NF for each line
+# Print 'line number' NR and 'Number of fields' NF for each line
 
 
     $ awk -F ":" '{print NR,NF}' test1.txt
@@ -43,7 +43,7 @@ FILENAME : Name of current input file
 
     B)
 
-#Print first field, colon delimited
+# Print first field, colon delimited
 
 
     $ awk -F ":" '{print $1}' test1.txt
@@ -58,7 +58,7 @@ FILENAME : Name of current input file
 
     C)
 
-#Same as B, but excluding the 'first line' (NR!=1)
+# Same as B, but excluding the 'first line' (NR!=1)
 
 
     $ awk -F ":" 'NR!=1 {print $1}' test1.txt
@@ -72,7 +72,7 @@ FILENAME : Name of current input file
 
     D)
 
-#Same as B but only for line number 1 (NR==1)
+# Same as B but only for line number 1 (NR==1)
 
 
     $ awk -F ":" 'NR==1 {print $1}' test1.txt
@@ -80,7 +80,7 @@ FILENAME : Name of current input file
 
     E)
 
-#Print first and second field
+# Print first and second field
 
 
     $ awk -F ":" 'NR!=1 {print $1,$2}' test1.txt
@@ -94,7 +94,7 @@ FILENAME : Name of current input file
 
     F)
 
-#Setting output field separator as pipe
+# Setting output field separator as pipe
 
 
     $ awk -F ":" 'BEGIN{OFS="|"} NR!=1 {print $1,$2}' test1.txt
@@ -108,7 +108,7 @@ FILENAME : Name of current input file
 
     G)
 
-#FS and OFS can be included in BEGIN section
+# FS and OFS can be included in BEGIN section
 
 
     $ awk 'BEGIN{FS=":"; OFS="|"} NR!=1 {print $1,$2}' test1.txt
@@ -122,7 +122,7 @@ FILENAME : Name of current input file
 
     H)
 
-#Anything on BEGIN executes first
+# Anything on BEGIN executes first
 
 
     $ awk 'BEGIN{FS=":"; OFS="|"; print "Con|SomeVal"} NR!=1 {print $1,$2}' test1.txt
@@ -137,7 +137,7 @@ FILENAME : Name of current input file
 
     I)
 
-#Printing FILENAME, will be printed for all the lines
+# Printing FILENAME, will be printed for all the lines
 
 
     $ awk -F ":" '{print FILENAME}' test1.txt
@@ -150,7 +150,7 @@ FILENAME : Name of current input file
     test1.txt
     test1.txt
 
-#Same as above but printing only last instance using END clause
+# Same as above but printing only last instance using END clause
 
 
     $ awk -F ":" ' END {print FILENAME}' test1.txt
@@ -158,7 +158,7 @@ FILENAME : Name of current input file
 
     J)
 
-#Revisiting NF, number of fields in each line
+# Revisiting NF, number of fields in each line
 
 
     $ awk -F ":" '{print NF}' test1.txt
@@ -173,7 +173,7 @@ FILENAME : Name of current input file
 
     K)
 
-#Printing the last field of the file, same as printing $2 as there are only 2 fields
+# Printing the last field of the file, same as printing $2 as there are only 2 fields
 
 
     $ awk -F ":" '{print $NF}' test1.txt
@@ -188,7 +188,7 @@ FILENAME : Name of current input file
 
     L)
 
-#Matching, printing lines begin with "AS"
+# Matching, printing lines begin with "AS"
 
 
     $ awk -F ":" '/^AS/' test1.txt
@@ -206,7 +206,7 @@ FILENAME : Name of current input file
     OC:12000
     AF:500
 
-#Direct matching, first field as "AS"
+# Direct matching, first field as "AS"
 
 
     $ awk -F ":" '$1=="AS"' test1.txt
@@ -263,7 +263,7 @@ FILENAME : Name of current input file
 
     N)
 
-#Partial Matching
+# Partial Matching
 
 
     $ awk -F ":" '$1 ~ /AS/ {print}' test1.txt
@@ -281,7 +281,7 @@ FILENAME : Name of current input file
 
     O)
 
-#Reading from STDOUT
+# Reading from STDOUT
 
 
     $ cat test1.txt | awk -F ":" '!/Continent/ {print $1}' | sort | uniq
@@ -292,7 +292,7 @@ FILENAME : Name of current input file
 
     P)
 
-#Add value 1000 to the 2nd field, where first field is "AF" and then print the output file
+# Add value 1000 to the 2nd field, where first field is "AF" and then print the output file
 
 
     $ awk -F ":" '$1=="AF" {$2+=1000} {print}' test1.txt
@@ -305,7 +305,7 @@ FILENAME : Name of current input file
     AF 1500
     AS:1000
 
-#As no OFS is mentioned above, by default, OFS is blank, specifying it now
+# As no OFS is mentioned above, by default, OFS is blank, specifying it now
 
 
     $ awk -F ":" 'BEGIN {OFS=":"} $1=="AF" {$2+=1000} {print}' test1.txt
@@ -320,13 +320,13 @@ FILENAME : Name of current input file
 
     Q)
 
-#Sum of 2nd fields, exclude first line
+# Sum of 2nd fields, exclude first line
 
 
     $ awk -F ":" 'NR!=1 {sum+=$NF} END {print sum}' test1.txt
     51000
 
-#If END is not mentioned ?
+# If END is not mentioned ?
 
 
     $ awk -F ":" 'NR!=1 {sum+=$NF} {print sum}' test1.txt
@@ -338,7 +338,7 @@ FILENAME : Name of current input file
     50000
     51000
 
-#Average of 2nd field, as first field is excluded, (NR-1) instead of NR for total number of items
+# Average of 2nd field, as first field is excluded, (NR-1) instead of NR for total number of items
 
 
     $ awk -F ":" 'NR!=1 {sum+=$NF} END {print sum/(NR-1)}' test1.txt
@@ -360,7 +360,7 @@ Continent:Count:Sum(val)
     AF:2:10300
     AS:3:25300
 
-#Count of each of the continents(1st field)
+# Count of each of the continents(1st field)
 
 
     $ awk -F ":" '
@@ -371,7 +371,7 @@ Continent:Count:Sum(val)
     AF 2
     AS 3
 
-#An alternative
+# An alternative
 
 
     $ awk -F ":" 'NR!=1 {print $1}' test1.txt  | sort | uniq -c
@@ -380,7 +380,7 @@ Continent:Count:Sum(val)
     1 NA
     1 OC
 
-#Reading from STDOUT
+# Reading from STDOUT
 
 
     $ cat test1.txt | awk 'BEGIN {OFS=":"} {print NR-1,$0}'
@@ -395,7 +395,7 @@ Continent:Count:Sum(val)
 
     S)
 
-#Accessing external variable in awk:
+# Accessing external variable in awk:
 
 
     $ awk -F ":" '$1=="AS" {print $2}' test1.txt
@@ -403,14 +403,14 @@ Continent:Count:Sum(val)
     12300
     1000
 
-#Suppose value of filterval is "AS"
+# Suppose value of filterval is "AS"
 
 
     $ filterval="AS"
     $ echo $filterval
     AS
 
-#Accessing value of variable filterval inside Awk
+# Accessing value of variable filterval inside Awk
 
 
     $ awk -F ":" -v con=$filterval '$1==con {print $2}' test1.txt
@@ -418,7 +418,7 @@ Continent:Count:Sum(val)
     12300
     1000
 
-#Set 2nd value as 0 where first field is "AS"
+# Set 2nd value as 0 where first field is "AS"
 
 
     $ awk -F ":" 'BEGIN {OFS=":"} $1=="AS" {$2=0} {print}' test1.txt

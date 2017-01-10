@@ -7,7 +7,6 @@
     twitter: voyeg3r
     email: voyeg3r at gmail.com
 
-
     Ctrl + shift + Esc
 
 ### Exibe os programas que estão abertos (possibilitando mata-los)

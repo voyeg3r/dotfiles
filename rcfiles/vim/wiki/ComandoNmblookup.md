@@ -1,10 +1,10 @@
-##Introdução
+### Introdução
 Resolve o hostname à partir de um IP
 
 nmbloockup -A 172.30.34.5
 
 
-###Script para pegar hostnames
+### Script para pegar hostnames
 
 #!/bin/bash
 # Criado em:ter 04/nov/2008 hs 08:34
@@ -33,4 +33,3 @@ done
 # para ler todas as dicas que postei sobre shell script / bash acesse:
 # http://vivaotux.blogspot.com/search/label/bash
 
- 

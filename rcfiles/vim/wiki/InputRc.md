@@ -5,17 +5,17 @@ autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
-###O arquivo inputrc
+### O arquivo inputrc
 
 Controla atalhos de teclado do bash, com uma configuração adequada
 somada às configurações do /etc/bash_completion.d/ temos um terminal
 bastante amigável
 
-##Como listar os atalhos do terminal
+### Como listar os atalhos do terminal
 
   bind -p
 
-## Magic space
+### Magic space
 
 Digitando
 

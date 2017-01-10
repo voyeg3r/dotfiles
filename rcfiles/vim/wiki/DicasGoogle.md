@@ -1,22 +1,26 @@
 # Arquivo: dicas sobre o google
 
-    Criado: Sex 05/Out/2012 hs 07:45
-    Last Change: dom 08 jan 2017 19:16:40 BRT
-    autor: Sérgio Luiz Araújo Silva
-    site: http://vivaotux.blogspot.com
-    twitter: http://www.twitter.com/voyeg3r
-    email: <voyeg3r  gmail.com>
+   File:		 DicasGoogle.md
+   Criado:       Sex 05/Out/2012 hs 07:45
+   Last Change:  seg 09 jan 2017 19:02:48 BRT
+   Author:		 Sergio Araujo
+   Site:		 http://vivaotux.blogspot.com
+   e-mail:       <voyeg3r ✉ gmail.com>
+   Twitter:	     @voyeg3r
+   Github:       https://github.com/voyeg3r
 
-## # Como encontrar fontes no google
+### Como encontrar fontes no google
 
 	intitle "index of" (ttf | otf) meridean -html -htm -php -asp -cf -jsp
 
 ### Lista de todos os recursos do google
 * http://www.google.com/help/features.html
 
-## # Link direto pra baixar filmes
+### # Link direto pra baixar filmes
 
-    To find direct download link for movies, search “[movie name] -inurl:(htm|html|php|pls|txt) intitle:index.of “last modified” (mkv|mp4|avi)”.
+    To find direct download link for movies, search “[movie name]
+
+    -inurl:(htm|html|php|pls|txt) intitle:index.of “last modified” (mkv|mp4|avi)”.
 
 ### Como buscar fontes, livros e mp3 no google?
 
@@ -46,3 +50,4 @@
 
     quanto de espaço estou ocupando na minha conta google?
     https://www.google.com/settings/storage
+

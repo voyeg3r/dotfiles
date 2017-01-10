@@ -20,7 +20,7 @@ email: <voyeg3r  gmail.com>
     Shift-r ................ record video
     Shift-s ................ capture image
 
-## Volume
+### Volume
 
     Ctrl-up ................ increase volume
     Ctrl-down .............. decrease volume
@@ -28,7 +28,7 @@ email: <voyeg3r  gmail.com>
     f ...................... full screen
     show playlist .......... <ctrl>l
 
-## Consertando o download de legendas no Vlc
+### Consertando o download de legendas no Vlc
 
 On windows edit: c:\windows\System32\drivers\etc\hosts
 

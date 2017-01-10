@@ -1,4 +1,4 @@
-##Introdução
+### Introdução
 fonte: http://ivanix.wordpress.com/2009/01/17/ferramentas-que-auxiliam-na-monitoracao-de-processos/
 
 O comando pidof, assim como o comando pgrep, localiza o ID de um processo. A
@@ -19,7 +19,7 @@ nome, também localiza por outros atributos, como usuário, por exemplo.
 
     pkill firefox-bin
 
-###testando se um programa está rodando
+### testando se um programa está rodando
 
     if ! pidof program; then
         echo "program not found"

@@ -51,7 +51,7 @@ other word, wich is "line"
      I got another line from another movie
      this yis an old movie ...
 
-###What means ...
+### What means ...
 
 -STARE --------------------------------------------------------
  You wear a brain-wave monitoring device and you
@@ -99,7 +99,7 @@ Temos de o fazer para impulsionar o processo e mantê-lo em andamento.
   full  fully
 
 
-##Rules to lean faster
+### Rules to lean faster
 
 In english learning, never says wrong sppeling, never show to
 your students or even yourself the wrong sound. Taking care
@@ -124,7 +124,7 @@ Listen real english, if it's possible native speakers, because your
 pronunciation is naturally correct, the reduction (combining words)
 become part you learn process in natural way.
 
-##Internet Slangs
+### Internet Slangs
 
 +------------------------------------+
 |      INTERNET SLANGS               |
@@ -146,7 +146,7 @@ become part you learn process in natural way.
 | R.U.D.Z       = Are you dizzy?    |
 +------------------------------------+
 
-##combining words in english
+### combining words in english
 
  This is also noumed as reduction or slurring of words
 
@@ -221,22 +221,22 @@ become part you learn process in natural way.
  shewants t 'takeavo'cation
 
 
-##Programa para pronunciar textos no linux
+### Programa para pronunciar textos no linux
 
 * http://opensourcecoders.blogspot.com/2011/05/jws-just-wanna-say.html
 
 jws --language=en --backend=external --backend-options=mplayer "Hello world! I'm a fancy little lovely text-to-speech program."
 
-##link do english rocks podcast
+### link do english rocks podcast
 
 http://www.englishrox.com/especiais/episode-27-especial-u2/
 
-##letras traduzidas
+### letras traduzidas
 
 Europe - The Final Cound Down - http://goo.gl/eqF6U
 Queen - Radio Gaga - http://goo.gl/Sa1p8
 
-##frases traduzidas
+### frases traduzidas
 
 They had a special art to tame wild beasts; they rode[past of ride] on white
 elephants, with large body and short trunk that they painted [...]
@@ -1563,7 +1563,7 @@ Looks are deceiving!
 (As aparências enganam!).
 
 your hot skin
-#sua pele quente
+# sua pele quente
 
 refresh your skin
 

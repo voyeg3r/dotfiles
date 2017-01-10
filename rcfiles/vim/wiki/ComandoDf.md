@@ -1,4 +1,4 @@
-###Introdução 
+### Introdução
 Exibe o espaço livre 'disck free'
 
 df -H
@@ -13,4 +13,3 @@ A combinação de comandos permite coisas do tipo
 PENDRIVE=$(df |grep sdb|awk '{print $NF}')
 
 
- 

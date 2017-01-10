@@ -1,4 +1,4 @@
-###Introdução
+### Introdução
 fonte: http://rmenezes.orgfree.com/index.php/analise-de-software-do-fedora-iftop-uso-de-rede-por-conexao/
 O comando top mostra quais processos estão usando a maioria do tempo de processamento e memória e o iotop mostra a utilização de interrupção de input/output. O iftop é um pouco diferente dessas aplicações, ele mostra o uso da rede por conexão. A visualização padrão mostra os destinos das conexões (números das portas podem ser vistos usando o atributo p), com os volumes de dados transmitidos em um formato numérico e gráficos horizontais.
 Várias funções provêm o controle do vídeo, pressione o ? para ver uma página desses controles pelo help. O iftop também tem a opção por linha de comando de filtrar por tipo de tráfico e seleção de interfaces.

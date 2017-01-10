@@ -1,4 +1,4 @@
-##Introdução
+### Introdução
 O comando tr faz troca de caracteres
 
  tr 'A-Z' 'a-z' <<< "CASA"
@@ -7,15 +7,15 @@ O comando tr faz troca de caracteres
 
     tr -d '[:punct:]'
 
-###Remover ^M
+### Remover ^M
 
 tr -d "\n\r" < arquivo.velho > arquivo.novo
 
-##exibindo o $PATH de forma mais legível
+### exibindo o $PATH de forma mais legível
 
 tr ":" "\n" <<<$PATH
 
-##Extraindo números negativos de um arquivo
+### Extraindo números negativos de um arquivo
 
 cat file.txt
 -5232,-92338,84545,34

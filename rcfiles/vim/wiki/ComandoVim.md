@@ -1,31 +1,31 @@
 
 {{{
 
-###Introdução
-##fonte consolas no linux
+### Introdução
+### fonte consolas no linux
 * http://igordevlog.blogspot.com/2007/05/how-to-consolas-font-in-linux.html
 
-##usando o plugin vimball
+### usando o plugin vimball
 
 mkdir ~/.vim/bundle/neocomplcache
 
 :let g:vimball_home="~/.vim/bundle/neocomplcache"
 :so %
 
-##inserindo uma linha em branco após cada seguda linha 
+### inserindo uma linha em branco após cada seguda linha
 
     :%s,.*\n.*\n,\0\r,g
 
-##Formatando css no vim
+### Formatando css no vim
 * http://stackoverflow.com/questions/1422866/
 
-#main {
+# main {
       padding:0;
       margin: 10px auto;
 }
 # quero deixa-lo assim:
 
-#main {padding:0;margin:10px auto;}
+# main {padding:0;margin:10px auto;}
 
 Here's a one-liner:
 
@@ -39,7 +39,7 @@ The inverse (converting the one-line version to multi-line) can also be done as 
 
 :%s/{\_.\{-}}/\=substitute(submatch(0), '[{;]', '\0\r', 'g')/
 
-##Resolvendo problema de permissões
+### Resolvendo problema de permissões
 Algumas vezes você começa a editar um arquivo importante do sistema para em seguida se dar
 conta de que está fazendo isto como usuário comun, para resolver esta situação:
 
@@ -52,81 +52,81 @@ cmap w!! %!sudo tee > /dev/null %
 "       /(_)\
 "        ^ ^
 
-##setando uma variável ao abrir
+### setando uma variável ao abrir
 
 vi +"se nu" Pessoa.py
 
-##inserindo comentários
+### inserindo comentários
 
 " Perl, Python and shell scripts
 autocmd BufNewFile,BufRead *.py,*.pl,*.sh vmap u :-1/^#/s///<CR>
 autocmd BufNewFile,BufRead *.py,*.pl,*.sh vmap c :-1/^/s//#/<CR>
 
-##Que tal fazer substituição somente nas próximas 4 linhas?
+### Que tal fazer substituição somente nas próximas 4 linhas?
 
 :s/isto/aquilo/g 4
 
-##Editando o histórico de comandos do vim
+### Editando o histórico de comandos do vim
 
 Com o cursor posicionado na linha de comandos do vim pressione:
 <ctrl-f> abre o histórico de comandos do vim para edição
 
-##tirando linhas em branco duplicadas
+### tirando linhas em branco duplicadas
 
 :%v/./,/./-j
 
-##destacando linhas duplicadas
+### destacando linhas duplicadas
 
 :g/^\(.*\)\n\ze\%(.*\n\)*\1$/#
 
-##juntando todas as linhas do arquivo
+### juntando todas as linhas do arquivo
 
 :g/./-j
 
 :%j
 
-##salvando um trecho para outro arquivo
+### salvando um trecho para outro arquivo
 
 :20,45 w! ~/tmp/file.txt
 
-##incrementando números
+### incrementando números
 
 :4,$s/\d\+/\=submatch(0) + 1/
 
 veja também o plugin visincr - faz incremento de um trecho selecionado
 [[@http://www.vim.org/scripts/script.php?script_id=670]]
-##mantendo uma linha a mais visível ao fazer a rolagem
+### mantendo uma linha a mais visível ao fazer a rolagem
 
 set scrolloff=2
 
-##ignorando espaços no modo diff
+### ignorando espaços no modo diff
 
 set diffopt+=iwhite
 
-##destacando a linha ativa
+### destacando a linha ativa
 
 :set cursorline
 
-##correções para o livro
+### correções para o livro
 
 haverpa .... procure e corrija esta palavra
 no modo normal, ato de deletar...
 ("mudança")
 na seção 2.11 citar o a seção "trabalhando com janelas"
 
-##inserção em bloco vertical
+### inserção em bloco vertical
 
 ctrl-v  shift-v + insert
 
-##comparando dois arquivos remotamente com o vim
+### comparando dois arquivos remotamente com o vim
 
 vimdiff <file> scp://[<user>@]<host>/<file>
 
-##comando vim
+### comando vim
 
 vim -c "5,10s/a/b/g | wq" filename
 
-##<span class="mw-headline">Boolean options</span>
+###<span class="mw-headline">Boolean options</span>
 fonte - wikia
 The many ways to set a boolean option are best illustrated by a simple example. In the following, the 'number' option is used. Any boolean option, such as wrap, linebreak, diff, etc can be set in these ways.
 || {{:set number}} || Turn line numbers on ||
@@ -153,7 +153,7 @@ O comando:
 
 pesquisa definições também, mas só lista a primeira.
 
-##setando a barra de título
+### setando a barra de título
 
 let &titlestring = hostname() . " - " . expand("%:p")
 
@@ -164,46 +164,46 @@ Se você posicionar o cursor sob uma palavra e pressionar:
 
 o vim pesquisará no arquivo corrente e nos includes, retornando a primeira
 ocorrência na nova janela.
-##contanto ocorrências de palavras
+### contanto ocorrências de palavras
 
 :%s/palavra//gn
 " contagem de ocorrências de uma palavra (case insensitive)
 nmap <F4> <esc>mz:%s/\c\<\(<c-r>=expand("<cword>")<cr>\)\>//gn<cr>`z
 nmap <s-F4> <esc>mz:%s/\c\(<c-r>=expand("<cword>")<cr>\)//gn<cr>`z
 
-##plugin fontsize
+### plugin fontsize
 aumenta a fonte com <leader>++
 * http://www.vim.org/scripts/script.php?script_id=2809#0.1.0
 
-##exibindo todos os snippets disponíveis
+### exibindo todos os snippets disponíveis
 No plugin snipmate
 
 <c-r><tab>
 
-##Abrir com o vim o último arquivo/diretório editado
+### Abrir com o vim o último arquivo/diretório editado
 
 vim $( ls -t | head -n1 )
 :nohls ..... desabilita cores nas buscas
 
-##Manipulando o nome do arquivo
+### Manipulando o nome do arquivo
 
 amenu 20.351 &Edit.Copy\ fName :let @*=expand("%:t")<CR>
 amenu 20.352 &Edit.Copy\ fPath :let @*=expand("%:p:h")<CR>
 amenu 20.353 &Edit.Copy\ rName :let @*=expand("%:.")<CR>
 
-##salvar ao sair do modo insert
+### salvar ao sair do modo insert
 
 :au InsertLeave <buffer> w
 
-##buscar global clicável
+### buscar global clicável
 
 :vimgrep /pattern/ %.
 
-##Após instalar um doc
+### Após instalar um doc
 
 :helptags ~/.vim/doc
 
-##dicas de busca
+### dicas de busca
 
 " contagem de ocorrências de uma palavra (case insensitive)
 nmap <F4> :%s/\c\(<c-r>=expand("<cword>")<cr>\)//gn<cr>
@@ -211,7 +211,7 @@ nmap <F4> :%s/\c\(<c-r>=expand("<cword>")<cr>\)//gn<cr>
 " mapeamento para colocar palavra sob o cursor na busca
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
-##Definindo a fonte e estilo do mouse
+### Definindo a fonte e estilo do mouse
 
 "use our custom font
 if has("gui")
@@ -222,7 +222,7 @@ if has("gui")
   set mousemodel=extend
 endif
 
-##estou tentando pegar uma palavra para um comando isto é só anotação
+### estou tentando pegar uma palavra para um comando isto é só anotação
 
 function! OnlineDoc()
   let s:browser = "firefox"
@@ -241,12 +241,12 @@ endfunction
 " Online doc search.
 map <LocalLeader>k :call OnlineDoc()<CR>
 
-##Sempre usar unicode utf-8
+### Sempre usar unicode utf-8
 
 " *always* use Unicode
 set encoding=utf-8 fileencodings=
 
-##Definindo o Compilador
+### Definindo o Compilador
 
 if has("autocmd")
   autocmd BufRead,BufNewFile *.java set makeprg=javac\ %
@@ -258,7 +258,7 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.tex set makeprg=latex\ %
 endif
 
-##project plugin
+### project plugin
 * http://www.vim.org/scripts/script.php?script_id=69
 * [[http://github.com/tomasr/dotfiles/blob/9856d9635c45edf67f91b7d63a6d303161c70b5b/.vim/doc/project.txt|leia também]]
 
@@ -300,19 +300,19 @@ let g:proj_window_increment = 50
 " habilitar e desabilitar o plugin
 nmap <silent> ,p <Plug>ToggleProject<cr>
 
-##dicas de substituição
+### dicas de substituição
 
 :%s/foo/\=@a/g ...... \=@a (conteúdo do registro a)
 
-##dica do comando global
+### dica do comando global
 
  :g/pattern/# ...... o '#' faz exibir o número da linha
 
-##dicas para nmap
+### dicas para nmap
 
 nnoremap <Space> :
 
-##dica para bufdo
+### dica para bufdo
 
 :bufdo %s/pattern/substitution/ge | update
 
@@ -322,7 +322,7 @@ g – change all instances in a line
 e – avoid an error when the pattern doesn’t exist in a buffer
 update – write the file only if changes were made
 See also :help :argdo.
-##gerando uma lista
+### gerando uma lista
 * http://vim.wikia.com/wiki/Increasing_or_decreasing_numbers
 
 :0put =range(11,15)
@@ -359,11 +359,11 @@ Usando comandos externos
 009
 010
 
-##copiando o arquivo para o clipboard
+### copiando o arquivo para o clipboard
 
 :%y+
 
-##change case
+### change case
 * http://vim.wikia.com/wiki/Switching_case_of_characters
 "widdle case
 "With the following (for example, in vimrc), you can visually select text then press ~ to convert "the text to UPPER CASE, then to lower case, then to Title Case. Keep pressing ~ until you get the "case you want.
@@ -380,7 +380,7 @@ function! TwiddleCase(str)
 endfunction
 vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
 
-##Comando global para colocar sublinhado
+### Comando global para colocar sublinhado
 
 :g/^Chapter/t.|s/./-/g
 
@@ -397,9 +397,9 @@ s ........... substituição
 - ........... por traço
 g ........... globalmente
 
-##Syntax em regiões do texto
+### Syntax em regiões do texto
 * http://vim.wikia.com/wiki/Creating_your_own_syntax_files
-##dicas do modo de inserção
+### dicas do modo de inserção
 
  ^w ............ apaga palavra anterior ao cursor
  ^rp = "+p
@@ -408,7 +408,7 @@ g ........... globalmente
  ^e ............ repete linha abaixo
  ^y ............ repete linha acima
 
-##fuzzyfinder
+### fuzzyfinder
 
 map <leader>f <esc>:FuzzyFinderFile<cr>
 map <leader>b <esc>:FuzzyFinderBookmark<cr>
@@ -417,48 +417,48 @@ map <leader>d <esc>:FuzzyFinderDir<cr>
 map <leader>m <esc>:FuzzyFinderMruFile<cr>
 let g:fuzzy_matching_limit=25
 
-##set
+### set
 
 set shiftwidth=3
 set tabstop=3
 set expandtab
 
-##mostrar caracteres ocultos
+### mostrar caracteres ocultos
 
 set listchars=tab:\|\ ,extends:>,precedes:<,trail:-,nbsp:%
 nmap <silent> <leader>s :set nolist!<CR>
 
-##Abrir novos arquivos em abas
+### Abrir novos arquivos em abas
 fonte: http://eustaquiorangel.com/blog/show/477
 
 alias tvim="gvim --servername `gvim --serverlist | head -1` --remote-tab"
 
-##path
+### path
 Para fazer buscas mais legais use...
 
 set path+=**
 nmap <d-t> :e **/
 :find filename
 
-##bufdo
+### bufdo
 
 :bufdo exe "normal @q" | w   : perform a recording on open files
 
-##Opções
+### Opções
 
 set ve=all     "permite mover o cursor para áreas onde não há texto
 set ttyfast    "Envia mais caracteres ao terminal, melhorando o redraw de janelas.
 
-##Vim como editor binário
+### Vim como editor binário
 
  :%!xxd ........... entra em modo binário
  :%!xxd -r ........ volta ao modo normal
 
-##Livros
+### Livros
 * aprendendo vim (inglês) http://www.mediafire.com/download.php?3yzmzzykzyi
 * hackeando o vim (inglês) http://www.mediafire.com/download.php?mbjxhmjznmo
 
-##spell
+### spell
 1. É necessário o dicionário do [[http://www.broffice.org/verortografico/baixar|broffice]] (vero).
 2. Descompacte o arquivo no seu home.
 3. Abra o vim e digite <span style="font-family: courier new;">**:mkspell pt pt_BR**</span>
@@ -511,7 +511,7 @@ endfunction
 set balloonexpr=FoldSpellBalloon()
 set ballooneval"}}}
 
-##syntaxe
+### syntaxe
 
 syn match   txtH1         "=[^=].*="hs=s+1,he=e-1
 syn match   txtH2         "==[^=].*=="hs=s+2,he=e-2
@@ -521,7 +521,7 @@ hi link txtH1           String
 hi link txtH2           String
 hi link txtH3           String
 
-##Atalhos do plugin surround
+### Atalhos do plugin surround
 
 Text              Command    New Text
 ---------------   -------    -----------
@@ -577,10 +577,10 @@ Insert mode
 <CTRL-g>s - same as <CTRL-s>
 <CTRL-g>S - same as <CTRL-s><CTRL-s>
 
-##site que indica muitos plugins
+### site que indica muitos plugins
 * http://mysite.verizon.net/astronaut/vim/
 
-##alterar a cor da linha de status
+### alterar a cor da linha de status
 
 " altera a cor da linha de status dependendo do modo
 if version >= 700
@@ -588,10 +588,10 @@ if version >= 700
   au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
 endif
 
-##vimrc para windows
+### vimrc para windows
 * http://download104.mediafire.com/00lis3ieyjwg/2yonejyowl1/_vimrc
 
-##broken terminals - cure for the vim
+### broken terminals - cure for the vim
 * fonte: http://vimrc-dissection.blogspot.com/
 Many times I have come across broken terminals screwing vim handling
 of shortcuts. Or vim just do not expect that some keys may produce
@@ -612,7 +612,7 @@ The cure is:
 :global /^Capítulo [0-9]$/ . w >> index.txt   .... joga linhas para um
 arquivo
 
-##Junção de linhas com vim
+### Junção de linhas com vim
 * Colaboração: Rubens Queiroz de Almeida
 * original do dicas-l: http://www.dicas-l.com.br/dicas-l/20081228.php
 
@@ -637,7 +637,7 @@ Explicando:
 g/^Matrícula     busca, no arquivo inteiro (g) pela palavra Matrícula na primeira coluna
 s/\n/ - /     substitui a quebra de linha (\n), pelos caracteres ** - **. Esta substituição faz a junção das duas linhas adjacentes
 
-##backup
+### backup
 * fonte: http://www.dicas-l.com.br/dicas-l/20081212.php
 * http://writequit.org/blog/?cat=464
 A primeira define que quero backups e a segunda onde devem ser mantidas as cópias dos trabalhos.
@@ -645,7 +645,7 @@ A primeira define que quero backups e a segunda onde devem ser mantidas as cópi
 set backup
 set backupdir=~/.backup,./.backup
 
-##extensão para o firefox usar o vim
+### extensão para o firefox usar o vim
 * https://addons.mozilla.org/pt-BR/firefox/addon/4125
 
 O mapeamento abaixo leva em conta o complemento automático
@@ -656,7 +656,7 @@ o mapeamento
 imap <F4> `
 nmap <F4> `
 
-##destacar palavra sob o cursor
+### destacar palavra sob o cursor
 
 " mostra a palavra atual destacada
 nnoremap <F10> :set hls<CR>:let @/="<C-r><C-w>"<CR>
@@ -665,12 +665,12 @@ python_highlight_numbers
 python_highlight_builtins
 python_highlight_exceptions
 
-##prevent vim from going to replace mode
+### prevent vim from going to replace mode
 Simpliest trick on the block. Took me long time to figure out.
 
 imap <Insert> <Nop>
 
-##funções para html
+### funções para html
 
 "http://pastebin.com/f784c635a
 
@@ -754,14 +754,14 @@ endfunction " InsertCloseTag()
 ""============================================================
 " fim das funções para html
 
-##vimrc
+### vimrc
 * http://amix.dk/vim/vimrc.html
 
-##Alguns mapeamentos
+### Alguns mapeamentos
 
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-##mapeamento para fechar tags html
+### mapeamento para fechar tags html
 
 :imap > >   <esc>yF<A<esc>p<esc>F<a/<esc>F<F><right>
 
@@ -780,7 +780,7 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
   10 - vai para '<' anterior
   11 - vai para o '>' anterior e avança para a direita <right>
 
-##skel html
+### skel html
 Eu uso duas abordagens para inserir modelos (templates) de
 documentos no vim:
 * skels - modelos que são insridos no novo documento
@@ -814,7 +814,7 @@ Autor: <+seu nome aqui+>
 </body>
 </html>
 
-##função para ordenação
+### função para ordenação
 O vim 7 tem uma função interna chamada 'sort'
 
 :sort
@@ -928,7 +928,7 @@ endfunction
 
     '<,'>!sort -n
 
-##dicas úteis
+### dicas úteis
 * referência: http://www.dicas-l.com.br/dicas-l/19970430.php
 O comando
 
@@ -945,16 +945,16 @@ O comando
 irá efetuar a mesma pesquisa, porém as linhas que se encaixarem no
 argumento de pesquisa serão copiadas para o final do arquivo.
 
-##Vim quickref
+### Vim quickref
 http://vim.sourceforge.net/htmldoc/quickref.html
 
-##vimrc
+### vimrc
 http://aurelio.net/vim/vimrc-ivan.txt
 
-##Vim grep
+### Vim grep
 fonte: http://vim.wikia.com/wiki/Find_in_files_within_Vim
 
-##Setando o vim no bash
+### Setando o vim no bash
 coloque no seu .bashrc
 
   set -o vi
@@ -963,10 +963,10 @@ let python_highlight_all=1
 let python_highlight_exceptions=0
 let python_highlight_builtins=0
 
-##Editando via puty com cores
+### Editando via puty com cores
 fonte: http://vim.wikia.com/wiki/Using_vim_color_schemes_with_Putty
 
-##Função para buscar arquivos
+### Função para buscar arquivos
 fonte: http://www.vim.org/tips/tip.php?tip_id=1432
 Para usar faça:
 
@@ -1010,7 +1010,7 @@ endfunction
 
 command! -nargs=1 Find :call Find("<args>")
 
-##Verbose Regular Expressions for Vim
+### Verbose Regular Expressions for Vim
 fonte: http://vim.wikia.com/wiki/Verbose_Regular_Expressions_for_Vim
 Many regular expression engines have support for verbose regular expressions, but unfortunately Vim seems to lack built in support. In order to simulate the effect, you can build a regular expression gradually:
 
@@ -1028,7 +1028,7 @@ let s:VerboseRegularExpressionMatcher = s:VREM
 " Use it:
 let result = matchstr("    else if (xyz == 1)", s:VerboseRegularExpressionMatcher)
 
-##Transformando arquivo rst em latex
+### Transformando arquivo rst em latex
 
 Os arquivos fonte encontram-se em formato rest (rst) e para trocar
 
@@ -1081,7 +1081,7 @@ Localizar trechos ``````````````````````````````````````````````````````````````
 e substituir por {\em{palavra}}
 :%s/\`\`\([^`]*\)\`\`/{\\em{\1}}/g//
 
-##//saltos no vim//
+###//saltos no vim//
 
 //Vim stores a list of your movements throughout a file, whether they're associated with marks or not. To see a full list of jumps within a file, use :jumps. Here's a short sample:
 
@@ -1115,7 +1115,7 @@ iab filename <c-r>=expand('%:t')<cr>//
 "  ^d  ....... completa o comando
 "  :history / 6,12//
 
-##//Saltos//
+###//Saltos//
 
   //gg .............. salta para a primeira linha do arquivo
   G  .............. salta para a última linha do arquivo
@@ -1131,13 +1131,13 @@ iab filename <c-r>=expand('%:t')<cr>//
   g, .............. salta uma alteração mais recente (avança na lista de alterações)
   g; .............. salta uma alteração anterior (retrocede na lista de alterações)//
 
-##//setando o tipo de arquivo//
+###//setando o tipo de arquivo//
 
 //:setf python//
 
 //[[snippets]]//
 
-##//Placeholders//
+###//Placeholders//
 
 //nnoremap <c-j> /<+.\{-1,}+><cr>c/+>/e<cr>
 inoremap <c-j> <esc>/<+.\{-1,}+><cr>c/+>/e<cr>
@@ -1167,7 +1167,7 @@ inoremap <C-J> <ESC>:call JumpToNextPlaceholder()<CR>a//
 
 //:imap ( () <+jump+><esc>F)i//
 
-##//Como mudar o editor padrão do ubuntu//
+###//Como mudar o editor padrão do ubuntu//
 //Para alterar o editor padrão (default),//
 
 //sudo update-alternatives --config editor//
@@ -1184,7 +1184,7 @@ Selection Alternative
 
 //Press enter to keep the default[*], or type selection number:
 Pressione 1 para o Vim.//
-##//Folders//
+###//Folders//
 //Folderes são dobras, o vim oculta algumas linhas e mostra algo como//
 
    //+-10 linhas ------------------//
@@ -1196,19 +1196,19 @@ zM //fold all levels//
 
 //veja [[http://www.vim.org/htmldoc/fold.html| documentação completa sobre o tema]]//
 
-##//Uma barra de status melhor//
+###//Uma barra de status melhor//
 //fonte: http://www.linux.com/feature/120126//
 
 //////" Acertando a barra de status
 set laststatus=2 "Sempre mostrando a linha de status
 :set statusline=%F%m%r%h%w\ [FORMAT=%{&amp;ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]//////
 
-##//Dicas do histórico//
+###//Dicas do histórico//
 
   //////:his  / 6,12
   " pesquisa o histórico de buscas de 6 a 12//////
 
-##//Snippets//
+###//Snippets//
 
 //////" snippet para o laço for
 Iabbr for for <{var}> in <{list}>:<cr><{}>//////
@@ -1216,7 +1216,7 @@ Iabbr for for <{var}> in <{list}>:<cr><{}>//////
 //O vim é um super editor, por enquanto esta página é só um rascunho
 mas em pouco tempo conterá muito conteúdo interessante.//
 
-##Indentando
+### Indentando
 
 >> .......... indenta a linha atual
 >>ip ......... indenta o parágrafo atual
@@ -1225,21 +1225,21 @@ mas em pouco tempo conterá muito conteúdo interessante.//
 == .......... indenta linha atual em modo normal
 = ........... indenta linha atual em modo visual
 
-##//Repetindo a última substituição//
+###//Repetindo a última substituição//
 
  //////&//////
 
-##//Procurando padrões e inserindo em outro arquivo://
+###//Procurando padrões e inserindo em outro arquivo://
 
   //////:'a,'b/^Padrão/ . w! >> ~/tmp/busca.txt//////
 
-##//Definindo o vim como editor padrão//
+###//Definindo o vim como editor padrão//
 //coloque dentro do seu arquivo .bashrc//
 
   //////export EDITOR=vim
   export VISUAL=vim//////
 
-##//Buscas especiais//
+###//Buscas especiais//
 
   ///////\c  ............ busca sem considerar maiúsculas e minúsculas
   //   ............ repete a última busca
@@ -1249,7 +1249,7 @@ mas em pouco tempo conterá muito conteúdo interessante.//
   /<[^>]*>  .......  casa com todas as tags html
   ^\d\+\.\d\+\(.*)   localiza seções tipo  "10.1 introdução"//////
 
-##//vim com python//
+###//vim com python//
 
 //**SmartIndent**
 Veja estas referências.//
@@ -1283,7 +1283,7 @@ readline.parse_and_bind('tab: complete')////
 PYTHONSTARTUP="$HOME/.pythonrc"
 export PYTHONSTARTUP
 
-##Modo de destaque no python
+### Modo de destaque no python
 
 " Auto open/close Tlist
 "let Tlist_Auto_Open = 1
@@ -1292,7 +1292,7 @@ let Tlist_Exit_OnlyWindow = 1
 " python
 let python_highlight_all = 1
 
-##Ocultando comentários
+### Ocultando comentários
 
 " F11 para esconder/mostrar comentários
 "
@@ -1305,7 +1305,7 @@ fu! CommOnOff()
 endfu
 map <f11> :call CommOnOff()<cr>
 
-##Problemas e soluções
+### Problemas e soluções
 
 fonte: http://groups.yahoo.com/group/vi-br/message/853
 Problema:
@@ -1342,7 +1342,7 @@ Mas muitos sistemas nao tem awk, e logo a melhor solucao mesmo eh usar o vim:
 
 Obs: 10,20 é o intervalo, ou seja, da linha 10 até a linha 20
 
-##Procurando dígitos pelo valor decimal ou hexadecimal no vim
+### Procurando dígitos pelo valor decimal ou hexadecimal no vim
 
 Para quê eu iria querer fazer isto?
 Bom, de repente você recebeu um arquivo 'txt' de um amigo qua ainda usa windows
@@ -1364,7 +1364,7 @@ E para fazer o mesmo em um conjunto de arquivos fazemos:
   :bufdo :%s/\%x0D//g | :wall
   :qall
 
-##vim tips
+### vim tips
 Wiki com dicas sobre o vim: http://vim.wikia.com/wiki/Main_Page
 
 http://www.vim.org/tips/tip.php?tip_id=1483
@@ -1381,12 +1381,12 @@ function! Time()
     return strftime("%c", getftime(bufname("%")))
 endfunction
 
-##Remover duas ou mais linhas vazias
+### Remover duas ou mais linhas vazias
 entre parágrafos diminuindo para uma só linha vazia.
 
 :%s/\(^\n\{2,}\)/\r/g
 
-##Inserindo a ultima busca, comando ou nome do arquivo no texto
+### Inserindo a ultima busca, comando ou nome do arquivo no texto
 
 <c-r>/
 
@@ -1414,21 +1414,21 @@ Para repetir linha acima caractere por caracte
 Para repetir linha abaixo caractere por caractere
 <c-e>
 
-##Para tornar maiúsculo apenas um trecho faça
+### Para tornar maiúsculo apenas um trecho faça
 
 :5,25 normal gUU
 
-##Contando ocorrências de um padrão
+### Contando ocorrências de um padrão
 fonte: http://aurelio.net/doc/vim/vim-dicas-ivan.html
 
 :let i=0|%g/{padrao}/let i=i+1
 :echo i
 
-##Abrindo o último arquivo editado
+### Abrindo o último arquivo editado
 
 '0
 
-##Python
+### Python
 
 "auto-complete (usando o pacote vim-python)
 set omnifunc=pythoncomplete#Complete
@@ -1438,7 +1438,7 @@ syntax match Special "\t"
 highlight Special ctermfg=DarkBlue ctermbg=White
 </c-e></c-y></c-k></c-x></c-p></c-x></c-l>
 
-##LaTeX
+### LaTeX
 " se você já tem alguma função para fechar parênteses
 " apague no local apropriado
 "
@@ -1771,7 +1771,7 @@ map! ;em bi{\em lea}i
 
 EOF
 
-##Referências
+### Referências
 * [[http://pt.wikibooks.org/wiki/Vim]]
 * http://pyconbrasil.com.br/saiba-mais/edicoes-anteriores/pyconbrasil-2006/downloads/apresentacoes/archetypes-o-bagulho-e-bom/vimrc/view
 * vim faq: [[http://www.faqs.org/faqs/editor-faq/vim/]]

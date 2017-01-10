@@ -1,10 +1,10 @@
-##Introdução
+### Introdução
 
 # date "+Data: %d/%m/%Y%nHora: %H:%M:%S"
 Data: 29/04/2011
 Hora: 21:18:34
 
-###Calculos com datas
+### Calculos com datas
 # referencia: http://www.dotsharp.com.br/linux/como-fazer-calculos-e-formatacao-de-data-no-linux.html
 
  date --date='1 year ago'
@@ -16,50 +16,50 @@ Thu Apr 29 21:24:37 BRT 2010
 
     date -d "2016-05-01 - 1 day" +%d-%m-%Y
 
-##data futura
+### data futura
 # date --date='1 month'
 Sun May 29 21:26:04 BRT 2011
 
-##qual o número da semana atual?
+### qual o número da semana atual?
 
     date +"%V"
 
-##quantos dias faltam para o fim do ano?
+### quantos dias faltam para o fim do ano?
 source: http://www.commandlinefu.com/commands/view/4804/how-many-days-until-the-end-of-the-year?
 
 How many days until the end of the year
 
 echo "There are $(($(date +%j -d "Dec 31, $(date +%Y)")-$(date +%j))) left in year $(date +%Y)."
 
-##ano bissexto
+### ano bissexto
 
 leapyear() { [ $(date -d "Dec 31, $1" +%j) == 366 ] && echo leap || echo not leap; }
 
-##adiantar o relógio do sistema em 30 minutos
+### adiantar o relógio do sistema em 30 minutos
 
 # date --set='+30 minutes'
 
 
-##sincronizando a data de um servidor com outro
+### sincronizando a data de um servidor com outro
 
 sudo date -s "$(ssh user@server.com "date -u")"
 
-##Verificar a data de modificação de um arquivo
+### Verificar a data de modificação de um arquivo
 
 date -r foo
 
-##Para exibir a data no padrão americano
+### Para exibir a data no padrão americano
 
 date -I
 
-##Para configurar a data faça
+### Para configurar a data faça
 
  date  mês-dia-hora-minuto[[seculo[ano]]
 
 O formato deve ser definido assim: MMDDHHMM[[CC[YY]]
 O que está entre colchetes é opcional
 
-##Configurando a data com base em uma string
+### Configurando a data com base em uma string
 
 date -s "01/31/2009 22:19:53"
 date -s "31 JAN 2009 22:19:53"
@@ -68,7 +68,7 @@ date -s "31 JAN 2009 22:19:53"
 date +%T -s "22:19:53"
 
 
-##data de amanhã
+### data de amanhã
 
 date -d 'tomorrow' +%d-%m-%Y
 $ date --date='2 year ago'  # past
@@ -87,7 +87,7 @@ $ date --date='2 months 5 day ago'
           |
 date -d "-8 month -$(date +%d) days" +%B
 
-## que dia (por extenso) será depois de amanhã? 
+### que dia (por extenso) será depois de amanhã?
 
 	date -d '2 days' +%A
 
@@ -96,7 +96,7 @@ date -d "-8 month -$(date +%d) days" +%B
 
 	date -d '-2 days' +%A
 
-## como saber que dia da semana foi 01 de outubro de 2012?
+### como saber que dia da semana foi 01 de outubro de 2012?
 
 	date -d "10/1/2012" +%A
 
@@ -109,18 +109,18 @@ date -d "-8 month -$(date +%d) days" +%B
 		echo "$numdiasemana - $diasemana"
 	}
 
-##que dia vai ser domingo
+### que dia vai ser domingo
 
 date -d 'this sunday' +%d-%m-%Y
 
-##mês passado
+### mês passado
 
 date -d "last month" +%B
 
 # em formato numérico
 date -d "last month" +%m
 
-##data de ontem
+### data de ontem
 
 date --date="yesterday"
 
@@ -145,11 +145,11 @@ Para mais informações acesse pelo terminal:
 
    man date
 
-##O comando date pode também retornar strings
+### O comando date pode também retornar strings
 
 FBKPNEW=$(date +"backup-%Y-%m-%d")
 
-##testar se é fim de mês
+### testar se é fim de mês
 
 [ `date --date='next day' +'%B'` == `date +'%B'` ] || echo 'end of month'
 

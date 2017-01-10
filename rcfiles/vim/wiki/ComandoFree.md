@@ -1,4 +1,4 @@
-##Introdução
+### Introdução
 O comando abaixo mostra a quantidade de memória livre em
 seu sistema
 
@@ -8,9 +8,8 @@ A opção –t mostra o total na parte inferior do resultado (soma da memória f
 
 free -mt
 
-###medindo o percentual de memória física livre
+### medindo o percentual de memória física livre
 
 free -m | awk '/Mem/ {print ($3 / $2)*100}'
 
 
- 

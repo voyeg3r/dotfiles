@@ -1,4 +1,4 @@
-##Plugin surround
+### Plugin surround
 
 * artigo sobre o plugin 'repeat' que completa o plugin surround
 * http://www.catonmat.net/blog/vim-plugins-repeat-vim
@@ -12,20 +12,20 @@ url: http://www.vim.org/scripts/script.php?script_id=1697
 artigo: http://www.catonmat.net/blog/vim-plugins-surround-vim/
 video: http://vimeo.com/6093081
 
-###deletando surround
+### deletando surround
 
  ds' ........ apaga aspas simples
  ds( ........ apaga parenteses
  dst ........ retira <div
 
 
-##alterando surround
+### alterando surround
 
  cs' ........ apaga aspas simples
  cs( ........ apaga parenteses
  cst ........ retira <div
 
-## Para colocar uma palavra entre (,{,[,<," 
+### Para colocar uma palavra entre (,{,[,<,"
 
    cswb .............  (palavra)
    cswB .............  {palavra}
@@ -45,7 +45,7 @@ video: http://vimeo.com/6093081
    Ctrl-s-r .................[]
    Ctrl-s-a .................<>
 
-## Modo visual 
+### Modo visual
 
   Vs<p>
   V .......... Seleção por linha
@@ -55,7 +55,7 @@ video: http://vimeo.com/6093081
   asdf asdfasdfasd
 
 
-## Para colocar uma serie de palavras entre aspas 
+### Para colocar uma serie de palavras entre aspas
 
    csw" ................ coloca palavra atual entre aspas
    . ................... repete a inserção das aspas

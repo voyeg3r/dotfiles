@@ -1,13 +1,13 @@
-##Introdução
+### Introdução
 Permite baixar arquivos sem riscos, ou seja,
 mantém um resumo do que foi baixado
 
-###referências
+### referências
 * http://codesnippets.joyent.com/tag/wget
 
 wget -m --restrict-file-names=nocontrol --user-agent="direct download -- `uname -a`" --no-parent --referer=http://DigitalK7.com/ "http://digitalk7.com/mus/Brazil/"
 
-##How do I pipe a downloaded file to standard output in bash?
+### How do I pipe a downloaded file to standard output in bash?
 source: https://serverfault.com/questions/25779/how-do-i-pipe-a-downloaded-file-to-standard-output-in-bash/25780#25780
 
 How is it possible to pipe out wget's downloaded file? If not what alternatives should I use?
@@ -15,7 +15,7 @@ How is it possible to pipe out wget's downloaded file? If not what alternatives 
     wget -O - -o /dev/null  http://google.com
 
 
-##baixar licença gplv3
+### baixar licença gplv3
 
  wget -O LICENSE.txt http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -24,27 +24,27 @@ Se desejar baixar um arquivo com o wget direto para um local faça:
   wget http://endereco/do/arquivo/vimrc -O ~/.vimrc
   wget --limit-rate=15k -i links.txt
 
-##pegando seu ip externo
+### pegando seu ip externo
 
 wget -qO- ifconfig.me/ip
 
-##agendando um download
+### agendando um download
 
 echo 'wget -c url' | at 12:00
 
-##tradutor
+### tradutor
 
 translate(){ wget -qO- "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=$1&langpair=$2|${3:-en}" | sed 's/.*"translatedText":"\([^"]*\)".*}/\1\n/'; }
 
 
 translate <phrase> <source-language> <output-language>
 
-##ignorando robots
+### ignorando robots
 
 wget -m -nd -A.avi -erobots=off -i urls.txt
 
 
-##baixar uma página inteira
+### baixar uma página inteira
 
 wget --random-wait -r -p -e robots=off -U mozilla http://www.example.com
 
@@ -54,7 +54,7 @@ wget --random-wait -r -p -e robots=off -U mozilla http://www.example.com
 
     wget -nc -k -r $(echo /moc.hsolevets.yawdrahehttpircsmivnrael//:ptth | rev)
 
-##Baixando e descompactando sem deixar o tarball no disco
+### Baixando e descompactando sem deixar o tarball no disco
 
 wget -qO - http://example.com/path/to/blah.tar.gz | tar xzf -
 
@@ -79,7 +79,7 @@ wget -P Slides -r -nd -t5 -H --domains=.blogger.com,kaspere.blogpost.com http://
 wget -P /tmp/pastaespecifica -r -p http://www.unicamp.br –accept=JPG,jpg,GIF,gif,png,PNG
 
 
-##baixando arquivos por extensão
+### baixando arquivos por extensão
 
 wget -r -l1 -A *.jpg www.urldosite.com.br
 
@@ -87,13 +87,13 @@ wget -r -l1 -A *.jpg www.urldosite.com.br
    -l1 nível 1 (profundidade)
    -A *.jpg  extensão aceita
 
-##Veja também o comando curl
+### Veja também o comando curl
 
 curl --limit-rate 15k http://learnrealenglish.com/AudioVideo/Tip%20[1-7].zip -o tip_#1.zip
 curl --limit-rate 15k http://learnrealenglish.com/AudioVideo/tips/Tip_[1-7].pdf -o tip_#1.pdf
 
 
-##Man page traduzida
+### Man page traduzida
 fonte: http://www.dicas-l.com.br/dicas-l/19991119.php
 
 Colaboração: Felipe Machado Cardoso

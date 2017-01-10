@@ -1,9 +1,9 @@
-###Descrição do plugin Projet
+### Descrição do plugin Projet
 
  Plugin projet
- 
+
     :Projet name
-    
+
 O mesmo abrirá uma janela, dentro da mesma digite \C para iniciar a criação de um projeto
 
    1. Digite :Project ........... carrega o plugin
@@ -11,8 +11,8 @@ O mesmo abrirá uma janela, dentro da mesma digite \C para iniciar a criação d
    3. Digite o nome do projeto
    4. Digite o caminho (e.g. /Users/me/Development/RailsApp)
    5. Digite . como CD parâmetro.
-   6. Digite *.py para que apareçam apenas arquivos python (um exemplo). 
-   
+   6. Digite *.py para que apareçam apenas arquivos python (um exemplo).
+
    Para salvar o status do plugin :w
 
    Para mostrar um status do projeto \i

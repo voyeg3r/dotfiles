@@ -10,7 +10,7 @@ email: voyeg3r -- gmail
 
 Curso do professor Ronaldo Ramos no Youtube: http://goo.gl/n4NxP
 
-###Consertando legengas srt com python
+### Consertando legengas srt com python
 
 source: http://tuxbalaji.wordpress.com/2013/10/05/how-to-fix-subtitles-delay-or-ealier-with-your-movies-by-python-code/
 
@@ -28,7 +28,7 @@ subs=open("/home/bala/Pirates of the Caribbean -The Curse of the Black Pearl(200
 subs.shift(minutes=-2) # Move all subs 2 minutes earlier
 subs.save('/home/bala/new.srt', encoding='utf-8')#saves file with new.srt in your home directory
 
-##baixando legendas com o subliminal
+### baixando legendas com o subliminal
 
 # no caso do ubuntu ou debian use...
 

@@ -1,4 +1,4 @@
-###sintaxe
+### sintaxe
 
 ln [opções] alvo linkname
 
@@ -10,4 +10,3 @@ podemos criar os links assim
 
 ln -sf /opt/firefox/firefox /usr/bin/firefox
 
- 

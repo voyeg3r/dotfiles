@@ -1,4 +1,4 @@
-##Introdução
+### Introdução
 
 Listando a saida complea do comando dig
 
@@ -21,4 +21,4 @@ endereço IP. A opção -x é usada para esse fim.
 # dig -x 141.146.8.66
 
 * fonte: http://www.oracle.com/technology/global/lad-pt/pub/articles/advanced-linux-commands/part4.html
- 
+

@@ -2,7 +2,7 @@
 % Sergio Luiz Araújo Silva
 % July 31, 2014
 
-#Synopsis
+# Synopsis
 
 pandoc [*options*] [*input-file*]...
 
@@ -26,7 +26,7 @@ Newlines are treated as spaces, so you can reflow your paragraphs as you like.
 If you need a hard line break, put two or more spaces at the end of a line.
 
 
-## Footnotes
+### Footnotes
 
 **Extension: `footnotes`**
 
@@ -38,7 +38,7 @@ Pandoc's markdown allows footnotes, using the following syntax:
 
     [^longnote]: Here's one with multiple blocks.
 
-## Code syntax highlight
+### Code syntax highlight
 
 ```python
 import os
@@ -49,7 +49,7 @@ def application(env, start_response):
     return "Hello WSGI!!"
 ```
 
-## Definition lists
+### Definition lists
 
 Term 1
 

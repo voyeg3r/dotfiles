@@ -13,12 +13,12 @@ como a2ps, ps2pdf etc. O «2» (two, pronunciado em inglês como to)
 significando «para», ou seja a2ps (any to postScript, qualquer coisa para
 PostScript), ps2pdf (PostScript to PDF, PostScript para PDF. O a2ps envia a
 saída para a impressora (spooler de impressão na verdade). Para salvar a
-saída deve-se utilizar as opções -o arquivo_ps ou --output=arquivo_ps 
+saída deve-se utilizar as opções -o arquivo_ps ou --output=arquivo_ps
 
 
 echo "teste" | a2ps -R  -1 -o teste.ps - && ps2pdf teste.ps; rm -f teste.ps
 
 
-###opção para o cups-pdf
+### opção para o cups-pdf
 
 sudo dpkg-statoverride –update –add root root 4755 /usr/lib/cups/backend/cups-pdf

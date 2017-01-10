@@ -1,4 +1,4 @@
-###Introdução 
+### Introdução
 O sftp é mais seguro que o scp, é usado para copia de arquivos remotos
 
 
@@ -32,4 +32,4 @@ version                       Show SFTP version
 !command                      Execute 'command' in local shell
 !                             Escape to local shell
 ?                             Synonym for help
-sftp> 
+sftp>

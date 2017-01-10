@@ -14,9 +14,9 @@
 rename 's/$/.bak/g' /etc/init/tty[3-6].conf
 
 
-#for i in `find /home -iname user-dirs.dirs`; do
+# for i in `find /home -iname user-dirs.dirs`; do
 #  sed -i 's,/.*[^"],/Desktop,g' $i
-#done
+# done
 
 # http://askubuntu.com/questions/7283/vim-7-3-on-ubuntu-10-10
 # ppa para o vim 7.3
@@ -203,39 +203,39 @@ apt-fast install -y sox
 
 # source: http://www.ubuntu-unleashed.com/2008/04/howto-harden-ubuntu-linux-kernel-with.html
 # http://www.cyberciti.biz/faq/linux-tcp-tuning/
-#net.core.rmem_default = 524288
-#net.core.rmem_max = 524288
-#net.core.wmem_default = 524288
-#net.core.wmem_max = 524288
-#net.core.optmem_max = 57344
-#net.core.netdev_max_backlog = 5000
-###net.ipv4.tcp_wmem = 4096 87380 524288
-##net.ipv4.tcp_rmem = 4096 87380 524288
-#net.ipv4.tcp_rmem= 10240 87380 12582912
-#net.ipv4.tcp_wmem= 10240 87380 12582912
-#net.ipv4.tcp_mem = 524288 524288 524288
-#net.ipv4.tcp_rfc1337 = 1
-#net.ipv4.ip_no_pmtu_disc = 0
-#net.ipv4.tcp_sack = 1
-#net.ipv4.tcp_fack = 1
-#net.ipv4.tcp_max_syn_backlog = 1024
-#net.ipv4.tcp_max_tw_buckets = 1440000
-#net.ipv4.tcp_timestamps = 1
-#net.ipv4.tcp_ecn = 0
-#net.ipv4.route.flush = 1
-#net.ipv4.ipfrag_high_thresh = 512000
-#net.ipv4.ipfrag_low_thresh = 446464
-#net.ipv4.tcp_window_scaling = 1
-#net.ipv4.tcp_no_metrics_save = 1
-#vm.swappiness=10
-#kernel.shmmax = 268435456
+# net.core.rmem_default = 524288
+# net.core.rmem_max = 524288
+# net.core.wmem_default = 524288
+# net.core.wmem_max = 524288
+# net.core.optmem_max = 57344
+# net.core.netdev_max_backlog = 5000
+### net.ipv4.tcp_wmem = 4096 87380 524288
+### net.ipv4.tcp_rmem = 4096 87380 524288
+# net.ipv4.tcp_rmem= 10240 87380 12582912
+# net.ipv4.tcp_wmem= 10240 87380 12582912
+# net.ipv4.tcp_mem = 524288 524288 524288
+# net.ipv4.tcp_rfc1337 = 1
+# net.ipv4.ip_no_pmtu_disc = 0
+# net.ipv4.tcp_sack = 1
+# net.ipv4.tcp_fack = 1
+# net.ipv4.tcp_max_syn_backlog = 1024
+# net.ipv4.tcp_max_tw_buckets = 1440000
+# net.ipv4.tcp_timestamps = 1
+# net.ipv4.tcp_ecn = 0
+# net.ipv4.route.flush = 1
+# net.ipv4.ipfrag_high_thresh = 512000
+# net.ipv4.ipfrag_low_thresh = 446464
+# net.ipv4.tcp_window_scaling = 1
+# net.ipv4.tcp_no_metrics_save = 1
+# vm.swappiness=10
+# kernel.shmmax = 268435456
 
 
 
-#Você tem que redefinir sua sysctl para
-#estas tenham efeito. Digite o comando:
+# Você tem que redefinir sua sysctl para
+# estas tenham efeito. Digite o comando:
 
-#sudo sysctl -p
+# sudo sysctl -p
 
 sed -i -r '/^CONCURRENCY=none/s/none/shell/g' /etc/init.d/rc
 
@@ -244,11 +244,11 @@ sed -i -r '/^CONCURRENCY=none/s/none/shell/g' /etc/init.d/rc
 
 # melhorando a performance do flash
 # http://www.omgubuntu.co.uk/2010/11/force-flash-gpu-acceleration-in-linux-improve-performance/
-#Using the terminal enter: -
+# Using the terminal enter: -
 
 sudo mkdir /etc/adobe && echo "OverrideGPUValidation = 1" | sudo tee /etc/adobe/mms.cfg
 
-#He also notes that it may be possible to enable it via the hidden adobe folder #inside the home folder, in which case use:
+# He also notes that it may be possible to enable it via the hidden adobe folder #inside the home folder, in which case use:
 
 echo "OverrideGPUValidation = 1" >> ~/.adobe/mms.cfg
 

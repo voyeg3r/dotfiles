@@ -1,4 +1,4 @@
-##Introdução
+### Introdução
 Execute o comando at para agendar uma atividade a ser executada apenas uma vez :
 
      $ echo 'comando -argumentos'| at 3:40 monday
@@ -8,11 +8,11 @@ Por exemplo, agendar o download de uma distro
 echo "wget -c http://mirrors.uol.com.br/pub/kurumin/kurumin-7.0.iso" | at 01:00 tomorrow
 
 
-###exibir mensagem visual temporizada
+### exibir mensagem visual temporizada
 
 echo "DISPLAY=$DISPLAY xmessage cooker" | at "NOW + 30 minutes"
 
-##despertador com mpg123
+### despertador com mpg123
 
 at 6:00 <<< "mpg123 ~/docs/musicas/u2/Boy/*.mp3"
 
@@ -24,8 +24,8 @@ outro despertador (alarme)
 # vim:ft=sh:fdm=syntax:nu:
 # Instituicao: none
 # Proposito do script: alarme
-# Autor: Sérgio Luiz Araújo Silva 
-# site: http://vivaotux.blogspot.com 
+# Autor: Sérgio Luiz Araújo Silva
+# site: http://vivaotux.blogspot.com
 
 # para baixar o som: aria2c http://ubuntuone.com/p/4qs/
 
@@ -43,10 +43,9 @@ at $hora <<< "play $musica"
 
 
 
-##visualizar os agendamentos do comando at
+### visualizar os agendamentos do comando at
 
 atq
 
 
- 
- 
+

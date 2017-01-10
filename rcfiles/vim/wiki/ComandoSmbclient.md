@@ -1,4 +1,4 @@
-##Introdução 
+### Introdução
 fonte: http://pt-br.gentoo-wiki.com/Tutorial_Samba
 
 smbclient e smbmount
@@ -14,7 +14,7 @@ Código: Compartilhamentos
         IPC$            IPC       IPC Service
         ADMIN$          IPC       IPC Service
 
-###Linux <span class="highlightedSearchTerm">client</span>e de uma rede Windows 
+### Linux <span class="highlightedSearchTerm">client</span>e de uma rede Windows
 Corpo do texto:
 **Colaboração:** Rafael Henrique da Silva Correia
 
@@ -22,7 +22,7 @@ O <span class="highlightedSearchTerm">SAMBA</span> é um auxiliador nas tarefas 
 
 Bom então mãos a obra....
 
-===1. Instalação dos pacotes do <span class="highlightedSearchTerm">SAMBA</span> (como <span class="highlightedSearchTerm">client</span>e):=== 
+===1. Instalação dos pacotes do <span class="highlightedSearchTerm">SAMBA</span> (como <span class="highlightedSearchTerm">client</span>e):===
 
 Estando dentro de uma rede Windows em gente! E usando Debian! E que seremos
 <span class="highlightedSearchTerm">client</span>e e não servidor, não se esqueçam que isso que vamos fazer agora só
@@ -55,7 +55,7 @@ Explicando:
 caso durante a instalação apareça alguma pergunta, responda a opção default
 teclando enter, pois iremos configurar tudo na mão
 
-===2. Configurando o <span class="highlightedSearchTerm">client</span>e <span class="highlightedSearchTerm">samba</span> (smb<span class="highlightedSearchTerm">client</span>)=== 
+===2. Configurando o <span class="highlightedSearchTerm">client</span>e <span class="highlightedSearchTerm">samba</span> (smb<span class="highlightedSearchTerm">client</span>)===
 
 Após instalados os pacotes agora vem a parte mais legal configurar o <span class="highlightedSearchTerm">client</span>e
 <span class="highlightedSearchTerm">samba</span>! Para esta proeza devemos ter certas coisas em mãos:
@@ -105,7 +105,7 @@ wins server = eth0: \ip do seu dns primário eth0: \ip do seu dns secundário
 
 O <span class="highlightedSearchTerm">client</span>e <span class="highlightedSearchTerm">samba</span> está configurado!
 
-===3. Configurando as coisas mais tontas!=== 
+===3. Configurando as coisas mais tontas!===
 
 Pra quem usa ip estático:
 
@@ -142,7 +142,7 @@ auto eth0
 iface eth0 inet dhcp
 
 
-===4. Terminando=== 
+===4. Terminando===
 
 Vamos reiniciar o serviço da rede:
 
@@ -154,7 +154,7 @@ Após feito isso já nos podemos considerar dentro do domínio e com conexão a 
 
 Façam o teste...
 
-#ping www.google.com
+# ping www.google.com
 
 Agora é só usar algum utilitário gráfico para que consigamos usar uma área
 mapeada no desktop, eu como estou usando Gnome, podemos fazer o seguinte,
@@ -174,7 +174,7 @@ do Rwindows) e compartilhar o servidor cups do Linux para poder imprimir em
 impressoras da rede Windows!
 
 
-##Referências 
+### Referências
 Acho prudente ler sobre gvfs:
 * http://syph0s.wordpress.com/2008/04/09/usando-o-gnomevfs-para-manipular-arquivos/
 * http://www.leonardomiranda.com.br/dicas/linux-cliente-de-uma-rede-windows/

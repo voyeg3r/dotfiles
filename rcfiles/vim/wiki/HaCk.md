@@ -2,7 +2,7 @@ in order to remember that key read this
 this is related with your mail account
 my: brand new password and birth year
 
-###como cancelar mensagens das operadoras de celular 
+### como cancelar mensagens das operadoras de celular
 
 Passo 1. Abra o aplicativo de mensagens do seu celular e envie a palavra “sair” para sua operadora:
 
@@ -36,14 +36,14 @@ passwrd airos -->
 user = ubnt
 password =ubnt
 
-##conection to education network Madalena
+### conection to education network Madalena
 192.168.0.25
 netmask 255.255.255.0
 gateway 192.168.0.1
 dns 8.8.8.8, 4.4.4.4
 
 
-## android 
+### android
 códico para resetar a instalação do android
 *2767*3855#
 
@@ -75,45 +75,53 @@ network name: madanet
 encryption: AES
 connection type: ESS
 
-##some google secrets
+### some google secrets
 
-Manipulate the google engine by using it to locate mp3 files online as well as some free software, and more! Using Google, and some finely crafted searches we can find a lot of interesting information.
+Manipulate the google engine by using it to locate mp3 files online as well as
+some free software, and more! Using Google, and some finely crafted searches we
+can find a lot of interesting information.
 
 For Example we can find:
-Passwords
-Software / MP3′s
-etc.
 
-Presented below is just a sample of interesting searches that we can send to google to obtain info. After you get a taste using some of these, try your own crafted searches to find info that you would be interested in.
+* Passwords
+* Software / MP3′s
+* etc.
+
+Presented below is just a sample of interesting searches that we can send to
+google to obtain info. After you get a taste using some of these, try your own
+crafted searches to find info that you would be interested in.
 
 Try a few of these searches:
 
-intitle:”Index of” passwords modified
-allinurl:auth_user_file.txt
-“access denied for user” “using password”
-“A syntax error has occurred” filetype:ihtml
-allinurl: admin mdb
-“ORA-00921: unexpected end of SQL command”
-inurl:passlist.txt
-“Index of /backup”
-“Chatologica MetaSearch” “stack tracking:”
+    intitle:”Index of” passwords modified
+    allinurl:auth_user_file.txt
+    “access denied for user” “using password”
+    “A syntax error has occurred” filetype:ihtml
+    allinurl: admin mdb
+    “ORA-00921: unexpected end of SQL command”
+    inurl:passlist.txt
+    “Index of /backup”
+    “Chatologica MetaSearch” “stack tracking:”
 
 And these:
 
-“parent directory ” /appz/ -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
-“parent directory ” DVDRip -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
-“parent directory “Xvid -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
-“parent directory ” Gamez -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
-“parent directory ” MP3 -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
-“parent directory ” Name of Singer or album -xxx -html -htm -php -shtml -
-opendivx -md5 -md5sums
+    “parent directory ” /appz/ -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+    “parent directory ” DVDRip -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+    “parent directory “Xvid -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+    “parent directory ” Gamez -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+    “parent directory ” MP3 -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+    “parent directory ” Name of Singer or album -xxx -html -htm -php -shtml -
+    opendivx -md5 -md5sums
 
-Notice that I am only changing the word after the parent directory, change it to what you want and you will get a lot of stuff.
+Notice that I am only changing the word after the parent directory, change it
+to what you want and you will get a lot of stuff.
 
 METHOD 2
 
 put this string in google search:
-intitle:index.of mp3
+
+    intitle:index.of mp3
+
 You only need add the name of the song/artist/singer. Example: intitle:index.of mp3 jackson
 
 METHOD 3

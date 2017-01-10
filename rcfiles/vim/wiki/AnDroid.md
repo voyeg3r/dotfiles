@@ -1,4 +1,4 @@
-##Como instalar o cynogenmod no moto g
+### Como instalar o cynogenmod no moto g
 https://www.youtube.com/watch?v=m-AkLX_HfFA
 
 https://fralef.me/reroot-android-using-gnulinux-sdk-tools-and-twrp.html
@@ -28,7 +28,7 @@ twitter https://twitter.com/brunorock2015
 Comunidade https://plus.google.com/communities/1...
 ===================================
 
-### como saber a versão do android 
+### como saber a versão do android
 
 We recommended to use firmware version from your own region.
 To check phone version you can follow two way :
@@ -74,7 +74,7 @@ e o comando final ficar mais ou menos assim:
 
 No comando acima colei o meu código
 
-##Flash 'TWRP' as the custom recovery image
+### Flash 'TWRP' as the custom recovery image
 
 sudo fastboot flash recovery ~/Downloads/openrecovery-twrp-2.8.2.0-hammerhead.img
 sudo fastboot flash recovery twrp-2.8.6.0-titan.img
@@ -82,7 +82,7 @@ sudo fastboot flash recovery twrp-2.8.6.0-titan.img
 boot in recover mode
 
 
-## How block fastbook again 
+### How block fastbook again
 
 source: http://forum.cyanogenmod.org/topic/64232-security-benefit-to-fastboot-oem-lock-after-rom-installation/
 

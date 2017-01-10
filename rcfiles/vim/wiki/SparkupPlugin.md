@@ -1,4 +1,4 @@
-###video introdutório ao sparkup
+### video introdutório ao sparkup
 
  * http://vimeo.com/9480601
  * http://www.youtube.com/watch?v=3RzsRlVsqnQ
@@ -33,20 +33,20 @@ div#header + div#footer expands to:
     <div id="header"></div>
     <div id="footer"></div>
 
-#menu > ul expands to:
+# menu > ul expands to:
 
     <div id="menu">
         <ul></ul>
     </div>
 
-#menu > h3 + ul expands to:
+# menu > h3 + ul expands to:
 
     <div id="menu">
         <h3></h3>
         <ul></ul>
     </div>
 
-#header > h1{Welcome to our site} expands to:
+# header > h1{Welcome to our site} expands to:
 
     <div id="header">
         <h1>Welcome to our site</h1>
@@ -97,7 +97,7 @@ table > tr*2 > td.name + td*3 expands to:
         </tr>
     </table>
 
-#header > ul > li < p{Footer} expands to:
+# header > ul > li < p{Footer} expands to:
 
 <!-- The < symbol goes back up the parent; i.e., the opposite of >. -->
     <div id="header">

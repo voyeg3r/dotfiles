@@ -1,8 +1,9 @@
-#Introdução
+this is only a test^[]
+# Introdução
 
     paste pares.txt impares.txt
 
-###Transformar 3 linhas em uma
+### Transformar 3 linhas em uma
 
 2,5,1,1
 3
@@ -16,7 +17,7 @@ paste -d"," - - - < file
 2,5,1,1,3,5
 3,7,1,1,2,8
 
-###Colar dois trechos do mesmo arquivo lado a lado
+### Colar dois trechos do mesmo arquivo lado a lado
 
     joao
     jose
@@ -32,7 +33,7 @@ paste -d"," - - - < file
 
 Na solução acima pegamos de uma linha vazia '^$' até o final $
 e da linha '1' até uma linha vazia '^$'
-##juntar linhas de 5 em 5
+### juntar linhas de 5 em 5
 
 ### Pessoal,
 
@@ -79,5 +80,5 @@ sequencia de 5 linhas:
 ### solução
 
     paste -d" " - - - - - < teste.txt
-    
-    
+
+

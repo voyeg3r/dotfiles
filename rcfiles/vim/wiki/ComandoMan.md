@@ -1,17 +1,17 @@
-##criando um txt de um manual
+### criando um txt de um manual
 
     man cp | col -b > man-cp.txt
 
 
-###listar todas as opções de um comando qualquer
+### listar todas as opções de um comando qualquer
 
 man find | sed  -e '/-\{1,2\}/!d' -e 's/.*\(-\{1,2\}\)\([^ ]*\).*/\1\2/' | grep ^"$2" | sort -u
 
-##Criar um pdf de um manual
+### Criar um pdf de um manual
 
 man -t find | ps2pdf - > find.pdf
 
-##comandos do comando man
+### comandos do comando man
 
   q ........ sair do man
   / ........ inicia uma busca
@@ -22,7 +22,7 @@ man -t find | ps2pdf - > find.pdf
   ma ....... cria uma marca 'a'
   `a ....... pula para marca 'a'
 
-##Acessando o man em um ponto específico
+### Acessando o man em um ponto específico
 
 man <COMMAND> | less +'/pattern'
 
@@ -33,7 +33,7 @@ Por exemplo, quero ver o man do find e buscar "printf"
 man <COMMAND> | less +'/printf'
 
 
-##obtendo uma lista completa de comandos
+### obtendo uma lista completa de comandos
 
 man -k . | grep "(1)" | less
 man -k .

@@ -1,4 +1,4 @@
-###Introdução 
+### Introdução
 
 fonte: http://www.dicas-l.com.br/dicas-l/20081014.php
 
@@ -15,7 +15,7 @@ com "port" utilizando o operador "and", veja como:
 tcpdump -i eth0 -n host 192.168.0.1 and port 80
 
 
-|| ==tcpdump: Monitorando conexões== 
+|| ==tcpdump: Monitorando conexões==
 Autor: Leandro Nascimento Souza <leandro@minimedia.com.br>
 Data: 11/04/2007 ||
 || **tcpdump: Monitorando conexões**|| O //tcpdump// é um dos mais, se não o mais "famoso" //sniffer// para sistemas GNU/[[http://www.vivaolinux.com.br/linux/|Linux]]. Com ele podemos realizar análises de redes e solucionar problemas. Sua utilização é simples e sem mistérios, bastando apenas ter os conhecimentos básicos de redes //TCP/IP//. Esta dica é apenas uma introdução deste sniffer, maiores informações e documentação à seu respeito podem ser encontradas em seu site oficial: * [[http://www.tcpdump.org/|http://www.tcpdump.org]]

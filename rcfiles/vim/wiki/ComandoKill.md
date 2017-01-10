@@ -1,4 +1,4 @@
-##Para fechar um programa usando o comando kill fazemos assim:
+### Para fechar um programa usando o comando kill fazemos assim:
 
 ps aux | grep firefox
 
@@ -11,11 +11,11 @@ Um modo mais prático é usar o comando [[pkill]]
 
 pkill firefox
 
-ou 
+ou
 
 pkill firefox-bin
 
-###Matando todos os processos de um usuário específico
+### Matando todos os processos de um usuário específico
 fonte: http://www.ataliba.eti.br/node/1771
 
 su - username -c 'kill -9 -1'
@@ -23,4 +23,3 @@ su - username -c 'kill -9 -1'
 O comando "su - username" toma a identidade do usuário indicado
 a opção "-c" executa um comando "kill -9 -1" mata todos os processos possíveis
 
- 

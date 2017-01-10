@@ -10,12 +10,11 @@
     Github:      https://github.com/voyeg3r
 
 
-References:
+### References:
 http://zshwiki.org/home/builtin/functions/zmv
 http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
-
-### References:
 http://chneukirchen.org/dotfiles/.zshrc
+
 
 ### arrays in zshell
 
@@ -49,7 +48,7 @@ This var is used in many zsh frameworks during git clone
 
     ZDOTDIR=~/.dotfiles/rcfiles/zsh
 
-###removing only certain dirs
+### removing only certain dirs
 
 removing all directories except some:
 
@@ -94,7 +93,7 @@ to a directory of your choice in your .zshenv file under $HOME:
 The la alias will behave just as if you typed ls --color=auto –a,
 there's no need to type --color=auto again on your definition.
 
-###how delete a history entry
+### how delete a history entry
 
 source: stackoverflow
 
@@ -123,7 +122,7 @@ The same thing done using zsh would be like
         mv $i ${i:r}
     done
 
-###how get pipestatus
+### how get pipestatus
 How to get exit status of process that's piped to another
 
 The syntax is:
@@ -136,21 +135,21 @@ OR
     command1 | command2
     echo "${PIPESTATUS[0]} ${PIPESTATUS[1]}"
 
-###how to run a secret series of commands
+### how to run a secret series of commands
 [[source]](http://unix.stackexchange.com/questions/6094/)
 
     % fc -p
     % secret-command
     % fc -P
 
-###how to show a function definition
+### how to show a function definition
 reference: http://va.mu/BLEHZ
 
 functions func_name
 
 you can use =command instead $(which command)
 
-###Just found this little gem
+### Just found this little gem
 
     cd old new
 
@@ -164,7 +163,7 @@ you can use =command instead $(which command)
 
     cd larry sergei
 
-###zsh buffer stack
+### zsh buffer stack
 
     If you type
 
@@ -177,7 +176,7 @@ you can use =command instead $(which command)
     you are in the middle of a typed command, zsh will show you
     the required manual
 
-###how upgrade oh-my-zsh
+### how upgrade oh-my-zsh
 
     Open up Terminal
 
@@ -198,7 +197,7 @@ you can use =command instead $(which command)
 
     git stash pop
 
-###fasd tool shortcuts
+### fasd tool shortcuts
 
     fasd is a tools installed in zsh environment
 
@@ -326,7 +325,7 @@ Nevertheless, you could also check for either
 
                                                                              Note that the default unit for this qualifier is days, so (m-1) will mean a day ago or, more precisely, up to 24 hours before the current system time.
 
-###zsh completions for yaourt
+### zsh completions for yaourt
 
 http://youtu.be/mCHwb_TD4ng
 
@@ -358,7 +357,7 @@ Now tab away and enjoy.
 
 That's it. Thanks for watching.
 
-###use r to repeat the last command - with substituition
+### use r to repeat the last command - with substituition
 
     echo one two
     r two=three
@@ -496,7 +495,7 @@ The above shortuc will put the most recent file name in command line
     Adding leading zeros to a filename (1.jpg -> 001.jpg)
     zmv '(<1->).jpg' '${(l:3::0:)1}.jpg'
 
-###Replace spaces in filenames with underline
+### Replace spaces in filenames with underline
 
     zmv '* *' '$f:gs/ /_'
     zmv '*' '$f:s/hell/heaven/'

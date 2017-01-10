@@ -2,7 +2,7 @@
 
     File:		 StackExchange.md
     Created:	 dom 08 jan 2017 09:29:38 BRT
-    Last Change: dom 08 jan 2017 10:40:20 BRT
+    Last Change: seg 09 jan 2017 18:37:48 BRT
     Author:		 Sergio Araujo
     Site:		 http://vivaotux.blogspot.com
     e-mail:      <voyeg3r ✉ gmail.com>
@@ -17,7 +17,6 @@ e por aí vai.
 
     https://gist.github.com/voyeg3r/
 
-
 ### Atalhos de teclas nos posts
 
 Quando necessitamos postar uma resposta os atalhos de tecla
@@ -29,7 +28,7 @@ podem ser referenciados da seguinte forma:
 ou seja usando a marcação <kbd> Ctrl-V </kbd>
 
 
-# #Encurtando urls to StackExchange
+### Encurtando urls to StackExchange
 
 Urls do tipo:
 

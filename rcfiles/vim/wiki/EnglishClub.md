@@ -274,7 +274,7 @@ gesto que tenha alguma relação com o significado da palavra
 e toda vez que você escuta ou usa a palavra durante as suas
 sessões de estudo você faz o gesto.
 
-## Comprehensible Input
+### Comprehensible Input
 
 Técnica para Aprender Inglês Comprovada por Pesquisas
 

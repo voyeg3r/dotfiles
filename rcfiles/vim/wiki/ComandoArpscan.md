@@ -1,4 +1,4 @@
-##Verificar ips ativos numa subrede
+### Verificar ips ativos numa subrede
 
 arp-scan -l
 
@@ -17,7 +17,7 @@ com o comando abaixo você também pode detectar conflitos de IP
     duplicate lines of file.
 
 
-###como pingar em um MAC
+### como pingar em um MAC
 Primeiro descubra o MAC ADDRESS do host que deseja pingar com ifconfig na
 própria máquina ou com
 
@@ -29,13 +29,13 @@ como abaixo.
 
 ping -c 2 `arp-scan 10.1.1.0/24 | awk '/00:1b:11:dc:a9:65/ {print $1}'`
 
-##na minha rede
+### na minha rede
 
 arp-scan 10.1.1.0/24
 
-##ssh pelo MAC address
+### ssh pelo MAC address
 
 ssh  usuario@`arp-scan 10.1.1.0/24 | awk '/00:1b:11:dc:a9:65/ {print $1}'`
 
-##Referências
+### Referências
 * http://teckboard.blogspot.com/2009/08/tutorial-descobrir-ip-mac-wep-wpa.html

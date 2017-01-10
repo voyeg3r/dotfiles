@@ -14,21 +14,21 @@ to get real rename follow this instructions:
 
     sudo ln -s /usr/local/bin/rename /usr/bin/rename.pl
 
-## interesting options
+### interesting options
 
 If you want to do a dry run to make sure you don't clobber any files, add the -n switch to the command
 
-## adding left zeros
+### adding left zeros
 [link: stackoverflow](http://stackoverflow.com/questions/14327613/)
 
     perl-rename 's/(\d+)/sprintf("%03d", $1)/e' *.txt
 
 
-## To rename all files matching *.bak to strip the extension, you might say
+### To rename all files matching *.bak to strip the extension, you might say
 
     rename 's/\e.bak$//' *.bak
 
-## To translate uppercase names to lower, you'd use
+### To translate uppercase names to lower, you'd use
 
     rename 'y/A-Z/a-z/' *
 

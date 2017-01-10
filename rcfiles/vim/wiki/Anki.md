@@ -1,8 +1,8 @@
-##O que é o Anki
+### O que é o Anki
 
 E um programa de aprendizado baseado na repetição espaçada
 
-### Decks que podem ser importados do site do anki 
+### Decks que podem ser importados do site do anki
 
 as 1000 primeiras frases em ingles
 https://ankiweb.net/shared/info/2009669666
@@ -14,7 +14,7 @@ Flip cards with shortcut key "0". 844452602
 zoom 1956318463
 
 
-##Como mudar a pasta padrão do anki
+### Como mudar a pasta padrão do anki
 a referência para esta dica veio daqui:
 http://danielhnyk.cz/change-default-folder-anki-space-repetition/
 
@@ -68,12 +68,12 @@ científico que repetições em intervalos de tempo específicos
 aumentam o nível de retenção do conhecimento. Nos foruns em Inglês
 eles usam a Sigla SRS, ou spaced repetition system.
 
-##Como instalar o Anki
+### Como instalar o Anki
 No site do mairo vergara você encontrará um manual que
 lhe mostra como instalar o Anki.
 http://www.mairovergara.com/como-instalar-e-usar-o-anki/
 
-##como anexar arquivos de audio aos flashcards
+### como anexar arquivos de audio aos flashcards
 
 Esta parte é super importante pois o manual de instalação do Mairo
 vergara não mostra, é com este simples passo que você se permitir

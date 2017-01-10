@@ -1,6 +1,6 @@
-###Introdução
+### Introdução
 Entre outras coias pega:
-* IP 
+* IP
 * hosntame
 * mac address
 
@@ -8,4 +8,4 @@ Entre outras coias pega:
 nbtscan 172.30.34.-1.254
 
 
- 
+

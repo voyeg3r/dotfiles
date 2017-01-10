@@ -1,8 +1,8 @@
-##Introdução
+### Introdução
 
  Loop for, used to perform repetitive tasks
 
-### creating many folders 
+### creating many folders
 
     for ((i=1;i<=7;i++)){
         mkdir $(printf "%03d\n" $i)
@@ -14,7 +14,7 @@ We can also create folders this way
 
      mkdir -p {001..007}
 
-##Multiplication table
+### Multiplication table
 
 source: http://www.commandlinefu.com/commands/matching/multiplication-table/bXVsdGlwbGljYXRpb24gdGFibGU=/sort-by-votes
 
@@ -26,7 +26,7 @@ Um exemplo para substituir 02 por 03
 for i in *02*; do echo mv ${i} ${i/02/03}; done
 
 
-##fazer download de um range de arquivos
+### fazer download de um range de arquivos
 
 for ((i=1; i<67; i++)) do wget http://www.phrack.org/archives/tgz/phrack${i}.tar.gz -q; done
 

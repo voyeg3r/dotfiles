@@ -1,4 +1,6 @@
-###Introdução
+this is only a test^[]
+this is only a test^[]
+### Introdução
 
     File:		 ComandoChmod.md
     Created:	 dom 08 jan 2017 11:54:36 BRT
@@ -16,11 +18,11 @@
 
 dá permissão de execução ao arquivo x
 
-###aplicar as mesmas permissões a outro arquivo
+### aplicar as mesmas permissões a outro arquivo
 
      chmod --reference file1 file2
 
-###aplicar permissões somente a arquivos
+### aplicar permissões somente a arquivos
 
 		chmod 644 $(find . -type f)
 
@@ -28,11 +30,11 @@ dá permissão de execução ao arquivo x
 
 		find . -type f -print0 2>/dev/null |xargs -0 -I'{}' chmod 644 '{}'
 
-###aplicar permissões somente a diretórios
+### aplicar permissões somente a diretórios
 
-		chmod 755 $(find . -type d)
+    chmod 755 $(find . -type d)
 
-     chmod 644 $(find . -type f)
+    chmod 644 $(find . -type f)
 
 #### quando houver arquivos com espaço no nome
 
@@ -41,4 +43,4 @@ dá permissão de execução ao arquivo x
 ####aplicar permissões somente a diretórios
 
      chmod 755 $(find . -type d)
-    
+

@@ -1,4 +1,4 @@
-##Introdução
+### Introdução
 O cron (vem de cronologia) funciona assim:
 
 # minuto hora dia-do-mes mes dia-da-semana comando
@@ -23,11 +23,11 @@ O cron (vem de cronologia) funciona assim:
 O comando acima limpará a pasta /tmp
 todos os dias às 03:00h
 
-###sempre usar caminho completo no cron
+### sempre usar caminho completo no cron
 
 quando referenciar scripts use o caminho completo, no cron não há como definir path
 
-##atualizar a hora
+### atualizar a hora
 
 # manter o relogio certo
 0 * * * * /usr/sbin/ntpdate -s ntp.usp.br
@@ -38,21 +38,21 @@ quando referenciar scripts use o caminho completo, no cron não há como definir
 # minuto hora dia mˆes dia da semana comando
 0 */4 * * * /usr/sbin/ntpdate -s ntp.usp.br
 
-##executar um comando a cada 15 minutos
+### executar um comando a cada 15 minutos
 
 */15 * * * * /path/to/command
 
-##limpar thumbnails antigos
+### limpar thumbnails antigos
 a cada trinta minutos verifica e limpa os thumbnails com mais de
 três dias de acesso.
 
 */30 * * * * find ~/.thumbnails -type f -atime +3 | xargs rm -f
 
-##visualizando o conteúdo da tabela cron
+### visualizando o conteúdo da tabela cron
 
 crontab -l
 
-## algumas dicas sobre o cron 
+### algumas dicas sobre o cron
 
 Mudando o papel de parede
 
@@ -61,7 +61,7 @@ Apparently gsettings needs some variables to be set. Because CRON uses only a ve
 30 */2 * * * DISPLAY=:0 GSETTINGS_BACKEND=dconf /your/path/your-script.sh
 
 
-##editando a tabela do cron
+### editando a tabela do cron
 
 crontab -e
 
@@ -88,8 +88,8 @@ script para limpar o cache do squid
 # Autor: Sergio Luiz Araujo Silva
 # site: http://vivaotux.blogspot.com
 
-#data=`date +%d/%m/%Y`
-#hora=`date +%H:%M`
+# data=`date +%d/%m/%Y`
+# hora=`date +%H:%M`
 
 # você pode agendar este script assim
 # crontab -e
@@ -100,7 +100,7 @@ echo "  Parando o serviço squid..."
 /etc/init.d/squid stop
 echo "  Squid parado!"
 
-#zerando os logs
+# zerando os logs
 cd /var/log/squid
 echo
 echo "==============================================================="
@@ -129,5 +129,5 @@ echo "  Pronto, o cache foi recriado"
 
 
 
-##Referências
+### Referências
 * http://www.devin.com.br/tlm4/s1-agendando-crontab.html

@@ -7,11 +7,11 @@ twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
 
-###speed up the Ethernet
+### speed up the Ethernet
 
     sudo ethtool -s eth0 speed 100 duplex full
 
-##como forçar a placa de rede para full duplex
+### como forçar a placa de rede para full duplex
 
 
 # instale o programa ethtool

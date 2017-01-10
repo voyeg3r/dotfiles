@@ -1,4 +1,4 @@
-##Introdução
+### Introdução
 
 convert velha_imagem.png nova_imagem.jpg
 
@@ -12,12 +12,12 @@ convert input.png \
     ( +clone -background black -shadow 75x2+2+2 ) \
     +swap -background white -layers merge +repage -chop 2x2 output.png
 
-###converter jpg to png
+### converter jpg to png
 
 
 for i in *.jpg; do convert "$i" "${i%.jpg}.png" && rm "$i" && echo "$i is converted."; done
 
-##converter todas as páginas de um pdf para png
+### converter todas as páginas de um pdf para png
 
 convert arquivo.pdf img.png
 

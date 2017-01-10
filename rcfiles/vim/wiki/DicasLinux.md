@@ -1,4 +1,5 @@
-Arquivo: dicas linux
+# Arquivo: dicas linux
+
 Criado: Qui 09/Mai/2013 hs 09:38
 Last Change: dom 08 jan 2017 12:03:28 BRT
 autor: Sérgio Luiz Araújo Silva
@@ -6,12 +7,12 @@ site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
-###Consertando o /etc/hosts
+### Consertando o /etc/hosts
 
 [ "`awk 'NR==1 {print $NF}' /etc/hosts`" = "`hostname`" ] && echo '/etc/hosts já está ok!' || \
 sed -i.backup -r "1s/(.*)/\1 `hostname`/g" /etc/hosts
 
-##Colocando a iso do crunchbang em um pendrive
+### Colocando a iso do crunchbang em um pendrive
 
  source: http://crunchbang.org/forums/viewtopic.php?id=23267
 

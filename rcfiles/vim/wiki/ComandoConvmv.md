@@ -1,4 +1,4 @@
-##Introdução 
+### Introdução
 Para converter o nome dos arquivos entre as duas codificações, o comando é o convmv
 A sintaxe á dada por:
 
@@ -21,12 +21,12 @@ não converter arquivos que estejam na codificação de destino.
 find . -type f -print0 | xargs -0 -i% convmv -f UTF-8 -t ISO-8859-1 % --notest
 
 
-###converter recursivamente
+### converter recursivamente
 
 convmv -r -f iso8859-1 -t utf8 seu_diretório
 
 convmv --notest -r -f iso8859-1 -t utf8 seu_diretório
 
 
-##Referências
+### Referências
 * http://jfmitre.com/2010/01/alternando-arquivos-entre-codificacoes.html

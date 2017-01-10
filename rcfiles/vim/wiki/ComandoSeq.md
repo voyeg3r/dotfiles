@@ -1,15 +1,15 @@
-##Introdução
+### Introdução
 Para gerar sequência de números pares
 
 seq 2 2 10
 
 O comando acima diz:
 	comece em 2, de dois em dois, até 10
-###contagem regressiva de 10 até zero
+### contagem regressiva de 10 até zero
 
 seq 10 -1 0
 
-##somando os numeros de 1 a 100
+### somando os numeros de 1 a 100
 
 seq -s+ 100 | bc
 echo $[$(seq -s+ 1000)]
@@ -45,7 +45,7 @@ ou
 
 $ paste -d\- - - arquivo > novo.arquivo
 
-##gerando listas com três dígitos
+### gerando listas com três dígitos
 
 seq -w 100
 

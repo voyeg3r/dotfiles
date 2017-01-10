@@ -1,10 +1,10 @@
-##Introdução
+### Introdução
 
    Sed é um editor de streams, ou seja, ele manipula fluxos
    de texto que podem ser pipeados fazendo deleções, inserções
    substituições, etc.
 
-### apagando toda segunda linha 
+### apagando toda segunda linha
 
   sed -i '1~2d' file
 
@@ -16,16 +16,16 @@
   o numeral 2 indica que toda segunda linha receberá a ação
   indicada que no caso é deleção 'd'
 
-## adicionando uma linha em branco após toda segunda linha 
+### adicionando uma linha em branco após toda segunda linha
     adding a new line after each second line
 
     sed '0~2 a\\' inputfile
 
-## juntando três linhas consecutivas 
+### juntando três linhas consecutivas
 
     sed 'N;N;s/\n/ /g' file
 
-## operadores do sed 
+### operadores do sed
 
   =  .......... insere um número entre cada linha
   G ........... insere uma linha em branco entre cada linha
@@ -33,26 +33,26 @@
   sed '=;G' annoying.txt
 
 
-## remover espaços não separáveis
+### remover espaços não separáveis
 
 source: http://askubuntu.com/questions/357248/how-to-remove-special-m-bm-character-with-sed
 
     sed -i 's/\xc2\xa0/ /g' file
 
-## Imprimir somente as linhas impares
+### Imprimir somente as linhas impares
 
     sed -n '1~2p'
 
     Em inglês "odd lines"
     as pares seriam "even lines"
 
-##Removendo o caratere ' de uma string
+### Removendo o caratere ' de uma string
 
   sed 's/\x27//g'
 
-##separando o ultimo campo de um caminho
+### separando o ultimo campo de um caminho
 
-##O problema
+### O problema
 
 * fonte: http://br.groups.yahoo.com/group/shell-script/message/32415
 
@@ -73,7 +73,7 @@ source: http://askubuntu.com/questions/357248/how-to-remove-special-m-bm-charact
 
     e por ai vai.
 
-##A solução
+### A solução
 
     `sed -i.backup -r  's,(.*/)(.*),full=\1 \narq=\2,'  arquivo`
 
@@ -93,15 +93,15 @@ source: http://askubuntu.com/questions/357248/how-to-remove-special-m-bm-charact
     \n ............ note o \n antes de 'arq='
 
 
-##converter primeira letra em maiúsculo
+### converter primeira letra em maiúsculo
 
     sed -r 's/\b[a-z]{3,}/\u&/g' <<< "coordenacao de analise e instrucao de processos"
 
-##deleção na próxima linha
+### deleção na próxima linha
 
 sed '/follow me/{n; /the end$/d}' file
 
-##substituição na próxima linha
+### substituição na próxima linha
 Substituir na linha subsequente a um padrão
 * referência: http://sed.sourceforge.net/sed1line.txt
 * http://br.groups.yahoo.com/group/shell-script/message/31774
@@ -117,11 +117,11 @@ sed -i.backup '/src admin/{n;s/\(.*\)/\1 teste/g}' file
 # se a inteção é apenas imprimir a linha subsequente a um padrão
 sed -n '/pattern/{n;p}' < file
 
-##de-me o numero da linha
+### de-me o numero da linha
 
 sed -ne '/gimme this line number/{=;q;}'
 
-##Monitorando um arquivo
+### Monitorando um arquivo
 fonte: [[@http://aurelio.net/sed/sed-HOWTO/sed-HOWTO-8.html]]
 
 No //Sed// da GNU, a partir da versão **3.02.80**(*), foi adicionada a opção -u, que significa "unbuffered",
@@ -146,11 +146,11 @@ mas você pode simplificar tudo fazendo:
 No caso acima o sed irá apagar a palavra "padrão"
 mas antes ele já cria o bakcup pra você, tudo em uma
 mísera linha. :)
-##Casando números de 0 a 100
+### Casando números de 0 a 100
 
 cat file | sed  -n -r '/^100|^[0-9]{1,2}$/p'
 
-##trocando colunas de um texto
+### trocando colunas de um texto
 * fonte: http://br.groups.yahoo.com/group/sed-br/message/4432
 
 > > > arquivo, para esse formato
@@ -215,7 +215,7 @@ seguido do grupo 5 seguido de dois pontos
 seguido do grupo 6 seguido de dois pontos
 
 
-##pegar elementos de uma url
+### pegar elementos de uma url
 
 # faça uma regex para pegar:
 # protocolo http ou https
@@ -232,13 +232,13 @@ seguido do grupo 6 seguido de dois pontos
 # usando o sed para escrever o resultado
 cat file | sed -r 's,(https?)://(www\.)?([^./]*)[^/]*[^.]*\.(.*$),protocolo: \1 server: \3 linguagem: \4,g'
 
-##substituir somente onde houver um padrão
+### substituir somente onde houver um padrão
 
 sed '/baz/!s/foo/bar/g' # onde não houver o padrão
 sed '/baz/s/foo/bar/g'
 
 
-##Juntando linhas com o sed
+### Juntando linhas com o sed
 
 # você tem a seguinte entrada
 <abc a="1">
@@ -263,7 +263,7 @@ sed -i.backup '/^<abc/{N;N;s/\n\| //g}' file
 
 
 
-##Converte formatos de arquivos (terminador de linha) dos unix
+### Converte formatos de arquivos (terminador de linha) dos unix
 
 To convert a UNIX file to DOS using <span style="font-family:
 monospace;">sed</span> (GNU <span style="font-family: monospace;">sed</span>
@@ -285,7 +285,7 @@ To accomplish the same thing using <span style="font-family: monospace;">sed</sp
     sed -i.backup 's/\x0D$//' file
 
 
-##Inserir texto na linha 1
+### Inserir texto na linha 1
 
     sed -i '1i\
     texto após linha 1' file
@@ -293,39 +293,39 @@ To accomplish the same thing using <span style="font-family: monospace;">sed</sp
     sed -i "1i $SHELL-VARIABLE" filename
 
 
-##Consertando o resolv.conf por tabela
+### Consertando o resolv.conf por tabela
 
 sed -i '/^# *prepend/s/^#//g; s/127.*/208.67.220.220, 208.67.222.222;/g' /etc/dhcp3/dhclient.conf
 
-##Adicionando os repositórios universe e multiverse
+### Adicionando os repositórios universe e multiverse
 
 sed -i.backup -r '/^#\s?deb\s?(http|ftp|-src).*(partner|multiverse|universe)/s/^#\s?//g' /etc/apt/sources.list
 
-##baixando atualizações para usar em outra máquin
+### baixando atualizações para usar em outra máquin
 
 apt-get -qq --print-uris dist-upgrade|sed "s/'\(.*\)'.*/\1/" >urls.txt
 
-##deletando uma linha específica
+### deletando uma linha específica
 
 sed -i 8d ~/.ssh/known_hosts
 
-##extraindo parte de um arquivo
+### extraindo parte de um arquivo
 
 sed -n '/start/,/end/p' file
 sed '27,99 !d' file.txt > /tmp/file2
 
 
-##consertando o /etc/hosts
+### consertando o /etc/hosts
 No ubuntu o nome da máquina tem que estar na linha 1 tambem
 
 [ -z "$(head -1 /etc/hosts | grep "$(hostname)")" ] && sed -i.backup -r "1s/(.*)/\1 `hostname`/g" /etc/hosts
 
-##Apagando tags html
+### Apagando tags html
 
 sed 's/<[^>]*>//g' index.html
 
 
-##inserindo links html
+### inserindo links html
 fonte: http://aurelio.net/sed/sed-dicas.txt
 
 # tranforma texto (URL) em tags HTML de links.
@@ -335,12 +335,12 @@ fonte: http://aurelio.net/sed/sed-dicas.txt
     sed 's_\<\(ht\|f\)tp://[^ ]*_<a href="&">&</a>_'
     sed -i.bakup 's|http.[^ \t]*|<a href="&">&</a>|'  htmlfile
 
-##Comentando scripts bash
+### Comentando scripts bash
 
 sed 's/^abc/#&/'   # comenta a linha que comeca com abc
 
 
-##Corrigindo os atalhos do mouse e terminal do ubuntu intrepid
+### Corrigindo os atalhos do mouse e terminal do ubuntu intrepid
 Para esta solução vamos pedir ao amado 'sed' que busque uma linha
 começada com '/^X-Ubuntu-Gettext-Domain=gnome-terminal/', caso
 obtenhamos sucesso ele substitui o começo da linha por um comentário.
@@ -351,7 +351,7 @@ sed -i '/^X-Ubuntu-Gettext-Domain=gnome-terminal/ s/^/#/g' \
 sed -i '/^X-Ubuntu-Gettext-Domain=gnome-control-center-2.0/ s/^/#/g' \
    /usr/share/applications/gnome-settings-mouse.desktop
 
-##Inserir arquivo em outro
+### Inserir arquivo em outro
 fonte: http://br.groups.yahoo.com/group/sed-br/message/4138
 
 Experimente somente
@@ -365,12 +365,12 @@ arq=arquivo.txt
 sed "/insertPoint/r $arq" padrao.txt
 
 Jair
-##Mostrar primeira linha
+### Mostrar primeira linha
 
 sed 1q /etc/passwd | awk '{ FS = ":" ; print $1 }'
 
 
-##Exibindo o path de uma forma mais legível
+### Exibindo o path de uma forma mais legível
 
 sed 's/:/\n/g' <<<$PATH
 
@@ -379,12 +379,12 @@ outro exemplo
 printenv PATH
 env | grep -i PATH | cut -d= -f2
 
-##imprimir uma linha randômica de arquivo
+### imprimir uma linha randômica de arquivo
 fonte: http://www.commandlinefu.com/commands/view/2748/pick-a-random-line-from-a-file
 
 sed -n $(($RANDOM % $(wc -l < file.txt) +1 ))p file.txt
 
-##Quebras de linha
+### Quebras de linha
 retirado da lista sed-br
 -- "Marcelo G. Dias" > wrote:
 >
@@ -407,15 +407,15 @@ beleza?
 --
 Aurelio Marinho Jargas, Curitiba, Conectiva
 http://aurelio.net
-##Trocando a página inicial do firefox
+### Trocando a página inicial do firefox
 
 sed -i 's|\("browser.startup.homepage",\) "\(.*\)"|\1 "http://www.google.com"|' .mozilla/firefox/*.default/prefs.js
 
-##Retirando linhas em branco duplicadas
+### Retirando linhas em branco duplicadas
 
    sed '/./,/^$/!d'
 
-##como mover parte de um arquivo para o seu final
+### como mover parte de um arquivo para o seu final
 fonte: http://stackoverflow.com/questions/1286883/
 
 sed '/\(pattern\)/,+4 { H; d; }; $ { p; x; }' file
@@ -432,7 +432,7 @@ sed '
  # Afterwards sed print current line => in our case deleted line
  }' /boot/grub/menu.lst
 
-##Inserindo linhas em brancom após linhas maiores que
+### Inserindo linhas em brancom após linhas maiores que
 Observe que a quebra de linha é explícita, ou seja o comando sed
 continua na próxima linha
 
@@ -442,12 +442,12 @@ sed -ie '/^.\{42\}$/a\
 ' huge_text_file
 
 
-##insert a blank line above every line which matches "regex"
+### insert a blank line above every line which matches "regex"
 
  sed '/regex/{x;p;x;}'
 
 
-##Modificando a profundidade de cores do xorg.conf
+### Modificando a profundidade de cores do xorg.conf
 
 #  sed -i.backup 's/\(DefaultDepth\s\+\)24$/\116/g' /etc/X11/xorg.conf
 
@@ -477,20 +477,20 @@ lá na substituição \1 isto cola o grupo acima
 \1 ............. DefaultDepth + espaços
 16 ............. Valor que deverá substituir o 24
 
-##Desabilitando terminais
+### Desabilitando terminais
 No ubuntu a inicialização dos terminais fica em arquivos /etc/event.d/tty[1-6]
 
    sed -i.backup '6,7s/^start/stop/g' /etc/event.d/tty[3-6]
 
-##Removendo linhas em branco em excesso
+### Removendo linhas em branco em excesso
 
   sed '/./,/^$/!d'
 
-##Removendo caracteres hexadecimais
+### Removendo caracteres hexadecimais
 
   sed -i 's/%0d//g' arquivo
 
-##Probleminha postado na lista sed-br
+### Probleminha postado na lista sed-br
 
 Alow pessoal,
 
@@ -549,13 +549,13 @@ protegidas trocamos o delimitador do sed de "/" para ","
 
 
 
-##Removendo kernels antigos
+### Removendo kernels antigos
 * fonte: http://ubuntued.info/ganhe-espaco-removendo-kernels-antigos
 
 dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
 
 
-##trocando caracteres no final de uma string longa
+### trocando caracteres no final de uma string longa
 fonte: http://br.groups.yahoo.com/group/shell-script/message/30120
 
 Ola pessoal,

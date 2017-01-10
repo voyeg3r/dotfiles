@@ -820,7 +820,7 @@ unmap =                           : get the original vim command on a mapped key
 <C-LEFTARROW><C-RIGHTARROW>       : jump one word backwards/forwards
 <C-X><C-E>,<C-X><C-Y>             : scroll while staying put in insert
 ----------------------------------------
-#encryption (use with care: DON'T FORGET your KEY)
+# encryption (use with care: DON'T FORGET your KEY)
 :X                                : you will be prompted for a key
 :h :X
 ----------------------------------------
@@ -855,13 +855,13 @@ i<C-K>e'                          : enters é
 i<C-V>233                         : enters é (Unix)
 i<C-Q>233                         : enters é (Win32)
 ga                                : View hex value of any character
-#Deleting non-ascii characters (some invisible)
+# Deleting non-ascii characters (some invisible)
 :%s/[\x00-\x1f\x80-\xff]/ /g      : type this as you see it
 :%s/[<C-V>128-<C-V>255]//gi       : where you have to type the Control-V
 :%s/[€-ÿ]//gi                     : Should see a black square & a dotted y
 :%s/[<C-V>128-<C-V>255<C-V>01-<C-V>31]//gi : All pesky non-asciis
 :exec "norm /[\x00-\x1f\x80-\xff]/"        : same thing
-#Pull a non-ascii character onto search bar
+# Pull a non-ascii character onto search bar
 yl/<C-R>"                         :
 /[^a-zA-Z0-9_[:space:][:punct:]]  : search for all non-ascii
 ----------------------------------------
@@ -912,7 +912,7 @@ gvim file1.c file2.c lib/lib.h lib/lib2.h : load files for "session"
 gvim -S                           : Reload all files (loads Session.vim) [C]
 gvim -S MySession.vim             : Reload all files from named session [C]
 ----------------------------------------
-#tags (jumping to subroutines/functions)
+# tags (jumping to subroutines/functions)
 taglist.vim                       : popular plugin
 :Tlist                            : display Tags (list of functions)
 <C-]>                             : jump to function under cursor

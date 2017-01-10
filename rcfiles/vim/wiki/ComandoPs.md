@@ -1,4 +1,4 @@
-## Mostrar processos que consomem mais memória
+### Mostrar processos que consomem mais memória
 
     ps aux | sort -nk +4 | tail
 
@@ -14,7 +14,7 @@ O comando "ps aux" exibe todos os processos de todos os usuários, o comando sor
 
 ps aux --sort=%mem,%cpu
 
-## listar os comandos que mais consomem memória
+### listar os comandos que mais consomem memória
 
     ps -A --sort -rss -o comm,pmem,rss | head -n 6
 

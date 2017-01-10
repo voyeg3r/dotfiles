@@ -1,9 +1,9 @@
-##Introdução
+### Introdução
 mover um arquivo para um nível acima
 
   mv arquivo ..
 
-###combinando o mv com o [[find]]
+### combinando o mv com o [[find]]
 
 # adicionando extensão
 find ./ -maxdepth 1 -type f -print0 | xargs -0 -i mv ./{} ./{}.txt
@@ -11,7 +11,7 @@ find ./ -maxdepth 1 -type f -print0 | xargs -0 -i mv ./{} ./{}.txt
 # movendo arquivos
 find ~/ -iname "*.txt" | xargs mv -t ~/tmp
 
-##consertar utf8 para iso
+### consertar utf8 para iso
 * http://www.mycomputerhelps.org/linux-user/how-to-batch-repair-file-and-folder-names-encoding-on-windows-after-a-windows-linux-file-transfer.html
 * veja também : http://www.diegolima.org/wordpress/?p=24
 
@@ -45,7 +45,7 @@ echo “$name => $new_name”
 # mv “$name” “$new_name”
 fi
 done
-## END SCRIPT
+### END SCRIPT
 
 
 Start out with the move (mv) line commented out to
@@ -59,16 +59,16 @@ actually rename the files. You can reverse the conversion
 
 Good luck.
 
-##trocar a extensão de arquivos
+### trocar a extensão de arquivos
 
 for i in *.html; do mv $i ${i%.html}.htm; done
 for i in `ls *.GIF`; do mv $i ${i/.GIF/.gif}; done
 
-##retirando espaços
+### retirando espaços
 
 for i in `ls *`; do mv $i ${i// /_/}; done
 
-##veja também 
+### veja também
 comando [[rename]]
 
 

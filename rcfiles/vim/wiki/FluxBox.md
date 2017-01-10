@@ -6,7 +6,7 @@ site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
 
-###Criar pasta de backgrounds do fluxbox
+### Criar pasta de backgrounds do fluxbox
 
 ln -s ~/Dropbox/img/wallpapers/ ~/.backgrounds/
 
@@ -19,7 +19,7 @@ vim ~/.fluxbox/init
 
     session.screen0.rootCommand: fbsetbg -r ~/.backgrounds/
 
-##Teclas de atalho do fluxbox
+### Teclas de atalho do fluxbox
 
  ~/.fluxbox/keys
 

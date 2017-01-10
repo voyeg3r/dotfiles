@@ -222,7 +222,7 @@ LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
 zle -N insert-history-line insert-history-line
 bindkey '^[e' insert-history-line
 
-# allows me to bring vim back atter pressing ctrl-z 
+# allows me to bring vim back atter pressing ctrl-z
 # by pressint it agaia
 # source http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 fancy-ctrl-z () {
@@ -258,7 +258,7 @@ bindkey '\eg' _git-status
 #         CURSOR=$#BUFFER         # move cursor
 #         zle -R -c               # refresh
 #     }
-# 
+#
 #     zle -N percol_select_history
 #     bindkey '^R' percol_select_history
 # fi
@@ -359,4 +359,4 @@ bindkey '^ ' autosuggest-accept
 source /home/sergio/.dotfiles/rcfiles/zsh/zaw/zaw.zsh
 bindkey '^R' zaw-history
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+GNOME_VERSION=$(gnome-shell --version)

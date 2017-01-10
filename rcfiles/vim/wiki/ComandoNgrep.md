@@ -1,4 +1,4 @@
-###Introdução
+### Introdução
 Filtra pacotes na rede (sniffer)
 O ngrep possui um amplo conjunto de argumentos permitindo diversas maneiras de coleta de tráfego e filtragem utilizando expressões regulares.
 
@@ -37,10 +37,10 @@ usage: ngrep <-hNXViwqpevxlDtTRM> <-IO pcap_dump> <-n num> <-d dev> <-A num>
 
 Irei explicar alguns dos mais importantes argumentos:
 
-#ngrep -d eth0 -W byline port 80
+# ngrep -d eth0 -W byline port 80
 A opção:-d = diz de qual interface de rede será feita a captura. Para todas as interfaces usar o valor any (qualquer)
 -W = Diz qual será o formato da saida, byline interpreta os caracteres especiais, podendo visualizar melhor o texto capturado. Entre as opções teremos normal, single e none.
 port = Captura o tráfego de uma determinada porta..
 
-#ngrep -wi "user|pass" port 21
+# ngrep -wi "user|pass" port 21
 Exibe todos os pacotes de todas as interfaces cuja o tráfego existe na porta 21 (FTP pra TCP), e que contenha as palavras user OU pass no seu interior.

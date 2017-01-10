@@ -1,10 +1,10 @@
-## introdução 
+### introdução
 
 http://sjl.bitbucket.org/gundo.vim/
 
 screencast: http://screenr.com/M9l
 
-###instalação
+### instalação
 
 Para quem usa o PathogenPlugin
 

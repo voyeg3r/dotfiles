@@ -1,15 +1,15 @@
-O plugin [[UltiSnips]]
+# O plugin [UltiSnips md](UltiSnips.md)
 
 Diretorio dos snippets (dá uma olhada em help Ulti...)
 
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+    let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 [[Tex.Snippets]]
 
 
-###como apagar tags do tipo </font*> no vim 
+### como apagar tags do tipo </font*> no vim
 
-<\/\?font[^<]*>
+    <\/\?font[^<]*>
 
 A expressão regular acima apaga a tag <font*> ou </font*>
 de documentos quaisquer, o asterisco representa qualquer caractere
@@ -34,7 +34,8 @@ Explicando:
 
 		%s,</\?font[^<]*>,,g
 
-		Para evitar usar muitos escapes usamos no comando final (acima) um
-		delimitador de busca diferente, para não ter que escapar todas asa
-		barras, havendo somente um escape para \? que é o quantificador da
-		barra nornal, significa uma barra normal no começo ou não (zero ou 1 ocorrências)
+Para evitar usar muitos escapes usamos no comando final (acima) um delimitador
+de busca diferente, para não ter que escapar todas asa barras, havendo somente
+um escape para \? que é o quantificador da barra nornal, significa uma barra
+normal no começo ou não (zero ou 1 ocorrências)
+

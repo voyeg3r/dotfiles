@@ -9,7 +9,7 @@ email: <voyeg3r  gmail.com>
 como evitar [[AtaqueCardiaco]]
 cerveja e agua [[CervejaEagua]]
 
-### 5 componentes essenciais para a saude 
+### 5 componentes essenciais para a saude
 http://www.youtube.com/watch?v=MFp5QLR6xpE&feature=watch-vrec
 
    Vitamina D  (evita câncer) tomar sol
@@ -18,7 +18,7 @@ http://www.youtube.com/watch?v=MFp5QLR6xpE&feature=watch-vrec
    Omega 3
 
 
-##Exercícios para a visão
+### Exercícios para a visão
 
 http://www.youtube.com/watch?v=S2Vjib_tGj4&feature=endscreen&NR=1
 
@@ -35,7 +35,7 @@ http://www.youtube.com/watch?v=S2Vjib_tGj4&feature=endscreen&NR=1
  Relaxamento da ioga balançando os braços
  Leitura de um livro de cabeça para baixo (focar a visão)
 
-## agua alcalina 
+### agua alcalina
 
 A água alcalina não é absorvida no estado ALCALINO pelo organismo, pois quando
 ela atinge o estômago, que é um ambiente ácido, ela se acidifica. Mas

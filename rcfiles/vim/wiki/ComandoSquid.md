@@ -1,14 +1,25 @@
-##Introdução 
+this is only a test^[]
+this is only a test^[]
+this is only a test^[]
+this is only a test^[]
+this is only a test^[]
+this is only a test^[]
+this is only a test^[]
+this is only a test^[]
+this is only a test^[]
+this is only a test^[]
+this is only a test^[]
+### Introdução
 O squid é um excelente filtro de conteúdo para intranets, com ele podemos restringir
 extensões de arquivos, [[expressões regulares]], além disto ele é uma forma de manter
 em cache (armazenados) sites frequentemente visitados, recurso que se bem configurado
 aumenta a velocidade da navegação numa intranet.
-###cache do apt
+### cache do apt
 * http://www.linuxjournal.com/content/presenting-squid-deb-proxy-speed-your-update-downloads
 
 sudo apt-get install squid-deb-proxy avahi-tools
 
-##Cache de videos do youtube 
+### Cache de videos do youtube
 Para que seu squid possa fazer cache dos vídeos do YouTube, adicione as linhas abaixo ao seu squid.conf, essa alteração não só faz cache do youtube, mas qualquer site que utilize a mesma tecnologia flash com extensão .flv
 
 ########### Cache Videos ###########
@@ -23,18 +34,18 @@ cache allow youtube
 maximum_object_size 102400 KB (100MB)
 
 
-* http://wiki.squid-cache.org/ConfigExamples/DynamicContent/YouTube 
+* http://wiki.squid-cache.org/ConfigExamples/DynamicContent/YouTube
 * http://lucianopinheiro.net/portal/?q=node/115
 
 
-##balanceamento de carga 
+### balanceamento de carga
 * http://www.gulbf.com.br/?q=node/28
 
-##dicas 
+### dicas
 * http://linuxadm.blogspot.com/2008/06/squid-tuning-mais-dicas-aumentando.html
 * local das páginas de erro /usr/share/squid/errors/English
 
-##bloqueio do emeesseene 
+### bloqueio do emeesseene
 
 gpedit.msc >> modelos administrativos >> sistema
 
@@ -70,9 +81,9 @@ Depois de reiniciar o PC , vá em: Iniciar\ Painel de controle\ Adicionar ou rem
  programas \Adicionar ou remover componentes do Windows Remova o Windows messenger
 
 
-##proxy transparente 
+### proxy transparente
 
-##Redirecionmento de portas no iptables 
+### Redirecionmento de portas no iptables
 da porta 80 do navegador para 3128
 
 Adicone as linhas abaixo ao final do arquivo
@@ -97,29 +108,29 @@ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 31
 iptables -t nat -A PREROUTING -i eth0 -p udp --dport 80 -j REDIRECT --to-port 3128
 
 
-##Ativando o proxy transparente no squid 
+### Ativando o proxy transparente no squid
 na linha http_port do arquivo 'squid.conf' adicione 'transparent'
 
 http_port 3128 trasnparent
 
-##squid.conf 
+### squid.conf
 
 #1. /etc/squid/squid.conf
 
-#http_port 3128 transparent vhost vport
+# http_port 3128 transparent vhost vport
 http_port 3128 transparent
-#alway_direct allow all
+# alway_direct allow all
 
-#http_port 168.30.34.1:3128 transparent vhost vport=80
-#http_port 127.0.0.1:3128 transparent vhost vport=80
-#http_port 3128
+# http_port 168.30.34.1:3128 transparent vhost vport=80
+# http_port 127.0.0.1:3128 transparent vhost vport=80
+# http_port 3128
 visible_hostname proxy
 
-#cache_mem 80 MB
-#maximum_object_size_in_memory 1024 KB
-#maximum_object_size 40 MB
-#cache_swap_low 80
-#cache_swap_high 85
+# cache_mem 80 MB
+# maximum_object_size_in_memory 1024 KB
+# maximum_object_size 40 MB
+# cache_swap_low 80
+# cache_swap_high 85
 
 cache_mem 128 MB
 maximum_object_size_in_memory 128 KB
@@ -131,9 +142,9 @@ half_closed_clients off
 ###############################
 #  local e tamanho do cache ##
 ###############################
-#cache_dir ufs /var/spool/squid 4096 16 256
-#cache_dir ufs /var/spool/squid 192 20 394
-#cache_dir diskd /var/spool/squid 2048 64 256 Q1=64 Q2=72
+# cache_dir ufs /var/spool/squid 4096 16 256
+# cache_dir ufs /var/spool/squid 192 20 394
+# cache_dir diskd /var/spool/squid 2048 64 256 Q1=64 Q2=72
 
 cache_dir ufs /var/spool/squid/cache1 512 16 256
 cache_dir ufs /var/spool/squid/cache2 512 16 256
@@ -143,8 +154,8 @@ cache_dir ufs /var/spool/squid/cache5 512 16 256
 
 cache_access_log /var/log/squid/access.log
 
-#Resolve um problema com conexões persistentes que ocorre com certos servidores,
-#e que provoca delays em nosso cache.
+# Resolve um problema com conexões persistentes que ocorre com certos servidores,
+# e que provoca delays em nosso cache.
 
 detect_broken_pconn on
 
@@ -198,12 +209,12 @@ reply_body_max_size 10485760 allow all
 
 # bloquei ao msn
 
-#acl msn_req req_mime_type ^application/x-msn-messenger$
-#acl msn_rep rep_mime_type ^application/x-msn-messenger$
-#acl msngw url_regex -i gateway.dll
-#http_access deny msn_req
-#http_access deny msn_rep
-#http_access deny msngw
+# acl msn_req req_mime_type ^application/x-msn-messenger$
+# acl msn_rep rep_mime_type ^application/x-msn-messenger$
+# acl msngw url_regex -i gateway.dll
+# http_access deny msn_req
+# http_access deny msn_rep
+# http_access deny msngw
 
 acl msn rep_mime_type ^application/x-msn-messenger$
 http_reply_access deny msn
@@ -216,8 +227,8 @@ http_reply_access deny msn
 acl webmail url_regex -i "/etc/squid/webmail"
 http_access allow webmail
 
-#acl ad src 168.30.34.155
-#http_access allow ad
+# acl ad src 168.30.34.155
+# http_access allow ad
 
 acl liberados url_regex -i "/etc/squid/liberados"
 http_access allow liberados
@@ -260,14 +271,14 @@ http_access allow redelocal
 
 # linha abaixo adicionad pelo sergio em 05-11-2008
 
-#always_direct allow all
+# always_direct allow all
 http_access deny all
 
 
-##sites para bloqueio 
+### sites para bloqueio
 http://www.mrjogos.com.br/
 
-##bloquear msn no próprio windows
+### bloquear msn no próprio windows
 [[code] format="bash"]
 edite c:\windows\system32\drivers\etc\hosts
 
@@ -279,19 +290,19 @@ echo 127.0.0.1 www.youtube.com >> %SystemRoot%\system32\drivers\etc\hosts
 Attrib +r +h %WINDIR%\system32\drivers\etc\hosts
 code
 
-##zerando o cache 
+### zerando o cache
 
 /etc/init.d/squid stop
 rm -rf /var/spool/squid/*
 squid -z
 /etc/init.d/squid start
 
-##Filtrando os logs do squid
+### Filtrando os logs do squid
 
 tail -f /var/log/squid/access.log | awk '{print $3" "$7}'
 
 
- Recomendado:* http://www.squidguard.org/Doc/configure.html* http://squidguard.shalla.de/faq/ (faq do squidGuard)==Evitando spam== * http://www.squid-cache.org.br/index.php?option=com_content&task=view&id=75&Itemid=27==noatime== 
+ Recomendado:* http://www.squidguard.org/Doc/configure.html* http://squidguard.shalla.de/faq/ (faq do squidGuard)==Evitando spam== * http://www.squid-cache.org.br/index.php?option=com_content&task=view&id=75&Itemid=27==noatime==
 
 /dev/sda3 /var/spool/squid reiserfs defaults,noatime 0 2
 
@@ -301,21 +312,21 @@ chattr -R +A /var/spool/squid
 #(Onde o -R é para recursividade, e o +A para especificar o noatime)
 
 
- ==Aumentando a segurança do squid== * http://gilbertosilva.wordpress.com/2008/03/06/aumentando-seguranca-do-squid/header_accessEssa configuração permite que o Squid não forneça uma série de informações para os sites acessados. Com elas você pode criar um servidor de proxy igual ao conhecido Anonymizer. Irei falar apenas as principais, as restantes você irá encontrar no manual do squid. As configurações abaixo servem para não ser passadas informações do seu servidor, como versão do sistema e ip. 
+ ==Aumentando a segurança do squid== * http://gilbertosilva.wordpress.com/2008/03/06/aumentando-seguranca-do-squid/header_accessEssa configuração permite que o Squid não forneça uma série de informações para os sites acessados. Com elas você pode criar um servidor de proxy igual ao conhecido Anonymizer. Irei falar apenas as principais, as restantes você irá encontrar no manual do squid. As configurações abaixo servem para não ser passadas informações do seu servidor, como versão do sistema e ip.
 
 header_access From deny all
 header_access Via deny all
 header_access Server deny all
 
 
- existem mais duas que podem ser desligadas, mas alguns sites podem não abrir. Eu tive problemas com sites seguros com as configurações abaixo. A primeira não envia a versão do navegador e a segunda o site de referencia. 
+ existem mais duas que podem ser desligadas, mas alguns sites podem não abrir. Eu tive problemas com sites seguros com as configurações abaixo. A primeira não envia a versão do navegador e a segunda o site de referencia.
 
 header_access User-Agent deny all
 header_access Referer deny all
 
 
  ==Sites bloqueados== [[bloqueados]]
-##desempenho do squid 
+### desempenho do squid
 * http://linuxadm.blogspot.com/2008/06/squid-tuning-mais-dicas-aumentando.html
 * http://www.vivaolinux.com.br/dicas/impressora.php?codigo=9192
 
@@ -350,7 +361,7 @@ cache_dir diskd /var/squid/cache/4 2900 128 512 Q1=64 Q2=72
 cache_dir diskd /var/squid/cache/5 2900 128 512 Q1=64 Q2=72
 
 
-##Configurando o squid para não fazer cache de alguns sites 
+### Configurando o squid para não fazer cache de alguns sites
  fonte: http://brfedora.wordpress.com/2008/05/18/configurando-squid-para-nao-fazer-cache-para-alguns-sites/
  Adicione as linhas abaixo no arquivo {{/etc/squid/squid.conf}}:
 
@@ -368,7 +379,7 @@ http://www.redhat.com/ - DIRECT/209.132.177.50 text/html
 
 
 
-##Dicas 
+### Dicas
  Durante a configuração do squid você pode ter que habilitar
  o proxy ou não no navegador, usa uma extenão para desabilitar:
 * https://addons.mozilla.org/pt-BR/firefox/addon/1557
@@ -393,7 +404,7 @@ application/zip zip
 
 
 
-##Zerar o cache do squid 
+### Zerar o cache do squid
 
 procedimento q eu sigo pra zerar o cache é o seguinte:
 
@@ -405,7 +416,7 @@ procedimento q eu sigo pra zerar o cache é o seguinte:
 
 
 
-##squid.conf 
+### squid.conf
 
 1. /etc/squid/squid.conf
 2. cache_dir ufs /var/cache/squid3 512 16 256
@@ -433,7 +444,7 @@ acl redeslocais src 172.20.19.0/255.255.254.0 192.168.254.0/24
 
 
 
-##squidGuard.conf 
+### squidGuard.conf
 
  Para verificar:
 
@@ -442,7 +453,7 @@ tail /var/log/squid/squidGuard.log
 
 
 
-#consertar permissões
+# consertar permissões
 chown proxy:proxy /etc/squid/squidGuard.conf
 chown -R proxy:proxy /var/lib/squidguard/db
 chown -R proxy:proxy /var/log/squid/
@@ -543,7 +554,7 @@ redirect http://www.google.com.br
 
 
 
-##Personalizando a mensagem de erro 
+### Personalizando a mensagem de erro
 * http://www.cybershark.net/tutoriais/squid/
 
 
@@ -572,13 +583,13 @@ Email: voyeg3r no gmail <br>
 
 
 
-##Criando regras 
+### Criando regras
 
 acl nome src 192.168.254.0/24
 http_access allow nome
 
 
-##Bloqueando pelo tipo mime 
+### Bloqueando pelo tipo mime
 * http://www.squid-cache.org/mail-archive/squid-users/200511/0534.html
 
 acl downloads req_mime_type application/octet-stream application/zip
@@ -592,7 +603,7 @@ acl downloads application/octet-stream application/zip video/.* audio/.* msi/.*
 acl msnmime req_mime_type -i ^application/x-msn-messenger$
 
 
-##Exemplos de acl's - regras 
+### Exemplos de acl's - regras
  acl HORARIO_ALMOCO time MTWHF 12:00-13:30
 
  Segue tabela de abreviação dos dias.
@@ -606,7 +617,7 @@ acl msnmime req_mime_type -i ^application/x-msn-messenger$
 || F || sexta-feira ||
 || A || sábado ||
 
-##Limpando os comentários do squid 
+### Limpando os comentários do squid
  Usando o vim:
 
 :%g/^#\|^$/d
@@ -617,21 +628,21 @@ acl msnmime req_mime_type -i ^application/x-msn-messenger$
 sed -i.backup '/^#\|^$/d' /etc/squid/squid.conf
 
 
-##Links para estudo 
+### Links para estudo
 * http://www.guiadohardware.net/comunidade/squid-autentica/246578/
 * http://www.linuxman.pro.br/squid/
 
-===Para autenticar no active directory=== 
+===Para autenticar no active directory===
 * http://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=4774
 * http://www.linuxchix.org.br/?q=node/15
 * http://www.andersonleite.net/tutoriais/squid_ad.htm
 
-##bloqueando no próprio windows 
+### bloqueando no próprio windows
  coloque cada entrada descrita abaixo precedidade de 0.0.0.0
  em c:\windows\system32\drivers\etc\hosts
 
 
-##Referências 
+### Referências
 * http://under-linux.org/forums/proxy-nat-firewall/111431-windows-vista-spk1-nao-acessa-atraves-de-proxy-transparente-3.html
 * http://www.guiadohardware.net/comunidade/regras-criando/205856/
 * [[http://www.squid-cache.org.br/]]

@@ -1,4 +1,4 @@
-##Introdução
+### Introdução
 corta os campos de 2 a 5
 
  echo "1234566" | cut -c2-5
@@ -11,7 +11,7 @@ O mesmo resultado com o [[awk]]
 
 awk -F: '{print $1}' /etc/passwd
 
-###imprimir tudo exceto primeira coluna
+### imprimir tudo exceto primeira coluna
 
 cut -f 2- -d " "
 
@@ -40,4 +40,3 @@ Solução
 
 cut -d"&" -f -5 arquivo
 
- 

@@ -1,4 +1,4 @@
-##Introdução 
+### Introdução
 
 Por padrão o cliente Subversion só irá pedir senha durante a primeira conexão com o servidor Subversion, pois o cliente do Subversion irá armazenar a senha e outras informações de autenticação em ~/.subversion/auth. Isto cria possíveis pontos de exploração do servidor Subversion, para mudar isto edite o arquivo em ~/.subversion/config e altere a seguinte linha de:
 
@@ -8,33 +8,33 @@ Para:
 
 store-passwords = no
 
-###criando um repositório
+### criando um repositório
 
   svn create <caminho_do_diretorio>
 
 
-##Find out who change what files in a SVN repository
+### Find out who change what files in a SVN repository
 descubra o que mudou em um repositório svn
 
 svn log -v | less
 
 
-##verificando diferenças com cores habilitadas
+### verificando diferenças com cores habilitadas
 
 svn diff | view -
 
 
-##Observações
+### Observações
 
 trunk=versão atual
 branchs=versões de testes
 tags=releses
-$svn import   .   file:///home/diego/repositorio/sitePessoal/trunk/ 
+$svn import   .   file:///home/diego/repositorio/sitePessoal/trunk/
 
 
-Quando for preciso efetuar modificações em um 
-projeto que já está no svn, antes é preciso 
-fazer o checkout, ou seja, efetuar o download 
+Quando for preciso efetuar modificações em um
+projeto que já está no svn, antes é preciso
+fazer o checkout, ou seja, efetuar o download
 dos arquivos correspondentes ao projeto.
 
 
@@ -43,19 +43,19 @@ dos arquivos correspondentes ao projeto.
 Esta etapa só é necessária ser executada uma vez.
 Obs: checkout = comit
 
-##copiando algo para o repositório
+### copiando algo para o repositório
 um trem qualquer
 
    svn add trem
 
 
-##Efetivando alterações
+### Efetivando alterações
 
-  svn commit file:///home/diego/repositorio/sitePessoal/trunk/ 
+  svn commit file:///home/diego/repositorio/sitePessoal/trunk/
 
 Obs: comit = ci
 
-##exemplos
+### exemplos
 
 # svn st
 
@@ -66,7 +66,7 @@ Legenda:
     * D - o arquivo ou diretório foi "Deleted" (deletado) da sua working copy;
     * R - o arquivo ou diretório foi "Replaced" (substituído) em sua working copy, ou seja, um elemento foi deletado e posteriormente outro com o mesmo nome foi adicionado; embora tenham o mesmo nome o repositório consegue percebê-los como arquivos diferentes;
     * G - o arquivo no servidor recebeu alterações, mas sua cópia local tinha as suas modificações; ou as alterações não interceptavam ou eram idênticas às suas, então o Subversion conseguiu colocá-las em estado de "merGed" (união) sem problemas;
-    * C - o arquivo recebeu alterações "Conflicting" (conflitantes) com as suas, ou seja, na mesma seção do arquivo; trataremos deste caso mais adiante. 
+    * C - o arquivo recebeu alterações "Conflicting" (conflitantes) com as suas, ou seja, na mesma seção do arquivo; trataremos deste caso mais adiante.
 
 
 
@@ -96,7 +96,7 @@ svn status
 A       stuff/loot/bloo.h   # arquivo agendado para adição
 C       stuff/loot/lump.c   # arquivo em conflito a partir de um update
 D       stuff/fish.c        # arquivo agendado para exclusão
-M       bar.c               # conteúdo em bar.c tem alterações locais 
+M       bar.c               # conteúdo em bar.c tem alterações locais
 
 Nenhuma  das  execuções  anteriores  de  svn  status  contactam  o  repositório—ao  invés  disso,  elas
 comparam os metadados no diretório .svn com a cópia de trabalho. Finalmente, existe a opção --
@@ -113,15 +113,15 @@ Status against revision:   46
 
 
 
-##como baixar o tema de ícones oxygen
+### como baixar o tema de ícones oxygen
 
 svn co svn://anonsvn.kde.org/home/kde/trunk/playground/artwork/Oxygen/
 
 
-##Entrevista com um dos criadores do tema de ícones oxygen (kde) 
+### Entrevista com um dos criadores do tema de ícones oxygen (kde)
 * http://caio.ueberalles.net/log/2006/06/11/entrevista-kde-artists/
 
-## Comandos básicos 
+### Comandos básicos
 ||Comando||Atalhos||Ação||Exemplo||
 ||checkout||co||Faz um download do repositório e cria uma cópia de trabalho||svn co !http://svn.collab.net/repos||
 ||status||st||Mostra alterações da cópia de trabalho||svn status||
@@ -132,7 +132,7 @@ svn co svn://anonsvn.kde.org/home/kde/trunk/playground/artwork/Oxygen/
 ||update||up||Atualiza para ultima versão do repositório||svn update||
 ||help|| ||Mostra ajuda||svn help||
 
-## Outros comandos 
+### Outros comandos
 ||Comando||Atalhos||Ação||Exemplo||
 ||export|| ||faz download do repositório sem versionar a cópia||svn export !svn://svn.svn.org .||
 ||copy||cp||copia um diretório/arquivo do repositório||svn cp !svn://expresso/trunk !svn://expresso/delivery/new/ ||
@@ -142,7 +142,7 @@ svn co svn://anonsvn.kde.org/home/kde/trunk/playground/artwork/Oxygen/
 ||list|| ||lista os arquivos no repositório||svn list !svn://svn.svn.org/trunk/src||
 ||propset, propdel|| ||muda propriedade de um arquivo||svn propset svn:executable 1 binaryfile||
 
-##Referências
+### Referências
 * http://vainalousachefe.wordpress.com/2008/02/21/introducao-ao-controle-de-versao-local-com-git/ sobre o git
 * http://malcomtux.blogspot.com/2007/08/servidor-subversion-no-windows-xp.html
 * http://techbase.kde.org/Getting_Started/Sources/Anonymous_SVN_(pt_BR)

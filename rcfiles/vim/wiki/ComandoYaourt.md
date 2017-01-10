@@ -58,7 +58,7 @@ ATENÇÃO: Esta operação é recursiva, e deve ser usado com muito cuidado, poi
     yaourt -Syua
 
 
-###Fixing yaourt after pacman update
+### Fixing yaourt after pacman update
 
 
 New version of Pacman released: Updating yaourt and package-query

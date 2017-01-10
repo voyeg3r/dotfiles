@@ -1,4 +1,4 @@
-###Introdução 
+### Introdução
 fonte: http://br-net.org/post/formatando-o-pendrive-no-linux
 
 Utilizando a ferramenta mkfs.vfat, foi possível formatar o pendrive em FAT32, de forma que ele funcionasse tanto no Linux quanto no Windows.

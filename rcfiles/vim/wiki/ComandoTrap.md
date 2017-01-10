@@ -1,7 +1,7 @@
 //{$revisionyear}//
-###Introdução Vc pode usar o comando trap para impedir que os
+### Introdução Vc pode usar o comando trap para impedir que os
 ctrl+c/ctrl+z te causem problemas.  A sintaxe do comando trap é a
-seguinte: 
+seguinte:
 
 
 trap [função_a_ser_executada] número_do_sinal
@@ -34,4 +34,3 @@ trap remove_temp 2
 
 
 
- 

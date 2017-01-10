@@ -11,16 +11,16 @@ Para pegar somente os nomes dos pacotes instalados
 
   dpkg -l | awk '{print $2}'
 
-###listar pacotes instalados
+### listar pacotes instalados
 
 dpkg --get-selections | grep -v deinstall | cut -f 1
 
-##remover kernels antigos
+### remover kernels antigos
 * Referência: http://andregondim.eti.br/?p=1162
 
 dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
 
-##manual completo
+### manual completo
 fonte: http://www.guiadohardware.net/comunidade/comandos-lista/870632/
 
 
@@ -185,7 +185,7 @@ dpkg --get-selections > lista_de_pacotes.txt
 - Para obter uma lista de pacotes instalados no sistema:
 dpkg --get-selections > lista_de_pacotes.txt
 
-É isso aí, pessoal, espero que tenha contribuído positivamente. Postem os comandos que não estão na lista e que vocês tiverem conhecimento. 
+É isso aí, pessoal, espero que tenha contribuído positivamente. Postem os comandos que não estão na lista e que vocês tiverem conhecimento.
 
 
 

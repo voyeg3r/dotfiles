@@ -1,11 +1,11 @@
-##Introdução
-Se utilizar o comando abaixo em um script ele retorna o 
+### Introdução
+Se utilizar o comando abaixo em um script ele retorna o
 caminho completo com o nome
 
  echo "arquivo $0"
 
-supondo que o nome do arquivo seja 'brilho' e que 
-o caminho seja 
+supondo que o nome do arquivo seja 'brilho' e que
+o caminho seja
 
  /home/user/bin/
 
@@ -18,7 +18,7 @@ usando basename tería-mos
   echo "arquivo `basename $0`"
   arquivo brilho
 
-###script de exemplo
+### script de exemplo
 
 # Criado em:Dom 26/Out/2008 hs 12:11
 # Last Change: Dom 26/Out/2008 hs 12:11
@@ -55,4 +55,3 @@ fi
 
 xbacklight -set $1
 
- 

@@ -1,7 +1,7 @@
-##Referências: 
+### Referências:
 * [[@http://manpages.ubuntu.com/manpages/dapper/man5/nanorc.5.html]]
 
-###Como habilitar a syntax no editor nano 
+### Como habilitar a syntax no editor nano
 edite o arquivo nanorc
 
 include "/usr/share/nano/c.nanorc"
@@ -12,42 +12,42 @@ include "/usr/share/nano/c.nanorc"
 include "/usr/share/nano/python.nanorc"
 include "/usr/share/nano/sh.nanorc"
 
-##Para abrir numa linha qualquer 
+### Para abrir numa linha qualquer
 
 nano +10 arquivo.txt
 
-##Para exibir ajuda 
+### Para exibir ajuda
 
 Ctrl-g
 
-##Para salvar 
+### Para salvar
 
 Ctrl-o
 
-##Para sair 
+### Para sair
 
 Ctrl-x
 
-##Rolagem na página 
+### Rolagem na página
 
 Ctrl-n
 Ctrl-p
 
-##Para ir para uma linha qualquer 
+### Para ir para uma linha qualquer
 
 
 ^w ^t
 
-##Ir para a primeira e ultima linhas 
+### Ir para a primeira e ultima linhas
 
 
 ^w ^y
 ^w ^v
 
 
-##Para iniciar uma busca 
+### Para iniciar uma busca
 
 Ctrl-w  para repetir a busca Alt-w
 
-##Referências 
+### Referências
 * http://ubuntuforums.org/showthread.php?t=62250

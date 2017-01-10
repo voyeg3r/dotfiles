@@ -1,4 +1,4 @@
-###Introdução 
+### Introdução
 * fonte: http://piterpunk.info02.com.br/dicas.html
 
 Muitas vezes, queremos trocar a senha de um usuário com um comando,
@@ -10,6 +10,5 @@ ser usado da seguinte maneira:
 
 
 
-Essa dica surgiu em uma resposta da Daniele na lista do gus-br... 
+Essa dica surgiu em uma resposta da Daniele na lista do gus-br...
 
- 

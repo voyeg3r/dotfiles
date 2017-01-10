@@ -1,7 +1,7 @@
-" vim: set fdl=3
+" vim:set et sw=4 ts=4:fdl=3
 " Arquivo de configuração do vim"{{{
 " Criado: Qua 02/Ago/2006 hs 09:19
-" Last Change: dom 08 jan 2017 19:38:40 BRT
+" Last Change: ter 10 jan 2017 06:26:04 BRT
 " Autor: Sergio Luiz Araujo Silva
 " Codificação: utf-8
 " Site: http://vivaotux.blogspot.com
@@ -10,15 +10,14 @@
 " Licence: Licença: Este arquivo é de domínio público
 " Garantia: O autor não se responsabiliza por eventuais danos
 " causados pelo uso deste arquivo.
-"my old vimrc:https://github.com/voyeg3r/dotfiles/blob/02b8a11b9f9e98c33d7290aea509004110305989/rcfiles/vim/vimrc
-"
+" my old vimrc:https://github.com/voyeg3r/dotfiles/blob/02b8a11b9f9e98c33d7290aea509004110305989/rcfiles/vim/vimrc
 "
 "                 ( O O )
 "  +===========oOO==(_)==OOo==============+
 "  |                                      |
 "  |    °v°    Sergio Luiz Araujo Silva   |
 "  |   /(_)\  Linux User #423493          |
-"  |   ^ ^    voyeg3r ✉ gmail.com        |
+"  |   ^ ^    voyeg3r ✉ gmail.com         |
 "  +======================================+"}}}
 
 " if there is zsh use it"{{{
@@ -143,6 +142,27 @@ Plug 'endel/vim-github-colorscheme'
 Plug 'mattn/emmet-vim'
 
 call plug#end()"}}}
+
+" this code implements seven new text objects on vim: ":",".","|" . . .
+" source: https://www.youtube.com/watch?v=0F4FgiVWvB8
+let pairs = { ":" : ":",
+            \ "." : ".",
+            \ "/" : "/",
+            \ '\|' : '\|',
+            \ "*" : "*",
+            \ "-" : "-",
+            \ "_" : "_" }
+
+for [key, value] in items(pairs)
+    exe "nnoremap ci".key." T".key."ct".value
+    exe "nnoremap ca".key." F".key."cf".value
+    exe "nnoremap vi".key." T".key."vt".value
+    exe "nnoremap va".key." F".key."vf".value
+    exe "nnoremap di".key." T".key."dt".value
+    exe "nnoremap da".key." F".key."df".value
+    exe "nnoremap yi".key." T".key."yt".value
+    exe "nnoremap ya".key." F".key."yf".value
+endfor
 
 " python auto imports
 " https://github.com/phillipberndt/python-imports.vim
@@ -528,13 +548,14 @@ function! LastModified()
     if &modified
         let save_cursor = getpos(".")
         let old_query = getreg('/')
-        keepjumps silent! exe  '1,10s/Change:.*/Change: ' . strftime('%c') . '/e'
+            1,10s/\vLast Change:\s+\zs.*/\=strftime("%c")/e
         call setpos('.', save_cursor)
         call setreg('/', old_query)
     endif
 endfun
-autocmd BufWritePre * :call Preserve(LastModified())
-map <silent> <F9> <esc>:call Preserve(LastModified())<cr>"}}}
+command! -nargs=0 LM :call LastModified()
+autocmd BufWritePre * :call LastModified()
+map <silent> <F9> <esc>:call LastModified()<cr>
 
 " jump to next place holder"{{{
 function! JumpToNextPlaceholder()
@@ -637,19 +658,19 @@ endfun
 command! -nargs=0 DelBlank :call DelBlankLines()
 "}}}
 
-" delete sucessive blank lines and trailing spces"{{{
+" delete sucessive blank lines and trailing spces
 nnoremap <special> <leader>d :call Preserve(DelBlank())<cr>
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
-nmap _= :call Preserve("normal gg=G")<CR>"}}}
+nmap _= :call Preserve("normal gg=G")<CR>
 
-fun! CleanExtraSpaces()"{{{
+fun! CleanExtraSpaces()
         let save_cursor = getpos(".")
         let old_query = getreg('/')
-        %s/\s\+$//e
+        :%s/\s\+$//e
         call setpos('.', save_cursor)
         call setreg('/', old_query)
 endfun
-com! Cls :silent! call CleanExtraSpaces<CR>"}}}
+com! Cls :call CleanExtraSpaces()<CR>
 
 " ************************ End functions *****************
 

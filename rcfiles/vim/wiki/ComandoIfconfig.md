@@ -6,12 +6,12 @@ site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
-###ifconfig
+### ifconfig
 Configura a interface de rede no caso de ip fixo - veja também [[ethtool]]
 
    ifconfig eth0 172.30.10.116 netmask 255.255.255.0 up
 
-##como forçar a placa de rede para full duplex
+### como forçar a placa de rede para full duplex
 
 # instale o programa ethtool
 iface eth0 inet static
@@ -21,7 +21,7 @@ iface eth0 inet static
     netmask 255.255.255.0
     gateway 123.456.789.254
 
-##configurando a placa de rede sem fio
+### configurando a placa de rede sem fio
 
 auto wlan0
 iface wlan0 inet static
@@ -31,15 +31,15 @@ iface wlan0 inet static
     wireless-essid nome-da-rede
     wireless-key s:senha
 
-##como fazer com que sua placa de rede sempre seja atrelada a um mesmo ALIAS
+### como fazer com que sua placa de rede sempre seja atrelada a um mesmo ALIAS
 * http://brfedora.wordpress.com/2008/06/04/placa-de-rede-ordenacao/
 
-##listar interfaces ativas
+### listar interfaces ativas
 
 ls /sys/class/net
 ls -l /sys/class/net  | awk '/eth/ {print $8}' #eth0 ou eth1?
 
-##como colocar dois ips na mesma interface
+### como colocar dois ips na mesma interface
 
     auto eth0
     iface eth0 inet static
@@ -63,7 +63,7 @@ ls -l /sys/class/net  | awk '/eth/ {print $8}' #eth0 ou eth1?
    # Create an IP alias from CLI
         /sbin/ifconfig eth0:1 192.168.3.33
 
-##Fixing NetworkManager DNS issue in Ubuntu (Hardy Heron/Gutsy)
+### Fixing NetworkManager DNS issue in Ubuntu (Hardy Heron/Gutsy)
 
 Using NetworkManager to change your <span class="caps">DNS</span> to custom servers,
 like OpenDNS, does not seem to stay between reboots.
@@ -88,10 +88,10 @@ nameserver 208.67.220.220
 Then run sudo chattr +i /etc/resolv.conf to stop NetworkManager from overwriting the file.
 Your settings should now stay between restarts.
 
-##[[http://under-linux.org/b1153-melhorando-performance-de-transferencia-de-grandes-arquivos-no-linux-jumbo-frame|transferência de grandes arquivos no linux]]
+###[[http://under-linux.org/b1153-melhorando-performance-de-transferencia-de-grandes-arquivos-no-linux-jumbo-frame|transferência de grandes arquivos no linux]]
 link: http://under-linux.org/b1153-melhorando-performance-de-transferencia-de-grandes-arquivos-no-linux-jumbo-frame
 
-##[[http://jamesmcdonald.id.au/gnu-linux/delete-a-pppoe-connection-in-ubuntu|Delete a pppoe connection in Ubuntu]]
+###[[http://jamesmcdonald.id.au/gnu-linux/delete-a-pppoe-connection-in-ubuntu|Delete a pppoe connection in Ubuntu]]
 
 I swapped from a bridge adsl modem setup (the connection is defined
 and terminates as ppp0 on my Linux box) to a ADSL Router setup where
@@ -103,24 +103,24 @@ seem to be an option in pppoeconf to delete it once configured.
 The fix is open /etc/network/interfaces and comment out the entry as shown
 auto lo
 iface lo inet loopback
-#auto dsl-provider
-#iface dsl-provider inet ppp
-#pre-up /sbin/ifconfig eth0 up # line maintained by pppoeconf
-#provider dsl-provider
+# auto dsl-provider
+# iface dsl-provider inet ppp
+# pre-up /sbin/ifconfig eth0 up # line maintained by pppoeconf
+# provider dsl-provider
 iface eth0 inet static
 address 10.244.139.25
 netmask 255.255.255.0
 gateway 10.244.139.253
 auto eth0
 
-##Adicionando rotas permanentes no linux
+### Adicionando rotas permanentes no linux
 fonte: [[http://ubuntuforums.org/showthread.php?p=217263]]
 
 <span class="kw2">sudo vi</span> <span class="sy0">/</span>etc<span class="sy0">/</span>network<span class="sy0">/</span>interfaces
 up route add <span class="re5">-net</span> 192.168.0.0 netmask 255.255.0.0 gw 10.0.0.1 dev eth0
 <span class="kw2">sudo</span> <span class="sy0">/</span>etc<span class="sy0">/</span>init.d<span class="sy0">/</span>networking restart
 
-##adicionar rotas
+### adicionar rotas
 no arquivo /etc/network/interfaces as seguintes linhas:
 
   post-up route add -net 192.168.0.0/16 gw 192.168.10.1
@@ -128,7 +128,7 @@ no arquivo /etc/network/interfaces as seguintes linhas:
 
   post-up route add -net 201.30.191.160 netmask 255.255.255.240 gw 172.16.1.252
 
-##adicionar rotas II
+### adicionar rotas II
 fonte: [[http://groups.google.com/group/linux.debian.user.portuguese/browse_thread/thread/7ffbb5d8e1bb9384/46a5fafac46b7fd4?lnk=raot&pli=1&utoken=EH1KJT8AAAD-4m7bW_nhUf_RRJzb_a9wA697SM0dPD_kwQYDpXyIX_6hTrTheTunk332uxAYrjoLpOIi6wef5w0h5JGZ18wY|linux.debian.user.portuguese]]
 
 Eu costumo configurar minhas rotas estáticas em arquivos separados por
@@ -149,7 +149,7 @@ eth0:
 --
 
 # vi /etc/network/interfaces
-##> INSIRA A SEGUINTE LINHA NA CONFIGURAÇÃO DA INTERFACE eth0 <
+###> INSIRA A SEGUINTE LINHA NA CONFIGURAÇÃO DA INTERFACE eth0 <
 up /etc/network/routes/eth0
 
 # /etc/init.d/networking restart
@@ -164,7 +164,7 @@ interface é "derrubada", o kernel cuida de remover as rotas.
 --
 Marcos S. Trazzini <mstrazzini - gm
 
-##Dns Velox
+### Dns Velox
 Edite o arquivo /etc/resolv.conf
 
 nameserver 200.165.132.155
@@ -229,11 +229,11 @@ Save the file and restart system or restart the network:
 
 sudo /etc/init.d/networking restart
 
-##get external ip
+### get external ip
 
 curl ifconfig.me
 
-##como pegar seu ip atual
+### como pegar seu ip atual
 
 ifconfig eth0 | awk '/inet addr/ {print $2}
 
@@ -247,18 +247,18 @@ sudo network-admin
 If you want more network aliases,
 use eth0:1, eth0:2, eth0:N (max upto 254).
 
-##forjando o mac address
+### forjando o mac address
 
 ifconfig wlan0 hw ether 00:11:D8:76:59:2E
 
-##eth0 virou eth1?!
+### eth0 virou eth1?!
 [[@http://hamacker.santhanna.net/?p=1944|fixando as placas de rede]]
 **/etc/udev/udev.d/XXpersistent-net.rules** este arquivo seta a placa pelo mac
 
-##veja também como pegar seu ip externo usando o html2text combinado com o grep
+### veja também como pegar seu ip externo usando o html2text combinado com o grep
 [[html2text]]
 
-##calculando subredes no linux
+### calculando subredes no linux
 * http://www.cyberciti.biz/faq/linux-subnet-calculator-cidr/
 
 ===Fixar nome da placa de rede Debian==
@@ -291,11 +291,11 @@ pronto, não ira mais ocorrer essa troca de nomes...so uma observação :mrgreen
 Esse bug afeta apenas algumas distribuições, então, nao se
 preocupe ate perceber que esta usando uma distro afetada 8)
 
-##gerar um mac address randomico
+### gerar um mac address randomico
 
 openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'
 
-##Referências
+### Referências
 * http://www.guiadohardware.net/artigos/compartilhar-placa/
 * http://www.cyberciti.biz/tips/ubuntu-linux-creating-ethernet-alias-for-eth0-network-device.html
 * http://www.gdhpress.com.br/redeseservidores/leia/index.php?p=cap4-8

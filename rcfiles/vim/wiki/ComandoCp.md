@@ -1,4 +1,4 @@
-##Introdução 
+### Introdução
 copia arquivos e/ou diretórios
 
  cp -r /pasta /destino/
@@ -8,16 +8,16 @@ A opção -u faz update
  cp -uvfa origem destino
 
 Update, verbose, force, a=dpR
-###copiando estrutura de pastas (somente a extrutura) 
+### copiando estrutura de pastas (somente a extrutura)
 
 (cd /home/user/source/; find -type d -print0) | xargs -0 mkdir -p
 
-##copiando e entrando na pasta 
+### copiando e entrando na pasta
 
 cp file ~/tmp
 cd Alt .
 
-##Opções interessantes 
+### Opções interessantes
 
  cp -a /origem /destino
 
@@ -27,15 +27,15 @@ leia o manual do cp
 
 man cp
 
-##Criando backup de arquivos de configuração 
+### Criando backup de arquivos de configuração
 
  cp /etc/resolv.conf{,.bak}
 
-##varias copias 
+### varias copias
 
 for i in {1..5}; do cp test{,$i};done
 
-##conbinando com o find 
+### conbinando com o find
 Use -t when using find and cp
 -t, --target-directory=DIRECTORY (copy all SOURCE arguments into DIRECTORY).
 
@@ -45,6 +45,6 @@ Caso não usassemos a opção -t (que indica destino) o comando seria algo assim
 
 find /originalPath/ -iname \*.mp3 -print0 | xargs -0 -i cp ./{} /destinationPath/
 
-##combinando com o ls 
+### combinando com o ls
 
   ls *.jpg | xargs -n1 -i cp {} /external-hard-drive/directory

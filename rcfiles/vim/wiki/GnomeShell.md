@@ -4,7 +4,7 @@ autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 
-### save alsamixer settings 
+### save alsamixer settings
 source: http://askubuntu.com/a/465641/3798
 
     alsactl --file ~/.config/asound.state store
@@ -54,7 +54,7 @@ source: http://askubuntu.com/a/465641/3798
     "alsactl store" to save alsa settings. Then close both terminals and
     restart your computer. This will do the job.
 
-## how to set languages shortcuts from config files or command line 
+### how to set languages shortcuts from config files or command line
 http://askubuntu.com/questions/604462/
 
     gsettings set org.gnome.desktop.interface clock-show-date true
@@ -65,11 +65,11 @@ http://askubuntu.com/questions/604462/
 
    gsettings set org.gnome.desktop.datetime automatic-timezone true
 
-##cleaning cached thumbnails 
+### cleaning cached thumbnails
 
     find .cache/thumbnails -type f | xargs rm -f
 
-##Increasing the sound through command line
+### Increasing the sound through command line
 
     pactl set-sink-volume 0 +10%
 
@@ -77,15 +77,15 @@ http://askubuntu.com/questions/604462/
 
     pactl set-sink-volume 0 -- -10%
 
-##touche to click on touchpad
+### touche to click on touchpad
 
     gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 
-##Set keyboard language
+### Set keyboard language
 
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', 'us')]"
 
-##change wallpaper every so many minutes 
+### change wallpaper every so many minutes
 
 http://thornton2.com/How_To_Shuffle_Your_Desktop_Background_Every_So_Many_Minutes_in_GNOME_and_MATE
 
@@ -111,18 +111,18 @@ chmod a+x ~/bin/login-script.sh
     Type=Application
     X-GNOME-Autostart-enabled=true
 
-##Show current wallpaper path
+### Show current wallpaper path
 
     gsettings get org.gnome.desktop.background picture-uri
 
     Script to change wallpaper automatically
     https://github.com/mattwilmott/Gnome3-Auto-Wallpaper-Changer
 
-##setting nautilus auto mount
+### setting nautilus auto mount
 
     gsettings set org.gnome.desktop.media-handling automount true
 
-##fixing audacious open folders error
+### fixing audacious open folders error
 
 I don't know how it happened but
 when, eg, I plug in a USB drive or try to open a folder in a firefox
@@ -142,15 +142,15 @@ to get rid of the association with Audacious.
     [Default Applications]
     inode/directory=nautilus.desktop;
 
-## setting gnome screenshot dir 
+### setting gnome screenshot dir
 
   gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/$USER/pictures/"
 
-##setando o muse para ser destacado com o ctrl ou não
+### setando o muse para ser destacado com o ctrl ou não
 
   gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 
-## habilitando o click to tap no mouse 
+### habilitando o click to tap no mouse
 
 gsettings set org.gnome.settings-daemon.peripherals.touchpad tap-to-click true
 
@@ -163,11 +163,11 @@ habilitar a rolagem pela borda to touchpad
 
     gsettings set org.gnome.desktop.peripherals.touchpad scroll-method "edge-scrolling"
 
-## accessing ssh throug nautilus 
+### accessing ssh throug nautilus
 
     sftp://user@address/folder/
 
-##Alterando o tempo de gravação no gnome shell
+### Alterando o tempo de gravação no gnome shell
 
     fonte:
 http://www.talesam.org/blog/dica-ampliando-o-tempo-de-gravacao-do-desktop-no-gnome-shell/
@@ -178,10 +178,10 @@ max-screencast-length 1800
     Extensão que permite gravar com audio
     https://extensions.gnome.org/extension/690/easyscreencast/
 
-##how install gnome shell in any distro with jhbuild
+### how install gnome shell in any distro with jhbuild
 http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distro-with-jhbuild/
 
-## performance tweaks  * https://wiki.archlinux.org/index.php/Sysctl *
+### performance tweaks  * https://wiki.archlinux.org/index.php/Sysctl *
 http://penguininside.blogspot.com.br/2009/08/top-10-gnome-performance-tweaks.html
 https://alexcabal.com/disabling-gnomes-recently-used-file-list-the-better-way/
 
@@ -205,7 +205,7 @@ Disabling tracer system
 
     tracker-control
 
-## other stuff 
+### other stuff
 
 Put this in your /etc/environment
 
@@ -222,7 +222,7 @@ If you had customized /etc/sysctl.conf, you need to rename it as
 need to rename is to /etc/sysctl.d/foo.conf
 
 
-## solving the problem of hidden files by default 
+### solving the problem of hidden files by default
 
  * source: http://ubuntuforums.org/archive/index.php/t-2133298.html
 
@@ -234,20 +234,20 @@ need to rename is to /etc/sysctl.d/foo.conf
 
 	Have a nice day!
 
-##how make a screencast on gnome-shell
+### how make a screencast on gnome-shell
 
   Ctrl+Shift+Alt+r
 
 # to reset default value to video record resource
 gsettings reset org.gnome.shell.recorder pipeline
 
-## text expander for linux 
+### text expander for linux
 
 https://bbs.archlinux.org/viewtopic.php?id=71938
 https://github.com/Dieterbe/snip/
 https://github.com/Dieterbe/snip/tree/master
 
-## beste addons to gnome-shell 
+### beste addons to gnome-shell
 
 Replacement of Alt-Tab, iterates through windows in a cover-flow manner.
 https://extensions.gnome.org/extension/97/coverflow-alt-tab/
@@ -258,18 +258,18 @@ https://extensions.gnome.org/extension/543/backslide/
 Readme sobre a extensão acima
 https://bitbucket.org/LukasKnuth/backslide
 
-##como instalar o gnome-shell no ubuntu 11.04
+### como instalar o gnome-shell no ubuntu 11.04
 
     sudo add-apt-repository ppa:gnome3-team/gnome3
     sudo apt-get update
     sudo apt-get dist-upgrade
     sudo apt-get install gnome-shell
 
-##Como abrir o menu Ativities?
+### Como abrir o menu Ativities?
 
   Basta pressionar a tecla windows
 
-##best gnome shell addons 
+### best gnome shell addons
 https://extensions.gnome.org/extension/549/web-search-dialog/
 https://extensions.gnome.org/extension/277/impatience/
 

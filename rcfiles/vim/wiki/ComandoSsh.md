@@ -1,4 +1,4 @@
-##9 Awesome SSH Trics
+###9 Awesome SSH Trics
 http://tychoish.com/rhizome/9-awesome-ssh-tricks/
 
 # considere este trecho do ~/.ssh/config
@@ -45,18 +45,18 @@ dá erro, o que fazer então?
 ssh-keygen -R ip
 ssh-keygen -R 192.168.1.217
 
-###descobrindo servidores ssh ativos na rede local
+### descobrindo servidores ssh ativos na rede local
 
     nmap -p 22 --open -sV 192.168.0/24
     nmap -p 22 10.3.1.1/16 | grep -B 4 "open"
 
-##usando o ssh com o comando screen
+### usando o ssh com o comando screen
 * http://www.commandlinefu.com/commands/view/2844/ssh-and-attach-to-a-screen-in-one-line
-##Executando um sed sobre ssh
+### Executando um sed sobre ssh
 
 ssh coordenador@host "sed -i '10s/^/#/g' /etc/X11/xorg.conf"
 
-##sincronizando a data de um servidor com outro
+### sincronizando a data de um servidor com outro
 
 sudo date -s "$(ssh user@server.com "date -u")"
 
@@ -65,19 +65,19 @@ sudo date -s "$(ssh user@server.com "date -u")"
 # obs: para funcionar exporte a chave do ssh
 date +%Y%m%d%T -s "`ssh manager@192.168.1.11 'date "+%Y%m%d %T"'`"
 
-##restaurando backup tar.bz2 via ssh
+### restaurando backup tar.bz2 via ssh
 
 ssh user@host "cat /path/to/backup/backupfile.tar.bz2" |tar jpxf -
 
-##Enviar som via ssh
+### Enviar som via ssh
 
 arecord -f dat | ssh -C user@host aplay -f dat
 
-##manter conexão ativa evitando timeout
+### manter conexão ativa evitando timeout
 
 echo 'ServerAliveInterval 60' >> /etc/ssh/ssh_config
 
-##Como criar aliases no ssh para facilitar o acesso
+### Como criar aliases no ssh para facilitar o acesso
 
 fonte: [[@http://www.dicas-l.com.br/dicas-l/20091204.php]]Alias válido apenas
 para usuário Efetuar estas configurações com usuário diferente do usuário root,
@@ -126,7 +126,7 @@ Criar aliases
 
 O arquivo **config** deve ter permissão 600, ou seja, deve estar acessível apenas para o usuário dono do arquivo.
 
-##Otimização do acesso
+### Otimização do acesso
 edite o arquivo /etc/ssh/ssh_config
 comente as duas linhas
 
@@ -139,7 +139,7 @@ Pode-se também comprimir e forçar o uso de IPV4
 
 ssh -4 -C user@host
 
-##Enviando mensagem tipo net send
+### Enviando mensagem tipo net send
 fonte: http://andregondim.eti.br/?p=619
 
 Depois de logado na máquina destino por ssh, é só fazer:
@@ -149,12 +149,12 @@ Exemplo:
 
     $ xmessage Teste http://andregondim.eti.br -display :0 &
 
-##tunel reverso
+### tunel reverso
 
 ssh -R 2001:localhost:22 [username]@[remote server ip]
 
 Allows you to establish a tunnel to your home pc froma company pc. Then from your home pc you can use the command `ssh localhost -p 2001` to ssh to your company PC.
-##definindo um range de acesso
+### definindo um range de acesso
 fonte: [[http://forums.opensuse.org/archives/novell-archives/308388-how-define-ip-ranges-etc-hosts-allow.html|forum do opensuse]]
 No arquivo /etc/hosts.deny negue o acesso de todos os hots e todos os protocolos
 
@@ -169,26 +169,26 @@ Outra forma seria
 
 sshd: 10.3.0.0/255.0.0.0
 
-##Para liberar o acesso apenas para alguns hosts
+### Para liberar o acesso apenas para alguns hosts
 
 sshd: ALL EXCEPT 195.168.26.56, 85.216.25.368
 
-##acessando arquivos gráficos remotamente
+### acessando arquivos gráficos remotamente
 
 ssh -C -X user@remotehost gui_command
 
-##configurando o atalho do putty
+### configurando o atalho do putty
 
 C:\tmp\PUTTY\putty.exe -load proxy
 
-##hosts.allow
+### hosts.allow
 
 sshd: 127.0.0.1
 sshd: 10.1.1.2
 sshd: 10.1.1.5
 sshd: 10.1.1.15
 
-##Acesso pelo modo gráfico
+### Acesso pelo modo gráfico
 ssh significa secure shell, ou shell seguro pois os dados trafegam criptografados. Podemos acessar graficamente pelo konqueror usando:
 
   fish://usuario@ip
@@ -214,11 +214,11 @@ Para saber quem está logoado em sua máquina usando ssh
 zago@speedy zago$ echo $SSH_CLIENT
 192.168.1.53 33033 22
 
-##pegando variável remotamente
+### pegando variável remotamente
 
 versao="$(ssh $servidor cat $arquivo)"
 
-##copiando arquivos remotamente pelo ssh
+### copiando arquivos remotamente pelo ssh
 
 scp opções origem destino
 
@@ -234,7 +234,7 @@ testar se a máquina a ser acessada tem
 * um ip ativo, use o comando ping --> ping ip
 * em último caso apague nas duas máquinas ~/.ssh
 
-## copiando a chave pública para a area de transferência 
+### copiando a chave pública para a area de transferência
 
   Esse procedimento serve para adicionar sua chave pública ao
   github por exmeplo
@@ -248,7 +248,7 @@ testar se a máquina a ser acessada tem
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
 
-##Exportando a chave do ssh
+### Exportando a chave do ssh
 
 ssh-keygen -b 1024 -t dsa
 ssh-copy-id -i ~/.ssh/id_dsa.pub usuario@maquina_remota
@@ -454,7 +454,7 @@ enormemente a nossa segurança.
 Caso não tenha ficado claro, todas as alterações mencionados aqui
 devem ser feitas na maquina que será acessada remotamente.
 
-##acessando ssh através de proxy autenticado
+### acessando ssh através de proxy autenticado
 * http://www.dicas-l.com.br/arquivo/acessando_ssh_atraves_de_um_proxy_autenticado.php#.T4Vkf-LLWjs
 
 Instalar os seguintes pacotes
@@ -463,6 +463,6 @@ Instalar os seguintes pacotes
 
    proxychains ssh usuario@servidor.externo
 
-##Referências
+### Referências
 * http://www.zago.eti.br/ssh/ssh.html
 * http://br-linux.org/tutoriais/002249.html (rsync sem senha)

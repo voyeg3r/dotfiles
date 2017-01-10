@@ -1,4 +1,4 @@
-##Introdução
+### Introdução
 Após uso intensivo da memória pode-se libera-la assim
 
 swapoff -a ; swapon -a
@@ -8,7 +8,7 @@ When you run a memory intensive application (VirtualBox, large java application,
 Both swapoff and swapon require root privileges.
 
 
-###usando seu pendrive como memória swap
+### usando seu pendrive como memória swap
 
 Formate ele usando o gparted
 depois descubra onde está a partição com o comando
@@ -22,7 +22,7 @@ sudo swapon -p 1000 -v /dev/sdc1
 a opção -p 1000 aumenta a prioridade de seu uso
 e opção -v mostra a saída do comando mais detalhada
 
-## Montando swap usando UUID 
+### Montando swap usando UUID
 
   UUID é a identificação única do dispositivo, ou seja, independente
   de qual entrada ele estiver montado ele será idenficado do mesmo
