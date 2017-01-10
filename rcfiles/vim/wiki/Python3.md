@@ -1,13 +1,15 @@
 # dicas Sobre python3
 
-    File:		 Python3.md
-    Created:	 sáb 07 jan 2017 07:29:27 BRT
-    Last Change: seg 09 jan 2017 18:22:40 BRT
-    Author:		 Sergio Araujo
-    Site:		 http://vivaotux.blogspot.com
-    e-mail:      <voyeg3r ✉ gmail.com>
-    Twitter:	 @voyeg3r
-    Github:      https://github.com/voyeg3r
+``` markdown
+File:		 Python3.md
+Created:	 sáb 07 jan 2017 07:29:27 BRT
+Last Change: ter 10 jan 2017 15:50:19 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
 
 ### curso completo no youtube
 * [canal ignorancia zero](https://www.youtube.com/channel/UCmjj41YfcaCpZIkU-oqVIIw)
@@ -15,6 +17,7 @@
 * [aula 001](https://www.youtube.com/watch?v=sC6mqcLSkZo&index=2&list=PLfCKf0-awunOu2WyLe2pSD2fXUo795xRe)
 * [another course](https://www.youtube.com/watch?v=f6ji-QcOo_U)
 * [another one](https://www.youtube.com/watch?v=QSzqiGeyU5s)
+* https://www.youtube.com/watch?v=TV9tSHFAFjg
 * [livro think python](https://upload.wikimedia.org/wikipedia/commons/1/1b/Think_Python.pdf)
 * [byte of python](http://files.swaroopch.com/python/byte_of_python.pdf)
 
@@ -44,33 +47,38 @@
 
 #### print clipboard contente
 
-    pyperclip.paste()
-    var = pyperclip.paste()
-    print(var)
+``` python
+pyperclip.paste()
+var = pyperclip.paste()
+print(var)
+```
 
 ### random numbers
 
-    iport random
-    random_num=random.randrange(0,100)
+``` python
+iport random
+random_num=random.randrange(0,100)
 
-    while(random_num != 15):
-        print(random_num)
-        random_num = random_num.range(0,100)
+while(random_num != 15):
+    print(random_num)
+    random_num = random_num.range(0,100)
+```
 
 ### addnumbers function
 
-        ```
-        def addNumber(fNum, lNum):
-            sumNum = fNum + lNum
-            return sumNum
+``` python
+def addNumber(fNum, lNum):
+    sumNum = fNum + lNum
+    return sumNum
 
-        print(addNumber(1,4))
-        ```
+print(addNumber(1,4))
+```
+
 ### Getting user input
 
-        ```
-        import sys
-        print('What is your name?')
-        name = sys.stadin.readline()
-        print('Hello', name)
-        ```
+``` python
+import sys
+print('What is your name?')
+name = sys.stadin.readline()
+print('Hello', name)
+```
