@@ -11,6 +11,7 @@
 
 ### curso completo no youtube
 * [canal ignorancia zero](https://www.youtube.com/channel/UCmjj41YfcaCpZIkU-oqVIIw)
+* [python course in English](https://www.youtube.com/watch?v=R6wQmWMDiB4)
 * [aula 001](https://www.youtube.com/watch?v=sC6mqcLSkZo&index=2&list=PLfCKf0-awunOu2WyLe2pSD2fXUo795xRe)
 * [livro think python](https://upload.wikimedia.org/wikipedia/commons/1/1b/Think_Python.pdf)
 * [byte of python](http://files.swaroopch.com/python/byte_of_python.pdf)
@@ -39,9 +40,9 @@
 
     import pyperclip
 
-    # print clipboard contente
-    pyperclip.paste()
+#### print clipboard contente
 
+    pyperclip.paste()
     var = pyperclip.paste()
     print(var)
 

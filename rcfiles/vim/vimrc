@@ -1,5 +1,5 @@
 " vim:set et sw=4 ts=4:fdl=3
-" Arquivo de configuração do vim"{{{
+" Arquivo de configuração do vim
 " Criado: Qua 02/Ago/2006 hs 09:19
 " Last Change: ter 10 jan 2017 06:26:04 BRT
 " Autor: Sergio Luiz Araujo Silva
@@ -18,38 +18,37 @@
 "  |    °v°    Sergio Luiz Araujo Silva   |
 "  |   /(_)\  Linux User #423493          |
 "  |   ^ ^    voyeg3r ✉ gmail.com         |
-"  +======================================+"}}}
+"  +======================================+
 
-" if there is zsh use it"{{{
+" if there is zsh use it
 if executable('zsh')
     set shell=zsh\ -l
-endif"}}}
+endif
 
-" Plug bootstrap - Install Plug if it is not already installed"{{{
+" Plug bootstrap - Install Plug if it is not already installed
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.dotfiles/rcfiles/vim/autoload/plug.vim --create-dirs
                 \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif"}}}
+endif
 
-if !exists("*VimReloadFunction")"{{{
+if !exists("*VimReloadFunction")
     fun! VimReloadFunction()
         " the idea for this function happened when I realized
         " that every time I reload vim it puts the cursor at the
         " begginingbeggining of the file
-        call Preserve(":source %")
+        call Preserve(":source ~/.vimrc")
         " See how the function Preserve is defined
     endfu
 endif
 com! ReloadVim call VimReloadFunction()
-"}}}
 
-" nocompatible"{{{
+" nocompatible
 if has('vim_starting')
   set nocompatible               " Be iMproved
-endif"}}}
+endif
 
-" we can open files in path just pressing gf"{{{
+" we can open files in path just pressing gf
 " http://www.hazaah.com/programming/textmate-and-vim/
 " :find file
 set path+=**
@@ -69,8 +68,8 @@ set completeopt=menu,preview
 set complete=.,w,k
 setlocal complete=.,w,k,b,u
 
-" execute current line on shell zsh or bash"{{{
-map <S-F12> :exec '!'.getline('.')<cr>"}}}
+" execute current line on shell zsh or bash
+map <S-F12> :exec '!'.getline('.')<cr>
 
 " this map reads shell commands into current file
 " and clean extra spaces due Preserve funtion call
@@ -87,28 +86,28 @@ cnoremap %% <C-R>=expand('%')<cr>
 " this map executes the currente line as a vim command ":"
 nnoremap <space>l yy:@" <cr>
 
-" fold text object"{{{
+" fold text object
 " http://vim.wikia.com/wiki/Creating_new_text_objects
 vnoremap af :<C-U>silent! normal! [zV]z<CR>
 omap af :normal Vaf<CR>
 set foldlevel=3
-set fdm=marker"}}}
+set fdm=marker
 
-" select text you just pasted"{{{
+" select text you just pasted
 " http://stackoverflow.com/questions/4312664/is-there-a-vim-command-to-select-pasted-text
 " http://vimcasts.org/episodes/bubbling-text/
 " o mapeamento abaixo permite reselecionar texto recem colado ou selecionado
-nmap gV `[v`]"}}}
+nmap gV `[v`]
 
 " entrar no modo comando mais rápido
 nnoremap ç :
 
-" some command line Abbreviations"{{{
+" some command line Abbreviations
 cab W  w
 cab Wq wq
-cab Q  q"}}}
+cab Q  q
 
-" Required to start Plug:"{{{
+" Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
 "Plug 'klen/python-mode'
@@ -141,28 +140,7 @@ Plug 'endel/vim-github-colorscheme'
 " HTML Bundle
 Plug 'mattn/emmet-vim'
 
-call plug#end()"}}}
-
-" this code implements seven new text objects on vim: ":",".","|" . . .
-" source: https://www.youtube.com/watch?v=0F4FgiVWvB8
-let pairs = { ":" : ":",
-            \ "." : ".",
-            \ "/" : "/",
-            \ '\|' : '\|',
-            \ "*" : "*",
-            \ "-" : "-",
-            \ "_" : "_" }
-
-for [key, value] in items(pairs)
-    exe "nnoremap ci".key." T".key."ct".value
-    exe "nnoremap ca".key." F".key."cf".value
-    exe "nnoremap vi".key." T".key."vt".value
-    exe "nnoremap va".key." F".key."vf".value
-    exe "nnoremap di".key." T".key."dt".value
-    exe "nnoremap da".key." F".key."df".value
-    exe "nnoremap yi".key." T".key."yt".value
-    exe "nnoremap ya".key." F".key."yf".value
-endfor
+call plug#end()
 
 " python auto imports
 " https://github.com/phillipberndt/python-imports.vim
@@ -217,10 +195,10 @@ nnoremap <silent> <c-p> :FZF -m<cr>
 "command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap ,ag :Ag<SPACE>
 
-" settings for incsearch plugin"{{{
+" settings for incsearch plugin
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)"}}}
+map g/ <Plug>(incsearch-stay)
 
 " Required:
 filetype plugin indent on
@@ -238,7 +216,7 @@ nmap -- <Plug>VimwikiRemoveHeaderLevel
 "    To display previous match use |:lprevious| command.
 let g:vimwiki_table_mappings = 0
 
-" Basic Setup"{{{
+" Basic Setup
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
@@ -257,9 +235,9 @@ set smartcase
 set nobackup
 set fileformats=unix,dos,mac
 set showcmd
-set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ "}}}
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
 
-" Visual Settings"{{{
+" Visual Settings
 " Notice: syntax enable is better than syntax on
 if !exists("g:syntax_on")
     syntax enable
@@ -312,9 +290,9 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1"}}}
+let g:airline_skip_empty_sections = 1
 
-" Highlight redundant whitespace and tabs."{{{
+" Highlight redundant whitespace and tabs.
 " This has the advantage of not highlighting each space you type at
 " the end of the line, only when you open a file or leave insert
 " mode. Very neat."
@@ -327,9 +305,9 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 " Create a red/red scheme
 highlight Problem ctermbg=red guibg=red
 " Highlight leading tabs - tab misturado com espaço
-match Problem /^\s\*\t\+\s\*/"}}}
+match Problem /^\s\*\t\+\s\*/
 
-" more command line Abbreviations"{{{
+" more command line Abbreviations
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -339,9 +317,9 @@ cnoreabbrev wQ wq
 cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
-cnoreabbrev Qall qall"}}}
+cnoreabbrev Qall qall
 
-"" NERDTree configuration"{{{
+"" NERDTree configuration
 let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
@@ -351,25 +329,25 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>"}}}
+noremap <F3> :NERDTreeToggle<CR>
 
 set rnu nu
 
 " executes current line on shell
 map <S-F12> :exec '!'.getline('.')<cr>
 
-"  when searching next patter put it in the middle of screen"{{{
+"  when searching next patter put it in the middle of screen
 nnoremap n nzz
 nmap * *zz
 nmap # #zz
 nmap g* g*zz
-nmap g# g#zz"}}}
+nmap g# g#zz
 
 " easy way to underline a row
 nmap <silent> ,= :t.<cr>Vr=k
 nmap <silent> ,- :t.<cr>Vr-k
 
-" :h g:incsearch#auto_nohlsearch"{{{
+" :h g:incsearch#auto_nohlsearch
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
@@ -377,25 +355,25 @@ map N  <Plug>(incsearch-nohl-N)
 map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)"}}}
+map g# <Plug>(incsearch-nohl-g#)
 
 " asteris now keeps its position
 "nnoremap <leader>* *``cgn
 "nnoremap <leader># #``cgN
 
-augroup sh"{{{
+augroup sh
     au BufNewFile *.sh 0r ~/.vim/skel/template.sh
     au BufNewFile *.sh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " . strftime("%d-%m-%Y")/e
     "au BufWritePost *.sh :silent !chmod a+x <afile>
-augroup end"}}}
+augroup end
 
-augroup zsh "{{{
+augroup zsh
     au BufNewFile *.zsh 0r ~/.vim/skel/template.zsh
     au BufNewFile *.zsh exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " . strftime("%d-%m-%Y")/e
     au BufWritePost *.zsh :silent !chmod a+x <afile>
-augroup end "}}}
+augroup end
 
-"" autocomandos para python"{{{
+"" autocomandos para python
 augroup python
     au FileType python set keywordprg=pydoc
     au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
@@ -411,9 +389,9 @@ augroup python
     let python_highlight_exceptions=1
     let python_highlight_numbers=1
     let python_highlight_space_errors=1
-augroup end"}}}
+augroup end
 
-augroup html"{{{
+augroup html
     " au! <--> Remove all html autocommands
     au!
     au BufNewFile,BufRead *.html,*.shtml,*.htm set ft=html
@@ -426,17 +404,17 @@ augroup html"{{{
     " needed one line with 'Created:' in firsts 5 lines
     "au Bufnewfile,BufRead *.html,*.shtml,*.htm 1,5s/\s*Created:\s*\zs.*/\="" . strftime("%Y %b %d %X")/ge
     au BufNewFile,BufRead *.html,*.shtml,*.htm exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
-augroup end"}}}
+augroup end
 
-augroup css"{{{
+augroup css
     au Bufnewfile,BufRead *.css set ft=css
     au BufNewFile *.css 0r ~/.vim/skel/template.css
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
     "au BufNewFile *.css exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
     au BufNewFile *.css exe "1," . 10 . "s/Creation Date:.*/Creation Date: " .strftime("%c")
-augroup end"}}}
+augroup end
 
-augroup tex"{{{
+augroup tex
     au Bufnewfile,BufRead *.tex set ft=tex
     au BufNewFile *.tex 0r ~/.vim/skel/template.tex
     au BufNewFile *.tex exe "1," . 10 . "s/Creation Date:.*/Creation Date: " .strftime("%c")
@@ -445,15 +423,15 @@ augroup tex"{{{
     iab latex \LaTeX\
     iab tex \Tex\
     normal gg
-augroup end"}}}
+augroup end
 
-" omnifunc settings"{{{
+" omnifunc settings
 if has("autocmd") && exists("+omnifunc")
     autocmd Filetype *
                 \  if &omnifunc == "" |
                 \  setlocal omnifunc=syntaxcomplete#Complete |
                 \ endif
-endif"}}}
+endif
 
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
@@ -462,14 +440,14 @@ let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
-"" set wrapping"{{{
+"" set wrapping
 if !exists('*s:setupWrapping')
   function s:setupWrapping()
     set wrap
     set wm=2
     set textwidth=79
   endfunction
-endif"}}}
+endif
 
 " Scientifc Calculator using python3 -->  :Calc sin(30)
 " :Calc sum([x^2 for x in range(100)])
@@ -503,7 +481,7 @@ nmap <leader>r @:
 nmap <leader>s :&&<cr>
 nmap <leader>qs q/
 
-" this function gets last 20 cmds to new buffer"{{{
+" this function gets last 20 cmds to new buffer
 fun! s:RedirHistoryCommands()
     set paste
     redir @r
@@ -513,9 +491,9 @@ fun! s:RedirHistoryCommands()
     put r
     set nopaste
 endfun
-command! -nargs=0 GetHistory call s:RedirHistoryCommands()"}}}
+command! -nargs=0 GetHistory call s:RedirHistoryCommands()
 
-" Esta função insere um change log"{{{
+" Esta função insere um change log
 " se nelas não houver "Last Change" ele passa batido
 " ou seja não insere o cabeçalho
 " usr_41.txt
@@ -537,9 +515,9 @@ fun! InsertChangeLog()
     call append(6, "email: <+seu email+>")
     normal gg
   endif
-endfun"}}}
+endfun
 
-" Esta função Modifica o change log"{{{
+" Esta função Modifica o change log
 " If buffer modified, update any 'Last modified: ' in the first 20 lines.
 " 'Last modified: ' can have up to 10 characters before (they are retained).
 " Restores cursor and window position using save_cursor variable.
@@ -548,16 +526,16 @@ function! LastModified()
     if &modified
         let save_cursor = getpos(".")
         let old_query = getreg('/')
-            1,10s/\vLast Change:\s+\zs.*/\=strftime("%c")/e
+            1,10s/\v^.*Last Change:\s+\zs.*/\=strftime("%c")/e
         call setpos('.', save_cursor)
         call setreg('/', old_query)
     endif
 endfun
-command! -nargs=0 LM :call LastModified()
+command! -nargs=0 LM :call LastModified()<cr>
 autocmd BufWritePre * :call LastModified()
 map <silent> <F9> <esc>:call LastModified()<cr>
 
-" jump to next place holder"{{{
+" jump to next place holder
 function! JumpToNextPlaceholder()
     let old_query = getreg('/')
     echo search("<+.\\++>")
@@ -565,9 +543,9 @@ function! JumpToNextPlaceholder()
     call setreg('/', old_query)
 endfunction
 nnoremap <special> <leader>j :keepjumps call JumpToNextPlaceholder()<CR>a
-inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a"}}}
+inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a
 
-" Toggle 0 and ^"{{{
+" Toggle 0 and ^
 " source: http://ddrscott.github.io/blog/2016/vim-toggle-movement/
 "function! ToggleHomeZero()
 "    let pos = getpos('.')
@@ -576,10 +554,10 @@ inoremap <special> <leader>j <ESC>:keepjumps call JumpToNextPlaceholder()<CR>a"}
 "        execute "normal! 0"
 "    endif
 "endfunction
-"nnoremap 0 :call ToggleHomeZero()<CR>"}}}
+"nnoremap 0 :call ToggleHomeZero()<CR>
 " if you would like to go to the first column just press g0
 
-" The function must be used in a piece of subtitles"{{{
+" The function must be used in a piece of subtitles
 " in order to clean it, join the lines and put the results
 " on clipboard to be pasted on anki
 fun! CleanSubtitles()
@@ -592,16 +570,16 @@ fun! CleanSubtitles()
     :%y+
     call setreg('/', old_query)
 endfun
-command! -nargs=0 GetSubs :call CleanSubtitles()"}}}
+command! -nargs=0 GetSubs :call CleanSubtitles()
 
 au! BufwritePre * :call CleanExtraSpaces()
 
-" auto clean trailing spaces"{{{
+" auto clean trailing spaces
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh :call CleanExtraSpaces()
-endif"}}}
+endif
 
-" Utility function that save last search and cursor position"{{{
+" Utility function that save last search and cursor position
 " http://technotales.wordpress.com/2010/03/31/preserve-a-vim-function-that-keeps-your-state/
 " video from vimcasts.org: http://vimcasts.org/episodes/tidying-whitespace
 if !exists('*Preserve')
@@ -615,7 +593,7 @@ if !exists('*Preserve')
         call setreg('/', old_query)
     endfunction
 endif
-"}}}
+
 
 "http://vi.stackexchange.com/questions/9646/how-do-i-capitalize-the-first-word-after-each-period-question-mark-or-exclamati
 fun! UpperCaseSentences()
@@ -626,7 +604,7 @@ fun! UpperCaseSentences()
     call setreg('/', old_query)
 endfun
 
-"    dos2unix ^M"{{{
+"    dos2unix ^M
 fun! Dos2unixFunction()
     call Preserve("%s/$//g")
     "call Preserve("%s/\\x0D$//")
@@ -635,11 +613,11 @@ fun! Dos2unixFunction()
     set encoding=utf-8
     set fileencoding=utf-8
 endfun
-com! Dos2Unix call Dos2unixFunction()"}}}
+com! Dos2Unix call Dos2unixFunction()
 
-" one liner rename file"{{{
+" one liner rename file
 " source: http://stackoverflow.com/questions/1205286/renaming-the-current-file-in-vim
-command! -nargs=1 Rename try | saveas <args> | call delete(expand('#')) | bd # | endtry"}}}
+command! -nargs=1 Rename try | saveas <args> | call delete(expand('#')) | bd # | endtry
 
 "source: http://stackoverflow.com/questions/2284556/how-do-i-use-variables-in-my-vimrc
 function! SetTabSize(size)
@@ -649,14 +627,14 @@ function! SetTabSize(size)
 endfunction
 command! -nargs=1 Sts call SetTabSize(<f-args>)
 
-" remove consecutive blank lines"{{{
+" remove consecutive blank lines
 " see Preserve function definition
 fun! DelBlankLines()
     keepjumps call Preserve("g/^\\n\\{2,}/d")
     "keepjumps call Preserve("g/^$/,/./-j")
 endfun
 command! -nargs=0 DelBlank :call DelBlankLines()
-"}}}
+
 
 " delete sucessive blank lines and trailing spces
 nnoremap <special> <leader>d :call Preserve(DelBlank())<cr>
@@ -687,19 +665,19 @@ nnoremap <F5> :GundoToggle<CR>
 nnoremap j gj
 nnoremap k gk
 
-" Sudo to write"{{{
+" Sudo to write
 cmap w!! w !sudo tee % >/dev/null
-command! SaveAsRoot w !sudo tee %"}}}
+command! SaveAsRoot w !sudo tee %
 
-" map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®"{{{
+" map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
 " togle between number nonumber and relativenumber
-" source: http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key"}}}
+" source: http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key
 
-" to reselect use gv in normal mode"{{{
+" to reselect use gv in normal mode
 nnoremap <S-F11> <ESC>:set hls!<cr>
 inoremap <S-F11> <C-o>:set hls!<cr>
 vnoremap <S-F11> <ESC>:set hls!<cr> <bar> gv
-"}}}
+
 
 " make copying from visual selection more sane
 " source: http://ddrscott.github.io/blog/2016/yank-without-jank/
@@ -708,40 +686,40 @@ vnoremap <expr>y "my\"" . v:register . "y`y"
 " make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
-" Buble single lines - mover linhas"{{{
+" Buble single lines - mover linhas
 " http://vimcasts.org/episodes/bubbling-text/
 nmap <special> <c-up> ddkP
 nmap <special> <c-down> ddp
 "buble multiple lines
 xmap <c-up> xkP`[V`]
-xmap <c-down> xp`[V`]"}}}
+xmap <c-down> xp`[V`]
 
 "" Autocmd Rules
 
-"" The PC is fast enough, do syntax highlight syncing from start"{{{
+"" The PC is fast enough, do syntax highlight syncing from start
 augroup vimrc-sync-fromstart
   autocmd!
   autocmd BufEnter * :syntax sync fromstart
-augroup END"}}}
+augroup END
 
-"" Remember cursor position"{{{
+"" Remember cursor position
 augroup vimrc-remember-cursor-position
   autocmd!
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-augroup END"}}}
+augroup END
 
-" txt wrap setting"{{{
+" txt wrap setting
 augroup vimrc-wrapping
   autocmd!
   autocmd BufRead,BufNewFile *.txt call s:setupWrapping()
-augroup END"}}}
+augroup END
 
-"" make/cmake"{{{
+"" make/cmake
 augroup vimrc-make-cmake
   autocmd!
   autocmd FileType make setlocal noexpandtab
   autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
-augroup END"}}}
+augroup END
 
 set autoread
 
@@ -751,7 +729,7 @@ map <silent> <leader>z :e ~/.zshrc<cr>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-"" Git stuff"{{{
+"" Git stuff
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gsh :Gpush<CR>
@@ -759,7 +737,7 @@ noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>"}}}
+noremap <Leader>gr :Gremove<CR>
 
 nnoremap <silent> <leader>O :pu! _<cr>:']+1<cr>
 nnoremap <silent> <leader>o :pu _<cr>:'[-1<cr>
@@ -771,9 +749,9 @@ else
 endif
 "autocmd BufEnter * lcd %:p:h
 
-" mapeamento para abrir e fechar folders em modo normal usando"{{{
+" mapeamento para abrir e fechar folders em modo normal usando
 " a barra de espaços -- zR abre todos os folders
-nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>"}}}
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 
 "" Set working directory
@@ -785,7 +763,7 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
-" snippets settings"{{{
+" snippets settings
 "let g:UltiSnips#ListSnippets="<C-tab>"
 let g:syntastic_python_python_exec = '/usr/bin/python'
 let g:UltiSnipsListSnippets = "<c-tab>"
@@ -807,7 +785,7 @@ let g:snips_site='http://vivaotux.blogspot.com'
 let g:snips_email='<voyeg3r ✉ gmail.com>'
 let g:snips_github='https://github.com/voyeg3r'
 let g:snips_twitter='@voyeg3r'
-let g:UltiSnipsEditSplit="horizontal""}}}
+let g:UltiSnipsEditSplit="horizontal"
 
 function! ExpandPossibleShorterSnippet()
   if len(UltiSnips#SnippetsInCurrentScope()) == 1 "only one candidate...
@@ -867,14 +845,14 @@ nnoremap <Leader>o :.Gbrowse<CR>
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
-" python"{{{
+" python
 " vim-python
 augroup vimrc-python
   autocmd!
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
       \ formatoption=croq softtabstop=4 smartindent
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-augroup END"}}}
+augroup END
 
 
 " syntastic
@@ -889,7 +867,7 @@ if filereadable(expand("~/.config/nvimrc.local"))
 endif
 
 
-" vim-airline"{{{
+" vim-airline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -923,7 +901,7 @@ else
   let g:airline_symbols.branch = ''
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
-endif"}}}
+endif
 
 "iab idate <c-r>=strftime("%c")<cr>
 iab idate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
