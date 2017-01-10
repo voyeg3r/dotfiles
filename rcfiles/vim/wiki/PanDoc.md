@@ -30,7 +30,7 @@ pandoc -s README -o example4.pdf
 Instead of a file, an absolute URI may be given. In this case
 pandoc will fetch the content using HTTP:
 
-``` bash
+``` sh
 pandoc -f html -t markdown http://www.fsf.org
 ```
 
