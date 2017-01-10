@@ -13,6 +13,8 @@
 * [canal ignorancia zero](https://www.youtube.com/channel/UCmjj41YfcaCpZIkU-oqVIIw)
 * [python course in English](https://www.youtube.com/watch?v=R6wQmWMDiB4)
 * [aula 001](https://www.youtube.com/watch?v=sC6mqcLSkZo&index=2&list=PLfCKf0-awunOu2WyLe2pSD2fXUo795xRe)
+* [another course](https://www.youtube.com/watch?v=f6ji-QcOo_U)
+* [another one](https://www.youtube.com/watch?v=QSzqiGeyU5s)
 * [livro think python](https://upload.wikimedia.org/wikipedia/commons/1/1b/Think_Python.pdf)
 * [byte of python](http://files.swaroopch.com/python/byte_of_python.pdf)
 
@@ -46,3 +48,29 @@
     var = pyperclip.paste()
     print(var)
 
+### random numbers
+
+    iport random
+    random_num=random.randrange(0,100)
+
+    while(random_num != 15):
+        print(random_num)
+        random_num = random_num.range(0,100)
+
+### addnumbers function
+
+        ```
+        def addNumber(fNum, lNum):
+            sumNum = fNum + lNum
+            return sumNum
+
+        print(addNumber(1,4))
+        ```
+### Getting user input
+
+        ```
+        import sys
+        print('What is your name?')
+        name = sys.stadin.readline()
+        print('Hello', name)
+        ```

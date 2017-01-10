@@ -1,10 +1,27 @@
 # Como usar o vimwiki de forma mais efeitiva
 
-    leader>ww ..................... wiki index
-    leader>wi ..................... abre o diário
-    Leader>wd              Delete wiki page you are in.
-    Leader>wr              Rename wiki page you are in.
-    map == <Plug>VimwikiAddHeaderLevel
+```
+File:		 Wiki.md
+Created:	 ter 10 jan 2017 12:30:04 BRT
+Last Change: ter 10 jan 2017 12:31:12 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
+
+[vimwiki website](https://github.com/vimwiki/vimwiki)
+
+* leader>ww ..................... wiki index
+* leader>wi ..................... abre o diário
+* Leader>wd ..................... Delete wiki page you are in.
+* Leader>wr ..................... Rename wiki page you are in.
+* map == <Plug>VimwikiAddHeaderLevel
+* <c-space> toggle checkbox in a list
+* gl remove checkbox gL
+
+    if you press + vimwiki will create a link
 
     :VimwikiTable cols rows
     Create a table with the given cols and rows

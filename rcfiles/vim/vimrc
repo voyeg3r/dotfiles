@@ -528,7 +528,7 @@ function! LastModified()
     if &modified
         let save_cursor = getpos(".")
         let old_query = getreg('/')
-            1,10s/\v^.*Last Change:\s+\zs.*/\=strftime("%c")/e
+            1,10s/\v^.*Last Change:(\s+|\t+)\zs.*/\=strftime("%c")/e
         call setpos('.', save_cursor)
         call setreg('/', old_query)
     endif
