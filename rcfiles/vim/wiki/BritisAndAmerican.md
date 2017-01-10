@@ -1,4 +1,5 @@
-Arquivo: class notes
+# Arquivo: class notes
+
 Criado: Ter 21/Out/2014 hs 11:53
 Last Change: Sun Feb 15, 2015  09:16AM
 autor: Sérgio Luiz Araújo Silva
@@ -6,10 +7,10 @@ site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
-beats me...     sei lá  (audio 1)
-named after ... com nome de..(audio 1)
-look after...   cuidar (audio 3)
-flat rate ...   valor fixo, montante fixo
+    beats me...     sei lá  (audio 1)
+    named after ... com nome de..(audio 1)
+    look after...   cuidar (audio 3)
+    flat rate ...   valor fixo, montante fixo
 
 
 Youtube video: possessive pronoums and determiners

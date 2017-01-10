@@ -1,12 +1,13 @@
-Arquivo: dicas sobre python
+# Arquivo: dicas sobre python
+
+```
 Criado: Ter 18/Dez/2012 hs 18:57
 Last Change: dom 08 jan 2017 12:03:28 BRT
 autor: Sérgio Luiz Araújo Silva
 site: vivaotux
 twitter: voyeg3r
 email: voyeg3r -- gmail
-
-{{{
+```
 
 Curso do professor Ronaldo Ramos no Youtube: http://goo.gl/n4NxP
 

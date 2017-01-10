@@ -1,9 +1,12 @@
-Arquivo: dicas do ubuntu
+# Arquivo: dicas do ubuntu
+
+```
 Criado: Seg 10/Jan/2011 hs 16:41
-Last Change: dom 08 jan 2017 12:03:28 BRT
+Last Change: ter 10 jan 2017 13:32:19 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+```
 
 ### setting abnt2 keyboard
 

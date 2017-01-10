@@ -16,8 +16,15 @@ Github:      `!v g:snips_github`
 ${0}
 endsnippet
 
+snippet coment "add backtics comments" w
+`!v repeat(nr2char(96),3)` ${1:markdown}
+${0:${VISUAL:type here}}
+`!v repeat(nr2char(96),3)`
+endsnippet
+
 snippet backtick
     `!v nr2char(96)`
+endsnippet
 
 snippet 'h1|#|=' "create header 1" r
 # ${1:header content}
@@ -33,8 +40,8 @@ snippet 'code|verbose?' "wiki verbose code" r
 	${0:${VISUAL:assertions ...}}
 endsnippet
 
-snippet 'backticks?' "code inline" r
-${0:${VISUAL:type here ...}}
+snippet 'in(line)?' "code inline" r
+`!v nr2char(96)`${0:${VISUAL:type here ..}}`!v nr2char(96)`
 endsnippet
 
 snippet bold "*markdown bold*" w

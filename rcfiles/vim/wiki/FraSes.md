@@ -1,9 +1,12 @@
-Arquivo: frases
+# Arquivo: frases
+
+```
 Criado: Sáb 21/Jan/2012 hs 08:19
 Last Change: qua 14 dez 2016 17:37:56 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
+```
 
 https://rhinospike.com/audio_requests/sergioaraujo/30202/
 

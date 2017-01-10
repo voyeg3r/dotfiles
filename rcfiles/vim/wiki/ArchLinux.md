@@ -1,6 +1,7 @@
-Arquivo: archlinux.wiki
+# Arquivo: archlinux.wiki
+
 Criado: Sat 17/Jan/2015 hs 06:52
-Last Change: dom 08 jan 2017 12:02:36 BRT
+Last Change: ter 10 jan 2017 13:15:28 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r

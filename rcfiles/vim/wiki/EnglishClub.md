@@ -1,5 +1,17 @@
 ### English Club
 
+``` markdown
+File:		 EnglishClub.md
+Created:	 ter 10 jan 2017 13:33:01 BRT
+Last Change: ter 10 jan 2017 13:33:10 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
+
+
 ### Introdução
 
 Um clube de inglês, no qual alunos mais adiantados no estudo

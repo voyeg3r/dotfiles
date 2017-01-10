@@ -1,16 +1,19 @@
-Arquivo: Dicas sobre ambientes de trabalho no linux
+# Arquivo: Dicas sobre ambientes de trabalho no linux
+
+```
 Criado: Sáb 11/Ago/2012 hs 11:14
-Last Change: dom 08 jan 2017 12:03:27 BRT
+Last Change: ter 10 jan 2017 13:20:30 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
-email: <voyeg3r  gmail.com>
+email: <voyeg3r ✉ gmail.com>
+```
 
 ### altere o modo de escalonamento dos discos para desempenho
 
 fonte ibm develop networks: http://www.readability.com/articles/q2jiwjfe
 
-Escalonadores de disco
+#### Escalonadores de disco
 
 O kernel Linux oferece diversos algoritmos de escalonamento de disco. Um
 escalonador de disco é necessário para o sistema decidir quais dados buscar
@@ -44,22 +47,22 @@ evite o noop ao máximo.
 
 Para conferir o escalonador de um disco (sda, no exemplo):
 
-  $ cat /sys/block/sda/queue/scheduler
-  noop deadline [cfq]
+      $ cat /sys/block/sda/queue/scheduler
+      noop deadline [cfq]
 
 Para conferir o escalonador de todos os discos:
 
-  $ cat /sys/block/*/queue/scheduler
+      $ cat /sys/block/*/queue/scheduler
 
 Para alterar o escalonador de um disco (novamente sda, no exemplo) — note que
 é preciso ser root:
 
-  # echo deadline > /sys/block/sda/queue/scheduler
+    # echo deadline > /sys/block/sda/queue/scheduler
 
 Feito isso, confira se a alteração foi feita:
 
-  $ cat /sys/block/sda/queue/scheduler
-  noop [deadline] cfq
+      $ cat /sys/block/sda/queue/scheduler
+      noop [deadline] cfq
 
 
 ### alterando o dpi (resolução)
@@ -73,7 +76,7 @@ https://extensions.gnome.org/
 
 http://www.fpmurphy.com/gnome-shell-extensions/
 
-~/.local/share/gnome-shell/extensions/
+    ~/.local/share/gnome-shell/extensions/
 
 ### links
 http://www.techdrivein.com/2011/11/8-things-i-did-after-installing-gnome.html
@@ -83,8 +86,9 @@ http://www.techdrivein.com/2011/11/8-things-i-did-after-installing-gnome.html
    sudo apt-fast install gnome-shell
 
 ### set number of workspaces on gnome-shell
-gsettings set org.gnome.desktop.wm.preferences num-workspaces 4
-gsettings set org.gnome.shell.overrides dynamic-workspaces false
+
+    gsettings set org.gnome.desktop.wm.preferences num-workspaces 4
+    gsettings set org.gnome.shell.overrides dynamic-workspaces false
 
 ### install gnome-sushi
 
@@ -93,12 +97,12 @@ you take a peek into files and folders quickly and easily. After installing
 GNOME Sushi, all you need to do is, select the file you want to preview and hit
 space bar.
 
-   sudo apt-fast install gnome-sushi
+       sudo apt-fast install gnome-sushi
 
 
 # função para o bashrc para mudar o papel de parede
-# adapte para o crontab
-chwall () {
-# change img folder according to their system
-gsettings set org.gnome.desktop.background picture-uri file://`ls ~/Imagens/wallpapers/* | shuf | tail -1`
-}
+    # adapte para o crontab
+    chwall () {
+    # change img folder according to their system
+    gsettings set org.gnome.desktop.background picture-uri file://`ls ~/Imagens/wallpapers/* | shuf | tail -1`
+    }

@@ -1,13 +1,15 @@
 # Arquivo: dicas sobre o google
 
-   File:		 DicasGoogle.md
-   Criado:       Sex 05/Out/2012 hs 07:45
-   Last Change:  seg 09 jan 2017 19:02:48 BRT
-   Author:		 Sergio Araujo
-   Site:		 http://vivaotux.blogspot.com
-   e-mail:       <voyeg3r ✉ gmail.com>
-   Twitter:	     @voyeg3r
-   Github:       https://github.com/voyeg3r
+ ```
+ File:		   DicasGoogle.md
+ Criado:       Sex 05/Out/2012 hs 07:45
+ Last Change:  ter 10 jan 2017 13:31:07 BRT
+ Author:	   Sergio Araujo
+ Site:		   http://vivaotux.blogspot.com
+ e-mail:       <voyeg3r ✉ gmail.com>
+ Twitter:	   @voyeg3r
+ Github:       https://github.com/voyeg3r
+ ```
 
 ### Como encontrar fontes no google
 

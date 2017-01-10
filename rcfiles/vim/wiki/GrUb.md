@@ -1,10 +1,13 @@
-Arquivo: dicas do grub
+# Arquivo: dicas do grub
+
+```
 Criado: Ter 20/Mai/2014 hs 08:44
-Last Change: Ter Mai 20, 2014  08:48
+Last Change: ter 10 jan 2017 13:47:02 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: voyeg3r
 email: <voyeg3r  gmail.com>
+```
 
 Reference: http://www.edivaldobrito.com.br/recuperando-o-boot-grub-ubuntu-depois-de-instalar-o-windows/
 

@@ -1,12 +1,14 @@
 # dicas do bash
 
-    File:		 DicasDoBash.md
-    Last Change: seg 09 jan 2017 18:55:32 BRT
-    Author:		 Sergio Araujo
-    Site:		 http://vivaotux.blogspot.com
-    e-mail:      <voyeg3r ✉ gmail.com>
-    Twitter:	 @voyeg3r
-    Github:      https://github.com/voyeg3r
+```
+File:		 DicasDoBash.md
+Last Change: ter 10 jan 2017 13:30:07 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
 
 ### bash onliners
 

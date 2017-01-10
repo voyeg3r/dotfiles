@@ -1,10 +1,12 @@
 # Arquivo: dicas firefox
 
-    Criado: Ter 04/Jan/2011 hs 20:21
-    Last Change: dom 08 jan 2017 12:03:27 BRT
-    autor: slas
-    site: vivaotux
-    twitter: voyeg3r
+```
+Criado: Ter 04/Jan/2011 hs 20:21
+Last Change: ter 10 jan 2017 13:30:29 BRT
+autor: slas
+site: vivaotux
+twitter: voyeg3r
+```
 
 ### clear firefox memory usage
 

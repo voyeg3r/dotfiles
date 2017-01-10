@@ -1,5 +1,6 @@
 ### macro para imagens
 
+``` \Tex\
 \newcommand{\myfig}[3] %label, caption, filename
 {
 \begin{figure}[h!]
@@ -9,13 +10,17 @@
  \label{fig:#1}
 \end{figure}
 }
+```
 
 ### Quebra de linha com distância definida em valor
 
+	``` tex
 	\textsc{\LARGE University Name}\\[1.5cm]
+	```
 
 ### texto ao redor de figura
 
+``` latex
 %Preamble
 \usepackage{wrapfig, graphicx}
 
@@ -26,6 +31,7 @@
 \caption{Text wrapped around figure}
 \label{fig:wrapfig}
 \end{wrapfigure}
+```
 
 ### dimensão correta do papel no pdflatex
 

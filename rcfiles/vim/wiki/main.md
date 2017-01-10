@@ -12,7 +12,6 @@
 * [AwkNewieTutorial](AwkNewieTutorial.md)
 * [BritisAndAmerican](BritisAndAmerican.md)
 * [CertidoesNegativasEdocumentos](CertidoesNegativasEdocumentos.md)
-* [CertidoesNegativasEdocumentos](CertidoesNegativasEdocumentos.md)
 * [CodecsMaverick](CodecsMaverick)
 * [ComandosLinux](ComandosLinux.md)
 * [ConCurso](ConCurso.md)

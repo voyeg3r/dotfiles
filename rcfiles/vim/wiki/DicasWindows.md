@@ -1,11 +1,13 @@
 # Arquivo: dicas windows
 
-    Criado: Ter 11/Dez/2012 hs 15:31
-    Last Change: dom 08 jan 2017 12:34:48 BRT
-    autor: sergio
-    site: vivaotux
-    twitter: voyeg3r
-    email: voyeg3r at gmail.com
+```
+Criado: Ter 11/Dez/2012 hs 15:31
+Last Change: ter 10 jan 2017 13:32:48 BRT
+autor: sergio
+site: vivaotux
+twitter: voyeg3r
+email: voyeg3r at gmail.com
+```
 
     Ctrl + shift + Esc
 

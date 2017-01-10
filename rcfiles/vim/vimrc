@@ -538,6 +538,15 @@ command! -nargs=0 LM :call LastModified()<cr>
 autocmd BufWritePre * :call LastModified()
 map <silent> <F9> <esc>:call LastModified()<cr>
 
+fun! ChangeHeader()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    1,10s/\vLast Change:(\s+|\t+)\zs(.*)/\=strftime("%c")/e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+command! -nargs=0 CH :call ChangeHeader()
+
 " jump to next place holder
 function! JumpToNextPlaceholder()
     let old_query = getreg('/')

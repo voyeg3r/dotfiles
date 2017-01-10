@@ -1,14 +1,15 @@
 ### O que é o Anki
 
-    File:		 Anki.md
-    Created:	 ter 10 jan 2017 12:50:12 BRT
-    Last Change: ter 10 jan 2017 12:50:12 BRT
-    Author:		 Sergio Araujo
-    Site:		 http://vivaotux.blogspot.com
-    e-mail:      <voyeg3r ✉ gmail.com>
-    Twitter:	 @voyeg3r
-    Github:      https://github.com/voyeg3r
-
+``` markdown
+File:		 Anki.md
+Created:	 ter 10 jan 2017 13:13:26 BRT
+Last Change: ter 10 jan 2017 13:13:26 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
 
 E um programa de aprendizado baseado na repetição espaçada
 

@@ -11,6 +11,13 @@ snippet zsh "zsh header" bA
 ${0:# press Ctrl-j to jump placeholders}
 endsnippet
 
+
+snippet coment "add backtics comments" w
+`!v repeat(nr2char(96),3)` ${1:zsh}
+${0:${VISUAL:type here}}
+`!v repeat(nr2char(96),3)`
+endsnippet
+
 snippet alias
 alias ${1:name}='${2:action}'
 endsnippet

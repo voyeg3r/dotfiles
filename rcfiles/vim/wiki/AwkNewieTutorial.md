@@ -1,4 +1,15 @@
-A newbie tutorial on UNIX Awk utility
+# A newbie tutorial on UNIX AWK utility
+
+``` markdown
+File:		 AwkNewieTutorial.md
+Created:	 ter 10 jan 2017 13:16:16 BRT
+Last Change: ter 10 jan 2017 13:16:11 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
 
 source: http://unstableme.blogspot.com/2010/11/newbie-tutorial-on-unix-awk-utility.html
 
