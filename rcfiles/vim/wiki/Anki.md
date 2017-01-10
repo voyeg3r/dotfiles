@@ -1,9 +1,9 @@
-### O que é o Anki
+### O que é o Anki?
 
 ``` markdown
 File:		 Anki.md
 Created:	 ter 10 jan 2017 13:13:26 BRT
-Last Change: ter 10 jan 2017 13:13:26 BRT
+Last Change: ter 10 jan 2017 14:35:34 BRT
 Author:		 Sergio Araujo
 Site:		 http://vivaotux.blogspot.com
 e-mail:      <voyeg3r ✉ gmail.com>
@@ -40,36 +40,43 @@ Mas se pode fazer de outra forma também:
 
  um arquivo  chamado 'anki', sem aspas contendo o seguinte:
 
-    #!/usr/bin/bash
-    /usr/bin/anki -b $HOME/docs/anki
+``` sh
+#!/usr/bin/bash
+/usr/bin/anki -b $HOME/docs/anki
+```
 
-   Depois atribua SETUID para o arquivo com o comando
-   chmod a+sx anki
+#### Depois atribua SETUID para o arquivo com o comando
+
+       chmod a+sx anki
 
 Outra solução possível seria:
 Go to the folder where ANKI is installed, in my case:
 
     /usr/share/anki
 
-Edit file in aqt folder called profiles.py, you have to find category Helpers and edit appropriate line (it depends which OS you use: Win, Mac, Linux..) you wish:
+Edit file in aqt folder called profiles.py, you have to find category Helpers
+and edit appropriate line (it depends which OS you use: Win, Mac, Linux..) you
+wish:
 
-    def _defaultBase(self):
-        if isWin:
-        if False: #qtmajor >= 5:
-        loc = QStandardPaths.writeableLocation(QStandardPaths.DocumentsLocation)
+``` python
+def _defaultBase(self):
+    if isWin:
+    if False: #qtmajor >= 5:
+    loc = QStandardPaths.writeableLocation(QStandardPaths.DocumentsLocation)
+    else:
+        loc = QDesktopServices.storageLocation(QDesktopServices.DocumentsLocation)
+        return os.path.join(loc, "Anki")
+        elif isMac:
+        return os.path.expanduser("~/Documents/Anki")
         else:
-            loc = QDesktopServices.storageLocation(QDesktopServices.DocumentsLocation)
-            return os.path.join(loc, "Anki")
-            elif isMac:
-            return os.path.expanduser("~/Documents/Anki")
-            else:
-            return os.path.expanduser("~/Anki")
+        return os.path.expanduser("~/Anki")
+```
 
-    e.g I edited last line to this:
+####  e.g I edited last line to this:
 
-            return os.path.expanduser("~/edu/Anki")
+    return os.path.expanduser("~/edu/Anki")
 
-            to change my default folder to ~/edu/Anki.
+    to change my default folder to ~/edu/Anki.
 
 O Anki é um software de repetição espaçada, a Repetiação espaçada
 surge como uma descoberta da Neurociência, é de conhecimento
@@ -102,7 +109,6 @@ que tenha um audio relacionado use a seguinte notação:
 Um cartão do anki com audio ficaria então assim:
 
 This is the English phrase[sound:nome-do-audio.mp3]
-
 Esta é uma frase em Inglês
 
 

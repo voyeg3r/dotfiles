@@ -1,14 +1,22 @@
-[[Dicas]] do comando git
-
+# [[Dicas]] do comando git
 https://githowto.com/getting_old_versions
 
-Atualizar um repositório local puxando do servidor
+``` markdown
+File:		 UsandoOgit.md
+Created:	 ter 10 jan 2017 14:37:28 BRT
+Last Change: ter 10 jan 2017 14:40:44 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
 
- git pull origin master
+#### Atualizar um repositório local puxando do servidor
 
----------------------------------------------
-Clonar um repositório num momento específico
----------------------------------------------
+     git pull origin master
+
+#### Clonar um repositório num momento específico
 http://stackoverflow.com/questions/3489173/
 
    git clone $URL
@@ -22,44 +30,34 @@ http://stackoverflow.com/questions/3489173/
 
     :Git checkout %
 
-### add current file to git
+#### add current file to git
 
- :Git add %
+     :Git add %
 
----------------------------------
-Para clonar este repositorio faça
----------------------------------
+#### Para clonar este repositorio faça
 
 	git clone git@github.com:voyeg3r/dotfiles.git ~/.vim
 
 
 	Para usar o vimdiff
 
-  git config --global merge.tool vimdiff
+      git config --global merge.tool vimdiff
 
---------------
-MANUAIS DO GIT
---------------
+#### Manuais do git
 
 	http://mariomoraesneto.blogspot.com.br/2012/11/git-dicas-basicas-e-praticas.html
 	http://githowto.com/
 
-------------------------
-Configurando o usuário
-------------------------
+#### Configurando o usuário
 
 	git config --global user.name "seu nome"
 	git config --global user.email "seu@email.com"
 
---------------------
-listar configurações
---------------------
+#### listar configurações
 
 	git config --list
 
---------------------------------------------------------
- É possível configurar alias para os comandos, exemplos
---------------------------------------------------------
+#### É possível configurar alias para os comandos, exemplos
 
 dentro do seu repositório um arquivo .git/config
 dentro dele cole estas linas.
@@ -73,15 +71,11 @@ dentro dele cole estas linas.
 	type = cat-file -t
 	dump = cat-file -p
 
---------------------------------------
-Como adicionar sua chave ssh ao github
---------------------------------------
+#### Como adicionar sua chave ssh ao github
 
 	https://help.github.com/articles/generating-ssh-keys
 
----------------------------
- começando um novo projeto
----------------------------
+#### começando um novo projeto
 
 	touch README.md
 	git init
@@ -90,11 +84,11 @@ Como adicionar sua chave ssh ao github
 	git remote add origin git@github.com:voyeg3r/dotfiles.git
 	git push -u origin master
 
-### Git - easy way pull latest of all submodules
+#### Git - easy way pull latest of all submodules
 
     git submodule foreach git pull
 
-### how checkout from a particular revison point
+#### how checkout from a particular revison point
 
 		Git clone particular version of remote repository
 
@@ -103,14 +97,11 @@ Como adicionar sua chave ssh ao github
 		git reset --hard [ENTER HERE THE COMMIT HASH YOU WANT]
 
 
------------------------------------
-Atualizando um repositório clonado
------------------------------------
+#### Atualizando um repositório clonado
 
     git remote update
 
----------------------------------------------
-Como checar as alterações de um único arquivo
----------------------------------------------
+#### Como checar as alterações de um único arquivo
 
     git log --follow filename
+

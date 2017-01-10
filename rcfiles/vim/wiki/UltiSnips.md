@@ -78,7 +78,7 @@ anything else, you only get the content of the place holder, i.e. the
 verbatim of what you typed.
 
 ###  how could add literal string in vim snippet?
-[source here:](http://stackoverflow.com/questions/15017031/)
+[source here:](http://stackoverflow.com/q/15017031/)
 
 ``` markdown
 snippet code

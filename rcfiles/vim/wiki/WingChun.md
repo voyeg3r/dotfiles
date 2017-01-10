@@ -1,4 +1,4 @@
-Notes about wing chun
+# Notes about wing chun
 
 Wing Chun has Shuai(wrestling), Na(seizing & locking),
 Ti(kicking), and Da(striking), making it a complete system.
