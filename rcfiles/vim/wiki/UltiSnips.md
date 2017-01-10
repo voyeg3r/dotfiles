@@ -1,6 +1,17 @@
 # link oficial
 [github repo](https://github.com/SirVer/ultisnips)
 
+``` markdown
+File:		 UltiSnips.md
+Created:	 ter 10 jan 2017 13:08:25 BRT
+Last Change: ter 10 jan 2017 13:08:30 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
+
 ### argigos a respeito:
  [sharpen your vim with snippets](https://brigade.engineering/sharpen-your-vim-with-snippets-767b693886db#.qq0y0kthk)
  [generic html snippets](https://medium.com/@shxfee/generic-html-snippets-with-vim-and-ultisnips-8cc369390cb9#.rheutidju)
@@ -62,3 +73,12 @@ string. That means that you can just type a t to quickly get two as
 the complete content of the snippet or a o to get one. If you type
 anything else, you only get the content of the place holder, i.e. the
 verbatim of what you typed.
+
+###  how could add literal string in vim snippet?
+
+    snippet code
+        `repeat(nr2char(96),3)` ${1:markdown}
+
+        `repeat(nr2char(96),3)`
+
+
