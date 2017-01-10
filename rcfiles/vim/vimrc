@@ -490,6 +490,8 @@ fun! s:RedirHistoryCommands()
     new
     put r
     set nopaste
+    :%s/^\s\+//g
+    :g/^$/d
 endfun
 command! -nargs=0 GetHistory call s:RedirHistoryCommands()
 

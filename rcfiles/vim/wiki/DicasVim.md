@@ -1,14 +1,15 @@
 # Manual de dicas do vim
 
-    File:		 DicasVim.md
-    Created:     Sáb 06/Nov/2010 hs 18:10
-    Last Change: dom 08 jan 2017 19:24:41 BRT
-    Author:		 Sergio Araujo
-    Site:		 http://vivaotux.blogspot.com
-    e-mail:      <voyeg3r ✉ gmail.com>
-    Twitter:	 @voyeg3r
-    Github:      https://github.com/voyeg3r
-
+```
+File:		 DicasVim.md
+Created:     Sáb 06/Nov/2010 hs 18:10
+Last Change: dom 08 jan 2017 19:24:41 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
 
 ### Getting rid of '-' on html links
 [source: stackoverflow](http://stackoverflow.com/questions/41529264/)
