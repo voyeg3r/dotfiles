@@ -1825,6 +1825,12 @@ source: [superuser.com](http://superuser.com/questions/592503/)
 
     Obs: os caracteres ^[ são obtidos digitando-se Ctrl-v + [
 
+### Trocar título tipo == assim == para markdown
+
+O código abaixo troca dois iguais por três ###
+
+    %s/\v^\=\=([^\=]+)\=\=/### \1/g
+
 ### Delet the character before cursor
 
 Let's say you have:

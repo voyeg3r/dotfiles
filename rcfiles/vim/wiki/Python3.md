@@ -11,29 +11,30 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
-### curso completo no youtube
+#### curso completo no youtube
+
 * [canal ignorancia zero](https://www.youtube.com/channel/UCmjj41YfcaCpZIkU-oqVIIw)
 * [python course in English](https://www.youtube.com/watch?v=R6wQmWMDiB4)
 * [aula 001](https://www.youtube.com/watch?v=sC6mqcLSkZo&index=2&list=PLfCKf0-awunOu2WyLe2pSD2fXUo795xRe)
 * [another course](https://www.youtube.com/watch?v=f6ji-QcOo_U)
 * [another one](https://www.youtube.com/watch?v=QSzqiGeyU5s)
-* https://www.youtube.com/watch?v=TV9tSHFAFjg
+* [Zero to Hero with Python Tutorial FULL Easy](https://www.youtube.com/watch?v=TV9tSHFAFjg)
 * [livro think python](https://upload.wikimedia.org/wikipedia/commons/1/1b/Think_Python.pdf)
 * [byte of python](http://files.swaroopch.com/python/byte_of_python.pdf)
 
 
-### to be able to import turtle in python
+#### to be able to import turtle in python
 [read on this link](https://opentechschool.github.io/python-beginners/en/simple_drawing.html)
 
     sudo pacman -S community/python-pmw
 
-### assigning a range or printing
+#### assigning a range or printing
 
     To print a list [1, 3, 5, 7, 9, 11]
 
     print(list(range(1,12,2)))
 
-### Converting python2 to python3
+#### Converting python2 to python3
 
    2to3 python2script.py
 
@@ -41,7 +42,7 @@ Github:      https://github.com/voyeg3r
 
    2to3 -w python2script.py
 
-### Access to the clipboard
+#### Access to the clipboard
 
     import pyperclip
 
@@ -53,7 +54,7 @@ var = pyperclip.paste()
 print(var)
 ```
 
-### random numbers
+#### random numbers
 
 ``` python
 iport random
@@ -64,7 +65,7 @@ while(random_num != 15):
     random_num = random_num.range(0,100)
 ```
 
-### addnumbers function
+#### addnumbers function
 
 ``` python
 def addNumber(fNum, lNum):
@@ -74,7 +75,7 @@ def addNumber(fNum, lNum):
 print(addNumber(1,4))
 ```
 
-### Getting user input
+#### Getting user input
 
 ``` python
 import sys
