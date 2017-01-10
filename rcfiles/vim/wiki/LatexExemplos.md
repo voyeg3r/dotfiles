@@ -1,6 +1,6 @@
 ### macro para imagens
 
-``` \Tex\
+``` latex
 \newcommand{\myfig}[3] %label, caption, filename
 {
 \begin{figure}[h!]
@@ -14,7 +14,7 @@
 
 ### Quebra de linha com distância definida em valor
 
-	``` tex
+	``` latex
 	\textsc{\LARGE University Name}\\[1.5cm]
 	```
 
@@ -35,8 +35,10 @@
 
 ### dimensão correta do papel no pdflatex
 
+``` latex
 \ifx\pdfoutput\undefined
 \else
     \pdfpagewidth=8.5in
     \pdfpageheight=11in
 \fi
+```
