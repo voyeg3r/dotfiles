@@ -157,7 +157,7 @@ dump = cat-file -p
 
 ####  começando um novo projeto
 
-```bash
+```sh
 touch README.md
 git init
 git add README.md
