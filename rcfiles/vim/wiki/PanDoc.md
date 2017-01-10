@@ -1,23 +1,36 @@
-% How use pandoc
-% Sergio Luiz Araújo Silva
-% July 31, 2014
+# How use pandoc
+
+``` markdown
+File:		 PanDoc.md
+Created:	 July 31 2014
+Last Change: ter 10 jan 2017 14:11:53 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
 
 # Synopsis
 
+``` markdown
 pandoc [*options*] [*input-file*]...
+```
 
 Pandoc can generate multiple outputs from markdown text
 for example
 
-		pandoc -s README -o example4.tex
+``` sh
+pandoc -s README -o example4.tex
 
-		pandoc -s README -o example4.pdf
+pandoc -s README -o example4.pdf
+```
 
 
 Instead of a file, an absolute URI may be given. In this case
 pandoc will fetch the content using HTTP:
 
-    pandoc -f html -t markdown http://www.fsf.org
+pandoc -f html -t markdown http://www.fsf.org
 
 ### Paragraphs
 

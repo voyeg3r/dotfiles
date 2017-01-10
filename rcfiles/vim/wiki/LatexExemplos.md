@@ -14,9 +14,9 @@
 
 ### Quebra de linha com distância definida em valor
 
-	``` latex
-	\textsc{\LARGE University Name}\\[1.5cm]
-	```
+``` latex
+\textsc{\LARGE University Name}\\[1.5cm]
+```
 
 ### texto ao redor de figura
 
