@@ -1,15 +1,14 @@
-Receita de Purê de Batata da Mamãe
-==================================
+# Receita de Purê de Batata da Mamãe
 
-4 batatas médias
-1 gema
-1 colher de manteiga bem cheia (não vale margarina)
-1 pitada de sal (a gosto)
-1 pires de queijo ralado (pequeno)
-1 copo de Leite pequeno (copo de geléia)
-2 colheres de creme de leite
+    4 batatas médias
+    1 gema
+    1 colher de manteiga bem cheia (não vale margarina)
+    1 pitada de sal (a gosto)
+    1 pires de queijo ralado (pequeno)
+    1 copo de Leite pequeno (copo de geléia)
+    2 colheres de creme de leite
 
-Modo de preparo
+### Modo de preparo
 Cozinha a bata muito bem cozida  (tira do fogo)
 descasca a bata e machuca até ficar bem machucada
 

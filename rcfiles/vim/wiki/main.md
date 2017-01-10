@@ -62,7 +62,6 @@
 * [SegundaVia](SegundaVia.md)
 * [SofficeCalc](SofficeCalc.md)
 * [StackExchange](StackExchange.md)
-* [StackExchange](StackExchange.md)
 * [SunTzu](SunTzu.md)
 * [TaticaEestrategi](TaticaEestrategi.md)
 * [UltiSnips](UltiSnips.md)

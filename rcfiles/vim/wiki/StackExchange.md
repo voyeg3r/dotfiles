@@ -1,13 +1,15 @@
 # Dicas sobre o StackExchange e StackOverFlow
 
-    File:		 StackExchange.md
-    Created:	 dom 08 jan 2017 09:29:38 BRT
-    Last Change: seg 09 jan 2017 18:37:48 BRT
-    Author:		 Sergio Araujo
-    Site:		 http://vivaotux.blogspot.com
-    e-mail:      <voyeg3r ✉ gmail.com>
-    Twitter:	 @voyeg3r
-    Github:      https://github.com/voyeg3r
+``` markdown
+File:		 StackExchange.md
+Created:	 dom 08 jan 2017 09:29:38 BRT
+Last Change: ter 10 jan 2017 14:23:48 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
 
 O Stack Exchange tem vários canais de discussão
 sobre diversos assuntos: vim, bash, zsh, awk, sed
@@ -22,7 +24,9 @@ e por aí vai.
 Quando necessitamos postar uma resposta os atalhos de tecla
 podem ser referenciados da seguinte forma:
 
-    `:%norm df`<kbd>Ctrl+V</kbd><kbd>Tab</kbd>`x`
+``` markdown
+<kbd>Ctrl+V</kbd><kbd>Tab</kbd>x
+```
 
 
 ou seja usando a marcação <kbd> Ctrl-V </kbd>

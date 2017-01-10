@@ -75,10 +75,13 @@ anything else, you only get the content of the place holder, i.e. the
 verbatim of what you typed.
 
 ###  how could add literal string in vim snippet?
+[source here:](http://stackoverflow.com/questions/15017031/)
 
-    snippet code
-        `repeat(nr2char(96),3)` ${1:markdown}
+``` markdown
+snippet code
+    `repeat(nr2char(96),3)` ${1:markdown}
 
-        `repeat(nr2char(96),3)`
+    `repeat(nr2char(96),3)`
+```
 
 

@@ -1,13 +1,17 @@
-Arquivo: dicas sobre saude
+# Arquivo: dicas sobre saude
+
+``` markdown
 Criado: Sáb 29/Set/2012 hs 15:10
-Last Change: dom 08 jan 2017 12:03:33 BRT
+Last Change: ter 10 jan 2017 14:22:20 BRT
 autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
+```
 
-como evitar [[AtaqueCardiaco]]
-cerveja e agua [[CervejaEagua]]
+### como evitar [[AtaqueCardiaco]]
+
+### cerveja e agua [[CervejaEagua]]
 
 ### 5 componentes essenciais para a saude
 http://www.youtube.com/watch?v=MFp5QLR6xpE&feature=watch-vrec
@@ -22,18 +26,18 @@ http://www.youtube.com/watch?v=MFp5QLR6xpE&feature=watch-vrec
 
 http://www.youtube.com/watch?v=S2Vjib_tGj4&feature=endscreen&NR=1
 
- Entendimento de que a lente do olho
- é movida por músculos (em geral cansados)
+     Entendimento de que a lente do olho
+     é movida por músculos (em geral cansados)
 
- O primeiro pilar da boa visão é aprender a focar
- O segundo pilar da boa visão é movimentar os olhos
- O terceiro pilar da boa visão é o piscar
+     O primeiro pilar da boa visão é aprender a focar
+     O segundo pilar da boa visão é movimentar os olhos
+     O terceiro pilar da boa visão é o piscar
 
- Piscar os olhos naturalmente (5 ou 10 minutos)
- Espalmação (não deixar entrar luz nos olhos por 5 ou 10 minutos)
- Olhar solar (ficar de frente para o sol com os olhos fechados)
- Relaxamento da ioga balançando os braços
- Leitura de um livro de cabeça para baixo (focar a visão)
+     Piscar os olhos naturalmente (5 ou 10 minutos)
+     Espalmação (não deixar entrar luz nos olhos por 5 ou 10 minutos)
+     Olhar solar (ficar de frente para o sol com os olhos fechados)
+     Relaxamento da ioga balançando os braços
+     Leitura de um livro de cabeça para baixo (focar a visão)
 
 ### agua alcalina
 

@@ -11,7 +11,7 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
-# Synopsis
+### Synopsis
 
 ``` markdown
 pandoc [*options*] [*input-file*]...
@@ -66,6 +66,7 @@ def application(env, start_response):
 
 ### Definition lists
 
+``` markdown
 Term 1
 
 :   Definition 1
@@ -73,6 +74,7 @@ Term 1
 Term 2 with *inline markup*
 
 :   Definition 2
+```
 
 ### Simple lists
 + you can use plus `+`
