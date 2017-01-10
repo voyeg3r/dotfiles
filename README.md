@@ -67,8 +67,8 @@ git config --global credential.helper 'cache --timeout=3600'
 git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
 
-Shallow clone:
-    git clone --depth 1 https://github.com/voyeg3r/dotfiles
+# Git Shallow clone:
+git clone --depth 1 https://github.com/voyeg3r/dotfiles
 
 git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
 
@@ -80,8 +80,10 @@ git clone git://github.com/clvv/fasd.git && cd fasd
 sudo make install
 
 # config vundle
-# https://github.com/VundleVim/Vundle.vim
+* https://github.com/VundleVim/Vundle.vim
+
 rm -rf ~/.dotfiles/vim/bundle/Vundle.vim
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/vim/bundle/Vundle.vim
 
 ln -sfvn ~/.dotfiles/vim/vimrc ~/.vimrc
@@ -99,11 +101,6 @@ ln -sfvn ~/.dotfiles/agignore ~/.agignore
 
 sudo chsh -s $(which zsh) $(whoami)
 
-# do not forget to install antigen
-# A plugin manager for zsh, inspired by oh-my-zsh and vundle.
-# source: http://blog.namangoel.com/zsh-with-antigen
-    yaourt -S antigen-git
-
 
 # installing fasdcd
 git clone git@github.com:clvv/fasd.git
@@ -112,27 +109,29 @@ cd fasd && sudo make install
 } && clonedotfiles
 ```
 
-## Manuais do git
+#### Manuais do git
 
 	http://mariomoraesneto.blogspot.com.br/2012/11/git-dicas-basicas-e-praticas.html
 	http://githowto.com/
 
-## listar configurações
+#### listar configurações
 
 	git config --list
 
-## Configurando git submodule
+#### Configurando git submodule
 
 reference: http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
 http://gitref.org/
 http://fadamiao.github.io/git-start/
 
-    git submodule init
-    git submodule update
+``` sh
+git submodule init
+git submodule update
 
-	git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
-	git add .
-	git commit -m "Install Fugitive.vim bundle as a submodule."
+git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+git add .
+git commit -m "Install Fugitive.vim bundle as a submodule."
+```
 
 ## É possível configurar alias para os comandos, exemplos
 
@@ -141,28 +140,28 @@ dentro do seu repositório um arquivo .git/config
 dentro dele cole estas linas.
 
 ```bash
-	[alias]
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	type = cat-file -t
-	dump = cat-file -p
+[alias]
+co = checkout
+ci = commit
+st = status
+br = branch
+hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+type = cat-file -t
+dump = cat-file -p
 ```
 
-## Como adicionar sua chave ssh ao github
+#### Como adicionar sua chave ssh ao github
 
 
 	https://help.github.com/articles/generating-ssh-keys
 
-##  começando um novo projeto
+####  começando um novo projeto
 
 ```bash
-	touch README.md
-	git init
-	git add README.md
-	git commit -m "first commit"
-	git remote add origin git@github.com:voyeg3r/dotfiles.git
-	git push -u origin master
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:voyeg3r/dotfiles.git
+git push -u origin master
 ```
