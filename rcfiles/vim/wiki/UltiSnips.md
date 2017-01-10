@@ -13,18 +13,19 @@ Github:      https://github.com/voyeg3r
 ```
 
 ### argigos a respeito:
- [sharpen your vim with snippets](https://brigade.engineering/sharpen-your-vim-with-snippets-767b693886db#.qq0y0kthk)
- [generic html snippets](https://medium.com/@shxfee/generic-html-snippets-with-vim-and-ultisnips-8cc369390cb9#.rheutidju)
- [why snippets](http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/)
-
- [d-snippets](https://github.com/kiith-sa/DSnips)
+* [sharpen your vim with snippets](https://brigade.engineering/sharpen-your-vim-with-snippets-767b693886db#.qq0y0kthk)
+* [generic html snippets](https://medium.com/@shxfee/generic-html-snippets-with-vim-and-ultisnips-8cc369390cb9#.rheutidju)
+* [why snippets](http://fueledbylemons.com/blog/2011/07/27/why-ultisnips/)
+* [d-snippets](https://github.com/kiith-sa/DSnips)
 
 ### Inserir texto com underline usando ultisnips
 
-    snippet '\bul(ine)?' "underline" r
-    ${1:your text here}
-    `!p snip.rv = len(t[1])*'-'`
-    endsnippet
+``` markdown
+snippet '\bul(ine)?' "underline" r
+${1:your text here}
+`!p snip.rv = len(t[1])*'-'`
+endsnippet
+```
 
 ###  Para mostrar uma lista das complementações possíveis
 
@@ -61,9 +62,11 @@ so: (?<number>:yes text:no text). yes text will be inserted if the
 group was matched, otherwise no text will be inserted. A quick
 example:
 
-	snippet cond
-	${1:some_text}${1/(o)|(t)|..*/(?1:ne)(?2:wo)/}
-	endsnippet
+``` markdown
+snippet cond
+${1:some_text}${1/(o)|(t)|..*/(?1:ne)(?2:wo)/}
+endsnippet
+```
 
 The transformation will match a o at the beginning into group 1 or a t
 at the beginning in group 2. The rest of the search string just
