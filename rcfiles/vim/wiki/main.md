@@ -9,7 +9,6 @@
 * [Anki](Anki.md)
 * [ArTigos](ArTigos.md)
 * [ArchLinux](ArchLinux.md)
-* [AwkNewieTutorial](AwkNewieTutorial.md)
 * [BritisAndAmerican](BritisAndAmerican.md)
 * [CertidoesNegativasEdocumentos](CertidoesNegativasEdocumentos.md)
 * [CodecsMaverick](CodecsMaverick)

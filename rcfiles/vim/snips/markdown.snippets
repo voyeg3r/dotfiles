@@ -37,7 +37,7 @@ ${0: ctrl-j}
 endsnippet
 
 snippet 'in(line)?' "code inline" r
-`!v nr2char(96)`${0:${VISUAL:type here ..}}`!v nr2char(96)` ${0}
+`!v nr2char(96)`${0:${VISUAL:type here ..}}`!v nr2char(96)`
 endsnippet
 
 snippet bold "*markdown bold*" w
@@ -48,3 +48,6 @@ snippet 'italic?' "md italic" r
 _${1:text}_
 endsnippet
 
+snippet modeline "modeline para markdown" w
+`!v repeat(nr2char(96),1)` vim: ft=markdown et sw=4 ts=4 `!v repeat(nr2char(96),1)`
+endsnippet

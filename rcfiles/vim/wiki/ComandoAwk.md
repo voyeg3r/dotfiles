@@ -1,4 +1,4 @@
-[[=Introdução=]]
+# Introdução
 O awk trabalha sempre dessa forma:
 
     awk padrão ação

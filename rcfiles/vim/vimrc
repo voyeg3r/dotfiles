@@ -110,6 +110,7 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+Plug 'mzlogin/vim-markdown-toc'
 "Plug 'klen/python-mode'
 Plug 'phillipberndt/python-imports.vim'
 Plug 'jiangmiao/auto-pairs'

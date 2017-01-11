@@ -10,7 +10,8 @@ e-mail:      <voyeg3r ✉ gmail.com>
 Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
-
+veja também
+* [AwkNewieTutorial](AwkNewieTutorial.md)
 
 Bem, este post veio por causa deste comentário.
 De forma simples o awk trata textos e streams assim:
@@ -34,11 +35,11 @@ Acima algo novo (o separador de campos padrão do awk é o espaço) para indicar
 um separador diferente usamos '-F' seguido do separador. Estamos pegando o campo 1 do
 arquivo /etc/group, estamos pedindo que imprima somente as linhas que contém o padrão sergio. /sergio/
 
-Para imprimir somente as linhas pares
+#### Para imprimir somente as linhas pares
 
     seq 10 | awk '$1 % 2 == 0 {print}'
 
-Como pegar o endereço IP?
+#### Como pegar o endereço IP?
 
     ifconfig eth0 | awk '/inet addr/ {print $2}'
 
@@ -74,15 +75,15 @@ OFS indica o separador de campo do arquivo de saida
 ORS indica o separador de registros do arquivo de saida
 ```
 
-indicando o separador de saída
+#### indicando o separador de saída
 
     awk -F: '{OFS="-"}{print $1,$6}' /etc/passwd
 
-Imprimir o nome dos grupos que tiverem como membro o usuário sergio
+#### Imprimir o nome dos grupos que tiverem como membro o usuário sergio
 
     awk -F":" '$4 ~ /sergio/ {print $1}' /etc/group
 
-Imprimir cada registro (linha) numerada "NR" usando Número do Registro
+#### Imprimir cada registro (linha) numerada "NR" usando Número do Registro
 
     awk -F":" '{ print NR " " $0 }' /etc/passwd
 
@@ -113,9 +114,7 @@ Power Management: No Start On Batteries, Stop On Battery Mode
 ```
 
 E deseja imprimir os blocos (Registros) em que o campo
-3 "Last Result:" não termine com zero
-
-A solução em awk fica assim
+3 "Last Result:" não termine com zero a solução em awk fica assim
 
 ``` sh
 awk 'BEGIN {RS="";FS="\n"} {if ($3 ~ /[^0]$/) print $0,"\n"}' teste.txt
@@ -260,6 +259,11 @@ awk 'NR == 5 {print $2}'
 ### imprimir primeira coluna da linha 2
 
     awk 'NR==2 {print $1}' arquivo
+
+
+### somando uma coluna de números
+
+	awk '{s+=$1}END{print s}' <file>
 
 ### somando números em um arquivo
 
@@ -861,10 +865,26 @@ Obrigado,
 Alessandro Almeida.
 ```
 
-solução
+#### solução
 
     awk '{printf("%s%s", $0, (NR%5 ? " " : "\n"))}'
 
+### Imprimindo o segundo e o último campos em arquivos com delimitadores distintos
+
+Tomando por exemplo o arquivo 'teste.txt" com o seguinte
+conteúdo e queremos exibir o segundo campo e o último
+
+``` sh
+/logs/tc0001/tomcat/tomcat7.1/conf/catalina.properties:app.env.server.name = demo.example.com
+/logs/tc0001/tomcat/tomcat7.2/conf/catalina.properties:app.env.server.name = quest.example.com
+/logs/tc0001/tomcat/tomcat7.5/conf/catalina.properties:app.env.server.name = www.example.com
+```
+
+a solução é indicar dois delimitadores de campo:
+
+ ``` sh
+ awk -F'[/=]' '{print $3, $NF}' teste.txt
+ ```
 
 ### Referências
 * http://br.geocities.com/cesarakg/awk-1.html
@@ -875,3 +895,5 @@ solução
 * http://www.vivaolinux.com.br/dica/Awk-Uma-poderosa-ferramenta-de-analise/
 * http://stackoverflow.com/questions/2332252/extracting-data-from-a-file
 * http://goo.gl/zwJ5
+
+`vim: ft=markdown et sw=4 ts=4`
