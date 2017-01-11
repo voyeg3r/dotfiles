@@ -1,4 +1,6 @@
-[[toc]]
+* auto-gen TOC:
+{:toc}
+
 ### Introdução
 
 O comando find é extremamente poderoso veja algumas construções do mesmo

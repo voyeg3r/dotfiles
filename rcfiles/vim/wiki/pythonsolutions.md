@@ -1,5 +1,16 @@
-
 ### Introdução
+
+``` markdown
+File:		 pythonsolutions.md
+Created:	 qua 11 jan 2017 14:21:22 BRT
+Last Change: qua 11 jan 2017 14:21:29 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
+
 
 * programando com janelas http://www.gustavobarbieri.com.br/eagle/docs/eagle-pt.html
 
@@ -22,13 +33,17 @@
 ### Módulos para acesso a informações do windows
 
 * win32api
+*
 ### truncar string em N bytes sem truncar nenhuma palavra
 
+``` python
 >>>> import textwrap
 >>>> textwrap.fill(u"string com texto bem maior que oitenta bytes de tamanho, jogar a palavra que está na coluna 80 para próxima linha", 80)
+```
 
 ### imprimir intervalo de linhas
 
+``` python
 python
 Python 2.5.2 (r252:60911, Jul 22 2009, 15:35:03)
 [GCC 4.2.4 (Ubuntu 4.2.4-1ubuntu3)] on linux2
@@ -37,44 +52,52 @@ Python 2.5.2 (r252:60911, Jul 22 2009, 15:35:03)
 >>> for i,line in enumerate(open("file.txt")):
 ...     if i >= 26 and i < 99 :
 ...             fp.write(line)
+```
 
 ### sequencia de fibonacci
 * http://www.petercollingridge.co.uk/blog/python-fibonacci-generator-using-reduce
 
-		>>> a = [1,1]
-		>>> for i in range(10):
-		...   a.append(a[-1] + a[-2])
-		...
-		>>> a
-		[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
+``` python
+>>> a = [1,1]
+>>> for i in range(10):
+...   a.append(a[-1] + a[-2])
+...
+>>> a
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
+```
 
 ### contar linhas de um arquivo
 * http://stackoverflow.com/questions/845058/
 
+``` python
 def file_len(fname):
   counts = itertools.count()
   with open(fname) as f:
     for _ in f: counts.next()
 		return counts.next()
+```
 
 # outro exemplo
-num_lines = sum(1 for line in open('myfile.txt'))
+
+    pythons = sum(1 for line in open('myfile.txt'))
 
 ### função map
 
+``` python
 >>> print map(lambda w: len(w), 'It is raining cats and dogs'.split())
 [2, 2, 7, 4, 3, 4]
+```
 
 ### somar linhas de um arquivo
 
-lista = ['34\n', '42\n', '11\n', '6\n', '2\n', '99\n', '\n']
-sum([int(i.strip()) for i in lista if i.strip().isdigit()])
+    lista = ['34\n', '42\n', '11\n', '6\n', '2\n', '99\n', '\n']
+    sum([int(i.strip()) for i in lista if i.strip().isdigit()])
 
-python -c "from fileinput import input; print sum(map(int, input()))" teste.txt
+    python -c "from fileinput import input; print sum(map(int, input()))" teste.txt
 
 ### builtin len
 
-"minha string".__len__()
+    "minha string".__len__()
 
 ### remover caracteres de uma string
 
@@ -85,53 +108,61 @@ python -c "from fileinput import input; print sum(map(int, input()))" teste.txt
 
 # Tenho (201.8.205.113) e quero apenas 201.8.205.113
 
+``` python
 a = '(123.123.123)'
 print a.strip('()')
 '123.123.123'
+```
 
-"".join([ char for char in string if char not in '()' ])
+    "".join([ char for char in string if char not in '()' ])
 
 ### ler a primeira e ultima linhas de um arquivo
 
+``` python
 fp = open('file.txt','r')
 data = fp.readlines()
 fp.close()
 print data[0],
 print data[-1],
+```
 
 ### verificar se há numeros repetidos em uma lista
 
 # O jeito mais simples de verificar se há valores repetidos é converter para set
 # e comparar se o tamanho muda.
 
+``` python
 >>> a = [1, 2, 3, 4, 5]
 >>> len(a) == len(set(a))
 True
 >>> b = [1, 2, 3, 3, 4, 5]
 >>> len(b) == len(set(b))
 False
+```
 
 # somente listar repetidos
-[ i for i in set(lista) if lista.count(i) > 1 ]
 
-print 'List has duplicate item %s' % [item for item in set(L) if L.count(item) > 1]
+    [ i for i in set(lista) if lista.count(i) > 1 ]
 
-any(i for i in lista if lista.count(i) > 1)
+    print 'List has duplicate item %s' % [item for item in set(L) if L.count(item) > 1]
+
+    any(i for i in lista if lista.count(i) > 1)
 
 ### numeros primos
 * fonte: http://code.activestate.com/recipes/117119-sieve-of-eratosthenes/
 
->>> primes(range(2,40))
-[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+    >>> primes(range(2,40))
+    [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
 
 outra implementação bem legal
 
 ### imprimir sequencia de binarios
 
-for i in xrange(16): print '{0:04b}'.format(i)
+    for i in xrange(16): print '{0:04b}'.format(i)
 
 ### enviar e-mails
 
+``` python
 import sys, smtplib
 
 fromaddr = raw_input("From: ")
@@ -143,11 +174,15 @@ while 1:
     if not line:
         break
     msg = msg + line
+```
 
-# The actual mail send
+##### The actual mail send
+
+``` python
 server = smtplib.SMTP('localhost')
 server.sendmail(fromaddr, toaddrs, msg)
 server.quit()
+```
 
 ### Ordenar uma matriz pelo segunda coluna
 
@@ -178,10 +213,12 @@ ganhar um pouco mais de velocidade:
 
 ### Ordenar strings pelo tamanho
 
-string.sort(key=len)
+    string.sort(key=len)
 
+``` python
 >>> print sorted("This is a test string from Andrew".split(), key=len)
 ['a', 'is', 'This', 'test', 'from', 'string', 'Andrew']
+```
 
 # Agradecimentos ao Rodrigo Hübner http://rodrigohubner.blogspot.com/
 
@@ -189,53 +226,62 @@ string.sort(key=len)
 
 * instale o pydelicious
 
+``` sh
 sudo su -
 easy_install -z http://pydelicious.googlecode.com/files/pydelicious%2Btools-0.5.3.zip
+```
 
 ### Limpando a tela
 
 # source: http://stackoverflow.com/questions/517970/
 
+``` python
 import os
 def cls():
     os.system(['clear','cls'][os.name == 'nt'])
+```
 
 # now, to clear the screen
-cls()
+
+    cls()
 
 ### iteradores
 
+``` python
 >>> s = 'casa'
 >>> it = iter(s)
 >>> it.next()
 ... c
 >>> it.next()
 ... a
+```
 
 ### acessando favoritos do delicious usando a biblioteca pydelicios
 
->> import pydelicious
->>> populares = pydelicious.get_popular(tag="python")
->>> print "\n".join([ x.get('url') for x in populares ])
+    >> import pydelicious
+    >>> populares = pydelicious.get_popular(tag="python")
+    >>> print "\n".join([ x.get('url') for x in populares ])
 
 ### Como testar se existe uma chave em um dicionário?
 
-print d.get('key','not found')
+    print d.get('key','not found')
 
 ### contar quantos numeros 9 existem entre 1 e 100
 
-str([x for x in xrange(1,101)]).count('9')
+    str([x for x in xrange(1,101)]).count('9')
 
 # ou
 
-str(range(1,1001)).count('9')
+    str(range(1,1001)).count('9')
 
 ### Extranct range
 
+``` python
 >>> fp = open("/tmp/file8","w")
 >>> for i,line in enumerate(open("file.txt")):
 ...     if i >= 26 and i < 99 :
 ...             fp.write(line)
+```
 
 ### Snippets - códigos de exemplos prontos
 * http://www.ubuntugeek.com/acire-browse-python-code-snippets-quickly-and-easily.html
@@ -243,7 +289,8 @@ str(range(1,1001)).count('9')
 ### Print raw of 50 hyphens
 
 # source: http://www.commandlinefu.com
- python -c 'print "-" * 50'
+
+     python -c 'print "-" * 50'
 
 ### imprimir itens de uma lista sem laço for
 
@@ -256,49 +303,58 @@ fonte: http://kodumaro.blogspot.com/2010/01/fizzbuzz.html
 
 A brincadeira consiste em imprimir uma sequência de números, tradicionalmente de 1 a 100. Porém os números múltiplos de 3 devem ser substituídos por //fizz// e os números múltiplos de 5 por //buzz//. Os números que são divisíveis por 3 e por 5 devem ser substituídos por //fizzbuzz//.
 
-print "\n".join('fizzbuzz' if x%15==0 else 'fizz' if x%3==0 else 'buzz' if x%5==0 else str(x) for x in xrange(1, 101))
+    print "\n".join('fizzbuzz' if x%15==0 else 'fizz' if x%3==0 else 'buzz' if x%5==0 else str(x) for x in xrange(1, 101))
 
 ### atribuição condicional
 
-n1 = float(raw_input("Por favor digite o primeiro numero: "))
-n2 = float(raw_input("Por favor digite o segundo numero: "))
+    n1 = float(raw_input("Por favor digite o primeiro numero: "))
+    n2 = float(raw_input("Por favor digite o segundo numero: "))
 
-resultado = 'O denominador não pode ser zero!' if n2 == 0 else 'Resultado: '+str(n1/n2)
+    resultado = 'O denominador não pode ser zero!' if n2 == 0 else 'Resultado: '+str(n1/n2)
 
-print resultado
+    print resultado
 
 Mais um exemplo
 
-x = 3 if (y == 1) else 2
+    x = 3 if (y == 1) else 2
 
->>> x = 1 and 2 or 3
+``` python
 >>> x
+>>> x = 1 and 2 or 3
 >>> 2
+```
 
-===Como uma atribuição condicional pode me ajudar?===
+### Como uma atribuição condicional pode me ajudar?
 Imagine a seguinte situação
 
+``` python
 if not minha_var:
     minha_var = 'default'
+```
 
 Que tal então fazer assim
 
-minha_var = minha_var or 'default'
+    minha_var = minha_var or 'default'
 
 ### Imprimir as variáveis de ambiente
 
+``` python
 import os
 print("\n".join([ "%s=%s" % (k,v) for k,v in os.environ.items()]))
+```
 
 ### imprimir um intervalo de linhas
 
+``` python
 fp = open("/tmp/file8","w")
 for i,line in enumerate(open("file.txt")):
     if i >= 26 and i < 99 :
         fp.write(line)
+```
 
 ### Somar números em um arquivo
 
+``` python
 >>> sum = 0
 >>> lines = open("/tmp/file.txt", "r").readlines()
 >>> lines
@@ -308,11 +364,14 @@ for i,line in enumerate(open("file.txt")):
 ...
 >>> sum
 256237131
+```
 
 ### testar se string contém substring
 
+``` python
 if 'word' in var:
     print "a variavel existe"
+```
 
 ### impressão inusitada
 
@@ -322,41 +381,57 @@ print 'The three most recent presidents were: %s.' % ', '.join(recent_presidents
 
 ### Numeros abaixo de um certo valor
 
-numbers = [1,2,3,4,5]
-numbers_under_4 = [number for number in numbers if number < 4]
-# Now, numbers_under_4 contains [1,2,3]
+    numbers = [1,2,3,4,5]
+    numbers_under_4 = [number for number in numbers if number < 4]
+    # Now, numbers_under_4 contains [1,2,3]
 
 ### nova forma de usar o print
 * http://aprenda-python.blogspot.com/2009/10/nova-formatacao-de-strings.html
 
+``` python
 nome = 'Fernando'
 sobrenome = 'Silva'
 idade = 9
+```
 
 # Campo simples.
+
+``` python
 print "meu nome é %s" % (nome)
 print "meu nome é {nome}".format(nome=nome)
+```
 
 # 2 campos mudando o nome da substituicao ("n" e "s").
+
+``` python
 print "meu nome completo é %s %s" % (nome, sobrenome)
 print "meu nome completo é {n} {s}".format(n=nome, s=sobrenome)
+```
 
 # Numero com 2 algarismos e zero à esquerda.
+
+``` python
 print "minha idade é %02d anos" % (idade)
 print "minha idade é {idade:02d} anos".format(idade=idade)
+```
 
 # Argumento posicional.
+
+``` python
 print "eu sou {0} e eu tenho {1} anos".format(nome, idade)
+```
 
 ### Converter para minúsculas ou maiúsculas
 
+```python
 normal = open(”usuarios.txt”).read()
 lower_string = normal.lower()
 upper_string = normal.upper()
+```
 
 ### Servidor simples http
 
-python -m SimpleHTTPServer
+    python -m SimpleHTTPServer
 
 Disponibiliza o conteúdo do directório actual em http://$hostname:8000/
 ### Python: Introspeção de atributos e métodos com vars(), locals() e dir()
@@ -379,6 +454,7 @@ dir(objeto)
 ### algoritmo de ordençaão bubblesort
 * http://www.phpavancado.net/node/302
 
+``` python
 def bsort(a):
     sorted = False
     while not sorted:
@@ -394,25 +470,29 @@ a = [4,5,2,1,3,7,5]
 print repr(a)
 bsort(a)
 print repr(a)
+```
 
 ### atribuição condicional
 
-x = 3 if (y == 1) else 2
+    x = 3 if (y == 1) else 2
 
 ### testar se é número
 
-type("a")
+    type("a")
 
+``` python
 def is_number(x):
     try:
         x + 1
         return True
     except TypeError:
         return False
+```
 
 Outro método
 * python isinstance site:http://stackoverflow.com/
 
+ ```python
  result = []
  for key, value in data.items():
     if isinstance(value, int):
@@ -422,40 +502,52 @@ Outro método
     elif isinstance(value, bool):
         result.append(dict(name=key, type='bool',
                            value=value and 'true' or 'false'))
+ ```
 
 Mais um exemplo
 
+```python
 >>> s = "A Simple String"
 >>> print isinstance(s, basestring)
 True
 >>> print isinstance(s, dict)
 False
 >>>
+```
 
+``` python
 if type(obj) is int:
     return True
 else:
     return False
+```
 
+```python
 if type(obj) is int
 if type(obj) is str
 if type(obj) is list
+```
 
 ### testar o sistema operacional
 
+```python
 def get_memory_size():
    if platform.system() == "Linux":
      print "você está no GNU/Linux"
    elif platform.system() == "Windows":
      print "aprenda a usar GNU/Linux"
+```
 
 ### detectar arquivos duplicados
 fonte: http://stackoverflow.com/questions/748675/
 
+``` python
 import sys
 import os
 import hashlib
+```
 
+``` python
 def chunk_reader(fobj, chunk_size=1024):
     """Generator that reads a file in chunks of bytes"""
     while True:
@@ -463,7 +555,9 @@ def chunk_reader(fobj, chunk_size=1024):
         if not chunk:
             return
         yield chunk
+```
 
+``` python
 def check_for_duplicates(paths, hash=hashlib.sha1):
     hashes = {}
     for path in paths:
@@ -484,6 +578,7 @@ if sys.argv[1:]:
     check_for_duplicates(sys.argv[1:])
 else:
     print "Please pass the paths to check as parameters to the script"
+```
 
 ### Argumentos
 fonte: http://infog.casoft.info/?p=498
@@ -503,6 +598,7 @@ fontes:
 * http://silveiraneto.net/tag/python/
 * http://www.builderau.com.au/program/python/soa/Lazy-list-builders-Generators-in-Python/0,2000064084,339279708,00.htm
 
+``` python
 def all_perms(str):
     if len(str) <=1:
         yield str
@@ -519,16 +615,18 @@ def all_perms(str):
 ['a', 'c', 'b']
 ['c', 'a', 'b']
 ['c', 'b', 'a']
+```
 
 outro exemplo
 
-[ (x,y) for x in palavra for y in palavra if x != y ]
+    [ (x,y) for x in palavra for y in palavra if x != y ]
 
 ### Mais um exemplo usando a biblioteca itertools
 * http://stackoverflow.com/questions/104420/
 
-import itertools
+    import itertools
 
+``` python
 print list(itertools.product([1,2,3], [4,5,6]))
 [(1, 4), (1, 5), (1, 6),
 (2, 4), (2, 5), (2, 6),
@@ -537,9 +635,11 @@ print list(itertools.product([1,2,3], [4,5,6]))
 print list(itertools.product([1,2], repeat=3))
 [(1, 1, 1), (1, 1, 2), (1, 2, 1), (1, 2, 2),
 (2, 1, 1), (2, 1, 2), (2, 2, 1), (2, 2, 2)]
+```
 
 Outro exemplo:
 
+``` python
 def permute(items, i):
     items = items[:]
     n = len(items)
@@ -550,9 +650,11 @@ def permute(items, i):
         items.pop(c)
         m /= n
         n -= 1
+```
 
 # Example:
 
+``` python
 >>> import permute
 >>> items = [1,2,3]
 >>> for i in range(permute.factorial(len(items))):
@@ -564,6 +666,7 @@ def permute(items, i):
 [2, 3, 1]
 [3, 1, 2]
 [3, 2, 1]
+```
 
 ### Módulo para aleatoriedade
 aleatório - embaralhando
@@ -587,8 +690,9 @@ randrange(1,10)
 >>> print random.choice(['pergunta','duvida','discussao'])
 
 # fonte: http://groups.google.com.br/group/python-em-portugues/browse_thread/thread/a8550e5c6857725c/9a47252ebad18b92?show_docid=9a47252ebad18b92
->>> [ random.randint(1,100) for i in xrange(10)]
-[37, 15, 36, 57, 65, 87, 63, 26, 97, 13]
+
+    >>> [ random.randint(1,100) for i in xrange(10)]
+    [37, 15, 36, 57, 65, 87, 63, 26, 97, 13]
 
 # fonte: python-brasil http://bit.ly/dAmCPC
 # Se você estiver fazendo algo sério, e quiser uma implementação decente pra
