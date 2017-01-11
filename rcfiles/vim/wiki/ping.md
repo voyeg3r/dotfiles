@@ -46,35 +46,39 @@ O comando ping retorna algo como:
 veja também [[ComandoNmap]]
 
 
-    #!/bin/bash
-    # testa hosts ativos
-    for((i=1; i <= 254; i++)); do
-       if ! ping -qc 2 192.168.1.$i | grep "0% packet loss" ; then
-          echo "192.168.1.$i não respondeu $1 " >> falhou.txt
-       else
-          echo "192.168.1.$i respondeu $1 " >> respondeu.txt
-       fi
-    done
+``` sh
+#!/bin/bash
+# testa hosts ativos
+for((i=1; i <= 254; i++)); do
+   if ! ping -qc 2 192.168.1.$i | grep "0% packet loss" ; then
+      echo "192.168.1.$i não respondeu $1 " >> falhou.txt
+   else
+      echo "192.168.1.$i respondeu $1 " >> respondeu.txt
+   fi
+done
+```
 
 
-    #!/bin/sh
-    NOW=$(date +"%T %m/%d/%Y")
-    PING=$(ping -qc 5 example.com | grep '5 packets')
-    echo $NOW: $PING >> /home/matt/ping.log
-    exit 0
+``` sh
+#!/bin/sh
+NOW=$(date +"%T %m/%d/%Y")
+PING=$(ping -qc 5 example.com | grep '5 packets')
+echo $NOW: $PING >> /home/matt/ping.log
+exit 0
+```
 
 
 A opção -q do ping faz com que o comando mostre apenas
 se houve ou não perda de pacotes, ou seja, a linha que mostra
 o resultado efetivo.
 
-    #!/bin/bash
-    LOG=~/ping.log
-    NOW=$(date)
-    OUT=$(ping -c 1 google.com | grep packets)
-    echo "$NOW : $OUT" >>$LOG
-
-
+``` sh
+#!/bin/bash
+LOG=~/ping.log
+NOW=$(date)
+OUT=$(ping -c 1 google.com | grep packets)
+echo "$NOW : $OUT" >>$LOG
+```
 
     #!/bin/bash
     nmap -sP 10.0.2.101-104 | grep up >> relatorio.txt

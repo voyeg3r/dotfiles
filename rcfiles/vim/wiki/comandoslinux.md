@@ -234,6 +234,7 @@
 [passwd](passwd.md)
 [paste](paste.md)
 [pbwiki](pbwiki.md)
+[perlrename](perlrename)
 [php](php.md)
 [pidof](pidof.md)
 [ping](ping.md)
@@ -353,3 +354,4 @@
 [xvidcap](xvidcap.md)
 [youtubedl](youtubedl.md)
 [zsync](zsync.md)
+[zshell](zshell)

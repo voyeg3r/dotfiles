@@ -3,7 +3,7 @@
 ``` markdown
 File:		 ComandoSed.md
 Created:	 qua 11 jan 2017 06:45:53 BRT
-Last Change: qua 11 jan 2017 06:49:31 BRT
+Last Change: qua 11 jan 2017 12:42:56 BRT
 Author:		 Sergio Araujo
 Site:		 http://vivaotux.blogspot.com
 e-mail:      <voyeg3r ✉ gmail.com>
@@ -17,7 +17,7 @@ Github:      https://github.com/voyeg3r
 
 ### apagando toda segunda linha
 
-  sed -i '1~2d' file
+      sed -i '1~2d' file
 
   A ação acima ocorre diretamente no arquivo devido a opção '-i'
   que permite ao sed editar diretamente o arquivo, caso contrário
@@ -30,18 +30,18 @@ Github:      https://github.com/voyeg3r
 ### adicionando uma linha em branco após toda segunda linha
     adding a new line after each second line
 
-    sed '0~2 a\\' inputfile
+        sed '0~2 a\\' inputfile
 
 ### juntando três linhas consecutivas
 
-    sed 'N;N;s/\n/ /g' file
+        sed 'N;N;s/\n/ /g' file
 
 ### operadores do sed
 
-  =  .......... insere um número entre cada linha
-  G ........... insere uma linha em branco entre cada linha
+    =  .......... insere um número entre cada linha
+    G ........... insere uma linha em branco entre cada linha
 
-  sed '=;G' annoying.txt
+    sed '=;G' annoying.txt
 
 
 ### remover espaços não separáveis
@@ -59,7 +59,7 @@ source: http://askubuntu.com/questions/357248/how-to-remove-special-m-bm-charact
 
 ### Removendo o caratere ' de uma string
 
-  sed 's/\x27//g'
+      sed 's/\x27//g'
 
 ### separando o ultimo campo de um caminho
 
@@ -67,22 +67,24 @@ source: http://askubuntu.com/questions/357248/how-to-remove-special-m-bm-charact
 
 * fonte: http://br.groups.yahoo.com/group/shell-script/message/32415
 
-    Galera,
-    preciso pegar o ultimo campo. Vou explicar, tenho as linhas
+Galera,
+preciso pegar o ultimo campo. Vou explicar, tenho as linhas
 
-    /dados/teste/uu/eu.sh
-    /dados/eu/eu.log
-    /nfs/bin/cp
+``` markdown
+/dados/teste/uu/eu.sh
+/dados/eu/eu.log
+/nfs/bin/cp
 
-    preciso separar o que é o full path e o que é o arquivo. Tipo:
+preciso separar o que é o full path e o que é o arquivo. Tipo:
 
-    full=/dados/teste/uu/
-    arq=eu.sh
+full=/dados/teste/uu/
+arq=eu.sh
 
-    full=/dados/eu/
-    arq=eu.log
+full=/dados/eu/
+arq=eu.log
+```
 
-    e por ai vai.
+e por ai vai.
 
 ### A solução
 
@@ -122,8 +124,6 @@ Substituir na linha subsequente a um padrão
 sed -i '/pattern/,+1 s/this/that/g' file
 sed -e '/address2/,+1s/address1/address2/' eri.txt
 ```
-
-
 
     sed -i.backup '/src admin/{n;s/\(.*\)/\1 teste/g}' file
 

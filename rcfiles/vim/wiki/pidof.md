@@ -21,9 +21,11 @@ nome, também localiza por outros atributos, como usuário, por exemplo.
 
 ### testando se um programa está rodando
 
-    if ! pidof program; then
-        echo "program not found"
-    fi
+``` sh
+if ! pidof program; then
+    echo "program not found"
+fi
+```
 
     outro modo
 

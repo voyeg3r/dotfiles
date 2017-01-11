@@ -491,8 +491,14 @@ The above shortuc will put the most recent file name in command line
 
 #### You can access zmv's advanced documentation by typing man zshcontrib.
 
-    `#zmv "programmable rename"`
+    zmv "programmable rename"
     autoload -U zmv
+
+### Remove extensio
+
+``` sh
+zmv -W '*.html' '*'
+```
 
 #### rename all files to lowercase
 

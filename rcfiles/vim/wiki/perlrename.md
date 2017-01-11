@@ -1,5 +1,17 @@
 # o poder do comando perl-rename
 
+``` markdown
+File:		 perlrename.md
+Created:	 qua 11 jan 2017 12:06:22 BRT
+Last Change: qua 11 jan 2017 12:06:25 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
+
+
   O poder do perl-rename está ligado à grande capacidade
   do perl de lidar com expressões regulares, inclusive
   tendo algumas expressões que lhe são perticulares.
@@ -22,7 +34,6 @@ If you want to do a dry run to make sure you don't clobber any files, add the -n
 [link: stackoverflow](http://stackoverflow.com/questions/14327613/)
 
     perl-rename 's/(\d+)/sprintf("%03d", $1)/e' *.txt
-
 
 ### To rename all files matching *.bak to strip the extension, you might say
 

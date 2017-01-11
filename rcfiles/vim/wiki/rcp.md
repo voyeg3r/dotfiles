@@ -1,2 +1,2 @@
 
-scp -r usuario@ip:/home/pasta ./
+    scp -r usuario@ip:/home/pasta ./

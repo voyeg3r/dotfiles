@@ -12,7 +12,7 @@ O comando "ps aux" exibe todos os processos de todos os usuários, o comando sor
 
 ### listar usuario memória e cpu
 
-ps aux --sort=%mem,%cpu
+    ps aux --sort=%mem,%cpu
 
 ### listar os comandos que mais consomem memória
 

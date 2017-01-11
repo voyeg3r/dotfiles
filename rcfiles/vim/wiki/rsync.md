@@ -4,39 +4,44 @@ O rsync sincroniza dados via rede
 Script de backup http://va.mu/XteF
 
 
-  rsync -avz /origem /backup
+``` sh
+rsync -avz /origem /backup
 
-  rsync -avz /home/aluno sergio@172.30.10.234:/home/sergio/backup
+rsync -avz /home/aluno sergio@172.30.10.234:/home/sergio/backup
+```
 
-  #se quizer aumentar um pouco a segurança faça:
+### se quizer aumentar um pouco a segurança faça:
 
-  rsync -avz -e ssh /home/aluno sergio@172.30.10.234:/home/sergio/backup
+``` sh
+rsync -avz -e ssh /home/aluno sergio@172.30.10.234:/home/sergio/backup
 
-  rsync -a --update --delete origem/ destino/
+rsync -a --update --delete origem/ destino/
+```
 
-  Para copiar a arvore de diretorio para um host remoto use o seguinte comando:
-  #rsync -avz -e ssh - -delete   /dir maquinaremota:/bak/dir
+### Para copiar a arvore de diretorio para um host remoto use o seguinte comando:
 
-  a opcao - -delete ira remover em /bak/dir arquivos não existentes em /dir
+    rsync -avz -e ssh - -delete   /dir maquinaremota:/bak/dir
+
+      a opcao - -delete ira remover em /bak/dir arquivos não existentes em /dir
 
 
 ### rsync + find
 
-find . -name "whatever.*" -print0 | rsync -av --files-from=- --from0 ./ ./destination/
+    find . -name "whatever.*" -print0 | rsync -av --files-from=- --from0 ./ ./destination/
 
 ### backups incrementais com --link-dest
 A opção "--link-dest" do rsync cria hard links para arquivos de outro
 backup, os arquivos antigos não modificados são apenas linkados, em geral
 se aponta para o último backup.
 
---link-dest=${BACKUP-ULTIMO}
+    --link-dest=${BACKUP-ULTIMO}
 
 ### apenas exibindo o conteúdo da origem
 fonte: http://www.vivaolinux.com.br/artigos/impressora.php?codigo=338
 
 Se você deseja listar o diretório /etc do servidor, pode usar o comando:
 
-$ rsync -Cravzp fabio@10.0.0.5:/etc/
+    $ rsync -Cravzp fabio@10.0.0.5:/etc/
 
 
 O "pulo do gato" dessa situação é a omissão do diretório de destino.
@@ -46,43 +51,44 @@ O "pulo do gato" dessa situação é a omissão do diretório de destino.
 a capacidade de fazer a codificação de caracteres, ou seja, se no windows tenho
 iso8859-1 e no ubuntu utf8 posso usar um parâmetro como abaixo:
 
-rsync --iconv=utf8,iso88591 /origem /destino
+    rsync --iconv=utf8,iso88591 /origem /destino
 
-rsync -va --iconv=utf8,iso88591 /source/latin1/ /destination/utf8
+    rsync -va --iconv=utf8,iso88591 /source/latin1/ /destination/utf8
 
 ### Copie pastas mantendo sua extrutura
 
 
-rsync -vd --files-from=<(find .  -name entries -print ) .   ../target_directory
+    rsync -vd --files-from=<(find .  -name entries -print ) .   ../target_directory
 
 
 ### Sincronizar mediante uma condição
 Sincronizar apenas arquivos modificados em um determinado período
 
-rsync -avz -e ssh --files-from=<(find -mtime +30 -mtime -60) origem destino
+    rsync -avz -e ssh --files-from=<(find -mtime +30 -mtime -60) origem destino
 
 
 ### Opções do rsync
 
- -u ou --update .......................... ignora os arquivos que forem mais novos no destino
- --delete ................................ deleta no destino os arquivos inexistentes na origem
- --bwlimit=KBPS .......................... limita a banda em KBPS
- -h, --human-readable .................... saida numerica em formato amigável
- -p ...................................... preserva permissões
- -z --compress ........................... compacta durante a transmissão
- --exclude=PATTERN ....................... exclude files matching PATTERN
- -v ...................................... mostra o que está acontecendo
- -a ...................................... o mesmo que -rlptgoD
-
+``` markdown
+-u ou --update ............. ignora os arquivos que forem mais novos no destino
+--delete ................... deleta no destino os arquivos inexistentes na origem
+--bwlimit=KBPS ............. limita a banda em KBPS
+-h, --human-readable ....... saida numerica em formato amigável
+-p ......................... preserva permissões
+-z --compress .............. compacta durante a transmissão
+--exclude=PATTERN .......... exclude files matching PATTERN
+-v ......................... mostra o que está acontecendo
+-a ......................... o mesmo que -rlptgoD
+```
 
 
 Caso use
 
-  /pasta
+      /pasta
 
 ele pega a pasta e seu conteúdo, já se usar:
 
-  /pasta/
+      /pasta/
 
 ele copia apenas o conteúdo da pasta
 ### Restaurando as configurações do home
@@ -91,17 +97,22 @@ ele copia apenas o conteúdo da pasta
 **Passo 1**
 Depois que configurar tudo do usuário, copie toda a home do usuário (no meu caso é cyber) para um diretório que deseja (no meu caso /opt):
 
-$ sudo cp -Rv /home/cyber /opt
+    $ sudo cp -Rv /home/cyber /opt
 
 **Passo 2**
 Adicionar o script na inicialização do sistema:
 
+``` sh
 #!/bin/bash
 rsync --delete --recursive /opt/cyber /home/
 chmod 775 -R /home/cyber
 chown cyber:cyber -R /home/cyber/
+```
 
-No meu caso, criei um arquivo “restaura_home.sh” em /opt e adicionei a linha abaixo no arquivo /etc/rc.local:
+No meu caso, criei um arquivo “restaura_home.sh” em /opt e adicionei a linha abaixo no arquivo
+
+    /etc/rc.local:
+
 /opt/restaura_home.sh
 Por ser um programa recheado de opções, aconselho que leiam o manual do rsync para mais opções.
 
@@ -168,6 +179,7 @@ script), respectivamente.  O conteúdo completo do script é o
 seguinte :
 
 
+``` sh
 #!/bin/bash
 # Name : versioned-backup.sh
 # Author : André Luís Lopes
@@ -218,9 +230,25 @@ done
 # Store the identification of our last run into a non-volatile
 # place so we can use it on further runs
 echo $pit &gt; $lastrunfile
+```
 
 
-Simplesmente execute o script de tempos em tempos, provavelmente agendado no crontab de um usuário que tenha permissões de ler os arquivos que sofrerão o backup e gravar no local onde o backup deverá ser armazenado (o root serve, mas não necessariamente precisa ser ele). É isso. Simples e fácil. Deixe o cron, o anacron ou seu agendador de tarefas preferido sendo executado e esqueça de suas preocupações com backup.
-Lógico que o script pode melhorar bastante. Na verdade, tenho algumas idéias para melhorá-lo já a algum tempo, mas venho usando essa mesma solução a alguns meses sem maiores problemas e ela vem me atendendo bem, por isso nunca achei que fosse necessário melhorá-lo.
-Funciona tão bem que algumas pessoas na empresa onde trabalho utilizam uma versão modificada dele, a qual eu modifiquei levemente para que o transporte ssh do rsync fosse utilizado, de forma que eu tivesse a mesma funcionalidade, mas em um ambiente em que o dispositivo que recebe o backup é uma partição de disco em um servidor remoto.
-A imaginação é o limite. O que achou da solução ? Gostou ? Comente suas impressões e me deixe feliz ou profundamente triste caso minha solução seja muito tosca [[image:http://www.andrelop.org/blog/wp-includes/images/smilies/icon_smile.gif caption=":-)"]]
+Simplesmente execute o script de tempos em tempos, provavelmente agendado no
+crontab de um usuário que tenha permissões de ler os arquivos que sofrerão o
+backup e gravar no local onde o backup deverá ser armazenado (o root serve, mas
+não necessariamente precisa ser ele). É isso. Simples e fácil. Deixe o cron, o
+anacron ou seu agendador de tarefas preferido sendo executado e esqueça de suas
+preocupações com backup.  Lógico que o script pode melhorar bastante. Na
+verdade, tenho algumas idéias para melhorá-lo já a algum tempo, mas venho
+usando essa mesma solução a alguns meses sem maiores problemas e ela vem me
+atendendo bem, por isso nunca achei que fosse necessário melhorá-lo.  Funciona
+tão bem que algumas pessoas na empresa onde trabalho utilizam uma versão
+modificada dele, a qual eu modifiquei levemente para que o transporte ssh do
+rsync fosse utilizado, de forma que eu tivesse a mesma funcionalidade, mas em
+um ambiente em que o dispositivo que recebe o backup é uma partição de disco em
+um servidor remoto.  A imaginação é o limite. O que achou da solução ? Gostou ?
+Comente suas impressões e me deixe feliz ou profundamente triste caso minha
+solução seja muito tosca
+
+[[image:http://www.andrelop.org/blog/wp-includes/images/smilies/icon_smile.gif caption=":-)"]]
+
