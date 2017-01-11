@@ -1,6 +1,10 @@
-#priority 1
+priority 2
 
 extends vim
+
+snippet filename "insert filename" w
+`!p snip.rv = snip.fn`
+endsnippet
 
 snippet plug "Install new plugin" w
 Plug '${1:`xclip -selection clipboard -o`}'
@@ -48,3 +52,6 @@ snippet com "new command" w
 command! -nargs=${1:number_of_args} ${2:other_params} ${2:name} ${2:command}
 endsnippet
 
+snippet modeline "Insert modeline" w
+" vim:set noet sts=0 sw=4 ts=4 tw=78:
+endsnippet

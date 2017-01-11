@@ -110,7 +110,6 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
-Plug 'mzlogin/vim-markdown-toc'
 "Plug 'klen/python-mode'
 Plug 'phillipberndt/python-imports.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -919,6 +918,7 @@ endif
 "iab idate <c-r>=strftime("%c")<cr>
 iab idate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
 iab ihora <c-r>=strftime("%H:%M:%S")<cr>
+iab fname <c-r>=expand("%:p")<cr>
 
 iab -> →
 iab tambem também

@@ -1,5 +1,16 @@
 ### Introdução
 
+``` markdown
+File:		 ComandoSed.md
+Created:	 qua 11 jan 2017 06:45:53 BRT
+Last Change: qua 11 jan 2017 06:49:31 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
+
    Sed é um editor de streams, ou seja, ele manipula fluxos
    de texto que podem ser pipeados fazendo deleções, inserções
    substituições, etc.
@@ -99,7 +110,7 @@ source: http://askubuntu.com/questions/357248/how-to-remove-special-m-bm-charact
 
 ### deleção na próxima linha
 
-sed '/follow me/{n; /the end$/d}' file
+    sed '/follow me/{n; /the end$/d}' file
 
 ### substituição na próxima linha
 Substituir na linha subsequente a um padrão
@@ -107,19 +118,22 @@ Substituir na linha subsequente a um padrão
 * http://br.groups.yahoo.com/group/shell-script/message/31774
 
 
+``` sh
 sed -i '/pattern/,+1 s/this/that/g' file
 sed -e '/address2/,+1s/address1/address2/' eri.txt
+```
 
 
 
-sed -i.backup '/src admin/{n;s/\(.*\)/\1 teste/g}' file
+    sed -i.backup '/src admin/{n;s/\(.*\)/\1 teste/g}' file
 
-# se a inteção é apenas imprimir a linha subsequente a um padrão
-sed -n '/pattern/{n;p}' < file
+#### se a inteção é apenas imprimir a linha subsequente a um padrão
+
+    sed -n '/pattern/{n;p}' < file
 
 ### de-me o numero da linha
 
-sed -ne '/gimme this line number/{=;q;}'
+    sed -ne '/gimme this line number/{=;q;}'
 
 ### Monitorando um arquivo
 fonte: [[@http://aurelio.net/sed/sed-HOWTO/sed-HOWTO-8.html]]
@@ -129,26 +143,29 @@ ou seja, faz um uso minimalista dos registradores, mostrando a saída o mais rá
 tornando possível editar um fluxo interminável como o gerado por um //tail -f//.
 Um exemplo prático seria mostrar apenas as mensagens do sistema relativas às conexões //ssh//:
 
- tail -f /var/log/messages | sed -nu '/sshd/p'
+     tail -f /var/log/messages | sed -nu '/sshd/p'
 
 
 Volta e meia aparecem dúvidas sobre o SED "stream editor"
 e quase sempre alguém sugere algo como:
 
-  cat arquivo.original > arquivo.original.backup
-  cat arquivo.original | sed '/padrao/d' > arquivo.modificado
-  mv arquivo.modificado arquivo.original
+``` sh
+cat arquivo.original > arquivo.original.backup
+cat arquivo.original | sed '/padrao/d' > arquivo.modificado
+mv arquivo.modificado arquivo.original
+```
 
 mas você pode simplificar tudo fazendo:
 
-  sed -i.backup '/padrao/d' arquivo.original
+      sed -i.backup '/padrao/d' arquivo.original
 
 No caso acima o sed irá apagar a palavra "padrão"
 mas antes ele já cria o bakcup pra você, tudo em uma
 mísera linha. :)
+
 ### Casando números de 0 a 100
 
-cat file | sed  -n -r '/^100|^[0-9]{1,2}$/p'
+    cat file | sed  -n -r '/^100|^[0-9]{1,2}$/p'
 
 ### trocando colunas de um texto
 * fonte: http://br.groups.yahoo.com/group/sed-br/message/4432
@@ -179,7 +196,9 @@ TOTAL 30000
 
 Expressão regular para solução
 
+``` sh
 (^[A-Z][a-z]{2})\s([A-Z][a-z]{2})\s([0-9]{2})\s([0-9]{2}):([0-9]{2}):([0-9]{2})\s([0-9]{4}$)
+```
 
 tudo que estiver dentro de parênteses é um grupo (grupo) e pode ser chamado
 assim \1  grupo 1    \2 grupo 2
@@ -240,7 +259,9 @@ sed '/baz/s/foo/bar/g'
 
 ### Juntando linhas com o sed
 
-# você tem a seguinte entrada
+** você tem a seguinte entrada **
+
+``` html
 <abc a="1">
    <val>0.25</val>
 </abc>
@@ -250,18 +271,19 @@ sed '/baz/s/foo/bar/g'
 <abc a="3">
    <val>0.35</val>
 </abc>
- ...
+```
 
-# e deseja a seginte saida
+** e deseja a seginte saida**
+
+``` html
 <abc a="1"><val>0.25</val></abc>
 <abc a="2"><val>0.25</val></abc>
 <abc a="3"><val>0.35</val></abc>
+```
 
 Com o sed faz-se assim
 
-sed -i.backup '/^<abc/{N;N;s/\n\| //g}' file
-
-
+        sed -i.backup '/^<abc/{N;N;s/\n\| //g}' file
 
 ### Converte formatos de arquivos (terminador de linha) dos unix
 
@@ -583,3 +605,5 @@ Referências:
 * http://aurelio.net/sed/sed-HOWTO/index.html
 * http://sed.sourceforge.net/local/docs/emulating_unix.txt
 * http://stackoverflow.com/questions/2372719/
+
+` vim: ft=markdown et sw=4 ts=4 `
