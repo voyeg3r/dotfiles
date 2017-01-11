@@ -1,0 +1,1 @@
+Um gerenciador de arquivos em modo texto

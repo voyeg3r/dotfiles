@@ -1,0 +1,280 @@
+#Arquivo: Dicas do Gnome-Shell
+
+```
+Criado: Wed 04/May/2011 hs 17:23
+Last Change: dom 08 jan 2017 12:03:30 BRT
+autor: Sérgio Luiz Araújo Silva
+site: http://vivaotux.blogspot.com twitter:
+http://www.twitter.com/voyeg3r
+```
+
+### save alsamixer settings
+source: http://askubuntu.com/a/465641/3798
+
+    alsactl --file ~/.config/asound.state store
+
+    reloading:
+
+    alsactl --file ~/.config/asound.state restore
+
+    vim ~/.config/autostart/alsarestore.desktop
+
+    Entries in ~/.config/autostart/ directory are used to autostart programs
+    and services for specific user on startup/graphical login.
+
+    The contents of the .desktop file should be the following:
+
+    [Desktop Entry]
+    Type=Application
+    Terminal=false
+    Name=alsarestore
+    Exec=alsactl --file ~/.config/asound.state restore
+
+    Among other things, you could store your config in /etc/asound.state and
+    symlink it to /var/lib/alsa/asound.state, but this one is more of a suggestion
+    rather than tested solution
+
+    Another user of askubuntu posted this:
+    Obs: The top answer didn't work for me but this did! I created a config
+    file and placed it at /etc/asound.state and added the reload line to my
+    /etc/rc.local
+
+    The first sugestion I got was this:
+
+    sudo alsactl store
+
+    This should save alsamixer configurations to /etc/asound.state which gets
+    loaded every startup.
+
+    another attempt:
+
+    After 2 months of trying to make "sudo alsactl store" to work, I finally
+    managed to do it. Firstly type in terminal "alsamixer" to enter the
+    alsamixer UI. Then make the configurations you need(e.g increase
+    speakers/headphones level or unmute something pressing "m" on keyboard).
+    Now the most important part. Before you exit alsamixer, open a new terminal
+    and do : "sudo su" to get high privileges (Be very careful with commands
+    you use in "sudo su" mode because you may destroy your system) and then do
+    "alsactl store" to save alsa settings. Then close both terminals and
+    restart your computer. This will do the job.
+
+### how to set languages shortcuts from config files or command line
+http://askubuntu.com/questions/604462/
+
+    gsettings set org.gnome.desktop.interface clock-show-date true
+
+   # do not show menu on terminal
+
+   gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
+
+   gsettings set org.gnome.desktop.datetime automatic-timezone true
+
+### cleaning cached thumbnails
+
+    find .cache/thumbnails -type f | xargs rm -f
+
+### Increasing the sound through command line
+
+    pactl set-sink-volume 0 +10%
+
+    And to make the volume go down by the same amount, the command would be:
+
+    pactl set-sink-volume 0 -- -10%
+
+### touche to click on touchpad
+
+    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+
+### Set keyboard language
+
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', 'us')]"
+
+### change wallpaper every so many minutes
+
+http://thornton2.com/How_To_Shuffle_Your_Desktop_Background_Every_So_Many_Minutes_in_GNOME_and_MATE
+
+#!/bin/sh
+echo $DBUS_SESSION_BUS_ADDRESS > $HOME/.dbus_session_bus_address
+
+(You can name the file in the echo command whatever you want, but it's a dot-file in order to keep it hidden from ordinary listings.)
+
+Run the echo command from a shell (or from the Run prompt accessed by Alt+F2) so that you don't have to log out for the shuffling to start.  Otherwise, just log out and log in again after you follow all the rest of these instructions.
+
+Change the file permissions to executable.  To do that in a shell, use the command:
+
+chmod a+x ~/bin/login-script.sh
+
+# dentro de .config/autostart coloque
+
+    [Desktop Entry]
+    Name=MyScript
+    GenericName=A descriptive name
+    Comment=Some description about your script
+    Exec=/path/to/my/script.sh
+    Terminal=false
+    Type=Application
+    X-GNOME-Autostart-enabled=true
+
+### Show current wallpaper path
+
+    gsettings get org.gnome.desktop.background picture-uri
+
+    Script to change wallpaper automatically
+    https://github.com/mattwilmott/Gnome3-Auto-Wallpaper-Changer
+
+### setting nautilus auto mount
+
+    gsettings set org.gnome.desktop.media-handling automount true
+
+### fixing audacious open folders error
+
+I don't know how it happened but
+when, eg, I plug in a USB drive or try to open a folder in a firefox
+extension (or other programs that want to open a folder...), it always
+wants to open with Audacious which is obnoxious.  Browsing through in
+Nautilus works fine and normal, but I want to know if I can find out how
+to get rid of the association with Audacious.
+
+    I've tried deleting ~/.config and ~/.local to no help...
+
+    Create the file
+
+    ~/.local/share/applications/mimeapps.list
+
+    and fill it with
+
+    [Default Applications]
+    inode/directory=nautilus.desktop;
+
+### setting gnome screenshot dir
+
+  gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/$USER/pictures/"
+
+### setando o muse para ser destacado com o ctrl ou não
+
+  gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
+
+### habilitando o click to tap no mouse
+
+gsettings set org.gnome.settings-daemon.peripherals.touchpad tap-to-click true
+
+gsettings set org.gnome.desktop.peripherals-touchpad disable-while-typing true
+
+
+gconftool-2 --toggle /desktop/gnome/peripherals/touchpad/touchpad-enabled
+
+habilitar a rolagem pela borda to touchpad
+
+    gsettings set org.gnome.desktop.peripherals.touchpad scroll-method "edge-scrolling"
+
+### accessing ssh throug nautilus
+
+    sftp://user@address/folder/
+
+### Alterando o tempo de gravação no gnome shell
+
+    fonte:
+http://www.talesam.org/blog/dica-ampliando-o-tempo-de-gravacao-do-desktop-no-gnome-shell/
+
+    gsettings set org.gnome.settings-daemon.plugins.media-keys
+max-screencast-length 1800
+
+    Extensão que permite gravar com audio
+    https://extensions.gnome.org/extension/690/easyscreencast/
+
+### how install gnome shell in any distro with jhbuild
+http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distro-with-jhbuild/
+
+### performance tweaks  * https://wiki.archlinux.org/index.php/Sysctl *
+http://penguininside.blogspot.com.br/2009/08/top-10-gnome-performance-tweaks.html
+https://alexcabal.com/disabling-gnomes-recently-used-file-list-the-better-way/
+
+
+-------------------------------
+ disable most recent files view --> recently-used-xbel
+-------------------------------
+
+Put the following in ~/.config/gtk-3.0/settings.ini (create the file if
+it doesn’t exist):
+
+        [Settings]
+        gtk-recent-files-max-age=0
+        gtk-recent-files-limit=0
+
+    Then, remove the file holding recently-used data:
+
+        rm ~/.local/share/recently-used.xbel
+
+Disabling tracer system
+
+    tracker-control
+
+### other stuff
+
+Put this in your /etc/environment
+
+    BROWSER=/usr/bin/firefox
+    CLUTTER_PAINT=disable-clipped-redraws:disable-culling
+    export CLUTTER_VBLANK=none
+
+Network performance
+
+https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf
+
+If you had customized /etc/sysctl.conf, you need to rename it as
+/etc/sysctl.d/99-sysctl.conf. If you had e.g. /etc/sysctl.d/foo, you
+need to rename is to /etc/sysctl.d/foo.conf
+
+
+### solving the problem of hidden files by default
+
+ * source: http://ubuntuforums.org/archive/index.php/t-2133298.html
+
+	open terminal and type:
+	dconf-editor
+	Enter and then:
+	org->gtk->settings->file-chooser
+	uncheck show-hidden
+
+	Have a nice day!
+
+### how make a screencast on gnome-shell
+
+  Ctrl+Shift+Alt+r
+
+# to reset default value to video record resource
+gsettings reset org.gnome.shell.recorder pipeline
+
+### text expander for linux
+
+https://bbs.archlinux.org/viewtopic.php?id=71938
+https://github.com/Dieterbe/snip/
+https://github.com/Dieterbe/snip/tree/master
+
+### beste addons to gnome-shell
+
+Replacement of Alt-Tab, iterates through windows in a cover-flow manner.
+https://extensions.gnome.org/extension/97/coverflow-alt-tab/
+
+Extensão para trocar papel de parede automaticamente
+https://extensions.gnome.org/extension/543/backslide/
+
+Readme sobre a extensão acima
+https://bitbucket.org/LukasKnuth/backslide
+
+### como instalar o gnome-shell no ubuntu 11.04
+
+    sudo add-apt-repository ppa:gnome3-team/gnome3
+    sudo apt-get update
+    sudo apt-get dist-upgrade
+    sudo apt-get install gnome-shell
+
+### Como abrir o menu Ativities?
+
+  Basta pressionar a tecla windows
+
+### best gnome shell addons
+https://extensions.gnome.org/extension/549/web-search-dialog/
+https://extensions.gnome.org/extension/277/impatience/
+
+
