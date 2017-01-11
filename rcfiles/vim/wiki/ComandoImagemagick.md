@@ -1,53 +1,3 @@
-
-<!-- vim-markdown-toc GFM -->
-        * [Imagemagick](#imagemagick)
-        * [recortando uma imagem grande para impressão](#recortando-uma-imagem-grande-para-impresso)
-        * [resolvendo o problema das fontes](#resolvendo-o-problema-das-fontes)
-        * [adicionando sombra e bordas](#adicionando-sombra-e-bordas)
-        * [Para adicionar sombra](#para-adicionar-sombra)
-        * [Para adicionar também bordas](#para-adicionar-tambm-bordas)
-        * [coloando texto em imagens](#coloando-texto-em-imagens)
-        * [Modificação Seletiva](#modificao-seletiva)
-        * [convertendo para escala de cinza](#convertendo-para-escala-de-cinza)
-        * [Convertendo muitas imagens](#convertendo-muitas-imagens)
-        * [Criando uma miniatura (trumbnail)](#criando-uma-miniatura-trumbnail)
-        * [resolvendo o problema das fontes](#resolvendo-o-problema-das-fontes-1)
-        * [coloando texto em imagens](#coloando-texto-em-imagens-1)
-        * [outro exemplo](#outro-exemplo)
-        * [Modificação Seletiva](#modificao-seletiva-1)
-        * [convertendo para escala de cinza](#convertendo-para-escala-de-cinza-1)
-        * [Para colocar muitas imagens em escala de cinza faça:](#para-colocar-muitas-imagens-em-escala-de-cinza-faa)
-        * [Convertendo muitas imagens](#convertendo-muitas-imagens-1)
-        * [Criando uma miniatura (trumbnail)](#criando-uma-miniatura-trumbnail-1)
-        * [Para fazer isto em um grupo de imagens faça:](#para-fazer-isto-em-um-grupo-de-imagens-faa)
-        * [Redimensionando fotos e modificando a resolução rapidinho](#redimensionando-fotos-e-modificando-a-resoluo-rapidinho)
-        * [Para fazer isto em uma única linha:](#para-fazer-isto-em-uma-nica-linha)
-        * [Para fazer uma montagem](#para-fazer-uma-montagem)
-        * [redimensionamento simples](#redimensionamento-simples)
-        * [Redimensionando apenas](#redimensionando-apenas)
-        * [Rotacionando uma imagem](#rotacionando-uma-imagem)
-        * [Criando uma montagem](#criando-uma-montagem)
-        * [Criando bordas em imagens com o comando convert](#criando-bordas-em-imagens-com-o-comando-convert)
-        * [Para colocar bordas em muitas imagens faça](#para-colocar-bordas-em-muitas-imagens-faa)
-        * [Exibindo um grupo de imagens](#exibindo-um-grupo-de-imagens)
-        * [Capturando um screenshot (imagem de tela)](#capturando-um-screenshot-imagem-de-tela)
-        * [Artigo sobre imagemagick](#artigo-sobre-imagemagick)
-        * [colocando texto na imagem](#colocando-texto-na-imagem)
-        * [Flip: inverte a posição da foto na vertical:](#flip-inverte-a-posio-da-foto-na-vertical)
-        * [Flop: inverte a direção da foto na horizontal (espelhamento):](#flop-inverte-a-direo-da-foto-na-horizontal-espelhamento)
-* [Renomeando as fotos para tirar os espaços](#renomeando-as-fotos-para-tirar-os-espaos)
-        * [redimensionamento simples](#redimensionamento-simples-1)
-* [-geometry (preserves values of height and width given, and aspect ratio)](#-geometry-preserves-values-of-height-and-width-given-and-aspect-ratio)
-        * [Redimensionando apenas](#redimensionando-apenas-1)
-        * [Rotacionando uma imagem](#rotacionando-uma-imagem-1)
-        * [Criando uma montagem](#criando-uma-montagem-1)
-        * [Criando bordas em imagens com o comando convert](#criando-bordas-em-imagens-com-o-comando-convert-1)
-        * [Exibindo um grupo de imagens](#exibindo-um-grupo-de-imagens-1)
-        * [Capturando um screenshot (imagem de tela)](#capturando-um-screenshot-imagem-de-tela-1)
-        * [Artigo sobre imagemagick](#artigo-sobre-imagemagick-1)
-        * [colocando texto na imagem](#colocando-texto-na-imagem-1)
-
-<!-- vim-markdown-toc -->
 ### Imagemagick
 a sua versão do linux já tem o imagemagick instalado.
 
@@ -253,20 +203,20 @@ done
 ### Redimensionando fotos e modificando a resolução rapidinho
 
 ``` sh
-#!/bin/bash
-# Script para redimensionar e modificar
-# a qualidade de fotos
-#
-# Agradecimentos: JFMitre
-# http://jfmitre.blogspot.com/2006/05/imagemagick-convert.html
+    #!/bin/bash
+    # Script para redimensionar e modificar
+    # a qualidade de fotos
+    #
+    # Agradecimentos: JFMitre
+    # http://jfmitre.blogspot.com/2006/05/imagemagick-convert.html
 
-# Renomeando as fotos para tirar os espaços
+    # Renomeando as fotos para tirar os espaços
 
     for i in *.jpg; do mv "$i" `echo $i | tr ' ' '_'`; done
 
-for i in *.jpg; do
-convert -quality 70 -resize 30% $i $i-70.jpg;
-done
+    for i in *.jpg; do
+    convert -quality 70 -resize 30% $i $i-70.jpg;
+    done
 ```
 
 ### Para fazer isto em uma única linha:
