@@ -1,7 +1,15 @@
-* auto-gen TOC:
-{:toc}
-
 ### Introdução
+
+``` markdown
+File:		 find.md
+Created:	 qua 11 jan 2017 14:42:46 BRT
+Last Change: qua 11 jan 2017 14:42:49 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
 
 O comando find é extremamente poderoso veja algumas construções do mesmo
 
@@ -172,14 +180,19 @@ Arquivos criados a menos de dez minutos e "-and -a" com extensão txt
 
 ### Mostra todos os arquivos pdf que não sejam maiores que 2000 bytes
 tudo que estiver após a exclamação será negado.
+
       find ~/ -iname *.pdf ! -size +2000
 
 ### Invertendo a lógica do comando acima no primeiro caso tirando a exclamação, no segundo invertendo o sinal de + para menos, veja:
+
       find ~/ -iname *.pdf -size +2000
+
 ou
+
       find ~/ -iname *.pdf ! -size -2000
 
 ### Procura pdf's de tamanho maiores que 2000 bytes e mostra somente o nome sem o caminho "basename"
+
       find ~/ -iname *.pdf -a -size +2000 -exec basename {} ;
 
 ### Procurar por arquivos de um usuário especifico
@@ -195,9 +208,10 @@ ou
 ### **Observações importantes** mudar permissão somente em diretórios "-d"
 
     find . -type d -exec chmod 755 {} ;
+
     Note: chmod -R 755 ./*   também aplica a modificação mas também pega arquivos
 
-### !!Usando o find com o xargs
+### Usando o find com o xargs
 Usando o parâmetro -exec ele executa cada vez que acha o arquivo, repassando via pipe "|" para o comando xargs o find faz primeiro as buscas tornando-se mais rápido.
 
        find   ~/ -type f  -print  |  xargs  rm -rf
@@ -210,6 +224,7 @@ imprima a lista "-print" filtre com o egrep ignorando maiúsculas e minúsculas 
        find . -type f -print | xargs egrep -i "expressao"
 
 ### Procurando todos os mp3 e exibindo o espaço ocupado por eles
+
        find . -name \*.mp3 -print0|xargs -0 du -ch
 
 ### Encontrando arquivos que não contenham extensão .c ou .o
@@ -225,24 +240,43 @@ A diferenca e que no primeiro find o comando ls e executado uma vez para cada
 arquivo encontrado. Se forem encontrados 1000 arquivos o comando ls sera
 executado 1000 vezes.
 
-Ja no segundo exemplo, com a saida do find redirecionada para o comando xargs, o comando ls sera executado sobre um grupo de arquivos de cada vez e nao uma vez para cada arquivo. O que ira determinar o numero de vezes que o comando xargs executara o comando ls e justamente o tamanho da linha de comandos. O comando xargs ira dividir a saida gerada pelo comando find em blocos compativeis com a capacidade do sistema de maneira a que nao ocorra um erro quando da execucao, em nosso caso, do comando ls.
+Ja no segundo exemplo, com a saida do find redirecionada para o comando xargs,
+o comando ls sera executado sobre um grupo de arquivos de cada vez e nao uma
+vez para cada arquivo. O que ira determinar o numero de vezes que o comando
+xargs executara o comando ls e justamente o tamanho da linha de comandos. O
+comando xargs ira dividir a saida gerada pelo comando find em blocos
+compativeis com a capacidade do sistema de maneira a que nao ocorra um erro
+quando da execucao, em nosso caso, do comando ls.
 
-Em outras palavras, suponhamos que o comando find descubra 2000 arquivos sobre os quais o comando xargs devera executar o comando ls. O limite maximo de arquivo sobre os quais o comando ls pode atuare de 500. O comando xargs automaticamente realizara a divisao desta entrada em quatro blocos de 500 arquivos.
+Em outras palavras, suponhamos que o comando find descubra 2000 arquivos sobre
+os quais o comando xargs devera executar o comando ls. O limite maximo de
+arquivo sobre os quais o comando ls pode atuare de 500. O comando xargs
+automaticamente realizara a divisao desta entrada em quatro blocos de 500
+arquivos.
 
-Concluindo, o comando xargs e bem mais eficiente do que a diretiva -exec do comando find, por exigir menos recursos computacionais para executar a mesma tarefa. uma vez sobre todos os arquivos encontrados.
+Concluindo, o comando xargs e bem mais eficiente do que a diretiva -exec do
+comando find, por exigir menos recursos computacionais para executar a mesma
+tarefa. uma vez sobre todos os arquivos encontrados.
 
 Veja o comando abaixo (ainda não testado) procure em /tmp arquivos com tempo de acesso superior a sete dias "-atime +7" e "and" usuário corrente $USER, redirecione através do xargs para o comando de remoção "rm", sem fazer perguntas -f
-   find /tmp -atime +7 -type f -a -user $USER | xargs rm -rf
-   find /tmp -atime +7 -type f | xargs rm -f
 
-Procura todos os arquivos suid e setgid executables:
-find / ( -perm -4000 -o -perm -2000 ) -type f -exec ls -ldb {} ;
+``` sh
+find /tmp -atime +7 -type f -a -user $USER | xargs rm -rf
+find /tmp -atime +7 -type f | xargs rm -f
+```
 
-!!Redirecionando o erro padrão  "2>/dev/null" para desviar as mensagens
+### Procura todos os arquivos suid e setgid executables:
+
+    find / ( -perm -4000 -o -perm -2000 ) -type f -exec ls -ldb {} ;
+
+### Redirecionando o erro padrão  "2>/dev/null"
+para desviar as mensagens
 de erro por acesso não root
-  find / -type f -name dummy 2>/dev/null
 
-!!Parâmetros
+      find / -type f -name dummy 2>/dev/null
+
+#### Parâmetros
+ ``` sh
  -ctime
  -mtime
  -atime
@@ -259,10 +293,14 @@ de erro por acesso não root
  -size
  -name
  -iname
+ ```
 
-!!Usando ''printf''
+### Usando ''printf''
 O argumento -printf pode receber vários parâmetros
+
   find ~/ -iname *.txt -printf %f\n   "\n faz quebra de linha"
+
+  ``` sh
   These are used the most:
   %p    imprime o nome do arquivo com o caminho
   %m    permissions of file, displayed in octal.
@@ -277,123 +315,144 @@ O argumento -printf pode receber vários parâmetros
   %m    imprime modo de permissão (formato octal)
 
    %A(caractere)  - devolve o "atime" (tempo de acesso)
-          %AD   imprime a data tipo dia/mes/ano (data de acesso)
-          %AH   imprime a hora
-          %AT   /hh/mm/ss
-          %A+   data e tempo separados pro "+"
-          %Ax   mm/dd/aaaa
+  %AD   imprime a data tipo dia/mes/ano (data de acesso)
+  %AH   imprime a hora
+  %AT   /hh/mm/ss
+  %A+   data e tempo separados pro "+"
+  %Ax   mm/dd/aaaa
+  ```
 
-          find ~/ -iname *.txt -printf "%f %Ax %AT \n"
+      find ~/ -iname *.txt -printf "%f %Ax %AT \n"
 
-          O comando acima exibe arquivos assim:
+** O comando acima exibe arquivos assim:**
 
-          nome        data         hora
-          serii.txt   04-01-2007   12:42:07
+``` sh
+nome        data         hora
+serii.txt   04-01-2007   12:42:07
 
-    %C(caractere)  "ctime"
-    %T(caractere)  "mtime"
-
-
-
-Um último exemplo
-  find . -iname *.txt -printf "%p %m %AA %Ad de %AB de %AY %AX\n"  isto retorna algo como:
-  /caminho/leia-me.txt 644 sexta 23 de junho de 2006 10:30:53
+%C(caractere)  "ctime"
+%T(caractere)  "mtime"
+```
 
 
-Para imprimir o nome do arquivo com o modo de permissão octal use
+
+### Um último exemplo
+
+      find . -iname *.txt -printf "%p %m %AA %Ad de %AB de %AY %AX\n"
+
+isto retorna algo como:
+
+      /caminho/leia-me.txt 644 sexta 23 de junho de 2006 10:30:53
+
+
+### Para imprimir o nome do arquivo com o modo de permissão octal use
+
    find ~ -iname *.txt -printf "%p %m\n"
-acrescentando o parâmetro %a retorna o ultimo acesso de acordo com "-ctime"
+
+### acrescentando o parâmetro %a retorna o ultimo acesso de acordo com "-ctime"
+
    find ~ -iname *.txt -printf "%p %a %m\n"
-printf com os parâmetros "%p %m %Ax\n"  retorna algo como
- /caminho/leia-me.txt 644 23/06/06
-printf com os parâmetros "%p %m %g %u %Ax\n"  retorna algo como
-  /caminho/leia-me.txt usuario grupo 644 23/06/06
 
-  -printf "%f %u %g %m %Ax %AX\n"  veja detalhes abaixo
-  %f nome sem o caminho
-  %u usuário
-  %g grupo
-  %m modo de permissão
-  %Ax dada de acesso no modo dd/mm/aa
-  %AX hora de acesso do tipo 18:15:23
-  \n quebra de linha
+### printf com os parâmetros "%p %m %Ax\n"  retorna algo como
 
-!!Usando Expressões regulares
-  $ find . -regex './ch0[1-2]_0[1-3].*'
-  ./ch01_01.html
-  ./ch01_02.html
-  ./ch02_01.html
-  ./ch02_02.html
-  ./ch02_03.html
+     /caminho/leia-me.txt 644 23/06/06
 
-How do I search for files, then do something with the result?
+### printf com os parâmetros "%p %m %g %u %Ax\n"  retorna algo como
 
-    * Find all .conf files, then search through them to see if they contain any IP addresses, then print the filename, line number and the line containing the address
+      /caminho/leia-me.txt usuario grupo 644 23/06/06
 
-      find /etc -name *.conf -exec grep -Hn '[0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*' {} ;
+``` python
+-printf "%f %u %g %m %Ax %AX\n"  veja detalhes abaixo
+%f nome sem o caminho
+%u usuário
+%g grupo
+%m modo de permissão
+%Ax dada de acesso no modo dd/mm/aa
+%AX hora de acesso do tipo 18:15:23
+\n quebra de linha
+```
 
-!Fazendo um backup
-  tar -zcvf ultimamod.tar.gz `find . -mtime -1 -type f -print`
+### Usando Expressões regulares
 
-!Outros exemplos
-Localizar todos os arquivos do tipo txt gerados nos últimos 20 minutos, menos os cookies do navegador, que são cosntantemente gerados e não devem ser buscados
-
-  find ~/ -iname *.txt -cmin -20 | grep -v "cookies"
-
-Usando expressões regulares
- find . -regex './ch0[1-2]_0[1-3].*'
+``` sh
+$ find . -regex './ch0[1-2]_0[1-3].*'
 ./ch01_01.html
 ./ch01_02.html
 ./ch02_01.html
 ./ch02_02.html
 ./ch02_03.html
+```
 
+### How do I search for files, then do something with the result?
 
+* Find all .conf files, then search through them to see if they contain any IP
+  addresses, then print the filename, line number and the line containing the
+  address
 
+      find /etc -name *.conf -exec grep -Hn '[0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*' {} ;
 
-Limpando miniaturas de imagens no nautilus
+### Fazendo um backup
 
-  find ~/.thumbnails -type f -atime +7 -exec rm {} ;
+      tar -zcvf ultimamod.tar.gz `find . -mtime -1 -type f -print`
+
+### Outros exemplos
+
+Localizar todos os arquivos do tipo txt gerados nos últimos 20 minutos, menos
+os cookies do navegador, que são cosntantemente gerados e não devem ser
+buscados
+
+      find ~/ -iname *.txt -cmin -20 | grep -v "cookies"
+
+Usando expressões regulares
+
+ ``` sh
+  find . -regex './ch0[1-2]_0[1-3].*'
+ ./ch01_01.html
+ ./ch01_02.html
+ ./ch02_01.html
+ ./ch02_02.html
+ ./ch02_03.html
+ ```
+
+### Limpando miniaturas de imagens no nautilus
+
+      find ~/.thumbnails -type f -atime +7 -exec rm {} ;
 
 
 Referências
 
 http://www.zago.eti.br/find.html
-
 http://www.tldp.org/LDP/abs/html/index.html
-
 http://www.absoluta.org/
-
 http://www.linux.ie/newusers/beginners-linux-guide/find.php
-
 http://www.oreilly.de/catalog/unixcd/chapter/c02_077.htm
-
 http://www.mattwalsh.com/twiki/bin/view/Main/UsingTheFindCommand
 
 manual do find "man find"
 
-
-
   find ~/ -iname "*.odt" -ctime -3
-  # procura arquivos odt criados nos últimos 3 dias
 
+### procura arquivos odt criados nos últimos 3 dias
 
   find ~/ -iname "*.odt" -o -iname "*.pdf"
-  # procura arquivos odt ou pdf
+
+# procura arquivos odt ou pdf
 
 
   find . -regex './ch0[1-2]_0[1-3].*'
-  # procura arquivos usando expressões regulares
 
+# procura arquivos usando expressões regulares
 
   find ~/ -type f -print0 | xargs -0 chmod 755
-  # usando o print0 conseguimos pegar arquivos com nomes
-  # que contenham espaços
+
+# usando o print0 conseguimos pegar arquivos com nomes que contenham espaços
 
 
-   find /originalPath/ -name *.mp3 -print0 | xargs -0 -i cp ./{} /destinationPath/
+``` sh
+find /originalPath/ -name *.mp3 -print0 | xargs -0 -i cp ./{} /destinationPath/
 
-   find ./ -maxdepth 1 -iname "*.doc" -print0 | xargs -0 -i cp ./{} /home/germana/Desktop/
+find ./ -maxdepth 1 -iname "*.doc" -print0 | xargs -0 -i cp ./{} /home/germana/Desktop/
+```
 
 
 Contar o tamanho do nome de arquivos

@@ -18,6 +18,7 @@ Github:      https://github.com/voyeg3r
 * [aula 001](https://www.youtube.com/watch?v=sC6mqcLSkZo&index=2&list=PLfCKf0-awunOu2WyLe2pSD2fXUo795xRe)
 * [another course](https://www.youtube.com/watch?v=f6ji-QcOo_U)
 * [another one](https://www.youtube.com/watch?v=QSzqiGeyU5s)
+* [Programming Foundations with Python](https://www.youtube.com/watch?v=X0FoelOIZM0&list=PLAwxTw4SYaPnYajEbZvqtcVWQ6XGhvtOW)
 * [Zero to Hero with Python Tutorial FULL Easy](https://www.youtube.com/watch?v=TV9tSHFAFjg)
 * [livro think python](https://upload.wikimedia.org/wikipedia/commons/1/1b/Think_Python.pdf)
 * [byte of python](http://files.swaroopch.com/python/byte_of_python.pdf)
