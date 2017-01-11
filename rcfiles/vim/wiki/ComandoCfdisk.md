@@ -1,2 +1,0 @@
-### Introdução
-Formatador de discos

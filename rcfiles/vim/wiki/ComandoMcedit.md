@@ -1,1 +1,0 @@
-O mcedit é um editor prático e rápido (para quem não sabe ainda usar o vim)

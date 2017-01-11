@@ -1,4 +1,0 @@
-
-
-lastlog -u sergio
-

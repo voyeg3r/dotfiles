@@ -1,3 +1,0 @@
-Como root use
-
-dhclient
