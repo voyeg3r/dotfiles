@@ -43,9 +43,14 @@ command! -nargs=0 W2MD :call FuncWikiToMd()
 ### Getting rid of '-' on html links
 [source: stackoverflow](http://stackoverflow.com/questions/41529264/)
 
+The `\%V \%V` will make the search pattern work over
+only in selected area.
+
     <a href="https://example.com/hello world hi">hello-world-hi</a>
 
     :s/\%V-\%V/ /g
+
+    :s/\%V\s\%V/-/g
 
 ### tips about ultisnips
 source: http://vimcasts.org/episodes/ultisnips-visual-placeholder/

@@ -14,15 +14,32 @@ Note: I’ll be assuming you’ve worked with some flavor of PCRE before.
 
 ## Magicness
 
-Vim has four different modes of regexes, depending on a specific modifier in the regex definition. Thankfully, the only thing that they affect is which special characters need to be escaped. For example, an asterisk, `*`, is the (kleene) star modifier when the pattern is magic or very magic, but in the other two modes it’s just a normal symbol and you need to use `\*` to signify the special modifier.
+Vim has four different modes of regexes, depending on a specific modifier in
+the regex definition. Thankfully, the only thing that they affect is which
+special characters need to be escaped. For example, an asterisk, `*`, is the
+(kleene) star modifier when the pattern is magic or very magic, but in the
+other two modes it’s just a normal symbol and you need to use `\*` to signify
+the special modifier.
 
-Note: if you want a more detailed explanation of the modes, you can always :help magic. In fact, I highly recommend it, I’m just trying to give an overview here.
+Note: if you want a more detailed explanation of the modes, you can always
+:help magic. In fact, I highly recommend it, I’m just trying to give an
+overview here.
 
-Magic mode is activated in a pattern with an `\m`. It’s also the default modifier – it’ll be used if you don’t include a magicness flag at all. You can control this by using the `'magic'` option, but it’s highly recommended you leave it as it is.
+Magic mode is activated in a pattern with an `\m`. It’s also the default
+modifier – it’ll be used if you don’t include a magicness flag at all. You can
+control this by using the `'magic'` option, but it’s highly recommended you
+leave it as it is.
 
-Very magic mode is activated using `\v`. This one’s pretty important, since it makes the regex mostly perl-compatible, so most of what you’re probably used to will work just fine. Unfortunately, you can’t make it the default – it’s argued that this would cause compatibility problems between scripts (much like the ‘magic’ option mentioned above, but oh, well…).
+Very magic mode is activated using `\v`. This one’s pretty important, since it
+makes the regex mostly perl-compatible, so most of what you’re probably used to
+will work just fine. Unfortunately, you can’t make it the default – it’s argued
+that this would cause compatibility problems between scripts (much like the
+‘magic’ option mentioned above, but oh, well…).
 
-Nomagic and Very nomagic modes are set with `\M` and `\V` respectively. Their effect is turning almost all special regex symbols into ordinary ones unless they start with a backslash. For example, in these modes, you can do a search like this:
+Nomagic and Very nomagic modes are set with `\M` and `\V` respectively. Their
+effect is turning almost all special regex symbols into ordinary ones unless
+they start with a backslash. For example, in these modes, you can do a search
+like this:
 
 ``` vim
 /\VFoo.bar(*args)
@@ -35,19 +52,25 @@ for, but don’t want to risk accidentally using a special character somewhere.
 As for the difference between the two, I believe it’s only in the end-of-line
 character – It’s `$` in nomagic and `\$` in very nomagic mode.
 
-As you may have noticed from the above example, the way to activate various modes is to prefix the regex with the modifier flag. For example, this pattern is in very magic mode:
+As you may have noticed from the above example, the way to activate various
+modes is to prefix the regex with the modifier flag. For example, this pattern
+is in very magic mode:
 
 ``` vim
 \vfoo\(bar\)
 ```
 
-The regex engine is actually a bit more flexible than that, you can also change the mode mid-pattern:
+The regex engine is actually a bit more flexible than that, you can also change
+the mode mid-pattern:
 
 ``` vim
 \vfoo\(\mbar)
 ```
 
-These two are the same and will match a string that contains foo(bar). Of course, it’s not really a good idea to shift modes all the time, but it’s useful to be aware of this. For example, you might want to extend this pattern to match the whole line:
+These two are the same and will match a string that contains foo(bar). Of
+course, it’s not really a good idea to shift modes all the time, but it’s
+useful to be aware of this. For example, you might want to extend this pattern
+to match the whole line:
 
 ``` vim
 let pattern = "\vfoo\(bar\)"
@@ -63,8 +86,9 @@ let full_pattern = "\v^.*foo\(bar\).*$"
 let full_pattern = "^.*" . pattern . ".*$"
 ```
 
-You might want to be more careful with greediness in this particular case, and there’s also at least one potential issue I can see with the pattern, so just consider it a simplified example.
-Small differences
+You might want to be more careful with greediness in this particular case, and
+there’s also at least one potential issue I can see with the pattern, so just
+consider it a simplified example. Small differences
 
 The most annoying differences with perl regexes are related to the default
 magic mode. Here are a few of the modifiers that need to be escaped with
@@ -85,7 +109,7 @@ your vim configuration:
 noremap / /\v
 ```
 
-The effect is that every time you try to search, the \v is prepended
+The effect is that every time you try to search, the `\v` is prepended
 automatically. It seems to be the next best thing to having it the default
 option. Personally, I’m fairly used to the above differences, so I don’t mind
 it that much.
@@ -142,7 +166,9 @@ contains spaces, for example), you can do this instead:
 :s/\%V.*\%V/\=fnamemodify(submatch(0), ':p')/
 ```
 
-The last set of patterns I’ll explain matches specific lines or columns. For example, if you want to search for “foo” before line 42 of the file, you can do it like so:
+The last set of patterns I’ll explain matches specific lines or columns. For
+example, if you want to search for “foo” before line 42 of the file, you can do
+it like so:
 
 ``` vim
 /\<%42lfoo
