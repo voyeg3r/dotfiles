@@ -28,7 +28,12 @@ Nomagic and Very nomagic modes are set with `\M` and `\V` respectively. Their ef
 /\VFoo.bar(*args)
 ```
 
-This will find the exact string Foo.bar(*args) and if you want to use special symbols, you have to prefix them with a backslash(`\*`, `\.`, etc.). This might be useful every once in a while when you know precisely what you’re looking for, but don’t want to risk accidentally using a special character somewhere. As for the difference between the two, I believe it’s only in the end-of-line character – It’s `$` in nomagic and `\$` in very nomagic mode.
+This will find the exact string Foo.bar(*args) and if you want to use special
+symbols, you have to prefix them with a backslash(`\*`, `\.`, etc.). This might
+be useful every once in a while when you know precisely what you’re looking
+for, but don’t want to risk accidentally using a special character somewhere.
+As for the difference between the two, I believe it’s only in the end-of-line
+character – It’s `$` in nomagic and `\$` in very nomagic mode.
 
 As you may have noticed from the above example, the way to activate various modes is to prefix the regex with the modifier flag. For example, this pattern is in very magic mode:
 
