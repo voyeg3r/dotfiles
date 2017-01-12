@@ -56,6 +56,7 @@
 * [Pythonsolutions](pythonsolutions.md)
 * [Radios](radios.md)
 * [Receitas](receitas.md)
+* [Regex](Regex)
 * [S5criandoslides](s5criandoslides)
 * [Saude](saude.md)
 * [Segundavia](segundavia.md)

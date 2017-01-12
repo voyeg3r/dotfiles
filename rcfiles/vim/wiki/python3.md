@@ -23,6 +23,12 @@ Github:      https://github.com/voyeg3r
 * [livro think python](https://upload.wikimedia.org/wikipedia/commons/1/1b/Think_Python.pdf)
 * [byte of python](http://files.swaroopch.com/python/byte_of_python.pdf)
 
+### um desafio interessante baseado em python2
+**Learn Python Through Public Data Hacking**
+
+* [PyCon 2013 Video](http://pyvideo.org/pycon-us-2013/learn-python-through-public-data-hacking.html)
+* http://www.dabeaz.com/pydata/
+* https://www.youtube.com/watch?v=RrPZza_vZ3w
 
 #### to be able to import turtle in python
 [read on this link](https://opentechschool.github.io/python-beginners/en/simple_drawing.html)

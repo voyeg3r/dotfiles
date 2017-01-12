@@ -20,7 +20,7 @@ and alternate files into the buffer:
 :put =expand('%:p')
 :put =expand('#:p')
 ```
-using ultisnips
+**using ultisnips**
 ``` vim
 snippet filename "insert filename" w
 `!p snip.rv = snip.fn`
@@ -1181,6 +1181,17 @@ ou
      if \(\(then\)\@!.\)*$
 
 
+
+    To represent a NOT, use the negative assertion \@!.
+
+    For example, "NOT Bush" would be:
+
+    ^\(.*Bush\)\@!
+
+    or using \v:
+
+    \v^(.*Bush)@!
+
 Let's say I have some lines like below and I want to find bar
 only if it is preceded by foo
 
@@ -1189,14 +1200,24 @@ only if it is preceded by foo
      foobar
      quxbar
 
- The solution search pattern would seems like this:
+The solution search pattern would seems like this:
 
     /\v(foo)@<=bar
 
-You can also use the tilde character (~) as your search pattern, and when running your substitution, Vim will
-interpret the tilde as the value of your last replacement. So, if you already executed a substitution in which you
-replaced the pattern matched with the characters +++ but realized you made a mistake and the +++ should have been
-!!!, you can quickly rectify the problem by executing another substitution, like so: :%s/~/!!!/g.
+You can also use the tilde character (~) as your search pattern, and when
+running your substitution, Vim will interpret the tilde as the value of your
+last replacement. So, if you already executed a substitution in which you
+replaced the pattern matched with the characters +++ but realized you made a
+mistake and the +++ should have been !!!, you can quickly rectify the problem
+by executing another substitution, like so: :%s/~/!!!/g.
+
+**Non-capturing group**
+
+``` vim
+\%^   .......... the beginning of the file
+\%( \) ......... a non-capturing group
+\{-}   ......... repeated 0 or more times (as few as possible)
+```
 
 ####  Anoter approach to similar situation
 
@@ -1570,29 +1591,40 @@ Após a instalação do dicionário, para habilitar o corretor ortográfico (em 
     command! ReverseLine call setline('.', join(reverse(split(getline('.')))))
 
 ### Como definir a fonte no vim
+[referencias: Ask Ubuntu](http://askubuntu.com/q/363142)
 
-  Você pode até escolher a fonte graficamente e em seguida
-  copie a saida deste comando
+Você pode até escolher a fonte graficamente e em seguida
+copie a saida deste comando
 
-  :set gfn?
-
-  Agora coloque no vimrc o resultado
-
-  set anti gfn="nome da fonte que você pegou"
+     :set gfn?
 
 
-    == how set windows font?==
+Agora coloque no vimrc o resultado
+
+     set anti gfn="nome da fonte que você pegou"
+
+Alternatively, enter the following to insert the current font setting into the buffer:
+
+    :put =&guifont
+
+
+   ** no modo gráfico (gvim) **
 
     :set anti gfn=Ubuntu\ Mono\ for\ PowerLine:h13
+
+Você pode também aumentar a fonte do terminal (se estiver usando um)
+com o atalho `Ctrl-Shif-+`
 
 ### contando quantas vezes uma palavra ocorre
 
 You can use the following set of commands to count the number of times a
 particular word occurs in a buffer: >
 
-    :let cnt=0
-    :g/\<your_word\>/let cnt=cnt+1
-    :echo cnt
+``` vim
+:let cnt=0
+:g/\<your_word\>/let cnt=cnt+1
+:echo cnt
+```
 
 ### Name spaces para variáveis no vim
 
