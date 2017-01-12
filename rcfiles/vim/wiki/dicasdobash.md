@@ -2,7 +2,7 @@
 
 ```
 File:		 DicasDoBash.md
-Last Change: ter 10 jan 2017 13:30:07 BRT
+Last Change: qua 11 jan 2017 18:02:07 BRT
 Author:		 Sergio Araujo
 Site:		 http://vivaotux.blogspot.com
 e-mail:      <voyeg3r ✉ gmail.com>
@@ -39,12 +39,14 @@ source (stack overflow): https://goo.gl/PYqI2n
 
 source: http://stackoverflow.com/questions/3211595/
 
-    a=1
-    for i in *.jpg; do
-        new=$(printf "%04d.jpg" "$a") #04 pad to length of 4
-        mv -- "$i" "$new"
-        let a=a+1
-    done
+``` sh
+a=1
+for i in *.jpg; do
+    new=$(printf "%04d.jpg" "$a") #04 pad to length of 4
+    mv -- "$i" "$new"
+    let a=a+1
+done
+```
 
 another option in one line:
 
@@ -85,9 +87,10 @@ The syntax is:
 
 ### como criar um array no bash
 
-  var=($(uname -a))
-
-  echo ${var[0]}
+``` sh
+var=($(uname -a))
+echo ${var[0]}
+```
 
 ###  imprimindo os últimos três elementos de um array
 
@@ -101,13 +104,15 @@ The syntax is:
 
 ### Dicas do Júlio César Neves
 
-    read -p "Deseja continuar (s/n)? "
+``` sh
+read -p "Deseja continuar (s/n)? "
 
-    [[ ${REPLY^} == N ]] && exit
+[[ ${REPLY^} == N ]] && exit
 
-    Para capturar qualquer tecla, tipo "pressione qualquer tecla pra continuar faça:"
+# Para capturar qualquer tecla, tipo "pressione qualquer tecla pra continuar faça:"
 
-        read -n 1 -s -p "Press any key to continue"
+    read -n 1 -s -p "Press any key to continue"
+```
 
 Veja também InputRc
 
@@ -123,20 +128,22 @@ o comando, basta então pressionar enter.
 
 ### Abrir o terminal via teclado
 
-   Ctrl-alt-t
+    Ctrl-alt-t
 
 ### função para testar se o valor passado é inteiro
 
-    #!/bin/sh
-    # Check if input is integer or not
+``` sh
+#!/bin/sh
+# Check if input is integer or not
 
-        ${1:? Usage: No input, exiting..}
+${1:? Usage: No input, exiting..}
 
-        result=$(echo $1 | egrep ^[[:digit:]]+$)
+result=$(echo $1 | egrep ^[[:digit:]]+$)
 
-        if [ "$result" = "" ] ; then
-            echo "Not Integer"
-        else
-            echo "Integer"
-        fi
+if [ "$result" = "" ] ; then
+    echo "Not Integer"
+else
+    echo "Integer"
+fi
+```
 

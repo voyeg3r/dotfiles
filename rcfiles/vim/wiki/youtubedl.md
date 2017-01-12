@@ -1,17 +1,26 @@
-### como baixar videos do youtube com melhor qualidade?
-*
-### comando para atualizar o youtube-dl
+# manual yooutube-dl
+``` markdown
+File:		 youtubedl.md
+Created:	 qua 11 jan 2017 14:58:28 BRT
+Last Change: qua 11 jan 2017 14:58:28 BRT
+Author:		 Sergio Araujo
+Site:		 http://vivaotux.blogspot.com
+e-mail:      <voyeg3r ✉ gmail.com>
+Twitter:	 @voyeg3r
+Github:      https://github.com/voyeg3r
+```
+### comando para atualizar o youtube-dl?
 
-  sudo pip3 install youtube-dl --upgrade
+      sudo pip3 install youtube-dl --upgrade
 
 ### Baixando de uma lista
-   Se você tem um arquivo com as url's use:
+Se você tem um arquivo com as url's use:
 
-     youtube-dl -a links.txt
+         youtube-dl -a links.txt
 
 ### preservando o título do vídeo
 
-	youtube-dl -t link
+        youtube-dl -t link
 
 ### Limiting bandwidth
 
@@ -43,12 +52,12 @@ OBS: Por padrão o youtube-dl irá baixar o video na melhor qualiade possível
 ### convertendo videos do youtube para mp3
 Fonte:
 
-	youtube-dl -t --extract-audio --audio-format mp3 YOUTUBE_URL_HERE
+    youtube-dl -t --extract-audio --audio-format mp3 YOUTUBE_URL_HERE
 
 ### baixar um playlist completo
 Antes de executar o comando certifique-se que a versão do youtube-dl é a mais nova
 
-	youtube-dl -U
+    youtube-dl -U
 
 Agora pode executar algo como...
 

@@ -419,14 +419,6 @@ Usando expressões regulares
       find ~/.thumbnails -type f -atime +7 -exec rm {} ;
 
 
-Referências
-
-http://www.zago.eti.br/find.html
-http://www.tldp.org/LDP/abs/html/index.html
-http://www.absoluta.org/
-http://www.linux.ie/newusers/beginners-linux-guide/find.php
-http://www.oreilly.de/catalog/unixcd/chapter/c02_077.htm
-http://www.mattwalsh.com/twiki/bin/view/Main/UsingTheFindCommand
 
 manual do find "man find"
 
@@ -488,3 +480,10 @@ vai filtrar apenas os que tem 32 caracteres ou mais.
 ### Referências
 * http://ubuntuforums.org/showthread.php?t=330093
 * http://www.dicas-l.com.br/dicas-l/20050226.php → Artigo do Júlio César Neves
++ http://www.zago.eti.br/find.html
++ http://www.tldp.org/LDP/abs/html/index.html
++ http://www.absoluta.org/
++ http://www.linux.ie/newusers/beginners-linux-guide/find.php
++ http://www.oreilly.de/catalog/unixcd/chapter/c02_077.htm
++ http://www.mattwalsh.com/twiki/bin/view/Main/UsingTheFindCommand
+

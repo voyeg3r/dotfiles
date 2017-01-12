@@ -11,8 +11,8 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
-
-* programando com janelas http://www.gustavobarbieri.com.br/eagle/docs/eagle-pt.html
+# programando com janelas
+* http://www.gustavobarbieri.com.br/eagle/docs/eagle-pt.html
 
 * http://www.caiomoritz.com/2008/01/05/byte-of-python/
 * http://www.lightbird.net/py-by-example/platform-module.html
@@ -33,7 +33,7 @@ Github:      https://github.com/voyeg3r
 ### Módulos para acesso a informações do windows
 
 * win32api
-*
+
 ### truncar string em N bytes sem truncar nenhuma palavra
 
 ``` python
@@ -101,12 +101,14 @@ def file_len(fname):
 
 ### remover caracteres de uma string
 
+``` markdown
 # fonte: lista python brasil
 # Bom dia.
 # Como faço para remover os parênteses de uma palavra ?
 # Por exemplo :
 
 # Tenho (201.8.205.113) e quero apenas 201.8.205.113
+```
 
 ``` python
 a = '(123.123.123)'
@@ -128,8 +130,8 @@ print data[-1],
 
 ### verificar se há numeros repetidos em uma lista
 
-# O jeito mais simples de verificar se há valores repetidos é converter para set
-# e comparar se o tamanho muda.
+O jeito mais simples de verificar se há valores repetidos é converter para set
+e comparar se o tamanho muda.
 
 ``` python
 >>> a = [1, 2, 3, 4, 5]
@@ -140,7 +142,7 @@ True
 False
 ```
 
-# somente listar repetidos
+### somente listar repetidos
 
     [ i for i in set(lista) if lista.count(i) > 1 ]
 

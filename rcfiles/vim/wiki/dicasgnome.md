@@ -14,7 +14,9 @@ twitter: http://www.twitter.com/voyeg3r
 
 ### restaurar os paineis do gnome
 
-	gconftool --recursive-unset /apps/panel
-	rm -rf ~/.gconf/apps/panel
-	pkill gnome-panel
+``` sh
+gconftool --recursive-unset /apps/panel
+rm -rf ~/.gconf/apps/panel
+pkill gnome-panel
+```
 

@@ -1,5 +1,5 @@
 
-This week, as English student, I had some problems figuring out a
+This week, as an English student, I had some problems figuring out a
 better way to learn how to make questions in English but after
 reazoning, thinking a lot, reflecting I came across this.
 

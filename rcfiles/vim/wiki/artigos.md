@@ -1,12 +1,12 @@
 
-[[ApropagandaIdeologicaDoPig]]
-[VidaAposaVida](VidaAposaVida)
-[OparadoxoPython](OparadoxoPython)
-[PythonEocaminhoDoMeio](PythonEocaminhoDoMeio)
-[[YouDontGrokVi]]
-[[DicaTedTalks]]
-[[TheFreeSoftwareEcoSystem]]
-[[HowToMakequestionsInEnglish]]
-[[AindustriaPornografica]]
-[[HowLearnLanguagesFast]]
-
+[[apropagandaideologicadopig]]
+[vidaaposavida](vidaaposavida)
+[oparadoxopython](oparadoxopython)
+[pythoneocaminhodomeio](pythoneocaminhodomeio)
+[[youdontgrokvi]]
+[[dicatedtalks]]
+[[thefreesoftwareecosystem]]
+[[howtomakequestionsinenglish]]
+[[aindustriapornografica]]
+[[howlearnlanguagesfast]]
+[resposta ao sergio reis](resposta-ao-sergio-reis)

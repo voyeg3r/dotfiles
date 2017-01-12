@@ -1,4 +1,4 @@
-# [Wiki](Wiki.md) do Sérgio para fins diversos
+# [Wiki](wiki.md) do Sérgio para fins diversos
 
     Criado: Dom 17/Out/2010 hs 14:23
     Last Change: dom 08 jan 2017 11:45:41 BRT
