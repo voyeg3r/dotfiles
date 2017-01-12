@@ -110,6 +110,8 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
 "Plug 'klen/python-mode'
 Plug 'phillipberndt/python-imports.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -141,6 +143,17 @@ Plug 'endel/vim-github-colorscheme'
 Plug 'mattn/emmet-vim'
 
 call plug#end()
+
+
+"Pandoc related keymaps
+"nnoremap <leader>gq :%!pandoc -f html -t markdown<CR>
+"vnoremap <leader>gq : !pandoc -f html -t markdown<CR>
+
+fun! HtmlToMarkdown()
+    :%!pandoc -f html -t markdown<CR>
+endfun
+command! -nargs=0 H2M :%!pandoc -f html -t markdown<CR>
+
 
 " python auto imports
 " https://github.com/phillipberndt/python-imports.vim

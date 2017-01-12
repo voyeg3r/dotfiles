@@ -1931,3 +1931,23 @@ Let's say you have:
 
 And you wnat to delete the space before caret, in command mode
 just press X
+
+### How to convert html to markdown using vim-pandoc
+[link here](http://amandogra.github.io/blog/how-to-convert-html-to-markdown-using-vim-pandoc/)
+
+#### Install pandoc
+after that install these plugins with your favorite vim plugin manager
+
+``` vim
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
+```
+In my case I usually create a function to this task
+
+``` vim
+fun! HtmlToMarkdown()
+    :%!pandoc -f html -t markdown<CR>
+endfun
+command! -nargs=0 H2M :%!pandoc -f html -t markdown<CR>
+```
+
