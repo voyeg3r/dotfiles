@@ -1,6 +1,7 @@
-Best of Vim Tips
+# Best of Vim Tips
 zzapper 16 Years of Vi + 9+ years of Vim and still learning
 31May16 : Last Update (Now in VIM Help Format :h helptags)
+
 ### These Tips are now being maintained at zzapper.co.uk/vimtips.html
 
 
@@ -21,6 +22,7 @@ Submit to Social Websites
 __BEGIN__
 *vimtips.txt*	For Vim version 7.3.
 ------------------------------------------------------------------------------
+``` markdown
 " new items marked [N] , corrected items marked [C]
 " *best-searching*
 /joe/e                      : cursor set to End of match
@@ -1055,4 +1057,5 @@ Vimtips in Belarusian
 " : commands to neutralise < for HTML display and publish
 " use yy@" to execute following commands
 :w!|sav! vimtips.html|:/^__BEGIN__/,/^__END__/s#<#\<#g|:w!|:!vimtipsftp
+```
 ----------------------------------------
