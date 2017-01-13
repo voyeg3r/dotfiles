@@ -49,7 +49,7 @@ endsnippet
 ```
 
 ### Função para converter wiki para markdown
-[source: stackoverflow](http://stackoverflow.com/a/3024430/2571881)
+[Source: stackoverflow](http://stackoverflow.com/a/3024430/2571881)
 
 ``` vim
 " :bufdo execute "normal @a" | write
@@ -62,7 +62,7 @@ command! -nargs=0 W2MD :call FuncWikiToMd()
 ```
 
 ### Getting rid of '-' on html links
-[source: stackoverflow](http://stackoverflow.com/questions/41529264/)
+[Source: stackoverflow](http://stackoverflow.com/questions/41529264/)
 
 The `\%V \%V` will make the search pattern work over
 only in selected area.
@@ -1385,7 +1385,10 @@ This string doesn't contain any quotes, isn't it.
     " a busca
 
 ``` vim
-\w\@<!'\(\(\w'\|[^']\)\+\)'\(\w\)\@!
+\w\@<!'\(\(\w'\|[^']\)\+\)'\(\w\)\@!  - without very magic
+
+\v\w@<!'((\w'|[^'])+)'(\w)@! - very magic option
+
 ```
 
 
@@ -1393,15 +1396,13 @@ This string doesn't contain any quotes, isn't it.
 ----------------------------------------------------------
 " a explicação
 ----------------------------------------------------------
-/               match
-\w\@<!'         any ' that does not have a word char before it
-\(\w'\|[^\']\)  any word+' or non-'
-\+              any number of times
-'\(\w\)\@!      end with a ' that does not have a word char after it
+\v ........... very magic
+\w@<!' ....... qualquer ' que naõ tiver uma palavra antes dele
+\w|[^']+ ..... uma palavra ou não colchete ao menos uma vez
+'(\w)@! ...... apóstofro que não tem uma palavra depois dele
 
-:%s/\w\@<!'\(\(\w'\|[^']\)\+\)'\(\w\)\@!/"\1"/gc
+%s/\v\w@<!'((\w'|[^'])+)'(\w)@!/"\1"/g
 ```
-
 
 ### Numerando linhas com novo comando
 source: http://stackoverflow.com/questions/4224410/
