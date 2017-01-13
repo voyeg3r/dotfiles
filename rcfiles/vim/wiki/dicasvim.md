@@ -1866,11 +1866,12 @@ quais arquivos serão instalados assim:
 
 First try install vundle
 
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-    :PluginInstall(!) - install (update) plugins
-    :PluginUpdate
-    :PluginSearch! plugin_query
+``` vim
+:PluginInstall(!) - install (update) plugins
+:PluginUpdate
+:PluginSearch! plugin_query
 
 Plugin 'rking/ag.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
@@ -1893,99 +1894,107 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'vimwiki/vimwiki'
 Plugin 'vim-scripts/VisIncr'
+```
 
- ProjectPlugin
- AirLine...............https://github.com/bling/vim-airline
- VisincrPlugin
- SurroundPlugin........https://github.com/tpope/vim-surround
- GundoPlugin
- RepeatPlugin .........https://github.com/tpope/vim-repeat
- PathogenPlugin........https://github.com/tpope/vim-pathogen
- [[Abolish]] ..............https://github.com/tpope/vim-abolish
- [[vim-system-copy]] ....... https://github.com/christoomey/vim-system-copy
+``` markdown
+ProjectPlugin
+AirLine...............https://github.com/bling/vim-airline
+VisincrPlugin
+SurroundPlugin........https://github.com/tpope/vim-surround
+GundoPlugin
+RepeatPlugin .........https://github.com/tpope/vim-repeat
+PathogenPlugin........https://github.com/tpope/vim-pathogen
+[[Abolish]] ..............https://github.com/tpope/vim-abolish
+[[vim-system-copy]] ....... https://github.com/christoomey/vim-system-copy
+```
 
 
 ### Trabalhando com janelas
 
-   Ctrl-w_^ .......... divide a janela atual e edita arquivo alternativo
+       Ctrl-w_^ .......... divide a janela atual e edita arquivo alternativo
 
 ### Colando do clipboard em modo insert
 
-   Em modo normal colamos o conteúdo da área de transferência
-   usando o clássico "+p já em modo insert faça:
+Em modo normal colamos o conteúdo da área de transferência usando o clássico "+p já em modo insert faça:
 
        <Ctrl-r>+
        <Ctrl-r>"
 
-    The Control-R mechanism is very useful:-
-    :h i_CTRL-R
+The Control-R mechanism is very useful:-
 
-    Usually used for inserting the contents of a register 0-9a-z
-    but can also insert the following special registers etc
+        :h i_CTRL-R
 
-    '"' the unnamed register, containing the text of the last delete or
-    yank
-    '%' the current file name
-    '#' the alternate file name
-    '*' the clipboard contents (X11: primary selection)
-    '+' the clipboard contents
-    '/' the last search pattern
-    ':' the last command-line
-    '.' the last inserted text
-    '-' the last small (less than a line) delete
-    =5*5 insert 25 into text (mini-calculator)
+Usually used for inserting the contents of a register 0-9a-z
+but can also insert the following special registers etc
 
-    The paste buffer is usually the easiest way to transfer text between VIM and
-    another application.
+``` markdown
+'"' the unnamed register, containing the text of the last delete or
+yank
+'%' the current file name
+'#' the alternate file name
+'*' the clipboard contents (X11: primary selection)
+'+' the clipboard contents
+'/' the last search pattern
+':' the last command-line
+'.' the last inserted text
+'-' the last small (less than a line) delete
+=5*5 insert 25 into text (mini-calculator)
+```
 
-    " Redirection & Paste register *
-    :redir @* : redirect commands to paste buffer
-    :redir END : end redirect
-    :redir >> out.txt : redirect to a file
-    " Working with Paste buffer
-    "*yy : yank current line to paste
-    "+y} : yank to end of paragraph
-    "+yi{ : yank current paragraph
-    "*p : insert from paste buffer
-    " yank to paste buffer (ex mode)
-    :'a,'by* : Yank range into paste
-    :%y* : Yank whole buffer into paste
-    :.y* : Yank Current line to paster
-    " filter non-printable characters from the paste buffer
-    " useful when pasting from some gui application
-    :nmap p :let @* = substitute(@*,'[^[:print:]]','','g')"*pr
+The paste buffer is usually the easiest way to transfer text between VIM and
+another application.
+
+``` vim
+" Redirection & Paste register *
+:redir @* : redirect commands to paste buffer
+:redir END : end redirect
+:redir >> out.txt : redirect to a file
+" Working with Paste buffer
+"*yy : yank current line to paste
+"+y} : yank to end of paragraph
+"+yi{ : yank current paragraph
+"*p : insert from paste buffer
+" yank to paste buffer (ex mode)
+:'a,'by* : Yank range into paste
+:%y* : Yank whole buffer into paste
+:.y* : Yank Current line to paster
+" filter non-printable characters from the paste buffer
+" useful when pasting from some gui application
+:nmap p :let @* = substitute(@*,'[^[:print:]]','','g')"*pr
+```
 
 ### Convertendo temas do texmate para o vim
 
-    http://coloration.sickill.net/
+http://coloration.sickill.net/
 
-    programa para possibilitar a conversão de esquemas de cor do texmate (binario para xml1)
-    http://vimcasts.org/episodes/creating-colorschemes-for-vim/
-    usando este site: http://coloration.sickill.net/
+programa para possibilitar a conversão de esquemas de cor do texmate (binario para xml1)
+http://vimcasts.org/episodes/creating-colorschemes-for-vim/
+usando este site: http://coloration.sickill.net/
 
     apt-fast install -y libplist-utils
 
 ### Videos bacanas sobre o vim
 
-    http://vimeo.com/user1690209/videos
+http://vimeo.com/user1690209/videos
 
-    muito louco, tranformando um xml em texto plano
-    http://vimeo.com/15443936
+muito louco, tranformando um xml em texto plano http://vimeo.com/15443936
 
 ### Busca dentro de seleção visual
 
-  /\%V
-  :%s/\%Visto/aquilo/ge
+``` vim
+/\%V
+:%s/\%Visto/aquilo/ge
+```
 
 ### Como abrir vários arquivos no gvim
 
-  :args ~/path/*.py
+      :args ~/path/*.py
 
-  isto evita o erro E77: muitos arquivos para editar
+isto evita o erro E77: muitos arquivos para editar
 
 ### Deletando linhas que não contém padrão
 
-  :v/pattern/d
+    :v/pattern/d
 
 ### Destacando as linhas duplicadas
 
@@ -1997,73 +2006,87 @@ Plugin 'vim-scripts/VisIncr'
 
 ### Adicionar uma linha em branco após linhas que começam com espaço
 
-   :g/^\s*-/normal O
+    :g/^\s*-/normal O
 
 ### Função para deletar linhas em branco duplicadas
 
-    fun! DelBlank()
-        let save_cursor = getpos(".")
-        let old_query = getreg('/')
-        :g/^\n\{2,}/d
-        call setpos('.', save_cursor)
-        call setreg('/', old_query)
-    endfun
-    map <leader>d :call keepjumps DelBlank()<cr>
+``` vim
+fun! DelBlank()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    :g/^\n\{2,}/d
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+map <leader>d :call keepjumps DelBlank()<cr>
+```
 
-
-    function! Preserve(command)
-        " Preparation: save last search, and cursor position.
-        let save_cursor = getpos(".")
-        let old_query = getreg('/')
-            execute a:command
-        " Clean up: restore previous search history, and cursor position
-        call setpos('.', save_cursor)
-        call setreg('/', old_query)
-    endfunction"}}}
+``` vim
+function! Preserve(command)
+    " Preparation: save last search, and cursor position.
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+        execute a:command
+    " Clean up: restore previous search history, and cursor position
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfunction"}}}
+```
 
 ### Adding blank lines  - adding empty lines between lines
 source: [superuser.com](http://superuser.com/questions/592503/)
 
     :g/.\n\n\@!/norm o
 
-    The pattern I use is /.\n\n\@!/. Breaking that down into its component pieces:
+The pattern I use is `/.\n\n\@!/`. Breaking that down into its component pieces:
 
-    . Matches any character in the line. (used to immediately discard any
-    existing empty lines from consideration) \n Matches a single \n at the end
-    of the character above \n\@! Fails the match if there's another \n
-    immediately after the earlier \n.
+. Matches any character in the line. (used to immediately discard any
+existing empty lines from consideration) \n Matches a single \n at the end
+of the character above \n\@! Fails the match if there's another \n
+immediately after the earlier \n.
 
 ### Visualizar o histórico de comandos do vim
 
-  Com o cursor na linha de comandos do vim pressione <C-f>
+Com o cursor na linha de comandos do vim pressione <C-f>
 
- :redir @a>  ......... redireciona para o registro 'a'
- :history : -20,
- :redir END
- "ap
+``` vim
+:redir @a>  ......... redireciona para o registro 'a'
+:history : -20,
+:redir END
+"ap
+```
 
- Outro modo de colar o regitro "a" é pressionar Ctrl-r Ctrl-r a
+Outro modo de colar o regitro "a" é pressionar Ctrl-r Ctrl-r a
 
- Comando para colar o histórico dos ultimos 22 comandos
- q:22kyG Ctrl-w-q p
+Comando para colar o histórico dos ultimos 22 comandos
+
+     q:22kyG Ctrl-w-q p
 
 ### Mapeamento para inserir números randomicos no vim
 
-    imap <leader>r <C-r>=system('echo "$(($RANDOM % 100))"')<cr>
+``` vim
+imap <leader>r <C-r>=system('echo "$(($RANDOM % 100))"')<cr>
+```
 
 ### Adicionado espaços em títulos markdown
 
 Se você tem um título ou subtitulo markdown com o texto
 colado no titulo como em  ##titulo podemos adicionar um espaço assim:
 
-    %s/\v(^#{1,3})([a-z])/\1 \2/g
+``` vim
+%s/\v(^#{1,3})([a-z])/\1 \2/g
+```
 
-    grupo 1 ---> comço de linha # Ou mais
-    grup 2  ---> tudo menos # E espaço
+``` markdown
+grupo 1 ---> comço de linha # Ou mais
+grup 2  ---> tudo menos # E espaço
+```
 
 ### Fazer com que subseções markdown virem subsubseções
 
-    :g/^##[^#]/ normal I#
+``` vim
+:g/^##[^#]/ normal I#
+```
 
 Obs: os caracteres ^[ são obtidos digitando-se Ctrl-v + [
 
@@ -2071,7 +2094,9 @@ Obs: os caracteres ^[ são obtidos digitando-se Ctrl-v + [
 
 O código abaixo troca dois iguais por três ###
 
-    %s/\v^\=\=([^\=]+)\=\=/### \1/g
+``` vim
+%s/\v^\=\=([^\=]+)\=\=/### \1/g
+```
 
 ### Delet the character before cursor
 
@@ -2079,7 +2104,7 @@ Let's say you have:
 
     sales_tax: row["sales tax"] ,
 
-And you wnat to delete the space before caret, in command mode
+And you want to delete the space before caret, in command mode
 just press X
 
 ### How to convert html to markdown using vim-pandoc
