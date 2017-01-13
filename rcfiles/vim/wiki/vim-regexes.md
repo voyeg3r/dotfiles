@@ -31,10 +31,10 @@ control this by using the `'magic'` option, but it’s highly recommended you
 leave it as it is.
 
 Very magic mode is activated using `\v`. This one’s pretty important, since it
-makes the regex mostly perl-compatible, so most of what you’re probably used to
+makes the regex mostly `perl-compatible`, so most of what you’re probably used to
 will work just fine. Unfortunately, you can’t make it the default – it’s argued
 that this would cause compatibility problems between scripts (much like the
-‘magic’ option mentioned above, but oh, well…).
+'magic' option mentioned above, but oh, well…).
 
 Nomagic and Very nomagic modes are set with `\M` and `\V` respectively. Their
 effect is turning almost all special regex symbols into ordinary ones unless

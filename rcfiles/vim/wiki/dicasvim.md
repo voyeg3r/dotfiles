@@ -11,6 +11,8 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
+see also: [Regex](Regex) page
+
 ### inserting filename
 
 The following commands insert lines consisting of the full path of the current
@@ -1185,8 +1187,6 @@ ou
 
      if \(\(then\)\@!.\)*$
 
-
-
     To represent a NOT, use the negative assertion \@!.
 
     For example, "NOT Bush" would be:
@@ -1203,11 +1203,13 @@ only if it is preceded by foo
      foobar
      bazbar
      foobar
+     fooother
      quxbar
 
 The solution search pattern would seems like this:
 
-    /\v(foo)@<=bar
+    /\v(foo)@<=bar .............. @<=bar (negates bar)
+    /\vfoo(bar)@! ............... @! also negates bar
 
 You can also use the tilde character (~) as your search pattern, and when
 running your substitution, Vim will interpret the tilde as the value of your
@@ -1216,6 +1218,14 @@ replaced the pattern matched with the characters +++ but realized you made a
 mistake and the +++ should have been !!!, you can quickly rectify the problem
 by executing another substitution, like so: :%s/~/!!!/g.
 
+``` vim
+qu\@!  " matches a q that's not followed by a u. (This is more correct than
+q[^u], " which requires that there is some character after the q.)
+```
+
+to match on f, fo, foo, or food, the pattern `f\%[ood]` can be used. In PCRE,
+such a pattern would look like `f(o(od?)?)?`. (Imagine that for a longer string!)
+
 **Non-capturing group**
 
 ``` vim
@@ -1223,6 +1233,8 @@ by executing another substitution, like so: :%s/~/!!!/g.
 \%( \) ......... a non-capturing group
 \{-}   ......... repeated 0 or more times (as few as possible)
 ```
+
+This helps you to use a patter in search and not use it in groups
 
 ####  Anoter approach to similar situation
 
