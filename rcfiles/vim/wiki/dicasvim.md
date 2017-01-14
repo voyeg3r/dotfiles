@@ -1,4 +1,4 @@
-# Manual de dicas do vim
+# Vim tips for everyone
 
 ```
 File:		 DicasVim.md
