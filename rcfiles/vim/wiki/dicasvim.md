@@ -38,6 +38,14 @@ snippet filename "insert filename" w
 `!p snip.rv = snip.fn`
 endsnippet
 ```
+
+I also have this line on my `~/.vimrc`, it allows me to insert the filename easily
+
+``` vim
+iab fname <c-r>=expand("%:p")<cr>
+```
+
+
 ### Tips on searching
 [Read more here](https://www.linux.com/learn/vim-tips-basics-search-and-replace)
 
@@ -388,15 +396,28 @@ qzq
 ```
 
 ### Clipboard manipulation
+[souce stackoverflow](http://stackoverflow.com/a/11489440/2571881)
 
-Faster way to paste data into vim than with paste mode?
-When I try to paste hundreds of lines or more into Vim, even in paste mode, it takes much longer (10 times or more?)
+Faster way to paste data into vim than with paste mode? When I try to paste
+hundreds of lines or more into Vim, even in paste mode, it takes much longer
+(10 times or more?)
 
 If your Vim is compiled with clipboard support
 
-    :echo has('clipboard') returns 1
+``` vim
+:echo has('clipboard') returns 1
 
-    you can simply use "+p or "*p
+```
+you can simply use "+p or "*p
+
+On X11 systems both registers can be used. See `:help x11-selection` for more
+details, but basically the `"*` is analogous to X11's PRIMARY selection (which
+usually copies things you select with the mouse and pastes with the middle
+mouse button) and `"+` is analogous to X11's CLIPBOARD selection (which is the
+clipboard proper).
+
+In order to preserve indentation during paste you could use <c-r><c-p>* or
+<cr>c-p>+ see more at `:help i_CTRL-R_CTRL-P`
 
 ### Como criar um diário no vim usando o vimwiki
 
