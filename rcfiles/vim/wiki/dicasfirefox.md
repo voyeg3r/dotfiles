@@ -8,6 +8,9 @@ site: vivaotux
 twitter: voyeg3r
 ```
 
+### Make firefox speak English
+[us language pack](https://addons.mozilla.org/en-US/firefox/addon/english-us-language-pack/)
+
 ### clear firefox memory usage
 
 source: http://www.online-tech-tips.com/computer-tips/speed-up-mozilla-firefox/

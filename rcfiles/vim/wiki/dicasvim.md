@@ -91,7 +91,7 @@ only in selected area.
 
     s/\%V\(.*\)\%V./"\1"/g
 
-OBS: the \%V option only selects up to the cursor, leavin
+OBS: the `\%V` option only selects up to the cursor, leavin
 one char out of the substituition, that's way we are using
 a dot '.' in the searh, to add a extra char.
 
@@ -124,23 +124,27 @@ at the beginning of your file
 
 ### Usando snippets espelho ou não
 
-        snippet req "require a module" b
-        let ${1:${VISUAL}} = require('${2:$1}');
-        ${0}
-        endsnippet
+``` markdown
+snippet req "require a module" b
+let ${1:${VISUAL}} = require('${2:$1}');
+${0}
+endsnippet
+```
 
 O snippet acima repete na posição 2 o valor da posição 1
 e permite que o segundo possa ser alterado
 
-Outro snippet com conceitos interessantes:
+** Replace spaces or non-ascii with underscores **: As it uses visual mode
+you can select the text, press tab and type 'us' `<tab>`
 
-    snippet us "replace specials with underscores" w
-    `!p
-    import re
-    snip.rv = re.sub("[^0-9a-zA-Z]", "_", snip.v.text)
-    `
-    endsnippet
-
+``` vim
+snippet us "replace specials with underscores" w
+`!p
+import re
+snip.rv = re.sub("[^0-9a-zA-Z]", "_", snip.v.text)
+`
+endsnippet
+```
 
 ### Remove parenthesis of current line
 

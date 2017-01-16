@@ -76,4 +76,9 @@ ${0}
 endsnippet
 
 
-
+snippet us "replace specials with underscores" w
+`!p
+import re
+snip.rv = re.sub("[^0-9a-zA-Z]", "_", snip.v.text)
+`
+endsnippet
