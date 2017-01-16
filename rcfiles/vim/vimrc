@@ -249,6 +249,7 @@ set nobackup
 set fileformats=unix,dos,mac
 set showcmd
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
+set lcs+=space:·
 
 " Visual Settings
 " Notice: syntax enable is better than syntax on
@@ -875,7 +876,7 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
 augroup vimrc-python
   autocmd!
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ formatoption=croq softtabstop=4 smartindent
+      \ softtabstop=4 smartindent
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 

@@ -13,6 +13,14 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### Making vim show spaces tabs and other things
+[source stackoverflow](http://stackoverflow.com/a/38652646/2571881)
+
+``` vim
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
+set lcs+=space:·
+```
+
 ### Editing complex commands and search
 
 When you have complex commands and searches you can open for each of theses modes a special window

@@ -11,6 +11,14 @@ email: voyeg3r -- gmail
 
 Curso do professor Ronaldo Ramos no Youtube: http://goo.gl/n4NxP
 
+### python keylogger
++ https://sourceforge.net/p/pyhook/wiki/PyHook_Tutorial/
++ http://www.thesnoopybub.com/blog/basic-keylogger-in-ubuntu/
++ https://lifestohack.com/how-to-make-very-simple-keylogger/
++ http://www.codelecture.com/wp/python-3-keylogger-w-subs/
+
+
+
 ### Consertando legengas srt com python
 
 source: http://tuxbalaji.wordpress.com/2013/10/05/how-to-fix-subtitles-delay-or-ealier-with-your-movies-by-python-code/
