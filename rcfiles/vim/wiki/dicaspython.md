@@ -16,7 +16,13 @@ Curso do professor Ronaldo Ramos no Youtube: http://goo.gl/n4NxP
 + http://www.thesnoopybub.com/blog/basic-keylogger-in-ubuntu/
 + https://lifestohack.com/how-to-make-very-simple-keylogger/
 + http://www.codelecture.com/wp/python-3-keylogger-w-subs/
-
++ https://github.com/theju/linux-keylogger/blob/master/keylogger.cpp
++ http://www.tecmint.com/how-to-monitor-keyboard-keystrokes-using-logkeys-in-linux/
++ http://porterhau5.com/blog/xkeyscan-parse-linux-keylogger/
++ https://github.com/porterhau5/xkeyscan
++ https://github.com/kernc/logkeys
++ http://www.securitybydefault.com/2013/09/listado-de-keyloggers-windows-linux.html
++ http://jeffhoogland.blogspot.com.br/2014/10/pyhook-for-linux-with-pyxhook.html
 
 
 ### Consertando legengas srt com python

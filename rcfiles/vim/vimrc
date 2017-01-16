@@ -674,7 +674,7 @@ fun! CleanExtraSpaces()
         call setpos('.', save_cursor)
         call setreg('/', old_query)
 endfun
-com! Cls :<silent>! call CleanExtraSpaces()
+com! Cls :call CleanExtraSpaces()
 
 " ************************ End functions *****************
 
