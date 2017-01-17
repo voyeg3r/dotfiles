@@ -961,6 +961,19 @@ vim *.txt
 :bufdo execute "normal @a" | write
 ```
 
+### Changing a vim macro
+
+Let's say you have a macro 'a' to insert it into your texto just do:
+
+``` vim
+:put a
+```
+or in insert mode:
+
+``` vim
+ctrl-r a
+```
+
 ### Dealig with previous yank register
 http://stackoverflow.com/q/12547369/
 
@@ -2198,6 +2211,6 @@ command! -nargs=0 H2M :%!pandoc -f html -t markdown<CR>
 ```
 ### References
 * http://vi.stackexchange.com/q/2268/
-
+* http://dalibornasevic.com/posts/43-12-vim-tips
 
 vim: ft=markdown
