@@ -1,5 +1,7 @@
 # Arquivo: zshell tips and tricks
 
+see also [zshtips](zshtips)
+
 ``` markdown
 File:		 ZsHell.md
 Created:	 sex 06 jan 2017 10:18:17 BRT

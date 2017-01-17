@@ -1,5 +1,7 @@
 # Vim tips for everyone
 
+see also [Best of vim tips](vimbesttips.md)
+
 ```
 File:		 DicasVim.md
 Created:     Sáb 06/Nov/2010 hs 18:10
@@ -38,6 +40,11 @@ solution
 
 ``` vim
 d]}
+```
+to see more:
+
+``` vim
+:h ]}
 ```
 
 ### Making vim show spaces tabs and other things

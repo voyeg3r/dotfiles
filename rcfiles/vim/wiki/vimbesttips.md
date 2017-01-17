@@ -4,18 +4,17 @@ zzapper 16 Years of Vi + 9+ years of Vim and still learning
 
 ### These Tips are now being maintained at zzapper.co.uk/vimtips.html
 
+[Tips Home](http://www.zzapper.co.uk/)
 
-Tips Home
+[Vim Tips Blog (NEW)](http://www.vimtips-blog.com/)
 
-Vim Tips Blog (NEW)
+[ZSH](http://www.zzapper.co.uk/zshtips.html)
 
-ZSH
+[Cygwin](http://www.zzapper.co.uk/cygwintips.php)
 
-Cygwin
+[VimTools](http://bestfreeprogramtips.blogspot.com/)
 
-VimTools
-
-Buy Vim Book Support VIM
+[Buy Vim Book Support VIM](http://iccf-holland.org/click5.html)
 
 Submit to Social Websites
 
