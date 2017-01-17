@@ -15,6 +15,22 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### open the file on the line where the 3rd occurrence of the pattern appears
+[tecmint.com](http://www.tecmint.com/how-to-use-vi-and-vim-editor-in-linux/)
+
+    vim filename +$(grep -in pattern filename | sed -n 3p | cut -d: -f1)
+
+Let’s take a closer look at what the above command does:
+
+    grep -in pattern filename – displays all lines from filename where pattern
+    occurs, with the line number at the beginning of each output line. sed -n
+    3p – displays the 3rd line from the preceding pipeline’s output.
+
+Finally,
+
+    cut -d: -f1 returns the first field of the previous pipeline with the colon
+    (:) is the field separator.
+
 ### Delete till end of current parenthesis block in vim
 
 Say I am editing this json
@@ -48,7 +64,7 @@ to see more:
 ```
 
 ### Making vim show spaces tabs and other things
-[source stackoverflow](http://stackoverflow.com/a/38652646/2571881)
+[Source stackoverflow](http://stackoverflow.com/a/38652646/2571881)
 
 ``` vim
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
@@ -289,8 +305,7 @@ many useful features to be disabled. The -N flag prevents this by setting the
     Ctrl-w Ctrl-6
 
 ### Copy from one buffer to another
-
-source: http://stackoverflow.com/questions/41259890/
+[stackoverflow](http://stackoverflow.com/q/41259890/)
 
 I try to copy the lines 7,11 from buffer 2 to my buffer 3 without leaving
 buffer 3. Is it possible to do that with a simple command?
@@ -467,7 +482,7 @@ In order to preserve indentation during paste you could use <c-r><c-p>* or
 
 ### Como criar um diário no vim usando o vimwiki
 
-source: http://stackoverflow.com/questions/40414720/
+source: http://stackoverflow.com/q/40414720/
 
     vim +VimwikiMakeDiaryNote
 
@@ -1162,7 +1177,7 @@ gk ............ sobe
 
       :enew .......... é melhor porque preserva o arquivo anterior na lista de buffers
 
-      Source: http://stackoverflow.com/questions/256204/
+      Source: http://stackoverflow.com/q/256204/
 
 ### Para executar uma função do vim que está na área de transferência
 
@@ -1187,7 +1202,7 @@ bla bla bla
 
 ### Incrementando números ou decrementando com uma função
 
-source: http://stackoverflow.com/questions/4951533/
+source: http://stackoverflow.com/q/4951533/
 
 Se eu tiver um arquivo assim:
 
@@ -1489,7 +1504,7 @@ This string doesn't contain any quotes, isn't it.
 ```
 
 ### Numerando linhas com novo comando
-source: http://stackoverflow.com/questions/4224410/
+source: http://stackoverflow.com/q/4224410/
 
 ``` vim
 command! -nargs=0 -range=% Number <line1>,<line2>s/^\zs/\=(line('.') - <line1>+1).' '
@@ -1820,7 +1835,7 @@ gd ........... go to definition
 
     inverter uma string por palavras
 
-    source: http://stackoverflow.com/questions/5532431/
+    source: http://stackoverflow.com/q/5532431/
 
     command! ReverseLine call setline('.', join(reverse(split(getline('.')))))
 
@@ -2118,7 +2133,7 @@ endfunction"}}}
 ```
 
 ### Adding blank lines  - adding empty lines between lines
-source: [superuser.com](http://superuser.com/questions/592503/)
+source: [superuser.com](http://superuser.com/q/592503/)
 
     :g/.\n\n\@!/norm o
 
