@@ -3,7 +3,7 @@
 ```
 File:		 DicasVim.md
 Created:     Sáb 06/Nov/2010 hs 18:10
-Last Change: sex 13 jan 2017 14:16:34 BRT
+Last Change: ter 17 jan 2017 17:50:13 BRT
 Author:		 Sergio Araujo
 Site:		 http://vivaotux.blogspot.com
 e-mail:      <voyeg3r ✉ gmail.com>
@@ -12,6 +12,33 @@ Github:      https://github.com/voyeg3r
 ```
 
 See also: [Regex](Regex) page
+
+### Delete till end of current parenthesis block in vim
+
+Say I am editing this json
+
+``` json
+{
+  "a": {"language": "python"},
+  "b": {},
+  "c": {"language": "java"},
+  "d": {"encoding": "utf-16"}
+}
+```
+
+My cursor is at b of `"b": {}`. I want to delete till the end of current `{}` block. So it'll look like,
+
+``` json
+{
+  "a": {"language": "python"},
+  "
+}
+```
+solution
+
+``` vim
+d]}
+```
 
 ### Making vim show spaces tabs and other things
 [source stackoverflow](http://stackoverflow.com/a/38652646/2571881)
@@ -583,6 +610,10 @@ Supose you have these lines:
 " promote each digit matched in the above search
 
         :%s//\=submatch(0)-1/g
+
+
+		:s/\d\+/\=submatch(0) + 1/
+        increases digits
 
 ### Jumping to edit positions and insert position
 
@@ -2161,3 +2192,5 @@ command! -nargs=0 H2M :%!pandoc -f html -t markdown<CR>
 ### References
 * http://vi.stackexchange.com/q/2268/
 
+
+vim: ft=markdown
