@@ -15,6 +15,10 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### Browsing vim help
+
+To open a link just press `Ctrl-]` and to jump back `Ctrl-t` or `Ctrl-o`
+
 ### open the file on the line where the 3rd occurrence of the pattern appears
 [tecmint.com](http://www.tecmint.com/how-to-use-vi-and-vim-editor-in-linux/)
 
@@ -215,6 +219,8 @@ endsnippet
     \) .................. end group 1
     ) ................... close parenthesis
 
+    :s,(\|),,g
+
 
 ### Quickfix list manipulations and :cdo command
 
@@ -266,7 +272,7 @@ ao instalar o vimgolf como recomenda o site digite
 
     PATH=$PATH:/home/sergio/.gem/ruby/2.3.0/bin
 
-See also [[vimbesttips]]
+See also [vimbesttips](vimbesttips)
 
 ### Start vim with no plugins
 source: Book practical vim
@@ -284,21 +290,21 @@ many useful features to be disabled. The -N flag prevents this by setting the
 
 ### Magic with expression register
 
-    6 chairs, each costing $35, totals $
+``` markdown
+6 chairs, each costing $35, totals $
 
-    A ............... start insert mode at the end of line
-    Ctrl-r = ........ starts expression register (cursor at the bottom)
-    6 * 35 <enter> .. inserts the result
+A ............... start insert mode at the end of line
+Ctrl-r = ........ starts expression register (cursor at the bottom)
+6 * 35 <enter> .. inserts the result
+```
 
 ### Viewing where maps are setted
 
-``` vim
-:verbose map
+    :verbose map
 
-:redir! > vim_keys.txt
-:silent verbose map
-:redir END
-```
+    :redir! > vim_keys.txt
+    :silent verbose map
+    :redir END
 
 ### Reopen previous buffer in a new window
 
@@ -680,6 +686,7 @@ Para o trecho acima usamos
 ### Writing vim functions
 
     :put =system('echo $RANDOM')
+    9@:  ....................... 9 times last command
 
     :onoremap ih :<c-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<cr>
 
@@ -2228,4 +2235,4 @@ command! -nargs=0 H2M :%!pandoc -f html -t markdown<CR>
 * http://vi.stackexchange.com/q/2268/
 * http://dalibornasevic.com/posts/43-12-vim-tips
 
-vim: ft=markdown
+vim:ft=markdown

@@ -1,22 +1,31 @@
 ### Introdução
 
-find -type f -maxdepth 1 | xargs -i iconv -f iso-8859-1 -t utf-8 {} -o {}
+O comando iconv converte a codificação de caracteres de arquivos,
+por exemplo: a codificação ISO-8859-15 exibe acentos corretamente no windows
+mas no Linux costuma exibir caracteres estranhos, sendo utf-8 o padrão para este
+sistema
+
+    conv -f ISO-8859-1 -t UTF-8 < frozen.pob.srt-backup > output.txt
+
+    find -type f -maxdepth 1 | xargs -i iconv -f iso-8859-1 -t utf-8 {} -o {}
 
 OBS: se o arquivo já é utf-8 e rodarmos a conversão para utf-8 pode
 dar erro, daí podemos fazer um teste
 
 
+``` sh
 d2u (){
     if (( ! $# )); then
         echo "Usage: $0:t input-dosfile output-unixfile"
         return 1
     fi
 
-    codification="`file -bi "$1" | awk -F"=" '{print $NF}'`"
-    [[ "$codification" != "utf-8" ]]  && iconv -f ISO8859-9 -t UTF-8 "$1" > "${1}.changed"
+    CODIFICATION="`file -bi "$1" | awk -F"=" '{print $NF}'`"
+    [[ "$CODIFICATION" != "utf-8" ]]  && iconv -f $CODIFICATION -t UTF-8 "$1" > "${1}.changed"
 
     sed -i 's/\x0D$//' "${1}.changed"
 }
+```
 
 
 
@@ -81,4 +90,4 @@ then
 	echo -e "\nConversao terminada com sucesso!\n"
 fi
 
-
+vim: ft=markdown

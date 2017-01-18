@@ -1,0 +1,43 @@
+#!/usr/bin/env zsh
+# Created: qua 18 jan 2017 14:43:54 BRT
+# Last Change: dom 08 jan 2017 12:44:01 BRT
+# Author: Sergio Araujo
+# Twitter: @voyeg3r
+
+# comando de exemplo
+# iconv -f ISO-8859-1 -t UTF-8 < frozen.pob.srt-backup > output.txt
+#
+USAGE(){
+cat <<EOF
+
+  + -------------------------------------------------------+
+  | This script changes file codification to UTF8          |
+  | if the orignal codification is different from UTF8 it  |
+  | makes the change using "iconv"                         |
+  |                                                        |
+  | USAGE EXAMPLE                                          |
+  + -------------------------------------------------------+
+  | ${0:t} ISO-8859-1.file                                  |
+  + -------------------------------------------------------+
+
+EOF
+}
+
+if (( ! $# )); then
+    USAGE
+    exit 1
+fi
+
+
+OUTFILE="${1}.UTF-8"
+
+echo "Generating utf-8 version to ${1} ..."
+
+CODIFICATION=$(file -bi frozen.pob.srt | awk -F'=' '{print $NF}' | tr 'a-z' 'A-Z')
+
+[[ "$CODIFICATION" != "utf-8"  ]] && iconv -f "${CODIFICATION:u}" -t UTF-8 < "$1" > $OUTFILE
+
+sed -i 's/\x0D//' $OUTFILE
+
+echo "${OUTFILE} created"
+

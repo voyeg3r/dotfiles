@@ -1,26 +1,25 @@
 #!/usr/bin/env bash
-
-# if (( ! $# )); then
-#     echo "Usage: $0:t input-dosfile output-unixfile"
-#     return 1
-# fi
-
+# Last Change: 2017-01-18 14:35:18
 
 # filename=$(basename "$fullfile")
 # extension="${filename##*.}"
 # filename="${filename%.*}"
 
-# executar dois testes, se é utf-8 e se é formato DOS
+if (( ! $# )); then
+    echo "This script changes iso-8859-1 to utf-8"
+    echo "Usage: $0:t input-dosfile output-unixfile"
+    return 1
+fi
 
 
-outfile="${1}".utf-8
+OUTFILE="${1}".utf-8
 
-cat "$1" > "$outfile"
+cat "$1" > "$OUTFILE"
 
-codification="`file -bi "$1" | awk -F"=" '{print $NF}'`"
+CODIFICATION="`file -bi "$1" | awk -F"=" '{print $NF}'`"
 
-[[ "$codification" != "utf-8" ]]  && iconv -f ISO8859-1 -t UTF-8 "$1" > $outfile
+[[ "$CODIFICATION" != "utf-8" ]]  && iconv -f $CODIFICATION  -t UTF-8 "$1" > $OUTFILE
 
-sed -i 's/\x0D$//' $outfile
+sed -i 's/\x0D$//' $OUTFILE
 
-mv -f $outfile ${outfile%.utf-8}
+mv -f $OUTFILE ${OUTFILE%.utf-8}

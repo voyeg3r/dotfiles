@@ -683,6 +683,8 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+nnoremap <F10> :set list!<CR>
+
 nnoremap <F5> :GundoToggle<CR>
 
 " toggle hightli
