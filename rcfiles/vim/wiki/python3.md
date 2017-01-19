@@ -11,6 +11,21 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
+### References
++ http://excript.com/curso-de-python.html
++ [curso-completo](https://www.youtube.com/watch?v=j94IGZmwtYI&list=PLesCEcYj003QxPQ4vTXkt22-E11aQvoVj)
+
+### Regex in python
+
+``` python
+def strip_html(text):
+    """Remove todo o html de uma determinada string. [2]
+    """
+    import re
+    s = re.sub('<[^>]*>', '', text)
+    return s
+```
+
 ### Getting rid of string punctuation
 
 ``` python
@@ -19,6 +34,23 @@ s = "Uma string com set's ação e à erros!"
 exclude = set(string.punctuation)
 s = ''.join(ch for ch in s if ch not in exclude)
 ```
+
+Another method
+
+``` python
+string = "Special $#! characters   spaces 888323"
+''.join(e for e in string if e.isalnum())
+'Specialcharactersspaces888323'
+```
+
+One more
+
+``` python
+import re
+cleanString = re.sub('\W+','', string )
+```
+
+
 
 #### curso completo no youtube
 
