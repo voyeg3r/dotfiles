@@ -11,6 +11,15 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
+### Getting rid of string punctuation
+
+``` python
+s = "Uma string com set's ação e à erros!"
+
+exclude = set(string.punctuation)
+s = ''.join(ch for ch in s if ch not in exclude)
+```
+
 #### curso completo no youtube
 
 * [canal ignorancia zero](https://www.youtube.com/channel/UCmjj41YfcaCpZIkU-oqVIIw)
@@ -90,3 +99,19 @@ print('What is your name?')
 name = sys.stadin.readline()
 print('Hello', name)
 ```
+
+### Manipulation the clipboard
++ https://github.com/asweigart/pyperclip
+
+On Linux, this module makes use of the `xclip` or `xsel` commands, which should
+come with the os. Otherwise run "`sudo apt-get install xclip`" or
+"`sudo apt-get install xsel`" (Note: xsel does not always seem to work.)
+
+``` python
+import pyperclip
+pyperclip.copy('The text to be copied to the clipboard.')
+pyperclip.paste()
+'The text to be copied to the clipboard.'
+```
+
+

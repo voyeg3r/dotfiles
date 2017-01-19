@@ -9,7 +9,15 @@
     yaourt -S python-pyperclip
 
     TODO: fix a - at end line
+
+    Here we make use of pyperclip library
+    Python module for cross-platform clipboard functions
+
+    https://pypi.python.org/pypi/pyperclip
+    https://github.com/asweigart/pyperclip
 """
+
+
 # uma string's de teste ?@
 
 import string
@@ -18,6 +26,9 @@ import pyperclip
 # as we have a string we can lower case it
 text = pyperclip.paste().lower()
 
+
+exclude = set(string.punctuation)
+text = ''.join(ch for ch in text if ch not in exclude)
 
 start='[sound:'
 ending='.mp3' # extensão desejada

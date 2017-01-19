@@ -229,6 +229,12 @@ copen
 ccl
 ```
 
+``` vim
+:vimgrep main {1,2,3}.cpp
+:cwindow
+:cdo s/foo/bar/g
+```
+
 Um exemplo de fluxo de trabalho com o comando `:cdo`
 Primeiro usar o grep para popular o quickfixlist
 
