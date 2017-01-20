@@ -23,7 +23,7 @@ cat <<EOF
 EOF
 }
 
-if (( ! $# )); then
+if [ "$#" -ne 1 ]; then
     USAGE
     exit 1
 fi
