@@ -33,7 +33,7 @@ OUTFILE="${1}.UTF-8"
 
 echo "Generating utf-8 version to ${1} ..."
 
-CODIFICATION=$(file -bi frozen.pob.srt | awk -F'=' '{print $NF}' | tr 'a-z' 'A-Z')
+CODIFICATION=$(file -bi "${1}" | awk -F'=' '{print $NF}' | tr 'a-z' 'A-Z')
 
 [[ "$CODIFICATION" != "utf-8"  ]] && iconv -f "${CODIFICATION:u}" -t UTF-8 < "$1" > $OUTFILE
 

@@ -13,7 +13,12 @@ Github:      https://github.com/voyeg3r
 
 ### References
 + http://excript.com/curso-de-python.html
-+ [curso-completo](https://www.youtube.com/watch?v=j94IGZmwtYI&list=PLesCEcYj003QxPQ4vTXkt22-E11aQvoVj)
++ [curso-completo](https://youtu.be/j94IGZmwtYI?list=PLesCEcYj003QxPQ4vTXkt22-E11aQvoVj)
++ [lista de aulas](http://excript.com/curso-de-python.html)
++ http://www.discoversdk.com/blog/10-interesting-python-modules-to-learn-in-2016
+
+### Python libs
++ https://docs.python.org/2/library/string.html
 
 ### Regex in python
 

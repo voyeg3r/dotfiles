@@ -17,7 +17,6 @@
     https://github.com/asweigart/pyperclip
 """
 
-
 # uma string's de teste ?@
 
 import string
@@ -26,17 +25,14 @@ import pyperclip
 # as we have a string we can lower case it
 text = pyperclip.paste().lower()
 
-
-exclude = set(string.punctuation)
-text = ''.join(ch for ch in text if ch not in exclude)
+text = ''.join(ch for ch in text if ch not in string.punctuation)
+middle = text.replace(' ','-')
 
 start='[sound:'
 ending='.mp3' # extensão desejada
 
-# string.punctuation - contem vários caracteres especiais
+# string.punctuation - has all this:
 # '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~''"'
-
-middle = str(''.join(x for x in text if x not in string.punctuation).replace(' ','-'))
 
 #output = start + middle + ending
 output = middle + ending
@@ -45,3 +41,4 @@ print('your clipboard is:\n', output, sep='')
 # print(output)
 
 pyperclip.copy(output)
+
