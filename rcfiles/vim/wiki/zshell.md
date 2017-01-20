@@ -17,6 +17,7 @@ Github:      https://github.com/voyeg3r
 * http://zshwiki.org/home/builtin/functions/zmv
 * http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
 * http://chneukirchen.org/dotfiles/.zshrc
+* http://wonderwall.hatenablog.com/entry/2016/06/19/192429
 
 
 ### arrays in zshell

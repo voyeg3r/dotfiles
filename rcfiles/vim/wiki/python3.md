@@ -16,6 +16,7 @@ Github:      https://github.com/voyeg3r
 + [curso-completo](https://youtu.be/j94IGZmwtYI?list=PLesCEcYj003QxPQ4vTXkt22-E11aQvoVj)
 + [lista de aulas](http://excript.com/curso-de-python.html)
 + http://www.discoversdk.com/blog/10-interesting-python-modules-to-learn-in-2016
++ https://www.youtube.com/watch?v=1F_OgqRuSdI
 
 ### Python libs
 + https://docs.python.org/2/library/string.html

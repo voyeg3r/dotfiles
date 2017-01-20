@@ -304,6 +304,7 @@
 [tcpflow](tcpflow.md)
 [tee](tee.md)
 [top](top.md)
+[touch](touch)
 [tr](tr.md)
 [trap](trap.md)
 [tree](tree.md)
