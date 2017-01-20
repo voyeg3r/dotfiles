@@ -21,6 +21,41 @@ Github:      https://github.com/voyeg3r
 ### Python libs
 + https://docs.python.org/2/library/string.html
 
+### Renaming files
+[from stackoverflow](http://stackoverflow.com/q/2759067/)
+
+Say I have a file called CHEESE_CHEESE_TYPE.*** and want to remove CHEESE_ so
+my resulting filename would be CHEESE_TYPE
+
+
+Assuming you are already in the directory, and that the "first 8 characters"
+from your comment hold true always. (Although "CHEESE_" is 7 characters... ? If
+so, change the 8 below to 7)
+
+``` python
+from glob import glob
+from os import rename
+for fname in glob('*.prj'):
+    rename(fname, fname[8:])
+```
+
+
+``` python
+import os
+for fileName in os.listdir("."):
+    os.rename(fileName, fileName.replace("CHEESE_CHEESE_", "CHEESE_"))
+```
+
+
+``` python
+import os
+for dpath, dnames, fnames in os.walk('/path/to/directory'):
+    for f in fnames:
+        os.chdir(dpath)
+        if f.startswith('cheese_'):
+            os.rename(f, f.replace('cheese_', ''))
+```
+
 ### Regex in python
 
 ``` python
