@@ -20,6 +20,93 @@ Github:      https://github.com/voyeg3r
 
 ### Python libs
 + https://docs.python.org/2/library/string.html
++ https://pypi.python.org/pypi/natsort
+
+**Natual sorting list items**
+
+    sudo pip install natsort
+
+
+When you try to sort a list of strings that contain numbers, the normal python
+sort algorithm sorts lexicographically, so you might not get the results that
+you expect:
+
+``` python
+a = ['a2', 'a9', 'a1', 'a4', 'a10']
+sorted(a)
+['a1', 'a10', 'a2', 'a4', 'a9']
+```
+
+
+Notice that it has the order (‘1’, ‘10’, ‘2’) - this is because the list is
+being sorted in lexicographical order, which sorts numbers like you would
+letters (i.e. ‘b’, ‘ba’, ‘c’).
+
+natsort provides a function natsorted that helps sort lists “naturally”, either
+as real numbers (i.e. signed/unsigned floats or ints), or as versions. Using
+natsorted is simple:
+
+``` python
+from natsort import natsorted
+a = ['a2', 'a9', 'a1', 'a4', 'a10']
+natsorted(a)
+['a1', 'a2', 'a4', 'a9', 'a10']
+```
+
+### Natural sorting filenames
+[stackoverflow](http://stackoverflow.com/q/4836710/)
+
+DOES PYTHON HAVE A BUILT IN FUNCTION FOR STRING NATURAL SORT?
+
+Using Python 3.x, I have a list of strings for which I would like to perform
+a natural alphabetical sort.
+
+Natural sort: The order by which files in Windows are sorted.
+For instance, the following list is naturally sorted (what I want):
+
+    ['elm0', 'elm1', 'Elm2', 'elm9', 'elm10', 'Elm11', 'Elm12', 'elm13']
+
+And here's the "sorted" version of the above list (what I have):
+
+    ['Elm11', 'Elm12', 'Elm2', 'elm0', 'elm1', 'elm10', 'elm13', 'elm9']
+
+I'm looking for a sort function which behaves like the first one.
+
+
+``` python
+data = ['elm13', 'elm9', 'elm0', 'elm1', 'Elm11', 'Elm2', 'elm10']
+```
+
+Let's analyse the data. The digit capacity of all elements is 2. And there are
+3 letters in common literal part 'elm'. So, the maximal length of element is 5.
+We can increase this value to make sure (for example, to 8).
+
+Bearing that in mind, we've got a one-line solution:
+
+    data.sort(key=lambda x: '{0:0>8}'.format(x).lower())
+
+without regular expressions and external libraries!
+
+    print(data)
+
+    >>> ['elm0', 'elm1', 'Elm2', 'elm9', 'elm10', 'Elm11', 'elm13']
+
+Explanation:
+
+``` python
+for elm in data:
+    print('{0:0>8}'.format(elm).lower())
+
+>>>
+0000elm0
+0000elm1
+0000elm2
+0000elm9
+000elm10
+000elm11
+000elm13
+```
+
 
 ### Renaming files
 [from stackoverflow](http://stackoverflow.com/q/2759067/)
