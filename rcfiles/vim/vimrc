@@ -110,6 +110,7 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+Plug 'thinca/vim-quickrun'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
 "Plug 'klen/python-mode'
@@ -491,7 +492,8 @@ nmap <leader>a :Age<cr>
 " if you want to repeat the last substituition globally g&
 nmap <leader>l :exec getline('.')<cr>
 nmap <leader>c q:
-nmap <leader>r @:
+"nmap <leader>r @:
+nmap <leader>r :QuickRun<cr>
 nmap <leader>s :&&<cr>
 nmap <leader>qs q/
 

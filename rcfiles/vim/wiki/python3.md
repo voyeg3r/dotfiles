@@ -17,10 +17,20 @@ Github:      https://github.com/voyeg3r
 + [lista de aulas](http://excript.com/curso-de-python.html)
 + http://www.discoversdk.com/blog/10-interesting-python-modules-to-learn-in-2016
 + https://www.youtube.com/watch?v=1F_OgqRuSdI
++ https://www.youtube.com/watch?v=ve2pmm5JqmI (renaming files)
 
 ### Python libs
-+ https://docs.python.org/2/library/string.html
-+ https://pypi.python.org/pypi/natsort
++ [manipulatin strings](https://docs.python.org/2/library/string.html)
++ [natural sorting](https://pypi.python.org/pypi/natsort)
++ [clipboard manipulation](https://pypi.python.org/pypi/pyperclip)
++ os module
+
+** Os Mudule **
+
+``` python
+import os
+print(dir(os))
+```
 
 **Natual sorting list items**
 
@@ -52,6 +62,32 @@ a = ['a2', 'a9', 'a1', 'a4', 'a10']
 natsorted(a)
 ['a1', 'a2', 'a4', 'a9', 'a10']
 ```
+### Reading files
+
+Using this approach the file is automatically closed
+``` python
+with open('test.txt' 'r') as f:
+    f_contents = f.read()
+    print(f_contents)
+```
+
+This way we can iterate over all lines
+without risk of getting an error
+``` python
+with open('test.txt' 'r') as f:
+
+    for line in f:
+        print(line, end='')
+```
+
+[source](https://www.youtube.com/watch?v=Uh2ebFW8OYM)
+``` python
+with open('test.txt', 'r') as rf:
+    with open('test_copy.txt', 'w') as wf:
+        for line in rf:
+            wf.write(line)
+```
+In case of binary files like images we have to use binary mode
 
 ### Natural sorting filenames
 [stackoverflow](http://stackoverflow.com/q/4836710/)
