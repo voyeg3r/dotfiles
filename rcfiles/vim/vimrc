@@ -110,7 +110,8 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
-Plug 'thinca/vim-quickrun'
+Plug 'tpope/vim-dispatch'
+Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
 "Plug 'klen/python-mode'
@@ -139,6 +140,8 @@ Plug 'kshenoy/vim-signature' "Plugin to toggle, display and navigate marks
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
 Plug 'endel/vim-github-colorscheme'
+Plug 'jnurmine/Zenburn'
+Plug 'altercation/vim-colors-solarized'
 
 " HTML Bundle
 Plug 'mattn/emmet-vim'
@@ -492,9 +495,7 @@ nmap <leader>a :Age<cr>
 " if you want to repeat the last substituition globally g&
 nmap <leader>l :exec getline('.')<cr>
 nmap <leader>c q:
-"nmap <leader>r @:
-nmap <leader>r :QuickRun<cr>
-nmap <leader>s :&&<cr>
+nmap <leader>r :Dispatch python %<cr>
 nmap <leader>qs q/
 
 " this function gets last 20 cmds to new buffer
@@ -684,6 +685,9 @@ set nopaste
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+set splitbelow
+set splitright
 
 nnoremap <F10> :set list!<CR>
 

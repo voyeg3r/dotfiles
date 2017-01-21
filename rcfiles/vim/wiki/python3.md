@@ -19,6 +19,20 @@ Github:      https://github.com/voyeg3r
 + https://www.youtube.com/watch?v=1F_OgqRuSdI
 + https://www.youtube.com/watch?v=ve2pmm5JqmI (renaming files)
 
+### Manipulating string
+
+colocando zeros à esquerda - leading zeros
+``` python
+text = "22"
+print(text.zfill(4))
+0022
+```
+For numbers
+``` python
+print('{0:03d}'.format(4))
+```
+
+
 ### Python libs
 + [manipulatin strings](https://docs.python.org/2/library/string.html)
 + [natural sorting](https://pypi.python.org/pypi/natsort)
