@@ -18,6 +18,8 @@ Github:      https://github.com/voyeg3r
 + http://www.discoversdk.com/blog/10-interesting-python-modules-to-learn-in-2016
 + https://www.youtube.com/watch?v=1F_OgqRuSdI
 + https://www.youtube.com/watch?v=ve2pmm5JqmI (renaming files)
++ https://www.youtube.com/channel/UCI0vQvr9aFn27yR6Ej6n5UA
++ https://dbader.org/
 
 ### Manipulating string
 

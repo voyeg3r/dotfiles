@@ -23,6 +23,7 @@ Github:      https://github.com/voyeg3r
 
 + https://github.com/hlissner/zsh-autopair
 + [list of plugins](https://github.com/unixorn/awesome-zsh-plugins#plugins)
++ [zsh like sensible](https://github.com/willghatch/zsh-saneopt)
 
 ### zplug plugin manager
 + https://github.com/zplug/zplug
