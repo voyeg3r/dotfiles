@@ -19,6 +19,24 @@ Github:      https://github.com/voyeg3r
 * http://chneukirchen.org/dotfiles/.zshrc
 * http://wonderwall.hatenablog.com/entry/2016/06/19/192429
 
+### zsh auto-pairs plugin
+
++ https://github.com/hlissner/zsh-autopair
++ [list of plugins](https://github.com/unixorn/awesome-zsh-plugins#plugins)
+
+### zplug plugin manager
++ https://github.com/zplug/zplug
+
+    export ZPLUG_HOME=$HOME/.dotfiles/rcfiles/zsh/zplug
+    git clone https://github.com/zplug/zplug $ZPLUG_HOME
+
+    curl -sL zplug.sh/installer | zsh
+
+#### config
+
+    source ~/.zplug/init.zsh
+    source ~/.dotfiles/rcfiles/zsh/zplug/init.zsh
+
 
 ### arrays in zshell
 

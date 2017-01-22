@@ -85,10 +85,48 @@ for i in range(1,11):
     print(sentence)
 ```
 
+``` python
+for i in range(1,11):
+    sentence = 'The value is {:02}'.format(i)
+    print(sentence)
+```
+
+**Printing decimal numbers**
+``` python
+import math
+pi = math.pi
+
+sentence = 'Pi is equl to {:.2f}'.format(pi)
+```
+
+** Printing dates **
+``` python
+import datetime
+my_date = datetime.datetime(2006, 9, 24, 12, 30, 45)
+sentence = '{:%B %d, %Y}'.format(my_date)
+
+Semptember 24, 2016
+
+
+
+``` python
+import datetime
+
+my_date = datetime.datetime(2006, 9, 24, 12, 30, 45)
+
+sentence = '{0:%B %d, %Y} fell on a {0:%A} and was the {0:%j} day of the year'.format(my_date)
+print(sentence)
+```
+
+### Better completion at console
+
+    sudo pip install ptpython
+
 ### Python libs
 + [manipulatin strings](https://docs.python.org/2/library/string.html)
 + [natural sorting](https://pypi.python.org/pypi/natsort)
 + [clipboard manipulation](https://pypi.python.org/pypi/pyperclip)
++ [python3 libs](https://pypi.python.org/pypi?:action=browse&c=533&show=all)
 + os module
 
 ** Os Mudule **

@@ -83,7 +83,7 @@ ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions git fasd extract systemd.plugin.zsh command-not-found history-substring-search )
+plugins=(zsh-autosuggestions git fasd extract systemd.plugin.zsh command-not-found history-substring-search zsh-autopair )
 
 eval "$(fasd --init auto)"
 eval "$(fasd --init posix-alias zsh-hook)"
@@ -345,18 +345,8 @@ export OOO_FORCE_DESKTOP=gnome # For OpenOffice to look more gtk-friendly.
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden  --follow --glob "!.git/*"'
 
-# style for zaw
-zstyle ':filter-select:highlight' matched fg=yellow,standout
-zstyle ':filter-select' max-lines 10 # use 10 lines for filter-select
-zstyle ':filter-select' max-lines -10 # use $LINES - 10 for filter-select
-zstyle ':filter-select' rotate-list yes # enable rotation for filter-select
-zstyle ':filter-select' case-insensitive yes # enable case-insensitive search
-zstyle ':filter-select' extended-search yes # see below
-zstyle ':filter-select' hist-find-no-dups yes # ignore duplicates in history source
-zstyle ':filter-select' escape-descriptions no # display literal newlines, not \n, etc
-
-bindkey '^ ' autosuggest-accept
-source /home/sergio/.dotfiles/rcfiles/zsh/zaw/zaw.zsh
-bindkey '^R' zaw-history
-
 GNOME_VERSION=$(gnome-shell --version)
+
+# python environment
+# export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonrc.py
+# export PYTHON_HISTORY_FILE=~/.python_history
