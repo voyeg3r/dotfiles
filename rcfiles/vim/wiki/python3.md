@@ -32,6 +32,58 @@ For numbers
 print('{0:03d}'.format(4))
 ```
 
+** Formatting options **
+``` python
+person = {'name': 'Jenn', 'age': 23}
+sentence = 'My name is {} and I am {} years old.'.format(person['name'], person['age'])
+print(sentence)
+
+person = {'name': 'Jenn', 'age': 23}
+sentence = 'My name is {0} and I am {1} years old.'.format(person['name'], person['age'])
+print(sentence)
+
+person = {'name': 'Jenn', 'age': 23}
+sentence = 'My name is {0[name]} and I am {0[age]} years old.'.format(person)
+print(sentence)
+
+l = ['Jenn', 23]
+sentence = 'My name is {0[0]} and I am {0[1]} years old.'.format(l)
+
+# another example
+tag = 'h1'
+text = 'This is a headline'
+
+sentence = '<{0}>{1}</{0}>'.format(tag, text)
+print(sentence)
+
+
+class Person():
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+p1 = Person('Jack', '33')
+
+sentence = 'My name is {0.name} and I am {0.age} years old.'.format(p1)
+```
+
+Using kwords
+``` python
+sentence = 'My name is {name} and I am {age} years old.'.format(name='Jenn', age='30')
+print(sentence)
+```
+Umpacking dictionaries
+``` python
+person = {'name': 'Jenn', 'age': 23 }
+sentence = 'My name is {name} and I am {age} years old.'.format(**person)
+```
+Formatting numbers print
+``` python
+for i in range(1,11):
+    sentence = 'The value is {}'.format(i)
+    print(sentence)
+```
 
 ### Python libs
 + [manipulatin strings](https://docs.python.org/2/library/string.html)
