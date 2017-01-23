@@ -43,7 +43,7 @@ sudo wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysct
 gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 
 # github url shortner
-gem install git.io 
+gem install git.io
 
 # to be able to import turtle in python
 sudo pacman -S community/python-pmw
@@ -130,7 +130,7 @@ yaourt -S gnome-terminal-fedora
 
 sudo pacman -S archlinux-wallpaper
 
-# wallpaper changer for linux 
+# wallpaper changer for linux
 yaourt variety
 
 # messenger do facebook
@@ -190,7 +190,7 @@ yaourt -S aur/zattoo
 
 # neovim
 yaourt -S aur/neovim-git aur/atom-editor-git
-yaourt -S aspell-pt aspell-en 
+yaourt -S aspell-pt aspell-en
 
 # to understand what the bellow command does see this:
 # http://stackoverflow.com/questions/14040351/filtering-zsh-history-by-command
@@ -298,9 +298,9 @@ yaourt -S extra/feh
 yaourt aur/periscope nautilus-periscope
 
 installxfceterminal(){
-		#light terminal with transparency support
-		yaourt -S extra/xfce4-terminal
-		sed -i.backup '/MiscMenubarDefault/s/TRUE$/FALSE/g' ~/.config/xfce4/terminal/terminalrc
+#light terminal with transparency support
+yaourt -S extra/xfce4-terminal
+sed -i.backup '/MiscMenubarDefault/s/TRUE$/FALSE/g' ~/.config/xfce4/terminal/terminalrc
 } && installxfceterminal
 
 # how configure nautilus-open-terminal with xfce4-terminal
@@ -386,20 +386,20 @@ yaourt -S community/txt2tags
 # Server = http://xsounds.org/~haskell/core/$arch
 
 admintools () {
-    local programs
-    programs=( gparted nmap arp-scan unetbootin polkit-gnome curl \
-        rsync git gksu gksudo lsof ssh dnsmasq python-setuptools gvim terminator aria2c zsh detox )
+local programs
+programs=( gparted nmap arp-scan unetbootin polkit-gnome curl \
+rsync git gksu gksudo lsof ssh dnsmasq python-setuptools gvim terminator aria2c zsh detox )
 
-    for program in ${programs[@]}; do
-        #read -n 1 -s -p "Press any key to continue"
-        if ! [ "$(command -v ${program})" ]; then
-            read -r -p "Install ${program}? [Y/n] " response
-            response=${response,,} # tolower
-            if [[ $response =~ ^(yes|y| ) ]] || [ -z $response ]; then
-                yaourt ${program}
-            fi
-        fi
-    done
+for program in ${programs[@]}; do
+#read -n 1 -s -p "Press any key to continue"
+if ! [ "$(command -v ${program})" ]; then
+read -r -p "Install ${program}? [Y/n] " response
+response=${response,,} # tolower
+if [[ $response =~ ^(yes|y| ) ]] || [ -z $response ]; then
+yaourt ${program}
+fi
+fi
+done
 } && admintools
 
 # terminal with transparence and more responsive
@@ -412,22 +412,22 @@ sudo chsh -s $(which zsh) $(whoami)
 echo "export $(export | grep '^PATH=')" > ~/.zshenv
 
 gdiskdump () {
-		wget -c https://aur.archlinux.org/packages/gd/gdiskdump/gdiskdump.tar.gz
-		tar zxvf gdiskdump.tar.gz && cd gdiskdump
-		makepkg -si
+wget -c https://aur.archlinux.org/packages/gd/gdiskdump/gdiskdump.tar.gz
+tar zxvf gdiskdump.tar.gz && cd gdiskdump
+makepkg -si
 } && gdiskdump
 
 configzsh () {
-		# video explanation: http://www.youtube.com/watch?v=1S3MUVIAieE
-		# https://github.com/robbyrussell/oh-my-zsh
-		# after install you need to do new login
-		# themes here: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-		pacman -Syu zsh zsh-lovers git
-		yaourt -S zsh-completions
-		git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-		cp ~/.zshrc ~/.zshrc.orig
-		cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-		sudo chsh -s $(which zsh) $(whoami)
+# video explanation: http://www.youtube.com/watch?v=1S3MUVIAieE
+# https://github.com/robbyrussell/oh-my-zsh
+# after install you need to do new login
+# themes here: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
+pacman -Syu zsh zsh-lovers git
+yaourt -S zsh-completions
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.zshrc ~/.zshrc.orig
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+sudo chsh -s $(which zsh) $(whoami)
 } && configzsh
 
 # aditional zsh completion
@@ -435,28 +435,28 @@ yaourt zsh-completions-git
 
 # execute the following script on bash
 configyaourt(){
-		cat <<-EOF > ~/.yaourtrc
-		# Yaourt Configuration File
-		# Created: `date`
-		# Last Change: `date`
+cat <<-EOF > ~/.yaourtrc
+# Yaourt Configuration File
+# Created: `date`
+# Last Change: `date`
 
-		# If set to 1, always use the default choice without confirmation.
-		NOCONFIRM=1
+# If set to 1, always use the default choice without confirmation.
+NOCONFIRM=1
 
-		#If set to 0, don’t propose to edit files (from AUR or from ABS).
-		EDITFILES=0
+#If set to 0, don’t propose to edit files (from AUR or from ABS).
+EDITFILES=0
 
-		#If 0, disable colors
-		USECOLOR=1
-		EOF
+#If 0, disable colors
+USECOLOR=1
+EOF
 } && configyaourt
 
 basesystem () {
-		sudo pacman -Syu dbus acpi acpid
+sudo pacman -Syu dbus acpi acpid
 } && basesystem
 
 compactadores () {
-		sudo pacman -Sy zip unzip unrar p7zip
+sudo pacman -Sy zip unzip unrar p7zip
 } && compactadores
 
 # adding pandoc
@@ -467,10 +467,10 @@ yaourt -S ghc
 cabal install pandoc
 
 graphictools () {
-		sudo pacman -Syu inkscape extra/python2-lxml gimp imagemagick xclip
-		sudo yaourt -S --noconfirm gloobus-sushi-bzr
-		sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
-		sudo yaourt --noconfirm -S ttf-ubuntu-font-family
+sudo pacman -Syu inkscape extra/python2-lxml gimp imagemagick xclip
+sudo yaourt -S --noconfirm gloobus-sushi-bzr
+sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
+sudo yaourt --noconfirm -S ttf-ubuntu-font-family
 } && graphictools
 
 yaourt -S gimp-plugin-registry
@@ -495,37 +495,36 @@ yaourt -S inkscape-open-symbols-git
 
 yaourt -S gnome-clocks
 
-multimedia () {
-		# corebird is a twitter client
-		# simplescreenrecorder: https://aur.archlinux.org/packages/simplescreenrecorder/
-		# gnome-shell-mousewell: https://github.com/tobiasquinn/gnome-shell-mousewheel-zoom
-		# python powerline: https://aur.archlinux.org/packages/python-powerline-git/
-		# http://gonzalorau.com.ar/descarga-musica-de-grooveshark-con-groove-dl/
-		# audio-recorder
-		# https://aur.archlinux.org/packages/au/audio-recorder/audio-recorder.tar.gz
-		# gcap is a tool to download youtube subtitles
-		yaourt -S groove-dl-git
-		# tools to edit subtitles
-		yaourt -S subtitleeditor python-pysrt
-		yaourt -S font-manager
-		sudo yaourt -S corebird-git
-		sudo yaourt -S youtube-dl
-		sudo pacman -Syu
-		sudo pacman -Syu sox
-		sudo pacman -Syu xorg-utils pavucontrol
-		gnome-{documents,music,maps,photos,tweak-tool,extra} dconf-editor
-		sudo pacman -S --noconfirm audacity
-    yaourt -S community/noise-player
-		sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
-		sudo pacman -S --noconfirm rhythmbox
-		sudo yaourt -S --noconfirm codecs
-		sudo pacman -S vlc ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
-    sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-pluginscman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins
-		rm -rf ~/.thumbnails/fail
-    yaourt -S extra/sound-juicer
-		# sucessor do ffmpeg
-		# https://aur.archlinux.org/packages/libav-git/
-} && multimedia
+# corebird is a twitter client
+# simplescreenrecorder: https://aur.archlinux.org/packages/simplescreenrecorder/
+# gnome-shell-mousewell: https://github.com/tobiasquinn/gnome-shell-mousewheel-zoom
+# python powerline: https://aur.archlinux.org/packages/python-powerline-git/
+# http://gonzalorau.com.ar/descarga-musica-de-grooveshark-con-groove-dl/
+# audio-recorder
+# https://aur.archlinux.org/packages/au/audio-recorder/audio-recorder.tar.gz
+# gcap is a tool to download youtube subtitles
+yaourt -S groove-dl-git
+# tools to edit subtitles
+yaourt -S subtitleeditor python-pysrt
+yaourt -S font-manager
+sudo yaourt -S corebird-git
+sudo yaourt -S youtube-dl
+sudo pacman -Syu
+sudo pacman -Syu sox
+sudo pacman -Syu xorg-utils pavucontrol
+gnome-{documents,music,maps,photos,tweak-tool,extra} dconf-editor
+sudo pacman -S --noconfirm audacity
+yaourt -S community/noise-player
+sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
+sudo pacman -S --noconfirm rhythmbox
+sudo yaourt -S --noconfirm codecs
+sudo pacman -S vlc ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
+
+sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-pluginscman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins
+rm -rf ~/.thumbnails/fail
+yaourt -S extra/sound-juicer
+# sucessor do ffmpeg
+# https://aur.archlinux.org/packages/libav-git/
 
 # gui for youtube-dl
 # https://aur.archlinux.org/packages/youtube-dl-gui-git/
