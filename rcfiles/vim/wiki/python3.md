@@ -120,6 +120,20 @@ sentence = '{0:%B %d, %Y} fell on a {0:%A} and was the {0:%j} day of the year'.f
 print(sentence)
 ```
 
+**getting pipe input**
+
+    python3 -c 'import sys; print( sys.stdin.read().lower() )'
+
+### Removing accents
+
+``` python
+import sys
+import sunicodedata
+
+s = u"Klüft skräms inför på fédéral électoral große"
+print(unicodedata.normalize('NFKD', s).encode('ascii','ignore'))
+```
+
 ### Better completion at console
 
     sudo pip install ptpython

@@ -19,9 +19,14 @@ Github:      https://github.com/voyeg3r
 * http://chneukirchen.org/dotfiles/.zshrc
 * http://wonderwall.hatenablog.com/entry/2016/06/19/192429
 
+### Auto suggestions plugin
+
++ https://github.com/zsh-users/zsh-autosuggestions
+
 ### zsh auto-pairs plugin
 
 + https://github.com/hlissner/zsh-autopair
++ https://github.com/zsh-users/zsh-autosuggestions
 + [list of plugins](https://github.com/unixorn/awesome-zsh-plugins#plugins)
 + [zsh like sensible](https://github.com/willghatch/zsh-saneopt)
 

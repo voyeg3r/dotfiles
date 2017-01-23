@@ -112,6 +112,7 @@ alias mmv='noglob zmv -W'
 autoload -U select-word-style
 select-word-style bash
 
+
 # User configuration
 # export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:[bf]g"
@@ -327,10 +328,14 @@ zle -N bracketed-paste bracketed-paste-magic
 bindkey '^ ' autosuggest-accept
 source ~/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-
 bindkey '^X^A' fasd-complete
 bindkey '^X^F' fasd-complete-f
 bindkey '^X^D' fasd-complete-d
+
+# http://stackoverflow.com/a/13614816/2571881
+autoload -Uz history-beginning-search-menu
+zle -N history-beginning-search-menu
+bindkey '^h' history-beginning-search-menu
 
 # firefox improviments
 # disalbe rendering fonts in firefox to free memory
