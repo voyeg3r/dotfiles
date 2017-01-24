@@ -83,7 +83,9 @@ ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions git fasd extract systemd.plugin.zsh command-not-found history-substring-search zsh-autopair )
+plugins=(git fasd extract systemd.plugin.zsh command-not-found history-substring-search )
+
+plugins+=(zsh-autosuggestions zsh-autopair)
 
 eval "$(fasd --init auto)"
 eval "$(fasd --init posix-alias zsh-hook)"
@@ -300,8 +302,8 @@ globalias() {
 
 zle -N globalias
 
-#bindkey ' ' globalias               # expande aliases globais
-#bindkey '^X ' magic-space           # control-space to bypass completion
+bindkey ' ' globalias                # expande aliases globais
+bindkey '^X ' magic-space            # control-space to bypass completion
 #bindkey -M isearch " " magic-space  # normal space during searches
 #bindkey -s '\eu' 'cd ..^j' # alt-u up dir
 

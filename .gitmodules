@@ -35,3 +35,6 @@
 [submodule "/home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-completions"]
 	path = /home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-completions
 	url = git://github.com/zsh-users/zsh-completions.git
+[submodule "rcfiles/zsh/custom/plugins/zsh-dwim"]
+	path = rcfiles/zsh/custom/plugins/zsh-dwim
+	url = https://github.com/oknowton/zsh-dwim.git
