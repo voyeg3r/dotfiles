@@ -177,11 +177,11 @@ mkdir -p ${ZSH_CACHE_DIR}
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+else
+   export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -276,11 +276,15 @@ bindkey '\eg' _git-status
 # bind widget to ESC-o
 #bindkey '^[o' cursor-after-first-word
 
-# strg+x,s adds sudo to the line
-# Zsh Buch p.159 - http://zshbuch.org/
-run-with-sudo() { LBUFFER="sudo $LBUFFER" }
-zle -N run-with-sudo
-bindkey '^Xs' run-with-sudo
+# Inserts 'sudo ' at the beginning of the line.
+function prepend-sudo {
+  if [[ "$BUFFER" != su(do|)\ * ]]; then
+    BUFFER="sudo $BUFFER"
+    (( CURSOR += 5 ))
+  fi
+}
+zle -N prepend-sudo
+bindkey '^Xs' prepend-sudo
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward

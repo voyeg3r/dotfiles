@@ -14,10 +14,14 @@ Github:      https://github.com/voyeg3r
 ```
 
 #### References:
-* http://zshwiki.org/home/builtin/functions/zmv
-* http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
-* http://chneukirchen.org/dotfiles/.zshrc
-* http://wonderwall.hatenablog.com/entry/2016/06/19/192429
++ http://zshwiki.org/home/builtin/functions/zmv
++ http://blog.patshead.com/2013/04/more-powerful-zsh-history-search-using-zaw.html
++ http://chneukirchen.org/dotfiles/.zshrc
++ http://wonderwall.hatenablog.com/entry/2016/06/19/192429
++ http://awesome-shell.readthedocs.io/en/latest/README/
++ http://reasoniamhere.com/2014/01/11/outrageously-useful-tips-to-master-your-z-shell/
++ https://libraries.io/github/unixorn/awesome-zsh-plugins
++ https://raw.githubusercontent.com/sorin-ionescu/prezto/28a20b48e652a01216a6c3dd76e6324d76c12def/modules/editor/init.zsh
 
 ### Auto suggestions plugin
 

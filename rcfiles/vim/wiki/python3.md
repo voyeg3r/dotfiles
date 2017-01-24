@@ -21,8 +21,8 @@ Github:      https://github.com/voyeg3r
 + https://www.youtube.com/channel/UCI0vQvr9aFn27yR6Ej6n5UA
 + https://dbader.org/
 
-### Manipulating string
-
+### Manipulating strings
++ [Read more here](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
 colocando zeros à esquerda - leading zeros
 ``` python
 text = "22"

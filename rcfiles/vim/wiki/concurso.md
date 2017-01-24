@@ -1,7 +1,12 @@
-﻿Local da prova
-{{{
-http://50.22.9.66/ConsultaLocalProva.aspx?key=239&tipo=O
-}}}
+### Lei 8112/90
+
+**Aplica-se a servidores federais:**
++ União
++ Fundações públicas (de direito público)
++ Autarquias
+
+### Linha do tempo de um concurso público:
+
 
 Trabalhe com quadro sinótico, cada matéria em uma página
 de uma olhada ver o todo, faça uma apostila que só você vai entender
@@ -10,7 +15,7 @@ revise a materia através do seu próprio material
 Dica do Sapia: https://www.youtube.com/watch?v=jM5hpV1d1pc
 
 
-Língua Portuguesa
+### Língua Portuguesa
 
 
 r35qis3 303r3 W02r*uq
@@ -209,7 +214,7 @@ b) exatamente dois amigos são Nuncamentem e “balá” significa “sim”.
 c) exatamente dois amigos são Semprementem e “balá” significa “não”.
 d) os três amigos são Semprementem e “balá” significa “não”. e) exatamente dois amigos são Nuncamentem e “balá” significa “não”.
 
-35- Considerando as seguintes proposições: “Alguns filósofos são
+### 35- Considerando as seguintes proposições: “Alguns filósofos são
 matemáticos” e “não é verdade que algum poeta é matemático”, pode-se
 concluir apenas que:
 
