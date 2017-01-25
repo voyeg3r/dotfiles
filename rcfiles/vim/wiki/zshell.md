@@ -22,6 +22,11 @@ Github:      https://github.com/voyeg3r
 + http://reasoniamhere.com/2014/01/11/outrageously-useful-tips-to-master-your-z-shell/
 + https://libraries.io/github/unixorn/awesome-zsh-plugins
 + https://raw.githubusercontent.com/sorin-ionescu/prezto/28a20b48e652a01216a6c3dd76e6324d76c12def/modules/editor/init.zsh
++ https://coderwall.com/t/zsh/popular
+
+### Testing zsh start speed
+
+    time zsh -i -c exit
 
 ### Auto suggestions plugin
 
