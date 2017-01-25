@@ -1759,17 +1759,18 @@ voltar. i_CTRL-X_s
 
 ### Seleção
 
-  see vim text objects the definitive guide
-  http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-
+see [vim text objects the definitive guide](http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/)
 
 selecionar
 
 ``` markdown
+# see more: https://gist.github.com/sjl/1171642
 Trecho entre parênteses  ......... vi(
 Entre parênteses (inclusive) ..... v%
 Trecho entre aspas ............... vi"
 Seleciona um parágrafo ........... vip
 Selection uma sentença ........... vis
+Seleciona próximo ( .............. %vi(
 ```
 
   Pode usar copiar ao inves de visual
@@ -2238,7 +2239,8 @@ endfun
 command! -nargs=0 H2M :%!pandoc -f html -t markdown<CR>
 ```
 ### References
-* http://vi.stackexchange.com/q/2268/
-* http://dalibornasevic.com/posts/43-12-vim-tips
++ http://vi.stackexchange.com/q/2268/
++ http://dalibornasevic.com/posts/43-12-vim-tips
++ https://vimvalley.com/
 
 vim:ft=markdown

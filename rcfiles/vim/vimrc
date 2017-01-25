@@ -312,6 +312,9 @@ set mouse=a
 set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 13
+set anti enc=utf-8
+" https://gist.github.com/epegzz/1634235/fe5100a91157c5d0f0c8b7b6dedd126c6396ae19
+"set guifont=Monaco\ for\ Powerline:h13
 
 set scrolloff=3
 

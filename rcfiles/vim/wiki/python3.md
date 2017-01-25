@@ -23,6 +23,28 @@ Github:      https://github.com/voyeg3r
 
 ### Manipulating strings
 + [Read more here](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
+``` python
+# only for python 3.6 and above
+
+>>> origin = "London"
+>>> destination = "Paris"
+>>> f"from {origin} to {destination}"
+'from London to Paris'
+```
+
+``` python
+# transforma caracteres para chinês
+def esconde(msg):
+    s = ''
+    for c in msg: s += chr(ord(c) + 30000)
+    return s
+
+def mostra(msg):
+    s = ''
+    for c in msg: s += chr(ord(c) - 30000)
+    return s
+```
+
 colocando zeros à esquerda - leading zeros
 ``` python
 text = "22"
@@ -108,7 +130,7 @@ my_date = datetime.datetime(2006, 9, 24, 12, 30, 45)
 sentence = '{:%B %d, %Y}'.format(my_date)
 
 Semptember 24, 2016
-
+```
 
 
 ``` python
@@ -132,6 +154,33 @@ import sunicodedata
 
 s = u"Klüft skräms inför på fédéral électoral große"
 print(unicodedata.normalize('NFKD', s).encode('ascii','ignore'))
+```
+
+### counting words in python
++ https://gist.github.com/voyeg3r/25247763865f0cd7b5a12691fe94c222
+
+``` python
+# file use to count words: http://www.gutenberg.org/cache/epub/11/pg11.txt
+# lynx -dump http://www.gutenberg.org/cache/epub/11/pg11.txt > alice.txt
+
+with  open('alice.txt', 'r') as f:
+    texto = f.read().lower()
+
+import string
+for c in string.punctuation:
+    texto = texto.replace(c, ' ')
+
+texto = texto.split()
+
+dic = {}
+for p in texto:
+    if p not in dic:
+        dic[p] = 1
+    else:
+        dic[p] += 1
+
+print(f'Alice aparece {dic["alice"]} vezes no texto')
+
 ```
 
 ### Better completion at console
