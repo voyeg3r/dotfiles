@@ -110,6 +110,7 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-dispatch'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-pandoc/vim-pandoc-syntax'

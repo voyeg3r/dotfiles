@@ -21,6 +21,7 @@ for f in os.listdir():
     f_num = f_num.zfill(2)
     f_ext = f_ext.lower()
 
-    new_name = '{}-{}{}'.format(f_num, f_name, f_ext)
+    new_name = f'{f_num}-{f_name}{f_ext}'
+    print(f'renaming {f} to {new_name}')
     os.rename(f, new_name)
 

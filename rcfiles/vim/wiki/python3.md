@@ -20,6 +20,24 @@ Github:      https://github.com/voyeg3r
 + https://www.youtube.com/watch?v=ve2pmm5JqmI (renaming files)
 + https://www.youtube.com/channel/UCI0vQvr9aFn27yR6Ej6n5UA
 + https://dbader.org/
++ [f-string](https://cito.github.io/blog/f-strings/)
++ https://pyformat.info/
+
+### Dictionary comprehension
+
+``` python
+first2pairs = {k: mydict[k] for k in mydict.keys()[:2]}
+```
+
+
+``` markdown
+with open('alice.txt', 'r') as f:
+        f = f.read().lower().split()
+
+result = {i:f.count(i) for i in f if i == 'alice'}
+
+print(f'Alice aparece {result["alice"]} vezes no texto')
+```
 
 ### Manipulating strings
 + [Read more here](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
@@ -31,6 +49,62 @@ Github:      https://github.com/voyeg3r
 >>> f"from {origin} to {destination}"
 'from London to Paris'
 ```
+
+**Padding** (preenchimento)
+
+``` python
+# preenche com espaço depois
+'{:>10}'.format('test')
+
+# o oposto
+'{:10}'.format('test')
+
+'{:_>10}'.format('test')
+test__________
+
+# esta opção centraliza
+'{:^10}'.format('test')
+
+# Adiciona espaços à esquerda
+'{:4d}'.format(42)
+
+# adiciona zeros à esquerda
+'{:03d}'.format(55)
+```
+
+``` python
+names = ["Trey", "Brantly", "Kojo", "Diane"]
+"{names[0]} is a name, so is {names[1]} and {number} is a number".format(names=names, number = 45)
+'Trey is a name, so is Brantly and 45 is a number'
+```
+Another way to do the same and more readable is doing this:
+
+``` python
+names = ["Trey", "Brantly", "Kojo", "Diane"]
+"{} is a name, so is {} and {number} is a number".format(*names, number = 45)
+'Trey is a name, so is Brantly and 45 is a number'
+```
+
+``` python
+name = 'Jose'
+"{name!r} is a name".format(name=name)
+"'Jose' is a name"
+```
+
+
+### Truncar uma string - Truncating long strings
+
+``` python
+'{:.5}'.format('xylophone')
+```
+### Format numbers printing
+
+ ``` python
+ '{:d}'.format(42)
+
+'{:f}'.format(3.141592653589793)
+ ```
+
 
 ``` python
 # transforma caracteres para chinês
