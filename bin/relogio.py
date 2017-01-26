@@ -1,28 +1,30 @@
 #!/usr/bin/env python
-# # -*- coding: UTF-8 -*-
-# Criado em:Sex 05/Out/2012 hs 12:58
-# Last Change: 2012 Out 05 13:11:11
-# vim:ft=python:nolist:nu:
-# Proposito do script: relogio gráfico em python
-# Autor: Sérgio Luiz Araújo Silva
-# site: vivaotux.blogspot.com
-# twitter: voyeg3r
-#by Luciano Ramalho
+# -*- coding: utf-8 -*-
+# vim: ai ts=4 sts=4 et sw=4
+# Author:       Sergio Araujo
+# Last Change:  qui 26 jan 2017 20:08:40 BRT
+# Created:      qui 26 jan 2017 20:08:40 BRT
+# email:        <voyeg3r ✉ gmail.com>
+# Github:       https://github.com/voyeg3r
+# twitter:      @voyeg3r
 
-import Tkinter
+# source: https://www.vivaolinux.com.br/script/Relogio-digital-em-Python
+
+import tkinter
 from time import strftime
+rel = tkinter.Label()
+rel.pack() # deixa o conteudo visivel dentro da label
+rel['text'] = strftime('%H:%M:%S')
+rel['font'] = 'Helvita 120 bold'
+rel['foreground'] = 'black'
+rel['bg'] = 'white'
+def contador():
+	agora = strftime('%H:%M:%S')
+	if rel['text'] != agora:
+		rel['text'] = agora
+	rel.after(100, contador)
+contador() # chama a funcao contador
+rel.mainloop()
 
-relogio = Tkinter.Label()
 
-relogio.pack()
-relogio['font'] = 'Helvetica 120 bold'
-relogio['text'] = strftime('%H:%M:%S')
 
-def tictac():
-    agora = strftime('%H:%M:%S')
-    if agora != relogio['text']:
-        relogio['text'] = agora
-    relogio.after(100, tictac)
-
-tictac()
-relogio.mainloop()

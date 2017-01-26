@@ -11,6 +11,9 @@
 # this module changes
 # file-1.txt to file-01.txt
 
+# deleted zfill in order to use '{number:>02}'
+# which gives the same
+
 import os
 
 os.chdir('/home/sergio/tmp')
@@ -18,10 +21,9 @@ for f in os.listdir():
     f_name, f_ext = os.path.splitext(f)
 
     f_name, f_num = f_name.lower().split(' ')
-    f_num = f_num.zfill(2)
     f_ext = f_ext.lower()
 
-    new_name = f'{f_num}-{f_name}{f_ext}'
-    print(f'renaming {f} to {new_name}')
+    new_name = f'{f_num:>02}-{f_name}{f_ext}'
+    print(f'renaming "{f}" to "{new_name}"')
     os.rename(f, new_name)
 
