@@ -7,33 +7,26 @@
 # Proposito do script: calcular sequencia de fibonacci
 # Autor: Sérgio Luiz Araújo Silva
 # site: http://vivaotux.blogspot.com
-"""
-importe: from fibonacci import fib
-g = fib
-for i in range(max):
-        print g.next(),
-"""
-from __future__ import generators
-import os
 
-# limpando a tela
+# to import:
+# from fibonacci import mem_fib
+
+
+import os
 if os.name == 'posix':
     os.system('clear')
 else:
     os.system('cls')
 
+def mem_fib(n, _cache={}):
+    '''efficiently memoized recursive function, returns a Fibonacci number'''
+    if n in _cache:
+        return _cache[n]
+    elif n > 1:
+        return _cache.setdefault(n, mem_fib(n-1) + mem_fib(n-2))
+    return n
 
-# needs Python 2.2 or above!
-def fib():
-    "unbounded generator, creates Fibonacci sequence"
-    x,y=0,1
-    while 1:
-        x, y = y, x + y
-        yield x
 
 if __name__ == "__main__":
-    g = fib()
     max = int(raw_input("Digite o numero a calcular: "))
-    for i in range(max):
-        print g.next(),
-
+    print(mem_fib(max))

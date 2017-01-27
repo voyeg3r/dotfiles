@@ -23,6 +23,9 @@ Github:      https://github.com/voyeg3r
 + [f-string](https://cito.github.io/blog/f-strings/)
 + https://pyformat.info/
 + [python para zumbis](https://www.youtube.com/watch?v=_OQEcuGHrxQ)
++ [python para zumbis playlist youtube](https://www.youtube.com/watch?v=6La690qlH5w&list=PLUukMN0DTKCtbzhbYe2jdF4cr8MOWClXc)
++ [python para zumbis site oficial](https://www.pycursos.com/python-para-zumbis/)
+
 
 ### Dictionary comprehension
 
@@ -268,6 +271,7 @@ print(f'Alice aparece {dic["alice"]} vezes no texto')
 + [clipboard manipulation](https://pypi.python.org/pypi/pyperclip)
 + [python3 libs](https://pypi.python.org/pypi?:action=browse&c=533&show=all)
 + os module
++ [memory cache] from functools import lru_cache
 
 ** Os Mudule **
 
