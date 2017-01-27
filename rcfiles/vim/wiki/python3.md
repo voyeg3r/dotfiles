@@ -22,6 +22,7 @@ Github:      https://github.com/voyeg3r
 + https://dbader.org/
 + [f-string](https://cito.github.io/blog/f-strings/)
 + https://pyformat.info/
++ [python para zumbis](https://www.youtube.com/watch?v=_OQEcuGHrxQ)
 
 ### Dictionary comprehension
 

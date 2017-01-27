@@ -335,3 +335,14 @@ snippet modeline "python modeline" w
 # vim: ai ts=4 sts=4 et sw=4
 endsnippet
 
+snippet f "f-string" w
+f'${1:content}'
+endsnippet
+
+snippet fp "print f-string" w
+print(f'${1:content}')
+endsnippet
+
+snippet fv "stores f-tring in a variable" w
+${1:var_name} = f'${2:content}'
+endsnippet
