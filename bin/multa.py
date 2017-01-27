@@ -22,7 +22,8 @@
 
 def multa():
     '''recebe um inteiro velocidade, para cada quilometro acima de 110
-    adiciona R$ 5,00 à multa'''
+    adiciona R$ 5,00 à multado
+    '''
     v = int(input("Velocidade: "))
     if v > 110:
         print("Você foi multado!")
