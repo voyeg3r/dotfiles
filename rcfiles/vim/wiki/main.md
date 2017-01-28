@@ -58,6 +58,7 @@
 * [Receitas](receitas.md)
 * [Regex](Regex)
 * [S5criandoslides](s5criandoslides)
+* [sphinx](sphinx)
 * [Saude](saude.md)
 * [Segundavia](segundavia.md)
 * [Sofficecalc](sofficecalc.md)

@@ -25,7 +25,7 @@ Github:      https://github.com/voyeg3r
 + [python para zumbis](https://www.youtube.com/watch?v=_OQEcuGHrxQ)
 + [python para zumbis playlist youtube](https://www.youtube.com/watch?v=6La690qlH5w&list=PLUukMN0DTKCtbzhbYe2jdF4cr8MOWClXc)
 + [python para zumbis site oficial](https://www.pycursos.com/python-para-zumbis/)
-
++ [socratica python computing science](https://www.youtube.com/playlist?list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-)
 
 ### Dictionary comprehension
 
@@ -262,8 +262,18 @@ print(f'Alice aparece {dic["alice"]} vezes no texto')
 ```
 
 ### Better completion at console
++ https://github.com/jonathanslenders/ptpython/
++ http://brandon.invergo.net/news/2014-03-21-Enhancing-the-Python-interpreter-with-a-start-up-script.html
 
     sudo pip install ptpython
+    sudo pip install ipython
+    sudo pip install prompt_toolkit
+    sudo pip install pyreadline
+
+Embedding the REPL in any Python application is easy:
+
+    from ptpython.repl import embed
+    embed(globals(), locals())
 
 ### Python libs
 + [manipulatin strings](https://docs.python.org/2/library/string.html)
@@ -272,6 +282,11 @@ print(f'Alice aparece {dic["alice"]} vezes no texto')
 + [python3 libs](https://pypi.python.org/pypi?:action=browse&c=533&show=all)
 + os module
 + [memory cache] from functools import lru_cache
++ [fix code layout] pip install flake8
+
+### fixing code layout
+
+    flake8 file.py
 
 ** Os Mudule **
 
@@ -558,4 +573,40 @@ pyperclip.paste()
 'The text to be copied to the clipboard.'
 ```
 
+### Métodos comuns a str and list
 
+
+``` python
+sorted(set(dir('abc')) & set(dir([])) )
+
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
+
+```
+
+### Print list items in python3
+
+``` python
+l = range(100)
+print(*l)
+
+# imprime valores como string não como lista
+```
+
+``` python
+from random import shuffle
+
+l = list(range(100))
+shuffle(l) #  << shuffle before print or assignment
+print(l)
+
+[67, 12, 44, 86, 39, 74, 36, 70, 1, 14, 90, 71, 47, 81, 41, 95, 92, 15, 7, 17, 9, 85, 25, 10, 34, 38, 24, 63, 52, 65, 66, 6, 43, 97, 54, 78, 77, 32, 35, 80, 8, 87, 5, 13, 73, 76, 82, 93, 26, 18, 79, 45, 46, 49, 2, 3, 96, 75, 40, 4, 61, 31, 55, 62, 37, 50, 30, 48, 22, 28, 23, 69, 56, 57, 20, 88, 53, 83, 64, 91, 21, 98, 51, 16, 94, 11, 72, 29, 27, 84, 59, 99, 68, 33, 0, 42, 60, 58, 89, 19]
+```
+
+### Dictionary comprehension
+
+``` python
+import string
+{ c:ord(c) for c in string.ascii_letters }
+
+{'a': 97, 'b': 98, 'c': 99, 'd': 100, 'e': 101, 'f': 102, 'g': 103, 'h': 104, 'i': 105, 'j': 106, 'k': 107, 'l': 108, 'm': 109, 'n': 110, 'o': 111, 'p': 112, 'q': 113, 'r': 114, 's': 115, 't': 116, 'u': 117, 'v': 118, 'w': 119, 'x': 120, 'y': 121, 'z': 122, 'A': 65, 'B': 66, 'C': 67, 'D': 68, 'E': 69, 'F': 70, 'G': 71, 'H': 72, 'I': 73, 'J': 74, 'K': 75, 'L': 76, 'M': 77, 'N': 78, 'O': 79, 'P': 80, 'Q': 81, 'R': 82, 'S': 83, 'T': 84, 'U': 85, 'V': 86, 'W': 87, 'X': 88, 'Y': 89, 'Z': 90}
+```

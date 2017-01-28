@@ -110,6 +110,7 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+Plug 'nvie/vim-flake8'
 Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-dispatch'
 Plug 'vim-scripts/indentpython.vim'
@@ -441,6 +442,8 @@ augroup python
     let python_highlight_exceptions=1
     let python_highlight_numbers=1
     let python_highlight_space_errors=1
+    " needs flake8 installed: pip install flake8
+    autocmd BufWritePost *.py call Flake8()
 augroup end
 
 augroup html
@@ -720,7 +723,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-nnoremap <F10> :set list!<CR>
+nnoremap <F10> :call Flake8()<CR>
 
 nnoremap <F5> :GundoToggle<CR>
 

@@ -28,5 +28,5 @@ def mem_fib(n, _cache={}):
 
 
 if __name__ == "__main__":
-    max = int(raw_input("Digite o numero a calcular: "))
+    max = int(input("Digite o numero a calcular: "))
     print(mem_fib(max))
