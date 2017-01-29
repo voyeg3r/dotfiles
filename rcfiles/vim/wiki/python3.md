@@ -28,11 +28,15 @@ Github:      https://github.com/voyeg3r
 + [socratica python computing science](https://www.youtube.com/playlist?list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-)
 
 ### Dictionary comprehension
++ [about dictionaries](https://www.tutorialspoint.com/python3/python_dictionary.htm)
 
 ``` python
 first2pairs = {k: mydict[k] for k in mydict.keys()[:2]}
 ```
 
+
+
+### Counting words in a file
 
 ``` markdown
 with open('alice.txt', 'r') as f:
@@ -538,6 +542,13 @@ random_num=random.randrange(0,100)
 while(random_num != 15):
     print(random_num)
     random_num = random_num.range(0,100)
+```
+
+** Sorteando um número de uma lista **
+``` python
+from random import choice
+l = rnage(100)
+print(choice(l))
 ```
 
 #### addnumbers function
