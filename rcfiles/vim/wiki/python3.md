@@ -287,6 +287,7 @@ Embedding the REPL in any Python application is easy:
 + os module
 + [memory cache] from functools import lru_cache
 + [fix code layout] pip install flake8
++ [srt translator] sudo pip install pysrttranslator
 
 ### fixing code layout
 
