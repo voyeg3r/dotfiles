@@ -15,6 +15,21 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### Scrolling down both parts of a split-window at the same time in Vim
+source [Stack Overflow](http://stackoverflow.com/a/2986980/2571881)
+
+First you can open two files, each in its window, doing this:
+
+    vim -o file1.txt file2.txt
+
+In the first file:
+
+    :set scrollbind
+
+In the second file:
+
+    :set scrollbind
+
 ### Browsing vim help
 
 To open a link just press `Ctrl-]` and to jump back `Ctrl-t` or `Ctrl-o`

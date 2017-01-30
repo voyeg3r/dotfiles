@@ -359,8 +359,6 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden  --follow --glob "!.
 GNOME_VERSION=$(gnome-shell --version)
 
 # python environment
-#export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonrc.py
-#export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonrc-startup.py
-#export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/python-start.py
-export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup
+#export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup
+export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup-new
 export PYTHON_HISTORY_FILE=~/.python_history
