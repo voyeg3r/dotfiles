@@ -8,20 +8,28 @@
 import readline
 import rlcompleter
 
-
-#readline.parse_and_bind("tab: complete")
-readline.parse_and_bind('Control-Space: complete')
-readline.parse_and_bind('bind ^I rl_complete')
-
-class MyCompleter(rlcompleter.Completer):
-    def complete(self, text, state):
-        if text.lstrip() == '':
-            if state == 0:
-                return text + '\t'
-            else:
-                return None
-        else:
-            return rlcompleter.Completer.complete(self, text, state)
+try:
+    import readline
+except ImportError:
+    print("Module readline not available.")
+else:
+    import rlcompleter
+    readline.parse_and_bind("\C-space: complete")
 
 
-readline.set_completer(MyCompleter().complete)
+# #readline.parse_and_bind("tab: complete")
+# readline.parse_and_bind('Control-Space: complete')
+# readline.parse_and_bind('bind ^I rl_complete')
+#
+# class MyCompleter(rlcompleter.Completer):
+#     def complete(self, text, state):
+#         if text.lstrip() == '':
+#             if state == 0:
+#                 return text + '\t'
+#             else:
+#                 return None
+#         else:
+#             return rlcompleter.Completer.complete(self, text, state)
+#
+#
+# readline.set_completer(MyCompleter().complete)

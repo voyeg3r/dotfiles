@@ -289,6 +289,8 @@ Embedding the REPL in any Python application is easy:
 + [fix code layout] pip install flake8
 + [srt translator] sudo pip install pysrttranslator
 
+3y g00 *pi 畱畹疪疑疃疩畲畽略畤疉疏疠疨疪疒疣畨疩疡畲疖畨疢疤疥疟畱畽疣疂疚畦疙畦疇疦畣疧
+
 ### fixing code layout
 
     flake8 file.py

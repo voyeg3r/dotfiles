@@ -5,7 +5,7 @@ por exemplo: a codificação ISO-8859-15 exibe acentos corretamente no windows
 mas no Linux costuma exibir caracteres estranhos, sendo utf-8 o padrão para este
 sistema
 
-    conv -f ISO-8859-1 -t UTF-8 < frozen.pob.srt-backup > output.txt
+    iconv -f ISO-8859-1 -t UTF-8 < frozen.pob.srt-backup > output.txt
 
     find -type f -maxdepth 1 | xargs -i iconv -f iso-8859-1 -t utf-8 {} -o {}
 
