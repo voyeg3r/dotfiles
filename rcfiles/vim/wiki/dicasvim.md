@@ -15,6 +15,12 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### Open file read-only
+
+edit /etc/nginx/nginx.conf in read-only mode:
+
+    $ sudo vim +M /etc/nginx/nginx.conf
+
 ### Scrolling down both parts of a split-window at the same time in Vim
 source [Stack Overflow](http://stackoverflow.com/a/2986980/2571881)
 

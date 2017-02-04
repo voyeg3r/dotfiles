@@ -55,6 +55,7 @@ set path+=**
 
 " a little bit more history commands
 set history=200
+set isfname+={,}
 
 "set wildmenu
 "set wildmode=longest,list,full
