@@ -352,3 +352,8 @@ snippet 'doc(string)?' "add docstring" r
 ${1:${VISUAL:type here}} ${0}
 '''
 endsnippet
+
+snippet open "open file" w
+with open('${1:file}', '${2:r}') as f:
+    f = f.read()
+endsnippet

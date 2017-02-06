@@ -4,7 +4,7 @@
 # ------------------------------------------------
 #   Creation Date:    20-01-2017
 #     Last Change: ter 29 nov 2016 09:21:52 BRT
-# this script aim:  <+this script aims+>
+# this script aim:  Removes spaces in file names
 #          author:  sergio luiz araujo silva
 #            site:  http://vivaotux.blogspot.com
 #         twitter:  @voyeg3r

@@ -3,7 +3,7 @@
 # ------------------------------------------------
 #   Creation Date:    23-01-2017
 #     Last Change: ter 29 nov 2016 09:21:52 BRT
-# this script aim:  <+this script aims+>
+# this script aim:  Remove accents of a given text
 #          author:  sergio luiz araujo silva
 #            site:  http://vivaotux.blogspot.com
 #         twitter:  @voyeg3r
@@ -14,7 +14,7 @@
 
 import unicodedata
 
-def unaccent(text):
-    output = unicodedata.normalize('NFKD', text).encode('ascii','ignore')
-    return output
 
+def unaccent(text):
+    output = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore')
+    return output

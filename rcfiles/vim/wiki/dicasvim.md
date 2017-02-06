@@ -15,6 +15,12 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### How many open buffers?
++ http://superuser.com/a/345593/45032
++ http://stackoverflow.com/a/42024307/2571881
+
+    echo len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+
 ### Open file read-only
 
 edit /etc/nginx/nginx.conf in read-only mode:

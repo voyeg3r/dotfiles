@@ -25,5 +25,3 @@ name = next(iter(result.keys()))
 num = next(iter(result.values()))
 
 print(f'{name} aparece {num} vezes no texto')
-
-

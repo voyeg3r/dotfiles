@@ -26,6 +26,8 @@ Github:      https://github.com/voyeg3r
 + [python para zumbis playlist youtube](https://www.youtube.com/watch?v=6La690qlH5w&list=PLUukMN0DTKCtbzhbYe2jdF4cr8MOWClXc)
 + [python para zumbis site oficial](https://www.pycursos.com/python-para-zumbis/)
 + [socratica python computing science](https://www.youtube.com/playlist?list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-)
++ http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
++ https://github.com/cobrateam
 
 ### Dictionary comprehension
 + [about dictionaries](https://www.tutorialspoint.com/python3/python_dictionary.htm)
@@ -34,11 +36,9 @@ Github:      https://github.com/voyeg3r
 first2pairs = {k: mydict[k] for k in mydict.keys()[:2]}
 ```
 
-
-
 ### Counting words in a file
 
-``` markdown
+``` python
 with open('alice.txt', 'r') as f:
         f = f.read().lower().split()
 
@@ -46,6 +46,32 @@ result = {i:f.count(i) for i in f if i == 'alice'}
 
 print(f'Alice aparece {result["alice"]} vezes no texto')
 ```
+
+### tools
+Script para converter scripts da versão 2 do python
+para versão 3 --> its name: 2to3
+
+    2to3 -w python2script.py
+
+without `-w` it just shows your what need be changed
+
+### print help functions and builtins
+
+``` python
+import random
+print(help(random.random))
+```
+
+### simulando o arremesso de um dado
+
+``` python
+import random
+
+for i in range(10):
+    print(random.randint(1,6))
+```
+
+
 
 ### Manipulating strings
 + [Read more here](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
@@ -553,6 +579,16 @@ while(random_num != 15):
 from random import choice
 l = rnage(100)
 print(choice(l))
+```
+
+**Sorteando nomes de uma lista**
+``` python
+import random
+
+outcomes = ['rock', 'paper', 'scissors']
+
+for in range(10):
+    print(random.choice(outcomes))
 ```
 
 #### addnumbers function

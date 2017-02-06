@@ -9,8 +9,10 @@
 # download: https://gist.github.com/955569
 # reference: http://blog.liquuid.net/2011/04/23/como-fazer-um-keyloggermouse-no-linux/
 
-import re, collections
+import re
+import collections
 from subprocess import *
+
 
 def sanitize_keybinding(binding):
     d = {'space': ' ',
