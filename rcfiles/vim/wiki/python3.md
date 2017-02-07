@@ -36,6 +36,17 @@ Github:      https://github.com/voyeg3r
 first2pairs = {k: mydict[k] for k in mydict.keys()[:2]}
 ```
 
+### Acessing docstrings (documentation)
+
+
+``` python
+import random
+print(random.choice.__doc__)
+Choose a random element from a non-empty sequence.
+```
+
+
+
 ### Counting words in a file
 
 ``` python
@@ -305,7 +316,7 @@ Embedding the REPL in any Python application is easy:
     from ptpython.repl import embed
     embed(globals(), locals())
 
-### Python libs
+### Python libs and modules
 + [manipulatin strings](https://docs.python.org/2/library/string.html)
 + [natural sorting](https://pypi.python.org/pypi/natsort)
 + [clipboard manipulation](https://pypi.python.org/pypi/pyperclip)
@@ -315,6 +326,7 @@ Embedding the REPL in any Python application is easy:
 + [fix code layout] pip install flake8
 + [srt translator] sudo pip install pysrttranslator
 + [open excel spreadsheets] openpyxl
++ os "shows os informations"
 
 3y g00 *pi 畱畹疪疑疃疩畲畽略畤疉疏疠疨疪疒疣畨疩疡畲疖畨疢疤疥疟畱畽疣疂疚畦疙畦疇疦畣疧
 
@@ -328,6 +340,43 @@ Embedding the REPL in any Python application is easy:
 import os
 print(dir(os))
 ```
+
+**Where I am on my OS?**
+
+``` python
+import os
+print(os.getcwd())
+```
+
+** How to list dir using python like ls on linux? **
+``` python
+from os import listdir
+from os.path import isfile, join
+files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+```
+
+``` python
+# To change dir:
+
+impor os
+os.chdir(path)
+```
+
+**another cd for python**
+``` python
+from contextlib import contextmanager
+import os
+
+@contextmanager
+def cd(newdir):
+    prevdir = os.getcwd()
+    os.chdir(os.path.expanduser(newdir))
+    try:
+        yield
+    finally:
+        os.chdir(prevdir)
+```
+
 
 **Natual sorting list items**
 

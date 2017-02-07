@@ -24,8 +24,10 @@
     https://github.com/asweigart/pyperclip
 """
 
+
 import string
 import pyperclip
+
 
 # as we have a string we can lower case it
 text = pyperclip.paste().lower()

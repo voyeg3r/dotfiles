@@ -13,6 +13,10 @@ Github:      https://github.com/voyeg3r
 
       sudo pip3 install youtube-dl --upgrade
 
+### Numerando um playlist durante o download
+
+    youtube-dl -o '%(playlist_index)s. %(title)s.%(ext)s'
+
 ### Baixando de uma lista
 Se você tem um arquivo com as url's use:
 
