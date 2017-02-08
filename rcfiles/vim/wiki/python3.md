@@ -32,7 +32,7 @@ Github:      https://github.com/voyeg3r
 
 ### Algorithms list
 
-+ Return a maximum value of a given list: ~/bin/max-list-value.py
++ Return a maximum value of a given list: ~/bin/maxlistvalue.py
 
 ### Return maximum value from a list
 
