@@ -28,7 +28,28 @@ Github:      https://github.com/voyeg3r
 + [socratica python computing science](https://www.youtube.com/playlist?list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-)
 + http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
 + https://github.com/cobrateam
++ http://code.activestate.com/recipes/langs/python/
 
+### Algorithms list
+
++ Return a maximum value of a given list: ~/bin/max-list-value.py
+
+### Return maximum value from a list
+
+There are two ways to do that, the first one makes use of
+a builtin function called `max`. (first let's create a list
+to show you how to use this function)
+
+    numbers = [987, 897, 34, 21, 67]
+
+Now just do:
+
+    max(numbers)
+
+Another way to perform this action is using negative index plus
+sorted function:
+
+    sorted(numbers)[-1]
 
 ### How to merge lists into a list of tuples in Python?
 
@@ -128,7 +149,16 @@ for i in range(10):
     print(random.randint(1,6))
 ```
 
+### Emulating switch case in python
++ [source: stackoverflow](http://stackoverflow.com/a/103081/2571881)
 
+``` python
+def f(x):
+    return {
+        'a': 1,
+        'b': 2,
+    }.get(x, 9)    # 9 is default if x not found
+```
 
 ### Manipulating strings
 + [Read more here](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
