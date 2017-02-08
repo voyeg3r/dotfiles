@@ -14,6 +14,9 @@ alias path="echo ${PATH//:/$'\n'}"
 alias fpath="echo ${fpath// /$'\n'}"
 alias shell='echo ${SHELL:t}'
 
+alias youindex="youtube-dl -o '%(playlist_index)s. %(title)s.%(ext)s'"
+alias youtube-srt='youtube-dl --write-srt --sub-lang en '
+
 # increase gnome-shell sound
 alias upsnd='pactl set-sink-volume 0 +10%'
 alias fullsnd='pactl set-sink-volume 0 +100%'
@@ -24,7 +27,6 @@ alias dairy='vim +VimwikiMakeDiaryNote'
 alias mkdir='mkdir -pv'
 alias hg='history | grep'
 
-alias youtube-srt='youtube-dl --write-srt --sub-lang en '
 
 type perl-rename >/dev/null 2>&1 && alias prename='perl-rename'
 

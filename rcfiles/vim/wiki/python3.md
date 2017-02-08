@@ -29,6 +29,52 @@ Github:      https://github.com/voyeg3r
 + http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
 + https://github.com/cobrateam
 
+
+### How to merge lists into a list of tuples in Python?
+
+``` python
+>>> estados
+['Ceará', 'Maranhão']
+>>> capitais
+['Fortaleza', 'São Luiz']
+
+list(zip(estados, capitais))
+[('Ceará', 'Fortaleza'), ('Maranhão', 'São Luiz')]
+```
+
+### print two lists side by side with equal space
+This example makes use of f-strings (python 3.6)
+
+``` python
+b = list(range(5, 8))
+a = list(range(1, 4))
+a
+[1, 2, 3]
+
+column1 = ["soft","pregnant","tall"]
+column2 = ["skin","woman", "man"]
+
+
+for k, v in zip(column1, column2):
+    print(f'{k:10} {v}')
+
+soft       skin
+pregnant   woman
+tall       man
+```
+
+
+### Lambda functions
+
+``` python
+add = lambda x, y: x + y
+add(6,8)
+14
+
+(lambda x, y: x + y)(5, 3)
+8
+```
+
 ### Dictionary comprehension
 + [about dictionaries](https://www.tutorialspoint.com/python3/python_dictionary.htm)
 
@@ -86,6 +132,27 @@ for i in range(10):
 
 ### Manipulating strings
 + [Read more here](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
++ [pep-498-string-interpolation](https://www.python.org/dev/peps/pep-0498/)
++ [pep 498 local help](pep-498-local-help)
+
+** some f-trings tips **
+
+``` python
+import datetime
+date = datetime.date(1968, 11, 8)
+f'{date} was on {date:%A}'
+'1968-11-08 was on Friday'
+```
+
+``` python
+>>> x=list(range(3))
+>>> x
+[0, 1, 2]
+>>> print(f"There are #{len(x)} elements in x")
+There are #3 elements in x
+```
+
+
 ``` python
 # only for python 3.6 and above
 

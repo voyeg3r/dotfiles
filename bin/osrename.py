@@ -15,15 +15,21 @@
 # which gives the same
 
 import os
+import sys
 
-os.chdir('/home/sergio/tmp')
-for f in os.listdir():
-    f_name, f_ext = os.path.splitext(f)
 
-    f_name, f_num = f_name.lower().split(' ')
-    f_ext = f_ext.lower()
+arg = sys.argv[1]
 
-    new_name = f'{f_num:>02}-{f_name}{f_ext}'
-    print(f'renaming "{f}" to "{new_name}"')
-    os.rename(f, new_name)
+try:
+    os.chdir(arg)
+    for f in os.listdir():
+        f_name, f_ext = os.path.splitext(f)
 
+        f_name, f_num = f_name.lower().split(' ')
+        f_ext = f_ext.lower()
+
+        new_name = f'{f_num:>02}-{f_name}{f_ext}'
+        print(f'renaming "{f}" to "{new_name}"')
+        os.rename(f, new_name)
+except OSError as e:
+    print(f"Cannot open {arg}")

@@ -12,8 +12,6 @@
 
 # source: https://gist.github.com/igniteflow/1226919
 
-import os
-
 """
 Renames the filenames within the same directory to be Unix friendly
 (1) Changes spaces to hyphens
@@ -22,10 +20,13 @@ Usage:
 python rename.py
 """
 
-path =  os.getcwd()
-filenames = os.listdir(path)
 
-for filename in filenames:
-    os.rename(filename, filename.replace(" ", "-").lower())
+import os
+import sys
 
 
+# path = os.getcwd()
+path = os.chdir(sys.argv[1])
+
+for filename in path:
+    os.rename(filename, filename.replace(" ", "_").lower())
