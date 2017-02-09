@@ -29,10 +29,78 @@ Github:      https://github.com/voyeg3r
 + http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html
 + https://github.com/cobrateam
 + http://code.activestate.com/recipes/langs/python/
++ https://panda.ime.usp.br/algoritmos/static/algoritmos/index.html
++ [30 python tricks you may not know about](30-python-tricks-you-may-not-know-about)
 
-### Algorithms list
+### http server
+
+```python
+# Python 3
+python3 -m http.server
+```
+
+### Algorithms list and list tips
 
 + Return a maximum value of a given list: ~/bin/maxlistvalue.py
+
+** Enumerate items from a give list
+```python
+for i, item in enumerate(["casa", "apartamento", "fazenda"], 1):
+     print(f'{i} - {item}')
+
+1 - casa
+2 - apartamento
+3 - fazenda
+
+
+>>> list(enumerate('abc', 1))
+[(1, 'a'), (2, 'b'), (3, 'c')]
+```
+
+
+### Useful builtin methods
+
+You can easily reverse one list to prioritize the most recent ones
+``` python
+nums = []
+for i in range(1,11):
+    nums.append(i)
+
+print(list(nums.reverse()))
+```
+
+You can quickly reverse a list by using:
+
+```python
+>>> a = [1,2,3,4]
+>>> a[::-1]
+[4, 3, 2, 1]
+```
+
+This creates a new reversed list. If you want to reverse a list in place you
+can do:
+
+a.reverse()
+
+
+But you can do the same by doing:
+
+
+A faster and elegant solution is:
+``` python
+[ x for x in range(1,11)[::-1] ]
+```
+
+### Mesuring execution time
+
+``` python
+import time
+
+start = time.time()
+print("hello")
+end = time.time()
+print(end - start)
+```
 
 ### Return maximum value from a list
 
@@ -101,6 +169,22 @@ add(6,8)
 
 ``` python
 first2pairs = {k: mydict[k] for k in mydict.keys()[:2]}
+```
+
+### List comprehension
+
+    [x**2 if x > 10 else x**4 for x in range(40)]
+
+1 - The essential part (loop for) NEEDED
+2 - modiicator  (x*2 for example) OPTIONAL
+3 - conditional OPTIONAL
+
+** Printing a list without loop for **
+```python
+# f-strings (only works on python 3)
+
+recent_presidents = ['George Bush', 'Bill Clinton', 'George W. Bush']
+print(f'The three most recent presidents are {", ".join(recent_presidents)}')
 ```
 
 ### Acessing docstrings (documentation)
@@ -426,6 +510,7 @@ Embedding the REPL in any Python application is easy:
 + os "shows os informations"
 
 3y g00 *pi 畱畹疪疑疃疩畲畽略畤疉疏疠疨疪疒疣畨疩疡畲疖畨疢疤疥疟畱畽疣疂疚畦疙畦疇疦畣疧
+
 
 ### fixing code layout
 
@@ -807,3 +892,41 @@ import string
 
 {'a': 97, 'b': 98, 'c': 99, 'd': 100, 'e': 101, 'f': 102, 'g': 103, 'h': 104, 'i': 105, 'j': 106, 'k': 107, 'l': 108, 'm': 109, 'n': 110, 'o': 111, 'p': 112, 'q': 113, 'r': 114, 's': 115, 't': 116, 'u': 117, 'v': 118, 'w': 119, 'x': 120, 'y': 121, 'z': 122, 'A': 65, 'B': 66, 'C': 67, 'D': 68, 'E': 69, 'F': 70, 'G': 71, 'H': 72, 'I': 73, 'J': 74, 'K': 75, 'L': 76, 'M': 77, 'N': 78, 'O': 79, 'P': 80, 'Q': 81, 'R': 82, 'S': 83, 'T': 84, 'U': 85, 'V': 86, 'W': 87, 'X': 88, 'Y': 89, 'Z': 90}
 ```
+
+### Sorted Dictionary
++ [stackoverflow](http://stackoverflow.com/a/35610062/2571881)
+
+``` python
+>>> class1 = { 'Ethan':'9','Ian':'3','Helen':'8','Holly':'6' }
+>>> print(sorted(class1.items()))
+[('Ethan', '9'), ('Helen', '8'), ('Holly', '6'), ('Ian', '3')]
+
+
+
+>>> for k,v in sorted(class1.items()):
+...     print(k, v)
+...
+Ethan 9
+Helen 8
+Holly 6
+Ian 3
+
+
+
+>>> for k,v in sorted(class1.items(), key=lambda p:p[1]):
+...     print(k,v)
+...
+Ian 3
+Holly 6
+Helen 8
+Ethan 9
+
+>>> for k,v in sorted(class1.items(), key=lambda p:p[1], reverse=True):
+...     print(k,v)
+...
+Ethan 9
+Helen 8
+Holly 6
+Ian 3
+```
+

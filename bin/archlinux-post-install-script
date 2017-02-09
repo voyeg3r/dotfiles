@@ -466,6 +466,9 @@ cabal update
 yaourt -S ghc
 cabal install pandoc
 
+# ranger cmd file manager
+sudo pacman -S ranger
+
 graphictools () {
 sudo pacman -S adobe-source-code-pro-fonts
 sudo pacman -Syu inkscape extra/python2-lxml gimp imagemagick xclip
