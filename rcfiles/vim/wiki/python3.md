@@ -571,6 +571,27 @@ Embedding the REPL in any Python application is easy:
 
 3y g00 *pi 畱畹疪疑疃疩畲畽略畤疉疏疠疨疪疒疣畨疩疡畲疖畨疢疤疥疟畱畽疣疂疚畦疙畦疇疦畣疧
 
+** Some import and documentation tricks **
+
+``` python
+>>> import pprint
+>>> pprint
+<module 'pprint' from '/usr/lib/python3.6/pprint.py'>
+
+# show every method excluding dunder ones "__likethis__"
+>>> print("\n".join([a for a in dir(pprint) if not a.startswith('_')]))
+PrettyPrinter
+isreadable
+isrecursive
+pformat
+pprint
+re
+saferepr
+
+print("\n".join([x for x in dir(os) if not x.startswith('_') ]))
+>>>
+```
+
 
 ### fixing code layout
 
