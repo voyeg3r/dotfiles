@@ -35,34 +35,48 @@ Github:      https://github.com/voyeg3r
 * win32api
 
 ### truncar string em N bytes sem truncar nenhuma palavra
++ http://stackoverflow.com/a/250373/2571881
 
 ``` python
->>>> import textwrap
->>>> textwrap.fill(u"string com texto bem maior que oitenta bytes de tamanho, jogar a palavra que está na coluna 80 para próxima linha", 80)
+import textwrap
+textwrap.fill(u"string com texto bem maior que oitenta bytes de tamanho, jogar a palavra que está na coluna 80 para próxima linha", 80)
 ```
+
+I actually wrote a solution for this on a recent project of mine. I've
+compressed the majority of it down to be a little smaller.
+
+``` markdown
+def smart_truncate(content, length=100, suffix='...'):
+    if len(content) <= length:
+        return content
+    else:
+        # return ' '.join(content[:length+1].split(' ')[0:-1]) + suffix
+        return content[:length].rsplit(' ', 1)[0]+suffix
+```
+
+What happens is the if-statement checks if your content is already less than
+the cutoff point. If it's not, it truncates to the desired length, splits on
+the space, removes the last element (so that you don't cut off a word), and
+then joins it back together (while tacking on the '...').
 
 ### imprimir intervalo de linhas
 
 ``` python
-python
-Python 2.5.2 (r252:60911, Jul 22 2009, 15:35:03)
-[GCC 4.2.4 (Ubuntu 4.2.4-1ubuntu3)] on linux2
-
->>> fp = open("/tmp/file8","w")
->>> for i,line in enumerate(open("file.txt")):
-...     if i >= 26 and i < 99 :
-...             fp.write(line)
+fp = open("/tmp/file8","w")
+for i,line in enumerate(open("file.txt")):
+    if i >= 26 and i < 99 :
+            fp.write(line)
 ```
 
 ### sequencia de fibonacci
 * http://www.petercollingridge.co.uk/blog/python-fibonacci-generator-using-reduce
 
 ``` python
->>> a = [1,1]
->>> for i in range(10):
-...   a.append(a[-1] + a[-2])
-...
->>> a
+a = [1,1]
+for i in range(10):
+  a.append(a[-1] + a[-2])
+
+a
 [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
 ```
 
@@ -86,6 +100,8 @@ def file_len(fname):
 ``` python
 >>> print map(lambda w: len(w), 'It is raining cats and dogs'.split())
 [2, 2, 7, 4, 3, 4]
+
+[ len(x) for x in 'It is raining cats and dogs'.split() ]
 ```
 
 ### somar linhas de um arquivo
@@ -97,7 +113,9 @@ def file_len(fname):
 
 ### builtin len
 
-    "minha string".__len__()
+``` python
+"minha string".__len__()
+```
 
 ### remover caracteres de uma string
 
@@ -116,7 +134,9 @@ print a.strip('()')
 '123.123.123'
 ```
 
-    "".join([ char for char in string if char not in '()' ])
+``` python
+"".join([ char for char in string if char not in '()' ])
+```
 
 ### ler a primeira e ultima linhas de um arquivo
 
@@ -131,24 +151,26 @@ print data[-1],
 ### verificar se há numeros repetidos em uma lista
 
 O jeito mais simples de verificar se há valores repetidos é converter para set
-e comparar se o tamanho muda.
+e comparar se o tamanho muda. A explicação para isso é que set não permite itens
+repetidos.
 
 ``` python
->>> a = [1, 2, 3, 4, 5]
->>> len(a) == len(set(a))
+len(a) == len(set(a))
 True
->>> b = [1, 2, 3, 3, 4, 5]
->>> len(b) == len(set(b))
+b = [1, 2, 3, 3, 4, 5]
+len(b) == len(set(b))
 False
 ```
 
 ### somente listar repetidos
 
-    [ i for i in set(lista) if lista.count(i) > 1 ]
+``` python
+[ i for i in set(lista) if lista.count(i) > 1 ]
 
-    print 'List has duplicate item %s' % [item for item in set(L) if L.count(item) > 1]
+print 'List has duplicate item %s' % [item for item in set(L) if L.count(item) > 1]
 
-    any(i for i in lista if lista.count(i) > 1)
+any(i for i in lista if lista.count(i) > 1)
+```
 
 ### numeros primos
 * fonte: http://code.activestate.com/recipes/117119-sieve-of-eratosthenes/

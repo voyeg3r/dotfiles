@@ -32,6 +32,10 @@ Github:      https://github.com/voyeg3r
 + https://panda.ime.usp.br/algoritmos/static/algoritmos/index.html
 + [30 python tricks you may not know about](30-python-tricks-you-may-not-know-about)
 
+### Ternary operator
+
+    x = 10 if (y == 9) else 20
+
 ### http server
 
 ```python
@@ -131,6 +135,19 @@ list(zip(estados, capitais))
 [('Ceará', 'Fortaleza'), ('Maranhão', 'São Luiz')]
 ```
 
+### Easily create a list
+
+    lista = list(set('12345'))
+
+
+### f-strings examples
+To read more, learn more about f-strings search for pep 498
+
+``` markdown
+var = 42
+print(f'My var is: {var:.02f}')
+```
+
 ### print two lists side by side with equal space
 This example makes use of f-strings (python 3.6)
 
@@ -150,6 +167,25 @@ for k, v in zip(column1, column2):
 soft       skin
 pregnant   woman
 tall       man
+```
+
+Another similar example
+
+
+``` python
+list1 = [ x for x in 'abcd' ]
+list2 = [ x for x in 'pqrs' ]
+
+for k, v in zip(list1, list2):
+    print(f'{k} - {v}')
+
+a - p
+b - q
+c - r
+d - s
+
+# another way to create a list
+my_list = list(set('12345'))
 ```
 
 
@@ -318,7 +354,31 @@ name = 'Jose'
 ```
 
 
-### Truncar uma string - Truncating long strings
+### truncar string em N bytes sem truncar nenhuma palavra
++ http://stackoverflow.com/a/250373/2571881
+
+``` python
+import textwrap
+textwrap.fill(u"string com texto bem maior que oitenta bytes de tamanho, jogar a palavra que está na coluna 80 para próxima linha", 80)
+```
+
+I actually wrote a solution for this on a recent project of mine. I've
+compressed the majority of it down to be a little smaller.
+
+``` markdown
+def smart_truncate(content, length=100, suffix='...'):
+    if len(content) <= length:
+        return content
+    else:
+        return ' '.join(content[:length+1].split(' ')[0:-1]) + suffix
+```
+
+What happens is the if-statement checks if your content is already less than
+the cutoff point. If it's not, it truncates to the desired length, splits on
+the space, removes the last element (so that you don't cut off a word), and
+then joins it back together (while tacking on the '...').
+
+** Truncar uma string - Truncating long strings **
 
 ``` python
 '{:.5}'.format('xylophone')
@@ -326,7 +386,7 @@ name = 'Jose'
 ### Format numbers printing
 
  ``` python
- '{:d}'.format(42)
+'{:d}'.format(42)
 
 '{:f}'.format(3.141592653589793)
  ```
