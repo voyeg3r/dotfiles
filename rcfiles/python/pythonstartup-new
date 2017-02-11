@@ -7,6 +7,10 @@
 
 import readline
 import rlcompleter
+import sys
+
+
+sys.path.insert(0, '/home/sergio/bin')
 
 try:
     import readline
@@ -16,7 +20,7 @@ else:
     import rlcompleter
     readline.parse_and_bind("\C-space: complete")
 
-
+del sys
 # #readline.parse_and_bind("tab: complete")
 # readline.parse_and_bind('Control-Space: complete')
 # readline.parse_and_bind('bind ^I rl_complete')

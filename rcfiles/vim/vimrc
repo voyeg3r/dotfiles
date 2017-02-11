@@ -113,8 +113,8 @@ call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
 
 Plug 'ivanov/vim-ipython'
-" Plug 'nvie/vim-flake8'
-" Plug 'davidhalter/jedi-vim'
+Plug 'nvie/vim-flake8'
+Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-dispatch'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -446,7 +446,7 @@ augroup python
     let python_highlight_numbers=1
     let python_highlight_space_errors=1
     " needs flake8 installed: pip install flake8
-    autocmd BufWritePost *.py call Flake8()
+    "autocmd BufWritePost *.py call Flake8()
 augroup end
 
 augroup html
@@ -726,7 +726,9 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-" nnoremap <F10> :call Flake8()<CR>
+nnoremap <F10> :call Flake8()<CR>
+let g:flake8_show_quickfix=0
+
 let g:pymode = 1
 let g:pymode_quickfix_minheight = 3
 let g:pymode_quickfix_maxheight = 6
@@ -746,6 +748,7 @@ let g:pymode_rope_complete_on_dot = 1
 let g:pymode_rope_completion_bind = '<C-Space>'
 let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime']
 let g:pymode_rope_autoimport_import_after_complete = 0
+let g:pymode_lint_checkers = ['pep8']
 
 " Commands:
 " :PymodeLint* -- Check code in current buffer

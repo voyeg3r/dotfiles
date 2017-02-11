@@ -63,6 +63,7 @@ for i, item in enumerate(["casa", "apartamento", "fazenda"], 1):
 
 
 ### Useful builtin methods
++ [complete list of them](https://docs.python.org/3/library/functions.html)
 
 You can easily reverse one list to prioritize the most recent ones
 ``` python
@@ -142,10 +143,30 @@ list(zip(estados, capitais))
 
 ### f-strings examples
 To read more, learn more about f-strings search for pep 498
++ [article about it](https://py.checkio.org/blog/pep-498-f-strings-python-36/)
 
 ``` markdown
 var = 42
 print(f'My var is: {var:.02f}')
+```
+
+``` python
+>>> val = 1/3
+>>> f'Value:{val:10.2}'
+'Value:      0.33'
+>>> precision = 3
+>>> f'Value:{val:10.{precision}}'
+'Value:     0.333'
+```
+
+
+You can use more complex expressions
+
+``` python
+>>> ll = [1, 22, 3, 1]
+>>> big = lambda a:a.capitalize()
+>>> f'{ll[1]} {big("alex")} {ll.count(1)}'
+'22 Alex 2'
 ```
 
 ### print two lists side by side with equal space
@@ -776,6 +797,10 @@ for fname in glob('*.prj'):
 import os
 for fileName in os.listdir("."):
     os.rename(fileName, fileName.replace("CHEESE_CHEESE_", "CHEESE_"))
+
+# removing filename spaces
+for fname in os.listdir('.'):
+    os.rename(fname, fname.replace(' ', '_'))
 ```
 
 
@@ -786,6 +811,14 @@ for dpath, dnames, fnames in os.walk('/path/to/directory'):
         os.chdir(dpath)
         if f.startswith('cheese_'):
             os.rename(f, f.replace('cheese_', ''))
+
+
+import os
+for f in os.listdir('.'):
+    oldname = f
+    newname = f.replace(' ', '_')
+    print(f'Renomeando \n {oldname} --> {newname}\n')
+    os.rename(oldname, newname)
 ```
 
 ### Regex in python
