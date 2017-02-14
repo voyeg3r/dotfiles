@@ -37,6 +37,7 @@ alias ne='nvim ~/.config/nvim/init.vim'
 # zsh profile editing
 alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
+alias ne='nvim ~/.config/init.vim'
 
 # pipe a download file to standard output on shell
 alias wgetn='wget -O - -o /dev/null'

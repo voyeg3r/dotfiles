@@ -13,8 +13,14 @@
 import os
 
 
-for f in os.listdir('.'):
-    oldname = f
-    newname = f.replace(' ', '_')
-    print(f'Renaming \n {oldname} --> {newname}\n')
-    os.rename(oldname, newname)
+def removespaces():
+    """Removes spaces in file names (no argument needed)"""
+    for f in os.listdir('.'):
+        oldname = f
+        newname = f.replace(' ', '_')
+        print(f'Renaming \n {oldname} --> {newname}\n')
+        os.rename(oldname, newname)
+
+
+if __name__ == '__main__':
+        removespaces()

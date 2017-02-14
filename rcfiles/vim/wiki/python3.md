@@ -31,6 +31,20 @@ Github:      https://github.com/voyeg3r
 + http://code.activestate.com/recipes/langs/python/
 + https://panda.ime.usp.br/algoritmos/static/algoritmos/index.html
 + [30 python tricks you may not know about](30-python-tricks-you-may-not-know-about)
++ https://www.programiz.com/python-programming/list
+
+### Using regex in python
+
+``` python
+import re
+
+mystring = 'abcdefgh'
+
+if re.search(r'abc', mystring):
+    print('matched')
+else:
+    print('NOT match')
+```
 
 ### Ternary operator
 
@@ -227,6 +241,27 @@ add(6,8)
 ``` python
 first2pairs = {k: mydict[k] for k in mydict.keys()[:2]}
 ```
+
+Combining three dictionaries - Let's say we have three dictionaries
+like below...
+
+``` python
+route = {'id': 271, 'title': 'Fast apps'}
+query = {'id': 1, 'render_fast': True}
+post = {'e-mail': 'j@j.com', 'name': 'Jeff'}
+```
+We can combine them in this way:
+``` python
+# dictionarie comprehension
+{ k:v  for d in [query, post, route] for k,v in d.items() }
+```
+
+But in python 3.5+ we can do a much more easy thing:
+
+``` python
+combined_dict = {**route, **query, **post}
+```
+
 
 ### List comprehension
 
