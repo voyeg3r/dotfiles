@@ -32,6 +32,23 @@ Github:      https://github.com/voyeg3r
 + https://panda.ime.usp.br/algoritmos/static/algoritmos/index.html
 + [30 python tricks you may not know about](30-python-tricks-you-may-not-know-about)
 + https://www.programiz.com/python-programming/list
++ [visualise your variables](http://pythontutor.com/)
+
+### Named tuples
++ [From Dan Bader website](https://dbader.org/blog/writing-clean-python-with-namedtuples)
+``` python
+>>> from collections import namedtuple
+>>> Car = namedtuple('Car' , 'color mileage')
+
+# It behaves as if you had defined a Car class manually and given it
+# a constructor accepting a “color” and a “mileage” value:
+
+>>> my_car = Car('red', 3812.4)
+>>> my_car.color
+'red'
+>>> my_car.mileage
+3812.4
+```
 
 ### Using regex in python
 
@@ -71,8 +88,19 @@ for i, item in enumerate(["casa", "apartamento", "fazenda"], 1):
 3 - fazenda
 
 
+# criando tuplas
 >>> list(enumerate('abc', 1))
 [(1, 'a'), (2, 'b'), (3, 'c')]
+
+
+>>> colors = [ 'blue', 'red', 'yellow', 'purple' ]
+>>> for i, color in enumerate(colors):
+...     print(i, color)
+...
+0 blue
+1 red
+2 yellow
+3 purple
 ```
 
 
@@ -148,6 +176,26 @@ sorted function:
 
 list(zip(estados, capitais))
 [('Ceará', 'Fortaleza'), ('Maranhão', 'São Luiz')]
+```
+
+
+``` python
+firstnames = ['Alice', 'Bob', 'John' ]
+lastnames = ['Dupont', 'Sleigh', 'Doe' ]
+ages = [ 24, 63, 33 ]
+
+zip(firstnames, lastnames, ages)
+<zip object at 0xb6e42bcc>
+
+list(zip(firstnames, lastnames, ages))
+[('Alice', 'Dupont', 24), ('Bob', 'Sleigh', 63), ('John', 'Doe', 33)]
+
+for m, k, v in list(zip(firstnames, lastnames, ages)):
+    print(m, k, v)
+
+Alice Dupont 24
+Bob Sleigh 63
+John Doe 33
 ```
 
 ### Easily create a list
@@ -259,9 +307,27 @@ We can combine them in this way:
 But in python 3.5+ we can do a much more easy thing:
 
 ``` python
+# pythonic way
 combined_dict = {**route, **query, **post}
 ```
 
+### dictionaries useful builtin methods
+
+
+``` python
+tall_buildings = {
+    "Empire State": 381, "Sears Tower": 442,
+    "Burj Kbalifa": 828, "Taipei 101": 509,
+}
+>>> print(max(tall_buildings.values()))
+828
+
+print(max(tall_buildings.items(), key=lambda b: b[1]))
+('Burj Kbalifa', 828)
+
+print(max(tall_buildings, key=tall_buildings.get))
+Burj Kbalifa
+```
 
 ### List comprehension
 
@@ -299,6 +365,14 @@ with open('alice.txt', 'r') as f:
 result = {i:f.count(i) for i in f if i == 'alice'}
 
 print(f'Alice aparece {result["alice"]} vezes no texto')
+```
+
+### Reading unix system users
+
+``` python
+with open('/etc/passwd') as f:
+    users = (s.split(':')[0] for s in f)
+    " ".join(list(users))
 ```
 
 ### tools
@@ -648,6 +722,14 @@ print("\n".join([x for x in dir(os) if not x.startswith('_') ]))
 >>>
 ```
 
+### Collections lib
+
+``` python
+>>> from collections import Counter
+>>> fruits = ['orange', 'banana', 'apple', 'orange', 'banana']
+>>> Counter(fruits)
+Counter({'orange': 2, 'banana': 2, 'apple': 1})
+```
 
 ### fixing code layout
 

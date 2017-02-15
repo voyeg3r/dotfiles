@@ -237,4 +237,24 @@ EOF
 ${0}
 endsnippet
 
+snippet 'yes(no)?' "Asks for confirmation" r
+while true; do
+  read Answer\?'Do you like coffee? [Y/n]  '
+  case $Answer in
+    '' | [Yy]* )
+      ${1:echo Yes!}
+      break;
+      ;;
+    [Nn]* )
+      ${2:echo No!}
+      break;
+      ;;
+    * )
+      echo Please answer YES or NO.
+      ;;
+  esac
+done
+$0
+endsnippet
+
 # vim: set ft=zsh ts=8 sw=4 tw=0 noet :
