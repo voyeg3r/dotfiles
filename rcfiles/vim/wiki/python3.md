@@ -33,6 +33,39 @@ Github:      https://github.com/voyeg3r
 + [30 python tricks you may not know about](30-python-tricks-you-may-not-know-about)
 + https://www.programiz.com/python-programming/list
 + [visualise your variables](http://pythontutor.com/)
++ https://docs.python.org/3.6/whatsnew/
+
+### Generators
+Let's say you have a big file with cities and their population
+to iterate over it you can do:
+
+``` python
+def load_cities_gen(path):
+    with open(path) as handle:
+        for line in handle:
+            city, count = line.split('\t')
+            yield city, int(count)
+
+result = load_cities_gen('pop.tsv')
+print(next(result))
+print(next(result))
+print(next(result))
+```
+This code avoids memory errors
+
+### Variable positional arguments
+
+``` python
+def log(message, values):
+    if not values:
+        print(message)
+    else:
+        values_str = ', '.join(str(x) for x in values)
+        print('%s: %s' % (message, values_str))
+
+log('My numbers are', 1, 2)
+log('Hi there')
+```
 
 ### Named tuples
 + [From Dan Bader website](https://dbader.org/blog/writing-clean-python-with-namedtuples)
@@ -49,6 +82,17 @@ Github:      https://github.com/voyeg3r
 >>> my_car.mileage
 3812.4
 ```
+
+Another example:
+
+``` python
+from collections import namedtuple
+Color = namedtuple('Color', 'red green blue')
+
+color = Color(55, 155, 255)
+print(color.red)
+```
+
 
 ### Using regex in python
 

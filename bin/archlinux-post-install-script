@@ -475,7 +475,11 @@ sudo pacman -Syu inkscape extra/python2-lxml gimp imagemagick xclip
 sudo yaourt -S --noconfirm gloobus-sushi-bzr
 sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
 sudo yaourt --noconfirm -S ttf-ubuntu-font-family
+sudo yaourt -S adobe-source-code-pro-fonts
 } && graphictools
+
+# piper is an alternative for sed awk and other text manipulation tools
+sudo pip install piper
 
 yaourt -S gimp-plugin-registry
 yaourt -S gimp-plugin-resynthesizer-git
@@ -529,6 +533,12 @@ rm -rf ~/.thumbnails/fail
 yaourt -S extra/sound-juicer
 # sucessor do ffmpeg
 # https://aur.archlinux.org/packages/libav-git/
+
+# Python Soundcloud Music Downloader
+# https://github.com/flyingrub/scdl
+# GET YOUR AUTH TOKEN HERE: https://flyingrub.github.io/scdl/
+git clone https://github.com/flyingrub/scdl.git && cd scdl
+sudo python3 setup.py install
 
 # gui for youtube-dl
 # https://aur.archlinux.org/packages/youtube-dl-gui-git/
