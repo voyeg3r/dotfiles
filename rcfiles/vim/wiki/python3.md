@@ -53,6 +53,60 @@ print(next(result))
 ```
 This code avoids memory errors
 
+### Decorators
+
+
+``` python
+def my_decorator(some_function):
+    def wrapper():
+            print(f'something before {some_function.__name__}')
+            some_function()
+            print(f'something happens after {some_function.__name__}')
+    return wrapper
+
+@my_decorator
+def just_some_function():
+    print("Wheee!")
+
+just_some_function()
+something before just_some_function
+Wheee!
+something happens after just_some_function
+```
+
+The decorator bellow mesures the time spent for any decorated function
+``` python
+# source: https://realpython.com/blog/python/primer-on-python-decorators/
+
+import time
+
+
+def timing_function(some_function):
+
+    """
+    Outputs the time a function takes
+    to execute.
+    """
+
+    def wrapper():
+        t1 = time.time()
+        some_function()
+        t2 = time.time()
+        return "Time it took to run the function: " + str((t2 - t1)) + "\n"
+    return wrapper
+
+
+@timing_function
+def my_function():
+    num_list = []
+    for num in (range(0, 10000)):
+        num_list.append(num)
+    print("\nSum of all the numbers: " + str((sum(num_list))))
+
+
+print(my_function())
+```
+
 ### Variable positional arguments
 
 ``` python

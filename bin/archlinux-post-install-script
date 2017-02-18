@@ -45,6 +45,9 @@ gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 # github url shortner
 gem install git.io
 
+# jupyter python interpreter on your browser
+sudo pip3 install jupyter
+
 # to be able to import turtle in python
 sudo pacman -S community/python-pmw
 
