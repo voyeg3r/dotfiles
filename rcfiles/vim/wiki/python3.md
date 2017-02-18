@@ -54,6 +54,7 @@ print(next(result))
 This code avoids memory errors
 
 ### Decorators
++ https://www.thumbtack.com/engineering/a-primer-on-python-decorators/
 
 
 ``` python

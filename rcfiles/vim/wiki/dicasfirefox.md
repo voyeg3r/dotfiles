@@ -138,6 +138,10 @@ http://pt.wikihow.com/Fazer-o-Firefox-Carregar-as-P%C3%A1ginas-de-Forma-Mais-R%C
 also enable this:
 https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf
 
+
+### New tab opening home page
++ [New tab homepage addon](https://addons.mozilla.org/en-US/firefox/addon/777)
+
 ### open searches in new tab
 
 By default, Firefox has a search box in the upper-right hand corner from which

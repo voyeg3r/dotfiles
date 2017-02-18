@@ -114,12 +114,12 @@ call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
 Plug 'ivanov/vim-ipython'
 Plug 'nvie/vim-flake8'
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-dispatch'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
-Plug 'klen/python-mode'
+"Plug 'klen/python-mode'
 Plug 'phillipberndt/python-imports.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rking/ag.vim'
@@ -726,29 +726,29 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-nnoremap <F10> :call Flake8()<CR>
-let g:flake8_show_quickfix=0
-
-let g:pymode = 1
-let g:pymode_quickfix_minheight = 3
-let g:pymode_quickfix_maxheight = 6
-let g:pymode_indent = 1
-let g:pymode_doc = 1
-let g:pymode_doc_bind = 'K'
-let g:pymode_run = 1
-let g:pymode_run_bind = '<leader>r'
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
-let g:pymode_lint = 1
-let g:pymode_lint_on_write = 1
-let g:pymode_lint_cwindow = 1
-let g:pymode_lint_signs = 1
-let g:pymode_rope_completion = 1
-let g:pymode_rope_complete_on_dot = 1
-let g:pymode_rope_completion_bind = '<C-Space>'
-let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime']
-let g:pymode_rope_autoimport_import_after_complete = 0
-let g:pymode_lint_checkers = ['pep8']
+"nnoremap <F10> :call Flake8()<CR>
+"let g:flake8_show_quickfix=0
+"
+"let g:pymode = 1
+"let g:pymode_quickfix_minheight = 3
+"let g:pymode_quickfix_maxheight = 6
+"let g:pymode_indent = 1
+"let g:pymode_doc = 1
+"let g:pymode_doc_bind = 'K'
+"let g:pymode_run = 1
+"let g:pymode_run_bind = '<leader>r'
+"let g:pymode_breakpoint = 1
+"let g:pymode_breakpoint_bind = '<leader>b'
+"let g:pymode_lint = 1
+"let g:pymode_lint_on_write = 1
+"let g:pymode_lint_cwindow = 1
+"let g:pymode_lint_signs = 1
+"let g:pymode_rope_completion = 1
+"let g:pymode_rope_complete_on_dot = 1
+"let g:pymode_rope_completion_bind = '<C-Space>'
+"let g:pymode_rope_autoimport_modules = ['os', 'shutil', 'datetime']
+"let g:pymode_rope_autoimport_import_after_complete = 0
+"let g:pymode_lint_checkers = ['pep8']
 
 " Commands:
 " :PymodeLint* -- Check code in current buffer
