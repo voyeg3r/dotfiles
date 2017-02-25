@@ -418,6 +418,17 @@ But in python 3.5+ we can do a much more easy thing:
 combined_dict = {**route, **query, **post}
 ```
 
+### Inverting a dictionary
+
+
+``` python
+m {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+dict(zip(m.values(), m.keys()))
+{1: 'a', 2: 'b', 3: 'c', 4: 'd'}
+
+```
+
 ### dictionaries useful builtin methods
 
 
@@ -1205,9 +1216,9 @@ sorted(set(dir('abc')) & set(dir([])) )
 
 ### Print list items in python3
 
-``` python
-l = range(100)
+l = range(1, 11)
 print(*l)
+1 2 3 4 5 6 7 8 9 10
 
 # imprime valores como string não como lista
 ```
@@ -1266,5 +1277,15 @@ Ethan 9
 Helen 8
 Holly 6
 Ian 3
+
+
+>>> m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+>>> for k, v in m.items():
+...     print(f'{k} - {v}')
+...
+a - 1
+b - 2
+c - 3
+d - 4
 ```
 
