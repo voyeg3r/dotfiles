@@ -101,6 +101,8 @@ for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
 # https://github.com/zsh-users/zsh-completions
 plugins+=(zsh-completions)
 plugins+=(python)
+export PYTHONDONTWRITEBYTECODE=1
+
 autoload -U compinit && compinit
 
 setopt complete_in_word
