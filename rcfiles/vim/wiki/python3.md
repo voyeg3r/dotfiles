@@ -34,6 +34,7 @@ Github:      https://github.com/voyeg3r
 + https://www.programiz.com/python-programming/list
 + [visualise your variables](http://pythontutor.com/)
 + https://docs.python.org/3.6/whatsnew/
++ [python-101 curso completo](https://www.youtube.com/playlist?list=PLV7VqBqvsd_3yRYYWrHkziPL6izzrUIkp)
 
 ### Generators
 Let's say you have a big file with cities and their population
@@ -273,8 +274,15 @@ sorted function:
 >>> capitais
 ['Fortaleza', 'São Luiz']
 
+# usando zip para unir as duas listas gera um problema
+# torna um lazy object em um objeto iteral simples
+# que guarda todos os valores em memória
 list(zip(estados, capitais))
 [('Ceará', 'Fortaleza'), ('Maranhão', 'São Luiz')]
+
+# melhor seria
+for k, v in zip(estados, capitais):
+    print(k, v)
 ```
 
 
