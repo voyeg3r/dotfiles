@@ -111,6 +111,7 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+Plug 'tell-k/vim-autopep8'
 Plug 'ivanov/vim-ipython'
 "Plug 'nvie/vim-flake8'
 "Plug 'davidhalter/jedi-vim'
@@ -150,6 +151,10 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 
 call plug#end()
+
+" Autopep8 plugin mapping
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+autocmd FileType python set equalprg=autopep8\ -
 
 " sources:
 " + https://gist.github.com/sjl/1171642
