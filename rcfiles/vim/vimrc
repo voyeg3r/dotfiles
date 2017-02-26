@@ -111,7 +111,6 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
-
 Plug 'ivanov/vim-ipython'
 "Plug 'nvie/vim-flake8'
 "Plug 'davidhalter/jedi-vim'
@@ -389,6 +388,8 @@ noremap <F3> :NERDTreeToggle<CR>
 " When double click a word vim will hightlight all other ocurences
 nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\>'<cr>:set hls<cr>
 nnoremap <leader>* :let @/='\V\<'.escape(expand('<cword>'), '\').'\>'<cr>:set hls<cr>
+hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
+
 
 set rnu nu
 
@@ -725,7 +726,9 @@ com! Cls :call CleanExtraSpaces()
 " ************************ End functions *****************
 
 set nopaste
-nnoremap <F2> :set invpaste paste?<CR>
+" nnoremap <F2> :set invpaste paste?<CR>
+
+
 set pastetoggle=<F2>
 set showmode
 

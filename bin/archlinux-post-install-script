@@ -55,7 +55,14 @@ sudo pip install feedparser
 
 
 # Adjusts the color temperature of your screen according to your surroundings.
+# Append to /etc/geoclue/geoclue.conf:
+#
+# [redshift]
+# allowed=true
+# system=false
+# users=
 sudo pacman -S redshift
+
 
 # to be able to import turtle in python
 sudo pacman -S community/python-pmw
