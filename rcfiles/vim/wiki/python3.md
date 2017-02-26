@@ -821,6 +821,15 @@ Embedding the REPL in any Python application is easy:
 
 3y g00 *pi 畱畹疪疑疃疩畲畽略畤疉疏疠疨疪疒疣畨疩疡畲疖畨疢疤疥疟畱畽疣疂疚畦疙畦疇疦畣疧
 
+#### Lib to remove text accents
+
+    sudo pip install unidecode
+
+``` python
+from unidecode import unidecode
+print(unidecode(u"áéíóú äëïöü ñÑ û"))
+```
+
 ** Some import and documentation tricks **
 
 ``` python
