@@ -9,12 +9,25 @@
 #         twitter:  @voyeg3r
 # ------------------------------------------------
 
-# to use unaccent function
-# import from unaccent import unaccent
+
 
 import unicodedata
 
 
 def unaccent(text):
+    '''
+    Removes accents from a givem text
+    unacent(text) --> string '''
     output = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore')
+    output = output.decode('utf-8')
     return output
+
+def main():
+        texto_acentuado = "Ação, à la carte, a pé"
+        output = unaccent(texto_acentuado)
+        print(f'Texto acentuado: "{texto_acentuado}"')
+        print(f'"{output}"')
+        return output
+
+if __name__ == '__main__':
+        main()
