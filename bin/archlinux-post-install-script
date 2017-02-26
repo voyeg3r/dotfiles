@@ -51,6 +51,11 @@ gem install git.io
 # jupyter notebook
 # You should see the notebook open in your browser.
 sudo pip3 install jupyter
+sudo pip install feedparser
+
+
+# Adjusts the color temperature of your screen according to your surroundings.
+sudo pacman -S redshift
 
 # to be able to import turtle in python
 sudo pacman -S community/python-pmw

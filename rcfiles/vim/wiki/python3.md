@@ -422,11 +422,13 @@ combined_dict = {**route, **query, **post}
 
 
 ``` python
-m {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+m = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 
 dict(zip(m.values(), m.keys()))
 {1: 'a', 2: 'b', 3: 'c', 4: 'd'}
 
+>>> {v: k for k, v in m.items()}
+{1: 'a', 2: 'b', 3: 'c', 4: 'd'}
 ```
 
 ### dictionaries useful builtin methods

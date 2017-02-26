@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # # -*- coding: UTF-8 -*-
 # Criado em:Ter 02/Mar/2010 hs 11:58
 # Last Change: qui 29 dez 2016 09:41:27 BRT
@@ -32,18 +32,19 @@ else:
 try:
     import pydelicious
 except ImportError:
-    print " "
-    print " você tem que instalar primeiro a biblioteca pydelicious"
-    print ""
-    print " sudo aptitude install python-setuptools"
-    print " sudo easy_install http://pydelicious.googlecode.com/files/pydelicious-0.6.zip"
-    print " "
+    print(" ")
+    print(" você tem que instalar primeiro a biblioteca pydelicious")
+    print("")
+    print(" sudo aptitude install python-setuptools")
+    print(" sudo easy_install http://pydelicious.googlecode.com/files/pydelicious-0.6.zip")
+    print(" ")
     sys.exit(1)
 
 
 if len(sys.argv) != 2:
-    print ' Uso: %s tag' % sys.argv[0]
+    print('Uso: %s tag' % sys.argv[0])
     sys.exit(1)
 
 populares=pydelicious.get_popular(tag=str(sys.argv[1]))
-print "\n".join([ x.get('url') for x in populares] )
+# print("\n".join([ x.get('url') for x in populares] ))
+print(populares)
