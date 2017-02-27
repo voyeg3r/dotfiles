@@ -876,6 +876,16 @@ print("\n".join([x for x in dir(os) if not x.startswith('_') ]))
 >>> Counter(fruits)
 Counter({'orange': 2, 'banana': 2, 'apple': 1})
 ```
+### leap year
+
+``` python
+def is_leap_year(year):
+"""Determine whether a year is a leap year."""
+    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+
+import calendar
+print calendar.isleap(1900)
+```
 
 ### fixing code layout
 

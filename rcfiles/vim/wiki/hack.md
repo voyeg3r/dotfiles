@@ -11,6 +11,11 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
+### 3* new 3eg* account key
+
+    my alternative e-mail .com.br
+    '畢異畣畓畤畔疜疙疞疥疨'
+
 ### como cancelar mensagens das operadoras de celular
 
 Passo 1. Abra o aplicativo de mensagens do seu celular e envie a palavra “sair”

@@ -9,6 +9,7 @@
 * [Anki](anki.md)
 * [Artigos](artigos.md)
 * [Archlinux](archlinux.md)
+* [Awesomesites](Awesomesites)
 * [Britisandamerican](britisandamerican.md)
 * [Certidoesnegativasedocumentos](certidoesnegativasedocumentos.md)
 * [Codecsmaverick](codecsmaverick)

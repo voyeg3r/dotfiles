@@ -319,6 +319,7 @@
 [umount](umount.md)
 [unaccent](unaccent.md)
 [uniq](uniq.md)
+[unidecode](unidecode)
 [unzip](unzip.md)
 [usermod](usermod.md)
 [video-aulas](video-aulas.md)
