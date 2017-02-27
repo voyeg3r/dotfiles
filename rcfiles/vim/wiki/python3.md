@@ -830,6 +830,23 @@ from unidecode import unidecode
 print(unidecode(u"áéíóú äëïöü ñÑ û"))
 ```
 
+### Easily remove text accents
+``` python
+import unicodedata
+
+def remove_accents(input_str):
+    nfkd_form = unicodedata.normalize('NFKD', input_str)
+    only_ascii = nfkd_form.encode('ASCII', 'ignore')
+    return only_ascii.decode('utf-8')
+```
+
+``` python
+import unicodedata
+def strip_accents(s):
+   return ''.join(c for c in unicodedata.normalize('NFD', s)
+                  if unicodedata.category(c) != 'Mn')
+```
+
 ** Some import and documentation tricks **
 
 ``` python
