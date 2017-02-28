@@ -215,6 +215,10 @@ yaourt -S aspell-pt aspell-en
 
 yaourt -S atom-editor
 
+# quod libet audio player
+# http://quodlibet.readthedocs.io/en/latest/downloads.html
+sudo pacman -S quodlibet
+
 # to understand what the bellow command does see this:
 # http://stackoverflow.com/questions/14040351/filtering-zsh-history-by-command
 #https://github.com/mooz/percol#zsh-history-search

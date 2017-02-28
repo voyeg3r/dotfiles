@@ -36,6 +36,13 @@ Github:      https://github.com/voyeg3r
 + https://docs.python.org/3.6/whatsnew/
 + [python-101 curso completo](https://www.youtube.com/playlist?list=PLV7VqBqvsd_3yRYYWrHkziPL6izzrUIkp)
 
+### Visualizing bytecode
+
+``` python
+>>> func.__code__.co_code
+'d\x01\x00}\x00\x00d\x00\x00S'
+```
+
 ### Generators
 Let's say you have a big file with cities and their population
 to iterate over it you can do:
@@ -445,7 +452,7 @@ tall_buildings = {
 print(max(tall_buildings.items(), key=lambda b: b[1]))
 ('Burj Kbalifa', 828)
 
-print(max(tall_buildings, key=tall_buildings.get))
+print(max([tall_buildings](tall_buildings), key=tall_buildings.get))
 Burj Kbalifa
 ```
 
@@ -868,6 +875,20 @@ saferepr
 
 print("\n".join([x for x in dir(os) if not x.startswith('_') ]))
 >>>
+
+>>> print("\n".join([x for x in dir(string) if not x.startswith('_')]))
+Formatter
+Template
+ascii_letters
+ascii_lowercase
+ascii_uppercase
+capwords
+digits
+hexdigits
+octdigits
+printable
+punctuation
+whitespace
 ```
 
 ### Collections lib
@@ -934,6 +955,20 @@ def cd(newdir):
         yield
     finally:
         os.chdir(prevdir)
+
+# another sippet
+from contextlib import contexmanager
+
+@contexmanager
+def managed_file(name):
+    try:
+        f = open(name, 'w')
+        yield f
+    finally:
+        f.close()
+
+with managed_file('hello.txt') as f:
+    f.write('hello, world')
 ```
 
 
