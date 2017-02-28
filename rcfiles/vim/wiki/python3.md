@@ -733,13 +733,15 @@ pi = math.pi
 sentence = 'Pi is equl to {:.2f}'.format(pi)
 ```
 
-** Printing dates **
+** PRINTING DATES **
 ``` python
+# datetime.utcnow returns a datetime object.
+# You can use its strftime method to con vert it into a
+# string of your desired format
 import datetime
-my_date = datetime.datetime(2006, 9, 24, 12, 30, 45)
-sentence = '{:%B %d, %Y}'.format(my_date)
 
-Semptember 24, 2016
+datetime.datetime.utcnow().strftime('%B %d %Y - %H:%M:%S')
+'August 20 2014 - 13:55:49'
 ```
 
 

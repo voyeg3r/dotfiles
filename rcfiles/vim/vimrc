@@ -146,6 +146,7 @@ Plug 'morhetz/gruvbox'
 Plug 'endel/vim-github-colorscheme'
 Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
+Plug 'https://github.com/juanedi/predawn.vim'
 
 " HTML Bundle
 Plug 'mattn/emmet-vim'
@@ -307,6 +308,7 @@ let mapleader = ","
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
   colorscheme gruvbox
+  "colorscheme predawn
   set background=dark
 endif
 
@@ -319,7 +321,8 @@ set mousemodel=popup
 set mouse=a
 set t_Co=256
 set guioptions=egmrti
-set gfn=Monospace\ 13
+"set gfn=Monospace\ 13
+set gfn=Source\ Code\ Pro\ for\ Powerline\ Medium\ 14
 set anti enc=utf-8
 " https://gist.github.com/epegzz/1634235/fe5100a91157c5d0f0c8b7b6dedd126c6396ae19
 "set guifont=Monaco\ for\ Powerline:h13
