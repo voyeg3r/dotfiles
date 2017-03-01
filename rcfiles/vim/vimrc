@@ -154,8 +154,8 @@ Plug 'mattn/emmet-vim'
 call plug#end()
 
 " Autopep8 plugin mapping
-autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
-autocmd FileType python set equalprg=autopep8\ -
+"autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+"autocmd FileType python set equalprg=autopep8\ -
 
 " sources:
 " + https://gist.github.com/sjl/1171642

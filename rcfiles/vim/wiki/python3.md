@@ -62,6 +62,17 @@ print(next(result))
 ```
 This code avoids memory errors
 
+### Print or set basename
+For those who don't know what basename is let's give an example:
+
+    ~/user/tmp/file.py .......... full path
+    file.py ..................... basename
+
+``` python
+import os
+script_name = os.path.basename(__file__)
+```
+
 ### Decorators
 + https://www.thumbtack.com/engineering/a-primer-on-python-decorators/
 
