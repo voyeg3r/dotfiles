@@ -35,6 +35,7 @@ Github:      https://github.com/voyeg3r
 + [visualise your variables](http://pythontutor.com/)
 + https://docs.python.org/3.6/whatsnew/
 + [python-101 curso completo](https://www.youtube.com/playlist?list=PLV7VqBqvsd_3yRYYWrHkziPL6izzrUIkp)
++ http://ricardoduarte.github.io/python-para-desenvolvedores/
 
 ### Visualizing bytecode
 
