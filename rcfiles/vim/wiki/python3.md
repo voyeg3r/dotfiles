@@ -37,6 +37,27 @@ Github:      https://github.com/voyeg3r
 + [python-101 curso completo](https://www.youtube.com/playlist?list=PLV7VqBqvsd_3yRYYWrHkziPL6izzrUIkp)
 + http://ricardoduarte.github.io/python-para-desenvolvedores/
 
+### Using jupiter notebook
++ https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/
+
+Jupyter notebook, formerly known as the IPython notebook, is a flexible tool
+that helps you create readable analyses, as you can keep code, images,
+comments, formulae and plots together.
+
+``` markdown
+    --------------------------
+    Jupiter notebook Shortcuts
+    --------------------------
+    Enter ......... edit cell
+    Esc ........... exit edit mode
+    Ctrl-Enter .... run cell
+    m ............. to markdown
+    y ............. back to code
+    A ............. insert cell above
+    B ............. insert cell below
+    DD ............ delete current cell
+```
+
 ### Visualizing bytecode
 
 ``` python
@@ -466,6 +487,11 @@ print(max(tall_buildings.items(), key=lambda b: b[1]))
 
 print(max([tall_buildings](tall_buildings), key=tall_buildings.get))
 Burj Kbalifa
+
+
+a = ["I", "am", "gregorious", "person", "echidna", "fly"]
+max(a, key=len)
+'gregorious'
 ```
 
 ### List comprehension
@@ -833,12 +859,13 @@ Embedding the REPL in any Python application is easy:
 + [natural sorting](https://pypi.python.org/pypi/natsort)
 + [clipboard manipulation](https://pypi.python.org/pypi/pyperclip)
 + [python3 libs](https://pypi.python.org/pypi?:action=browse&c=533&show=all)
-+ os module
++ os module - deals with any operating system
 + [memory cache] from functools import lru_cache
 + [fix code layout] pip install flake8
 + [srt translator] sudo pip install pysrttranslator
 + [open excel spreadsheets] openpyxl
 + os "shows os informations"
++ imp (reload) - reloads previous imported modules
 
 3y g00 *pi 畱畹疪疑疃疩畲畽略畤疉疏疠疨疪疒疣畨疩疡畲疖畨疢疤疥疟畱畽疣疂疚畦疙畦疇疦畣疧
 

@@ -362,5 +362,5 @@ GNOME_VERSION=$(gnome-shell --version)
 
 # python environment
 #export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup
-export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup-new
+#export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup-new
 export PYTHON_HISTORY_FILE=~/.python_history
