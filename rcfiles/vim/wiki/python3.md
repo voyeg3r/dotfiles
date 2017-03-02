@@ -353,6 +353,7 @@ John Doe 33
 ### f-strings examples
 To read more, learn more about f-strings search for pep 498
 + [article about it](https://py.checkio.org/blog/pep-498-f-strings-python-36/)
++ https://cito.github.io/blog/f-strings/
 
 ``` markdown
 var = 42
@@ -366,6 +367,25 @@ print(f'My var is: {var:.02f}')
 >>> precision = 3
 >>> f'Value:{val:10.{precision}}'
 'Value:     0.333'
+
+
+import os
+
+>>> for i in range(1, 11):
+...     new_folder = f'folder-{i:02d}'
+...     os.mkdir(new_folder)
+...     print(f'Created {new_folder}')
+...
+Created folder-01
+Created folder-02
+Created folder-03
+Created folder-04
+Created folder-05
+Created folder-06
+Created folder-07
+Created folder-08
+Created folder-09
+Created folder-10
 ```
 
 
