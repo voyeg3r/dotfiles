@@ -388,6 +388,13 @@ Created folder-09
 Created folder-10
 ```
 
+``` python
+# list only files in current dir
+for entry in os.listdir('.'):
+    if os.path.isfile(entry):
+        print(f'"{entry}" is a file')
+```
+
 
 You can use more complex expressions
 

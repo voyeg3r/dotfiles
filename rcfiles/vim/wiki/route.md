@@ -28,3 +28,7 @@ Se os usuários tentarem configurar outro proxy, por exemplo
 
 ele vai dar erro de DNS, ou seja a criança não navega!
 
+### Default gateway
+The command below shows your default gateway on Linux
+
+    route -n | awk '/UG/ {print $2}'
