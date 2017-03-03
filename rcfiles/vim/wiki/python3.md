@@ -502,6 +502,8 @@ dict(zip(m.values(), m.keys()))
 
 
 ``` python
+# getting maximum values
+
 tall_buildings = {
     "Empire State": 381, "Sears Tower": 442,
     "Burj Kbalifa": 828, "Taipei 101": 509,
@@ -519,6 +521,31 @@ Burj Kbalifa
 a = ["I", "am", "gregorious", "person", "echidna", "fly"]
 max(a, key=len)
 'gregorious'
+```
+
+### Ordering dictionaries
+
+``` python
+# https://gist.github.com/voyeg3r/e44d50c29525a450a38f77e5f656b5f4
+
+students = [
+    {'name':'Paul Allen', 'class':'Science','grade':'A'},
+    {'name':'Paul Allen', 'class':'Math','grade':'C'},
+    {'name':'Bob Lewis', 'class':'Science','grade':'D'},
+    {'name':'Bob Lewis', 'class':'Math','grade':'b'},
+    {'name':'Bob Lewis', 'class':'History','grade':'f'},
+]
+
+from operator import itemgetter
+
+for x in sorted(students, key=itemgetter('name', 'class')):
+    print(x)
+
+{'name': 'Bob Lewis', 'class': 'History', 'grade': 'f'}
+{'name': 'Bob Lewis', 'class': 'Math', 'grade': 'b'}
+{'name': 'Bob Lewis', 'class': 'Science', 'grade': 'D'}
+{'name': 'Paul Allen', 'class': 'Math', 'grade': 'C'}
+{'name': 'Paul Allen', 'class': 'Science', 'grade': 'A'}
 ```
 
 ### List comprehension
@@ -546,6 +573,12 @@ print(random.choice.__doc__)
 Choose a random element from a non-empty sequence.
 ```
 
+### A function that adds all arguments
+
+``` python
+def addnums(*args):
+   return sum(args)
+```
 
 
 ### Counting words in a file
@@ -893,6 +926,7 @@ Embedding the REPL in any Python application is easy:
 + [open excel spreadsheets] openpyxl
 + os "shows os informations"
 + imp (reload) - reloads previous imported modules
++ [python pandas](python-pandas) (data analisys) pip install pandas
 
 3y g00 *pi 畱畹疪疑疃疩畲畽略畤疉疏疠疨疪疒疣畨疩疡畲疖畨疢疤疥疟畱畽疣疂疚畦疙畦疇疦畣疧
 
