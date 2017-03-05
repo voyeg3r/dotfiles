@@ -23,4 +23,5 @@ comments, formulae and plots together.
     pastebin and get the url returned.
 
     %time will time whatever you evaluate
+    % lsmagic ...... show all magic commands
 ```

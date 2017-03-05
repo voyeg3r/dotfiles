@@ -96,6 +96,7 @@ script_name = os.path.basename(__file__)
 
 ### Decorators
 + https://www.thumbtack.com/engineering/a-primer-on-python-decorators/
++ https://realpython.com/blog/python/primer-on-python-decorators/
 
 
 ``` python
@@ -218,7 +219,7 @@ python3 -m http.server
 
 + Return a maximum value of a given list: ~/bin/maxlistvalue.py
 
-** Enumerate items from a give list
+** Enumerate items from a give list **
 ```python
 for i, item in enumerate(["casa", "apartamento", "fazenda"], 1):
      print(f'{i} - {item}')
@@ -226,7 +227,31 @@ for i, item in enumerate(["casa", "apartamento", "fazenda"], 1):
 1 - casa
 2 - apartamento
 3 - fazenda
+```
 
+### What does ** (double star) and * (star) do for parameters?
++ http://stackoverflow.com/a/3394898/2571881
+
+``` python
+def print_everything(*args):
+    for count, thing in enumerate(args, 1):
+        print(f'{count}. {thing}')
+
+print_everything('apple', 'banana', 'cabbage')
+
+1. apple
+2. banana
+3. cabbage
+
+def table_things(**kwargs):
+    for name, value in kwargs.items():
+        print(f'{name} = {value}')
+
+table_things(apple = 'fruit', cabbage = 'vegetable')
+
+apple = fruit
+cabbage = vegetable
+```
 
 # criando tuplas
 >>> list(enumerate('abc', 1))

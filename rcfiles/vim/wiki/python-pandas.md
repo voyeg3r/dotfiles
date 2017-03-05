@@ -1,4 +1,5 @@
 
+
 ### Pandas (biblioteca para manipulação de dados)
 No arch linux instalei usando o yaourt
 
@@ -143,3 +144,5 @@ users.head()
 ```python
 
 ```
+### References
++ https://pythonprogramming.net/data-analysis-python-pandas-tutorial-introduction/
