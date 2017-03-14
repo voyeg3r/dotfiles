@@ -10,6 +10,13 @@ a versão do sistema use este comando:
    Release:        7.10
    Codename:       gutsy
 
+   Exibe a versão, o codinome e outras informações sobre uma distribuição linux
+
+   lsb_release -a  .............. exibe informação completa
+   lsb_release -c  .............. exibe o codinome
+   lsb_release -r  .............. no caso do ubuntu 10.10 exibe --> "Release:	10.10"
+
+
 ### Exibir somente o codinome da versão
 
 lsb_release -cs

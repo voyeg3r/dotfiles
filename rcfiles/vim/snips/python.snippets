@@ -7,6 +7,7 @@ snippet py "python header" w
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # vim: ai ts=4 sts=4 et sw=4
+# File:         <+Filename Here+>
 # Author:       `!v g:snips_author `
 # Last Change:  `!v strftime("%c")`
 # Created:      `!v strftime("%c")`
@@ -44,7 +45,7 @@ endsnippet
 
 snippet wh
 while ${1:condition}:
-        ${0}
+    ${0}
 endsnippet
 
 # dowh - does the same as do...while in other languages
@@ -57,7 +58,7 @@ endsnippet
 
 snippet with
 with ${1:expr} as ${2:var}:
-        ${0}
+    ${0}
 endsnippet
 
 # New Class
@@ -79,13 +80,13 @@ endsnippet
 
 snippet deff
 def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
-        ${0}
+    ${0}
 endsnippet
 
 # New Method
 snippet defs
 def ${1:mname}(self, ${2:arg}):
-        ${0}
+    ${0}
 endsnippet
 
 # New Property
@@ -105,23 +106,23 @@ endsnippet
 
 snippet if
 if ${1:condition}:
-        ${0}
+    ${0}
 endsnippet
 
 snippet el
 else:
-        ${0}
+    ${0}
 endsnippet
 
 snippet ei
 elif ${1:condition}:
-        ${0}
+    ${0}
 endsnippet
 
 # For
 snippet for
 for ${1:item} in ${2:items}:
-        ${0}
+    ${0}
 endsnippet
 
 # Encodes
@@ -185,7 +186,7 @@ endsnippet
 # if __name__ == '__main__':
 snippet ifmain "if name main test" w
 if __name__ == '__main__':
-        ${0:main()}
+    ${0:main()}
 endsnippet
 
 # __magic__
@@ -231,14 +232,14 @@ endsnippet
 # test function/method
 snippet test
 def test_${1:description}(${2:`indent('.') ? 'self' : ''`}):
-        ${0}
+    ${0}
 endsnippet
 
 # test case
 snippet testcase
 class ${1:ExampleCase}(unittest.TestCase):
-        def test_${2:description}(self):
-            ${0}
+    def test_${2:description}(self):
+        ${0}
 endsnippet
 
 snippet fut
@@ -248,9 +249,9 @@ endsnippet
 #getopt
 snippet getopt
 try:
-        # Short option syntax: "hv:"
-        # Long option syntax: "help" or "verbose="
-        opts, args = getopt.getopt(sys.argv[1:], "${1:short_options}", [${2:long_options}])
+    # Short option syntax: "hv:"
+    # Long option syntax: "help" or "verbose="
+    opts, args = getopt.getopt(sys.argv[1:], "${1:short_options}", [${2:long_options}])
 
     except getopt.GetoptError, err:
         # Print debug info
@@ -308,7 +309,7 @@ endsnippet
 
 snippet dol
 def ${1:__init__}(self, *args, **kwargs):
-        super(${0:ClassName}, self).$1(*args, **kwargs)
+    super(${0:ClassName}, self).$1(*args, **kwargs)
 endsnippet
 
 snippet kwg

@@ -36,6 +36,31 @@ Github:      https://github.com/voyeg3r
 + https://docs.python.org/3.6/whatsnew/
 + [python-101 curso completo](https://www.youtube.com/playlist?list=PLV7VqBqvsd_3yRYYWrHkziPL6izzrUIkp)
 + http://ricardoduarte.github.io/python-para-desenvolvedores/
++ awesome-python.com [categorization for python libs] at github
+
+# python keyword list
+
+``` python
+>>> import keyword
+>>> keyword.kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+keyword.iskeyword('else')
+True
+```
+
+### Dealing with decimal numbers
+For more complex decimal operations
+use decimal module
+
+``` python
+round(5.6 + 87.3, 1)
+92.9
+
+# whereas if you do this
+5.6 + 87.3
+92.89999999999999
+```
 
 ### Using jupiter notebook
 + https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/
@@ -190,6 +215,22 @@ color = Color(55, 155, 255)
 print(color.red)
 ```
 
+``` python
+row = ('Dave', 'Beazley', '5412 N CLARK ST')
+row[1]
+'Beazley'
+row[2]
+'5412 N CLARK ST'
+from collections import namedtuple
+Person = namedtuple('Person', ['first', 'last', 'address'])
+row = Person('Dave', 'Beazley', '5423 N CLARK ST')
+row.first
+'Dave'
+row.last
+'Beazley'
+row.address
+'5423 N CLARK ST'
+```
 
 ### Using regex in python
 
@@ -219,7 +260,7 @@ python3 -m http.server
 
 + Return a maximum value of a given list: ~/bin/maxlistvalue.py
 
-** Enumerate items from a give list **
+#### Enumerate items from a give list
 ```python
 for i, item in enumerate(["casa", "apartamento", "fazenda"], 1):
      print(f'{i} - {item}')
@@ -228,6 +269,15 @@ for i, item in enumerate(["casa", "apartamento", "fazenda"], 1):
 2 - apartamento
 3 - fazenda
 ```
+
+#### Printing a decreasing amount of something
+The list.pop() method gives us the last value of a list
+and removes it from the list
+
+li = list(range(1, 5))
+
+while li:
+    print('Spam!' * li.pop())
 
 ### What does ** (double star) and * (star) do for parameters?
 + http://stackoverflow.com/a/3394898/2571881
@@ -254,6 +304,8 @@ cabbage = vegetable
 ```
 
 # criando tuplas
+
+``` python
 >>> list(enumerate('abc', 1))
 [(1, 'a'), (2, 'b'), (3, 'c')]
 
@@ -275,32 +327,49 @@ cabbage = vegetable
 You can easily reverse one list to prioritize the most recent ones
 ``` python
 nums = []
-for i in range(1,11):
+for i in range(1, 11):
     nums.append(i)
 
 print(list(nums.reverse()))
+
+# list.reverse() changes the list in place
+# whereas reversed(list) only gives you the list reversed withot changing it
+```
+``` python
+li = list(range(1, 11))
+li = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+li2 = [11, 12, 13]
+li.append(li2)
+li
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, [11, 12, 13]]
+li.pop()
+[11, 12, 13]
+# to remove the last item list.pop()
+# to add each item of li2 on li just:
+li.extend(li2)
+li
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 ```
 
 You can quickly reverse a list by using:
 
 ```python
->>> a = [1,2,3,4]
+>>> a = [1, 2, 3, 4]
 >>> a[::-1]
-[4, 3, 2, 1]
+[4,  3,  2,  1]
 ```
 
 This creates a new reversed list. If you want to reverse a list in place you
 can do:
 
-a.reverse()
-
+    a.reverse()
 
 But you can do the same by doing:
 
-
 A faster and elegant solution is:
 ``` python
-[ x for x in range(1,11)[::-1] ]
+[ x for x in range(1, 11)[::-1] ]
 ```
 
 ### Mesuring execution time
@@ -315,7 +384,6 @@ print(end - start)
 ```
 
 ### Return maximum value from a list
-
 There are two ways to do that, the first one makes use of
 a builtin function called `max`. (first let's create a list
 to show you how to use this function)
@@ -330,6 +398,20 @@ Another way to perform this action is using negative index plus
 sorted function:
 
     sorted(numbers)[-1]
+
+If you want to print the first three big elements:
+
+    big_values = ' '.join((str(x) for x in sorted(numbers[-3:])))
+
+``` python
+# the last three (bigger)
+' '.join((str(x) for x in sorted(numbers)[-3:] ))
+'67 897 987'
+
+# the first three (smallest)
+>>> ' '.join((str(x) for x in sorted(numbers)[:3]))
+'21 34 67'
+```
 
 ### How to merge lists into a list of tuples in Python?
 
@@ -349,7 +431,6 @@ list(zip(estados, capitais))
 for k, v in zip(estados, capitais):
     print(k, v)
 ```
-
 
 ``` python
 firstnames = ['Alice', 'Bob', 'John' ]
@@ -425,7 +506,7 @@ You can use more complex expressions
 
 ``` python
 >>> ll = [1, 22, 3, 1]
->>> big = lambda a:a.capitalize()
+>>> big = lambda a: a.capitalize()
 >>> f'{ll[1]} {big("alex")} {ll.count(1)}'
 '22 Alex 2'
 ```
@@ -439,8 +520,8 @@ a = list(range(1, 4))
 a
 [1, 2, 3]
 
-column1 = ["soft","pregnant","tall"]
-column2 = ["skin","woman", "man"]
+column1 = ["soft", "pregnant", "tall"]
+column2 = ["skin", "woman",  "man"]
 
 
 for k, v in zip(column1, column2):
@@ -469,7 +550,6 @@ d - s
 # another way to create a list
 my_list = list(set('12345'))
 ```
-
 
 ### Lambda functions
 
@@ -500,7 +580,7 @@ post = {'e-mail': 'j@j.com', 'name': 'Jeff'}
 We can combine them in this way:
 ``` python
 # dictionarie comprehension
-{ k:v  for d in [query, post, route] for k,v in d.items() }
+{ k: v  for d in [query, post, route] for k,v in d.items() }
 ```
 
 But in python 3.5+ we can do a much more easy thing:
@@ -523,11 +603,29 @@ dict(zip(m.values(), m.keys()))
 {1: 'a', 2: 'b', 3: 'c', 4: 'd'}
 ```
 
+### Creating a dictionary form two lists
+
+``` markdown
+>>> values = ['Hammad', 'Builder', 'Engine']
+>>> keys = ['Safe', 'Bob', 'Thomas']
+>>> d = dict(zip(keys, values))
+>>> d
+{'Safe': 'Hammad', 'Bob': 'Builder', 'Thomas': 'Engine'}
+```
+
+
 ### dictionaries useful builtin methods
 
 
 ``` python
 # getting maximum values
+
+# First of all how combine two list in one dict (using zip)
+
+names = ['Empire State', 'Sears Tower', 'Burj Kbalifa', 'Taipei 101']
+heights = [ 381, 442, 828, 509 ]
+
+tall_buildings = dict(zip(names, heights))
 
 tall_buildings = {
     "Empire State": 381, "Sears Tower": 442,
@@ -547,6 +645,22 @@ a = ["I", "am", "gregorious", "person", "echidna", "fly"]
 max(a, key=len)
 'gregorious'
 ```
+
+### Ordering dictionaries
+
+``` python
+# https://gist.github.com/voyeg3r/e44d50c29525a450a38f77e5f656b5f4
+
+students = [
+    {'name':'Paul Allen', 'class':'Science','grade':'A'},
+    {'name':'Paul Allen', 'class':'Math','grade':'C'},
+    {'name':'Bob Lewis', 'class':'Science','grade':'D'},
+    {'name':'Bob Lewis', 'class':'Math','grade':'b'},
+
+### Use _ for “throwaway” variables e.g.:
+
+    for k, _ in [('a', 1), ('b', 2), ('c', 3)]:
+        print(k)
 
 ### Ordering dictionaries
 
@@ -646,7 +760,7 @@ print(help(random.random))
 import random
 
 for i in range(10):
-    print(random.randint(1,6))
+    print(random.randint(1, 6))
 ```
 
 ### Emulating switch case in python
@@ -788,37 +902,26 @@ def mostra(msg):
 colocando zeros à esquerda - leading zeros
 ``` python
 text = "22"
-print(text.zfill(4))
+print(f'{text:04d}')
 0022
 ```
 For numbers
 ``` python
-print('{0:03d}'.format(4))
+print(f'{4:03d}')
 ```
 
 ** Formatting options **
 ``` python
 person = {'name': 'Jenn', 'age': 23}
-sentence = 'My name is {} and I am {} years old.'.format(person['name'], person['age'])
-print(sentence)
-
-person = {'name': 'Jenn', 'age': 23}
-sentence = 'My name is {0} and I am {1} years old.'.format(person['name'], person['age'])
-print(sentence)
-
-person = {'name': 'Jenn', 'age': 23}
-sentence = 'My name is {0[name]} and I am {0[age]} years old.'.format(person)
-print(sentence)
+print(f'My name is {name} and I am {age} years old.')
 
 l = ['Jenn', 23]
-sentence = 'My name is {0[0]} and I am {0[1]} years old.'.format(l)
+print(f'My name is {l[0]} and I am {l[1]} years old.')
 
 # another example
 tag = 'h1'
 text = 'This is a headline'
-
-sentence = '<{0}>{1}</{0}>'.format(tag, text)
-print(sentence)
+print(f'<{tag}>{text}</{tag}')
 
 
 class Person():
@@ -829,7 +932,7 @@ class Person():
 
 p1 = Person('Jack', '33')
 
-sentence = 'My name is {0.name} and I am {0.age} years old.'.format(p1)
+print(f'My name is {p1.name} and I am {p1.age} years old.')
 ```
 
 Using kwords
@@ -844,7 +947,7 @@ sentence = 'My name is {name} and I am {age} years old.'.format(**person)
 ```
 Formatting numbers print
 ``` python
-for i in range(1,11):
+for i in range(1, 11):
     sentence = 'The value is {}'.format(i)
     print(sentence)
 ```
@@ -952,6 +1055,7 @@ Embedding the REPL in any Python application is easy:
 + os "shows os informations"
 + imp (reload) - reloads previous imported modules
 + [python pandas](python-pandas) (data analisys) pip install pandas
++ heapq
 
 3y g00 *pi 畱畹疪疑疃疩畲畽略畤疉疏疠疨疪疒疣畨疩疡畲疖畨疢疤疥疟畱畽疣疂疚畦疙畦疇疦畣疧
 
@@ -980,6 +1084,20 @@ def strip_accents(s):
    return ''.join(c for c in unicodedata.normalize('NFD', s)
                   if unicodedata.category(c) != 'Mn')
 ```
+
+### lib for statistics
+
+``` python
+>>> import heapq
+>>> help(heapq)
+
+>>> grades = '32 43 654 34 132 66 99 532'.split()
+>>> grades
+['32', '43', '654', '34', '132', '66', '99', '532']
+>>> print(heapq.nlargest(3, grades))
+['99', '66', '654']
+```
+
 
 ** Some import and documentation tricks **
 
@@ -1023,7 +1141,19 @@ whitespace
 >>> fruits = ['orange', 'banana', 'apple', 'orange', 'banana']
 >>> Counter(fruits)
 Counter({'orange': 2, 'banana': 2, 'apple': 1})
+
+
+c = Counter('abcdeabcdabcaba')  # count elements from a string
+
+c.most_common(3)
+[('a', 5), ('b', 4), ('c', 3)]
+
+>>> c = Counter('xyzzy')
+>>> c
+Counter({'y': 2, 'z': 2, 'x': 1})
 ```
+
+
 ### leap year
 
 ``` python
@@ -1052,6 +1182,19 @@ print(dir(os))
 import os
 print(os.getcwd())
 ```
+
+### Context managers can deal with iterabes easily
+
+``` python
+with open('blah.dat') as f:
+    # Read the firs line (header)
+    header_line = next(f)
+
+    # Read the rest
+    for data_line in f:
+        # ...
+```
+
 
 ** How to list dir using python like ls on linux? **
 ``` python
@@ -1117,7 +1260,7 @@ Notice that it has the order (‘1’, ‘10’, ‘2’) - this is because the 
 being sorted in lexicographical order, which sorts numbers like you would
 letters (i.e. ‘b’, ‘ba’, ‘c’).
 
-natsort provides a function natsorted that helps sort lists “naturally”, either
+natsort provides a function natsorted that helps sort lists "naturally", either
 as real numbers (i.e. signed/unsigned floats or ints), or as versions. Using
 natsorted is simple:
 
@@ -1208,7 +1351,6 @@ for elm in data:
 000elm13
 ```
 
-
 ### Renaming files
 [from stackoverflow](http://stackoverflow.com/q/2759067/)
 
@@ -1238,7 +1380,6 @@ for fname in os.listdir('.'):
     os.rename(fname, fname.replace(' ', '_'))
 ```
 
-
 ``` python
 import os
 for dpath, dnames, fnames in os.walk('/path/to/directory'):
@@ -1265,6 +1406,10 @@ def strip_html(text):
     import re
     s = re.sub('<[^>]*>', '', text)
     return s
+
+# remove duplicated spaces
+s = 'This    is my  string'
+re.sub('\s+', ' ', s)
 ```
 
 ### Getting rid of string punctuation
@@ -1404,6 +1549,17 @@ pyperclip.paste()
 'The text to be copied to the clipboard.'
 ```
 
+### Para verificar duplicados e interceções use set
+
+``` python
+names = ['Dave', 'Thomas', 'Paula', 'Lewis', 'Dave']
+names
+['Dave', 'Thomas', 'Paula', 'Lewis', 'Dave']
+names = {'Dave', 'Thomas', 'Paula', 'Lewis', 'Dave'}
+names
+{'Thomas', 'Lewis', 'Dave', 'Paula'}
+```
+
 ### Métodos comuns a str and list
 
 
@@ -1414,33 +1570,6 @@ sorted(set(dir('abc')) & set(dir([])) )
 
 ```
 
-### Print list items in python3
-
-l = range(1, 11)
-print(*l)
-1 2 3 4 5 6 7 8 9 10
-
-# imprime valores como string não como lista
-```
-
-``` python
-from random import shuffle
-
-l = list(range(100))
-shuffle(l) #  << shuffle before print or assignment
-print(l)
-
-[67, 12, 44, 86, 39, 74, 36, 70, 1, 14, 90, 71, 47, 81, 41, 95, 92, 15, 7, 17, 9, 85, 25, 10, 34, 38, 24, 63, 52, 65, 66, 6, 43, 97, 54, 78, 77, 32, 35, 80, 8, 87, 5, 13, 73, 76, 82, 93, 26, 18, 79, 45, 46, 49, 2, 3, 96, 75, 40, 4, 61, 31, 55, 62, 37, 50, 30, 48, 22, 28, 23, 69, 56, 57, 20, 88, 53, 83, 64, 91, 21, 98, 51, 16, 94, 11, 72, 29, 27, 84, 59, 99, 68, 33, 0, 42, 60, 58, 89, 19]
-```
-
-### Dictionary comprehension
-
-``` python
-import string
-{ c:ord(c) for c in string.ascii_letters }
-
-{'a': 97, 'b': 98, 'c': 99, 'd': 100, 'e': 101, 'f': 102, 'g': 103, 'h': 104, 'i': 105, 'j': 106, 'k': 107, 'l': 108, 'm': 109, 'n': 110, 'o': 111, 'p': 112, 'q': 113, 'r': 114, 's': 115, 't': 116, 'u': 117, 'v': 118, 'w': 119, 'x': 120, 'y': 121, 'z': 122, 'A': 65, 'B': 66, 'C': 67, 'D': 68, 'E': 69, 'F': 70, 'G': 71, 'H': 72, 'I': 73, 'J': 74, 'K': 75, 'L': 76, 'M': 77, 'N': 78, 'O': 79, 'P': 80, 'Q': 81, 'R': 82, 'S': 83, 'T': 84, 'U': 85, 'V': 86, 'W': 87, 'X': 88, 'Y': 89, 'Z': 90}
-```
 
 ### Sorted Dictionary
 + [stackoverflow](http://stackoverflow.com/a/35610062/2571881)
@@ -1488,4 +1617,26 @@ b - 2
 c - 3
 d - 4
 ```
+### Example of python classes
 
+``` python
+class Worker:
+    def __init__(self, name, pay):
+            self.name = name
+            self.pay = pay
+    def lastName(self):
+            return self.name.split()[-1]
+    def giveRaise(self, percent):
+            self.pay *= (1.0 + percent)
+
+bob = Worker('Bob Smith', 50000)
+sue = Worker('Sue Jones', 60000)
+
+bob.lastName()
+'Smith'
+sue.lastName()
+'Jones'
+sue.giveRaise(.10)
+sue.pay
+66000.0
+```

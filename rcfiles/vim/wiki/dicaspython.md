@@ -29,19 +29,23 @@ Curso do professor Ronaldo Ramos no Youtube: http://goo.gl/n4NxP
 
 source: http://tuxbalaji.wordpress.com/2013/10/05/how-to-fix-subtitles-delay-or-ealier-with-your-movies-by-python-code/
 
+``` python
 >>> subs.shift(seconds=-2) # Move all subs 2 seconds earlier
 >>> subs.shift(minutes=1)  # Move all subs 1 minutes later
+```
 
 Passando parâmetro para o script
 
 		import sys
 		str(sys.argv[1])
 
+``` python
 #! usr/bin/python
 import pysrt
 subs=open("/home/bala/Pirates of the Caribbean -The Curse of the Black Pearl(2003).srt")
 subs.shift(minutes=-2) # Move all subs 2 minutes earlier
 subs.save('/home/bala/new.srt', encoding='utf-8')#saves file with new.srt in your home directory
+```
 
 ### baixando legendas com o subliminal
 
@@ -54,4 +58,3 @@ subs.save('/home/bala/new.srt', encoding='utf-8')#saves file with new.srt in you
 
 
 
-[[}}}]]

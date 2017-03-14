@@ -11,6 +11,21 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
+# python keyword list
+
+``` python
+import keyword
+keyword.kwlist
+```
+
+# Centralizando uma string no python 3
+
+``` python
+s = 'This is my string'
+print(s.center(50, '-'))
+----------------This is my string-----------------
+```
+
 # programando com janelas
 * http://www.gustavobarbieri.com.br/eagle/docs/eagle-pt.html
 
@@ -62,9 +77,9 @@ then joins it back together (while tacking on the '...').
 ### imprimir intervalo de linhas
 
 ``` python
-fp = open("/tmp/file8","w")
-for i,line in enumerate(open("file.txt")):
-    if i >= 26 and i < 99 :
+fp = open("/tmp/file8", "w")
+for i, line in enumerate(open("file.txt")):
+    if i >= 26 and i < 99:
             fp.write(line)
 ```
 
