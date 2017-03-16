@@ -153,6 +153,7 @@ sudo pacman -S archlinux-wallpaper
 
 # wallpaper changer for linux
 yaourt variety
+yaourt komorebi
 
 # messenger do facebook
 yaourt -S messengerfordesktop
