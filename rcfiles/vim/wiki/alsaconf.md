@@ -34,8 +34,11 @@ ajustar o volume conforme sua necessidade e pressione ESC para sair.
 ###. Salvando os ajustes
 Para salvar e não precisar fazer os ajustes novamente, digite no prompt de comando:
 
+Read more here: http://askubuntu.com/a/465641/3798
+
        alsactl store
 
+       alsactl --file ~/.config/asound.state store
 
 Quando iniciar ficará tudo como deixou anteriormente.
 Acho que é isso.

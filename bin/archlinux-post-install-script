@@ -153,6 +153,9 @@ sudo pacman -S archlinux-wallpaper
 
 # wallpaper changer for linux
 yaourt variety
+
+# customize wallpapers
+# https://github.com/iabem97/komorebi
 yaourt komorebi
 
 # messenger do facebook
@@ -493,9 +496,6 @@ pacman -Sy cabal-install
 cabal update
 yaourt -S ghc
 cabal install pandoc
-
-# ranger cmd file manager
-sudo pacman -S ranger
 
 graphictools () {
 sudo pacman -S adobe-source-code-pro-fonts
