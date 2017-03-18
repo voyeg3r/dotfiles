@@ -8,6 +8,12 @@ A opção -u faz update
  cp -uvfa origem destino
 
 Update, verbose, force, a=dpR
+
+
+### Copiando o mesmo arquivo para três pastas diferentes
+
+    echo dir1 dir2 dir3 | xargs -n 1 cp -v arquivo.txt
+
 ### copiando estrutura de pastas (somente a extrutura)
 
 (cd /home/user/source/; find -type d -print0) | xargs -0 mkdir -p

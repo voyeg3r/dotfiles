@@ -1,5 +1,12 @@
 ### Introdução
 
+### Copiando o mesmo arquivo para três pastas diferentes
+
+    echo dir1 dir2 dir3 | xargs -n 1 cp -v arquivo.txt
+
+ -n 1 – diz ao xargs para usar no máximo um argumento por linha de comando e enviar para o comando cp.
+cp – usado para copiar um arquivo.
+-v – permite mostrar os detalhes da operação de cópia.
 
 ### Consertando permissões
 Usando a opção -0 do find e do xargs delimitamos os arquivos, isso

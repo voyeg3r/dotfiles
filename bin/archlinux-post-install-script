@@ -525,6 +525,7 @@ yaourt -S ffmulticonverter
 # numix circle icon theme
 yaourt -S numix-circle-icon-theme-git
 yaourt -S adapta-gtk-theme
+yaourt numix-gtk-theme
 
 # https://github.com/Xaviju/inkscape-open-symbols
 yaourt -S inkscape-open-symbols-git
