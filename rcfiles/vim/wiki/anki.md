@@ -1,5 +1,7 @@
 ### O que é o Anki?
 
+E um programa de aprendizado baseado na repetição espaçada
+
 ``` markdown
 File:		 Anki.md
 Created:	 ter 10 jan 2017 13:13:26 BRT
@@ -11,7 +13,20 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
-E um programa de aprendizado baseado na repetição espaçada
+### Novo processo de instalação:
++ https://apps.ankiweb.net/#linux
+
+
+ Anki not picking up GTK theme on Gnome/Linux
+
+You can work around this issue by explicitly telling Anki what the GTK theme is. Run the following commands in a terminal:
+
+theme=$(gsettings get org.gnome.desktop.interface gtk-theme)
+echo "gtk-theme-name=$theme" >> ~/.gtkrc-2.0
+echo "export GTK2_RC_FILES=$HOME/.gtkrc-2.0" >> ~/.profile
+
+
+
 
 ### Decks que podem ser importados do site do anki
 

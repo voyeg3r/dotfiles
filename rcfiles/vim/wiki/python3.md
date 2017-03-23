@@ -789,6 +789,79 @@ f'{date} was on {date:%A}'
 ```
 
 ``` python
+>>> import datetime
+>>> current_date = datetime.date.today()
+>>> print(current_date)
+2017-03-22
+>>> print(current_date.month)
+3
+>>> print(current_date.year)
+2017
+>>>
+```
+
+``` python
+>>> import datetime
+>>> current_date = datetime.date.today()
+>>> # strftime allows you to specify the date format
+... print(current_date.strftime('%d %b, %Y'))
+22 Mar, 2017
+```
+
+
+``` python
+>>> current_date = datetime.date.today()
+>>> f"Please attend our event {current_date.strftime('%A, %B %d in the year %Y')}"
+'Please attend our event Wednesday, March 22 in the year 2017'
+```
+
+
+
+``` python
+# how many days until my bifthday
+>>> import datetime
+>>> next_birthday = \
+... datetime.datetime.strptime('11/08/2017', '%m/%d/%Y').date()
+>>> current_date = datetime.date.today()
+>>> difference = next_birthday - current_date
+>>> print(difference.days)
+231
+```
+
+
+``` python
+>>> import datetime
+>>> current_time = datetime.datetime.now()
+>>> print(current_time)
+2017-03-22 08:36:24.589458
+>>> print(current_time.hour)
+8
+>>> print(current_time.minute)
+36
+>>> print(current_time.second)
+24
+```
+
+``` python
+>>> import datetime
+>>> current_time = datetime.datetime.now()
+>>> print(datetime.datetime.strftime(current_time, '%H:%M:%S'))
+08:38:50
+```
+
+
+``` python
+# withou using strftime
+>>> import datetime
+>>> current_date =  datetime.datetime.now()
+>>> print(current_date.minute)
+42
+>>> print(f'{current_date.hour}:{current_date.minute}:{current_date.second}')
+8:42:43
+```
+
+
+``` python
 >>> x=list(range(3))
 >>> x
 [0, 1, 2]
@@ -1047,6 +1120,7 @@ Embedding the REPL in any Python application is easy:
 + [natural sorting](https://pypi.python.org/pypi/natsort)
 + [clipboard manipulation](https://pypi.python.org/pypi/pyperclip)
 + [python3 libs](https://pypi.python.org/pypi?:action=browse&c=533&show=all)
++ python-dateutils - deals with dates
 + os module - deals with any operating system
 + [memory cache] from functools import lru_cache
 + [fix code layout] pip install flake8
