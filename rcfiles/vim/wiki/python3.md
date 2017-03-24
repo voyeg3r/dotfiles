@@ -920,6 +920,16 @@ name = 'Jose'
 "'Jose' is a name"
 ```
 
+### It is easyer to ask forgiveness than permission (EAFP)
+
+``` python
+my_list = [1, 2, 3, 4, 5, 6]
+
+try:
+    print(my_list[5])
+except IndexError:
+    print('That index does not exist')
+```
 
 ### truncar string em N bytes sem truncar nenhuma palavra
 + http://stackoverflow.com/a/250373/2571881
