@@ -26,6 +26,10 @@ echo "gtk-theme-name=$theme" >> ~/.gtkrc-2.0
 echo "export GTK2_RC_FILES=$HOME/.gtkrc-2.0" >> ~/.profile
 
 
+### How delete tag on anki
+
++ https://www.youtube.com/watch?v=D46FR00UR_M
+
 ### Decks que podem ser importados do site do anki
 
 as 1000 primeiras frases em ingles
