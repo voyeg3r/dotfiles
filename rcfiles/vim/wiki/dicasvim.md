@@ -511,13 +511,24 @@ I would like to have this in my clipboard :
     :%norm 0"Zyt:
     :'<,'>norm! "Qye
 
-Obs: You need to have > in cpoptions for the newline to be added in between yanks (:set cpoptions+=>), otherwise the words will be concatenated on a single line.
+Obs: You need to have > in cpoptions for the newline to be added in between
+yanks (:set cpoptions+=>), otherwise the words will be concatenated on a single
+line.
+
+		>	When appending to a register, put a line break before
+			the appended text.
+
 
     apiKey
     maxCount
     id
     userid
     requestFields
+
+
+To see all cpoptions:
+
+    :verbose set cpoptions?
 
 ### Inserting ttyrecordings at stackexchange
 
