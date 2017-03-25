@@ -9,5 +9,7 @@ aos arquivos do squid, uma vez que o mesmo já faz isto.
 
     sudo chattr +i <file>
 
+Para reverter o atributo troque o sinal por '-'
+
 
 

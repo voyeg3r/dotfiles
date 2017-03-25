@@ -484,6 +484,41 @@ if your register z is not clean you can clear it by doing
 qzq
 ```
 
+
+# I would like to copy the first words of multiple lines.
++ http://stackoverflow.com/a/43003031/2571881
+
+Example of code :
+
+``` viml
+apiKey := fmt.Sprintf("&apiKey=%s", args.ApiKey)
+maxCount := fmt.Sprintf("&maxCount=%d", args.MaxCount)
+id := fmt.Sprintf("&id=%s", args.Id)
+userid := fmt.Sprintf("&userid=%s", args.Userid)
+requestFields := fmt.Sprintf("&requestFields=%s", args.RequestFields)
+```
+
+I would like to have this in my clipboard :
+
+    apiKey
+    maxCount
+    id
+    userid
+    requestFields
+
+### Solutions
+
+    :%norm 0"Zyt:
+    :'<,'>norm! "Qye
+
+Obs: You need to have > in cpoptions for the newline to be added in between yanks (:set cpoptions+=>), otherwise the words will be concatenated on a single line.
+
+    apiKey
+    maxCount
+    id
+    userid
+    requestFields
+
 ### Inserting ttyrecordings at stackexchange
 
 [![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14) https://asciinema.org/docs/embedding
