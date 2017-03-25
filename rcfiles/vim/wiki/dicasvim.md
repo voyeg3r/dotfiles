@@ -508,8 +508,8 @@ I would like to have this in my clipboard :
 
 ### Solutions
 
-    :%norm 0"Zyt:
-    :'<,'>norm! "Qye
+    :%norm 0"Zyt:     ................ this one for intire file
+    :'<,'>norm! "Qye  ................ this one for selection are only
 
 Obs: You need to have > in cpoptions for the newline to be added in between
 yanks (:set cpoptions+=>), otherwise the words will be concatenated on a single
@@ -517,14 +517,6 @@ line.
 
 		>	When appending to a register, put a line break before
 			the appended text.
-
-
-    apiKey
-    maxCount
-    id
-    userid
-    requestFields
-
 
 To see all cpoptions:
 
