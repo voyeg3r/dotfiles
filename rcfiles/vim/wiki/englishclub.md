@@ -1277,6 +1277,12 @@ http://www.talkenglish.com/Speaking/Idioms/Category6.aspx
 Phrases with sound
 http://www.englishspeak.com/english-phrases.cfm?newCategoryShowed=1&sortBy=28
 
+Penguin Reader - Parallel texts
+
+    Backup: http://goo.gl/doJ2bm
+    Level 2: http://goo.gl/hNbbtN
+    Level 3: http://goo.gl/4pNM4F
+
 ### Impotant skills to a poliglot
 Noticing
 Processing
@@ -1346,4 +1352,3 @@ Some applications to improve your lerning speed
   Site que pronuncia (trechos de video no youtube)
   http://youpronounce.it/
 
-}}}

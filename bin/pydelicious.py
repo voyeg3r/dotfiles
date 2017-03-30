@@ -433,7 +433,6 @@ def dlcs_rss_request(tag = "", popular = 0, user = "", url = ''):
     elif popular == 1 and tag != '':
         url = DLCS_RSS + '''popular/%s'''%tag
     rss = http_request(url).read()
-    #rss = http_request('http://feeds.delicious.com/v2/rss').read()
     rss = feedparser.parse(rss)
     # print rss
 #     for e in rss.entries: print e;print

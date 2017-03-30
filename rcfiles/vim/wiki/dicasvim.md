@@ -515,8 +515,8 @@ Obs: You need to have > in cpoptions for the newline to be added in between
 yanks (:set cpoptions+=>), otherwise the words will be concatenated on a single
 line.
 
-		>	When appending to a register, put a line break before
-			the appended text.
+    >	When appending to a register, put a line break before
+        the appended text.
 
 To see all cpoptions:
 

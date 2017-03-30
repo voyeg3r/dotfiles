@@ -52,6 +52,7 @@ gem install git.io
 # You should see the notebook open in your browser.
 sudo pip3 install jupyter
 sudo pip install feedparser
+sudo pip install numpy
 
 # unidecode (to remove accents in python programs)
 sudo pip install unidecode

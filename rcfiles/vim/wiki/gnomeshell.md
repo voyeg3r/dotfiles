@@ -251,16 +251,19 @@ https://bbs.archlinux.org/viewtopic.php?id=71938
 https://github.com/Dieterbe/snip/
 https://github.com/Dieterbe/snip/tree/master
 
-### beste addons to gnome-shell
+# best addons to gnome-shell
 
-Replacement of Alt-Tab, iterates through windows in a cover-flow manner.
-https://extensions.gnome.org/extension/97/coverflow-alt-tab/
+### Replacement of Alt-Tab, iterates through windows in a cover-flow manner.
++ https://extensions.gnome.org/extension/97/coverflow-alt-tab/
 
-Extensão para trocar papel de parede automaticamente
-https://extensions.gnome.org/extension/543/backslide/
+### Extensão para trocar papel de parede automaticamente
++ https://extensions.gnome.org/extension/543/backslide/
 
-Readme sobre a extensão acima
-https://bitbucket.org/LukasKnuth/backslide
+### Readme sobre a extensão acima
++ https://bitbucket.org/LukasKnuth/backslide
+
+### Set your gravatar icon
++ https://extensions.gnome.org/extension/1015/gravatar/
 
 ### como instalar o gnome-shell no ubuntu 11.04
 
