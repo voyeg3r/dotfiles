@@ -54,6 +54,9 @@ sudo pip3 install jupyter
 sudo pip install feedparser
 sudo pip install numpy
 
+# baixador do soundcloud
+sudo pip install soundscrape
+
 # unidecode (to remove accents in python programs)
 sudo pip install unidecode
 
