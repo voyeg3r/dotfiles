@@ -81,6 +81,9 @@ comments, formulae and plots together.
     A ............. insert cell above
     B ............. insert cell below
     DD ............ delete current cell
+
+    In order to start jupiter notebook just
+    jupyter notebook
 ```
 
 ### Visualizing bytecode
@@ -1130,6 +1133,7 @@ Embedding the REPL in any Python application is easy:
 + [natural sorting](https://pypi.python.org/pypi/natsort)
 + [clipboard manipulation](https://pypi.python.org/pypi/pyperclip)
 + [python3 libs](https://pypi.python.org/pypi?:action=browse&c=533&show=all)
++ [BeautifulSoup](BeautifulSoup)
 + python-dateutils - deals with dates
 + os module - deals with any operating system
 + [memory cache] from functools import lru_cache

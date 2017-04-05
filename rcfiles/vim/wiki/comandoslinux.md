@@ -238,6 +238,7 @@
 [php](php.md)
 [pidof](pidof.md)
 [ping](ping.md)
+[pip](pip.md)
 [pkill](pkill.md)
 [planos-de-aula](planos-de-aula.md)
 [popd](popd.md)

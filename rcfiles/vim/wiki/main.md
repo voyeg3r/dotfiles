@@ -45,7 +45,7 @@
 * [Hh0](hh0.md)
 * [Idiomaticexpressions](idiomaticexpressions.md)
 * [Inkscape](inkscape.md)
-* [jupiter notebook](jupiter-notebook)
+* [jupyter notebook](jupyter-notebook)
 * [Latex](latex.md)
 * [Latexexemplos](latexexemplos.md)
 * [Libras2kg](libras2kg.md)

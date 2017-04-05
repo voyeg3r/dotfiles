@@ -24,4 +24,8 @@ comments, formulae and plots together.
 
     %time will time whatever you evaluate
     % lsmagic ...... show all magic commands
+
+    To start jupyter notebook on firefox
+
+    ipython notebook --browser=firefox
 ```
