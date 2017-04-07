@@ -1,6 +1,10 @@
-
 # how to use BeautifulSoup
 + https://www.dataquest.io/blog/web-scraping-tutorial-python/
+
+It is highly recomended to install 'requests' and 'pandas'
+
+    sudo pip install pandas
+    sudo pip install requests
 
 ``` python
 from bs4 import BeautifulSoup

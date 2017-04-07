@@ -1352,3 +1352,44 @@ Some applications to improve your lerning speed
   Site que pronuncia (trechos de video no youtube)
   http://youpronounce.it/
 
+
+# Dicas do app discord
+
+my user on discord: voyager
+
+``` txt
+        CTRL/CMD + K: Teleport Anywhere You Need Ever with our new and robust Quick Switcher.
+            Switch between text channels, voice channels, and DMs.
+            Snap back to your last chat.
+            Display unread mentions from channels.
+        Filter your Quick Switches with various commands:
+            @ limits search to users in your current server
+            * only searches servers
+            # only searches text channels
+            ! only searches voice channels
+        The internet can be a scary place, so we’ve added a few safety features:
+            Safe Direct Messaging: images you receive in a DM from a non-friend will be automatically scanned by using fancy machine learning. Any flagged images will be deleted. You can turn off Safe Direct Messaging for your account under the User Settings > Privacy tab.
+            Global DM Privacy Setting: a one-click global option so you can set whether or not you want DMs from non-friends. If you want, you can still override the global setting on a per-server basis.
+            Server Auto-moderation: the new Explicit Content Filtering option will auto-detect and delete images and uploads deemed inappropriate. This is off by default. To enable this, simply check the Explicit Content Filtering option in server settings.
+            More safety features are coming. Read the full scoop here
+        Removed geotagging when uploading a photo to Discord from your phone because, honestly, we don’t want to know where you’ve been.
+        League of Legends Beta client is supported for Friend Sync.
+        Improved performance of enormous servers like Overwatch and Dreamgrove. Keep testing our limits, bruh. We got you.
+        Fixed a bug that caused users in Do Not Disturb to be heavily disturbed by push notifications on their phone :sweaty-towel-guy:
+
+    Reactions are now on iOS! Respond to your friends with low commitment pictures instead of words (long press on a message to add a reaction).
+    Typing a message with up to 27 Emoji and no characters will result in the Emoji becoming what they’ve always dreamed to be: big beautiful Wumboji.
+    Search on mobile is complete: Now you don’t have to be at your computer to recall that obscure bit of info your buddy linked ten months ago.
+    Carry your Nitro perks from desktop with you to the mobile app - animate your avatar with GIF wizardry, use your server’s custom emotes anywhere in Discord, upload larger files, and see your Nitro-exclusive badge to prove that our love is real.
+    Even faster loading: We heard you guys had too much time to read the loading lines, so we turned some knobs and made Discord load even faster. Good luck reading them now.
+    Brand spankin' new chat input, with these bells and whistles:
+
+        Built-in camera for streamlined potato selfies :potato: :selfie:
+        Quick images + files picker, gotta go fast
+        Send multiple attachments in one message
+
+    To use your own personal file picker, use the launcher icon on the top left above the folder
+    We found Search hiding in the tall grass! With that fancy magnifying glass, can you see why kids love <popular copyrighted brand name breakfast food>?
+    You can pick your friends, you can pick your nose... and you can also pick the order your servers are in, now that server sorting is on Android.
+    Improved markdown support including: jumbo emojis and better code blocks, better URLs, masked links, etc. field.
+```
