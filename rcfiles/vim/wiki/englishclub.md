@@ -137,6 +137,7 @@ Aprender por sentenças é mais produtivo poque a gramática já está embutida,
 As 1000 frases mais comuns do inglês (troque o número final para
 acessar as outras letras do alfabeto - z=26)
 http://www.englishspeak.com/english-phrases.cfm?sortby=1
+http://www.englishspeak.com/pt/english-phrases
 
 ### alterando o tempo de legendas com o script subslider.py
 O script subslider.py altera o tempo de legendas, adiantando ou

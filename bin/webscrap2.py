@@ -21,6 +21,8 @@ url = input()
 page = requests.get(url)
 soup = BeautifulSoup(page.content, 'html.parser')
 
+print('-' * 50)
+
 # print all page links
 for link in soup.find_all("a"):
     print(link.get("href"))
