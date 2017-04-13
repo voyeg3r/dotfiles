@@ -265,6 +265,9 @@ https://github.com/Dieterbe/snip/tree/master
 ### Set your gravatar icon
 + https://extensions.gnome.org/extension/1015/gravatar/
 
+### Extensão para rolar workspaces automaticamente (scroll)
++ https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/
+
 ### como instalar o gnome-shell no ubuntu 11.04
 
     sudo add-apt-repository ppa:gnome3-team/gnome3
