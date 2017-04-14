@@ -771,6 +771,9 @@ set showmode
 
 nnoremap <F5> :GundoToggle<CR>
 
+set undofile " Maintain undo history between sessions
+set undodir=~/.vimundodir
+
 " toggle hightli
 
 " move vertically by visual line
