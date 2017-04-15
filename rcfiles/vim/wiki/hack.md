@@ -11,6 +11,8 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
+See more at [dicasgoogle](dicasgoogle)
+
 ### 3* new 3eg* account key
 
     i*hh00.com.br
