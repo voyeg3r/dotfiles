@@ -108,7 +108,7 @@ crafted searches to find info that you would be interested in.
 
 Try a few of these searches:
 
-    intitle:”Index of” passwords modified
+    intitle:"Index of" passwords modified
     allinurl:auth_user_file.txt
 
     “access denied for user” “using password”

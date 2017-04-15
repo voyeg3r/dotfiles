@@ -29,6 +29,9 @@
     -inurl:htm -inurl:html intitle:"index of" +("/ebooks""/book")
     -inurl:htm -inurl:html intitle:"index of" "Last modified" mp3
 
+    +(“index of”) +(“/ebooks”|”/ebook”) +(chm|pdf|zip|rar) +health
+    +(“index of”) +(“/ebooks”|”/ebook”) +(chm|pdf|zip|rar) +”Radiology Tips”
+
 ### Achar câmeras online
 
     inurl:"view/index.shtml"
