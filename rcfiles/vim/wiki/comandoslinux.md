@@ -115,6 +115,7 @@
 [find](find.md)
 [firefox](firefox.md)
 [fluxbox](fluxbox.md)
+[fold](fold)
 [for](for.md)
 [formulas-calc](formulas-calc.md)
 [fortune](fortune.md)
