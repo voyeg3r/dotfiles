@@ -1,9 +1,6 @@
 
 
-    sk.com.br
-
-Palavras de múltiplo sentido
-Leffa, Vilson J
+sk.com.br Palavras de múltiplo sentido Leffa, Vilson J
 
 Página inicial
 
