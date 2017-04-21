@@ -7,12 +7,22 @@
 #          author:  sergio luiz araujo silva
 #            site:  http://vivaotux.blogspot.com
 #         twitter:  @voyeg3r
-#       Reference:  http://stackoverflow.com/a/27652558/2571881
+#      References:  http://stackoverflow.com/a/27652558/2571881
+#                   http://stackoverflow.com/a/25564921/2571881
 # ------------------------------------------------
 
 from bs4 import BeautifulSoup
 import requests
 import re
+import wget
+import os
+from urllib.parse import unquote
+
+def cleanup(url):
+    try:
+        return unquote(url, errors='strict')
+    except UnicodeDecodeError:
+        return unquote(url, encoding='utf-8')
 
 
 print("Digite o endereço da página que deseja pegar os links: ")
@@ -29,11 +39,42 @@ headers = {
 page = requests.get(url, headers=headers)
 soup = BeautifulSoup(page.content, 'html.parser')
 
+
 print('-' * 50)
 
 # print all page links
-# for link in soup.find_all("a"):
-#     print(link.get("href"))
+#print('All links')
+#for link in soup.find_all("a"):
+#    print(link.get("href"))
 
+#print('All links')
+#for a in soup.findAll('a',href=re.compile('http.*\.mp3')):
+#    print ("URL:", a['href'])
+
+# You can build a list using a list-comprehension instead:
+# links = [a['href'] for a in soup.find_all('a',href=re.compile('http.*\.mp3'))]
+
+
+audios = []
+for link in soup.find_all('a'):
+    if 'mp3' in link['href']:
+        file_link = link.get('href')
+        file_name = link.contents[0]
+        file_name = os.path.basename(file_name)
+        file_name = cleanup(file_name)
+        #file_name = file_name.replace(" ", "-") + 'mp3'
+        #if not '.' in file_name:
+        #    file_name = file_name.replace("mp3", ".mp3")
+        #print(f'{file_link} {file_name}')
+        #print(f'Audio: {file_name} Link: {file_link}')
+        #wget.download(file_link, out = file_name)
+        #audios.append(file_name)
+
+
+
+print('-' * 50)
 for strong_tag in soup.find_all('strong'):
+    #print()
     print(strong_tag.text, strong_tag.next_sibling)
+
+
