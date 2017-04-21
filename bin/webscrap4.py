@@ -9,6 +9,7 @@
 #         twitter:  @voyeg3r
 #      References:  http://stackoverflow.com/a/27652558/2571881
 #                   http://stackoverflow.com/a/25564921/2571881
+#                   http://stackoverflow.com/a/16149666/2571881
 # ------------------------------------------------
 
 from bs4 import BeautifulSoup
@@ -60,21 +61,24 @@ for link in soup.find_all('a'):
     if 'mp3' in link['href']:
         file_link = link.get('href')
         file_name = link.contents[0]
-        file_name = os.path.basename(file_name)
         file_name = cleanup(file_name)
         #file_name = file_name.replace(" ", "-") + 'mp3'
         #if not '.' in file_name:
         #    file_name = file_name.replace("mp3", ".mp3")
-        #print(f'{file_link} {file_name}')
         #print(f'Audio: {file_name} Link: {file_link}')
-        #wget.download(file_link, out = file_name)
-        #audios.append(file_name)
+        #wget.download(file_link, out=file_name)
+        audios.append(file_name)
 
+for audio in audios:
+    wget.download(audio)
 
+print()
+audios.reverse()
 
-print('-' * 50)
 for strong_tag in soup.find_all('strong'):
-    #print()
-    print(strong_tag.text, strong_tag.next_sibling)
+    audio = audios.pop()
+    audio = os.path.basename(audio)
+    text = strong_tag.text.strip('\n') + '[sound:' + audio + ']' + ';' + strong_tag.next_sibling.text
+    print(f'{text}')
 
 
