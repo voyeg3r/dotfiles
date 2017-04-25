@@ -52,6 +52,11 @@ Pode fazer:
 cat /etc/issue
 
 
+### Remover linhas duplicadas
+
+    cat -n file_name | sort -uk2 | sort -nk1 | cut -f2-
+
+
 ### Ler os logs do squid
 
  cat /var/log/squid/access.log | awk '{pint $3" "$8" "$7}' | less

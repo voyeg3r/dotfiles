@@ -8,6 +8,41 @@ site: vivaotux
 twitter: voyeg3r
 ```
 
+### Download firefox pt-br
++ https://superuser.com/a/322381
+
+    br.mozdev.org
+
+    sudo tar -jxvf firefox.xx.xx.tar.bz2 -C /opt
+
+    chown -R root:users /opt/firefox
+
+    chmod 750 /opt/firefox
+
+    usermod -a -G users sergio
+
+    sudo ln -sfvn /opt/Firefox/firefox /usr/bin/firefox
+
+    touch /usr/share/applications/firefox.desktop
+
+
+    touch /usr/share/applications/firefox.desktop
+
+    vim /usr/share/applications/firefox.desktop
+
+``` markdown
+[Desktop Entry]
+Encoding=UTF-8
+Name=Mozilla Firefox
+Comment=Browse the World Wide Web
+Type=Application
+Terminal=false
+Exec=/usr/bin/firefox %U
+Icon=/opt/firefox/icons/mozicon128.png
+StartupNotify=true
+Categories=Network;WebBrowser;
+```
+
 ### Make firefox speak English
 [us language pack](https://addons.mozilla.org/en-US/firefox/addon/english-us-language-pack/)
 
