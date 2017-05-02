@@ -30,10 +30,13 @@ email: <voyeg3r  gmail.com>
 
 ### Consertando o download de legendas no Vlc
 
-On windows edit: c:\windows\System32\drivers\etc\hosts
+On windows edit:
+
+    c:\windows\System32\drivers\etc\hosts
 
 and add this line:
-92.240.234.122 api.opensubtitles.org
+
+    92.240.234.122 api.opensubtitles.org
 
 ### ajustando o brilho
 

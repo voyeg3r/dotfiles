@@ -53,6 +53,7 @@ gem install git.io
 sudo pip3 install jupyter
 sudo pip install feedparser
 sudo pip install numpy
+sudo pip install scrapy
 
 # baixador do soundcloud
 sudo pip install soundscrape

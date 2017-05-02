@@ -63,38 +63,38 @@ host(){
 # END PING WRAPPER ------------------------------------------------
 
 
-subslider(){
-    # subslider wrapper
-    # how to deal with arrays in zsh: http://zshwiki.org/home/scripting/array
-
-    local _subslider="${HOME}/bin/subslider"
-
-    #usage(){
-    #    echo você deve fornecer dois parametros
-    #    echo arquivo a ser alterado e o tempo de alteração
-    #    echo parametros: file.srt +-3,000
-    #    sleep 5
-    #    exit 1
-    #}
-
-    #[[ ${#} < 2 ]] && usage
-
-    local -a FNAME
-
-    # -2 pega o nome arquivo da legenda a ser modiicado
-    FNAME=(${@[-2]})
-
-    # pega a codificação do arquivo
-    FILE_ENCODING=$(file -bi $FNAME | awk -F'=' '{print $2}')
-
-    # se a codificação não for utf-8 aplica
-    [[ "$CODIFICATION" != "utf-8" ]]  && iconv -f $CODIFICATION  -t UTF-8 "${FNAME}" > $OUTFILE
-
-    mv -f $OUTFILE $FNAME
-
-    $_subslider $@
-
-    [[ -f "${FNAME:r}_offset.srt"  ]] && sed -i 's/\x0D$//' "${FNAME:r}_offset.srt"
-    mv "${FNAME}" ~/.local/share/Trash/files/"${FNAME:r}-$(date +%H-%M-%S).srt" && mv "${FNAME:r}_offset.srt" "${FNAME}"
-}
+# subslider(){
+#     # subslider wrapper
+#     # how to deal with arrays in zsh: http://zshwiki.org/home/scripting/array
+#
+#     local _subslider="${HOME}/bin/subslider"
+#
+#     #usage(){
+#     #    echo você deve fornecer dois parametros
+#     #    echo arquivo a ser alterado e o tempo de alteração
+#     #    echo parametros: file.srt +-3,000
+#     #    sleep 5
+#     #    exit 1
+#     #}
+#
+#     #[[ ${#} < 2 ]] && usage
+#
+#     local -a FNAME
+#
+#     # -2 pega o nome arquivo da legenda a ser modiicado
+#     FNAME=(${@[-2]})
+#
+#     # pega a codificação do arquivo
+#     FILE_ENCODING=$(file -bi $FNAME | awk -F'=' '{print $2}')
+#
+#     # se a codificação não for utf-8 aplica
+#     [[ "$CODIFICATION" != "utf-8" ]]  && iconv -f $CODIFICATION  -t UTF-8 "${FNAME}" > $OUTFILE
+#
+#     mv -f $OUTFILE $FNAME
+#
+#     $_subslider $@
+#
+#     [[ -f "${FNAME:r}_offset.srt"  ]] && sed -i 's/\x0D$//' "${FNAME:r}_offset.srt"
+#     mv "${FNAME}" ~/.local/share/Trash/files/"${FNAME:r}-$(date +%H-%M-%S).srt" && mv "${FNAME:r}_offset.srt" "${FNAME}"
+# }
 

@@ -161,6 +161,8 @@ command! -nargs=0 W2MD :call FuncWikiToMd()
 ### Getting rid of '-' on html links
 [Source: stackoverflow](http://stackoverflow.com/questions/41529264/)
 
+Executar uma substituição apenas na área selecionada
+
 The `\%V \%V` will make the search pattern work over
 only in selected area.
 
@@ -173,7 +175,7 @@ only in selected area.
     "ANOTHER EXAMPLE WITH \%V
 
     Transform this:
-    printf(text goes her);
+    printf(text goes here);
 
     into this:
     printf("text goes her");
@@ -241,7 +243,7 @@ endsnippet
 
     ( ................... patenthesis
     \( .................. start group 1
-    [^)] ................ denied (
+    [^)] ................ denied )
     \+   ................ at least once
     \) .................. end group 1
     ) ................... close parenthesis

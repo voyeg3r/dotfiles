@@ -42,3 +42,11 @@ Read more here: http://askubuntu.com/a/465641/3798
 
 Quando iniciar ficará tudo como deixou anteriormente.
 Acho que é isso.
+
+    vim ~/.config/autostart/alsarestore.desktop
+
+    [Desktop Entry]
+    Type=Application
+    Terminal=false
+    Name=alsarestore
+    Exec=alsactl --file ~/.config/asound.state restore
