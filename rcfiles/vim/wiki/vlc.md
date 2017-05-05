@@ -12,13 +12,16 @@ email: <voyeg3r  gmail.com>
     Alt-left ............... pequeno atrazo
     Ctrl-left .............. retrocesso médio
     Ctrl-Alt-left .......... retrocesso longo
-    more slowlly ........... -
-    more fast .............. +
+    slower ................. -
+    faster ................. +
     <space> ................ pause/play
 
     Shift-v ................ alternate subtitles
     Shift-r ................ record video
     Shift-s ................ capture image
+
+    Ctrl-j ................. informações sobre o codificador (download url)
+    Ctrl-n ................. abrir fluxo de rede
 
 ### Volume
 
