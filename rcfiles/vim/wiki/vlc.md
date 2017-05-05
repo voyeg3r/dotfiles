@@ -14,6 +14,8 @@ email: <voyeg3r  gmail.com>
     Ctrl-Alt-left .......... retrocesso longo
     slower ................. -
     faster ................. +
+    slower by 10% each time  [
+    faster by 10% each time  ]
     <space> ................ pause/play
 
     Shift-v ................ alternate subtitles
