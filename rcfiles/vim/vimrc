@@ -111,6 +111,8 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+
+Plug 'chilicuil/nextCS.vim'
 Plug 'tell-k/vim-autopep8'
 Plug 'ivanov/vim-ipython'
 "Plug 'nvie/vim-flake8'
@@ -770,6 +772,11 @@ set showmode
 " :PymodeLintAuto* -- Fix PEP8 errors in current buffer automatically
 
 nnoremap <F5> :GundoToggle<CR>
+
+"let g:nextcs_map = '<F6>'
+"let g:nextcs_map = '<s-F6>'
+map <F6> <Plug>NextCS
+map <s-F11> <Plug>PreviousCS
 
 set undofile " Maintain undo history between sessions
 set undodir=~/.vimundodir
