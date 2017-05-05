@@ -452,6 +452,13 @@ to sort by surname just do this:
 
     :%!sort -k1
 
+### Vim duplicate line multiple times with 2 keypresses
++ http://stackoverflow.com/a/43755604/2571881
+
+This solution uses the expression register <c-r>= or @=
+
+    nnoremap , @='mqYp`q'<cr>
+
 ### Yank text object on multiple lines
 
  Let's say you have:
