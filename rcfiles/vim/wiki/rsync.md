@@ -25,6 +25,10 @@ rsync -a --update --delete origem/ destino/
       a opcao - -delete ira remover em /bak/dir arquivos não existentes em /dir
 
 
+### move instead of copying
+
+    rsync --remove-source-files /source/dir /dest/name
+
 ### rsync + find
 
     find . -name "whatever.*" -print0 | rsync -av --files-from=- --from0 ./ ./destination/

@@ -243,6 +243,10 @@ yaourt -S great-little-radio-player
 # sshfs name@server:/path/to/folder /path/to/mount/point
 sudo pacman -S sshfs openssh
 
+# check wich process is using your mount point
+# lsof | grep '/dev/sdb1'
+sudo pacman -S lsof
+
 # Atualizar o sistema
 sudo pacman -Syu
 sudo pacman -S base-devel
