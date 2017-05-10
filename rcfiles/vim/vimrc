@@ -523,8 +523,8 @@ endif
 
 " Scientifc Calculator using python3 -->  :Calc sin(30)
 " :Calc sum([x^2 for x in range(100)])
-command! -nargs=+ Calc :py print(<args>)
-py from math import *
+" command! -nargs=+ Calc :py print(<args>)
+" py from math import *
 
 " function to clear all registers
 " http://stackoverflow.com/questions/19430200/how-to-clear-vim-registers-effectively
