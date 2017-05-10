@@ -2,6 +2,11 @@
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# some aliases to fix 'command not found'
+# alias ls='/bin/ls'
+# alias mkdir='/bin/mkdir'
+# alias mv='/bin/mv'
+
 alias aedit="$EDITOR $ZSH_CONFIG/aliases; source $ZSH_CONFIG/aliases"
 
 # source: https://www.reddit.com/r/linux/comments/3ly2zl/lpt_use_python_interpreter_as_an_advanced/

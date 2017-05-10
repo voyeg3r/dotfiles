@@ -348,7 +348,7 @@ if [ -d /usr/local/texlive/2013/bin/i386-linux ] ; then
   PATH=/usr/local/texlive/2013/texmf-dist/doc/man:$PATH
 fi
 
-#[ -d ~/bin ] && PATH=~/bin:$PATH
+[ -d /bin ] && PATH=~/bin:$PATH
 
 # para chamar o pythonrc
 PYTHONSTARTUP="$HOME/.pythonstartup"

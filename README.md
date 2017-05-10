@@ -86,8 +86,8 @@ rm -rf ~/.dotfiles/vim/bundle/Vundle.vim
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/vim/bundle/Vundle.vim
 
-ln -sfvn ~/.dotfiles/vim/vimrc ~/.vimrc
-ln -sfvn ~/.dotfiles/vim ~/.vim
+ln -sfvn ~/.dotfiles/rcfiles/vim/vimrc ~/.vimrc
+ln -sfvn ~/.dotfiles/rcfiles/vim ~/.vim
 ln -sfvn ~/.dotfiles/rcfiles/bashrc ~/.bashrc
 ln -sfvn ~/.dotfiles/rcfiles/inputrc ~/.inputrc
 ln -sfvn ~/.dotfiles/rcfiles/wgetrc ~/.wgetrc
