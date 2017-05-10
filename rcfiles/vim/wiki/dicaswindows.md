@@ -25,6 +25,14 @@ email: voyeg3r at gmail.com
     Matar programa pelo nome:
     taskkill /IM utorrent.exe /F
 
+### Desfragmentar no linux
+
+    sudo apt-get install e2fsprogs
+
+To do this I use the following command:
+
+    sudo e4defrag
+
 ### Recording a desktop session
 
     http://goo.gl/lbwM9G

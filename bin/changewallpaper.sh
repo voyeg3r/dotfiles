@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 # sources:
 # http://stackoverflow.com/questions/10374520/gsettings-with-cron
 # http://fabhax.com/technology/change-wallpapers-in-gnome-3.4/
