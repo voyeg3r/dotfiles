@@ -11,6 +11,11 @@ apt-get upgrade
 http://ppa.launchpad.net/tahutek-team/prozilla/ubuntu/pool/main/
 
 
+if you see any dependency related errors during installation process, simply
+run following command.
+
+    sudo apt-get -f install
+
 ### Instalar apt-fast e apt-metalink
 
 apt-get install -y aria2
