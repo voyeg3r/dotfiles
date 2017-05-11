@@ -26,6 +26,7 @@ email: voyeg3r at gmail.com
     taskkill /IM utorrent.exe /F
 
 ### Desfragmentar no linux
++ https://www.howtoforge.com/tutorial/linux-filesystem-defrag/
 
     sudo apt-get install e2fsprogs
 
