@@ -4,8 +4,8 @@ export ZSH="${HOME}/.dotfiles/oh-my-zsh"
 [[ -d $HOME/.gem/ruby/2.3.0/bin ]] && PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
 
 
-[ -d /bin ] && PATH=~/bin:$PATH
-export PATH
+[ -d ~/bin ] && PATH=~/bin:$PATH &&  export PATH
+[ -d /bin ] && PATH=/bin:$PATH &&  export PATH
 
 XDG_CONFIG_HOME="$HOME/.config"
 XDG_CACHE_HOME="$HOME/.cache"
