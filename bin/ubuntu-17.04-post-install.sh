@@ -3,6 +3,13 @@
 sudo apt-get update
 sudo apt-get install -y zsh
 
+# language support
+# https://www.vivaolinux.com.br/dica/Ubuntu-GNOME-1310-totalmente-em-portugues
+sudo apt-get install language-selector-gnome
+
+# command line radio player
+sudo apt-get install -y cmus
+
 vimwithpythonsuport (){
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt update

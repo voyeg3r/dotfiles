@@ -112,6 +112,8 @@ cab Q  q
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
 
+
+Plug 'itchyny/vim-cursorword'
 Plug 'chilicuil/nextCS.vim'
 Plug 'tell-k/vim-autopep8'
 Plug 'ivanov/vim-ipython'
@@ -398,6 +400,7 @@ noremap <F3> :NERDTreeToggle<CR>
 " When double click a word vim will hightlight all other ocurences
 nnoremap <silent> <2-LeftMouse> :let @/='\V\<'.escape(expand('<cword>'), '\').'\>'<cr>:set hls<cr>
 nnoremap <leader>* :let @/='\V\<'.escape(expand('<cword>'), '\').'\>'<cr>:set hls<cr>
+
 hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 
 
