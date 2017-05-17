@@ -2,6 +2,7 @@
 
 sudo apt-get update
 sudo apt-get install -y zsh
+sudo apt-get install -y silversearcher-ag
 
 # language support
 # https://www.vivaolinux.com.br/dica/Ubuntu-GNOME-1310-totalmente-em-portugues

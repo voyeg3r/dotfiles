@@ -1,0 +1,171 @@
+
+# Lesson 1 - First week
+Course overview (Visão Geral do Curso)
+Greetings - Introductions and Presentations (Saudações e Apresentações)
+
+### Mind map about the learning process
+How to learn faster
+Spaced Repetition
+
+**The alphabet**
+Prepositions - at, on, it (from general to specific)
+
+# Lesson 2 - Second week
+
+Asking someone’s name,  spelling your first name,
+Origin, neighborhood and profession
+Checking-in at the hotel - Dialog about hotel
+
+Homework - Asking simple questions in English (we will make reviews of those)
+
+# Lesson 3 - Third week
+Asking someone’s address, phone number, date of birth, age, height and weight
+Asking about numbers, quantities and prices
+Grammar - How old /How tall/ When + to be
+How many - How much (countable and uncountable)
+
+# Lesson 4 - Fourth week
+Numbers, fractions
+Asking about days and dates
+Asking about possession
+
+Possessive adjectives, possessive pronouns, Genitive case
+Speaking - Taking a taxi
+
+**Vocabulary**
+Days of the week
+Months of the year
+Colors
+
+# Lesson 5 - Fiftth week
+Asking about existence
+Asking about places and locations
+There is / There are
+
+Asking for directions
+
+**Vocabulary**
+Differences between british and American English
+
+# Lesson 6 - Sexth week
+Talking about what people are doing
+Expressing annoying actions
+Expressing surprise
+
+The Present Continuous Tense
+Asking about interesting places
+
+**Vocabulary**
+Exclamations
+Sightseeing
+
+# Lesson 7 - seventh week
+Asking about Present Personal Information
+Asking about someone or something that performs an action
+Askin about options
+
+Preset Simple Tense
+Prepositions: Opposite / Across from/ Behing/ In front of
+Question words
+
+At a restaurant
+Menu items
+
+# Lesson 8 - Eithieth week
+Asking about routines and habitual actions
+Asking about facts
+Asking about present options
+Asking about scheduled events
+
+**Grammar**
+The Present Simple Tense
+Prepositions: Oven, under, above, below, near, close to, far from, beside, next to, from, to, along, around
+
+**Speaking**
+Telling the time
+
+**Vocabulary**
+Free time activities
+Flight announcements
+
+# Lesson 9 - Ninieth week
+Asking netagitive questions
+Emphasizing ideas
+
+The Present Continuous Tense x Present Simple Tense
+Stative verbs x Dynamic verbs
+
+**Speaking**
+Renting a car
+
+**Vocabulary**
+Opinions, Senses, Possessions, Emotions
+
+# Lesson 10 - Tenieth week
+Expressiong future possibilities and imagined situations
+Expressiong opinions
+
+**Grammar**
+Still x Animore
+Already x Yet
+
+**Speaking**
+Talking to a doctor
+
+**Vocabulary**
+Family Tree
+Health problems
+
+# Lesson 11 - Eleventh week
+Expressing habilities and possibilities
+
+**Grammar**
+Object Pronoums (Me, you, him, her, it, us, you, them)
+Reflexive Pronoums (myself, herself ...)
+General Review
+
+# Lesson 12
+Comparative and superlative forms
+Adjectives
+
+# Lesson 13
+Express future actions
+future Going to
+Present Continuous
+Future Will / Present Simple
+
+# Lesson 14
+Review verb tenses
+Present Continuous
+Present Simple
+Future Will / Future Going to
+
+# Lesson 15
+Modal verbs
+Can / Could / May / Might / Would
+
+# Lesson 16
+Modal Verbs
+Should / Ought to / Be + supposed to / Have to
+
+# Lesson 17
+Express past actions
+Past Simple Tense
+
+
+# Lesson 18
+Quantifiers
+How many / How much
+
+# Lesson 19
+Express past habits
+Express actions one is accostumed to / Express frequency
+Used to / Be + used to / How often
+
+# Lesson 20
+Differentiate Present Perfect Siimple
+and Present Perfect Continuous
+
+# Lesson 21
+Differentiate Past Simple and
+Present Perfect Simple
