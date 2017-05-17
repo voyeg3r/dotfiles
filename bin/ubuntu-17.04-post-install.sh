@@ -3,6 +3,7 @@
 sudo apt-get update
 sudo apt-get install -y zsh
 sudo apt-get install -y silversearcher-ag
+sudo apt-get install -y python-pip
 
 # language support
 # https://www.vivaolinux.com.br/dica/Ubuntu-GNOME-1310-totalmente-em-portugues
