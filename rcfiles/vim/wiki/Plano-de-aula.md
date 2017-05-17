@@ -1,4 +1,3 @@
-
 # Lesson 1 - First week
 Course overview (Visão Geral do Curso)
 Greetings - Introductions and Presentations (Saudações e Apresentações)
@@ -13,14 +12,14 @@ Prepositions - at, on, it (from general to specific)
 # Lesson 2 - Second week
 
 Asking someone’s name,  spelling your first name,
-Origin, neighborhood and profession
+Origin, neighborhood, and profession
 Checking-in at the hotel - Dialog about hotel
 
 Homework - Asking simple questions in English (we will make reviews of those)
 
 # Lesson 3 - Third week
 Asking someone’s address, phone number, date of birth, age, height and weight
-Asking about numbers, quantities and prices
+Asking about numbers, quantities, and prices
 Grammar - How old /How tall/ When + to be
 How many - How much (countable and uncountable)
 
@@ -37,7 +36,7 @@ Days of the week
 Months of the year
 Colors
 
-# Lesson 5 - Fiftth week
+# Lesson 5 - Fifth week
 Asking about existence
 Asking about places and locations
 There is / There are
@@ -45,9 +44,9 @@ There is / There are
 Asking for directions
 
 **Vocabulary**
-Differences between british and American English
+Differences between British and American English
 
-# Lesson 6 - Sexth week
+# Lesson 6 - Sixth week
 Talking about what people are doing
 Expressing annoying actions
 Expressing surprise
@@ -65,13 +64,13 @@ Asking about someone or something that performs an action
 Askin about options
 
 Preset Simple Tense
-Prepositions: Opposite / Across from/ Behing/ In front of
+Prepositions: Opposite / Across from/ Behind/ In front of
 Question words
 
 At a restaurant
 Menu items
 
-# Lesson 8 - Eithieth week
+# Lesson 8 - Eightieth week
 Asking about routines and habitual actions
 Asking about facts
 Asking about present options
@@ -79,7 +78,7 @@ Asking about scheduled events
 
 **Grammar**
 The Present Simple Tense
-Prepositions: Oven, under, above, below, near, close to, far from, beside, next to, from, to, along, around
+Prepositions: Oven, under, above, below, near, close to, far from, besides, next to, from, to, along, around
 
 **Speaking**
 Telling the time
@@ -88,8 +87,8 @@ Telling the time
 Free time activities
 Flight announcements
 
-# Lesson 9 - Ninieth week
-Asking netagitive questions
+# Lesson 9 - Ninth week
+Asking negative questions
 Emphasizing ideas
 
 The Present Continuous Tense x Present Simple Tense
@@ -101,12 +100,12 @@ Renting a car
 **Vocabulary**
 Opinions, Senses, Possessions, Emotions
 
-# Lesson 10 - Tenieth week
-Expressiong future possibilities and imagined situations
-Expressiong opinions
+# Lesson 10 - Tenth week
+Expressing future possibilities and imagined situations
+Expressing opinions
 
 **Grammar**
-Still x Animore
+Still x Anymore
 Already x Yet
 
 **Speaking**
@@ -120,8 +119,8 @@ Health problems
 Expressing habilities and possibilities
 
 **Grammar**
-Object Pronoums (Me, you, him, her, it, us, you, them)
-Reflexive Pronoums (myself, herself ...)
+Object Pronouns (Me, you, him, her, it, us, you, them)
+Reflexive Pronouns (myself, herself ...)
 General Review
 
 # Lesson 12
@@ -159,7 +158,7 @@ How many / How much
 
 # Lesson 19
 Express past habits
-Express actions one is accostumed to / Express frequency
+Express actions one is accustomed to / Express frequency
 Used to / Be + used to / How often
 
 # Lesson 20
