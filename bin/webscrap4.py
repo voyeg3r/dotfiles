@@ -40,7 +40,6 @@ headers = {
 page = requests.get(url, headers=headers)
 soup = BeautifulSoup(page.content, 'html.parser')
 
-
 print('-' * 50)
 
 # print all page links
@@ -79,6 +78,6 @@ for strong_tag in soup.find_all('strong'):
     audio = audios.pop()
     audio = os.path.basename(audio)
     text = strong_tag.text.strip('\n') + '[sound:' + audio + ']' + ';' + strong_tag.next_sibling.text
-    print(f'{text}')
+    print(text)
 
 

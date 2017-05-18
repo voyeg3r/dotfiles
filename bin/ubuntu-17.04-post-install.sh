@@ -4,6 +4,13 @@ sudo apt-get update
 sudo apt-get install -y zsh
 sudo apt-get install -y silversearcher-ag
 sudo apt-get install -y python-pip
+sudo apt-get install -y python3-pip
+
+pip install beautifulsoup4
+pip3 install beautifulsoup4
+pip install requests
+pip3 install wget
+
 
 # language support
 # https://www.vivaolinux.com.br/dica/Ubuntu-GNOME-1310-totalmente-em-portugues

@@ -168,3 +168,84 @@ and Present Perfect Continuous
 # Lesson 21
 Differentiate Past Simple and
 Present Perfect Simple
+
+
+# Lesson 22
+The office - building Vocabulary
+Job interview
+
+Idioms about work (expressões idiomáticas)
+Future Continuous Tense
+
+specific moment in the future
+interruptedaction in the future
+parallel actions in the future
+
+Future Perfect Tense
+
+# Lesson 23
+Computer related equipment
+idioms about computers
+
+Past Continuous Tense
+Past Perfect Tense
+
+# Lesson 24
+Business Expressions
+Statements of agrement
+Use to/ so / either / neither
+Paired conjunctions
+tag questions
+
+# Lesson 25
+Idioms about transport
+Relative Clauses
+    Types of Relative Clauses
+Restrictive Clauses
+Non-restrictive clauses
+
+# Lesson 26
+Parts of the body
+Idioms Related with parts of the body
+Passive Voice
+Impersonal "it" with passive
+Causative verbs
+
+# Lesson 27
+Moving into home sweet home
+Parts of the house
+Idioms about the house
+Gerunds
+Infinitives
+
+# Lesson 28
+Sports expressions
+Position of ajectives
+Degree of adjectives (comparative | superlative)
+Sequence of adjectives
+Form of adjectives
+Adverbs
+
+# Lesson 29
+The weather
+Weather idioms
+Transitive and intransitive verbs
+To Raise ad to Rise
+To borrow and to lend
+To say and to tell
+
+# Lesson 30
+The workshop
+Idioms
+Indirect and reported speech
+
+# Lesson 31
+At airport
+Future Continuous Tense and Future Perfect Tense
+Past Continuous Tense and Past Perfect Tense
+States of agreemente, paired conjunctions and question tags
+Review
+
+
+
+
