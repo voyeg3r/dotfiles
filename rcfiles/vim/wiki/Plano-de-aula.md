@@ -1,10 +1,10 @@
 # Lesson 1 - First week
-Course overview (Visão Geral do Curso)
-Greetings - Introductions and Presentations (Saudações e Apresentações)
++ Course overview (Visão Geral do Curso)
++ Greetings - Introductions and Presentations (Saudações e Apresentações)
 
 ### Mind map about the learning process
-How to learn faster
-Spaced Repetition
++ How to learn faster
++ Spaced Repetition
 
 **The alphabet**
 Prepositions - at, on, it (from general to specific)
@@ -128,123 +128,122 @@ Comparative and superlative forms
 Adjectives
 
 # Lesson 13
-Express future actions
-future Going to
-Present Continuous
-Future Will / Present Simple
++ Express future actions
++ future Going to
++ Present Continuous
++ Future Will / Present Simple
 
 # Lesson 14
-Review verb tenses
-Present Continuous
-Present Simple
-Future Will / Future Going to
++ Review verb tenses
++ Present Continuous
++ Present Simple
++ Future Will / Future Going to
 
 # Lesson 15
-Modal verbs
-Can / Could / May / Might / Would
++ Modal verbs
++ Can / Could / May / Might / Would
 
 # Lesson 16
-Modal Verbs
-Should / Ought to / Be + supposed to / Have to
++ Modal Verbs
++ Should / Ought to / Be + supposed to / Have to
 
 # Lesson 17
-Express past actions
-Past Simple Tense
++ Express past actions
++ Past Simple Tense
 
 
 # Lesson 18
-Quantifiers
-How many / How much
++ Quantifiers
++ How many / How much
 
 # Lesson 19
-Express past habits
-Express actions one is accustomed to / Express frequency
-Used to / Be + used to / How often
++ Express past habits
++ Express actions one is accustomed to / Express frequency
++ Used to / Be + used to / How often
 
 # Lesson 20
-Differentiate Present Perfect Siimple
-and Present Perfect Continuous
++ Differentiate Present Perfect Siimple
++ and Present Perfect Continuous
 
 # Lesson 21
-Differentiate Past Simple and
-Present Perfect Simple
++ Differentiate Past Simple and
++ Present Perfect Simple
 
 
 # Lesson 22
-The office - building Vocabulary
-Job interview
++ The office - building Vocabulary
++ Job interview
 
-Idioms about work (expressões idiomáticas)
-Future Continuous Tense
++ Idioms about work (expressões idiomáticas)
++ Future Continuous Tense
 
-specific moment in the future
-interruptedaction in the future
-parallel actions in the future
++ specific moment in the future
++ interruptedaction in the future
++ parallel actions in the future
 
-Future Perfect Tense
++ Future Perfect Tense
 
 # Lesson 23
-Computer related equipment
-idioms about computers
-
-Past Continuous Tense
-Past Perfect Tense
++ Computer related equipment
++ idioms about computers
++ Past Continuous Tense
++ Past Perfect Tense
 
 # Lesson 24
-Business Expressions
-Statements of agrement
-Use to/ so / either / neither
-Paired conjunctions
-tag questions
++ Business Expressions
++ Statements of agrement
++ Use to/ so / either / neither
++ Paired conjunctions
++ tag questions
 
 # Lesson 25
-Idioms about transport
-Relative Clauses
-    Types of Relative Clauses
-Restrictive Clauses
-Non-restrictive clauses
++ Idioms about transport
++ Relative Clauses
++     Types of Relative Clauses
++ Restrictive Clauses
++ Non-restrictive clauses
 
 # Lesson 26
-Parts of the body
-Idioms Related with parts of the body
-Passive Voice
-Impersonal "it" with passive
-Causative verbs
++ Parts of the body
++ Idioms Related with parts of the body
++ Passive Voice
++ Impersonal "it" with passive
++ Causative verbs
 
 # Lesson 27
-Moving into home sweet home
-Parts of the house
-Idioms about the house
-Gerunds
-Infinitives
++ Moving into home sweet home
++ Parts of the house
++ Idioms about the house
++ Gerunds
++ Infinitives
 
 # Lesson 28
-Sports expressions
-Position of ajectives
-Degree of adjectives (comparative | superlative)
-Sequence of adjectives
-Form of adjectives
-Adverbs
++ Sports expressions
++ Position of ajectives
++ Degree of adjectives (comparative | superlative)
++ Sequence of adjectives
++ Form of adjectives
++ Adverbs
 
 # Lesson 29
-The weather
-Weather idioms
-Transitive and intransitive verbs
-To Raise ad to Rise
-To borrow and to lend
-To say and to tell
++ The weather
++ Weather idioms
++ Transitive and intransitive verbs
++ To Raise ad to Rise
++ To borrow and to lend
++ To say and to tell
 
 # Lesson 30
-The workshop
-Idioms
-Indirect and reported speech
++ The workshop
++ Idioms
++ Indirect and reported speech
 
 # Lesson 31
-At airport
-Future Continuous Tense and Future Perfect Tense
-Past Continuous Tense and Past Perfect Tense
-States of agreemente, paired conjunctions and question tags
-Review
++ At airport
++ Future Continuous Tense and Future Perfect Tense
++ Past Continuous Tense and Past Perfect Tense
++ States of agreemente, paired conjunctions and question tags
++ Review
 
 
 
