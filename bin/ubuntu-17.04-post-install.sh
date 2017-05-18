@@ -5,6 +5,7 @@ sudo apt-get install -y zsh
 sudo apt-get install -y silversearcher-ag
 sudo apt-get install -y python-pip
 sudo apt-get install -y python3-pip
+pip3 install jupyter
 
 pip install beautifulsoup4
 pip3 install beautifulsoup4

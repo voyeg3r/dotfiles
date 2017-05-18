@@ -40,7 +40,6 @@ headers = {
 page = requests.get(url, headers=headers)
 soup = BeautifulSoup(page.content, 'html.parser')
 
-print('-' * 50)
 
 # print all page links
 #print('All links')
@@ -55,29 +54,28 @@ print('-' * 50)
 # links = [a['href'] for a in soup.find_all('a',href=re.compile('http.*\.mp3'))]
 
 
-audios = []
-for link in soup.find_all('a'):
-    if 'mp3' in link['href']:
-        file_link = link.get('href')
-        file_name = link.contents[0]
-        file_name = cleanup(file_name)
-        #file_name = file_name.replace(" ", "-") + 'mp3'
-        #if not '.' in file_name:
-        #    file_name = file_name.replace("mp3", ".mp3")
-        #print(f'Audio: {file_name} Link: {file_link}')
-        #wget.download(file_link, out=file_name)
-        audios.append(file_name)
-
-for audio in audios:
-    wget.download(audio)
-
-print()
-audios.reverse()
+# audios = []
+# for link in soup.find_all('a'):
+#     if 'mp3' in link['href']:
+#         file_link = link.get('href')
+#         file_name = link.contents[0]
+#         file_name = cleanup(file_name)
+#         #file_name = file_name.replace(" ", "-") + 'mp3'
+#         #if not '.' in file_name:
+#         #    file_name = file_name.replace("mp3", ".mp3")
+#         #print(f'Audio: {file_name} Link: {file_link}')
+#         #wget.download(file_link, out=file_name)
+#         audios.append(file_name)
+# 
+# for audio in audios:
+#     wget.download(audio)
+# 
+# print()
+# audios.reverse()
 
 for strong_tag in soup.find_all('strong'):
-    audio = audios.pop()
-    audio = os.path.basename(audio)
-    text = strong_tag.text.strip('\n') + '[sound:' + audio + ']' + ';' + strong_tag.next_sibling.text
-    print(text)
+    #audio = audios.pop()
+    #audio = os.path.basename(audio)
+    print(strong_tag.text, strong_tag.next_sibling.text)
 
 

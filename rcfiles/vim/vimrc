@@ -113,14 +113,14 @@ call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
 
 
-Plug 'itchyny/vim-cursorword'
-Plug 'chilicuil/nextCS.vim'
-Plug 'tell-k/vim-autopep8'
-Plug 'ivanov/vim-ipython'
+"Plug 'itchyny/vim-cursorword'
+"Plug 'chilicuil/nextCS.vim'
+"Plug 'tell-k/vim-autopep8'
+"Plug 'ivanov/vim-ipython'
 "Plug 'nvie/vim-flake8'
 "Plug 'davidhalter/jedi-vim'
-Plug 'tpope/vim-dispatch'
-Plug 'vim-scripts/indentpython.vim'
+"Plug 'tpope/vim-dispatch'
+"Plug 'vim-scripts/indentpython.vim'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
 "Plug 'vim-pandoc/vim-pandoc'
 "Plug 'klen/python-mode'
