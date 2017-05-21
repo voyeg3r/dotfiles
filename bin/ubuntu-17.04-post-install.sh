@@ -7,6 +7,8 @@ sudo apt-get install -y python-pip
 sudo apt-get install -y python3-pip
 pip3 install jupyter
 
+sudo apt-get install -y curl
+
 pip install beautifulsoup4
 pip3 install beautifulsoup4
 pip install requests

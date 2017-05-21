@@ -1,0 +1,138 @@
+#!/bin/bash
+
+# Recursively descend in a folder-structure and recreate every folder on ascending, to ensure it is
+# sorted (check with 'ls -lU'). This will defrag the FAT32 file-system but not touch the files.
+
+
+
+# count some statistics
+directories=0
+invalid=0
+unreadable=0
+
+
+
+# the latest modification date of a file within the given directory
+function getMaxDate {
+    # read the output of ls (one file per line, sorted for descending modification time)
+    ls -1t "$1" | while read line; do
+        # "return value" is piped through standard out
+        echo "-d $(stat -c %y "$1"/"$line")"
+        # stop after first line
+        return
+    done
+}
+
+
+
+# expect a single directory as argument
+function rewrite {
+    # get canonical path
+    local canonical="$(readlink -f "$1")"
+    if [[ ! -d "$1" || -h "$1" ]]; then
+        echo "Skipping symbolic link \"$1\" -> \"$canonical\"!"
+        let invalid+=1
+        return
+    fi
+    if [[ ! -d "$1" || -h "$1" ]]; then
+        echo \"$canonical\" is not a valid directory!
+        let invalid+=1
+        return
+    fi
+
+    cd "$canonical"
+    if [[ $? != 0 ]]; then
+        echo Cannot change to directory \"$canonical\"! Skipping ...
+        let unreadable+=1
+        return
+    fi
+    echo $canonical
+    let directories+=1
+
+    local isEmpty=true
+    # recursive descend
+    for d in *; do
+        if [[ -d "$d" ]]; then
+            rewrite "$d"
+        fi
+        let isEmpty=false
+    done
+
+    # ascend to parent of canonical (But don't ascend blindly)
+    cd "$canonical"/..
+
+    if [[ $isEmpty == true ]]; then
+        # no need to recreate an empty directory, as it's zero entries are always sorted
+        return
+    fi
+
+    # check for an empty temporary directory-name
+    local tempdir="$canonical".bak
+    if [[ -e "$tempdir" ]]; then
+        # echo $tempdir exits
+        local counter=1
+        while [[ -e "$tempdir$counter" ]]; do
+            # echo ${tempdir}${counter} exits
+            let counter+=1
+        done
+        tempdir="${tempdir}${counter}"
+    fi
+
+    # TODO check file-system boundaries (don't move across)
+
+    # rename the current directory
+    mv "$canonical" "$tempdir"
+    # create a new directory
+    mkdir "$canonical"
+
+    # move all the content from the old to the new directory
+    # The whole script is build around the side-effect of mv to sort the entries.
+    mv "$tempdir"/* "$canonical"
+
+    # check, that the old directory is really empty
+    if [[ "$(ls -A "$tempdir")" ]]; then
+        echo ERROR: "$tempdir" is not empty!
+        exit -2
+    fi
+    # restore permissions
+    chmod --reference="$tempdir" "$canonical"
+    # delete the old directory
+    rmdir "$tempdir"
+
+    # update the timestamp of the new directory
+    # start off with today
+    local maxDate=$(date)
+    # evaluate the latest modification time of a file within this directory
+    # empty directories would be set to now
+    touch "$(getMaxDate "$canonical")" "$canonical"
+}
+
+
+
+# check commandline for help option
+for a in "$@"; do
+    if [[ ${a} = "-?" || ${a} = "-h"  || ${a} = "--help" ]]; then
+        echo -e "\nUsage: folderSort [-?|-h|--help] [directories]\n"
+        exit -1
+    fi
+done
+
+# start processing the directories
+if [[ "$#" -eq 0 ]]; then
+    # no commandline argument was given -> work on the current directory
+    rewrite .
+else
+    for a in "$@"; do
+        rewrite ${a}
+    done
+fi
+
+echo Processed a total of $directories directories!
+if [[ $invalid > 0 ]]; then
+    echo Found $invalid invalid directories!
+fi
+if [[ $unreadable > 0 ]]; then
+    echo Found $unreadable directories, that could not be changed into!
+fi
+
+exit $(($invalid + $unreadable))

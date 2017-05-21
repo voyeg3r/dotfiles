@@ -1,6 +1,7 @@
 # Lesson 1 - First week
 + Course overview (Visão Geral do Curso)
-+ Greetings - Introductions and Presentations (Saudações e Apresentações)
++ Greetings;
++ Introductions and Presentations
 
 ### Mind map about the learning process
 + How to learn faster
@@ -11,35 +12,40 @@ Prepositions - at, on, it (from general to specific)
 
 # Lesson 2 - Second week
 
-Asking someone’s name,  spelling your first name,
-Origin, neighborhood, and profession
++ Asking someone’s name;
++ spelling your first name;
++ Asking someone's origin;
++ Neighborhood;
++ Asking someone's profession
+
 Checking-in at the hotel - Dialog about hotel
 
 Homework - Asking simple questions in English (we will make reviews of those)
 
 # Lesson 3 - Third week
-Asking someone’s address, phone number, date of birth, age, height and weight
-Asking about numbers, quantities, and prices
-Grammar - How old /How tall/ When + to be
-How many - How much (countable and uncountable)
++ Asking someone’s address, phone number, date of birth, age, height and weight
++ Asking about numbers, quantities, and prices
++ Grammar - How old /How tall/ When + to be
++ How many - How much (countable and uncountable)
 
 # Lesson 4 - Fourth week
-Numbers, fractions
-Asking about days and dates
-Asking about possession
++ Numbers, fractions
++ Asking about days and dates
++ Asking about possession
 
 Possessive adjectives, possessive pronouns, Genitive case
-Speaking - Taking a taxi
+
+**Speaking** - Taking a taxi
 
 **Vocabulary**
-Days of the week
-Months of the year
-Colors
++ Days of the week
++ Months of the year
++ Colors
 
 # Lesson 5 - Fifth week
-Asking about existence
-Asking about places and locations
-There is / There are
++ Asking about existence
++ Asking about places and locations
++ There is / There are
 
 Asking for directions
 
@@ -47,37 +53,39 @@ Asking for directions
 Differences between British and American English
 
 # Lesson 6 - Sixth week
-Talking about what people are doing
-Expressing annoying actions
-Expressing surprise
++ Talking about what people are doing
++ Expressing annoying actions
++ Expressing surprise
 
 The Present Continuous Tense
 Asking about interesting places
 
 **Vocabulary**
-Exclamations
-Sightseeing
++ Exclamations
++ Sightseeing
 
 # Lesson 7 - seventh week
-Asking about Present Personal Information
-Asking about someone or something that performs an action
-Askin about options
++ Asking about Present Personal Information
++ Asking about someone or something that performs an action
++ Askin about options
 
-Preset Simple Tense
+**Preset Simple Tense**
 Prepositions: Opposite / Across from/ Behind/ In front of
 Question words
 
-At a restaurant
+At a restaurant -
 Menu items
 
 # Lesson 8 - Eightieth week
-Asking about routines and habitual actions
-Asking about facts
-Asking about present options
-Asking about scheduled events
++ Asking about routines and habitual actions
++ Asking about facts
++ Asking about present options
++ Asking about scheduled events
 
 **Grammar**
+
 The Present Simple Tense
+
 Prepositions: Oven, under, above, below, near, close to, far from, besides, next to, from, to, along, around
 
 **Speaking**
@@ -88,44 +96,47 @@ Free time activities
 Flight announcements
 
 # Lesson 9 - Ninth week
-Asking negative questions
-Emphasizing ideas
++ Asking negative questions
++ Emphasizing ideas
 
-The Present Continuous Tense x Present Simple Tense
-Stative verbs x Dynamic verbs
++ The Present Continuous Tense x Present Simple Tense
++ Stative verbs x Dynamic verbs
 
 **Speaking**
 Renting a car
 
 **Vocabulary**
-Opinions, Senses, Possessions, Emotions
++ Opinions;
++ Senses;
++ Possessions;
++ Emotions
 
 # Lesson 10 - Tenth week
-Expressing future possibilities and imagined situations
-Expressing opinions
++ Expressing future possibilities and imagined situations
++ Expressing opinions
 
 **Grammar**
-Still x Anymore
-Already x Yet
++ Still x Anymore
++ Already x Yet
 
 **Speaking**
-Talking to a doctor
++ Talking to a doctor
 
 **Vocabulary**
-Family Tree
-Health problems
++ Family Tree
++ Health problems
 
 # Lesson 11 - Eleventh week
-Expressing habilities and possibilities
++ Expressing habilities and possibilities
 
 **Grammar**
-Object Pronouns (Me, you, him, her, it, us, you, them)
-Reflexive Pronouns (myself, herself ...)
-General Review
++ Object Pronouns (Me, you, him, her, it, us, you, them)
++ Reflexive Pronouns (myself, herself ...)
++ General Review
 
 # Lesson 12
-Comparative and superlative forms
-Adjectives
++ Comparative and superlative forms
++ Adjectives
 
 # Lesson 13
 + Express future actions
@@ -150,7 +161,6 @@ Adjectives
 # Lesson 17
 + Express past actions
 + Past Simple Tense
-
 
 # Lesson 18
 + Quantifiers
@@ -244,7 +254,3 @@ Adjectives
 + Past Continuous Tense and Past Perfect Tense
 + States of agreemente, paired conjunctions and question tags
 + Review
-
-
-
-
