@@ -7,6 +7,9 @@ sudo apt-get install -y python-pip
 sudo apt-get install -y python3-pip
 pip3 install jupyter
 
+# soundcloud downloader
+pip install soundscrape
+
 sudo apt-get install -y curl
 
 pip install beautifulsoup4

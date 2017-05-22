@@ -1,3 +1,6 @@
+
+Errata - Modulo 1 pg 29
+
 # Lesson 1 - First week
 + Course overview (Visão Geral do Curso)
 + Greetings;
@@ -8,32 +11,44 @@
 + Spaced Repetition
 
 **The alphabet**
-Prepositions - at, on, it (from general to specific)
++ ABC song
++ Prepositions - at, on, it (from general to specific)
 
 # Lesson 2 - Second week
 
 + Asking someone’s name;
 + spelling your first name;
 + Asking someone's origin;
-+ Neighborhood;
++ Asking someone's neighborhood;
 + Asking someone's profession
++ Demonstrative Pronouns (This, these, those ... modulo-1 pg 18)
 
 Checking-in at the hotel - Dialog about hotel
 
-Homework - Asking simple questions in English (we will make reviews of those)
+### Homework - Asking simple questions in English (we will make reviews of those)
+
+(Modulo 1 - pg 25)
+
+OBS: There is a video about this, including an mp3 audio
+(Page 19) interrogative pronouns
+
 
 # Lesson 3 - Third week
 + Asking someone’s address, phone number, date of birth, age, height and weight
 + Asking about numbers, quantities, and prices
 + Grammar - How old /How tall/ When + to be
 + How many - How much (countable and uncountable)
++ Regular and Irregular Verbs (modulo 1 - pg 21/22)
+
+Videos do canal Small Advantages sobre números
+são três videos
 
 # Lesson 4 - Fourth week
 + Numbers, fractions
 + Asking about days and dates
++ Possessive adjectives, possessive pronouns (modulo 1 - pg 17);
 + Asking about possession
-
-Possessive adjectives, possessive pronouns, Genitive case
++ Genitive case
 
 **Speaking** - Taking a taxi
 
@@ -69,11 +84,11 @@ Asking about interesting places
 + Asking about someone or something that performs an action
 + Askin about options
 
-**Preset Simple Tense**
-Prepositions: Opposite / Across from/ Behind/ In front of
-Question words
++ Preset Simple Tense
++ Prepositions: Opposite / Across from/ Behind/ In front of
++ Question words
 
-At a restaurant -
+**At a restaurant**
 Menu items
 
 # Lesson 8 - Eightieth week
@@ -168,11 +183,11 @@ Renting a car
 
 # Lesson 19
 + Express past habits
-+ Express actions one is accustomed to / Express frequency
++ Express actions one is accustomed to / Express frequency (modulo 1 - pg 20)
 + Used to / Be + used to / How often
 
 # Lesson 20
-+ Differentiate Present Perfect Siimple
++ Differentiate Present Perfect Simple
 + and Present Perfect Continuous
 
 # Lesson 21
@@ -254,3 +269,45 @@ Renting a car
 + Past Continuous Tense and Past Perfect Tense
 + States of agreemente, paired conjunctions and question tags
 + Review
+
+# Lesson 32
++ Confusing words
++ Difference between "lie and lay"
++ Difference between "between and among"
+
+# Lesson 33
+Dictation - Listening practice
+
+We will chose a Real Audio and test how much students are
+getting from the audio.
+
+# Lesson 34
+Text interpretation - In thiss lesson we will read along
+a text with the students
+
+Aside with the understanding evaluation of students we are
+looking out new words
+
+Read the text aloud to improve speaking skills.
+
+# Lesson 35
+Differences between...
+
++ Between & among
++ Lose, loose and miss
+
+# Lesson 36
++ Como expressar a mesma ideia de diferentes formas
+
+Locução circular, consiste em utilizar outras palavras
+pra expressar uma ideia, é usada quando você não lembra
+a palavra correta pra situação, por exemplo:
+
+     I'm thirsty
+     I need to dring some water
+     I'm dying of thirst
+
+     I'm hungry
+     I need to eat something
+     I'm starving
+
