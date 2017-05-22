@@ -43,6 +43,8 @@ OBS: There is a video about this, including an mp3 audio
 Videos do canal Small Advantages sobre números
 são três videos
 
++ Ordinal and Cardinal numbers
+
 # Lesson 4 - Fourth week
 + Numbers, fractions
 + Asking about days and dates
@@ -104,7 +106,7 @@ The Present Simple Tense
 Prepositions: Oven, under, above, below, near, close to, far from, besides, next to, from, to, along, around
 
 **Speaking**
-Telling the time
+Telling the time (videos Small-advantages)
 
 **Vocabulary**
 Free time activities
@@ -296,6 +298,8 @@ Differences between...
 + Between & among
 + Lose, loose and miss
 
+https://www.youtube.com/watch?v=z_0UgaNEeIk
+
 # Lesson 36
 + Como expressar a mesma ideia de diferentes formas
 
@@ -310,4 +314,120 @@ a palavra correta pra situação, por exemplo:
      I'm hungry
      I need to eat something
      I'm starving
+
+# Lesson 37
+Exercises
+
++ trasform affirmations into questions
++ change the time to past/future/present
++ change the subject of the sentensce
+
+Creating a little text and reading it
+
+# Lesson 38
+Plural forms of:
+
++ mouse
++ tooth
++ foot
++ woman
++ man ...
++ child
++ goose
++ sheep
+
++ https://www.youtube.com/watch?v=czxg49hzrik
+
+# Lesson 39
+Talking about food
+
++ Food vocabulary
++ kitchen tools
+
+# Lesson 40
++ https://goo.gl/MWNJnV (substativos sem plural)
++ book two lesson three
+
+# Lesson 41
++ Book two lesson four (dictation) listening practice (pg 23)
++ Reading the lesson out loud (pronunciation practice)
+
+# Lesson 42
++ Book two lesson five (pg 35)
++ Listening practice, dictation and pronunciation
+
+# Lesson 43
++ Book two lesson six
++ Listening practice, dictation and pronunciation
+
++ comparissons
+
+# Lesson 44
++ Book two lesson seven (pg 41)
++ Listening practice, dictation and pronunciation
++ Vocabulary about places
++ Reviewing Present Continuous Tense
+
+# Lesson 45
++ Book two lesson eigh (pg 47)
++ Listening practice, dictation and pronunciation
++ Nicknames (apelidos)
++ Informal ways to say things
+
+# Lesson 46
++ Book two lesson nine (pg 53)
++ Listening practice, dictation and pronunciation
++ More places names
+
+# Lesson 47
++ Book two lesson ten (pg 59)
++ Listening practice, dictation and pronunciation
++ bad luck
+
+
+# Lesson 48
++ Book two lesson eleven (pg 65)
++ Listening practice, dictation and pronunciation
+
+
+# Lesson 49
++ Book two lesson twelve (pg 71)
++ Listening practice, dictation and pronunciation
+
+# Lesson 50
++ Book two lesson thirteen (pg 77)
++ Listening practice, dictation and pronunciation
+
+# Lesson 51
++ Book two lesson fourteen (pg 83)
++ Listening practice, dictation and pronunciation
+
+# Lesson 52
++ Book two lesson fifteen (pg 89)
++ Listening practice, dictation and pronunciation
+
+# Lesson 53
++ Book two lesson sixteen (pg 95)
++ Listening practice, dictation and pronunciation
+
+# Lesson 54
++ Book two lesson seventeen (pg 101)
++ Listening practice, dictation and pronunciation
+
+# Lesson 55
++ Book two lesson eithteen (pg 107)
++ Listening practice, dictation and pronunciation
+
+# Lesson 56
++ Book two lesson nineteen (pg 113)
++ Listening practice, dictation and pronunciation
+
+# Lesson 57
++ Book two lesson twenty (pg 119)
++ Listening practice, dictation and pronunciation
+
+# Lesson 58
++ Book two lesson  (pg 119)
++ Listening practice, dictation and pronunciation
+
 
