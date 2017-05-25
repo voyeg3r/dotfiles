@@ -2198,6 +2198,26 @@ isto evita o erro E77: muitos arquivos para editar
     normal ........... executa em modo normal
     ^v^A ............. incrementa o número
 
+### How to use vim to do multiple line edit?
+I have text like this:
+
+    w ky,
+    wyz,
+    wyy,
+    wj,
+    w w,
+
+now I want to change to this:
+
+    "w ky",
+    "wyz",
+    "wyy",
+    "wj",
+    "w w",
+
+My solution
+    %s/\v(\w ?\w+),/"\1",/g
+
 ### Pegar linha que começa com palavra e sublinhar
 
     g/^\w/t.|s/./=/g
