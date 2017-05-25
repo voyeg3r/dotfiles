@@ -2187,6 +2187,17 @@ isto evita o erro E77: muitos arquivos para editar
 
     :g/^\(.*\)\n\ze\%(.*\n\)*\1$/#
 
+### incrementar as linhas contendo "# Lesson + number"
+
+    :.,$g/# Lesson \d\+/normal 
+
+    . ................ linha atual
+    $ ................ final do arquivo
+    g ................ comando global
+    /.../ ............ padrão de busca
+    normal ........... executa em modo normal
+    ^v^A ............. incrementa o número
+
 ### Pegar linha que começa com palavra e sublinhar
 
     g/^\w/t.|s/./=/g

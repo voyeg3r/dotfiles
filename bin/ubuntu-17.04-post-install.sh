@@ -7,6 +7,8 @@ sudo apt-get install -y python-pip
 sudo apt-get install -y python3-pip
 pip3 install jupyter
 
+sudo apt-get install -y detox
+
 # soundcloud downloader
 pip install soundscrape
 

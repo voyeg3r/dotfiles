@@ -345,88 +345,113 @@ Talking about food
 + kitchen tools
 
 # Lesson 40
-+ https://goo.gl/MWNJnV (substativos sem plural)
-+ book two lesson three
++ Book two lesson one
++ Listening dialog (track 02 )
++ Speaking practice (track 03 and 04)
++ Track 05
 
 # Lesson 41
-+ Book two lesson four (dictation) listening practice (pg 23)
-+ Reading the lesson out loud (pronunciation practice)
++ https://goo.gl/MWNJnV (substativos sem plural)
++ book two lesson two (track 6 and 7 - who are they?)
 
 # Lesson 42
-+ Book two lesson five (pg 35)
-+ Listening practice, dictation and pronunciation
++ book two lesson three (track 10 and 11)
++ OBS: há um pequeno erro no arquivo desse audio
 
 # Lesson 43
++ Book two lesson four (dictation) listening practice (pg 23)
++ Track 14 and 15
++ Reading the lesson out loud (pronunciation practice)
+
+# Lesson 44
++ Book two lesson five (pg 35) track
++ Track 19 and 20
++ Listening practice, dictation and pronunciation
+
+# Lesson 45
 + Book two lesson six
++ Track 23 and 24
 + Listening practice, dictation and pronunciation
 
 + comparissons
 
-# Lesson 44
+# Lesson 46
 + Book two lesson seven (pg 41)
++ Track 27 and 28
 + Listening practice, dictation and pronunciation
 + Vocabulary about places
 + Reviewing Present Continuous Tense
 
-# Lesson 45
+# Lesson 47
 + Book two lesson eigh (pg 47)
++ Track 31 and 32
 + Listening practice, dictation and pronunciation
 + Nicknames (apelidos)
 + Informal ways to say things
 
-# Lesson 46
+# Lesson 48
 + Book two lesson nine (pg 53)
++ Track 35 and 36
 + Listening practice, dictation and pronunciation
 + More places names
 
-# Lesson 47
+# Lesson 49
 + Book two lesson ten (pg 59)
++ Track 39 and 40
 + Listening practice, dictation and pronunciation
 + bad luck
 
-
-# Lesson 48
-+ Book two lesson eleven (pg 65)
-+ Listening practice, dictation and pronunciation
-
-
-# Lesson 49
-+ Book two lesson twelve (pg 71)
-+ Listening practice, dictation and pronunciation
-
 # Lesson 50
-+ Book two lesson thirteen (pg 77)
++ Book two lesson eleven (pg 65)
++ CD 2 --> Speak 2 to 5
 + Listening practice, dictation and pronunciation
 
 # Lesson 51
-+ Book two lesson fourteen (pg 83)
++ Book two lesson twelve (pg 71)
++ CD 2 --> Speak 6 to 9
 + Listening practice, dictation and pronunciation
 
 # Lesson 52
-+ Book two lesson fifteen (pg 89)
++ Book two lesson thirteen (pg 77)
++ CD 2 --> Speak 10 to 13
 + Listening practice, dictation and pronunciation
 
 # Lesson 53
-+ Book two lesson sixteen (pg 95)
++ Book two lesson fourteen (pg 83)
++ CD 2 --> Speak 14 to 17
 + Listening practice, dictation and pronunciation
 
 # Lesson 54
-+ Book two lesson seventeen (pg 101)
++ Book two lesson fifteen (pg 89)
++ CD 2 --> Speak 18 to 21
 + Listening practice, dictation and pronunciation
 
 # Lesson 55
-+ Book two lesson eithteen (pg 107)
++ Book two lesson sixteen (pg 95)
++ CD 2 --> Speak 22 to 25
 + Listening practice, dictation and pronunciation
 
 # Lesson 56
-+ Book two lesson nineteen (pg 113)
++ Book two lesson seventeen (pg 101)
++ CD 2 --> Speak 26 to 29
 + Listening practice, dictation and pronunciation
 
 # Lesson 57
-+ Book two lesson twenty (pg 119)
++ Book two lesson eithteen (pg 107)
++ CD 2 --> Speak 30 to 33
 + Listening practice, dictation and pronunciation
 
 # Lesson 58
++ Book two lesson nineteen (pg 113)
++ CD 2 --> Speak 34 to 37
++ Listening practice, dictation and pronunciation
+
+# Lesson 59
++ Book two lesson twenty (pg 119)
++ CD 2 --> Speak 38
++ Listening practice, dictation and pronunciation
+
+# Lesson 60
 + Book two lesson  (pg 119)
 + Listening practice, dictation and pronunciation
 
