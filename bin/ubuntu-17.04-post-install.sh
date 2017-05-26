@@ -9,6 +9,10 @@ pip3 install jupyter
 
 sudo apt-get install -y detox
 
+# listen online radios
+sudo apt-get install -y streamtuner2
+sudo apt-get install -y gpodder
+
 # soundcloud downloader
 pip install soundscrape
 

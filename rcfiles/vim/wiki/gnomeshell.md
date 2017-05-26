@@ -268,6 +268,13 @@ https://github.com/Dieterbe/snip/tree/master
 ### Extensão para rolar workspaces automaticamente (scroll)
 + https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/
 
+### Extensão para adicionar transparência a barra do topo
++ https://extensions.gnome.org/extension/857/transparent-top-bar/
++ https://extensions.gnome.org/extension/885/dynamic-top-bar/
+
+### Extensão que adiciona um menu tipo windows 10
++ https://extensions.gnome.org/extension/1228/arc-menu/
+
 ### como instalar o gnome-shell no ubuntu 11.04
 
     sudo add-apt-repository ppa:gnome3-team/gnome3

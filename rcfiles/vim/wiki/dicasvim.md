@@ -2199,6 +2199,8 @@ isto evita o erro E77: muitos arquivos para editar
     ^v^A ............. incrementa o número
 
 ### How to use vim to do multiple line edit?
++ https://stackoverflow.com/questions/44172121/
+
 I have text like this:
 
     w ky,
