@@ -8,6 +8,7 @@ sudo apt-get install -y python3-pip
 pip3 install jupyter
 
 sudo apt-get install -y detox
+sudo apt-get install -y sox
 
 # listen online radios
 sudo apt-get install -y streamtuner2
