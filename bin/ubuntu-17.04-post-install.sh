@@ -9,6 +9,8 @@ pip3 install jupyter
 
 sudo apt-get install -y detox
 sudo apt-get install -y sox
+sudo apt-get install -y gnome-subtitles
+sudo apt-get install -y epiphany-browser
 
 # listen online radios
 sudo apt-get install -y streamtuner2
