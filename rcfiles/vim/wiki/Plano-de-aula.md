@@ -60,7 +60,11 @@ são três videos
 + Colors
 
 # Lesson 5 - Fifth week
+
 + Asking about existence
++ https://www.youtube.com/watch?v=38AwU4ucX98
++ https://www.vagalume.com.br/john-legend/all-of-me-traducao.html
+
 + Asking about places and locations
 + There is / There are
 
