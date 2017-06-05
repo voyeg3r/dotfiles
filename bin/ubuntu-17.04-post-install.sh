@@ -1,5 +1,8 @@
 # http://www.omgubuntu.co.uk/2017/04/things-to-do-after-installing-ubuntu-17-04
 
+# aswita tweaks Is a Slimmer, Transparent Version of GNOME’s Adwaita Theme
+# http://www.omgubuntu.co.uk/2017/06/adwaita-tweaks-theme
+
 sudo apt-get update
 sudo apt-get install -y zsh
 sudo apt-get install -y silversearcher-ag
@@ -11,6 +14,7 @@ sudo apt-get install -y detox
 sudo apt-get install -y sox
 sudo apt-get install -y gnome-subtitles
 sudo apt-get install -y epiphany-browser
+sudo apt-get install -y deluge
 
 # listen online radios
 sudo apt-get install -y streamtuner2
