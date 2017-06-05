@@ -4,6 +4,7 @@ Errata - Modulo 1 pg 29
 # Lesson 1 - First week
 + Course overview (Visão Geral do Curso)
 + Greetings;
++ http://www.talkenglish.com/lessondetails.aspx?ALID=520
 + Introductions and Presentations
 
 ### Mind map about the learning process
