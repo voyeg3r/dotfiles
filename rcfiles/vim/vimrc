@@ -69,6 +69,16 @@ set completeopt=menu,preview
 set complete=.,w,k
 setlocal complete=.,w,k,b,u
 
+" Exchange words position
+" exchange word under cursor with the next word without moving the cursor
+nnoremap gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o><C-l>
+
+" push word under cursor to the left
+nnoremap <leader><Left> "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o><C-l>
+
+" push word under cursor to the right
+nnoremap <leader><Right> "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>/\w\+\_W\+<CR><C-l>
+
 " execute current line on shell zsh or bash
 map <S-F12> :exec '!'.getline('.')<cr>
 
