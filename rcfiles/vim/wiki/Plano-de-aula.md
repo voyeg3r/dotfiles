@@ -317,6 +317,41 @@ Renting a car
 + States of agreemente, paired conjunctions and question tags
 + Review
 
+You know what? I like the summer, because of the sun, and
+the weather. It's so nice. - Me too!
+
+But I don't like the Winter, because of the snow.
+You know what I mean? - Neither do I.
+
+I like pickles. -So do I. (me too)
+I like stawberries. -So does Allie. - So does Tim.
+
+I am so happy. - So am I (Me too)
+I am so happy. - So is Amanda.
+
+Mary went to the movies yesterday. -So did I.
+She will travel to China. -So will I.
+
+I don't speak French. - Neither do I. (Me Neither)
+
+I am not happy. -Neither am I. Neither is she.
+I didn't go to the club. -Neither did I.
+
+I won't go to school tomorrow. - Neither will I.
+She didn't travel. -Neither did I.
+
+I don't live in California. I don't either. (me neither)
+
+Peter isn't going to the mall tonight. I'm not either. (Me Neither)
+
+I don't like mushrooms. - Me neither.
+
+I can't dance. Me neither.
+
+I will not go there. Me neither
+
+I didn't go to church yesterday. Me neither.
+
 # Lesson 32
 + Confusing words
 + Difference between "lie and lay"

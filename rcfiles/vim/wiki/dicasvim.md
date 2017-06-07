@@ -15,6 +15,19 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### Swap two words fast
+
+   one word
+
+   "acw .......... "a register 'a'
+   cw ............ change word
+
+   after that jump the next word and do:
+   ^ra
+
+   ^r ................ Ctrl-r
+   a ................. paste register 'a'
+
 ### How many open buffers?
 + http://superuser.com/a/345593/45032
 + http://stackoverflow.com/a/42024307/2571881
