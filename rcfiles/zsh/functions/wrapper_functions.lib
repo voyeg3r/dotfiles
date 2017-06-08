@@ -41,7 +41,8 @@ ping(){
     local array=( $@ )  		# get all args in an array
     local host=${array[-1]}     # get the last arg
     local args=${array[1,-2]}   # get all args before last arg in $@
-    local _ping="/usr/bin/ping"
+    #local _ping="/usr/bin/ping"
+    local _ping="/bin/ping"
     local c=$(_getdomainnameonly "$host")
     [ "$host" != "$c" ] && echo "Sending ICMP ECHO_REQUEST to \"$c\"..."
     # pass args and host
