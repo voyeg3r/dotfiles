@@ -109,9 +109,9 @@ PASSADO
 ---------------------------------------------------------------
 
 ---------------------------------------------------------------
-* Was there a car on the street? |
-* Was there a book on the table? |
-* Was there an apple in the box? |
+* Was there a car on the street?
+* Was there a book on the table?
+* Was there an apple in the box?
 ---------------------------------------------------------------
 * Were there two cars on the street?
 * Were there many books on the table?
