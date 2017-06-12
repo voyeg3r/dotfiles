@@ -121,7 +121,8 @@ PASSADO
 * How many cars were there on the street?
 
 
-+ Asking about places and locations
+---------------------------------------------------------------
++ ASKING ABOUT PLACES AND LOCATIONS
 + There is / There are
 
 Asking for directions
@@ -133,7 +134,6 @@ Differences between British and American English
 + Talking about what people are doing
 + https://www.grammarly.com/blog/present-continuous/
 + https://www.englishclub.com/grammar/verbs-ing-form.htm
-
 
 + Expressing annoying actions
 + Expressing surprise
