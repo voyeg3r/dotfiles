@@ -68,7 +68,7 @@ são três videos
 + https://www.vagalume.com.br/john-legend/all-of-me-traducao.html
 
 AFIRMATIVA
----------------------------------------------------------------
+[](---------------------------------------------------------------)
 There is a car on the street | there are two cars on the street
 There is a book on the table | there are many books on the table
 There is an apple in the box | there are five apples in the box
@@ -116,6 +116,10 @@ Differences between British and American English
 
 # Lesson 6 - Sixth week
 + Talking about what people are doing
++ https://www.grammarly.com/blog/present-continuous/
++ https://www.englishclub.com/grammar/verbs-ing-form.htm
+
+
 + Expressing annoying actions
 + Expressing surprise
 

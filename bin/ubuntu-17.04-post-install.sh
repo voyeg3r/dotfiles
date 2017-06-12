@@ -10,6 +10,8 @@ sudo apt-get install -y python-pip
 sudo apt-get install -y python3-pip
 pip3 install jupyter
 
+sudo apt-get install -y conky-all
+
 sudo apt-get install -y detox
 sudo apt-get install -y sox
 sudo apt-get install -y gnome-subtitles
