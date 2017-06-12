@@ -69,41 +69,56 @@ são três videos
 
 AFIRMATIVA
 [](---------------------------------------------------------------)
-There is a car on the street | there are two cars on the street
-There is a book on the table | there are many books on the table
-There is an apple in the box | there are five apples in the box
----------------------------------------------------------------
+* There is a car on the street
+* There is a book on the table
+* There is an apple in the box
+------------------------------
+* there are two cars on the street
+* there are many books on the table
+* there are five apples in the box NEGATIVA
+------------------------------
 
-NEGATIVA
----------------------------------------------------------------
-There isn't a car on the street | there aren't two cars on the street
-There isn't a book on the table | there aren't many books on the table
-There isn't an apple in the box | there aren't five apples in the box
----------------------------------------------------------------
+* There isn't a car on the street
+* There isn't a book on the table
+* There isn't an apple in the box
+--------------------------------------------------------------
+* there aren't two cars on the street
+* there aren't many books on the table
+* there aren't five apples in the box
+--------------------------------------------------------------
 
 PASSADO
 ---------------------------------------------------------------
-There was a car on the street | there were two cars on the street
-There was a book on the table | there were many books on the table
-There was an apple in the box | there were five apples in the box
+* There was a car on the street
+* There was a book on the table
+* There was an apple in the box
+---------------------------------------------------------------
+* there were two cars on the street
+* there were many books on the table
+* there were five apples in the box INTERREGATIVA NO PRESENTE
 ---------------------------------------------------------------
 
-INTERREGATIVA NO PRESENTE
 ---------------------------------------------------------------
-Is There a car on the street? | Are there two cars on the street?
-Is There a book on the table? | Are there many books on the table?
-Is There an apple in the box? | Are there five apples in the box?
+* Is There a car on the street? |
+* Is There a book on the table? |
+* Is There an apple in the box? |
 ---------------------------------------------------------------
-
-INTERROGATIVA NO PASSADO
----------------------------------------------------------------
-Was there a car on the street? | Were there two cars on the street?
-Was there a book on the table? | Were there many books on the table?
-Was there an apple in the box? | Were there five apples in the box?
+* Are there two cars on the street?
+* Are there many books on the table?
+* Are there five apples in the box? INTERROGATIVA NO PASSADO
 ---------------------------------------------------------------
 
-How many cars are there on the street?
-How many cars were there on the street?
+---------------------------------------------------------------
+* Was there a car on the street? |
+* Was there a book on the table? |
+* Was there an apple in the box? |
+---------------------------------------------------------------
+* Were there two cars on the street?
+* Were there many books on the table?
+
+* Were there five apples in the box?
+* How many cars are there on the street?
+* How many cars were there on the street?
 
 
 + Asking about places and locations
