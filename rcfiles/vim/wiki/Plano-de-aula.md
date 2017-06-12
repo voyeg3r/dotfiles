@@ -1,6 +1,8 @@
 
 Errata - Modulo 1 pg 29
 
+Turma no duolingo: https://www.duolingo.com/o/cbmeqw
+
 # Lesson 1 - First week
 + Course overview (Visão Geral do Curso)
 + Greetings;
