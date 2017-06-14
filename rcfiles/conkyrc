@@ -1,3 +1,6 @@
+# install conky and...
+# ln -sfvn ~/.dotfiles/rcfiles/conkyrc ~/.conkyrc
+#
 # Conky settings
 background yes
 update_interval 3
@@ -13,10 +16,9 @@ update_interval 3
 # gap_y 280
 # minimum_size 350 300
 
-
 alignment br
 gap_x 100
-gap_y 100
+gap_y 80
 
 override_utf8_locale yes
 
@@ -46,7 +48,7 @@ use_xft yes
 xftfont Ubuntu-B.ttf:size=50
 xftalpha 0.7
 text_buffer_size 2048
-default_color white     # grey 5f5f5f 3F3F3F
+default_color grey     # grey 5f5f5f 3F3F3F
 
 uppercase no
 
@@ -57,4 +59,4 @@ default_color FFFFFF
 TEXT
 ${voffset 10}${font Open Sans Light:size=40}${time %A}${font}${voffset -15}
 ${voffset 10}${font Open Sans Light:size=40}${time %B} ${time %e}${font}${voffset -15}
-${voffset 10}${font Ubuntu:size=40}${time %I:%M %P}${font}${voffset 5}
+${voffset 10}${font Ubuntu:size=40}${time %I:%M %p}${font}${voffset 5}
