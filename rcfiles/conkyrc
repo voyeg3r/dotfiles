@@ -1,15 +1,22 @@
 # Conky settings
 background yes
-update_interval 1
+update_interval 3
 
-alignment mt
-gap_x 350
-gap_y 500
+# mt means: middle top
+# alignment mt
+# gap_x 350
+# gap_y 500
 
-alignment tr
-gap_x -400
-gap_y 280
-minimum_size 350 300
+# tr means top right
+# alignment tr
+# gap_x -400
+# gap_y 280
+# minimum_size 350 300
+
+
+alignment br
+gap_x 100
+gap_y 100
 
 override_utf8_locale yes
 
@@ -45,10 +52,9 @@ uppercase no
 
 default_color FFFFFF
 
+# font download: https://fonts.google.com/specimen/Open+Sans
+
 TEXT
-# ${voffset 10}${font Open Sans Light:size=50}${time %A}${font}${voffset -10}
-# ${voffset 10}${font Open Sans Light:size=50}${time %B} ${time %e}${font}${voffset -10}
-# ${voffset 10}${font Open Cantarell Bold:size=65}${time %l:%M%P}${font}${voffset -10}
-${voffset 10}${font Open Sans Light:size=50}${time %A}${font}${voffset -5}
-${voffset 10}${font Open Sans Light:size=50}${time %B} ${time %e}${font}${voffset -5}
-${voffset 10}${font Ubuntu:size=80}${time %I:%M %p}${font}${voffset -5}
+${voffset 10}${font Open Sans Light:size=40}${time %A}${font}${voffset -15}
+${voffset 10}${font Open Sans Light:size=40}${time %B} ${time %e}${font}${voffset -15}
+${voffset 10}${font Ubuntu:size=40}${time %I:%M %P}${font}${voffset 5}

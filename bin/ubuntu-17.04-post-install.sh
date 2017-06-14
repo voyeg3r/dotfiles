@@ -3,6 +3,8 @@
 # aswita tweaks Is a Slimmer, Transparent Version of GNOME’s Adwaita Theme
 # http://www.omgubuntu.co.uk/2017/06/adwaita-tweaks-theme
 
+# Press Alt+F2 to bring up the Run dialog. Type gnome-session-properties. Click the "Add" button. In the resulting dialog box give the name as "Conky" and the command as conky. Click add and close.
+
 sudo apt-get update
 sudo apt-get install -y zsh
 sudo apt-get install -y silversearcher-ag
