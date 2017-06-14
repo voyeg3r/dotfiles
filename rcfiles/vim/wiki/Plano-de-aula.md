@@ -134,6 +134,8 @@ Differences between British and American English
 
 # Lesson 6 - Sixth week
 + Talking about what people are doing
++ https://www.youtube.com/watch?v=Ue6jiGbq564
++ https://www.youtube.com/watch?v=0d7jrmZSa88&t=47s
 + https://www.grammarly.com/blog/present-continuous/
 + https://www.englishclub.com/grammar/verbs-ing-form.htm
 
