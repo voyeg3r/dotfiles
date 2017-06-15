@@ -14,6 +14,17 @@ pip3 install jupyter
 
 sudo apt-get install -y conky-all
 
+sudo apt install -y numix-gtk-theme
+
+papertheme (){
+# read more here: https://snwh.org/paper
+sudo add-apt-repository ppa:snwh/pulp -y
+sudo apt-get update
+sudo apt-get install -y paper-icon-theme
+sudo apt-get install -y paper-gtk-theme
+sudo apt-get install -y paper-cursor-theme
+} && papertheme
+
 sudo apt-get install -y detox
 sudo apt-get install -y sox
 sudo apt-get install -y gnome-subtitles
