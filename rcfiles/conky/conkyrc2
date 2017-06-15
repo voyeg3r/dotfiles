@@ -1,0 +1,63 @@
+# install conky and...
+# ln -sfvn ~/.dotfiles/rcfiles/conkyrc ~/.conkyrc
+#
+# Conky settings
+background yes
+update_interval 3
+
+# mt means: middle top
+# alignment mt
+# gap_x 350
+# gap_y 500
+
+# tr means top right
+# alignment tr
+# gap_x -400
+# gap_y 280
+# minimum_size 350 300
+
+alignment br
+gap_x 100
+gap_y 80
+
+override_utf8_locale yes
+
+double_buffer true,
+no_buffers yes
+text_buffer_size 2048
+
+# Window specifications
+own_window yes
+own_window_class Conky
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_argb_visual yes
+own_window_argb_value 255
+
+border_inner_margin 0
+border_outer_margin 0
+
+# Graphics settings
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings
+use_xft yes
+xftfont Ubuntu-B.ttf:size=50
+xftalpha 0.7
+text_buffer_size 2048
+default_color grey     # grey 5f5f5f 3F3F3F
+
+uppercase no
+
+default_color FFFFFF
+orange FFA500
+
+# font download: https://fonts.google.com/specimen/Open+Sans
+
+TEXT
+${voffset 10}${font Open Sans Light:size=40}${time %A}${font}${voffset -15}
+${voffset 10}${font Open Sans Light:size=40}${time %B} ${time %e}${font}${voffset -15}
+${voffset 10}${font Ubuntu:size=40}${time %I:%M}${color orange}${time %p}${font}${voffset 5}

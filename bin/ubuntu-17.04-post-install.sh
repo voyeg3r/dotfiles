@@ -5,6 +5,8 @@
 
 # Press Alt+F2 to bring up the Run dialog. Type gnome-session-properties. Click the "Add" button. In the resulting dialog box give the name as "Conky" and the command as conky. Click add and close.
 
+sudo apt-get install -y conky curl lm-sensors hddtemp
+
 sudo apt-get update
 sudo apt-get install -y zsh
 sudo apt-get install -y silversearcher-ag
