@@ -43,6 +43,9 @@ StartupNotify=true
 Categories=Network;WebBrowser;
 ```
 
+### Hide firefox titlebar
++ https://addons.mozilla.org/en-US/firefox/addon/hide-caption-titlebar-plus-sma/
+
 ### Make firefox speak English
 [us language pack](https://addons.mozilla.org/en-US/firefox/addon/english-us-language-pack/)
 
