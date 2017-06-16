@@ -7,6 +7,14 @@
 
 sudo apt-get install -y conky curl lm-sensors hddtemp
 
+fpat () {
+# flatpat gtk theme
+# https://github.com/nana-4/Flat-Plat
+cd /tmp
+curl -sL https://github.com/nana-4/Flat-Plat/archive/v20170605.tar.gz | tar xz
+cd Flat-Plat-20170605 && sudo ./install.sh
+} && fpat
+
 sudo apt-get update
 sudo apt-get install -y zsh
 sudo apt-get install -y silversearcher-ag
