@@ -5,7 +5,12 @@
 
 # Press Alt+F2 to bring up the Run dialog. Type gnome-session-properties. Click the "Add" button. In the resulting dialog box give the name as "Conky" and the command as conky. Click add and close.
 
+# how install opera-developer on Ubuntu
+# http://linuxg.net/install-opera-developer-on-ubuntu/
+
 sudo apt-get install -y conky curl lm-sensors hddtemp
+
+sudo apt-get install -y wireshark
 
 fpat () {
 # flatpat gtk theme
@@ -14,6 +19,9 @@ cd /tmp
 curl -sL https://github.com/nana-4/Flat-Plat/archive/v20170605.tar.gz | tar xz
 cd Flat-Plat-20170605 && sudo ./install.sh
 } && fpat
+
+# install folder color changer
+apt://folder-color
 
 sudo apt-get update
 sudo apt-get install -y zsh

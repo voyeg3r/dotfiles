@@ -141,3 +141,9 @@ curl -u username -o bookmarks.xml https://api.del.icio.us/v1/posts/all
 ### extrair tarball remoto sem salvar localmente
 
 curl http://example.com/foo.tar.gz | tar zxvf -
+
+### changing user-agent
+
+    curl -silent -A "iMacAppStore/1.0.1 (Macintosh; U; Intel Mac OS X 10.6.7; en) AppleWebKit/533.20.25" http://ax.search.itunes.apple.com/
+
+    curl -A "Opera/9.80 (Macintosh; Intel Mac OS X; U; en) Presto/2.6.30 Version/10.63" -o file.zip url

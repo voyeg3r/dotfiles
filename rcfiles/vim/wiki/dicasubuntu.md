@@ -8,6 +8,12 @@ site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 ```
 
+### stopping system errors report
+
+    sudo vim /etc/default/apport
+
+    change "enabled" to zero "0"
+
 ### setting abnt2 keyboard
 
     setxkbmap -model abnt2 -layout br

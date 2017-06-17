@@ -45,6 +45,22 @@ Categories=Network;WebBrowser;
 
 ### Hide firefox titlebar
 + https://addons.mozilla.org/en-US/firefox/addon/hide-caption-titlebar-plus-sma/
++ https://github.com/chpii/Headerbar
++ https://addons.mozilla.org/en-Us/firefox/addon/gnome-3-updated/
++ https://addons.mozilla.org/en-US/firefox/addon/hide-tab-bar-with-one-tab/
+
+### Change firefox user-agent
+
+    about:config
+
+Create a new string:
+
+    general.useragent.override
+
+The string below will set your firefox to appear like opera 46
+
+    Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3053.3 Safari/537.36 OPR/46.0.2573.0 (Edition developer)
+
 
 ### Make firefox speak English
 [us language pack](https://addons.mozilla.org/en-US/firefox/addon/english-us-language-pack/)
