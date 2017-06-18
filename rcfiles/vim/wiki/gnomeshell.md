@@ -93,6 +93,9 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', '
 
 http://thornton2.com/How_To_Shuffle_Your_Desktop_Background_Every_So_Many_Minutes_in_GNOME_and_MATE
 
+### Amazing site to get wallpapers
++ http://sf.co.ua/
+
 #!/bin/sh
 echo $DBUS_SESSION_BUS_ADDRESS > $HOME/.dbus_session_bus_address
 
