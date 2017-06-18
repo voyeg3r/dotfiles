@@ -33,6 +33,7 @@ pip3 install jupyter
 sudo apt-get install -y conky-all
 
 sudo apt install -y numix-gtk-theme
+sudo apt install -y arc-theme
 
 papertheme (){
 # read more here: https://snwh.org/paper

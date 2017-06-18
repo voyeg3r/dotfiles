@@ -275,6 +275,9 @@ https://github.com/Dieterbe/snip/tree/master
 ### Extensão que adiciona um menu tipo windows 10
 + https://extensions.gnome.org/extension/1228/arc-menu/
 
+### Extensão para mostrar um tooltip sobre a aplicação
++ https://extensions.gnome.org/extension/1071/applications-overview-tooltip/
+
 ### como instalar o gnome-shell no ubuntu 11.04
 
     sudo add-apt-repository ppa:gnome3-team/gnome3
