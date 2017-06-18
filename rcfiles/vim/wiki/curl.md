@@ -147,3 +147,7 @@ curl http://example.com/foo.tar.gz | tar zxvf -
     curl -silent -A "iMacAppStore/1.0.1 (Macintosh; U; Intel Mac OS X 10.6.7; en) AppleWebKit/533.20.25" http://ax.search.itunes.apple.com/
 
     curl -A "Opera/9.80 (Macintosh; Intel Mac OS X; U; en) Presto/2.6.30 Version/10.63" -o file.zip url
+
+Apearing like opera-developer
+
+    curl -A "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3053.3 Safari/537.36 OPR/46.0.2573.0 (Edition developer)"
