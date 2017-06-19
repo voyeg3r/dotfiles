@@ -38,6 +38,10 @@ sudo apt install -y arc-theme
 # app search
 sudo apt install -y synapse
 
+# set tracker preferences
+# to run it: alt-f2 --> tracker-preferences
+sudo apt install -y tracker-gui
+
 greenrecord (){
 # a new video recorder
 sudo add-apt-repository ppa:mhsabbagh/greenproject -y

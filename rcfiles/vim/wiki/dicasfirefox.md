@@ -65,6 +65,8 @@ Restore firefox 54 user-agent
 
     Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:54.0) Gecko/20100101 Firefox/54.0
 
+### Suspend firefox inactive tabs
++ https://addons.mozilla.org/en-US/firefox/addon/tab-suspender-tab-unloader/
 
 ### Make firefox speak English
 [us language pack](https://addons.mozilla.org/en-US/firefox/addon/english-us-language-pack/)
