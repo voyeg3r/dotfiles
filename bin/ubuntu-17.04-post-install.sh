@@ -35,6 +35,15 @@ sudo apt-get install -y conky-all
 sudo apt install -y numix-gtk-theme
 sudo apt install -y arc-theme
 
+# app search
+sudo apt install -y synapse
+
+greenrecord (){
+# a new video recorder
+sudo add-apt-repository ppa:mhsabbagh/greenproject -y
+sudo apt update && sudo apt install -y green-recorder
+} && greenrecord
+
 papertheme (){
 # read more here: https://snwh.org/paper
 sudo add-apt-repository ppa:snwh/pulp -y

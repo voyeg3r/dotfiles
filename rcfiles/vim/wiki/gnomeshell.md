@@ -255,6 +255,13 @@ https://github.com/Dieterbe/snip/
 https://github.com/Dieterbe/snip/tree/master
 
 # best addons to gnome-shell
++ https://linuxious.com/2016/01/10/my-recommended-gnome-extensions/
+
+### Dinamic Panel Transparency addon
++ https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/
+
+### gmail notifications extension
++ https://extensions.gnome.org/extension/1230/gmail-message-tray/
 
 ### Replacement of Alt-Tab, iterates through windows in a cover-flow manner.
 + https://extensions.gnome.org/extension/97/coverflow-alt-tab/
