@@ -8,6 +8,9 @@ site: vivaotux
 twitter: voyeg3r
 ```
 
+### References
++ https://www.maketecheasier.com/speed-up-firefox/
+
 ### Download firefox pt-br
 + https://superuser.com/a/322381
 
