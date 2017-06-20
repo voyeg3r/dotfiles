@@ -15,6 +15,11 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### Erase / delete change history
++ https://superuser.com/a/263406/45032
+
+    :set undoreload=0 | edit
+
 ### Swap two words fast
 
    one word

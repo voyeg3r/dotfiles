@@ -8,6 +8,11 @@
 # how install opera-developer on Ubuntu
 # http://linuxg.net/install-opera-developer-on-ubuntu/
 
+# fixing brithness control
+# backup grub file:  sudo cp /etc/default/grub{,-backup}
+# Edit the /etc/default/grub file.
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=vendor acpi_osi=Linux"
+
 sudo apt-get install -y conky curl lm-sensors hddtemp
 
 sudo apt-get install -y wireshark
