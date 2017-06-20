@@ -23,5 +23,3 @@ for item in os.listdir(backgrounds):
 
 item = random.randrange (0, len (items))
 os.system('gsettings set org.gnome.desktop.background picture-uri "file:///' + backgrounds + items[item] + '"' )
-
-

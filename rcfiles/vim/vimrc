@@ -126,15 +126,11 @@ call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 "Plug 'itchyny/vim-cursorword'
 "Plug 'chilicuil/nextCS.vim'
 "Plug 'tell-k/vim-autopep8'
-"Plug 'ivanov/vim-ipython'
 "Plug 'nvie/vim-flake8'
 "Plug 'davidhalter/jedi-vim'
 "Plug 'tpope/vim-dispatch'
-"Plug 'vim-scripts/indentpython.vim'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
 "Plug 'vim-pandoc/vim-pandoc'
-"Plug 'klen/python-mode'
-"Plug 'phillipberndt/python-imports.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-markdown'
@@ -212,9 +208,6 @@ endfun
 command! -nargs=0 H2M :%!pandoc -f html -t markdown<CR>
 
 
-" python auto imports
-" https://github.com/phillipberndt/python-imports.vim
-let g:PythonAutoAddImports=1
 
 " The Silver Searcher
 if executable('ag')
@@ -456,26 +449,6 @@ augroup zsh
     au BufWritePost *.zsh :silent !chmod a+x <afile>
 augroup end
 
-"" autocomandos para python
-augroup python
-    au FileType python set keywordprg=pydoc
-    au! BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-    au! BufRead,Bufnewfile *.py im :<CR> :<CR><TAB>
-    au! BufNewFile *.py 0r ~/.vim/skel/template.py
-    au BufNewFile *.py exe "1," . 10 . "s/Creation Date:.*/Creation Date:    " .strftime("%d-%m-%Y")
-    au! BufWritePost *.py :silent !chmod a+x <afile>
-    autocmd FileType python set textwidth=79
-    autocmd FileType python filetype indent on
-    let python_highlight_all=1
-    let python_highlight_builtins=0
-    let python_highlight_builtins=1
-    let python_highlight_exceptions=1
-    let python_highlight_numbers=1
-    let python_highlight_space_errors=1
-    " needs flake8 installed: pip install flake8
-    "autocmd BufWritePost *.py call Flake8()
-augroup end
-
 augroup html
     " au! <--> Remove all html autocommands
     au!
@@ -558,12 +531,6 @@ endfun
 command! -nargs=0 Age call s:CalculateAge()
 nmap <leader>a :Age<cr>
 
-" mappings to repeat last command and last substituition
-" if you want to repeat the last substituition globally g&
-nmap <leader>l :exec getline('.')<cr>
-nmap <leader>c q:
-"nmap <leader>r :Dispatch python %<cr>
-nmap <leader>qs q/
 
 " this function gets last 20 cmds to new buffer
 fun! s:RedirHistoryCommands()
@@ -900,7 +867,6 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " snippets settings
 "let g:UltiSnips#ListSnippets="<C-tab>"
-let g:syntastic_python_python_exec = '/usr/bin/python'
 let g:UltiSnipsListSnippets = "<c-tab>"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -980,18 +946,6 @@ nnoremap <Leader>o :.Gbrowse<CR>
 " for html files, 2 spaces
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
-" python
-" vim-python
-augroup vimrc-python
-  autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=4 colorcolumn=79
-      \ softtabstop=4 smartindent
-      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-augroup END
-
-
-" syntastic
-let g:syntastic_python_checkers=['python', 'flake8']
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
