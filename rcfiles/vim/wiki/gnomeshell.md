@@ -8,6 +8,12 @@ site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 ```
 
+### Startap applications
+
+rode o comando (Alt+F2) dialog run:
+
+    gnome-session-properties
+
 ### save alsamixer settings
 source: http://askubuntu.com/a/465641/3798
 
@@ -89,6 +95,10 @@ http://askubuntu.com/questions/604462/
 
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', 'us')]"
 
+### Disable update checking for gnome extensions
+
+    gsettings set org.gnome.shell disable-extension-version-validation "true"
+
 ### change wallpaper every so many minutes
 
 http://thornton2.com/How_To_Shuffle_Your_Desktop_Background_Every_So_Many_Minutes_in_GNOME_and_MATE
@@ -117,6 +127,10 @@ chmod a+x ~/bin/login-script.sh
     Terminal=false
     Type=Application
     X-GNOME-Autostart-enabled=true
+
+ou rode o comando (Alt+F2) dialog run:
+
+    gnome-session-properties
 
 ### Show current wallpaper path
 
