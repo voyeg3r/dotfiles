@@ -8,11 +8,22 @@ site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 ```
 
+
 ### Startap applications
 
 rode o comando (Alt+F2) dialog run:
 
     gnome-session-properties
+
+### ocs-url
++ https://www.linux-apps.com/p/1175480/
+
+It is a protocol similar to apt-url that allows us to
+install new gnome-shell themes easily
+
+### Backing up gnome-shell extensions
+
+    rsync -av --update --delete ~/.local/share/gnome-shell/extensions/ ~/docs/conf/gnome-shell/extensions
 
 ### save alsamixer settings
 source: http://askubuntu.com/a/465641/3798
@@ -138,6 +149,13 @@ ou rode o comando (Alt+F2) dialog run:
 
     Script to change wallpaper automatically
     https://github.com/mattwilmott/Gnome3-Auto-Wallpaper-Changer
+
+    Using notify send system:
+    notify-send -i "terminal" "current-background" "$(gsettings get org.gnome.desktop.background picture-uri)"
+
+Using notify-send to warn the user when a job is finished
+
+    notify-send "Task Completed"
 
 ### setting nautilus auto mount
 
