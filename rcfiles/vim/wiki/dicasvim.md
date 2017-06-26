@@ -15,6 +15,16 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### Switch from visual to insert mode
+
+    ^I .............. starts insert mode at the beginin
+    ^A .............. starts insert mode at the end
+
+### Exit ex mode
+
+    q:  ............... eters ex mode
+    ^c ................ exit it
+
 ### Erase / delete change history
 + https://superuser.com/a/263406/45032
 

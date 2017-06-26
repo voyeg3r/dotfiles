@@ -17,6 +17,53 @@ sudo apt-get install -y conky curl lm-sensors hddtemp
 
 sudo apt-get install -y wireshark
 
+# how remove ppa repository
++ https://askubuntu.com/a/310/3798
+
+    sudo apt-add-repository --remove ppa:whatever/ppa
+
+As a safer alternative, you can install ppa-purge:
+
+    sudo apt-get install ppa-purge
+
+And then remove the PPA, downgrading gracefully packages it provided to packages provided by official repositories:
+
+    sudo ppa-purge ppa_name
+
+Note that this will uninstall packages provided by the PPA, but not those provided by the official repositories. If you want to remove them, you should tell it to apt:
+
+    sudo apt-get purge package_name
+
+You can also remove PPAs by deleting the .list files from /etc/apt/sources.list.d directory.
+
+uniformicons (){
+# http://www.noobslab.com/2017/01/uniform-icons-are-unshaped-but-looks.html
+sudo add-apt-repository ppa:noobslab/icons2 -y
+sudo apt-get update && sudo apt install -y uniform-icons
+} && uniformicons
+
+lollypopinstall (){
+# http://gnumdk.github.io/lollypop-web/
+sudo add-apt-repository ppa:gnumdk/gnuppa -y
+sudo apt-get update && sudo apt-get install lollypop -y
+} && lollypopinstall
+
+installppaurl (){
+# A simple application to add PPA repository directly from web with a simple interface.
+# http://www.omgubuntu.co.uk/2017/04/plotinus-hud-menu-search-gtk3-apps
+sudo add-apt-repository ppa:atareao/ppaurl -y
+sudo apt-get update && sudo apt install -y ppaurl
+} && installppaurl
+
+plotinusinstall () {
+# A searchable command palette in every modern GTK+ application
+# http://www.webupd8.org/2017/01/add-searchable-command-palette-to-any.html
+# https://www.atareao.es/software-linux/paleta-de-comandos-aplicaciones-ubuntu/
+# GTK3_MODULES=/usr/libi386-linux-gnu/libplotinus/libplotinus.so
+sudo add-apt-repository ppa:nilarimogard/webupd8 -y
+sudo apt update && sudo apt install -y libplotinus
+} && plotinusinstall
+
 fpat () {
 # flatpat gtk theme
 # https://github.com/nana-4/Flat-Plat
@@ -82,6 +129,7 @@ pip3 install beautifulsoup4
 pip install requests
 pip3 install wget
 
+sudo apt install -y p7zip-full
 
 # language support
 # https://www.vivaolinux.com.br/dica/Ubuntu-GNOME-1310-totalmente-em-portugues
