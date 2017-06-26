@@ -144,6 +144,7 @@ ou rode o comando (Alt+F2) dialog run:
     gnome-session-properties
 
 ### Set wallpaper mode
++ https://bbs.archlinux.org/viewtopic.php?id=152571
 Possible values are "none", "wallpaper", "centered", "scaled", "stretched", "zoom", "spanned".
 
     gsettings set org.gnome.desktop.background picture-options 'stretched'
