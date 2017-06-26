@@ -143,6 +143,11 @@ ou rode o comando (Alt+F2) dialog run:
 
     gnome-session-properties
 
+### Set wallpaper mode
+Possible values are "none", "wallpaper", "centered", "scaled", "stretched", "zoom", "spanned".
+
+    gsettings set org.gnome.desktop.background picture-options 'stretched'
+
 ### Show current wallpaper path
 
     gsettings get org.gnome.desktop.background picture-uri
