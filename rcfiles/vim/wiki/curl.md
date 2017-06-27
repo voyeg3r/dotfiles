@@ -3,6 +3,10 @@
 * IBM [[http://www.ibm.com/developerworks/br/opensource/library/os-curl/index.html]]
 * https://curl.haxx.se/docs/manpage.html
 
+    curl -O url
+
+    curl -O http://cdn.designrulz.com/wp-content/uploads/2012/08/pallet-designrulz-[1-33].jpg
+
 cURL é uma ferramenta desenvolvida para a transferência de arquivos pela
 Internet pelo próprio terminal de comandos do sistema (Xterm, Konsole, Consola,
 etc...). Este aplicativo suporta vários tipos de protocolos diferentes, deste

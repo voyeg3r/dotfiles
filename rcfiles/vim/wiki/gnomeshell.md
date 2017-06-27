@@ -8,6 +8,10 @@ site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 ```
 
+### delay until screen goes black
+
+    gsettings get org.gnome.desktop.session idle-delay
+    gsettings set org.gnome.desktop.session idle-delay 600
 
 ### Startap applications
 
@@ -104,7 +108,7 @@ http://askubuntu.com/questions/604462/
 
 ### Set keyboard language
 
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', 'us')]"
+    gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', 'us')]"
 
 ### Disable update checking for gnome extensions
 
@@ -162,6 +166,10 @@ Possible values are "none", "wallpaper", "centered", "scaled", "stretched", "zoo
 Using notify-send to warn the user when a job is finished
 
     notify-send "Task Completed"
+
+### Screenshot directory
+
+    gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/$USER/img/Screenshots"
 
 ### setting nautilus auto mount
 
