@@ -204,6 +204,8 @@ export EDITOR='vim'
 
 source ~/.dotfiles/rcfiles/zsh/aliases
 
+current_wallpaper=$(gsettings get org.gnome.desktop.background picture-uri)
+
 # emacs mode
 bindkey -e
 

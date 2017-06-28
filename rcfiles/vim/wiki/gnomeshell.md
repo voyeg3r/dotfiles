@@ -8,6 +8,17 @@ site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 ```
 
+### disable lockdown screen
++ https://askubuntu.com/q/675256/3798
+
+This option only prevents alowing user to lock screen manually
+
+    gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+
+avoid lock on suspending desktop
+
+    gsettings set org.gnome.desktop.screensaver ubuntu-lock-on-suspend false
+
 ### delay until screen goes black
 
     gsettings get org.gnome.desktop.session idle-delay
