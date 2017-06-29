@@ -68,6 +68,10 @@ Restore firefox 54 user-agent
 
     Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:54.0) Gecko/20100101 Firefox/54.0
 
+Identify as chrome
+
+    Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/58.0.3029.110 Chrome/58.0.3029.110 Safari/537.36
+
 ### Suspend firefox inactive tabs
 + https://addons.mozilla.org/en-US/firefox/addon/tab-suspender-tab-unloader/
 

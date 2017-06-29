@@ -131,6 +131,17 @@ pip3 install wget
 
 sudo apt install -y p7zip-full
 
+sudo apt install -y gnome-screensaver
+
+instaltldr(){
+# easiest command explanations
+# https://itsfoss.com/tldr-linux-man-pages-simplified/
+# online: https://tldr.ostera.io/
+sudo apt install -y nodejs npm
+sudo npm install -g tldr
+tldr --update
+} && instaltldr
+
 # language support
 # https://www.vivaolinux.com.br/dica/Ubuntu-GNOME-1310-totalmente-em-portugues
 sudo apt-get install language-selector-gnome
@@ -177,6 +188,12 @@ sudo apt-add-repository ppa:numix/ppa
 sudo apt-get update
 sudo apt-get install numix-icon-theme numix-icon-theme-circle
 } && numixinstall
+
+installadpatatheme () {
+# http://www.omgubuntu.co.uk/2016/10/install-adapta-gtk-theme-on-ubuntu
+sudo apt-add-repository ppa:tista/adapta -y
+sudo apt-get update && sudo apt-get install -y adapta-gtk-theme
+} && installadpatatheme
 
 installaudiorecorder (){
 sudo add-apt-repository ppa:audio-recorder/ppa

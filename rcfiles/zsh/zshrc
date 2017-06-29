@@ -204,7 +204,7 @@ export EDITOR='vim'
 
 source ~/.dotfiles/rcfiles/zsh/aliases
 
-current_wallpaper=$(gsettings get org.gnome.desktop.background picture-uri)
+current_wallpaper=$(gsettings get org.gnome.desktop.background picture-uri | sed 's,file:///,/,g' | sed "s,',,g")
 
 # emacs mode
 bindkey -e

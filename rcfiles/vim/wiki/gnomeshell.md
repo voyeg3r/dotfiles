@@ -8,6 +8,28 @@ site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 ```
 
+### shortcuts
+
+    minimize .................. super + h
+    show ...................... super + s
+
+### Cleaning up Linux journal
++ https://cubethethird.wordpress.com/2016/05/10/cleaning-up-linux-journal/
+
+
+While reading up on a few random things, I stumbled across info on the Arch Wiki about how the system journal archives can get quite large, and may cause slowdowns. This is caused by a lack of limit in place for the size of journals stored. To my surprise, I had nearly 4GB of space taken up by system journals in /var/log/journal. I ran the following command to clear that up:
+
+    journalctl --vacuum-size=100M
+
+This brought the size down to approximately 100MB. Along with this, I’ve set a limit to the journals, by editing the /etc/systemd/journald.conf:
+
+    SystemMaxUse=100M
+
+
+### How do I know if I am using wayland or x11
+
+The `XDG_SESSION_TYPE` environmental variable takes precedence. One of " unspecified ", " tty ", " x11 ", " wayland " or " mir "
+
 ### disable lockdown screen
 + https://askubuntu.com/q/675256/3798
 
