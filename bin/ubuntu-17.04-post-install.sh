@@ -13,9 +13,18 @@
 # Edit the /etc/default/grub file.
 # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=vendor acpi_osi=Linux"
 
-sudo apt-get install -y conky curl lm-sensors hddtemp
 
-sudo apt-get install -y wireshark
+
+### remove noise during recordings
++ https://askubuntu.com/a/765024/3798
+
+
+
+### install and set conky
+
+    sudo apt-get install -y conky curl lm-sensors hddtemp
+
+    sudo apt-get install -y wireshark
 
 # how remove ppa repository
 + https://askubuntu.com/a/310/3798
@@ -41,6 +50,14 @@ uniformicons (){
 sudo add-apt-repository ppa:noobslab/icons2 -y
 sudo apt-get update && sudo apt install -y uniform-icons
 } && uniformicons
+
+installpoptheme (){
+# http://www.noobslab.com/2017/04/pop-theme-suite-make-your-ubuntulinux.html?m=1
+sudo add-apt-repository ppa:noobslab/themes -y
+sudo apt-get update && sudo apt-get install -y system76-pop-gtk-theme
+sudo add-apt-repository ppa:noobslab/icons -y
+sudo apt-get update && sudo apt-get install -y system76-pop-icon-theme
+} && installpoptheme
 
 lollypopinstall (){
 # http://gnumdk.github.io/lollypop-web/
