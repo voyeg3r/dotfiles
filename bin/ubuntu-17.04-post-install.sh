@@ -51,7 +51,13 @@ sudo add-apt-repository ppa:noobslab/icons2 -y
 sudo apt-get update && sudo apt install -y uniform-icons
 } && uniformicons
 
+installmoka (){
+sudo add-apt-repository ppa:moka/daily -y
+sudo apt-get update && sudo apt install -y moka-icon-theme
+} && installmoka
+
 # united theme: https://www.gnome-look.org/p/1174889/
+# zuki: https://github.com/lassekongo83/zuki-themes
 
 installpoptheme (){
 # http://www.noobslab.com/2017/04/pop-theme-suite-make-your-ubuntulinux.html?m=1

@@ -63,6 +63,11 @@ rode o comando (Alt+F2) dialog run:
 It is a protocol similar to apt-url that allows us to
 install new gnome-shell themes easily
 
+### theme list
+
++ united theme: https://www.gnome-look.org/p/1174889/
++ zuki: https://github.com/lassekongo83/zuki-themes
+
 ### Backing up gnome-shell extensions
 
     rsync -av --update --delete ~/.local/share/gnome-shell/extensions/ ~/docs/conf/gnome-shell/extensions
@@ -189,7 +194,7 @@ ou rode o comando (Alt+F2) dialog run:
 + https://bbs.archlinux.org/viewtopic.php?id=152571
 Possible values are "none", "wallpaper", "centered", "scaled", "stretched", "zoom", "spanned".
 
-    gsettings set org.gnome.desktop.background picture-options 'stretched'
+    gsettings set org.gnome.desktop.background picture-options 'zoom'
 
 ### Show current wallpaper path
 
