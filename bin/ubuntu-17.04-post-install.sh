@@ -51,6 +51,8 @@ sudo add-apt-repository ppa:noobslab/icons2 -y
 sudo apt-get update && sudo apt install -y uniform-icons
 } && uniformicons
 
+# united theme: https://www.gnome-look.org/p/1174889/
+
 installpoptheme (){
 # http://www.noobslab.com/2017/04/pop-theme-suite-make-your-ubuntulinux.html?m=1
 sudo add-apt-repository ppa:noobslab/themes -y

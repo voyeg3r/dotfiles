@@ -15,6 +15,9 @@ google spredsheet word count:
    On libreoffice calc you cand do this
     =NÚM.CARACT(A1)-NÚM.CARACT(SUBSTITUIR(A1;" ";""))+1
 
+In order to eliminate rows with less than two words simply sorte
+byt the line containing the numbers
+
 ### Formatação condicional
 
 Crie um estilo e formate com o fundo cinza
