@@ -6,6 +6,14 @@ site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
+### Contar palavras em planilhas do google
+
+google spredsheet word count:
+
+    =len(C1)-len(substitute(C1," ",""))+1
+
+   On libreoffice calc you cand do this
+    =NÚM.CARACT(A1)-NÚM.CARACT(SUBSTITUIR(A1;" ";""))+1
 
 ### Formatação condicional
 
