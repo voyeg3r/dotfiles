@@ -128,4 +128,8 @@ Um cartão do anki com audio ficaria então assim:
 This is the English phrase[sound:nome-do-audio.mp3]
 Esta é uma frase em Inglês
 
+### Como busar cartões com tags distintas
+
+    tag:TvSeries* or tag:movies
+
 
