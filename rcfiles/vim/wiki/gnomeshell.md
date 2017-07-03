@@ -57,6 +57,19 @@ rode o comando (Alt+F2) dialog run:
 
     gnome-session-properties
 
+### How can I delay a specific program on startup?
++ https://askubuntu.com/a/195036/3798
+
+    gedit ~/.config/autostart/application.desktop
+
+Append the following line to the file:
+
+    X-GNOME-Autostart-Delay=foo
+
+where foo is the time in seconds you want to delay the application launch by, e.g.:
+
+    X-GNOME-Autostart-Delay=60
+
 ### ocs-url
 + https://www.linux-apps.com/p/1175480/
 
