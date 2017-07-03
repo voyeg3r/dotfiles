@@ -1152,6 +1152,14 @@ zug ......... undo add word as good one
 
     :%s/PATTERN/&\r/g
 
+### How to add a line after every few lines in vim
+I wanted to add a line after every 3 lines in a file (having about 1000 lines) using vim editor. Can someone help me out?
+
+Solution one:
+    :%s/\v(.*\n){3}/&\r
+Solution two:
+    :%s/^/\=(line(".")%4==0?"\n":"")/g
+
 ### How join lines whithin xml <div>s
 
      :g/<div>/+1,/<\/div>/-1 join

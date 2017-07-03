@@ -279,6 +279,12 @@ max-screencast-length 1800
 
 mprove focus and increase your productive by listening to different sounds
 
+### Media Player indicator extension
++ https://extensions.gnome.org/extension/55/media-player-indicator/
+
+This extension is ideal to combine with Anoise program
++ http://anoise.tuxfamily.org/
+
 ### how install gnome shell in any distro with jhbuild
 http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distro-with-jhbuild/
 

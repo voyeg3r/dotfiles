@@ -51,6 +51,13 @@ sudo add-apt-repository ppa:noobslab/icons2 -y
 sudo apt-get update && sudo apt install -y uniform-icons
 } && uniformicons
 
+installambientnoise (){
+# http://anoise.tuxfamily.org/
+sudo add-apt-repository ppa:costales/anoise -y
+sudo apt-get update && sudo apt-get install -y anoise
+sudo apt-get install -y anoise-community-extension{1..5}
+} && installambientnoise
+
 installmoka (){
 sudo add-apt-repository ppa:moka/daily -y
 sudo apt-get update && sudo apt install -y moka-icon-theme
