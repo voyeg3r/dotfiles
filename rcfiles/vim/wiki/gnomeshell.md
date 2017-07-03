@@ -271,8 +271,13 @@ http://www.talesam.org/blog/dica-ampliando-o-tempo-de-gravacao-do-desktop-no-gno
     gsettings set org.gnome.settings-daemon.plugins.media-keys
 max-screencast-length 1800
 
-    Extensão que permite gravar com audio
-    https://extensions.gnome.org/extension/690/easyscreencast/
+### Extensão que permite gravar com audio
++ https://extensions.gnome.org/extension/690/easyscreencast/
+
+### Extensão que reproduz sons como chuva, água etc
++ https://extensions.gnome.org/extension/1224/focusli/
+
+mprove focus and increase your productive by listening to different sounds
 
 ### how install gnome shell in any distro with jhbuild
 http://worldofgnome.org/how-to-easily-install-the-very-latest-gnome-in-any-distro-with-jhbuild/
