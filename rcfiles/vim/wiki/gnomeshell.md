@@ -8,6 +8,14 @@ site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 ```
 
+### set system sound above 100%
++ https://superuser.com/a/1017972/45032
+install pulseaudio
+
+on debian like for example
+
+    pactl -- set-sink-volume 0 150%
+
 ### shortcuts
 
     minimize .................. super + h

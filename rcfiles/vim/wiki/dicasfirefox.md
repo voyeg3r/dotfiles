@@ -115,6 +115,20 @@ https://addons.mozilla.org/en-US/firefox/addon/wikiwand-wikipedia-modernized/
 ### Extensão similar a "momentum" chamada tabtracker
 + https://addons.mozilla.org/en-US/firefox/addon/tabtrekker/
 
+To refresh tabtracker making it show new wallpapers do this:
+
+Open about:config and search for extensions.jid1-AahxeYITR16k5Q@jetpack.images_lastupdated
+Right click the preference and click reset.
+
+Using the console setup "Shift + f2"
+
+    pref reset extensions.jid1-AahxeYITR16k5Q@jetpack.images_lastupdated
+
+### Developer toolbar
++ http://www.hongkiat.com/blog/firefox-graphical-command-line/
+
+    shift + f2
+
 ### desabilitar a checagem de virus
 http://en.kioskea.net/faq/1686-optimize-firefox-completely
 

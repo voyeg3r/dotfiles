@@ -104,6 +104,8 @@ alias copera='curl -A "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, 
 alias finished='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
 alias errorsound='paplay /usr/share/sounds/freedesktop/stereo/suspend-error.oga'
 
+alias volumeup='pactl -- set-sink-volume 0 150%'
+alias volumenormal='pactl -- set-sink-volume 0 100%'
 alias a='fasd -a' # any
 alias s='fasd -si' # show / search / select
 alias d='fasd -d' # directory
