@@ -204,4 +204,11 @@ or .net
      HacknMod is not responsible for your actions and does not promote illegal or
      malicious actvities.
 
+### some cartoon sounds
 
++ http://tinyurl.com/HBmega  .nz/#!gxJz2SZa!YqtK7EudLoNx5oIjisyr8in1c9xSmdQ6QkqPGcOTHy8
++ http://tinyurl.com/HB1mega
++ http://tinyurl.com/HB2mega
++ http://tinyurl.com/HB3mega
++ http://tinyurl.com/HB4mega
++ http://tinyurl.com/HB5mega

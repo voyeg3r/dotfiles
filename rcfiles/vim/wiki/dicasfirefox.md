@@ -112,6 +112,9 @@ https://addons.mozilla.org/en-US/firefox/addon/proxmate/
 Extensão para melhor visualizar páginas da wikipédia
 https://addons.mozilla.org/en-US/firefox/addon/wikiwand-wikipedia-modernized/
 
+### Extensão similar a "momentum" chamada tabtracker
++ https://addons.mozilla.org/en-US/firefox/addon/tabtrekker/
+
 ### desabilitar a checagem de virus
 http://en.kioskea.net/faq/1686-optimize-firefox-completely
 
