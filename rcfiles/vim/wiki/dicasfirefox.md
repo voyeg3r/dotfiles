@@ -124,6 +124,13 @@ Using the console setup "Shift + f2"
 
     pref reset extensions.jid1-AahxeYITR16k5Q@jetpack.images_lastupdated
 
+There is another better than momentum extension that works on chromium
++ https://chrome.google.com/webstore/detail/leoh-new-tab/ijhhakihjccpanbibbcceofpjnebokcb/related
+
+    curl -O
+
+'疘疤疤疠番畟畟疓疔疞畞疜疕疟疘畞疙疟畟疙疝疑疗疕疣畟疒疑疓疛疥疠疣畟疒疑疣疕疏疪疕疢疟畕畢畠疓疟疠疩畟疙疝疑疗疕疏疌疋畡畝畣畠畩疌疍畞疚疠疗'
+
 ### Developer toolbar
 + http://www.hongkiat.com/blog/firefox-graphical-command-line/
 

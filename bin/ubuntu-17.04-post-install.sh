@@ -16,9 +16,24 @@
 
 
 ### remove noise during recordings
-+ https://askubuntu.com/a/765024/3798
+# + https://askubuntu.com/a/765024/3798
 
+### fix brithness on ubuntu
+# https://www.youtube.com/watch?v=BAF_UNoLZMo
+# if you have
+ls /sys/class/backlight
+acpi_video0  intel_backlight
 
+# Then make
+sudo touch /usr/share/X11/xorg.conf.d/20-intel.conf
+
+sudo vim /usr/share/X11/xorg.conf.d/20-intel.conf
+Section "Device"
+    Identifier "card0"
+    Driver "intel"
+    Option "Backlight" "intel_backlight"
+    BusID "PCI:0:2:0"
+Endsection
 
 ### install and set conky
 
