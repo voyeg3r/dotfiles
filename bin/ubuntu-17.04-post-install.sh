@@ -13,7 +13,8 @@
 # Edit the /etc/default/grub file.
 # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=vendor acpi_osi=Linux"
 
-
+### how to install popcorntime
+#### https://ubunlog.com/instalar-popcorn-time-2017/
 
 ### remove noise during recordings
 # + https://askubuntu.com/a/765024/3798
