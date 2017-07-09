@@ -69,7 +69,17 @@ alias southLosAngelis='mplayer http://relay.broadcastify.com:80/q1zxhgrdwt0p\?xa
 
 alias classic='mplayer http://80.237.154.83:8120'
 # watch aljazeera
-alias alj='rtmpdump -v -r "rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med" | mplayer -'
+#
+alias alj='mplayer https://english.streaming.aljazeera.net/aljazeera/english2/index101.m3u8'
+
+alias cbs='mplayer https://cbsnhls-i.akamaihd.net/hls/live/264710-b/CBSN_mdialog/prodstream/master_360.m3u8'
+
+# troque o c pelo b pra entender
+alias hco='mplayer http://freeeucache1.streamlive.to/live/qzbbu26gcvjxksz/chunks.m3u8\?nimblesessionid\=379679\&wmsAuthSign\=c2VydmVyX3RpbWU9Ny85LzIwMTcgNToxMDowMyBQTSZoYXNoX3ZhbHVlPWZyL1hXYjFqcUZ1WVN3YTAxVmxDcHc9PSZ2YWxpZG1pbnV0ZXM9MTAyMCZzdHJtX2xlbj0yMA\=\='
+
+alias cmm='mplayer http://37.48.70.138:8088/live/CNN_livestreaming2017/playlist.m3u8\?id\=71244\&wowzasessionid\=3312082838\&pk\=ec9ae024c0c1697ed8d3e762eef60770553be1a95f24b63f28ec1adea8d63340'
+
+alias fmovies1='mplayer http://freeeucache1.streamlive.to/live/hc992q7x7cz86t9/chunks.m3u8\?nimblesessionid\=381576\&wmsAuthSign\=c2VydmVyX3RpbWU9Ny85LzIwMTcgNjowMzo0NSBQTSZoYXNoX3ZhbHVlPXlvM2JKSzBucmh0em93ZXFrekZ1WVE9PSZ2YWxpZG1pbnV0ZXM9MTAyMCZzdHJtX2xlbj0yMA\=\='
 
 alias rtnews='mplayer https://rt-eng-live-hls.secure.footprint.net/rt/eng/index1600.m3u8'
 alias rtamerica='mplayer https://rt-usa-live-hls.secure.footprint.net/rt/usa/index800.m3u8'
