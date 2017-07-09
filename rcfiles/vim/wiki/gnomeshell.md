@@ -20,6 +20,8 @@ on debian like for example
 
     minimize .................. super + h
     show ...................... super + s
+    super (windows) + a ....... show applications
+    Super+Shift+Page Up ....... move current windows to ...
 
 ### Cleaning up Linux journal
 + https://cubethethird.wordpress.com/2016/05/10/cleaning-up-linux-journal/

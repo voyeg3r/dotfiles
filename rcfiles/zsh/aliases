@@ -71,6 +71,9 @@ alias classic='mplayer http://80.237.154.83:8120'
 # watch aljazeera
 alias alj='rtmpdump -v -r "rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/aljazeera_eng_med" | mplayer -'
 
+alias rtnews='mplayer https://rt-eng-live-hls.secure.footprint.net/rt/eng/index1600.m3u8'
+alias rtamerica='mplayer https://rt-usa-live-hls.secure.footprint.net/rt/usa/index800.m3u8'
+
 # some radios using mplayer
 alias bbc="mplayer -playlist http://peace.str3am.com:6810/live-96k.mp3.m3u"
 alias klara='mplayer  http://mp3.streampower.be/klara-high.mp3'
