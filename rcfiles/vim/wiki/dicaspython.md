@@ -24,6 +24,19 @@ Curso do professor Ronaldo Ramos no Youtube: http://goo.gl/n4NxP
 + http://www.securitybydefault.com/2013/09/listado-de-keyloggers-windows-linux.html
 + http://jeffhoogland.blogspot.com.br/2014/10/pyhook-for-linux-with-pyxhook.html
 
+### Invertendo uma lista no python3
++ https://dbader.org/blog/python-reverse-list
+Se tentar-mos usar "reversed" diretamente o python criará um objeto
+como se vê no código a seguir...
+
+    >>> reversed(mylist)
+    <list_reverseiterator object at 0xb71a584c>
+
+No entanto se chamar-mos a mesma função dentro de "list()"
+obteremos o resultado desejado.
+
+    >>> list(reversed(mylist))
+    [5, 4, 3, 2, 1]
 
 ### Consertando legengas srt com python
 
