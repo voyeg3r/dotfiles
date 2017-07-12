@@ -16,6 +16,13 @@
 ### how to install popcorntime
 #### https://ubunlog.com/instalar-popcorn-time-2017/
 
+
+# https://www.xpertnotes.net/blog/2015/03/02/automatic-updates-for-ubuntu/
+sudo apt -y install cron-apt
+sudo apt install -y unattended-upgrades
+#sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
+sudo dpkg-reconfigure unattended-upgrades
+
 ### remove noise during recordings
 # + https://askubuntu.com/a/765024/3798
 

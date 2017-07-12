@@ -8,6 +8,28 @@ site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 ```
 
+### Setting a persistent DNS
++ https://www.xpertnotes.net/blog/2015/12/29/make-dns-stick-in-ubuntu/
++ https://itsfoss.com/easiest-watch-netflix-hulu-usa/
+
+
+Edit the file /etc/resolvconf/resolv.conf.d/base
+
+    sudo vim /etc/resolvconf/resolv.conf.d/base
+
+Add the name servers to this
+
+    nameserver 69.197.169.9
+    nameserver 192.95.16.109
+
+Run the following command to apply the changes.
+
+    sudo resolvconf -u
+
+Check the file /etc/resolv.conf to make sure the changes took place.
+
+    cat /etc/resolv.conf
+
 ### stopping system errors report
 
     sudo vim /etc/default/apport

@@ -11,6 +11,13 @@ twitter: voyeg3r
 ### References
 + https://www.maketecheasier.com/speed-up-firefox/
 
+
+### Enabling firefox multiprocessing
+Disable ubuntu-modifications addon and ...
+
+    browser.tabs.remote.autostart
+    true
+
 ### Download firefox pt-br
 + https://superuser.com/a/322381
 
