@@ -95,6 +95,20 @@ install new gnome-shell themes easily
 
     rsync -av --update --delete ~/.local/share/gnome-shell/extensions/ ~/docs/conf/gnome-shell/extensions
 
+### Enabling extensions through command line
+
+Enable user-theme
+
+    gnome-shell-extension-tool -e user-theme
+
+Whith "-d" you will disable any extension
+
+Oh, and you can get the names of all your locally installed extensions by doing
+
+    ls ~/.local/share/gnome-shell/extensions
+
+org.gnome.shell enabled-extensions ['workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'gravatar@jr.rlabs.io', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'activities-config@nls1729', 'CoverflowAltTab@palatis.blogspot.com', 'applications-overview-tooltip@RaphaelRochet', 'launch-new-instance@gnome-shell-extensions.gcampax.github.com', 'remove-contacts-search@busaster.gmail.com', 'impatience@gfxmonk.net', 'quicklists@damianbasic.gmail.com', 'backslide@codeisland.org', 'mediaplayer@patapon.info']
+
 ### save alsamixer settings
 source: http://askubuntu.com/a/465641/3798
 
