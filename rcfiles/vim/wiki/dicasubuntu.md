@@ -32,9 +32,13 @@ Check the file /etc/resolv.conf to make sure the changes took place.
 
 ### stopping system errors report
 
+    sudo systemctl disable apport.service
+
     sudo vim /etc/default/apport
 
     change "enabled" to zero "0"
+
+    sudo service apport stop ; sudo sed -ibak -e '/^enabled/ s/1/0/g' /etc/default/apport
 
 ### setting abnt2 keyboard
 

@@ -224,6 +224,7 @@
 [nl](nl.md)
 [nmap](nmap.md)
 [nmblookup](nmblookup.md)
+[nmcli](nmcli.md)
 [nslookup](nslookup.md)
 [ntpdate](ntpdate.md)
 [ocs](ocs.md)

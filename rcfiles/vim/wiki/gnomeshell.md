@@ -302,6 +302,13 @@ max-screencast-length 1800
 
 mprove focus and increase your productive by listening to different sounds
 
+### Extension to set blur effect
++ https://github.com/yozoon/gnome-shell-extension-blyr
+
+    git clone git@github.com:yozoon/gnome-shell-extension-blyr.git
+    cd gnome-shell-extension-blyr/
+    cp -r blyr@yozoon.dev.gmail.com ~/.local/share/gnome-shell/extensions
+
 ### Media Player indicator extension
 + https://extensions.gnome.org/extension/55/media-player-indicator/
 

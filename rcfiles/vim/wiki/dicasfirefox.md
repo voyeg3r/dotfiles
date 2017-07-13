@@ -113,6 +113,9 @@ dentro do about:config
 
       plugins.click_to_play
 
+### Addon pra usar em conjunção com Downthemall (flashgot)
++ https://addons.mozilla.org/en-US/firefox/addon/flashgot/developers
+
 ### extensão para assistir sites como hulu
 https://addons.mozilla.org/en-US/firefox/addon/proxmate/
 

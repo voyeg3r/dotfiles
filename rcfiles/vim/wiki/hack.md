@@ -13,6 +13,11 @@ Github:      https://github.com/voyeg3r
 
 See more at [dicasgoogle](dicasgoogle)
 
+### Senha do roteador Vivo
+
+      admin
+      vivo12345
+
 ### 3* new 3eg* account key
 
     i*hh00.com.br

@@ -108,7 +108,8 @@ alias dronezone="mplayer -playlist http://somafm.com/dronezone130.pls" # Soma FM
 alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTunes AAC 128K
 alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
 
-alias myexternalip='curl http://myexternalip.com/raw'
+# alias myexternalip='curl http://myexternalip.com/raw'
+alias myexternalip='curl https://api.ipify.org'
 alias iso2utf='iconv -f iso-8859-1 -t utf-8'
 alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 
