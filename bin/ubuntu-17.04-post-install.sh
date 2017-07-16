@@ -14,14 +14,43 @@
 # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_backlight=vendor acpi_osi=Linux"
 
 ### how to install popcorntime
-#### https://ubunlog.com/instalar-popcorn-time-2017/
+### http://www.edivaldobrito.com.br/popcorn-time-no-linux/
 
+installpopcorn (){
+sudo rm -Rf /opt/popcorntime
+sudo rm -Rf /usr/bin/Popcorn-Time
+sudo rm -Rf /usr/share/applications/popcorntime.desktop
+sudo mkdir /opt/popcorntime
+wget -c https://get.popcorntime.sh/build/Popcorn-Time-0.3.10-Linux-32.tar.xz -O popcorntime.tar.xz
+sudo tar Jxf popcorntime.tar.xz -C /opt/popcorntime/
+sudo ln -sf /opt/popcorntime/Popcorn-Time /usr/bin/Popcorn-Time
+echo -e '[Desktop Entry]\n Version=1.0\n Name=popcorntime\n Exec=/opt/popcorntime/Popcorn-Time\n Icon=/opt/popcorntime/src/app/images/icon.png\n Type=Application\n Categories=Application' | sudo tee /usr/share/applications/popcorntime.desktop
+} && installpopcorn
 
 # https://www.xpertnotes.net/blog/2015/03/02/automatic-updates-for-ubuntu/
 sudo apt -y install cron-apt
 sudo apt install -y unattended-upgrades
 #sudo vim /etc/apt/apt.conf.d/50unattended-upgrades
 sudo dpkg-reconfigure unattended-upgrades
+
+
+#installkodi (){
+#sudo add-apt-repository ppa:team-xbmc/ppa -y
+#sudo apt update
+#sudo apt -y install kodi
+#} && installkodi
+
+
+installkodi (){
+# http://kodi.wiki/view/HOW-TO:Install_Kodi_for_Linux
+sudo add-apt-repository ppa:team-xbmc/xbmc-nightly
+sudo apt-get update
+sudo apt-get install kodi
+
+#Note that if you have any addons (such as PVR clients), these must be upd#ated as well (they will not be updated automatically):
+
+sudo apt-get install kodi-pvr-mythtv
+} && installkodi
 
 ### remove noise during recordings
 # + https://askubuntu.com/a/765024/3798

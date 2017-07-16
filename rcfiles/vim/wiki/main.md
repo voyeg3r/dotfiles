@@ -46,6 +46,7 @@
 * [Idiomaticexpressions](idiomaticexpressions.md)
 * [Inkscape](inkscape.md)
 * [jupyter notebook](jupyter-notebook)
+* [kodi](kodi.md)
 * [Latex](latex.md)
 * [Latexexemplos](latexexemplos.md)
 * [Libras2kg](libras2kg.md)

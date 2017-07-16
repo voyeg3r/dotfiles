@@ -73,6 +73,27 @@ alias classic='mplayer http://80.237.154.83:8120'
 alias alj='mplayer https://english.streaming.aljazeera.net/aljazeera/english2/index101.m3u8'
 
 alias cbs='mplayer https://cbsnhls-i.akamaihd.net/hls/live/264710-b/CBSN_mdialog/prodstream/master_360.m3u8'
+alias cbsnews='mplayer http://cbsnewshd-lh.akamaihd.net/i/CBSNHD_7@199302/index_2200_av-p.m3u8'
+
+alias dubaione='mplayer http://dmi.mangomolo.com:1935/dubaione/smil:dubaione.smil/playlist.m3u8'
+
+alias fox13='mplayer http://cmghlslive-i.akamaihd.net/hls/live/224672/WHBQ/2564k/prog.m3u8'
+
+alias genesistv='mplayer http://201.144.184.98:1935/genesis/smil:television.smil/chunklist_w1290068780_b410000_sleng.m3u8'
+
+alias miami18='mplayer http://mexicoserver.miamitvchannel.com/miamitv/smil:miamitvmexico/playlist.m3u8'
+
+alias qvc='mplayer http://qvclvp2.mmdlive.lldns.net/qvclvp2/9aa645c89c5447a8937537011e8f8d0d/manifest.m3u8'
+
+alias rthdusa='mplayer http://rt-usa-live.hls.adaptive.level3.net/rt/usa/index2500.m3u8'
+
+alias tvaparecida='mplayer http://caikron.com.br:1935/tvaparecida/tvaparecida.stream/playlist.m3u8'
+
+alias cbs47='mplayer http://cmghlslive-i.akamaihd.net/hls/live/224714/WJAX/master.m3u8'
+
+alias foxlife='mplayer http://185.152.65.130:8080/foxlife/mpegts'
+
+alias discovery='mplayer http://thepk.co:2095/live/denzuka/zukabumi13/255.ts'
 
 # troque o c pelo b pra entender
 alias hco='mplayer http://freeeucache1.streamlive.to/live/qzbbu26gcvjxksz/chunks.m3u8\?nimblesessionid\=379679\&wmsAuthSign\=c2VydmVyX3RpbWU9Ny85LzIwMTcgNToxMDowMyBQTSZoYXNoX3ZhbHVlPWZyL1hXYjFqcUZ1WVN3YTAxVmxDcHc9PSZ2YWxpZG1pbnV0ZXM9MTAyMCZzdHJtX2xlbj0yMA\=\='
@@ -107,6 +128,10 @@ alias groovesalad="mplayer -playlist http://somafm.com/groovesalad130.pls" # Som
 alias dronezone="mplayer -playlist http://somafm.com/dronezone130.pls" # Soma FM Drone Zone iTunes AAC 128K
 alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTunes AAC 128K
 alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
+
+alias cbanews='mplayer http://abclive.abcnews.com/i/abc_live2@136328/index_2500_av-b.m3u8'
+
+alias vbros='mplayer http://adultswim-vodlive.cdn.turner.com/the-venture-bros/stream_4.m3u8'
 
 # alias myexternalip='curl http://myexternalip.com/raw'
 alias myexternalip='curl https://api.ipify.org'
