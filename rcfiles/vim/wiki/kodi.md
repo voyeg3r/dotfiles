@@ -18,3 +18,5 @@
 
 ### ubuntu install including PVR client
 + http://kodi.wiki/view/HOW-TO:Install_Kodi_for_Linux
+
+    sudo apt -y install kodi-pvr-nextpvr

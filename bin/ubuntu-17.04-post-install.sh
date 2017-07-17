@@ -48,7 +48,7 @@ sudo apt-get update
 sudo apt-get install kodi
 
 #Note that if you have any addons (such as PVR clients), these must be upd#ated as well (they will not be updated automatically):
-
+sudo apt install -y kodi-pvr-iptvsimple
 sudo apt-get install kodi-pvr-mythtv
 } && installkodi
 
