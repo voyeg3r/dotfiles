@@ -76,7 +76,11 @@ Endsection
 
     sudo apt-get install -y conky curl lm-sensors hddtemp
 
-    sudo apt-get install -y wireshark
+To cofigure conky at startup open...
+
+        gnome-session-properties
+
+sudo apt-get install -y wireshark
 
 # how remove ppa repository
 + https://askubuntu.com/a/310/3798
@@ -280,7 +284,7 @@ sudo apt-get update && sudo apt-get install -y adapta-gtk-theme
 } && installadpatatheme
 
 installaudiorecorder (){
-sudo add-apt-repository ppa:audio-recorder/ppa
+sudo add-apt-repository -y ppa:audio-recorder/ppa
 sudo apt-get -y update
 sudo apt-get install --reinstall audio-recorder
 } && installaudiorecorder
