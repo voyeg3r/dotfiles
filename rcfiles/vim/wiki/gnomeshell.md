@@ -8,6 +8,10 @@ site: http://vivaotux.blogspot.com twitter:
 http://www.twitter.com/voyeg3r
 ```
 
+### Am I using wayland or X11?
+
+    echo $XDG_SESSION_TYPE
+
 ### set system sound above 100%
 + https://superuser.com/a/1017972/45032
 install pulseaudio

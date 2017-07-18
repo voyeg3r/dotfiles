@@ -192,6 +192,9 @@ yaourt -S dos2unix
 # site: https://github.com/mcrapet/plowshare
 yaourt -S plowshare
 plowmod --install
+plowlist https://www.mediafire.com/folder/5s35ib7577f0y/wallpapers > links.txt
+plowdown -m links.txt
+
 
 # mediafire fuse
 # https://github.com/MediaFire/mediafire-fuse

@@ -86,7 +86,7 @@
 
 # [[ -n $SSH_CLIENT ]] && export $(cat /proc/$(command pgrep -u "$USER"  -f -- "dbus-daemon --session" )/environ| tr '\0' '\n' | command grep "DBUS_SESSION_BUS_ADDRESS=")
 
-walls_dir="$HOME"/img/new-wallpapers
+walls_dir="$HOME"/multimedia/img/new-wallpapers
 selection=$(find "${walls_dir}" -type f | shuf -n1)
 gsettings set org.gnome.desktop.background picture-uri "file://$selection"
 

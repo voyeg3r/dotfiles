@@ -19,7 +19,7 @@ twitter: http://www.twitter.com/voyeg3r
     Icon=<full path to icon>
     Comment=<optinal comments>
     X-GNOME-Autostart-enabled=true
-    #X-GNOME-Autostart-Delay=foo
+    X-GNOME-Autostart-Delay=60
 
 ### Tema elementary Dark
 
