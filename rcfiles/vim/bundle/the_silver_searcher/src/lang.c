@@ -36,6 +36,7 @@ lang_spec_t langs[] = {
     { "groovy", { "groovy", "gtmpl", "gpp", "grunit", "gradle" } },
     { "haml", { "haml" } },
     { "haskell", { "hs", "lhs" } },
+    { "haxe", { "hx" } },
     { "hh", { "h" } },
     { "html", { "htm", "html", "shtml", "xhtml" } },
     { "ini", { "ini" } },
@@ -58,6 +59,7 @@ lang_spec_t langs[] = {
     { "mason", { "mas", "mhtml", "mpl", "mtxt" } },
     { "matlab", { "m" } },
     { "mathematica", { "m", "wl" } },
+    { "md", { "markdown", "mdown", "mdwn", "mkdn", "mkd", "md" } },
     { "mercury", { "m", "moo" } },
     { "nim", { "nim" } },
     { "objc", { "m", "h" } },
@@ -68,6 +70,7 @@ lang_spec_t langs[] = {
     { "perl", { "pl", "pm", "pm6", "pod", "t" } },
     { "php", { "php", "phpt", "php3", "php4", "php5", "phtml" } },
     { "pike", { "pike", "pmod" } },
+    { "plist", { "plist" } },
     { "plone", { "pt", "cpt", "metadata", "cpy", "py", "xml", "zcml" } },
     { "proto", { "proto" } },
     { "puppet", { "pp" } },
@@ -106,7 +109,7 @@ lang_spec_t langs[] = {
     { "wix", { "wxi", "wxs" } },
     { "wsdl", { "wsdl" } },
     { "wadl", { "wadl" } },
-    { "xml", { "xml", "dtd", "xsl", "xslt", "ent", "tld" } },
+    { "xml", { "xml", "dtd", "xsl", "xslt", "ent", "tld", "plist" } },
     { "yaml", { "yaml", "yml" } }
 };
 

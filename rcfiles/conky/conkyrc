@@ -36,7 +36,7 @@ use_spacer yes
 
 
 TEXT
-${voffset 10}${color C0C0C0}${font Ubuntu:pixelsize=138}${time %I:%M}${font}${voffset -84}${offset 8}${color ffa500}${font Ubuntu:pixelsize=50}${time %p} ${voffset -18}${color efefef}${font Ubuntu:pixelsize=30}${time %B} ${color ffa500}${time %d} ${color efefef}${time %Y}${font}${voffset 22}${font Ubuntu:pixelsize=58}${offset -260}${color ffa500}${time %A}${font}
+${voffset 10}${color C0C0C0}${font Ubuntu:pixelsize=138}${time %I:%M}${font}${voffset -84}${offset 8}${color ffa500}${font Ubuntu:pixelsize=50}${time %p} ${voffset -18}${color efefef}${font Ubuntu:pixelsize=30}${time %B} ${color ffa500}${time %d} ${color efefef}${time %Y}${font}${voffset 22}${font Ubuntu:pixelsize=58}${offset -280}${color ffa500}${time %A}${font}
 ${voffset 2}${offset 3}${font Ubuntu:pixelsize=14}${color acc9dc}HD ${offset 2}$color${fs_free /} / ${fs_size /}${offset 10}${color acc9dc}RAM ${offset 2}$color$mem / $memmax${offset 10}${color acc9dc}CPU ${offset 10}$color${cpu}%${offset 10}${color acc9dc}ARCH ${offset 2}$color${machine}
 #${hr 1}
 

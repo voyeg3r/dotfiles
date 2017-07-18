@@ -97,6 +97,7 @@ ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
 ln -sfvn ~/.dotfiles/rcfiles/zsh/zshrc ~/.zshrc
 ln -sfvn ~/.dotfiles/rcfiles/zsh/zshenv ~/.zshenv
 ln -sfvn ~/.dotfiles/agignore ~/.agignore
+ln -sfvn ~/.dotfiles/rcfiles/conky/conkyrc ~/.conkyrc
 [ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
 
 sudo chsh -s $(which zsh) $(whoami)

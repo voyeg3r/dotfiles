@@ -78,6 +78,17 @@ sudo pacman -S community/python-pmw
 sudo pacman -S --force ttf-dejavu
 sudo pacman -Syu
 
+# instaling yaourt
+# https://revryl.com/2013/07/11/yaourt-installation-arch-linux/
+# sudo vim /etc/pacman.conf.
+# add this repo:
+#
+#    [archlinuxfr]
+#    SigLevel = Never
+#    Server = http://repo.archlinux.fr/$arch
+#
+#     sudo pacman -Sy yaourt
+
 # Ultimate executable compressor.
 yaourt upx
 

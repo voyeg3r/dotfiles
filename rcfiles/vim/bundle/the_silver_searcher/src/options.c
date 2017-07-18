@@ -63,6 +63,8 @@ Output Options:\n\
                           (don't print the matching lines)\n\
   -L --files-without-matches\n\
                           Only print filenames that don't contain matches\n\
+     --print-all-files    Print headings for all files searched, even those that\n\
+                          don't contain matches\n\
      --[no]numbers        Print line numbers. Default is to omit line numbers\n\
                           when searching streams\n\
   -o --only-matching      Prints only the matching part of the lines\n\
@@ -158,6 +160,7 @@ void init_options(void) {
     opts.path_sep = '\n';
     opts.print_break = TRUE;
     opts.print_path = PATH_PRINT_DEFAULT;
+    opts.print_all_paths = FALSE;
     opts.print_line_numbers = TRUE;
     opts.recurse_dirs = TRUE;
     opts.color_path = ag_strdup(color_path);
@@ -200,6 +203,7 @@ void parse_options(int argc, char **argv, char **base_paths[], char **paths[]) {
     int ch;
     size_t i;
     int path_len = 0;
+    int base_path_len = 0;
     int useless = 0;
     int group = 1;
     int help = 0;
@@ -304,6 +308,7 @@ void parse_options(int argc, char **argv, char **base_paths[], char **paths[]) {
         { "passthru", no_argument, &opts.passthrough, 1 },
         { "path-to-ignore", required_argument, NULL, 'p' },
         { "print0", no_argument, NULL, '0' },
+        { "print-all-files", no_argument, NULL, 0 },
         { "print-long-lines", no_argument, &opts.print_long_lines, 1 },
         { "recurse", no_argument, NULL, 'r' },
         { "search-binary", no_argument, &opts.search_binary_files, 1 },
@@ -538,6 +543,9 @@ void parse_options(int argc, char **argv, char **base_paths[], char **paths[]) {
                     break;
                 } else if (strcmp(longopts[opt_index].name, "pager") == 0) {
                     opts.pager = optarg;
+                    break;
+                } else if (strcmp(longopts[opt_index].name, "print-all-files") == 0) {
+                    opts.print_all_paths = TRUE;
                     break;
                 } else if (strcmp(longopts[opt_index].name, "workers") == 0) {
                     opts.workers = atoi(optarg);
@@ -782,6 +790,7 @@ void parse_options(int argc, char **argv, char **base_paths[], char **paths[]) {
     }
 
     char *path = NULL;
+    char *base_path = NULL;
 #ifdef PATH_MAX
     char *tmp = NULL;
 #endif
@@ -799,10 +808,20 @@ void parse_options(int argc, char **argv, char **base_paths[], char **paths[]) {
             (*paths)[i] = path;
 #ifdef PATH_MAX
             tmp = ag_malloc(PATH_MAX);
-            (*base_paths)[i] = realpath(path, tmp);
+            base_path = realpath(path, tmp);
 #else
-            (*base_paths)[i] = realpath(path, NULL);
+            base_path = realpath(path, NULL);
 #endif
+            if (base_path) {
+                base_path_len = strlen(base_path);
+                /* add trailing slash */
+                if (base_path_len > 1 && base_path[base_path_len - 1] != '/') {
+                    base_path = ag_realloc(base_path, base_path_len + 2);
+                    base_path[base_path_len] = '/';
+                    base_path[base_path_len + 1] = '\0';
+                }
+            }
+            (*base_paths)[i] = base_path;
         }
         /* Make sure we search these paths instead of stdin. */
         opts.search_stream = 0;

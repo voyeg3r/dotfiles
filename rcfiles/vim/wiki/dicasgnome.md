@@ -8,6 +8,19 @@ site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 ```
 
+### Autostart applications
+
+    vim ~/.config/autostart/program
+
+    [Desktop Entry]
+    Type=Application
+    Name=<Name of application as displayed>
+    Exec=<command to execute>
+    Icon=<full path to icon>
+    Comment=<optinal comments>
+    X-GNOME-Autostart-enabled=true
+    #X-GNOME-Autostart-Delay=foo
+
 ### Tema elementary Dark
 
 	http://aaron-a-arts.deviantart.com/art/elementary-Dark-Gtk-190822873

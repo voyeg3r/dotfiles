@@ -7,6 +7,7 @@ site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 email: <voyeg3r  gmail.com>
 
+
 ### archanywhere
 Facilitador para instalaçaõ do archlinux
 
@@ -14,6 +15,17 @@ http://arch-anywhere.org/download.html
 
 http://danpla.github.io/fontlink/
 https://askubuntu.com/questions/531479/install-fonts-temporarily/623236#623236
+
+# instaling yaourt
+# https://revryl.com/2013/07/11/yaourt-installation-arch-linux/
+# sudo vim /etc/pacman.conf.
+# add this repo:
+#
+#    [archlinuxfr]
+#    SigLevel = Never
+#    Server = http://repo.archlinux.fr/$arch
+#
+#     sudo pacman -Sy yaourt
 
 ``` sh
 yaourt -S extra/python2-gobject2

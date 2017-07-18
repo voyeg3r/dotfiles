@@ -311,6 +311,9 @@ max-screencast-length 1800
 ### Extensão que permite gravar com audio
 + https://extensions.gnome.org/extension/690/easyscreencast/
 
+### Extensão pra liberar espaço na tela
++ https://extensions.gnome.org/extension/723/pixel-saver/
+
 ### Extensão que reproduz sons como chuva, água etc
 + https://extensions.gnome.org/extension/1224/focusli/
 
