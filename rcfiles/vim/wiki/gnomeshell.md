@@ -195,6 +195,7 @@ http://askubuntu.com/questions/604462/
     gsettings set org.gnome.shell disable-extension-version-validation "true"
 
 ### change wallpaper every so many minutes
++ https://extensions.gnome.org/extension/543/backslide/
 
 http://thornton2.com/How_To_Shuffle_Your_Desktop_Background_Every_So_Many_Minutes_in_GNOME_and_MATE
 
@@ -222,6 +223,20 @@ chmod a+x ~/bin/login-script.sh
     Terminal=false
     Type=Application
     X-GNOME-Autostart-enabled=true
+
+
+    [Desktop Entry]
+    Name=Conky
+    GenericName=background monitor
+    Comment=Keep a background eye on your system
+    Exec=conky &
+    Terminal=false
+    Type=Application
+    Icon=conky
+    Categories=System;
+    StartupNotify=false
+    Name[en_US]=conky
+    X-GNOME-Autostart-Delay=80
 
 ou rode o comando (Alt+F2) dialog run:
 

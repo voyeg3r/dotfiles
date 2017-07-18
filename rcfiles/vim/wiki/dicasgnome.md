@@ -10,7 +10,7 @@ twitter: http://www.twitter.com/voyeg3r
 
 ### Autostart applications
 
-    vim ~/.config/autostart/program
+    vim ~/.config/autostart/program.desktop
 
     [Desktop Entry]
     Type=Application
