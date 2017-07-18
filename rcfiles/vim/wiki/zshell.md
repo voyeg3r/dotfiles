@@ -66,6 +66,10 @@ echo $buffer[1]
 127.0.0.1       eva-O1.linagora.com     eva-01
 ```
 
+### Repeating strings
+
+    sudo pacman -S {,gst-{libav,plugins-{bad,base,good,ugly}}}
+
 #### zim zsh framework
 
     /usr/bin/env zsh

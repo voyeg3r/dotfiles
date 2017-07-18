@@ -232,6 +232,7 @@
 [oggenc](oggenc.md)
 [opencd](opencd.md)
 [openoffice](openoffice.md)
+[pacman](pacman.md)
 [padrões de projeto](padrões de projeto.md)
 [passwd](passwd.md)
 [paste](paste.md)

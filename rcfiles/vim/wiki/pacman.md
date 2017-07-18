@@ -1,5 +1,4 @@
 
-
 If pacman is not running and has a lock package avoiding
 other instalations, run this:
 
@@ -16,3 +15,8 @@ rm /var/lib/pacman/db.lck
 ### upgrade all
 
     sudo pacman -Syyu
+
+### Repeating strings
+
+    sudo pacman -S {,gst-{libav,plugins-{bad,base,good,ugly}}}
+
