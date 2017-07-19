@@ -93,8 +93,7 @@ source: http://www.online-tech-tips.com/computer-tips/speed-up-mozilla-firefox/
     about:support
 
 ### using Google Data Saver Proxy on firefox
-
-https://addons.mozilla.org/en-US/firefox/addon/google_datasaver_for_firefox/
++ https://addons.mozilla.org/en-US/firefox/addon/google_datasaver_for_firefox/
 
 ### user.js [[FirefoxUserProfile]]
 

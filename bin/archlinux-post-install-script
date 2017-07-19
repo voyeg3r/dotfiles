@@ -401,7 +401,6 @@ yaourt -S ulatencyd
 # https://wiki.archlinux.org/index.php/Power_saving
 yaourt -S rfkill
 
-#
 # edit --> /etc/udev/rules.d/bt.rules
 #
 #   ## DISABLE BLUETOOTH
@@ -532,11 +531,13 @@ sudo yaourt -S adobe-source-code-pro-fonts
 # piper is an alternative for sed awk and other text manipulation tools
 sudo pip install piper
 
-yaourt -S gimp-plugin-registry
-yaourt -S gimp-plugin-resynthesizer-git
-yaourt -S gimp-plugin-separate+
-yaourt -S gimp-plugin-beautify
-yaourt -S gimp-plugin-lqr
+installgimpplugins () {
+yaourt -Sy gimp-plugin-registry
+yaourt -Sy gimp-plugin-resynthesizer-git
+yaourt -Sy gimp-plugin-separate+
+yaourt -Sy gimp-plugin-beautify
+yaourt -Sy gimp-plugin-lqr
+} && installgimpplugins
 
 # gcp is a file copy tool, freely inspired from cp, but with a few
 # high-level functionnality.
@@ -548,7 +549,7 @@ yaourt -S ffmulticonverter
 # numix circle icon theme
 yaourt -S numix-circle-icon-theme-git
 yaourt -S adapta-gtk-theme
-yaourt numix-gtk-theme
+yaourt -S numix-gtk-theme
 
 # https://github.com/Xaviju/inkscape-open-symbols
 yaourt -S inkscape-open-symbols-git
@@ -578,7 +579,8 @@ yaourt -S community/noise-player
 sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
 sudo pacman -S --noconfirm rhythmbox
 sudo yaourt -S --noconfirm codecs
-sudo pacman -S vlc ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
+#sudo pacman -S vlc qt4 ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
+sudo pacman -S vlc qt4 {,gst-{libav,plugins-{bad,base,good,ugly}}}
 
 sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-pluginscman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins
 rm -rf ~/.thumbnails/fail
