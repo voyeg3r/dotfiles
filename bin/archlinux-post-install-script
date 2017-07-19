@@ -263,6 +263,8 @@ sudo pacman -S lsof
 
 # Atualizar o sistema
 sudo pacman -Syu
+
+# necessário para algumas compliações do yaourt
 sudo pacman -S base-devel
 
 pacman -Syu pydoc

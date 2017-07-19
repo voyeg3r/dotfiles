@@ -105,6 +105,7 @@
 [expr](expr.md)
 [expressions-english](expressions-english.md)
 [expressões regulares](expressões regulares.md)
+[faad](faad.md)
 [favoritos](favoritos.md)
 [fc](fc.md)
 [fdisk](fdisk.md)

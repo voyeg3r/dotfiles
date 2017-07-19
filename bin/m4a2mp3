@@ -3,6 +3,9 @@
 # m4a to mp3
 #Read more: http://linuxpoison.blogspot.com.br/2008/02/script-to-convert-m4a-to-mp3.html#ixzz2iwbFvTdp
 
+# A new reference:
+# http://www.bashoneliners.com/oneliners/oneliner/111/
+
 # if the dependences are not met the script opens the installer
 #command -v faad || sudo apt-get install -y faad
 
@@ -18,9 +21,14 @@
 # extension="${filename##*.}"
 # filename="${filename%.*}"
 
+#for f in `ls *.m4a`; do
+#    ffmpeg -i "$f" -codec:v copy -codec:a libmp3lame -q:a 2 "${f%.m4a}.mp3"
+#    rm -f "$f"
+#done
+
+
 for f in `ls *.m4a`; do
-    ffmpeg -i "$f" -codec:v copy -codec:a libmp3lame -q:a 2 "${f%.m4a}.mp3"
-    rm -f "$f"
+    faad -o tmp.wav "$f" && lame -b 192 tmp.wav "${f%.m4a}.mp3"
 done
 
 
