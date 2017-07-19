@@ -74,7 +74,12 @@ If you want to do a dry run to make sure you don't clobber any files, add the -n
     rename 's/\e.bak$//' *.bak
 
 ### To translate uppercase names to lower, you'd use
+OBS: prename is an alias to perl-rename
 
     rename 'y/A-Z/a-z/' *
 
     prename 'tr/A-Z/a-z/' *
+
+### Restabelecendo espaços
+
+    prename 'tr/_/ /' *
