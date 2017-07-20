@@ -112,6 +112,7 @@ alias radio4='mplayer http://icecast.omroep.nl/radio4-bb-mp3'
 #alias wnyc="mplayer -playlist http://www.wnyc.org/stream/wnyc-fm939/mp3.pls"
 alias wnyc="mplayer http://fm939.wnyc.org/wnycfm-tunein.aac"
 alias wfiu="mplayer -playlist http://hannibal.ucs.indiana.edu:8000/wfiu_hi.m3u"
+alias ufm="mplayer http://200.129.35.230:8081/;?d="
 alias news="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
 alias npr='mplayer -playlist http://www.npr.org/templates/dmg/dmg.php\?getProgramStream\=true\&NPRMediaPref\=WM'
 alias current="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/the_current.pls" # The Current
