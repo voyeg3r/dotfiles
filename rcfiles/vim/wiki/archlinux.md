@@ -264,8 +264,8 @@ Archbang linux brings to you the beste of ArchLinux without pain or boring proce
 https://aur.archlinux.org/packages/conky-colors/?setlang=pt_BR
 
 ### fontes micro$oft
++ https://aur.archlinux.org/packages/ttf-ms-fonts/
 
-https://aur.archlinux.org/packages/ttf-ms-fonts/
 
 ### how use aur packages
 

@@ -9,7 +9,9 @@
 #            SKYPE: sergioaraujosilva
 # =================================================
 
-# Reference: https://gist.github.com/Xifax/1517721
+# References:
++ https://gist.github.com/Xifax/1517721
++ https://hawkradius.wordpress.com/arch-linux-tips/
 
 # testa se está logado como root
 #if [ "$(id -u)" != "0" ]; then
@@ -44,6 +46,8 @@ gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 
 # github url shortner
 gem install git.io
+
+
 
 # jupyter python interpreter on your browser
 #
@@ -228,6 +232,9 @@ yaourt -S xbmc
 # clonar as fontes powerline
 # para instalar rode o script install contido na pasta
 git clone git@github.com:powerline/fonts.git
+
+# https://fonts.google.com/specimen/Open+Sans
+yaourt ttf-opensans
 
 # watch online tv | don't forget to install hola firefox addon
 yaourt -S aur/zattoo
