@@ -25,6 +25,16 @@ See also: [Regex](Regex) page
     q:  ............... eters ex mode
     ^c ................ exit it
 
+
+### Remove offending key from known_hosts file with one swift move
+
+     vi +18d +wq ~/.ssh/known_hosts
+
+alternatively you can use sed:
+
+     sed -i 18d .ssh/known_hosts
+
+
 ### Erase / delete change history
 + https://superuser.com/a/263406/45032
 
