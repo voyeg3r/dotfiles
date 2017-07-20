@@ -297,6 +297,7 @@
 [sponge](sponge.md)
 [squid](squid.md)
 [ssh](ssh.md)
+[stapler](stapler.md)
 [startx](startx.md)
 [su](su.md)
 [subversion](subversion.md)

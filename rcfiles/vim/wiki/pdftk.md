@@ -10,6 +10,8 @@ Arquivo: manual do comando pdftk
 ### Pdftk - manipulando pdfs por linha de comando
 * source: http://www.vivaolinux.com.br/dica/Manipulando-arquivos-PDF-com-pdftk
 
+Uma alternativa mais leve é o [stapler](stapler)
+
 ### Concatenando dois arquivos em um
 
 	pdftk Arquivo1.pdf Arquivo2.pdf cat output Concatenado1e2.pdf
