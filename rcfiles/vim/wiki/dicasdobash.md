@@ -114,6 +114,18 @@ read -p "Deseja continuar (s/n)? "
     read -n 1 -s -p "Press any key to continue"
 ```
 
+
+``` sh
+function ask()
+{
+    echo -n "$@" '[y/n] ' ; read ans
+    case "$ans" in
+        y*|Y*) return 0 ;;
+        *) return 1 ;;
+    esac
+}
+```
+
 Veja também InputRc
 
 Para acessar rapidamente um comando recem digitado basta
