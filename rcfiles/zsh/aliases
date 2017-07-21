@@ -131,7 +131,7 @@ alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTun
 alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
 
 # liberty statue live cam
-alias ls='vlc http://video3.earthcam.com/fecnetwork/libertyHD1.flv/chunklist_w1810184803.m3u8'
+alias libertystatue='vlc http://video3.earthcam.com/fecnetwork/libertyHD1.flv/chunklist_w1810184803.m3u8'
 
 alias cbanews='mplayer http://abclive.abcnews.com/i/abc_live2@136328/index_2500_av-b.m3u8'
 

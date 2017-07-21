@@ -15,3 +15,14 @@ Agora pode fazer algo do tipo
 	ls -1 | xclip
     # ... e colar no navegador e outros programas
 
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
+
+### Tip on using above aliases
+ If you want to paste on your terminal a long string you can do something like this:
+
+    vlc $(pbpaste)
+
+instead of worrying about using middle mouse button or even keyboard shortcuts
+
+
