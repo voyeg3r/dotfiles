@@ -130,6 +130,9 @@ alias dronezone="mplayer -playlist http://somafm.com/dronezone130.pls" # Soma FM
 alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTunes AAC 128K
 alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
 
+# liberty statue live cam
+alias ls='vlc http://video3.earthcam.com/fecnetwork/libertyHD1.flv/chunklist_w1810184803.m3u8'
+
 alias cbanews='mplayer http://abclive.abcnews.com/i/abc_live2@136328/index_2500_av-b.m3u8'
 
 alias vbros='mplayer http://adultswim-vodlive.cdn.turner.com/the-venture-bros/stream_4.m3u8'
