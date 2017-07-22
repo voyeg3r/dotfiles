@@ -1,0 +1,6 @@
+imgsize(){
+# source: https://www.imagemagick.org/script/identify.php
+# it depends on imagemagick
+# a4 size --> 2480 px de largura 3508 px de altura
+identify "$1" | awk '{print $3}'
+ }
