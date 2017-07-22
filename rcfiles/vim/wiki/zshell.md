@@ -66,6 +66,11 @@ echo $buffer[1]
 127.0.0.1       eva-O1.linagora.com     eva-01
 ```
 
+### Edit environment easily
++ https://medium.com/@gpedro/o-que-eu-aprendi-com-zsh-e-porque-voce-deve-usar-99ea596f840e
+
+    vared PATH
+
 ### Repeating strings
 
     sudo pacman -S {,gst-{libav,plugins-{bad,base,good,ugly}}}
@@ -90,6 +95,17 @@ done
 source ${ZDOTDIR:-${HOME}}/.zlogin
 ```
 
+### Start and ending of paths
+
+    var="/um/caminho/longo/final"
+    print ${var:t}
+    final
+
+    print ${var:h}
+    /um/caminho/longo
+
+    OBS: mnemonic --> t (tail)
+                  --> h (head)
 
 #### defining ZDOTDIR
 This var is used in many zsh frameworks during git clone
