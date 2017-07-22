@@ -16,6 +16,10 @@
 ### how to install popcorntime
 ### http://www.edivaldobrito.com.br/popcorn-time-no-linux/
 
+# changing hostname
+# https://askubuntu.com/questions/87665/how-do-i-change-the-hostname-without-a-restart
+sudo hotname linuxpc
+
 installpopcorn (){
 sudo rm -Rf /opt/popcorntime
 sudo rm -Rf /usr/bin/Popcorn-Time

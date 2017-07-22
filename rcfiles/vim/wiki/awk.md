@@ -109,6 +109,12 @@ Edit, filter engineering :
 awk '$5=="A" && $3=="Engineering"{print $1, $2}' file
 
 }}}
+
+### How to print third column to last column?
++ https://stackoverflow.com/a/1602063/2571881
+
+    echo one two three four five | awk '{ print substr($0, index($0,$3)) }'
+
 ### how use shell vars on awk
 Como usar variáveis do bash/shell no awk
 

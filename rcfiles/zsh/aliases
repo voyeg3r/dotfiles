@@ -17,7 +17,6 @@ alias calc='python3 -ic "from math import *; import cmath"'
 
 alias xterm='xterm -rv'
 # alias calc='noglob calc'
-
 alias path="echo ${PATH//:/$'\n'}"
 alias fpath="echo ${fpath// /$'\n'}"
 alias shell='echo ${SHELL:t}'
@@ -139,6 +138,7 @@ alias vbros='mplayer http://adultswim-vodlive.cdn.turner.com/the-venture-bros/st
 
 # alias myexternalip='curl http://myexternalip.com/raw'
 alias myexternalip='curl https://api.ipify.org'
+alias ipaddress='hostname -i'
 alias iso2utf='iconv -f iso-8859-1 -t utf-8'
 alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 
@@ -169,6 +169,7 @@ alias _!='fc -e "sed -i -e \"s/^/sudo /\""' # sudo last command
 
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias last2cb='fc -ln -1 | xclip -selection clipboard'
 
 alias http-server='python3 -m http.server'
 

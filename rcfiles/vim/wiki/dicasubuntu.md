@@ -7,6 +7,10 @@ autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 ```
+### Changing hostiname without resarting the system
++ https://askubuntu.com/questions/87665/how-do-i-change-the-hostname-without-a-restart
+
+    sudo hostname newname
 
 ### Setting a persistent DNS
 + https://www.xpertnotes.net/blog/2015/12/29/make-dns-stick-in-ubuntu/
