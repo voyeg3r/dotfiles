@@ -76,6 +76,7 @@
 [cut](cut.md)
 [date](date.md)
 [dd](dd.md)
+[ddrescue](ddrescue.md)
 [debian](debian.md)
 [desempenho-ubuntu](desempenho-ubuntu.md)
 [df](df.md)

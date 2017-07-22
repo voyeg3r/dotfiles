@@ -5,6 +5,7 @@ export ZSH="${HOME}/.dotfiles/oh-my-zsh"
 
 
 #[ -d ~/bin ] && PATH=~/bin:$PATH &&  export PATH
+typeset -U path
 [ -d /bin ] && PATH=/bin:$PATH &&  export PATH
 
 XDG_CONFIG_HOME="$HOME/.config"
