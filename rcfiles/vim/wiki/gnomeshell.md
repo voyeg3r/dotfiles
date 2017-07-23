@@ -12,6 +12,16 @@ http://www.twitter.com/voyeg3r
 
     echo $XDG_SESSION_TYPE
 
+### Fixing dir names
++ https://askubuntu.com/a/737236/3798
+
+    xdg-user-dirs-update --set DESKTOP "$HOME/Desktop"
+    xdg-user-dirs-update --set DOWNLOAD "$HOME/Downloads"
+    xdg-user-dirs-update --set TEMPLATES "$HOME/modelos"
+    xdg-user-dirs-update --set DOCUMENTS "$HOME/docs"
+    xdg-user-dirs-update --set PICTURES "$HOME/img"
+    xdg-user-dirs-update --set VIDEOS "$HOME/videos"
+
 ### set system sound above 100%
 + https://superuser.com/a/1017972/45032
 install pulseaudio

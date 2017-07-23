@@ -107,6 +107,12 @@ source ${ZDOTDIR:-${HOME}}/.zlogin
     OBS: mnemonic --> t (tail)
                   --> h (head)
 
+### smart cd
+
+    cd ~/projects/sample/src/main/java/com/arun/examples/
+    cd java scala
+
+
 #### defining ZDOTDIR
 This var is used in many zsh frameworks during git clone
 
