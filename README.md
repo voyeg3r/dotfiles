@@ -49,27 +49,29 @@ for needed_command in $NEEDED_COMMANDS; do
     fi
 done
 
+myclonefuntion(){
     ssh -T git@github.com
-
     var=`echo 3gmail.com@ | sed 's,\(^3\)\(gmail\.com\)\(\@\),voyeg\1r\3\2,g'`
     git config --global user.name voyeg3r
     git config --global merge.tool vimdiff
-
-# in the line below substitute ${var} by your e-mail
+    # in the line below substitute ${var} by your e-mail
     git config --global user.email ${var}
-
-# add a last command, like this:
+    # add a last command, like this:
     git config --global alias.last 'log -1 HEAD'
-
     git config --global credential.helper cache
     git config --global push.default simple
     git config --global credential.helper 'cache --timeout=3600'
     git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
-    git clone --depth 1 --recursive  git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+    git clone --depth 1 --jobs=4 --recursive  git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+} && myclonefuntion
 
 # Git Shallow clone:
 
     git clone --depth 1 --recursive https://github.com/voyeg3r/dotfiles ~/.dotfiles
+
+    # to update all submodules
+    git fetch --recurse-submodules --jobs=4
+
 
 the recursive option allows us to clone also all submodules
 
