@@ -152,7 +152,6 @@ Plug 'kshenoy/vim-signature' "Plugin to toggle, display and navigate marks
 
 "" Color
 Plug 'tomasr/molokai'
-Plug 'morhetz/gruvbox'
 Plug 'endel/vim-github-colorscheme'
 Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
@@ -313,11 +312,6 @@ set number
 let mapleader = ","
 
 let no_buffers_menu=1
-if !exists('g:not_finish_vimplug')
-  colorscheme gruvbox
-  "colorscheme predawn
-  set background=dark
-endif
 
 " source: http://tilvim.com/2013/07/31/swapping-bg.html
 nmap <F7> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
