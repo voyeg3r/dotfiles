@@ -38,3 +38,6 @@
 [submodule "rcfiles/zsh/custom/plugins/zsh-dwim"]
 	path = rcfiles/zsh/custom/plugins/zsh-dwim
 	url = https://github.com/oknowton/zsh-dwim.git
+[submodule "rcfiles/vim/bundle/vim-plug"]
+	path = rcfiles/vim/bundle/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
