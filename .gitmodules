@@ -1,39 +1,23 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
-[submodule "prezto"]
-	path = prezto
-	url = git@github.com:voyeg3r/prezto.git
-[submodule "rcfiles/vim/bundle/vundle"]
-	path = rcfiles/vim/bundle/vundle
-	url = http://github.com/gmarik/vundle.git
 [submodule "rcfiles/vim/bundle/NrrwRgn"]
   path = rcfiles/vim/bundle/NrrwRgn
   url = https://github.com/chrisbra/NrrwRgn.git
-[submodule "rcfiles/vim/bundle/Vundle.vim"]
-	path = rcfiles/vim/bundle/Vundle.vim
-	url = https://github.com/gmarik/Vundle.vim.git
 [submodule "rcfiles/zsh/custom/plugins/zsh-autosuggestions"]
 	path = rcfiles/zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-    ignore = dirty
 [submodule "rcfiles/vim/bundle/VisIncr"]
 	path = rcfiles/vim/bundle/VisIncr
 	url = https://github.com/vim-scripts/VisIncr.git
 [submodule "rcfiles/vim/bundle/vim-l9"]
 	path = rcfiles/vim/bundle/vim-l9
 	url = https://github.com/vim-scripts/L9.git
-[submodule "rcfiles/vim/bundle/ctrlp-cmatcher"]
-	path = rcfiles/vim/bundle/ctrlp-cmatcher
-	url = https://github.com/JazzCore/ctrlp-cmatcher.git
-[submodule "fasd"]
-	path = fasd
-	url = https://github.com/clvv/fasd.git
-[submodule "/home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions"]
-	path = /home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions
+[submodule "rcfiles/zsh/custom/plugins/zsh-autosuggestions"]
+	path = rcfiles/zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "/home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-completions"]
-	path = /home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-completions
+[submodule "rcfiles/zsh/custom/plugins/zsh-completions"]
+	path = rcfiles/zsh/custom/plugins/zsh-completions
 	url = git://github.com/zsh-users/zsh-completions.git
 [submodule "rcfiles/zsh/custom/plugins/zsh-dwim"]
 	path = rcfiles/zsh/custom/plugins/zsh-dwim
@@ -44,6 +28,3 @@
 [submodule "rcfiles/fasd"]
 	path = rcfiles/fasd
 	url = https://github.com/clvv/fasd.git
-[submodule "/home/sergio/.dotfiles/rcfiles/vim/bundle/vim-plug"]
-	path = /home/sergio/.dotfiles/rcfiles/vim/bundle/vim-plug
-	url = https://github.com/junegunn/vim-plug.git
