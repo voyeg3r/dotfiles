@@ -41,3 +41,6 @@
 [submodule "rcfiles/vim/bundle/vim-plug"]
 	path = rcfiles/vim/bundle/vim-plug
 	url = https://github.com/junegunn/vim-plug.git
+[submodule "rcfiles/fasd"]
+	path = rcfiles/fasd
+	url = https://github.com/clvv/fasd.git

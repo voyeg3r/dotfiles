@@ -79,7 +79,8 @@ the recursive option allows us to clone also all submodules
 
 # how install fasd
 
-    git clone git://github.com/clvv/fasd.git && cd fasd ; sudo make install
+    #git clone git://github.com/clvv/fasd.git && cd fasd ; sudo make install
+    cd ~/.dotfiles/rcfiles/fasd && sudo make install
 
 # config vundle
 * https://github.com/VundleVim/Vundle.vim

@@ -35,5 +35,6 @@ Or, if you're a busy person:
 ### Clonando um repo e também os submódulos
 
     git clone --recursive repo
+    git fetch --recurse-submodules --jobs=4
 
 
