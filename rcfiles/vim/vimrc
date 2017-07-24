@@ -123,21 +123,9 @@ call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
 
 
-"Plug 'itchyny/vim-cursorword'
-"Plug 'chilicuil/nextCS.vim'
-"Plug 'tell-k/vim-autopep8'
-"Plug 'nvie/vim-flake8'
-"Plug 'davidhalter/jedi-vim'
-"Plug 'tpope/vim-dispatch'
-"Plug 'vim-pandoc/vim-pandoc-syntax'
-"Plug 'vim-pandoc/vim-pandoc'
 Plug 'jiangmiao/auto-pairs'
-Plug 'rking/ag.vim'
 Plug 'tpope/vim-markdown'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
 Plug 'sjl/gundo.vim'
-Plug 'ggreer/the_silver_searcher'
 Plug 'chrisbra/NrrwRgn'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -146,7 +134,6 @@ Plug 'eparreno/vim-l9'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/VisIncr'
-"Plug 'rhysd/clever-f.vim'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'kshenoy/vim-signature' "Plugin to toggle, display and navigate marks
 
