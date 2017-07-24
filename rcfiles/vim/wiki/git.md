@@ -20,3 +20,6 @@ Comandos git
     Como visto acima basta colocar no final da url #Ln  "onde n é
     o número da linha"
 
+### Submódulos
+
+    git submodule add --force https://github.com/zsh-users/zsh-autosuggestions.git
