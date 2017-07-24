@@ -23,3 +23,11 @@ Comandos git
 ### Submódulos
 
     git submodule add --force https://github.com/zsh-users/zsh-autosuggestions.git
+
+    # after some changes at master
+    git pull
+
+
+Or, if you're a busy person:
+
+    git submodule foreach git pull origin master
