@@ -44,3 +44,6 @@
 [submodule "rcfiles/fasd"]
 	path = rcfiles/fasd
 	url = https://github.com/clvv/fasd.git
+[submodule "/home/sergio/.dotfiles/rcfiles/vim/bundle/vim-plug"]
+	path = /home/sergio/.dotfiles/rcfiles/vim/bundle/vim-plug
+	url = https://github.com/junegunn/vim-plug.git

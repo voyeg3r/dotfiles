@@ -63,6 +63,7 @@ myclonefuntion(){
     git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
     git clone --depth 1 --jobs=4 --recursive  git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
     # cd ~/.dotfiles/rcfiles/vim/bundle ; rm -rf vim-plug && git clone https://github.com/junegunn/vim-plug.git
+    ln -sfvn ~/.dotfiles/rcfiles/vim/bundle/vim-plug/plug.vim ~/.dotfiles/rcfiles/vim/autload/plug-vim/plug.vim
 } && myclonefuntion
 
 # Git Shallow clone:
