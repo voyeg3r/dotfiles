@@ -23,12 +23,11 @@ echo "Pasta de backup $BACKUP_FOLDER"
 
 [ ! -d "$BACKUP_FOLDER" ] && mkdir "${BACKUP_FOLDER}/" ; cd "$BACKUP_FOLDER"
 
-sleep 2
 echo "estamos em $PWD"
 
 # echo $CURRENT_WALLPAPER | xargs cp -t ~/multimedia/img/favorites
-echo $CURRENT_WALLPAPER | xargs cp -t .
-
+echo $CURRENT_WALLPAPER | xargs cp -f -t .
+clear
 
 
 

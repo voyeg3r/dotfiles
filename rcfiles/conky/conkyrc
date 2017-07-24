@@ -1,3 +1,18 @@
+# to enable auto startup
+# save the above conde at
+# ~/config/Autostart/conky.desktop
+#
+# [Desktop Entry]
+# Encoding=UTF-8
+# Type=Application
+# Name=Conky
+# Name[en_US]=Conky
+# Exec=/usr/bin/conky
+# Comment[en_US]=
+# StartupNotify=true
+# X-GNOME-Autostart-Delay=60
+
+
 use_xft yes
 xftfont 110:size=8
 xftalpha 0.1
@@ -24,9 +39,10 @@ default_color efefef
 default_shade_color 333333
 default_outline_color green
 
-#alignment br
+alignment br
 #alignment tl
-alignment mm
+# alignment mm
+
 gap_x 0
 gap_y 0
 no_buffers yes
@@ -41,6 +57,9 @@ TEXT
 ${voffset 10}${color C0C0C0}${font Phenomena-Black:pixelsize=138}${time %I:%M}${font}${voffset -84}${offset 8}${color ffa500}${font Phenomena-Black:pixelsize=50}${time %p} ${voffset -18}${color efefef}${font Phenomena-Black:pixelsize=30}${time %B} ${color ffa500}${time %d} ${color efefef}${time %Y}${font}${voffset 15}${font Phenomena-Black:pixelsize=58}${offset -130}${color ffa500}${time %A}${font}
 ${voffset 10}${offset 3}${font Ubuntu:pixelsize=14}${color acc9dc} ${offset -10} HD ${offset 2}$color${fs_free /} / ${fs_size /}${offset 10}${color acc9dc}RAM ${offset 2}$color$mem / $memmax${offset 10}${color acc9dc}CPU ${offset 10}$color${cpu}%${offset 10}${color acc9dc}ARCH ${offset 2}$color${machine}
 #${hr 1}
+
+
+
 
 
 

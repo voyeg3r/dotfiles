@@ -94,6 +94,17 @@ where foo is the time in seconds you want to delay the application launch by, e.
 
     X-GNOME-Autostart-Delay=60
 
+
+    [Desktop Entry]
+    Encoding=UTF-8
+    Type=Application
+    Name=Conky
+    Name[en_US]=Conky
+    Exec=/usr/bin/conky
+    Comment[en_US]=
+    StartupNotify=true
+    X-GNOME-Autostart-Delay=60
+
 ### ocs-url
 + https://www.linux-apps.com/p/1175480/
 
