@@ -31,7 +31,7 @@
 	url = https://github.com/clvv/fasd.git
 [submodule "/home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions"]
 	path = /home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions
-	url = git://github.com/zsh-users/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "/home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-completions"]
 	path = /home/sergio/.dotfiles/rcfiles/zsh/custom/plugins/zsh-completions
 	url = git://github.com/zsh-users/zsh-completions.git
