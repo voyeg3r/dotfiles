@@ -144,9 +144,6 @@ Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
 Plug 'https://github.com/juanedi/predawn.vim'
 
-" HTML Bundle
-Plug 'mattn/emmet-vim'
-
 call plug#end()
 
 " Autopep8 plugin mapping
