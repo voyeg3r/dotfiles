@@ -49,64 +49,67 @@ for needed_command in $NEEDED_COMMANDS; do
     fi
 done
 
-ssh -T git@github.com
+    ssh -T git@github.com
 
-var=`echo 3gmail.com@ | sed 's,\(^3\)\(gmail\.com\)\(\@\),voyeg\1r\3\2,g'`
-git config --global user.name voyeg3r
-git config --global merge.tool vimdiff
+    var=`echo 3gmail.com@ | sed 's,\(^3\)\(gmail\.com\)\(\@\),voyeg\1r\3\2,g'`
+    git config --global user.name voyeg3r
+    git config --global merge.tool vimdiff
 
 # in the line below substitute ${var} by your e-mail
-git config --global user.email ${var}
+    git config --global user.email ${var}
 
 # add a last command, like this:
-git config --global alias.last 'log -1 HEAD'
+    git config --global alias.last 'log -1 HEAD'
 
-git config --global credential.helper cache
-git config --global push.default simple
-git config --global credential.helper 'cache --timeout=3600'
-git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
-git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+    git config --global credential.helper cache
+    git config --global push.default simple
+    git config --global credential.helper 'cache --timeout=3600'
+    git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+    git clone --depth 1 --recursive  git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
 
 # Git Shallow clone:
-git clone --depth 1 https://github.com/voyeg3r/dotfiles
 
-git clone git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+    git clone --depth 1 --recursive https://github.com/voyeg3r/dotfiles ~/.dotfiles
+
+the recursive option allows us to clone also all submodules
 
 # porwerline fonts
-git clone git@github.com:powerline/fonts.git
+
+    git clone git@github.com:powerline/fonts.git
 
 # how install fasd
-git clone git://github.com/clvv/fasd.git && cd fasd
-sudo make install
+
+    git clone git://github.com/clvv/fasd.git && cd fasd ; sudo make install
 
 # config vundle
 * https://github.com/VundleVim/Vundle.vim
 
-rm -rf ~/.dotfiles/vim/bundle/Vundle.vim
+    rm -rf ~/.dotfiles/vim/bundle/Vundle.vim
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/vim/bundle/Vundle.vim
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/vim/bundle/Vundle.vim
 
-ln -sfvn ~/.dotfiles/rcfiles/vim/vimrc ~/.vimrc
-ln -sfvn ~/.dotfiles/rcfiles/vim ~/.vim
-ln -sfvn ~/.dotfiles/rcfiles/bashrc ~/.bashrc
-ln -sfvn ~/.dotfiles/rcfiles/inputrc ~/.inputrc
-ln -sfvn ~/.dotfiles/rcfiles/wgetrc ~/.wgetrc
-ln -sfvn ~/.dotfiles/gitconfig ~/.gitconfig
-ln -sfvn ~/.dotfiles/fonts.conf ~/.fonts.conf
-ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
-ln -sfvn ~/.dotfiles/rcfiles/zsh/zshrc ~/.zshrc
-ln -sfvn ~/.dotfiles/rcfiles/zsh/zshenv ~/.zshenv
-ln -sfvn ~/.dotfiles/agignore ~/.agignore
-ln -sfvn ~/.dotfiles/rcfiles/conky/conkyrc ~/.conkyrc
-ln -sfvn ~/.dotfiles/rcfiles/yaourtrc ~/.yaourtrc
-[ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
+    ln -sfvn ~/.dotfiles/rcfiles/vim/vimrc ~/.vimrc
+    ln -sfvn ~/.dotfiles/rcfiles/vim ~/.vim
+    ln -sfvn ~/.dotfiles/rcfiles/bashrc ~/.bashrc
+    ln -sfvn ~/.dotfiles/rcfiles/inputrc ~/.inputrc
+    ln -sfvn ~/.dotfiles/rcfiles/wgetrc ~/.wgetrc
+    ln -sfvn ~/.dotfiles/gitconfig ~/.gitconfig
+    ln -sfvn ~/.dotfiles/fonts.conf ~/.fonts.conf
+    ln -sfvn ~/.dotfiles/pythonstartup ~/.pythonstartup
+    ln -sfvn ~/.dotfiles/rcfiles/zsh/zshrc ~/.zshrc
+    ln -sfvn ~/.dotfiles/rcfiles/zsh/zshenv ~/.zshenv
+    ln -sfvn ~/.dotfiles/agignore ~/.agignore
+    ln -sfvn ~/.dotfiles/rcfiles/conky/conkyrc ~/.conkyrc
+    ln -sfvn ~/.dotfiles/rcfiles/yaourtrc ~/.yaourtrc
+    [ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
 
-sudo chsh -s $(which zsh) $(whoami)
+    sudo chsh -s $(which zsh) $(whoami)
 
 
 # installing fasdcd
-git clone git@github.com:clvv/fasd.git
-cd fasd && sudo make install
+
+    git clone git@github.com:clvv/fasd.git
+    cd fasd && sudo make install
 
 } && clonedotfiles
 ```
