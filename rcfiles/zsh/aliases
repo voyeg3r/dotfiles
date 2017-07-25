@@ -142,6 +142,7 @@ alias ipaddress='hostname -i'
 alias iso2utf='iconv -f iso-8859-1 -t utf-8'
 alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 alias fontreload='fc-cache -fv'
+alias gfetch='git fetch --recurse-submodules --jobs=4'
 
 alias copera='curl -A "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3053.3 Safari/537.36 OPR/46.0.2573.0 (Edition developer)"'
 
