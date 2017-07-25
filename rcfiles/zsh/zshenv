@@ -14,7 +14,9 @@ EDITOR=vim
 # PAGER
 # ZDOTDIR
 
-#reference: https://github.com/robbyrussell/oh-my-zsh/pull/269
+#references:
+# https://github.com/robbyrussell/oh-my-zsh/pull/269
+# source: http://blog.patshead.com/2011/04/improve-your-oh-my-zsh-startup-time-maybe.html
 skip_global_compinit=1
 
 
@@ -24,7 +26,5 @@ cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp ~/videos)
 typeset -U path cdpath fpath manpath
 path=(~/bin $path[@])
 
-# source: http://blog.patshead.com/2011/04/improve-your-oh-my-zsh-startup-time-maybe.html
-skip_global_compinit=1
 
 

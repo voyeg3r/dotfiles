@@ -37,6 +37,7 @@ KEYTIMEOUT=1
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="agnoster"
 ZSH_THEME="bira"
+#ZSH_THEME="muse"
 #ZSH_THEME="kphoen"
 
 setopt COMPLETE_ALIASES # complete aliases before executing
@@ -145,11 +146,12 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' squeeze-slashes true
 
 # HISTORY
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=500
+SAVEHIST=500
 HISTFILE=~/.zsh_history
 
 # Use caching so that commands like apt and dpkg complete are useable
+zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 

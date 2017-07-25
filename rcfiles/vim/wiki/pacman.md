@@ -2,7 +2,7 @@
 If pacman is not running and has a lock package avoiding
 other instalations, run this:
 
-rm /var/lib/pacman/db.lck
+    rm /var/lib/pacman/db.lck
 
 ### Fixing pacman database
 
