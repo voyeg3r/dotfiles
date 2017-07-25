@@ -63,7 +63,7 @@ myclonefuntion(){
     # cd ~/.dotfiles/rcfiles/vim/bundle ; rm -rf vim-plug && git clone https://github.com/junegunn/vim-plug.git
     cp -f ~/.dotfiles/rcfiles/vim/bundle/vim-plug/plug.vim ~/.dotfiles/rcfiles/vim/autoload/plug.vim
     cd ~/.dotfiles/rcfiles/fasd && sudo make install
-    cd ~/.dotfiles/rcfiles/fonts && ./install.sh
+    cd ~/.dotfiles/rcfiles/fonts && ./install.sh && cd -
     ln -sfvn ~/.dotfiles/rcfiles/vim/vimrc ~/.vimrc
     ln -sfvn ~/.dotfiles/rcfiles/vim ~/.vim
     ln -sfvn ~/.dotfiles/rcfiles/bashrc ~/.bashrc
