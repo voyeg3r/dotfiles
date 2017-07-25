@@ -20,3 +20,12 @@ other instalations, run this:
 
     sudo pacman -S {,gst-{libav,plugins-{bad,base,good,ugly}}}
 
+### Search packages
+
+    sudo pacman -Ss package-name
+
+### Remove packages
+
+    sudo pacman -R package-name
+
+
