@@ -25,12 +25,12 @@ if executable('zsh')
     set shell=zsh\ -l
 endif
 
-" Plug bootstrap - Install Plug if it is not already installed
-if empty(glob('~/.dotfiles/rcfiles/vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.dotfiles/rcfiles/vim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
+"" Plug bootstrap - Install Plug if it is not already installed
+"if empty(glob('~/.dotfiles/rcfiles/vim/autoload/plug.vim'))
+"    silent !curl -fLo ~/.dotfiles/rcfiles/vim/autoload/plug.vim --create-dirs
+"                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"    autocmd VimEnter * PlugInstall | source $MYVIMRC
+"endif
 
 if !exists("*VimReloadFunction")
     fun! VimReloadFunction()
@@ -120,8 +120,6 @@ cab Q  q
 
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
-
-
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-markdown'

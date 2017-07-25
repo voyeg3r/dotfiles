@@ -59,8 +59,9 @@ myclonefuntion(){
     git config --global credential.helper 'cache --timeout=3600'
     git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
     git clone --depth 1 --jobs=4 --recursive  git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
+    git fetch --recurse-submodules --jobs=4
     # cd ~/.dotfiles/rcfiles/vim/bundle ; rm -rf vim-plug && git clone https://github.com/junegunn/vim-plug.git
-    ln -sfvn ~/.dotfiles/rcfiles/vim/bundle/vim-plug/plug.vim ~/.dotfiles/rcfiles/vim/autoload/plug.vim
+    cp -f ~/.dotfiles/rcfiles/vim/bundle/vim-plug/plug.vim ~/.dotfiles/rcfiles/vim/autoload/plug.vim
     cd ~/.dotfiles/rcfiles/fasd && sudo make install
     cd ~/.dotfiles/rcfiles/fonts && ./install.sh
     ln -sfvn ~/.dotfiles/rcfiles/vim/vimrc ~/.vimrc
