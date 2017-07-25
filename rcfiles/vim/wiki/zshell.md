@@ -50,11 +50,23 @@ Github:      https://github.com/voyeg3r
 
     curl -sL zplug.sh/installer | zsh
 
-#### config
+#### config zplug
 
     source ~/.zplug/init.zsh
     source ~/.dotfiles/rcfiles/zsh/zplug/init.zsh
 
+### Dealing with variables
++ https://unix.stackexchange.com/a/119442/3157
+
+    LIST=(HOME MAIL EDITOR)
+    for VAR in ${LIST}
+    do
+         print "${VAR}:  ${(P)VAR}"
+    done
+
+    HOME:  /home/sergio
+    MAIL:  /var/spool/mail/sergio
+    EDITOR:  vim
 
 ### arrays in zshell
 

@@ -14,6 +14,10 @@ EDITOR=vim
 # PAGER
 # ZDOTDIR
 
+#reference: https://github.com/robbyrussell/oh-my-zsh/pull/269
+skip_global_compinit=1
+
+
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp ~/videos)
 

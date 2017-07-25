@@ -78,6 +78,8 @@ myclonefuntion(){
     ln -sfvn ~/.dotfiles/rcfiles/conky/conkyrc ~/.conkyrc
     ln -sfvn ~/.dotfiles/rcfiles/yaourtrc ~/.yaourtrc
     [ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
+    [ -d ~/.config/youtube-dl ] || mkdir -p ~/.config/youtube-dl
+    ln -svfn ~/.dotfiles/rcfiles/youtube-dl.config ~/.config/youtube-dl/config
 } && myclonefuntion
 
 # Git Shallow clone:
