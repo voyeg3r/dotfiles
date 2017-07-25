@@ -145,8 +145,8 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' squeeze-slashes true
 
 # HISTORY
-HISTSIZE=10000
-SAVEHIST=9000
+HISTSIZE=1000
+SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 # Use caching so that commands like apt and dpkg complete are useable
