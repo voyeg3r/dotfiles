@@ -1,0 +1,57 @@
+[submodule "rcfiles/vim/bundle/AutoComplPop"]
+	path = rcfiles/vim/bundle/AutoComplPop
+	url = https://github.com/vim-scripts/AutoComplPop.git
+[submodule "rcfiles/vim/bundle/auto-pairs"]
+	path = rcfiles/vim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "rcfiles/vim/bundle/gundo.vim"]
+	path = rcfiles/vim/bundle/gundo.vim
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "rcfiles/vim/bundle/molokai"]
+	path = rcfiles/vim/bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "rcfiles/vim/bundle/nerdtree"]
+	path = rcfiles/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "rcfiles/vim/bundle/NrrwRgn"]
+	path = rcfiles/vim/bundle/NrrwRgn
+	url = https://github.com/chrisbra/NrrwRgn.git
+[submodule "rcfiles/vim/bundle/predawn.vim"]
+	path = rcfiles/vim/bundle/predawn.vim
+	url = https://github.com/juanedi/predawn.vim.git
+[submodule "rcfiles/vim/bundle/ultisnips"]
+	path = rcfiles/vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "rcfiles/vim/bundle/vim-airline"]
+	path = rcfiles/vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "rcfiles/vim/bundle/vim-colors-solarized"]
+	path = rcfiles/vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "rcfiles/vim/bundle/vim-github-colorscheme"]
+	path = rcfiles/vim/bundle/vim-github-colorscheme
+	url = https://github.com/endel/vim-github-colorscheme.git
+[submodule "rcfiles/vim/bundle/vim-l9"]
+	path = rcfiles/vim/bundle/vim-l9
+	url = https://github.com/vim-scripts/L9.git
+[submodule "rcfiles/vim/bundle/vim-markdown"]
+	path = rcfiles/vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "rcfiles/vim/bundle/vim-plug"]
+	path = rcfiles/vim/bundle/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
+[submodule "rcfiles/vim/bundle/vim-signature"]
+	path = rcfiles/vim/bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature.git
+[submodule "rcfiles/vim/bundle/vim-snippets"]
+	path = rcfiles/vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "rcfiles/vim/bundle/vimwiki"]
+	path = rcfiles/vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
+[submodule "rcfiles/vim/bundle/VisIncr"]
+	path = rcfiles/vim/bundle/VisIncr
+	url = https://github.com/vim-scripts/VisIncr.git
+[submodule "rcfiles/vim/bundle/Zenburn"]
+	path = rcfiles/vim/bundle/Zenburn
+	url = https://github.com/jnurmine/Zenburn.git
