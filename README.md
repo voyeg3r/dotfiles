@@ -10,7 +10,6 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
-``` markdown
 License: MIT license
 ermission is hereby granted, free of charge, to any person obtaining copy of
 this software and associated documentation files (the Software"), to deal in
@@ -31,8 +30,6 @@ CONNECTION WITH THE OFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
 
-```bash
-clonedotfiles () {
 # Arquivo: Arquivos de configuração de ambiente
 # Criado: Dom 17/Out/2010 hs 15:13
 # Last Change: sex 07 out 2016 08:58:58 BRT
@@ -63,35 +60,9 @@ myclonefuntion(){
     git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
     git clone --depth 1 --jobs=4 --recursive  git@github.com:voyeg3r/dotfiles.git ~/.dotfiles
     # cd ~/.dotfiles/rcfiles/vim/bundle ; rm -rf vim-plug && git clone https://github.com/junegunn/vim-plug.git
-    ln -sfvn ~/.dotfiles/rcfiles/vim/bundle/vim-plug/plug.vim ~/.dotfiles/rcfiles/vim/autload/plug-vim/plug.vim
-} && myclonefuntion
-
-# Git Shallow clone:
-
-    git clone --depth 1 --recursive https://github.com/voyeg3r/dotfiles ~/.dotfiles
-
-    # to update all submodules
-    git fetch --recurse-submodules --jobs=4
-
-
-the recursive option allows us to clone also all submodules
-
-# porwerline fonts
-
-    git clone git@github.com:powerline/fonts.git
-
-# how install fasd
-
-    #git clone git://github.com/clvv/fasd.git && cd fasd ; sudo make install
+    ln -sfvn ~/.dotfiles/rcfiles/vim/bundle/vim-plug/plug.vim ~/.dotfiles/rcfiles/vim/autoload/plug.vim
     cd ~/.dotfiles/rcfiles/fasd && sudo make install
-
-# config vundle
-* https://github.com/VundleVim/Vundle.vim
-
-    rm -rf ~/.dotfiles/vim/bundle/Vundle.vim
-
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.dotfiles/vim/bundle/Vundle.vim
-
+    cd ~/.dotfiles/rcfiles/fonts && ./install.sh
     ln -sfvn ~/.dotfiles/rcfiles/vim/vimrc ~/.vimrc
     ln -sfvn ~/.dotfiles/rcfiles/vim ~/.vim
     ln -sfvn ~/.dotfiles/rcfiles/bashrc ~/.bashrc
@@ -106,17 +77,18 @@ the recursive option allows us to clone also all submodules
     ln -sfvn ~/.dotfiles/rcfiles/conky/conkyrc ~/.conkyrc
     ln -sfvn ~/.dotfiles/rcfiles/yaourtrc ~/.yaourtrc
     [ ! -d ~/bin ] && ln -s ~/.dotfiles/bin ~/bin
+} && myclonefuntion
+
+# Git Shallow clone:
+
+    git clone --depth 1 --recursive https://github.com/voyeg3r/dotfiles ~/.dotfiles
+
+    # to update all submodules
+    git fetch --recurse-submodules --jobs=4
+
+
 
     sudo chsh -s $(which zsh) $(whoami)
-
-
-# installing fasdcd
-
-    git clone git@github.com:clvv/fasd.git
-    cd fasd && sudo make install
-
-} && clonedotfiles
-```
 
 #### Manuais do git
 
