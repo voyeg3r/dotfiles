@@ -35,17 +35,21 @@ buscando alí uma variável que na verdade não existe.
 
 ### Variáveis do awk
 
-NR     Contém o número do registro atual (linha)
-NF     contém o número de campos por registro (coluna)
-FS     indica o separador de campos
-RS     indica o separador de registros
-OFS    indica o separador de campo do arquivo de saida
-ORS    indica o separador de registros do arquivo de saida
-FNR    refers to the record number (typically the line number)
+    NR     Contém o número do registro atual (linha)
+    NF     contém o número de campos por registro (coluna)
+    FS     indica o separador de campos
+    RS     indica o separador de registros
+    OFS    indica o separador de campo do arquivo de saida
+    ORS    indica o separador de registros do arquivo de saida
+    FNR    refers to the record number (typically the line number)
 
 ### How to determine the line number of the last occurrence of a string in a file
 
     awk '/Fedora/ { ln = FNR } END { print ln }'
+
+### Delete first line
+
+    cat -n /etc/passwd | awk 'NR != 1 {print $0}'
 
 ### convert DOS file to Unix file
 
@@ -89,7 +93,8 @@ FNR    refers to the record number (typically the line number)
     awk ' {print;} NR % 2 == 0 { print ""; }' file.txt
 
 ### Using awk to filter out students in a list
-{{{
+
+``` sh
 cat ip.txt
 
     John Doe Marketing Junior B
@@ -106,9 +111,9 @@ Betty Metty
 
 Edit, filter engineering :
 
-awk '$5=="A" && $3=="Engineering"{print $1, $2}' file
+    awk '$5=="A" && $3=="Engineering"{print $1, $2}' file
+```
 
-}}}
 
 ### How to print third column to last column?
 + https://stackoverflow.com/a/1602063/2571881
@@ -143,9 +148,9 @@ for i in `ls -l ~/ubuntuone/e-books/ | awk '$9 ~ /vim/ {print $9}'`
   Tomando por exemplo o arquivo 'teste.txt" com o seguinte
   conteúdo e queremos exibir o segundo campo e o último
 
-/logs/tc0001/tomcat/tomcat7.1/conf/catalina.properties:app.env.server.name = demo.example.com
-/logs/tc0001/tomcat/tomcat7.2/conf/catalina.properties:app.env.server.name = quest.example.com
-/logs/tc0001/tomcat/tomcat7.5/conf/catalina.properties:app.env.server.name = www.example.com
+    /logs/tc0001/tomcat/tomcat7.1/conf/catalina.properties:app.env.server.name = demo.example.com
+    /logs/tc0001/tomcat/tomcat7.2/conf/catalina.properties:app.env.server.name = quest.example.com
+    /logs/tc0001/tomcat/tomcat7.5/conf/catalina.properties:app.env.server.name = www.example.com
 
 a solução é indicar dois delimitadores de campo:
 
@@ -165,19 +170,20 @@ Lembrando que para o awk linha é registro e coluna é campo
 
 ### buscar ocorrência exata com awk
 
-awk '$2=="172.17.4.1" {print $1}' file.txt
+    awk '$2=="172.17.4.1" {print $1}' file.txt
 
 ### numerar linhas
 
- awk '{print FNR "\t" $0}' files*
+     awk '{print FNR "\t" $0}' files*
 
 ### imprimir numero da linha de um padrão
 
-awk '/enable bash completion/ {print NR}' /etc/bash.bashrc
+    awk '/enable bash completion/ {print NR}' /etc/bash.bashrc
 
 ### imprimindo o primeiro e o último campos
 * http://br.groups.yahoo.com/group/shell-script/message/31590
 
+``` markdown
 Tenho uma coluna que contém nomes, exemplo:
 
 Ciclano Fulano da Silva Soares
@@ -193,8 +199,9 @@ ajudar?
 
 
 JJ.Santanna
+```
 
-awk '{print $1,$NF}' teste.txt
+    awk '{print $1,$NF}' teste.txt
 
 
 ### Pegando o número ip
@@ -213,22 +220,23 @@ terceiro campo retornando somente o ip.
 
 ### Pegando o endereço do roteador
 
-awk 'NR==2 {print $1}' /proc/net/arp
+    awk 'NR==2 {print $1}' /proc/net/arp
 
 A explicação: Mostre o campo 1 '$1' do registro 2 'NR==2' do arquivo /proc/net/arp
 
 ### Removendo linhas duplicadas
 
-awk '!($0 in a) {a[$0];print}' file
+    awk '!($0 in a) {a[$0];print}' file
 
-awk '!a[$0]++' file
+    awk '!a[$0]++' file
 
 ### Imprimindo linhas de um intervalo
 
-awk 'NR >= 27 && NR <= 99' file.txt > /tmp/file3
+    awk 'NR >= 27 && NR <= 99' file.txt > /tmp/file3
 
 fonte: http://br.groups.yahoo.com/group/shell-script/message/31705
 
+``` markdown
 Srs.,
 
 Boa tarde!
@@ -258,10 +266,11 @@ desde já agradeço atenção!
 
 att,
 Cleberson.
+```
 
 ### solução
 
-cat teste.txt | awk '/teste{/,/}/' | grep -v '{\|}'
+    cat teste.txt | awk '/teste{/,/}/' | grep -v '{\|}'
 
 ### Imprimir linhas em intervalos específicos (neste caso a cada 3 linhas)
 
@@ -298,16 +307,17 @@ um comentário a cada 5 linhas
 
 ### colocando em maiúsculas
 
-echo "um dois" | awk '{print $1, toupper($2)}'
+    echo "um dois" | awk '{print $1, toupper($2)}'
 
 ### Concatenando linhas
 **Concatenate every 4 lines of input with a comma.**
 
-awk 'ORS=NR%4?",":"\n"'
+    awk 'ORS=NR%4?",":"\n"'
 
 O comando acima resolve questões como esta:
 [[@http://br.groups.yahoo.com/group/sed-br/message/4369]]
 
+``` markdown
 Senhores,
 Ainda não consegui achar uma solução, tem um arquivo que ele assim:
 
@@ -328,47 +338,48 @@ dn: uid=xx,ou=Usuarios,dc=bbbb,dc=com,dc=br;cn: fulano de tal;homePhone:
 
 em coluna para cada 4 linhas do arquivo. Alguém tem alguma idéia de como
 fazer isso?
-
+```
 
 ### Calculadora com awk
 
 # coloque no seu ~/.bashrc
-calc(){ awk "BEGIN{ print $* }" ;}
+
+    calc(){ awk "BEGIN{ print $* }" ;}
 
 
 ### Exibindo os maiores arquivos
 Insira estas linhas no bashrc
 
-biggest () {
-du | sort -r -n | awk '{split("k m g",v); s=1; while($1>1024){$1/=1024; s++} print int($1)" "v[s]"\t"$2}'
-}
+    biggest () {
+    du | sort -r -n | awk '{split("k m g",v); s=1; while($1>1024){$1/=1024; s++} print int($1)" "v[s]"\t"$2}'
+    }
 
 em seguida pode abrir outro terminal e fazer
 
-biggest | head -20
+    biggest | head -20
 
 ### retirar ultimo diretório de uma lista
 
-echo /teste/teste1/teste2/teste3 | awk -F"/" '{print $NF}'
+    echo /teste/teste1/teste2/teste3 | awk -F"/" '{print $NF}'
 
--F"/" = especifica / como divisor de campo
-$NF = último campo
+    -F"/" = especifica / como divisor de campo
+    $NF = último campo
 
 ### Ordenando strings por tamanho
 
-awk '{ print length($0),$0 | "sort -n"}'  file
+    awk '{ print length($0),$0 | "sort -n"}'  file
 
 ### Imprimindo linhas maiores que
 
-awk 'length>72' file
+    awk 'length>72' file
 
 ### Somando listas
 
-ls -la | awk 'BEGIN{count=0}; {count++; print $5} END{ print "Total:", count}'
+    ls -la | awk 'BEGIN{count=0}; {count++; print $5} END{ print "Total:", count}'
 
 outro exemplo
 
-awk '{sum+=$2} END {print sum}' arquivo
+    awk '{sum+=$2} END {print sum}' arquivo
 
 ### Trocar de posição os campos 1 e 2 de um arquivo e imprimir a linha
 
@@ -380,48 +391,45 @@ awk '{sum+=$2} END {print sum}' arquivo
 
 ### imprimindo linhas impares
 
-cat -n /etc/passwd | awk '$1 % 2 == 1 {print}'
+    cat -n /etc/passwd | awk '$1 % 2 == 1 {print}'
 
 ### Combinando com ls
 
-ls -l | awk ’$6 == "Nov" { sum += $5 }
+    ls -l | awk ’$6 == "Nov" { sum += $5 }
              END { print sum }’
 
 
 ### Localizando processos por usuário
 
- ps aux | awk '!/root|nobody/ { if ($4>2) {print $2,$11}}'
+     ps aux | awk '!/root|nobody/ { if ($4>2) {print $2,$11}}'
 
 ### Pegar coluna de linha especifica
 
 # exemplo da coluna 2 na linha 5
-  awk 'NR == 5 {print $2}'
+
+    awk 'NR == 5 {print $2}'
 
 imprimir primeira coluna da linha 2
 
-awk 'NR==2 {print $1}' arquivo
-
+    awk 'NR==2 {print $1}' arquivo
 
 ### somando números em um arquivo
 
-awk '{s+=$0} END {print s}' /tmp/file.txt
+    awk '{s+=$0} END {print s}' /tmp/file.txt
 
 ### somando os 10 primeiros números
 
-
-$ seq 10 | awk '{ i+=$1 } END { print i }'
-55
-
+    seq 10 | awk '{ i+=$1 } END { print i }'
+    55
 
 ### Opção com o paste + bc para somar numeros em um arquivo
 
-paste -sd+ /tmp/file.txt | bc
+    paste -sd+ /tmp/file.txt | bc
 
-awk '{ sum += $1 } END { print sum }' file
-
-
+    awk '{ sum += $1 } END { print sum }' file
 
 ### Calculando sua fatura do com o awk
+``` markdown
 Eu tenho uma fatura assim:
 
 12/01/2007 INSINUANTE_LJ_187(12/12)    187,91
@@ -432,22 +440,25 @@ Eu tenho uma fatura assim:
 21/11/2007 ADAUTO_PECAS(02/06)         200,00
 17/12/2007 ANUIDADE(12/12)             7,00
 26/12/2007 VIACAO_ITAPEMIRIM(01/03)    259,34
+```
 
-awk '{ total = total + $3} END {print total} ' fatura.txt
+    awk '{ total = total + $3} END {print total} ' fatura.txt
 
 
+``` markdown
 A variável total receber o valor dela + o acumulado
 do terceiro campo do arquivo "fatura.txt", mas
 só é impresso a soma no final graças ao uso do
 END
 
 Resultado:
+```
 
-794
+    794
 
 ### somando campos de arquivos csv
 
-awk -F ',' '{ x = x + $4 } END { print x }' test.csv
+    awk -F ',' '{ x = x + $4 } END { print x }' test.csv
 
 procura e mostra linhas com o terceiro campo igual a "peter" ou que contenham o string "marie":
 
@@ -455,48 +466,47 @@ procura e mostra linhas com o terceiro campo igual a "peter" ou que contenham o 
 
 ### Imprimir o tamanho de uma linha
 
-  awk '/root/ {print NR " - " lenght}' /etc/passwd
+      awk '/root/ {print NR " - " lenght}' /etc/passwd
 
 ### imprimir linhas menores que
 
-awk 'length<30' /etc/passwd
+    awk 'length<30' /etc/passwd
 
 ### Imprimir uma linha específica
 a ação padrão do awk é imprimir portanto não precisa fazer 'nr=1234 {print}' basta fazer o teste
 comparando o número do registro (linha)
 
-
- awk 'NR==1234' arquivo
+     awk 'NR==1234' arquivo
 
 ### Imprimir o nome dos usuários acima de um determinado GID
 
-  awk -F":" '{if ($4 >= 1000) print $1}' /etc/passwd
+    awk -F":" '{if ($4 >= 1000) print $1}' /etc/passwd
 
 ### Imprimir nome de usuário o id
 
-awk -F":" '{ print "username: " $1 "\t\tuid:" $3" }' /etc/passwd
+    awk -F":" '{ print "username: " $1 "\t\tuid:" $3" }' /etc/passwd
 
 ### Programa que imprime o tamanho da maior linha
 
- awk '{ if (length($0) > max) max=length($0) }  END { print max }' texto.txt
+    awk '{ if (length($0) > max) max=length($0) }  END { print max }' texto.txt
 
- awk '{ l = length($0); a = (a > l) ? a : l } END {print a}' test.txt
+    awk '{ l = length($0); a = (a > l) ? a : l } END {print a}' test.txt
 
 ### Imprimir linhas maiores que 80 caracteres
 
-  length($0) > 80
+    length($0) > 80
 
 ### visualizando logs do squid
 
-tail -f /var/log/squid/access.log | awk '{print "Host: "$3 "site: "$7}'
+    tail -f /var/log/squid/access.log | awk '{print "Host: "$3 "site: "$7}'
 
 ### Imprimindo um trecho de arquivo no awk
 
-awk '/start_pattern/,/stop_pattern/' file.txt
+    awk '/start_pattern/,/stop_pattern/' file.txt
 
 ### Mostrar usuários com ID acima de 1000
 
-awk -F":" '$3 > 1000 {print $0}' /etc/passwd
+    awk -F":" '$3 > 1000 {print $0}' /etc/passwd
 
 ### Modificando o separador de registros e de campos
 

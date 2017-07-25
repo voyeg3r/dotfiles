@@ -27,6 +27,10 @@ o numeral 1 indica o ponto onde se inicia
 o numeral 2 indica que toda segunda linha receberá a ação
 indicada que no caso é deleção 'd'
 
+### imprimir da segnda linha em diante
+
+    sed -i '1d' filename
+
 ### adicionando uma linha em branco após toda segunda linha
 Adding a new line after each second line
 
