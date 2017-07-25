@@ -64,3 +64,6 @@
 [submodule "rcfiles/fonts"]
 	path = rcfiles/fonts
 	url = https://github.com/powerline/fonts.git
+[submodule "rcfiles/zsh/custom/themes/sobole-zsh-theme"]
+	path = rcfiles/zsh/custom/themes/sobole-zsh-theme
+	url = https://github.com/sobolevn/sobole-zsh-theme.git
