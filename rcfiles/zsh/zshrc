@@ -89,8 +89,7 @@ ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract systemd.plugin.zsh command-not-found history-substring-search )
-
+plugins=(git fasd extract systemd.plugin.zsh command-not-found history-substring-search)
 plugins+=(zsh-autosuggestions zsh-autopair)
 
 eval "$(fasd --init auto)"
@@ -345,7 +344,6 @@ zle -N bracketed-paste bracketed-paste-magic
 # https://github.com/zsh-users/zsh-autosuggestions
 # this key binding must be here at the end because of something I dont know yet
 bindkey '^ ' autosuggest-accept
-source ~/.dotfiles/rcfiles/zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 bindkey '^X^A' fasd-complete
 bindkey '^X^F' fasd-complete-f

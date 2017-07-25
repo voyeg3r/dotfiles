@@ -185,7 +185,7 @@ yaourt -S messengerfordesktop
 # awesome theme
 yaourt -S zukitwo-themes
 
-yaourt -S zsh-completions
+yaourt -S zsh-completions zsh-autosuggestions
 
 # check your shell script syntax
 sudo pacman -S shellcheck
