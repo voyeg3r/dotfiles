@@ -350,9 +350,11 @@ fazer isso?
 ### Exibindo os maiores arquivos
 Insira estas linhas no bashrc
 
+    ``` sh
     biggest () {
     du | sort -r -n | awk '{split("k m g",v); s=1; while($1>1024){$1/=1024; s++} print int($1)" "v[s]"\t"$2}'
     }
+    ```
 
 em seguida pode abrir outro terminal e fazer
 
@@ -367,7 +369,9 @@ em seguida pode abrir outro terminal e fazer
 
 ### Ordenando strings por tamanho
 
+    ``` sh
     awk '{ print length($0),$0 | "sort -n"}'  file
+    ```
 
 ### Imprimindo linhas maiores que
 
@@ -401,7 +405,9 @@ outro exemplo
 
 ### Localizando processos por usuário
 
+     ``` sh
      ps aux | awk '!/root|nobody/ { if ($4>2) {print $2,$11}}'
+     ```
 
 ### Pegar coluna de linha especifica
 
@@ -446,7 +452,7 @@ Eu tenho uma fatura assim:
 
 
 ``` markdown
-A variável total receber o valor dela + o acumulado
+A variável total recebe o valor dela + o acumulado
 do terceiro campo do arquivo "fatura.txt", mas
 só é impresso a soma no final graças ao uso do
 END
@@ -682,50 +688,52 @@ Output:
 12 9090 1212 21
 
 ### Recebendo variáveis do shell
++ https://stackoverflow.com/a/19075707/2571881
 
 
-read_val=0301; awk -v var=${read_val} '{sub(/0019/,var); print}' infile
+    read_val=0301; awk -v var=${read_val} '{sub(/0019/,var); print}' infile
 
 
-
-
-echo "Enter ID: "
-read ID
-awk -v ID=$ID 'NR==14{ print ID}{print}' "file"
+    echo "Enter ID: "
+    read ID
+    awk -v ID=$ID 'NR==14{ print ID}{print}' "file"
 
 # assim dá pra usar o argv para passar alguns parâmetros no script
 
-awk 'BEGIN {print ARGV[5]}' 1 2 3 4 5 6 7
+    awk 'BEGIN {print ARGV[5]}' 1 2 3 4 5 6 7
 
-awk 'BEGIN {print ARGV[5] "\n" ARGV[3]}' 1 2 3 4 5 6 7
+    awk 'BEGIN {print ARGV[5] "\n" ARGV[3]}' 1 2 3 4 5 6 7
 
-awk -v sq=`pwd` 'BEGIN {print "você está em " sq}'
+    awk -v sq=`pwd` 'BEGIN {print "você está em " sq}'
 
 ### extraindo dados de um arquivo
 Você tem um arquivo assim:
 
-a.txt
-{some data}
-success!!
 
-b.txt
-{some data}
-success!!
+    a.txt
+    {some data}
+    success!!
 
-c.txt
-{some data}
-error!!
+    b.txt
+    {some data}
+    success!!
 
-deseja a seguinte saida:
+    c.txt
+    {some data}
+    error!!
 
-a.txt: success
-b.txt: success
-c.txt: error
+    deseja a seguinte saida:
+
+    a.txt: success
+    b.txt: success
+    c.txt: error
 
 
-com awk dá pra fazer assim:
+    com awk dá pra fazer assim:
 
-awk 'BEGIN {RS="\n\n"} {gsub("!!","",$NF);print $1": "$NF}' teste.txt
+    ``` sh
+    awk 'BEGIN {RS="\n\n"} {gsub("!!","",$NF);print $1": "$NF}' teste.txt
+    ```
 
 # um jeito bem mais simples
 awk '{print $1": "$4}' RS="\n\n" results.txt

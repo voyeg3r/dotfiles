@@ -129,10 +129,19 @@ function ${1:function_name}() {
 }
 endsnippet
 
+#snippet replay "get yes or no from user" w
+#read -p "Type one response [y|n]:" response
+#if [[ "${response,,}" =~ ^[^y] ]];then
+#	exit 0
+#fi
+#${0:# press c-j}
+#endsnippet
+
 snippet replay "get yes or no from user" w
-read -p "Type one response [y|n]:" response
-if [[ "${response,,}" =~ ^[^y] ]];then
-	exit 0
+read -r -p "${1:your question}? [Y/n]: " response
+response=${response,,} # tolower
+if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
+	${2:action}
 fi
 ${0:# press c-j}
 endsnippet
