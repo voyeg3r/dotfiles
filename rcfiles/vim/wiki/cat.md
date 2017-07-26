@@ -4,13 +4,18 @@ concatenar arquivos divididos como comando [[split]]
 
   cat /etc/group
 
-
 Podemos criar um arquivo com o cat assim:
 
   cat > nomedoarquivo
   digite algumas
   linhas no arquivo e control-c
   para finalizar a edição
+
+### Removing blank lines at the begining of file
+
+    cat file | (read; read; cat)
+
+Se also how to perform this task with [tail](tail)
 
 ### Here documents
 

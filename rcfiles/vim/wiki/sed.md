@@ -525,6 +525,12 @@ No ubuntu a inicialização dos terminais fica em arquivos /etc/event.d/tty[1-6]
 
       sed '/./,/^$/!d'
 
+### Removendo aprenas as duas primeiras linhas
+
+    sed '1,2d' file
+
+Se desejar apagar definitivamente use a opção `-i`
+
 ### Removendo caracteres hexadecimais
 
       sed -i 's/%0d//g' arquivo

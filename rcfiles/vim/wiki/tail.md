@@ -13,6 +13,10 @@ um arquivo:
 
     tail -f /var/log/squid/access.log | awk '{print $3,$7}'
 
+### Remove first two lines
+
+    tail -n +3 file
+
 ### monitorar log via rede
 
     tail -f error_log | nc -l 1234
