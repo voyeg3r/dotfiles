@@ -140,7 +140,7 @@ endsnippet
 snippet replay "get yes or no from user" w
 read -r -p "${1:your question}? [Y/n]: " response
 response=${response,,} # tolower
-if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
+if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
 	${2:action}
 fi
 ${0:# press c-j}
