@@ -384,6 +384,7 @@ hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 
 
 set rnu nu
+nmap ,r :set rnu!<cr>
 
 " executes current line on shell
 map <S-F12> :exec '!'.getline('.')<cr>

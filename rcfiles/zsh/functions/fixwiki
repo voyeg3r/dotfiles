@@ -1,0 +1,9 @@
+# This function gest a randome section from my wiki
+# files that does't exists should be renamed or deleted
+
+# cd ~/.vim/wiki                                                  [9:04:44]
+# LINUX_CMDS=$(cat ~/.vim/wiki/comandoslinux.md | shuf -n 1)
+# #echo $LINUX_CMDS | sed 's,^.*(\([^)]*\)),\1,g'
+# CMD=$(echo $LINUX_CMDS | sed 's,^.*(\([^)]*\)),\1,g')
+# echo "arquivo $CMD"
+# awk 'BEGIN { RS="/#+.*$/"; FS="$"} {print NF}' $CMD
