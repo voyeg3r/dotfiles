@@ -622,14 +622,14 @@ e desejo pegar somente os nomes tipo sed.md
 a solução veio assim
 
 ``` sh
-LINUX_CMDS=~/.vim/wiki/comandoslinux.md
-for i in $(cat $LINUX_CMDS | sed 's,^.*(\([^)]*\)),\1,g'); do
-echo $i
-done
+LINUX_CMDS=$(cat ~/.vim/wiki/comandoslinux.md | shuf -n 1)
+echo $LINUX_CMDS | sed 's,^.*(\([^)]*\)),\1,g'
 ```
 O objetivo final será pegar somente os comandos linux, por isso
 leio o conteúdo de comandoslinux.md, daí vou pegar um nome aletório
 provavelmente usando o comando shuf e finalmente exibir uma seção aleatória de um dos manuais durante o login no shell ou possivelmente crie uma função dica de comando que posso chamar através de um nome tipo: cmdtip
+
+
 
 ### Referências:
 * http://www.zago.eti.br/sed.txt

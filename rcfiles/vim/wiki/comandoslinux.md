@@ -6,7 +6,8 @@
 [adsl](adsl.md)
 [algoritimos](algoritimos.md)
 [alias](alias.md)
-[alsaconf](alsaconf.md) alsamixer
+[alsaconf](alsaconf.md)
+[alsamixer](alsamixer)
 [animais](animais.md)
 [apropos](apropos.md)
 [apt](apt.md)
