@@ -26,11 +26,11 @@ Se desejar baixar um arquivo com o wget direto para um local faça:
 
 ### pegando seu ip externo
 
-wget -qO- ifconfig.me/ip
+    wget -qO- ifconfig.me/ip
 
 ### agendando um download
 
-echo 'wget -c url' | at 12:00
+    echo 'wget -c url' | at 12:00
 
 ### tradutor
 
@@ -41,12 +41,12 @@ translate <phrase> <source-language> <output-language>
 
 ### ignorando robots
 
-wget -m -nd -A.avi -erobots=off -i urls.txt
+    wget -m -nd -A.avi -erobots=off -i urls.txt
 
 
 ### baixar uma página inteira
 
-wget --random-wait -r -p -e robots=off -U mozilla http://www.example.com
+    wget --random-wait -r -p -e robots=off -U mozilla http://www.example.com
 
     --------------------------------------------------
     Lembre-se que algumas opções fazem os links locais
