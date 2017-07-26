@@ -14,40 +14,30 @@ cd $WIKIFOLDER
 
 echo "Estou na pasta $PWD"
 
-LINUX_CMDS=$(cat ~/.vim/wiki/comandoslinux.md | (read; read; cat) | shuf -n 1)
+# A opção (read; read; cat) remove as primeiras duas linhas
+# opção similar com sed: sed -n '/^\[/p' comandoslinux.md
+# LINUX_CMDS=$(cat ~/.vim/wiki/comandoslinux.md | (read; read; cat) | shuf -n 1)
+LINUX_CMDS=$(sed -n '/^\[/p' ~/.vim/wiki/comandoslinux.md | sed 's,^.*(\([^)]*\)),\1,g' )
 
-echo "Comando $LINUX_CMDS"
-sleep 1
 
-#echo $LINUX_CMDS | sed 's,^.*(\([^)]*\)),\1,g'
-CMD=$(echo $LINUX_CMDS | sed 's,^.*(\([^)]*\)),\1,g')
+for CMD in $LINUX_CMDS; do
+    echo "processando o comando --> $CMD"
+    if [ ! -f "$CMD" ]; then
+       echo 'Arquivo inexistete!!!!'
+       read -r -p "Deseja remove-lo do índice? [Y/n]: " response
+       response=${response,,} # tolower
+       if [[ $response =~ ^(yes|y| ) ]]  || [[ -z $response ]]; then
+           sed -i "/$CMD/d" comandoslinux.md
+       fi
+       echo "saindo da função ..."
+       sleep 1
+    fi
+done
 
-echo "Comando processado pelo SED"
-echo "$CMD"
-sleep 1
-
-echo "--------------------------------------------------"
-echo "arquivo $CMD"
-echo "--------------------------------------------------"
-
-if [ ! -f "$CMD" ]; then
-
-   echo 'Arquivo inexistete!!!!'
-
-   read -r -p "Deseja remove-lo? [Y/n]: " response
-   response=${response,,} # tolower
-   if [[ $response =~ ^(yes|y| ) ]]  || [[ -z $response ]]; then
-       sed -i "/$CMD/d" comandoslinux.md
-   fi
-   echo "saindo do programa ..."
-   sleep 1
-   exit 1
-fi
-
-NF=$(awk 'BEGIN { RS="/#+.*$/"; FS="$"} {print NF}' $CMD)
-sleep 1
-
-echo "Número de seções no arquivo: $NF"
+# NF=$(awk 'BEGIN { RS="/#+.*$/"; FS="$"} {print NF}' $CMD)
+# sleep 1
+#
+# echo "Número de seções no arquivo: $NF"
 
 # pra pegar a variável do shell e passar pro awk temos que coloca-la
 # primeiro entre aspas duplas e depois entre aspas simples, pois
