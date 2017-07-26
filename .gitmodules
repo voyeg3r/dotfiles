@@ -67,3 +67,6 @@
 [submodule "rcfiles/zsh/custom/themes/sobole-zsh-theme"]
 	path = rcfiles/zsh/custom/themes/sobole-zsh-theme
 	url = https://github.com/sobolevn/sobole-zsh-theme.git
+[submodule "rcfiles/zsh/custom/plugins/zsh-you-should-use"]
+	path = rcfiles/zsh/custom/plugins/zsh-you-should-use
+	url = https://github.com/MichaelAquilina/zsh-you-should-use.git

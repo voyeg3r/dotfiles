@@ -92,7 +92,7 @@ ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract systemd.plugin.zsh command-not-found history-substring-search)
-plugins+=(zsh-autosuggestions zsh-autopair)
+plugins+=(zsh-autosuggestions zsh-autopair zsh-you-should-use)
 
 eval "$(fasd --init auto)"
 eval "$(fasd --init posix-alias zsh-hook)"

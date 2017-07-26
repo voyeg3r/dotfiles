@@ -17,6 +17,7 @@ substituições, etc.
 
 ### apagando toda segunda linha
 
+
       sed -i '1~2d' file
 
 A ação acima ocorre diretamente no arquivo devido a opção '-i'
@@ -119,15 +120,14 @@ e por ai vai.
 
 ### substituição na próxima linha
 Substituir na linha subsequente a um padrão
-* referência: http://sed.sourceforge.net/sed1line.txt
-* http://br.groups.yahoo.com/group/shell-script/message/31774
++ referência: http://sed.sourceforge.net/sed1line.txt
++ http://br.groups.yahoo.com/group/shell-script/message/31774
 
 
 ``` sh
 sed -i '/pattern/,+1 s/this/that/g' file
 sed -e '/address2/,+1s/address1/address2/' eri.txt
 ```
-
     sed -i.backup '/src admin/{n;s/\(.*\)/\1 teste/g}' file
 
 #### se a inteção é apenas imprimir a linha subsequente a um padrão
@@ -147,7 +147,6 @@ tornando possível editar um fluxo interminável como o gerado por um //tail -f/
 Um exemplo prático seria mostrar apenas as mensagens do sistema relativas às conexões //ssh//:
 
      tail -f /var/log/messages | sed -nu '/sshd/p'
-
 
 Volta e meia aparecem dúvidas sobre o SED "stream editor"
 e quase sempre alguém sugere algo como:
@@ -612,6 +611,25 @@ mas podia ser assim tb (usando variáveis de memória):
 
     sed 's/\(.*\)||/\1|0|0/' < arquivo
 
+### manipulando strings complexas
+Eu tenho linhas assi:
+
+``` markdown
+[wikispaces](wikispaces.md)
+```
+
+e desejo pegar somente os nomes tipo sed.md
+a solução veio assim
+
+``` sh
+LINUX_CMDS=~/.vim/wiki/comandoslinux.md
+for i in $(cat $LINUX_CMDS | sed 's,^.*(\([^)]*\)),\1,g'); do
+echo $i
+done
+```
+O objetivo final será pegar somente os comandos linux, por isso
+leio o conteúdo de comandoslinux.md, daí vou pegar um nome aletório
+provavelmente usando o comando shuf e finalmente exibir uma seção aleatória de um dos manuais durante o login no shell ou possivelmente crie uma função dica de comando que posso chamar através de um nome tipo: cmdtip
 
 ### Referências:
 * http://www.zago.eti.br/sed.txt
@@ -622,4 +640,4 @@ mas podia ser assim tb (usando variáveis de memória):
 * http://sed.sourceforge.net/local/docs/emulating_unix.txt
 * http://stackoverflow.com/questions/2372719/
 
-` vim: ft=markdown et sw=4 ts=4 `
+`vim: ft=markdown et sw=4 ts=4`

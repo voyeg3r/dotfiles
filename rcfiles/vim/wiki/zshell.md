@@ -70,6 +70,15 @@ Github:      https://github.com/voyeg3r
 
 ### arrays in zshell
 
+### Smart cd
+
+``` markdown
+.dot/r/v/b<tab>
+.dotfiles/rcfiles/vim/bundle/
+
+for f (**/*.txt) {echo $f}
+```
+
 #### Create an array of lines from a file
 
 ``` sh

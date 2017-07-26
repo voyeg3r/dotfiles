@@ -73,6 +73,7 @@ alias alj='mplayer https://english.streaming.aljazeera.net/aljazeera/english2/in
 
 alias cbs='mplayer https://cbsnhls-i.akamaihd.net/hls/live/264710-b/CBSN_mdialog/prodstream/master_360.m3u8'
 alias cbsnews='mplayer http://cbsnewshd-lh.akamaihd.net/i/CBSNHD_7@199302/index_2200_av-p.m3u8'
+alias apnews='mplayer http://apnews.streamguys1.com/apnews'
 
 alias dubaione='mplayer http://dmi.mangomolo.com:1935/dubaione/smil:dubaione.smil/playlist.m3u8'
 
