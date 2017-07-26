@@ -14,7 +14,7 @@ cd $WIKIFOLDER
 
 echo "Estou na pasta $PWD"
 
-LINUX_CMDS=$(cat ~/.vim/wiki/comandoslinux.md | shuf -n 1)
+LINUX_CMDS=$(cat ~/.vim/wiki/comandoslinux.md | (read; read; cat) | shuf -n 1)
 
 echo "Comando $LINUX_CMDS"
 sleep 1
@@ -40,7 +40,7 @@ if [ ! -f "$CMD" ]; then
        sed -i "/$CMD/d" comandoslinux.md
    fi
    echo "saindo do programa ..."
-   sleep 3
+   sleep 1
    exit 1
 fi
 

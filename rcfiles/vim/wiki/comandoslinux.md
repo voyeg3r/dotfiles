@@ -59,7 +59,6 @@
 [comandos avançados](comandos avançados.md)
 [comandos-linux](comandos-linux.md)
 [comm](comm.md)
-[compiz](compiz.md)
 [convert](convert.md)
 [convmv](convmv.md)
 [cp](cp.md)
