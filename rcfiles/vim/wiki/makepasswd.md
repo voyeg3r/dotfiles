@@ -1,6 +1,2 @@
-
-Fonte: http://blog.ffelix.eti.br/seguranca/crie-senhas-seguras/?utm_source=rss&utm_medium=rss&utm_campaign=crie-senhas-seguras
-
-
-makepasswd -char=10 -count=10
-
+# Gerador de senhas do linux
+mkpasswd - generate new password, optionally apply it to a user

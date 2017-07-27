@@ -122,8 +122,8 @@ sudo pacman -S pkgfile && sudo pkgfile -u
 # you will have a better rename with regex support
 sudo pacman -S perl-rename
 
-# a lightweigh terminal
-sudo pacman -S sakura
+# two lightweigh terminal
+sudo pacman -S sakura tilix
 
 # tradutor via linha de comando
 # https://aur.archlinux.org/packages/translate-shell/
@@ -185,7 +185,7 @@ yaourt -S messengerfordesktop
 # awesome theme
 yaourt -S zukitwo-themes
 
-yaourt -S zsh-completions zsh-autosuggestions
+yaourt -Syu zsh-completions zsh-autosuggestions zsh-theme-powerlevel9k
 
 # check your shell script syntax
 sudo pacman -S shellcheck

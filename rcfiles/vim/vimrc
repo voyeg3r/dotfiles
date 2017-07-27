@@ -80,11 +80,11 @@ nnoremap <leader><Left> "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3
 nnoremap <leader><Right> "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>/\w\+\_W\+<CR><C-l>
 
 " execute current line on shell zsh or bash
-map <S-F12> :exec '!'.getline('.')<cr>
+" map <S-F12> :exec '!'.getline('.')<cr>
 
 " this map reads shell commands into current file
 " and clean extra spaces due Preserve funtion call
-nnoremap <F12> !!$SHELL <cr> <bar> :silent! call Preserve("%s/\\s\\+$//e")<cr>
+" nnoremap <F12> !!$SHELL <cr> <bar> :silent! call Preserve("%s/\\s\\+$//e")<cr>
 
 " redo the last substituition keeping the flags
 nnoremap & :&&<CR>
@@ -121,6 +121,8 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
+
+Plug 'skywind3000/quickmenu.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-markdown'
 Plug 'sjl/gundo.vim'
@@ -143,6 +145,12 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'https://github.com/juanedi/predawn.vim'
 
 call plug#end()
+
+" choose a favorite key to show/hide quickmenu
+noremap <silent>,q :call quickmenu#toggle(0)<cr>
+
+" enable cursorline (L) and cmdline help (H)
+let g:quickmenu_options = "HL"
 
 " Autopep8 plugin mapping
 "autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
@@ -385,9 +393,6 @@ hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 
 set rnu nu
 nmap ,r :set rnu!<cr>
-
-" executes current line on shell
-map <S-F12> :exec '!'.getline('.')<cr>
 
 "  when searching next patter put it in the middle of screen
 nnoremap n nzz
@@ -747,10 +752,6 @@ nnoremap k gk
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
 command! SaveAsRoot w !sudo tee %
-
-" map <S-F12> <esc>:dig<cr> " mostra os digrafos do tipo Word®
-" togle between number nonumber and relativenumber
-" source: http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key
 
 " to reselect use gv in normal mode
 nnoremap <S-F11> <ESC>:set hls!<cr>

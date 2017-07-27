@@ -70,3 +70,12 @@
 [submodule "rcfiles/zsh/custom/plugins/zsh-you-should-use"]
 	path = rcfiles/zsh/custom/plugins/zsh-you-should-use
 	url = https://github.com/MichaelAquilina/zsh-you-should-use.git
+[submodule "rcfiles/zsh/custom/themes/powerlevel9k"]
+	path = rcfiles/zsh/custom/themes/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k.git
+[submodule "rcfiles/vim/bundle/quickmenu"]
+	path = rcfiles/vim/bundle/quickmenu
+	url = https://github.com/skywind3000/quickmenu.vim.git
+[submodule "rcfiles/vim/bundle/quickmenu.vim"]
+	path = rcfiles/vim/bundle/quickmenu.vim
+	url = https://github.com/skywind3000/quickmenu.vim.git

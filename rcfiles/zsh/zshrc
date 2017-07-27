@@ -5,7 +5,11 @@ export ZSH="${HOME}/.dotfiles/oh-my-zsh"
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
+fi
 
+if [[ $TERM == xterm-termite ]]; then
+    . /etc/profile.d/vte.sh
+    __vte_osc7
 fi
 
 
@@ -44,7 +48,6 @@ KEYTIMEOUT=1
 #ZSH_THEME="bira"
 #ZSH_THEME="muse"
 #ZSH_THEME="kphoen"
-ZSH_THEME="duellj"
 
 setopt COMPLETE_ALIASES # complete aliases before executing
 setopt NO_FLOW_CONTROL # deactvates XOFF

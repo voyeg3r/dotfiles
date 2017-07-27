@@ -1,48 +1,56 @@
-### Introdução
-O comando tee permite que a saída de um comando
-seja gravada em um arquivo ao mesmo tempo em que
-é exibida na tela.
+# O Comando tee
++ http://www.uniriotec.br/~morganna/guia/tee.html
 
-echo "deb http://packages.medibuntu.org/ hardy free non-free" | sudo tee -a /etc/apt/sources.list
+Exibe a saíde de um comando e o envia para o pipe
 
-No caso acima estamos mostrando na tela:
+O tee pega a entrada padrao, joga em um arquivo e ainda envia novamente para a saida padrao.
+No teu caso, tudo que for digitado sera salvo NOS DOIS ARQUIVOS e a saida padrão enterrada no /dev/null
 
-deb http://packages.medibuntu.org/ hardy free non-free
+    tee [opções] [arquivo]
 
-Ao mesmo tempo em que estamos enviando o mesmo conteúdo para o final
-do arquivo
-
-/etc/apt/sources.list
-
-### Gravando a saida padrão e os erros em um arquivo de log
-A solução abaixo é especialmente útil para scripts em que você
-não pode estar acompanhando o tempo todo, daí você gera um log,
-mas se tiver tempo pode ver o que acontece na hora.
-
-comando 2>&1 | tee -a log.txt
-bash -x test.sh 2>&1 | tee out.test
-
-### enviando uma saida para varios arquivos de uma vez
-
-source: http://stackoverflow.com/questions/34678428/
-
-echo "What you want the files to contain." | tee filename{1..10}.txt
+    O argumento arquivo é o nome do arquivo de saída onde os dados de entrada
+    serão gravados (além de serem também exibidos na saída padrão).
 
 
-### Gravando logs dos comandos digitados
-* fonte: http://www.vivaolinux.com.br/dica/Gravando-logs-dos-comandos-digitados
-Para gravar log de comandos ou processos, se você esqueceu de
-configurar o terminal para mais de 200 linhas, digite os seguintes
-comandos:
+### Descrição
 
-$ script | tee /dev/pts/[n]
+Este utilitário ler dados na entrada padrão e os grava na saída padrão e em arquivos.
+Algumas opções do comando
 
+    -a : adiciona a entrada padrão no final do arquivo especificado.
+    -i : ignora os sinais de interrupção.
+    --help : exibe as opções do utilitário.
+    --version : mostra informações sobre o utilitário.
 
-Onde [n] é o número de outro terminal onde você quer ver os comandos rolarem.
+### Exemplos
 
-Automaticamente é gerado um arquivo chamado typescript no diretório
-onde foi executado o comando. Aí basta abrir o arquivo e lá estará
-todo o log e saídas do terminal em que você trabalhou.
+    O comando
 
-### Referências
-* http://www.zago.eti.br/log.html
+        tee teste.txt
+
+    faz com que toda entrada digitada pelo usuário seja ecoada na tela e
+    gravada no arquivo teste.txt.  Para acrescentar os novos dados de entrada
+    no final do arquivo teste.txt, sem perder as informações que este arquivo
+    já possui, digite
+
+        tee -a teste.txt
+
+    É possível usar o PIPE (representado pelo símbolo |) para redirecionar a
+    saída de algum comando para o tee. Por exemplo,
+
+        cat teste.txt | tee teste2.txt
+
+    exibe o conteúdo do arquivo teste.txt na tela além de copiá-lo para o
+    arquivo teste2.txt (para saber mais sobre o PIPE, veja redirecionadores de
+    E/S).
+
+### Observações
+
+    Caso o nome de um arquivo não seja definido junto com o comando tee, o
+    sistema exibirá os dados apenas na saída padrão.
+
+### Tópicos relacionados
+
+    cat - concatena e/ou exibe um ou mais arquivos.
+    redirecionadores de E/S - >, >>, < e |.
+

@@ -1,1 +1,1 @@
-O mcedit é um editor prático e rápido (para quem não sabe ainda usar o vim)
+# O mcedit é um editor de linha de comando pra quem não aprendeu ainda a usar o vim

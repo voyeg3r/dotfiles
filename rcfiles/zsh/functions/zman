@@ -1,0 +1,12 @@
+# zsh has lots of documentation, but finding what you want
+# to know can be difficult. The manpage zshall(1) contains everything,
+# and this function wilzsh has lots of documentation, but finding what you
+# want to know can be difficult. The manpage zshall(1) contains everything,
+# and this function will make it easy to search inl make it easy to search in
+
+# Try zman fc or zman HIST_IGNORE_SPACE! (Use n if
+# the first match is not what you were looking for.)
+
+zman() {
+  PAGER="less -g -s '+/^       "$1"'" man zshall
+}

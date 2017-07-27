@@ -1,11 +1,7 @@
-### Descrição de um comando
+# Intro
+Exibe informações básicas sobre um comando, por exemplo
 
-whatis find
-find (1)             - search for files in a directory hierarchy
-
-
-### para listar a descrição de todos os comandos
-
-for i in `ls /usr/bin`; do
-  whatis $i
-done
+    whatis find
+    find (1)             - search for files in a directory hierarchy
+    find (1p)            - find files
+    find (n)             - search for classes and objects

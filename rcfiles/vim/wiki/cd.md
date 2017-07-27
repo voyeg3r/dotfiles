@@ -1,27 +1,4 @@
-### Introdução
-sem argumentos o comando 'cd' lhe leva à sua pasta padrão '~'
+# cd - mudar de diretórios
 
-cd
-pwd
-/home/user
-
-Um exemplo mais complexo
-
-cd $(dirname $(find ~ -iname image.png))
-
-### ir para o diretório usado no último comando
-* referência: http://www.commandlinefu.com/commands/view/862/bash-shortcut-3-h-and-t
-
-cd !$:h
-
-### se obtiver erro ao entrar numa pasta
-
-$ cd /home/user/foo
-
-cd: /home/user/foo: No such file or directory
-
-$ mkdir !*
-
-mkdir /home/user/foo
-
-
+    cd -    ............ voltar ao último diretório
+    cd ..   ............ subir um nível
