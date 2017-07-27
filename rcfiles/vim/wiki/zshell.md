@@ -345,12 +345,16 @@ you can use =command instead $(which command)
 #### one-liners
 
 #### lowcase filenames
-source: http://lorenzod8n.wordpress.com/category/zsh/
+make file and directory names lowercase
++ http://onethingwell.org/post/24608988305/zmv
 
-``` sh
-for file in *; do mv $file ${file:l}; done
-for p in ~/pictures/**/*[A-Z]*; do mv $p ${p:l}; done
-```
+
+    Uppercase or lowercase filenames
+
+    zmv '*' '${(U)f}'
+    zmv '*' '${(L)f}'
+
+    zmv '(*)' '${(L)1}'
 
     An application of modifiers is !:t, which results into the basename of
     the last argument. Very useful when working with URLs, for example.
@@ -594,9 +598,12 @@ The above shortuc will put the most recent file name in command line
 		chmod -x **/*(.)
 
 #### You can access zmv's advanced documentation by typing man zshcontrib.
++ http://onethingwell.org/post/24608988305/zmv
 
     zmv "programmable rename"
     autoload -U zmv
+
+    zmv -W '*.md' '*.txt'
 
 ### Remove extensio
 
@@ -621,6 +628,7 @@ zmv '(**/)(*.mkv)' '$1${(U)2:r}.${(L)2:e}' # recursive traversal
     zmv -Wv '*.txt' '*.rb'
 
 #### removendo extensão mp4a
+
     zmv '(*)mp4a' '$f:gs/\.mp4a//'
 
     with the '-n' option you can only see what will happen
@@ -657,5 +665,5 @@ zmv '(**/)(*.mkv)' '$1${(U)2:r}.${(L)2:e}' # recursive traversal
     autoload -U zmv
     zmv '[0-9]## #(*.mp3)' '$1'
 
-    In this case we can use perl-rename with regex
+    In this case we can use [perl-rename](perlrename.md) with regex
 

@@ -15,3 +15,8 @@
     -v ......... verbos
     -n ......... no-derefence
 
+### saving some keystrokes with shell tricks
+
+    echo um{,-2.91}.sh
+
+    ln -s /etc/profile.d/{vte,vte-2.91}.sh

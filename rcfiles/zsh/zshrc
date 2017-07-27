@@ -7,6 +7,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
+
 if [[ $TERM == xterm-termite ]]; then
     . /etc/profile.d/vte.sh
     __vte_osc7
@@ -123,6 +124,11 @@ autoload -U compinit && compinit
 setopt complete_in_word
 
 autoload -U zmv
+autoload zmv
+alias zmv='noglob zmv'
+alias zcp='noglob zmv -C'
+alias zln='noglob zmv -L'
+alias zsy='noglob zmv -Ls'
 alias mmv='noglob zmv -W'
 
 # In Zsh ^W removes words delimited by whitespace. We are working in shell here though,

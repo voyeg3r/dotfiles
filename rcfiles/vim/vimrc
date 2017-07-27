@@ -71,7 +71,7 @@ setlocal complete=.,w,k,b,u
 
 " Exchange words position
 " exchange word under cursor with the next word without moving the cursor
-nnoremap gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o><C-l>
+" nnoremap gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o><C-l>
 
 " push word under cursor to the left
 nnoremap <leader><Left> "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o><C-l>
@@ -121,7 +121,7 @@ cab Q  q
 " Required to start Plug:
 call plug#begin(expand('~/.dotfiles/rcfiles/vim/bundle'))
 
-
+Plug 'tpope/vim-speeddating'
 Plug 'skywind3000/quickmenu.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-markdown'
@@ -151,6 +151,12 @@ noremap <silent>,q :call quickmenu#toggle(0)<cr>
 
 " enable cursorline (L) and cmdline help (H)
 let g:quickmenu_options = "HL"
+
+" new section
+call quickmenu#append("# Misc", '')
+call quickmenu#append("Turn paste %{&paste? 'off':'on'}", "set paste!", "enable/disable paste mode (:set paste!)")
+call quickmenu#append("Turn spell %{&spell? 'off':'on'}", "set spell!", "enable/disable spell check (:set spell!)")
+call quickmenu#append("Function List", "TagbarToggle", "Switch Tagbar on/off")
 
 " Autopep8 plugin mapping
 "autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>

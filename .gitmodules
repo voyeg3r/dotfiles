@@ -79,3 +79,9 @@
 [submodule "rcfiles/vim/bundle/quickmenu.vim"]
 	path = rcfiles/vim/bundle/quickmenu.vim
 	url = https://github.com/skywind3000/quickmenu.vim.git
+[submodule "rcfiles/vim/bundle/speeddating"]
+	path = rcfiles/vim/bundle/speeddating
+	url = https://github.com/tpope/vim-speeddating.git
+[submodule "rcfiles/vim/bundle/vim-speeddating"]
+	path = rcfiles/vim/bundle/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating.git

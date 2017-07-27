@@ -1,15 +1,35 @@
 ### Introdução
 mover um arquivo para um nível acima
 
-  mv arquivo ..
+    mv arquivo ..
+
+### Economizando digitação
+
+    mv /path/to/file.{txt,xml}
+
+
+    sudo cp /etc/rc.conf{,-old}
+
+Putting nothing before the comma will just append -old to the filename after
+copying it with cp. If your new file doesn't work out and you want to restore
+the backed up file to its original location, you can just use:
+
+    sudo mv /etc/rc.conf{-old,}
 
 ### combinando o mv com o [[find]]
 
+    find ./ -maxdepth 1 -iname "*.txt" -print0 | xargs -0 mv -t ~/tmp
+
 # adicionando extensão
-find ./ -maxdepth 1 -type f -print0 | xargs -0 -i mv ./{} ./{}.txt
+
+    find ./ -maxdepth 1 -type f -print0 | xargs -0 -i mv ./{} ./{}.txt
+
+    prename 's/.txt$/.md/' *
+    prename 's/$/.txt' *
 
 # movendo arquivos
-find ~/ -iname "*.txt" | xargs mv -t ~/tmp
+
+    find ~/ -iname "*.txt" | xargs mv -t ~/tmp
 
 ### consertar utf8 para iso
 * http://www.mycomputerhelps.org/linux-user/how-to-batch-repair-file-and-folder-names-encoding-on-windows-after-a-windows-linux-file-transfer.html
@@ -61,12 +81,12 @@ Good luck.
 
 ### trocar a extensão de arquivos
 
-for i in *.html; do mv $i ${i%.html}.htm; done
-for i in `ls *.GIF`; do mv $i ${i/.GIF/.gif}; done
+    for i in *.html; do mv $i ${i%.html}.htm; done
+    for i in `ls *.GIF`; do mv $i ${i/.GIF/.gif}; done
 
 ### retirando espaços
 
-for i in `ls *`; do mv $i ${i// /_/}; done
+    for i in `ls *`; do mv $i ${i// /_/}; done
 
 ### veja também
 comando [[rename]]

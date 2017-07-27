@@ -40,6 +40,14 @@ alternatively you can use sed:
 
     :set undoreload=0 | edit
 
+### Edit subtitles with vim
++ https://github.com/tpope/vim-speeddating
++ https://stackoverflow.com/a/24149171/2571881
+
+After instaling Tim Pope's speeddating plugin you can do something like:
+
+    :g/\v^\d{2}:\d{2}:/execute "normal t,10\<C-x>2t,10\<C-x>"
+
 ### Swap two words fast
 
    one word

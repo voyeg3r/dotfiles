@@ -73,6 +73,16 @@ If you want to do a dry run to make sure you don't clobber any files, add the -n
 
     rename 's/\e.bak$//' *.bak
 
+
+changing file extension
++ https://unix.stackexchange.com/a/68913/3157
+
+    prename 's/$/.md/' *
+
+in my case I have an alias called prename
+
+    prename 's/.txt$/.md/' *
+
 ### To translate uppercase names to lower, you'd use
 OBS: prename is an alias to perl-rename
 

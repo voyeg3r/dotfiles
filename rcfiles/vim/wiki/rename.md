@@ -2,7 +2,6 @@
 
     rename 'y/ /_/' *
 
-
     for i in *mp3*; do
         mv "$i" `echo $i | sed 's/ //g'`
     done
