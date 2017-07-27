@@ -27,6 +27,24 @@ Github:      https://github.com/voyeg3r
 + https://raw.githubusercontent.com/sorin-ionescu/prezto/28a20b48e652a01216a6c3dd76e6324d76c12def/modules/editor/init.zsh
 + https://coderwall.com/t/zsh/popular
 
+### manuals
+
+    man zsh          Zsh overview
+    man zshmisc      Anything not fitting into the other sections
+    man zshexpn      Zsh command and parameter expansion
+    man zshparam     Zsh parameters
+    man zshoptions   Zsh options
+    man zshbuiltins  Zsh built-in functions
+    man zshzle       Zsh command line editing
+    man zshcompwid   Zsh completion widgets
+    man zshcompsys   Zsh completion system
+    man zshcompctl   Zsh completion control
+    man zshmodules   Zsh loadable modules
+    man zshzftpsys   Zsh built-in FTP client
+    man zshall       Meta-man page containing all of the above
+    info --index-search=age zsh         # get man info for zsh function age *N*
+    zinfo(){info --index-search=$1 zsh} *N*
+
 ### Testing zsh start speed
 
     time zsh -i -c exit

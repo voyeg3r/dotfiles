@@ -3,10 +3,15 @@ export ZSH="${HOME}/.dotfiles/oh-my-zsh"
 
 [[ -d $HOME/.gem/ruby/2.3.0/bin ]] && PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+
+fi
+
 
 #[ -d ~/bin ] && PATH=~/bin:$PATH &&  export PATH
 typeset -U path
-[ -d /bin ] && PATH=/bin:$PATH &&  export PATH
+[ -d ~/bin ] && PATH=~/bin:$PATH && export PATH
 
 XDG_CONFIG_HOME="$HOME/.config"
 XDG_CACHE_HOME="$HOME/.cache"
