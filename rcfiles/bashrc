@@ -40,6 +40,9 @@ function gm() {
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 
+htmldecode() { : "${*//+/ }"; echo -e "${_//&#x/\x}" | tr -d ';'; }
+urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+
 alias allcomm='whatis `compgen -c` | less' # list all possible commands
 alias x='extract'
 alias pbcopy='xclip -selection clipboard'

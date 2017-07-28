@@ -45,6 +45,12 @@ Github:      https://github.com/voyeg3r
     info --index-search=age zsh         # get man info for zsh function age *N*
     zinfo(){info --index-search=$1 zsh} *N*
 
+
+### zsh-lovers
+
+    sudo pacman -Syu zsh-lovers
+    just type: man zsh-lovers
+
 ### Testing zsh start speed
 
     time zsh -i -c exit

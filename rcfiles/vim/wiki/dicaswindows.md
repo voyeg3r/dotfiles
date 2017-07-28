@@ -8,10 +8,16 @@ site: vivaotux
 twitter: voyeg3r
 email: voyeg3r at gmail.com
 ```
+### A good terminal emulator
++ https://github.com/cmderdev/cmder
+
+You also should use babun "oh-my-zsh" framework on windows:
++ http://babun.github.io/
+
+### Exibe os programas que estão abertos (possibilitando mata-los)
 
     Ctrl + shift + Esc
 
-### Exibe os programas que estão abertos (possibilitando mata-los)
 
     Outro modo:
     Abra o command e digite

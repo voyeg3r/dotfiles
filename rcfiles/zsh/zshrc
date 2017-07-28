@@ -46,7 +46,7 @@ KEYTIMEOUT=1
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="agnoster"
-#ZSH_THEME="bira"
+ZSH_THEME="bira"
 #ZSH_THEME="muse"
 #ZSH_THEME="kphoen"
 

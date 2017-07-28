@@ -34,6 +34,7 @@ alias dairy='vim +VimwikiMakeDiaryNote'
 alias mkdir='mkdir -pv'
 alias hg='history | grep'
 
+# alias lowercasename="zmv '*' '${(L)f}'"
 
 type perl-rename >/dev/null 2>&1 && alias prename='perl-rename'
 
