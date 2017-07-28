@@ -46,6 +46,21 @@ Github:      https://github.com/voyeg3r
     zinfo(){info --index-search=$1 zsh} *N*
 
 
+
+### What files run when you start a ZSH login shell?
++ https://kev.inburke.com/kevin/profiling-zsh-startup-time/
+
+In order, your machine will load/execute the following files when ZSH starts:
+
+    /etc/zshenv
+    ~/.zshenv
+    /etc/zprofile
+    ~/.zprofile
+    /etc/zshrc
+    ~/.zshrc
+    /etc/zlogin
+    ~/.zlogin
+
 ### zsh-lovers
 
     sudo pacman -Syu zsh-lovers
