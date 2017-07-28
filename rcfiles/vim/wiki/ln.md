@@ -20,3 +20,5 @@
     echo um{,-2.91}.sh
 
     ln -s /etc/profile.d/{vte,vte-2.91}.sh
+
+

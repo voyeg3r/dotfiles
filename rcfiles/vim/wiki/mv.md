@@ -7,7 +7,6 @@ mover um arquivo para um nível acima
 
     mv /path/to/file.{txt,xml}
 
-
     sudo cp /etc/rc.conf{,-old}
 
 Putting nothing before the comma will just append -old to the filename after
