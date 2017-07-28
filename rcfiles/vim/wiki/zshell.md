@@ -386,7 +386,9 @@ make file and directory names lowercase
 
 #### this command
 
+    ``` sh
     ls -1 */**/*.sh
+    ```
 
 #### is equivalent to:
 
@@ -402,17 +404,23 @@ the 'm-1' asks modifications at less than one day
 
 #### show files modified in the last hour
 
+    ``` zsh
     ls *(.mh-1) | wc -l
 
     ls *.*(^mh3)   # all files not 3 hours  old
+    ```
 
 ####  find all files with size larger than 10 megabytes
 
+    ``` zsh
     ls **/*(.Lm+10)
+    ```
 
 #### find all files you accessed within the last month:
 
+    ``` zsh
     ls **/*(.aM-1)
+    ```
 
 #### list files not ending with 'o'
 
@@ -443,6 +451,7 @@ Nevertheless, you could also check for either
     changed at more than 3 weeks (mw+3)
     (Lm+5) —larger than five megabytes.
 
+    ``` zsh
     ls **/*(.) .......... regular files
     ls **/*(^.) ......... not regular files
     ls **/*(@) .......... simbolic links
@@ -457,6 +466,7 @@ Nevertheless, you could also check for either
     ls **/*(.DmM+12) .... regular files older thant one year
     ls **/*(L+10M) ...... file more than 10M
     ls **/*(*Lk-5) ...... executable files less than 5kb
+    ```
 
     ls *(.D) ........... D dotfiles '.' regular files
 
@@ -624,7 +634,36 @@ The above shortuc will put the most recent file name in command line
     zmv "programmable rename"
     autoload -U zmv
 
+    ``` zsh
     zmv -W '*.md' '*.txt'
+    ```
+
+### Recursively changing file extension
++ http://www.drbunsen.org/batch-file-renaming/
+To actually perform the file renaming run the command without the -n flag
+
+    ``` zsh
+    zmv -n '(**/)(*).txt' '$1$2.rtf'
+
+    zmv -Q '(**/)(*).txt' '$1$2.rtf'
+
+    mv -- other/file001.txt other/file001.rtf
+    mv -- other/file002.txt other/file002.rtf
+    mv -- other/file003.txt other/file003.rtf
+    mv -- other/file004.txt other/file004.rtf
+    mv -- other/file005.txt other/file005.rtf
+    mv -- other/file006.txt other/file006.rtf
+    mv -- other/file007.txt other/file007.rtf
+    mv -- other/file008.txt other/file008.rtf
+    mv -- other/file009.txt other/file009.rtf
+    mv -- other/file010.txt other/file010.rtf
+    mv -- file001.txt file001.rtf
+    mv -- file002.txt file002.rtf
+    mv -- file003.txt file003.rtf
+    ```
+
+The -Q flag allows hidden files to be matched along with visible files. Adding the (**/) code will cause zmv to change the file extension on all .txt files in the current directory and any text files in any sub-directories (visible or hidden).
+
 
 ### Remove extensio
 

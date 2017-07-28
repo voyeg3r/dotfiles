@@ -146,7 +146,8 @@ alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 alias fontreload='fc-cache -fv'
 alias timezsh='time zsh -ilc exit'
 
-alias copera='curl -A "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3053.3 Safari/537.36 OPR/46.0.2573.0 (Edition developer)"'
+alias operacurl='curl -A "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3053.3 Safari/537.36 OPR/46.0.2573.0 (Edition developer)"' # curl with opera user-agent
+alias ffcurl='curl -A Mozilla/5.0 (X11; Linux i686; rv:54.0) Gecko/20100101 Firefox/54.0' # curl with firefox user-agent
 
 ########### aliases #################
 # aliases para fasd

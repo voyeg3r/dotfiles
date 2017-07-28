@@ -32,6 +32,24 @@ endif
 "    autocmd VimEnter * PlugInstall | source $MYVIMRC
 "endif
 
+set viminfo=%,<800,'10,/50,:100,h,f1,n~/.viminfo
+"           | |    |   |   |    | |  + viminfo file path
+"           | |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
+"           | |    |   |   |    + disable 'hlsearch' loading viminfo
+"           | |    |   |   + command-line history saved
+"           | |    |   + search history saved
+"           | |    + files marks saved
+"           | + lines saved each register (old name for <, vi6.2)
+"           + save/restore buffer list
+
+" This syntax is better
+" set viminfo       ='100                  " previously edited files
+" set viminfo       +=/10                  " search pattern items
+" set viminfo       +=f1                   " save file marks
+" set viminfo       +=h                    " disable hlsearch
+" set viminfo       +=s10                  " maximum number of KB to save from a register
+" set viminfo +=n~/.vim/viminfo      " set viminfo file name
+
 if !exists("*VimReloadFunction")
     fun! VimReloadFunction()
         " the idea for this function happened when I realized
@@ -309,8 +327,6 @@ let mapleader = ","
 
 let no_buffers_menu=1
 
-" source: http://tilvim.com/2013/07/31/swapping-bg.html
-nmap <F7> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 set mousemodel=popup
 
@@ -360,6 +376,16 @@ au ColorScheme * highlight ExtraWhitespace guibg=red
 au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+"set background=light
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+colorscheme solarized
+" source: http://tilvim.com/2013/07/31/swapping-bg.html
+ nmap <F7> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " Create a red/red scheme
 highlight Problem ctermbg=red guibg=red

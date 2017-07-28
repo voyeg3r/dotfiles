@@ -1,20 +1,19 @@
 ### Introdução
 corta os campos de 2 a 5
 
- echo "1234566" | cut -c2-5
+     echo "1234566" | cut -c2-5
 
-exibe o campo 1
+exibe o campo 1  (-d = delimitador de campo)
 
-cut -d: -f1 < /etc/passwd
+    cut -d: -f1 < /etc/passwd
 
 O mesmo resultado com o [[awk]]
 
-awk -F: '{print $1}' /etc/passwd
+    awk -F: '{print $1}' /etc/passwd
 
 ### imprimir tudo exceto primeira coluna
 
-cut -f 2- -d " "
-
+    cut -f 2- -d " "
 
 
 Tenho um arquivo seguinte estrutura:
