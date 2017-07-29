@@ -30,7 +30,11 @@ indicada que no caso é deleção 'd'
 
 ### Criando pastas para aruqivos
 
-OBS: A listagem dos arquivos é feita com um recurso do [ZSH](zshell.md) --> `ls -1 **/*(.)`
+OBS: Se você tem uma estrutura com subdiretórios pode listar os arquivos
+com o find, no meu caso (em certas situações )
+A listagem dos arquivos é feita com um recurso do [ZSH](zshell.md) --> `ls -1 **/*(.)`
+que na prática é o equivalente a: `find -type f`
+
 
 Eu tenho uma pasta com um monte de arquivos tipo:
 
