@@ -71,7 +71,13 @@ fkill() {
 
 
 dumpwnyc () {
-    mplayer -playlist "http://www.wnyc.org/stream/wnyc-fm939/mp3.pls" -dumpstream -dumpfile wnyc-`date +%Y-%b-%d--%H.%Mhs`.mp3
+    url="http://fm939.wnyc.org/wnycfm-tunein.aac"
+    mplayer "$url" -dumpstream -dumpfile wnyc-`date +%Y-%b-%d--%H.%Mhs`.mp3
+}
+
+dumpscifi () {
+    url="http://198.178.123.2:8652/;stream/1"
+    mplayer "$url" -dumpstream -dumpfile scifi-`date +%Y-%b-%d--%H.%Mhs`.mp3
 }
 
 record(){
