@@ -31,6 +31,7 @@ indicada que no caso é deleção 'd'
 ### Criando pastas para aruqivos
 
 OBS: A listagem dos arquivos é feita com um recurso do [ZSH](zshell.md) --> `ls -1 **/*(.)`
+
 Eu tenho uma pasta com um monte de arquivos tipo:
 
     xminusone_560501_SeaLegs.mp3
