@@ -69,6 +69,7 @@ alias smolthjazz='mplayer http://us3.internet-radio.com:8007/;stream'
 alias megaton='mplayer http://us2.internet-radio.com:8443/;stream'
 alias infowars='mplayer http://50.7.79.20/;'
 alias scifioldtime='mplayer http://198.178.123.2:8652/;stream/1'
+alias amazingtale='mplayer http://rosetta.shoutca.st:8462/;stream1'
 
 # Miami International Airport (KMIA) Scanning Approach, Departure and Ground Control
 alias miami2='mplayer http://relay.broadcastify.com:80/970805198\?xan\=7C80215A2A84B01D154525F05BD80095'
