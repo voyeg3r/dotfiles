@@ -1,0 +1,42 @@
+
+function html2pdf (){
+# Last Change: sex 04 nov 2016 16:02:43 BRT
+# Proposito do script: convert html page to pdf
+
+output=output.pdf
+
+usage () {
+    echo
+    echo "-----------------------------------"
+    echo "Error: URL required"
+    echo "USAGE: ${0:t} url [file-name.pdf]"
+    echo
+    echo  "Give me a URL and output name"
+    echo "-----------------------------------"
+    echo
+    echo "press any key do exit"
+    read -r key
+    exit 1
+}
+
+
+if [ -z "$1" ] ;then
+
+    echo "Error: URL required"
+    sleep 1
+    usage
+fi
+
+
+if [ "$1"=="-h" ]; then
+    usage
+fi
+
+
+if [ -z "$2" ];then
+    output="$2"
+fi
+
+wkhtmltopdf "$1" "$output"
+
+}

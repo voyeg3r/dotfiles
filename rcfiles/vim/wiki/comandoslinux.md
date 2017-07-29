@@ -105,6 +105,7 @@
 [history](history.md)
 [hostname](hostname.md)
 [html2latex](html2latex.md)
+[[html2pdf](html2pdf.md)]
 [html2text](html2text.md)
 [hwclock](hwclock.md)
 [iconv](iconv.md)

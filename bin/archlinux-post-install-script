@@ -44,6 +44,19 @@ sudo wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysct
 # setando o muse para ser destacado com o ctrl ou não
 gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 
+yaourt html2pdf
+sudo pip install pdfkit
+# import pdfkit
+# pdfkit.from_url('http://google.com', 'out.pdf')
+
+# sudo pip install weasyprint
+#
+# python
+# >>> pdf = weasyprint.HTML('http://www.google.com').write_pdf()
+# >>> len(pdf)
+# 92059
+# >>> file('google.pdf', 'w').write(pdf)
+
 # github url shortner
 gem install git.io
 
