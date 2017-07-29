@@ -85,3 +85,6 @@
 [submodule "rcfiles/vim/bundle/vim-speeddating"]
 	path = rcfiles/vim/bundle/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating.git
+[submodule "rcfiles/zsh/custom/plugins/zsh-syntax-highlighting"]
+	path = rcfiles/zsh/custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

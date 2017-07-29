@@ -423,8 +423,10 @@ nnoremap <leader>* :let @/='\V\<'.escape(expand('<cword>'), '\').'\>'<cr>:set hl
 hi Search ctermfg=Yellow ctermbg=NONE cterm=bold,underline
 
 
+" alternate between relative number, number and no number
 set rnu nu
-nmap ,r :set rnu!<cr>
+"nmap ,r :set rnu!<cr>
+nmap ,r :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1]<cr>
 
 "  when searching next patter put it in the middle of screen
 nnoremap n nzz

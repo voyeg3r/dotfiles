@@ -101,7 +101,12 @@ ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract systemd.plugin.zsh command-not-found history-substring-search)
-plugins+=(zsh-autosuggestions zsh-autopair zsh-you-should-use)
+plugins+=(zsh-autosuggestions zsh-autopair zsh-syntax-highlighting zsh-you-should-use)
+
+# testing completions
+# https://github.com/zsh-users/zsh-completions
+plugins+=(zsh-completions)
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=brackets
 
 eval "$(fasd --init auto)"
 eval "$(fasd --init posix-alias zsh-hook)"
@@ -113,11 +118,9 @@ bindkey '^Xw' expand-word # expande variáveis
 
 for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
 
-# testing completions
-# https://github.com/zsh-users/zsh-completions
-plugins+=(zsh-completions)
-plugins+=(python)
-export PYTHONDONTWRITEBYTECODE=1
+
+# plugins+=(python)
+# export PYTHONDONTWRITEBYTECODE=1
 
 autoload -U compinit && compinit
 
