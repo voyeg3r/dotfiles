@@ -44,6 +44,12 @@ sudo wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysct
 # setando o muse para ser destacado com o ctrl ou não
 gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
 
+installcups (){
+sudo pacman -S cups cups-pdf
+sudo systemctl enable org.cups.cupsd.service
+sudo systemctl start org.cups.cupsd.service
+} && installcups
+
 yaourt html2pdf
 sudo pip install pdfkit
 # import pdfkit

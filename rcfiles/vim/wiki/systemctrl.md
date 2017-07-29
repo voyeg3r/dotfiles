@@ -5,6 +5,7 @@ Local onde ficam os serviços
 iniciar um serviço
 
   systemctrl start nignx.service
+  systemctl start org.cups.cupsd.service
 
 Enable service to start on boot time
 
