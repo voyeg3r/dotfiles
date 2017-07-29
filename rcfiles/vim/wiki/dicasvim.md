@@ -2399,6 +2399,45 @@ fun! HtmlToMarkdown()
 endfun
 command! -nargs=0 H2M :%!pandoc -f html -t markdown<CR>
 ```
+
+### Adding markdown sections
+
+``` txt
+Lets say you have lines as folows
+---------------------------------
+
+
+amixer is a command-line mixer for ALSA soundcard driver.
+
+Increase volume by 10%
+
+    amixer set 'Master' 10%+
+
+Decrease volume by 10%
+
+    amixer set 'Master' 10%-
+
+Set volume to 10%
+
+    amixer set 'Master' 10%
+
+Set volume to 80%
+
+    amixer set 'Master' 80%
+
+Shows a complete list of simple mixer controls
+
+    amixer scontrols
+
+And you want to add ### at non indented lines
+
+the command will be:
+
+
+    .,$/^[^ \t]*/### &/g
+
+```
+
 ### References
 + http://vi.stackexchange.com/q/2268/
 + http://dalibornasevic.com/posts/43-12-vim-tips

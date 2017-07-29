@@ -17,6 +17,10 @@ Github:      https://github.com/voyeg3r
 
     youtube-dl -o '%(playlist_index)s. %(title)s.%(ext)s'
 
+### pegando o link do video pra assistir no mplayer
+
+    youtubedl -g "link"
+
 ### Baixando de uma lista
 Se você tem um arquivo com as url's use:
 

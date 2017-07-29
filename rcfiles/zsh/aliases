@@ -62,6 +62,14 @@ alias chicago='mplayer http://relay.broadcastify.com:80/il_chicago_police2\?xan\
 # Listen to Air Traffic Control, used to be scripts.
 alias miami='mplayer http://relay.broadcastify.com:80/540894049\?xan\=7C80215A2A84B01D154525F05BD80095'
 
+alias flagradio='mplayer http://ice9.securenetsystems.net/WZFG'
+alias thepoint='mplayer http://icy3.abacast.com/capitalcity-wqxlam-64'
+alias adicted='mplayer http://208.77.21.33:11730/;'
+alias smolthjazz='mplayer http://us3.internet-radio.com:8007/;stream'
+alias megaton='mplayer http://us2.internet-radio.com:8443/;stream'
+alias infowars='mplayer http://50.7.79.20/;'
+alias scifioldtime='mplayer http://198.178.123.2:8652/;stream/1'
+
 # Miami International Airport (KMIA) Scanning Approach, Departure and Ground Control
 alias miami2='mplayer http://relay.broadcastify.com:80/970805198\?xan\=7C80215A2A84B01D154525F05BD80095'
 alias northLosAngelis='mplayer http://relay.broadcastify.com:80/g35bnmpf8wc2\?xan\=7C80215A2A84B01D154525F05BD80095'

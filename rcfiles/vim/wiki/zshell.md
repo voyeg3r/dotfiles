@@ -638,8 +638,10 @@ The above shortuc will put the most recent file name in command line
     zmv -W '*.md' '*.txt'
     ```
 
-### Recursively changing file extension
+### Recursively changing file extension with zmv
 + http://www.drbunsen.org/batch-file-renaming/
++ https://github.com/johan/zsh/blob/master/Functions/Misc/zmv
+
 To actually perform the file renaming run the command without the -n flag
 
     ``` zsh
@@ -662,10 +664,21 @@ To actually perform the file renaming run the command without the -n flag
     mv -- file003.txt file003.rtf
     ```
 
-The -Q flag allows hidden files to be matched along with visible files. Adding the (**/) code will cause zmv to change the file extension on all .txt files in the current directory and any text files in any sub-directories (visible or hidden).
+The -Q flag allows hidden files to be matched along with visible files. Adding
+the (**/) code will cause zmv to change the file extension on all .txt files in
+the current directory and any text files in any sub-directories (visible or
+hidden).
 
+    ``` zsh
+    zmv -w '**/*.txt' '$1$2.lis'
+    noglob zmv -W **/*.txt **/*.lis
+    ```
 
-### Remove extensio
+These are the lazy version of the one above; with -w, zsh inserts the
+parentheses for you in the search pattern, and with -W it also inserts
+the numbered variables for you in the replacement pattern.
+
+### Remove extension
 
 ``` sh
 zmv -W '*.html' '*'
@@ -706,6 +719,7 @@ zmv '(**/)(*.mkv)' '$1${(U)2:r}.${(L)2:e}' # recursive traversal
 #### Replace spaces in filenames with underline
 
     zmv '* *' '$f:gs/ /_'
+    zmv  '*' '${f// /}'
     zmv '*' '$f:s/hell/heaven/'
 
     zmv '(* *)' '${1// /}'

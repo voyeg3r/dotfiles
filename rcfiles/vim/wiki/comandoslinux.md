@@ -6,6 +6,7 @@
 [alias](alias.md)
 [alsaconf](alsaconf.md)
 [alsamixer](alsamixer.md)
+[[amixer](amixer.md)]
 [apropos](apropos.md)
 [apt](apt.md)
 [apt-build](apt-build.md)
@@ -171,6 +172,7 @@
 [oggenc](oggenc.md)
 [opencd](opencd.md)
 [pacman](pacman.md)
+[[pactl](pactl.md)]
 [passwd](passwd.md)
 [paste](paste.md)
 [perlrename](perlrename.md)
