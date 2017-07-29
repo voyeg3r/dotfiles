@@ -15,5 +15,4 @@ Github:      https://github.com/voyeg3r
 The Brian Later Show
 * http://fm939.wnyc.org/wnycfm
 
-CNN
-* http://www.cnn.com/audio/radio/cnn_us.asx
+Most of my radios is on my aliases file

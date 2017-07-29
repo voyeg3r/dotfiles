@@ -1,6 +1,8 @@
 ### Convert html pages to pdf
 + https://www.cyberciti.biz/open-source/html-to-pdf-freeware-linux-osx-windows-software/
 
+On my system i have found wkhtmltopdf so then I aliased it
+
     html2pdf https://www.cyberciti.biz/open-source/html-to-pdf-freeware-linux-osx-windows-software/ html2pdf.pdf
 
 

@@ -9,8 +9,9 @@
 
 # https://askubuntu.com/a/590030/3798
 alias python='/usr/bin/python3'
-
 alias aedit="$EDITOR $ZSH_CONFIG/aliases; source $ZSH_CONFIG/aliases"
+
+alias html2pdf='wkhtmltopdf'
 
 # source: https://www.reddit.com/r/linux/comments/3ly2zl/lpt_use_python_interpreter_as_an_advanced/
 alias calc='python3 -ic "from math import *; import cmath"'
@@ -50,6 +51,7 @@ alias xterm='xterm -fn 7x13 -fa "Liberation Mono:size=14:antialias=false"'
 
 # pipe a download file to standard output on shell
 alias wgetn='wget -O - -o /dev/null'
+alias getsinglepage='wget -E -H -k -K -nd -N -p -P pagedir'
 
 alias lynx='lynx -dump -display_charset=utf-8'
 
@@ -70,6 +72,8 @@ alias megaton='mplayer http://us2.internet-radio.com:8443/;stream'
 alias infowars='mplayer http://50.7.79.20/;'
 alias scifioldtime='mplayer http://198.178.123.2:8652/;stream/1'
 alias amazingtale='mplayer http://rosetta.shoutca.st:8462/;stream1'
+alias roswellufotalks='mplayer http://streaming.shoutcast.com/TheUFOChannel'
+alias cryptoradio='mplayer http://station.kryptonradio.com:8000/stream'
 
 # Miami International Airport (KMIA) Scanning Approach, Departure and Ground Control
 alias miami2='mplayer http://relay.broadcastify.com:80/970805198\?xan\=7C80215A2A84B01D154525F05BD80095'
