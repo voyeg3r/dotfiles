@@ -45,12 +45,23 @@ para cada uma delas
 
 A criação das pastas eu fiz assim:
 
-    ls | awk -F'[_.]' '{print $3}' | xargs mkdir
+      ``` sh
+      ls | awk -F'[_.]' '{print $3}' | xargs mkdir
+      ```
 
 Daí eu testei o comando de mover (o shell me dará só uma string)
 
       ``` sh
       ls -1 **/*(.) | sed -r 's@(.*_)([^.]*).mp3@ mv  & \2@g'
+      ```
+
+A mesma solução com o awk (as strings necessárias presicam estar entre aspas)
+
+      ``` sh
+      ls **/*(.) | awk -F'[_.]' '{print "mv " $0" "$3}' | sh
+
+      $0 ................. string inteira
+      $3 ................. corresponde ao terceiro campo "nome da pasta"
       ```
 
 Pra finalizar uso uma dica do [Aurélio Marinho Jargas](http://aurelio.net/)
@@ -60,6 +71,10 @@ basta colocar um pipe e "sh" no final da linha acima, ficando assim:
 
         ``` sh
         ls -1 **/*(.) | sed -r 's@(.*_)([^.]*).mp3@ mv  & \2@g' | sh
+
+        ls -1  ............... listagem de um por linha
+        **/*(.) .............. casa com arquivos (não pastas)
+        sed -r ............... extended regular expressions
         ```
 
 ### imprimir da segnda linha em diante
