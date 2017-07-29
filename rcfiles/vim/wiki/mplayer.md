@@ -2,6 +2,11 @@
 
     mplayer -dumpaudio NOMEDOVIDEO.avi -dumpfile NOMEDOVIDEO.mp3
 
+### Assistir online stream e gravar ao mesmo tempo
++ https://shkspr.mobi/blog/2011/11/watching-and-simultaneously-saving-video-in-mplayer/
+
+    wget -O - http://site.com/video.avi | tee -ai cameravideo.avi | mplayer -cache 8192 -cache-min 1
+
 ### Extrair audio de dvd
 Abra um terminal e digite
 
