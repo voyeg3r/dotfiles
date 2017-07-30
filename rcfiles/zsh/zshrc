@@ -1,23 +1,3 @@
-# have a look: https://github.com/joshtronic/dotfiles/blob/master/zshrc
-# Path to your oh-my-zsh installation.
-export ZSH="${HOME}/.dotfiles/oh-my-zsh"
-
-[[ -d $HOME/.gem/ruby/2.3.0/bin ]] && PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
-
-# sources:
-# https://codegists.com/code/fasd/
-# http://www.inmotionhosting.com/support/website/ssh/speed-up-grep-searches-with-lc-all
-function add_locale() {
-    if [[ -z "$($GREP __LC_CTYPE $RC)" ]]; then
-        cat >>$RC <<HERE
-
-        # __LC_CTYPE
-        export LC_CTYPE=\$LANG
-HERE
-    fi
-}
-
-
 # 10ms for key sequences
 KEYTIMEOUT=1
 
@@ -32,9 +12,7 @@ ZSH_THEME="bira"
 
 setopt COMPLETE_ALIASES # complete aliases before executing
 setopt NO_FLOW_CONTROL # deactvates XOFF
-setopt COMPLETE_ALIASES
 setopt INTERACTIVE_COMMENTS # allow inline comments like this one
-# allow inline comments like this one
 setopt HIST_VERIFY
 setopt PROMPT_BANG # enables '!' substituition on prompt
 setopt INC_APPEND_HISTORY
@@ -61,7 +39,7 @@ DISABLE_AUTO_UPDATE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -92,14 +70,19 @@ bindkey '^i' expand-or-complete-prefix
 
 bindkey '^Xw' expand-word # expande variáveis
 
-for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
+for f in ${DOTFILES}/rcfiles/zsh/functions/*(.N); source $f
 
 # plugins+=(python)
 # export PYTHONDONTWRITEBYTECODE=1
 
-
+# https://gist.github.com/ctechols/ca1035271ad134841284
+# source: https://www.snip2code.com/Snippet/778271/Speed-up-zsh-compinit-by-only-checking-c
 autoload -Uz compinit
-compinit
+if [[ $(date +'%j') > $(date +'%j' -r "${ZDOTDIR:-${HOME}}/.zcompdump") ]] ; then
+	compinit;
+else
+	compinit -C;
+fi;
 
 setopt complete_in_word
 
@@ -169,7 +152,6 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 #zstyle ':completion::prefix:::' completer _complete
 zstyle ':completion::*:::' completer _complete _prefix
 
-
 zstyle ':completion:*:warnings' format 'Too bad there is nothing'
 
 # You may need to manually set your language environment
@@ -186,9 +168,9 @@ zstyle ':completion:*:warnings' format 'Too bad there is nothing'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-source ~/.dotfiles/rcfiles/zsh/aliases
+source $DOTFILES/rcfiles/zsh/aliases
 
-current_wallpaper=$(gsettings get org.gnome.desktop.background picture-uri | sed 's,file:///,/,g' )
+# current_wallpaper=$(gsettings get org.gnome.desktop.background picture-uri | sed 's,file:///,/,g' )
 
 # emacs mode
 bindkey -e
@@ -205,41 +187,37 @@ bindkey '\eb' push-line-or-edit
 # don't try to type ^G instead use Ctrl-v Ctrl-g
 bindkey -s '' ' | grep '
 
-insert-history-line() {
-LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
-}
-zle -N insert-history-line insert-history-line
-bindkey '^[e' insert-history-line
-
-insert-history-line() {
-LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
-}
-zle -N insert-history-line insert-history-line
-bindkey '^[e' insert-history-line
+# insert-history-line() {
+# LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
+# }
+# zle -N insert-history-line insert-history-line
+# # press alt-e para inserir o ultimo comando $(assim)
+# bindkey '^[e' insert-history-line
 
 # allows me to bring vim back atter pressing ctrl-z
 # by pressint it agaia
 # source http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-fancy-ctrl-z () {
-if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-else
-    zle push-input
-    zle clear-screen
-fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
 
-# getting git status
-function _git-status {
-zle kill-whole-line
-zle -U "git status"
-zle accept-line
-}
-zle -N _git-status
-bindkey '\eg' _git-status
+# fancy-ctrl-z () {
+# if [[ $#BUFFER -eq 0 ]]; then
+#     BUFFER="fg"
+#     zle accept-line
+# else
+#     zle push-input
+#     zle clear-screen
+# fi
+# }
+# zle -N fancy-ctrl-z
+# bindkey '^Z' fancy-ctrl-z
+
+# # getting git status
+# function _git-status {
+# zle kill-whole-line
+# zle -U "git status"
+# zle accept-line
+# }
+# zle -N _git-status
+# bindkey '\eg' _git-status
 
 # history search
 # see: http://stackoverflow.com/questions/14040351/filtering-zsh-history-by-command
@@ -271,14 +249,16 @@ bindkey '\eg' _git-status
 #bindkey '^[o' cursor-after-first-word
 
 # Inserts 'sudo ' at the beginning of the line.
-function prepend-sudo {
-  if [[ "$BUFFER" != su(do|)\ * ]]; then
-    BUFFER="sudo $BUFFER"
-    (( CURSOR += 5 ))
-  fi
-}
-zle -N prepend-sudo
-bindkey '^Xs' prepend-sudo
+stty ixany
+
+# function prepend-sudo {
+#   if [[ "$BUFFER" != su(do|)\ * ]]; then
+#     BUFFER="sudo $BUFFER"
+#     (( CURSOR += 5 ))
+#   fi
+# }
+# zle -N prepend-sudo
+# bindkey '^Xs' prepend-sudo
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
@@ -291,7 +271,6 @@ globalias() {
     fi
     zle self-insert
 }
-
 zle -N globalias
 
 bindkey ' ' globalias                # expande aliases globais
@@ -307,11 +286,11 @@ bindkey '^X ' magic-space            # control-space to bypass completion
 # should probably write meta-E?) insert the previous line
 # between $().
 
-insert-history-line() {
-    LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
-}
-zle -N insert-history-line insert-history-line
-bindkey '^[e' insert-history-line
+# insert-history-line() {
+#     LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
+# }
+# zle -N insert-history-line insert-history-line
+# bindkey '^[e' insert-history-line
 
 # quote pasted URLs
 # it seems kind of uncompatible with substring-search
@@ -330,19 +309,14 @@ bindkey '^X^F' fasd-complete-f
 bindkey '^X^D' fasd-complete-d
 
 # http://stackoverflow.com/a/13614816/2571881
+# very very useful
 autoload -Uz history-beginning-search-menu
 zle -N history-beginning-search-menu
-bindkey '^h' history-beginning-search-menu
+bindkey '' history-beginning-search-menu
 
-# firefox improviments
-# disalbe rendering fonts in firefox to free memory
-export MOZ_DISABLE_PANGO='1'
-export OOO_FORCE_DESKTOP=gnome # For OpenOffice to look more gtk-friendly.
 
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
 # --hidden: Search hidden files and folders
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-
-GNOME_VERSION=$(gnome-shell --version)

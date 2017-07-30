@@ -101,6 +101,10 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export VIMDOTDIR="$XDG_CONFIG_HOME/vim"
 ```
 
+### Adicionando uma linha ao histórico do zsh sem rodar o comando
+
+    print -S "echo esta linha vai pro histórico"
+
 ### What files run when you start a ZSH login shell?
 + https://kev.inburke.com/kevin/profiling-zsh-startup-time/
 

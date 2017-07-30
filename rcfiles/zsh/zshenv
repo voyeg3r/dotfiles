@@ -12,23 +12,24 @@
 
 EDITOR=vim
 # PAGER
-# ZDOTDIR=~/.dotfiles
 
 export LANG="pt_BR.UTF-8"
 export LANGUAGE="pt_BR:pt:pt_PT"
 export LC_ALL="pt_BR.UTF-8"
 
-export XDG_CONFIG_HOME="$HOME/.config"
-export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+#export XDG_CONFIG_HOME="$HOME/.config"
+#export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+
+export DOTFILES="$HOME/.dotfiles"
 export XDG_CACHE_HOME="$HOME/.cache"
-export ZSH_CONFIG=~/.dotfiles/rcfiles/zsh
+export ZSH_CONFIG="$DOTFILES/rcfiles/zsh"
 
 # Path to your oh-my-zsh installation.
-export ZSH="${ZDOTDIR}/zsh/oh-my-zsh"
+export ZSH="${DOTFILES}/oh-my-zsh"
 
 # python environment
 #export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup
-export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup-new
+export PYTHONSTARTUP="${DOTFILES}/rcfiles/python/pythonstartup-new"
 export PYTHON_HISTORY_FILE=~/.python_history
 
 ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
@@ -42,5 +43,6 @@ skip_global_compinit=1
 export PATH="/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 cdpath=(. .. ~/Desktop ~/.dotfiles/bin ~/.config/zsh ~/docs ~/docs/img ~/tmp ~/videos)
 
-path=(~/.dotfiles/bin $path[@])
+path=(${DOTFILES}/bin $path[@])
 typeset -U path cdpath fpath manpath
+
