@@ -81,7 +81,7 @@ ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract systemd.plugin.zsh command-not-found history-substring-search)
-plugins+=(zsh-autosuggestions zsh-autopair zsh-you-should-use)
+plugins+=(zsh-autosuggestions zsh-autopair)
 
 # testing completions
 # https://github.com/zsh-users/zsh-completions
@@ -97,8 +97,9 @@ for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
 # plugins+=(python)
 # export PYTHONDONTWRITEBYTECODE=1
 
-#autoload -U compinit && compinit
+
 autoload -Uz compinit
+compinit
 
 setopt complete_in_word
 
@@ -112,7 +113,7 @@ alias mmv='noglob zmv -W'
 # In Zsh ^W removes words delimited by whitespace. We are working in shell here though,
 # this should be more fine-grained. I like how it behave in b#ash - slashes,
 # dots and few other things are treated as delimiters too. You can achieve this behaviour in Zsh by simply:
-autoload -U select-word-style
+autoload -Uz select-word-style
 select-word-style bash
 
 # User configuration
@@ -126,6 +127,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
+setopt NO_BEEP
 
 source $ZSH/oh-my-zsh.sh
 

@@ -57,6 +57,46 @@ There are five startup files that zsh will read commands from:
     zinfo(){info --index-search=$1 zsh} *N*
 
 
+What are the step to move all your dotfiles into XDG directories?
++ https://superuser.com/a/874924/45032
+
+The variable $XDG_CONFIG_HOME must be used to this task
+
+    echo $XDG_CONFIG_HOME
+    /home/sergio/.config
+
+ ``` markdown
+ One may edit /etc/zsh/zshenv to set `$XDG_CONFIG_HOME` directories and `$ZDOTDIR`. This require write privilegies on this files though.
+ ```
+
+    export ZDOTDIR="$XDG_CONFIG_HOME/zsh/"
+
+Other config would be placed on it...
+
+``` sh
+# gnupg
+export GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
+
+# ICEauthority
+export ICEAUTHORITY=${XDG_CACHE_HOME}/ICEauthority
+
+#  less
+export LESSHISTFILE="${XDG_CONFIG_HOME}/less/history"
+export LESSKEY="${XDG_CONFIG_HOME}/less/keys"
+
+
+
+# mplayer
+export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
+
+# subversion
+export SUBVERSION_HOME=$XDG_CONFIG_HOME/subversion
+
+
+# vim
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+export VIMDOTDIR="$XDG_CONFIG_HOME/vim"
+```
 
 ### What files run when you start a ZSH login shell?
 + https://kev.inburke.com/kevin/profiling-zsh-startup-time/
