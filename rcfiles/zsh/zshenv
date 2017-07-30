@@ -12,15 +12,31 @@
 
 EDITOR=vim
 # PAGER
-# ZDOTDIR
+# ZDOTDIR=~/.dotfiles
+
+export LANG="pt_BR.UTF-8"
+export LANGUAGE="pt_BR:pt:pt_PT"
+export LC_ALL="pt_BR.UTF-8"
+
+XDG_CONFIG_HOME="$HOME/.config"
+XDG_CACHE_HOME="$HOME/.cache"
+ZSH_CONFIG=~/.dotfiles/rcfiles/zsh
+
+# python environment
+#export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup
+export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup-new
+export PYTHON_HISTORY_FILE=~/.python_history
+
+ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
+# mkdir -p ${ZSH_CACHE_DIR}
 
 #references:
 # https://github.com/robbyrussell/oh-my-zsh/pull/269
 # source: http://blog.patshead.com/2011/04/improve-your-oh-my-zsh-startup-time-maybe.html
 skip_global_compinit=1
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp ~/videos)
+export PATH="/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+cdpath=(. .. ~/Desktop ~/.dotfiles/bin ~/docs ~/docs/img ~/tmp ~/videos)
 
+path=(~/.dotfiles/bin $path[@])
 typeset -U path cdpath fpath manpath
-path=(~/bin $path[@])

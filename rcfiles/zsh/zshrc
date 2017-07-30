@@ -1,28 +1,8 @@
+# have a look: https://github.com/joshtronic/dotfiles/blob/master/zshrc
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.dotfiles/oh-my-zsh"
 
 [[ -d $HOME/.gem/ruby/2.3.0/bin ]] && PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
-
-
-if [[ $TERM == xterm-termite ]]; then
-    . /etc/profile.d/vte.sh
-    __vte_osc7
-fi
-
-
-#[ -d ~/bin ] && PATH=~/bin:$PATH &&  export PATH
-typeset -U path
-[ -d ~/bin ] && PATH=~/bin:$PATH && export PATH
-
-XDG_CONFIG_HOME="$HOME/.config"
-XDG_CACHE_HOME="$HOME/.cache"
-
-
-ZSH_CONFIG=~/.dotfiles/rcfiles/zsh
 
 # sources:
 # https://codegists.com/code/fasd/
@@ -101,15 +81,11 @@ ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git fasd extract systemd.plugin.zsh command-not-found history-substring-search)
-plugins+=(zsh-autosuggestions zsh-autopair zsh-syntax-highlighting zsh-you-should-use)
+plugins+=(zsh-autosuggestions zsh-autopair zsh-you-should-use)
 
 # testing completions
 # https://github.com/zsh-users/zsh-completions
 plugins+=(zsh-completions)
-ZSH_HIGHLIGHT_HIGHLIGHTERS+=brackets
-
-eval "$(fasd --init auto)"
-eval "$(fasd --init posix-alias zsh-hook)"
 
 # trying to expand gudo at the begining
 bindkey '^i' expand-or-complete-prefix
@@ -118,16 +94,15 @@ bindkey '^Xw' expand-word # expande variáveis
 
 for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
 
-
 # plugins+=(python)
 # export PYTHONDONTWRITEBYTECODE=1
 
-autoload -U compinit && compinit
+#autoload -U compinit && compinit
+autoload -Uz compinit
 
 setopt complete_in_word
 
 autoload -U zmv
-autoload zmv
 alias zmv='noglob zmv'
 alias zcp='noglob zmv -C'
 alias zln='noglob zmv -L'
@@ -140,7 +115,6 @@ alias mmv='noglob zmv -W'
 autoload -U select-word-style
 select-word-style bash
 
-
 # User configuration
 # export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
 export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:[bf]g"
@@ -152,10 +126,6 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
-
-export LANG="pt_BR.UTF-8"
-export LANGUAGE="pt_BR:pt:pt_PT"
-export LC_ALL="pt_BR.UTF-8"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -183,7 +153,6 @@ zstyle ':completion:*:approximate:*' max-errors 1 numeric
 zstyle -e ':completion:*:approximate:*' \
     max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
 
-
 zstyle ':completion:*:*:cd:*' ignored-patterns '(*/|)(CVS|SCCS)'
 zstyle ':completion::*:(cvs-add|less|rm|vi):*' ignore-line true
 zstyle ':completion:*' ignore-parents parent pwd
@@ -201,19 +170,8 @@ zstyle ':completion::*:::' completer _complete _prefix
 
 zstyle ':completion:*:warnings' format 'Too bad there is nothing'
 
-ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
-mkdir -p ${ZSH_CACHE_DIR}
-
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-#if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='vim'
-#else
-#export EDITOR='mvim'
-#fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -385,12 +343,4 @@ export OOO_FORCE_DESKTOP=gnome # For OpenOffice to look more gtk-friendly.
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden  --follow --glob "!.git/*"'
-
 GNOME_VERSION=$(gnome-shell --version)
-
-# python environment
-#export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup
-export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup-new
-export PYTHON_HISTORY_FILE=~/.python_history
-export LC_TIME=us_US.UTF-8

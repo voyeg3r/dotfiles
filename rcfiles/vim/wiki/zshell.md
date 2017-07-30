@@ -27,6 +27,17 @@ Github:      https://github.com/voyeg3r
 + https://raw.githubusercontent.com/sorin-ionescu/prezto/28a20b48e652a01216a6c3dd76e6324d76c12def/modules/editor/init.zsh
 + https://coderwall.com/t/zsh/popular
 
+### zsh startup file
++ http://zsh.sourceforge.net/Intro/intro_3.html
+
+There are five startup files that zsh will read commands from:
+
+    $ZDOTDIR/.zshenv
+    $ZDOTDIR/.zprofile
+    $ZDOTDIR/.zshrc
+    $ZDOTDIR/.zlogin
+    $ZDOTDIR/.zlogout
+
 ### manuals
 
     man zsh          Zsh overview
