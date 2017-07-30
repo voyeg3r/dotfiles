@@ -69,7 +69,10 @@ The variable $XDG_CONFIG_HOME must be used to this task
  One may edit /etc/zsh/zshenv to set `$XDG_CONFIG_HOME` directories and `$ZDOTDIR`. This require write privilegies on this files though.
  ```
 
-    export ZDOTDIR="$XDG_CONFIG_HOME/zsh/"
+    ``` sh
+    export XDG_CONFIG_HOME="${HOME}/.config"
+    export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+    ```
 
 Other config would be placed on it...
 
@@ -769,12 +772,20 @@ zmv '(**/)(*.mkv)' '$1${(U)2:r}.${(L)2:e}' # recursive traversal
 
 #### Replace spaces in filenames with underline
 
+    ``` zsh
+    zmv '(*)_(*)' '$1-$2'
+    zmv '(*_*)' '${1//_/-}'
+    zmv '(* *)' '${1// /}'
+    zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
+
+Other stuff
+
+    zmv '(*)' '${(U)1}'
     zmv '* *' '$f:gs/ /_'
     zmv  '*' '${f// /}'
     zmv '*' '$f:s/hell/heaven/'
 
-    zmv '(* *)' '${1// /}'
-    zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
+    ```
 
 #### Change the suffix from *.sh to *.pl
 
