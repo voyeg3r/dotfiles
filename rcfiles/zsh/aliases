@@ -48,6 +48,7 @@ alias ze='vim ~/.zshrc'
 alias zr='source ~/.zshrc'
 alias ne='nvim ~/.config/init.vim'
 alias xterm='xterm -fn 7x13 -fa "Liberation Mono:size=14:antialias=false"'
+alias zdot='cd $ZDOTDIR'
 
 # pipe a download file to standard output on shell
 alias wgetn='wget -O - -o /dev/null'

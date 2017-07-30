@@ -15,6 +15,17 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### Editing .viminfo file
++ https://stackoverflow.com/a/2833376/2571881
+
+    Open the .viminfo file in vim,
+
+`:set viminfo=` to turn off the auto-saving of info to the `.viminfo` file. If
+you don't do this, Vim will overwrite all your changes when you quit,
+
+Remove everything you don't want (perhaps by using Johnsyweb's answer, or just
+by deleting the lines with manual edit commands), save the file, and quit vim,
+
 ### Switch from visual to insert mode
 
     ^I .............. starts insert mode at the beginin
