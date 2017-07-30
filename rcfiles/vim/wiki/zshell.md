@@ -101,6 +101,31 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export VIMDOTDIR="$XDG_CONFIG_HOME/vim"
 ```
 
+### Adicionando um tema ao zsh quase puro
+
+There is a quick and easy way to set up a colored prompt in Zsh. Make sure that
+prompt theme system is set to autoload in .zshrc. This can be done by adding
+these lines to:
+
+``` zsh
+~/.zshrc
+
+autoload -Uz promptinit
+promptinit
+
+Available prompt themes are listed by running the command:
+
+# $ prompt -l
+
+For example, to use the walters theme, enter:
+
+$ prompt walters
+
+To preview all available themes, use this command:
+
+$ prompt -p
+```
+
 ### Adicionando uma linha ao histórico do zsh sem rodar o comando
 
     print -S "echo esta linha vai pro histórico"

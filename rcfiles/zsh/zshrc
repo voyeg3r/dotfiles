@@ -7,7 +7,7 @@ KEYTIMEOUT=1
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="agnoster"
 ZSH_THEME="bira"
-#ZSH_THEME="muse"
+# ZSH_THEME="pure"
 #ZSH_THEME="kphoen"
 
 setopt COMPLETE_ALIASES # complete aliases before executing
@@ -64,6 +64,8 @@ plugins+=(zsh-autosuggestions zsh-autopair)
 # testing completions
 # https://github.com/zsh-users/zsh-completions
 plugins+=(zsh-completions)
+
+# fpath+=($DOTFILES/rcfiles/zsh/custom/themes/pure $fpath )
 
 # trying to expand gudo at the begining
 bindkey '^i' expand-or-complete-prefix
