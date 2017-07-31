@@ -137,6 +137,7 @@ To again go back to the most recent commit
     git pull
 
 ### Pegar um arquivo de um determinado commit
++ https://stackoverflow.com/a/610216/2571881
 
     git show a873e510a2c1c5618f32426e3623ade8e63e75f0:rcfiles/zsh/zshrc > ~/zsh-backup
 
