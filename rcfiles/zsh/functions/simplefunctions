@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 # functions
+#
+
 today(){date +%d-%m-%Y ;}
 now(){ date +%H:%M;}
 mktbz () { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/";}
@@ -30,7 +32,7 @@ bindkey '^Z' foreground-vi
 
 youtube-mp3 () {
 # get mp3 from youtube
-    command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames --extract-audio --audio-format=mp3 --audio-quality 320k "${1}"
+  command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames --extract-audio --audio-format=mp3 --audio-quality 320k "${1}"
         [[ $? = 1 ]] && echo "instale o programa ffmpeg para poder converter para mp3"
 }
 
@@ -72,10 +74,10 @@ record(){
 
 
 # source: http://stackoverflow.com/questions/35524958/push-local-git-repo-with-sub-repos-vim
-make-github-submodule () {
-    git config -f .gitmodules submodule.$1.path $1
-        git config -f .gitmodules submodule.$1.url https://github.com/$2.git
-}
+# make-github-submodule () {
+#     git config -f .gitmodules submodule.$1.path $1
+#         git config -f .gitmodules submodule.$1.url https://github.com/$2.git
+# }
 
 
 background() {
@@ -83,10 +85,10 @@ background() {
 }
 
 # como quase nunca uso Ctrl-s linkey ele com o sudo
-add_sudo (){
-		prefix="sudo"
-		BUFFER="$prefix $BUFFER"
-		CURSOR=$(($CURSOR + $#prefix + 1))
-}
-zle -N add_sudo
-bindkey "^s" add_sudo
+# add_sudo (){
+# 		prefix="sudo"
+# 		BUFFER="$prefix $BUFFER"
+# 		CURSOR=$(($CURSOR + $#prefix + 1))
+# }
+# zle -N add_sudo
+# bindkey "^s" add_sudo

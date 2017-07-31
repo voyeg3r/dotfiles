@@ -10,6 +10,9 @@ ZSH_THEME="bira"
 #ZSH_THEME="muse"
 #ZSH_THEME="kphoen"
 
+# beeps are annoying
+setopt NO_BEEP
+
 setopt COMPLETE_ALIASES # complete aliases before executing
 setopt NO_FLOW_CONTROL # deactvates XOFF
 setopt COMPLETE_ALIASES
@@ -60,7 +63,7 @@ ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract systemd.plugin.zsh command-not-found history-substring-search)
+plugins=(git fasd extract history-substring-search)
 plugins+=(zsh-autosuggestions zsh-autopair zsh-you-should-use)
 
 eval "$(fasd --init auto)"
@@ -81,7 +84,9 @@ export PYTHONDONTWRITEBYTECODE=1
 
 # https://gist.github.com/ctechols/ca1035271ad134841284
 # source: https://www.snip2code.com/Snippet/778271/Speed-up-zsh-compinit-by-only-checking-c
-autoload -Uz compinit
+
+skip_global_compinit=1
+autoload -Uz compinit -d $ZSH_COMPDUMP
 if [[ -n ${ZDOTDIR:-${HOME}}/$ZSH_COMPDUMP(#qN.mh+24) ]]; then
 	compinit -d $ZSH_COMPDUMP;
 else
@@ -353,10 +358,7 @@ bindkey '' history-beginning-search-menu
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden  --follow --glob "!.git/*"'
+#export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden  --follow --glob "!.git/*"'
 
 
-# python environment
-#export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup
-export PYTHONSTARTUP="${DOTFILES}/rcfiles/python/pythonstartup-new"
-export PYTHON_HISTORY_FILE=~/.python_history
+typeset -U path cdpath fpath manpath

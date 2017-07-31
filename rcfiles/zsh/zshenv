@@ -20,12 +20,11 @@ EDITOR=vim
 skip_global_compinit=1
 
 
+export DOTFILES="${HOME}/.dotfiles"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-cdpath=(. .. ~/Desktop ~/bin ~/docs ~/docs/img ~/tmp ~/videos)
+cdpath=(. .. ~/Desktop ~/.dotfiles/bin ~/docs ~/docs/img ~/tmp ~/videos)
 
-path=(~/bin $path[@])
-
-DOTFILES="${HOME}/.dotfiles"
+path=( $DOTFILES/bin $path[@])
 
 # Path to your oh-my-zsh installation.
 export ZSH="${DOTFILES}/oh-my-zsh"
@@ -33,6 +32,11 @@ export ZSH_CONFIG="${DOTFILES}/rcfiles/zsh"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
+
+# python environment
+#export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup
+export PYTHONSTARTUP="${DOTFILES}/rcfiles/python/pythonstartup-new"
+export PYTHON_HISTORY_FILE=~/.python_history
 
 typeset -U path cdpath fpath manpath
 

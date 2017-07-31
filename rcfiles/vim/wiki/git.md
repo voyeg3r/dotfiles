@@ -139,6 +139,12 @@ To again go back to the most recent commit
 ### Pegar um arquivo de um determinado commit
 + https://stackoverflow.com/a/610216/2571881
 
+English Title: How to retrieve a single file from specific revision in Git?
+
+If you are without Internet you can use `git log` to find out
+which revision you want to retrive
+
+
     git show a873e510a2c1c5618f32426e3623ade8e63e75f0:rcfiles/zsh/zshrc > ~/zsh-backup
 
     git show a873e510a2c1c5618f32426e3623ade8e63e75f0:rcfiles/zsh/zshrc | vim -
