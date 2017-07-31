@@ -63,7 +63,7 @@ ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract history-substring-search)
+plugins=(git fasd zsh-completions extract history-substring-search)
 plugins+=(zsh-autosuggestions zsh-autopair zsh-you-should-use)
 
 eval "$(fasd --init auto)"
@@ -227,17 +227,17 @@ bindkey '\eb' push-line-or-edit
 # don't try to type ^G instead use Ctrl-v Ctrl-g
 bindkey -s '' ' | grep '
 
-# insert-history-line() {
-# LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
-# }
-# zle -N insert-history-line insert-history-line
-# bindkey '^[e' insert-history-line
+insert-history-line() {
+LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
+}
+zle -N insert-history-line insert-history-line
+bindkey '^[e' insert-history-line
 
-# insert-history-line() {
-# LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
-# }
-# zle -N insert-history-line insert-history-line
-# bindkey '^[e' insert-history-line
+insert-history-line() {
+LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
+}
+zle -N insert-history-line insert-history-line
+bindkey '^[e' insert-history-line
 
 # allows me to bring vim back atter pressing ctrl-z
 # by pressint it agaia
@@ -351,14 +351,13 @@ autoload -Uz history-beginning-search-menu
 zle -N history-beginning-search-menu
 bindkey '' history-beginning-search-menu
 
-
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
 # --hidden: Search hidden files and folders
 # --follow: Follow symlinks
 # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 
-#export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden  --follow --glob "!.git/*"'
-
-
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden  --follow --glob "!.git/*"'
 typeset -U path cdpath fpath manpath
+
+

@@ -149,5 +149,12 @@ which revision you want to retrive
 
     git show a873e510a2c1c5618f32426e3623ade8e63e75f0:rcfiles/zsh/zshrc | vim -
 
+### visualizing your git tree
 
+    git log --graph --oneline --branches
+    git --no-pager log --graph --oneline --branches
 
+    [alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+    the option `--no-pager` allows you to pipe the log
