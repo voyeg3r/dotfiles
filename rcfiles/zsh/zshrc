@@ -1,43 +1,3 @@
-# Path to your oh-my-zsh installation.
-export ZSH="${HOME}/.dotfiles/oh-my-zsh"
-
-[[ -d $HOME/.gem/ruby/2.3.0/bin ]] && PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
-
-
-if [[ $TERM == xterm-termite ]]; then
-    . /etc/profile.d/vte.sh
-    __vte_osc7
-fi
-
-
-#[ -d ~/bin ] && PATH=~/bin:$PATH &&  export PATH
-typeset -U path
-[ -d ~/bin ] && PATH=~/bin:$PATH && export PATH
-
-XDG_CONFIG_HOME="$HOME/.config"
-XDG_CACHE_HOME="$HOME/.cache"
-
-
-ZSH_CONFIG=~/.dotfiles/rcfiles/zsh
-
-# sources:
-# https://codegists.com/code/fasd/
-# http://www.inmotionhosting.com/support/website/ssh/speed-up-grep-searches-with-lc-all
-function add_locale() {
-    if [[ -z "$($GREP __LC_CTYPE $RC)" ]]; then
-        cat >>$RC <<HERE
-
-        # __LC_CTYPE
-        export LC_CTYPE=\$LANG
-HERE
-    fi
-}
-
-
 # 10ms for key sequences
 KEYTIMEOUT=1
 
@@ -111,7 +71,7 @@ bindkey '^i' expand-or-complete-prefix
 
 bindkey '^Xw' expand-word # expande variáveis
 
-for f in $HOME/.dotfiles/rcfiles/zsh/functions/*(.N); source $f
+for f in ${DOTFILES}/rcfiles/zsh/functions/*(.N); source $f
 
 # testing completions
 # https://github.com/zsh-users/zsh-completions
@@ -223,8 +183,6 @@ zstyle ':completion::*:::' completer _complete _prefix
 zstyle ':completion:*:warnings' format 'Too bad there is nothing'
 
 ZSH_CACHE_DIR=${HOME}/.zsh.d/cache
-mkdir -p ${ZSH_CACHE_DIR}
-
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -247,9 +205,7 @@ export EDITOR='vim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-source ~/.dotfiles/rcfiles/zsh/aliases
-
-current_wallpaper=$(gsettings get org.gnome.desktop.background picture-uri | sed 's,file:///,/,g' )
+source "$DOTFILES/rcfiles/zsh/aliases"
 
 # emacs mode
 bindkey -e
@@ -266,32 +222,32 @@ bindkey '\eb' push-line-or-edit
 # don't try to type ^G instead use Ctrl-v Ctrl-g
 bindkey -s '' ' | grep '
 
-insert-history-line() {
-LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
-}
-zle -N insert-history-line insert-history-line
-bindkey '^[e' insert-history-line
+# insert-history-line() {
+# LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
+# }
+# zle -N insert-history-line insert-history-line
+# bindkey '^[e' insert-history-line
 
-insert-history-line() {
-LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
-}
-zle -N insert-history-line insert-history-line
-bindkey '^[e' insert-history-line
+# insert-history-line() {
+# LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
+# }
+# zle -N insert-history-line insert-history-line
+# bindkey '^[e' insert-history-line
 
 # allows me to bring vim back atter pressing ctrl-z
 # by pressint it agaia
 # source http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-fancy-ctrl-z () {
-if [[ $#BUFFER -eq 0 ]]; then
-    BUFFER="fg"
-    zle accept-line
-else
-    zle push-input
-    zle clear-screen
-fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
+# fancy-ctrl-z () {
+# if [[ $#BUFFER -eq 0 ]]; then
+#     BUFFER="fg"
+#     zle accept-line
+# else
+#     zle push-input
+#     zle clear-screen
+# fi
+# }
+# zle -N fancy-ctrl-z
+# bindkey '^Z' fancy-ctrl-z
 
 # getting git status
 function _git-status {
@@ -332,14 +288,14 @@ bindkey '\eg' _git-status
 #bindkey '^[o' cursor-after-first-word
 
 # Inserts 'sudo ' at the beginning of the line.
-function prepend-sudo {
-  if [[ "$BUFFER" != su(do|)\ * ]]; then
-    BUFFER="sudo $BUFFER"
-    (( CURSOR += 5 ))
-  fi
-}
-zle -N prepend-sudo
-bindkey '^Xs' prepend-sudo
+# function prepend-sudo {
+#   if [[ "$BUFFER" != su(do|)\ * ]]; then
+#     BUFFER="sudo $BUFFER"
+#     (( CURSOR += 5 ))
+#   fi
+# }
+# zle -N prepend-sudo
+# bindkey '^Xs' prepend-sudo
 
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
@@ -368,11 +324,6 @@ bindkey '^X ' magic-space            # control-space to bypass completion
 # should probably write meta-E?) insert the previous line
 # between $().
 
-insert-history-line() {
-    LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
-}
-zle -N insert-history-line insert-history-line
-bindkey '^[e' insert-history-line
 
 # quote pasted URLs
 # it seems kind of uncompatible with substring-search
@@ -393,12 +344,8 @@ bindkey '^X^D' fasd-complete-d
 # http://stackoverflow.com/a/13614816/2571881
 autoload -Uz history-beginning-search-menu
 zle -N history-beginning-search-menu
-bindkey '^h' history-beginning-search-menu
+bindkey '' history-beginning-search-menu
 
-# firefox improviments
-# disalbe rendering fonts in firefox to free memory
-export MOZ_DISABLE_PANGO='1'
-export OOO_FORCE_DESKTOP=gnome # For OpenOffice to look more gtk-friendly.
 
 # --files: List files that would be searched but do not search
 # --no-ignore: Do not respect .gitignore, etc...
@@ -408,10 +355,8 @@ export OOO_FORCE_DESKTOP=gnome # For OpenOffice to look more gtk-friendly.
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden  --follow --glob "!.git/*"'
 
-GNOME_VERSION=$(gnome-shell --version)
 
 # python environment
 #export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup
-export PYTHONSTARTUP=~/.dotfiles/rcfiles/python/pythonstartup-new
+export PYTHONSTARTUP="${DOTFILES}/rcfiles/python/pythonstartup-new"
 export PYTHON_HISTORY_FILE=~/.python_history
-export LC_TIME=us_US.UTF-8

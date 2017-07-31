@@ -802,6 +802,12 @@ solução
 
 awk '{printf("%s%s", $0, (NR%5 ? " " : "\n"))}'
 
+### Imprimir o penúltimo campo
+
+    REPO=https://github.com/voyeg3r/dotfiles.git
+    REPONAME=`echo $REPO | awk -F'[/.]' '{print $(NF-1)}'`
+    echo $REPONAME
+    dotfiles
 
 ### Referências
 * http://br.geocities.com/cesarakg/awk-1.html

@@ -124,7 +124,11 @@ If you decide you didn't want to revert after all, you can revert the revert (as
 You may also find this answer helpful in this case:
 How to move HEAD back to a previous location? (Detached head)
 
-### Clonar em um commit específico
+
+### Reverter para um comit específico clonando o mesmo
+
+
+
 
     git clone $URL
     cd $PROJECT_NAME
@@ -133,4 +137,44 @@ How to move HEAD back to a previous location? (Detached head)
 To again go back to the most recent commit
 
     git pull
+
+
+    script para resetar para um comit específico
+
+``` sh
+#!/usr/bin/env bash
+
+clonerevision(){
+REPO=https://github.com/voyeg3r/dotfiles.git
+REPONAME=`echo $REPO | awk -F'[/.]' '{print )$(NF-1)}'`
+
+echo "Clonando o repositório $REPO"
+git clone "$REPO"
+echo "Entrando em $REPONAME"
+cd $REPONAME
+
+if [ -z "$1" ]; then
+    echo: Usando: Área de transferência como parametro
+    echo: "valor: $(xclip -selection clipboard -o)"
+
+    read -r -p "Deseja prosseguir? [Y/n]: " response
+    response=${response,,} # tolower
+    if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+        git reset --hard $(xclip -selection clipboard -o)
+    fi
+
+else
+    echo "O parametro passado foi"
+    echo "$1"
+    read -r -p "Deseja prosseguir? [Y/n]: " response
+    response=${response,,} # tolower
+    if [[ $response =~ ^(yes|y| ) ]] || [[ -z $response ]]; then
+        git reset --hard $(xclip -selection clipboard -o)
+    fi
+fi
+
+} && clone revision
+```
+
+
 
