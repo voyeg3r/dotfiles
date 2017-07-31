@@ -5,7 +5,40 @@ mantém um resumo do que foi baixado
 ### referências
 * http://codesnippets.joyent.com/tag/wget
 
-wget -m --restrict-file-names=nocontrol --user-agent="direct download -- `uname -a`" --no-parent --referer=http://DigitalK7.com/ "http://digitalk7.com/mus/Brazil/"
+    wget -m --restrict-file-names=nocontrol --user-agent="direct download -- `uname -a`" --no-parent --referer=http://DigitalK7.com/ "http://digitalk7.com/mus/Brazil/"
+
+### Downloading a single page with wget with styles and images
++ https://gist.github.com/dannguyen/03a10e850656577cfb57
+
+    wget -E -H -k -K -nd -N -p -P thepageslug http://www.oldradioworld.com/shows/X_Minus_One.php
+
+    --adjust-extension, -E
+    --span-hosts, -H
+
+Even though we're trying to mirror a single page, that page may link to offsite
+assets (such as images or stylesheets) located on a CDN (i.e. a different
+domain, such as s3.thissite.amazon.aws.com). However, since we're only
+mirroring a single page, this shouldn't cause wget to crawl past the foreign
+hosts that are hosting these asset files.
+
+    --convert-links, -k
+
+When mirroring the target webpage, we create a self-contained folder of all of
+its external dependencies, so that you can disconnect your computer from the
+Internet, open that target webpage, and see it (mostly) function in its own
+non-Internet-aware environment.
+
+
+    --page-requisites, -p
+
+
+This option causes Wget to download all the files that are necessary to
+properly display a given HTML page. This includes such things as inlined
+images, sounds, and referenced stylesheets.
+
+    --directory-prefix=someprefix, -P someprefix,
+
+Saves the mirrored page and its contents in a folder named someprefix
 
 ### How do I pipe a downloaded file to standard output in bash?
 source: https://serverfault.com/questions/25779/how-do-i-pipe-a-downloaded-file-to-standard-output-in-bash/25780#25780
@@ -14,6 +47,9 @@ How is it possible to pipe out wget's downloaded file? If not what alternatives 
 
     wget -O - -o /dev/null  http://google.com
 
+### Adjusting the extension
+
+    wget --adjust-extension
 
 ### baixar licença gplv3
 

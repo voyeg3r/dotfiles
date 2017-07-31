@@ -55,7 +55,7 @@
 * [Oracoes](oracoes)
 * [Pandoc](pandoc.md)
 * [Plowshare](plowshare.md)
-* [[perl rename](perl-rename.md)]
+* [perl rename](perl-rename.md)
 * [Python3](python3.md)
 * [Pythonsolutions](pythonsolutions.md)
 * [Radios](radios.md)

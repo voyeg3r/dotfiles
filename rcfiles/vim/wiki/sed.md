@@ -28,6 +28,55 @@ o numeral 1 indica o ponto onde se inicia
 o numeral 2 indica que toda segunda linha receberá a ação
 indicada que no caso é deleção 'd'
 
+### Criando pastas para aruqivos
+
+OBS: Se você tem uma estrutura com subdiretórios pode listar os arquivos
+com o find, no meu caso (em certas situações )
+A listagem dos arquivos é feita com um recurso do [ZSH](zshell.md) --> `ls -1 **/*(.)`
+que na prática é o equivalente a: `find -type f`
+
+
+Eu tenho uma pasta com um monte de arquivos tipo:
+
+    xminusone_560501_SeaLegs.mp3
+
+E desejo criar as pastas para todos os arquivos e mover os arquivos
+para cada uma delas
+
+A criação das pastas eu fiz assim:
+
+      ``` sh
+      ls | awk -F'[_.]' '{print $3}' | xargs mkdir
+      ```
+
+Daí eu testei o comando de mover (o shell me dará só uma string)
+
+      ``` sh
+      ls -1 **/*(.) | sed -r 's@(.*_)([^.]*).mp3@ mv  & \2@g'
+      ```
+
+A mesma solução com o awk (as strings necessárias presicam estar entre aspas)
+
+      ``` sh
+      ls **/*(.) | awk -F'[_.]' '{print "mv " $0" "$3}' | sh
+
+      $0 ................. string inteira
+      $3 ................. corresponde ao terceiro campo "nome da pasta"
+      ```
+
+Pra finalizar uso uma dica do [Aurélio Marinho Jargas](http://aurelio.net/)
+da sua série [Tela Preta](https://www.youtube.com/playlist?list=PLkMH2SrZj2aiWw-t6rLgciBQqqoZZn5t1)
+basta colocar um pipe e "sh" no final da linha acima, ficando assim:
+
+
+        ``` sh
+        ls -1 **/*(.) | sed -r 's@(.*_)([^.]*).mp3@ mv  & \2@g' | sh
+
+        ls -1  ............... listagem de um por linha
+        **/*(.) .............. casa com arquivos (não pastas)
+        sed -r ............... extended regular expressions
+        ```
+
 ### imprimir da segnda linha em diante
 
     sed -i '1d' filename

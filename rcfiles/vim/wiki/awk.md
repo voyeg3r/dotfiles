@@ -144,6 +144,7 @@ for i in `ls -l ~/ubuntuone/e-books/ | awk '$9 ~ /vim/ {print $9}'`
 	done
 
 ### Imprimindo o segundo e o último campos em arquivos com delimitadores distintos
+AWK multiple delimiter
 
   Tomando por exemplo o arquivo 'teste.txt" com o seguinte
   conteúdo e queremos exibir o segundo campo e o último
@@ -153,9 +154,11 @@ for i in `ls -l ~/ubuntuone/e-books/ | awk '$9 ~ /vim/ {print $9}'`
     /logs/tc0001/tomcat/tomcat7.5/conf/catalina.properties:app.env.server.name = www.example.com
 
 a solução é indicar dois delimitadores de campo:
++ https://stackoverflow.com/a/12204350/2571881
 
+		``` sh
 		awk -F'[/=]' '{print $3, $NF}' teste.txt
-
+		```
 
 ### somando uma coluna de números
 

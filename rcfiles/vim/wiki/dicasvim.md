@@ -15,6 +15,17 @@ Github:      https://github.com/voyeg3r
 
 See also: [Regex](Regex) page
 
+### Editing .viminfo file
++ https://stackoverflow.com/a/2833376/2571881
+
+    Open the .viminfo file in vim,
+
+`:set viminfo=` to turn off the auto-saving of info to the `.viminfo` file. If
+you don't do this, Vim will overwrite all your changes when you quit,
+
+Remove everything you don't want (perhaps by using Johnsyweb's answer, or just
+by deleting the lines with manual edit commands), save the file, and quit vim,
+
 ### Switch from visual to insert mode
 
     ^I .............. starts insert mode at the beginin
@@ -2399,6 +2410,45 @@ fun! HtmlToMarkdown()
 endfun
 command! -nargs=0 H2M :%!pandoc -f html -t markdown<CR>
 ```
+
+### Adding markdown sections
+
+``` txt
+Lets say you have lines as folows
+---------------------------------
+
+
+amixer is a command-line mixer for ALSA soundcard driver.
+
+Increase volume by 10%
+
+    amixer set 'Master' 10%+
+
+Decrease volume by 10%
+
+    amixer set 'Master' 10%-
+
+Set volume to 10%
+
+    amixer set 'Master' 10%
+
+Set volume to 80%
+
+    amixer set 'Master' 80%
+
+Shows a complete list of simple mixer controls
+
+    amixer scontrols
+
+And you want to add ### at non indented lines
+
+the command will be:
+
+
+    .,$/^[^ \t]*/### &/g
+
+```
+
 ### References
 + http://vi.stackexchange.com/q/2268/
 + http://dalibornasevic.com/posts/43-12-vim-tips

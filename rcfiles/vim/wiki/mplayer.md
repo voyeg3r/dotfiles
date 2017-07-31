@@ -1,20 +1,25 @@
 ### Extrair audio de avi, flv, mpeg, etc...
 
-mplayer -dumpaudio NOMEDOVIDEO.avi -dumpfile NOMEDOVIDEO.mp3
+    mplayer -dumpaudio NOMEDOVIDEO.avi -dumpfile NOMEDOVIDEO.mp3
+
+### Assistir online stream e gravar ao mesmo tempo
++ https://shkspr.mobi/blog/2011/11/watching-and-simultaneously-saving-video-in-mplayer/
+
+    wget -O - http://site.com/video.avi | tee -ai cameravideo.avi | mplayer -cache 8192 -cache-min 1
 
 ### Extrair audio de dvd
 Abra um terminal e digite
 
-mkfifo
-mplayer dvd://1 -chapter 1-1 -aid 128 -ao pcm:file= -vc dummy -vo null
+    mkfifo
+    mplayer dvd://1 -chapter 1-1 -aid 128 -ao pcm:file= -vc dummy -vo null
 
 Abra outro terminal no mesmo diretório e digite
 
-lame -b 192 --resample 44100 -o titulo-1.mp3
+    lame -b 192 --resample 44100 -o titulo-1.mp3
 
 ### converter video flv para gif animado
 
-mplayer -vo gif89a yourvideosfilename.flv
+    mplayer -vo gif89a yourvideosfilename.flv
 
 # some radios
 KCRW: http://www.kcrw.com/pls/kcrwsimulcast.pls
@@ -30,12 +35,10 @@ mplayer -playlist  http://www.wemu.org/WEMU-broadband.m3u
 mplayer -playlist  http://radio.wesleyan.edu:8000/listen.pls
 mplayer -playlist  http://www.wuga.org/wuga-hi.pls
 
---------------------------------------
-  HOW RECORD A ONLINE STREAM RADIO?
---------------------------------------
+###  HOW RECORD A ONLINE STREAM RADIO?
 
-# in this case wnyc - HERE you are dumping the file to your machine
-# and at same time you cand hear using vlc
+ in this case wnyc - HERE you are dumping the file to your machine
+ and at same time you cand hear using vlc
 mplayer -playlist "http://www.wnyc.org/stream/wnyc-fm939/mp3.pls" -dumpstream -dumpfile test.mp3
 
 alias news="mplayer -playlist http://minnesota.publicradio.org/tools/play/streams/news.pls" # MPR News
@@ -59,5 +62,3 @@ alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # So
 ### Referências
 * http://ubuntudicas.blogspot.com/2008/11/extraindo-udio-de-vdeos-avi-flv-mpeg.html
 * http://ubuntuforum-pt.org/index.php/topic,42984.0/topicseen.html
-
-

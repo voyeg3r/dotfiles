@@ -3,7 +3,6 @@
 today(){date +%d-%m-%Y ;}
 now(){ date +%H:%M;}
 mktbz () { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/";}
-groove-dl-cli(){ python2.7 /usr/share/groove-dl/groove.py "$@" ;}
 man2pdf () { man -w $1 && man -t $1 | ps2pdf - $1.pdf; }
 yt () mplayer -fs -quiet $(youtube-dl -g "$1")
 gsend() { git commit -am "$1" && git push ;}
@@ -36,42 +35,31 @@ youtube-mp3 () {
 }
 
 
-# fzf settings ##############################################
-# ZSH keybinding example; ~/.zshrc
-fzf_history() { zle -I; eval $(history | fzf +s | sed 's/ *[0-9]* *//') ; }; zle -N fzf_history; bindkey '^h' fzf_history
-fzf_killps() { zle -I; ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9} ; }; zle -N fzf_killps; bindkey '^Q' fzf_killps
-fzf_cd() { zle -I; DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR" ; }; zle -N fzf_cd; bindkey '^x^d' fzf_cd
-
-# vimf - Open selected file in Vim
-vimf() {
-    FILE=$(fzf) && vim "$FILE"
-}
-
-# fd - cd to selected directory
-fd() {
-    DIR=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf) && cd "$DIR"
-}
-
-# fda - including hidden directories
-fda() {
-    DIR=$(find ${1:-.} -type d 2> /dev/null | fzf) && cd "$DIR"
-}
-
-# fh - repeat history
-fh() {
-    eval $(history | fzf +s | sed 's/ *[0-9]* *//')
-}
-
-# fkill - kill process
-fkill() {
-    ps -ef | sed 1d | fzf -m | awk '{print $2}' | xargs kill -${1:-9}
-}
-
-# End fzf settings
-
-
 dumpwnyc () {
-    mplayer -playlist "http://www.wnyc.org/stream/wnyc-fm939/mp3.pls" -dumpstream -dumpfile wnyc-`date +%Y-%b-%d--%H.%Mhs`.mp3
+    # source: https://shkspr.mobi/blog/2011/11/watching-and-simultaneously-saving-video-in-mplayer/
+    # mplayer "$url" -dumpstream -dumpfile wnyc-`date +%Y-%b-%d--%H.%Mhs`.mp3
+
+    station="wnyc"
+    url="http://fm939.wnyc.org/wnycfm-tunein.aac"
+    filename=${station}-$(date +%Y-%b-%d--%H.%Mhs).mp3
+    wget -O - "$url" | tee -ai "$filename" | mpg123 -
+}
+
+dumpscifi () {
+    # source: https://shkspr.mobi/blog/2011/11/watching-and-simultaneously-saving-video-in-mplayer/
+    # mplayer "$url" -dumpstream -dumpfile scifi-`date +%Y-%b-%d--%H.%Mhs`.mp3
+
+    station="scifi-old"
+    url="http://198.178.123.2:8652/;stream/1"
+    filename=${station}-$(date +%Y-%b-%d--%H.%Mhs).mp3
+    wget -O - "$url" | tee -ai "$filename" | mpg123 -
+}
+
+dumpamazingtale (){
+    station="amazing-tale"
+    url="http://rosetta.shoutca.st:8462/;stream1"
+    filename=${station}-$(date +%Y-%b-%d--%H.%Mhs).mp3
+    wget -O - "$url" | tee -ai "$filename" | mpg123 -
 }
 
 record(){
@@ -93,17 +81,6 @@ make-github-submodule () {
 background() {
     "$@" &
 }
-
-
-# ctrl-p for zsh (when fzf is setted whith
-# yaourt -S fzf comment these lines
-# # source: https://goo.gl/Tts3vW (reddit)
-ctrlp() {
-		</dev/tty vim -c CtrlP
-}
-zle -N ctrlp
-bindkey "^f" ctrlp
-
 
 # como quase nunca uso Ctrl-s linkey ele com o sudo
 add_sudo (){

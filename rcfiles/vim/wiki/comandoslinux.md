@@ -6,6 +6,7 @@
 [alias](alias.md)
 [alsaconf](alsaconf.md)
 [alsamixer](alsamixer.md)
+[[amixer](amixer.md)]
 [apropos](apropos.md)
 [apt](apt.md)
 [apt-build](apt-build.md)
@@ -104,6 +105,7 @@
 [history](history.md)
 [hostname](hostname.md)
 [html2latex](html2latex.md)
+[[html2pdf](html2pdf.md)]
 [html2text](html2text.md)
 [hwclock](hwclock.md)
 [iconv](iconv.md)
@@ -171,6 +173,7 @@
 [oggenc](oggenc.md)
 [opencd](opencd.md)
 [pacman](pacman.md)
+[[pactl](pactl.md)]
 [passwd](passwd.md)
 [paste](paste.md)
 [perlrename](perlrename.md)

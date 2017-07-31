@@ -5,13 +5,13 @@ filtrar strings em textos
 
    grep -f file1.txt file2.txt
 
-
 ### pegar ocorrência exata
 
-grep -w '172.17.4.1' file.txt
+    grep -w '172.17.4.1' file.txt
 
 # listando apenas opções de um comando
-man aria2c | grep -Ew -- '-{1,2}[a-zA-Z][^ ] ' -
+
+    man aria2c | grep -Ew -- '-{1,2}[a-zA-Z][^ ] ' -
 
 # teste de exepressão regular para pegar opções
 -{1,2}[][a-zA-Z][^ ]*
@@ -103,27 +103,25 @@ $ cat -v -e -t /tmp/s
 
 ### remover linhas em branco
 
-grep -v '^$' input.txt > output.txt
+    grep -v '^$' input.txt > output.txt
 
-# outro modo
-grep . filename > newfilename
+    grep . inpute.txt > output
+
 
 Você pode fazer um teste interativo assim
 
-cat <<-EOF | grep .
-linhas com algo
+    cat <<-EOF | grep .
+    linhas com algo
 
+    linha com texto
 
-
-linha com texto
-
-linha
-EOF
+    linha
+    EOF
 
 ### contador do grep
 A opção "-c" do grep apenas exibe a contagem
 
-file -i * | grep -ic 'text/plain'
+    file -i * | grep -ic 'text/plain'
 
  O comando grep é mais frequentemente usado para localizar
  a ocorrência de um determinado texto em um ou mais
@@ -150,7 +148,7 @@ acrescentamos a diretiva "-w":
 ### Mostrar linhas anteriores ou posteriores
 Use as opções -A ou -B do grep. O "-A" mostra linhas após "after" e o "-B" mostra linhas anteriores "before"
 
-grep -in -A 2 "postfix" /etc/passwd
+    grep -in -A 2 "postfix" /etc/passwd
 
 34:postfix:x:114:123::/var/spool/postfix:/bin/false
 35-nx:x:115:65534::/usr/NX/home/nx:/usr/NX/bin/nxserver
@@ -159,19 +157,20 @@ grep -in -A 2 "postfix" /etc/passwd
 ### Opção de contexto
 Para exibir as linhas anteriores e posteriores a um padrão
 
-grep --context=5 'pattern' file
+    grep --context=5 'pattern' file
 
 
 ### Para usar expressões regulares extendidas
 Use a opção -E do grep
 ### filtrando uma palavra em um tipo de arquivo específico
 
-grep -r --include="*.[ch]" pattern .
-find . -name "*.[ch]" | xargs grep "TODO"
+    grep -r --include="*.[ch]" pattern .
+    find . -name "*.[ch]" | xargs grep "TODO"
 
 ### Intercessão entre dois arquivos
 
 
+``` markdown
 Tenho dois arquivos txt:
 arq1:
 30
@@ -191,96 +190,97 @@ arq2:
 427 Maria do Zé 03/2002 22/03/81
 428 Jubencio da Zinha 10/2007 28/06/64
 ....
+```
 
-
-
-for i in $(car arq1.txt); do
-   grep "^$i" arq2.txt
-done
+    for i in $(car arq1.txt); do
+       grep "^$i" arq2.txt
+    done
 
 outro modo de fazer
 
-grep -f <(cat arq1.txt | xargs -i echo ^{}) arq2.txt
+    grep -f <(cat arq1.txt | xargs -i echo ^{}) arq2.txt
 
 
 ### Mostrar linhas próximas a um padrão
 
-> Uma dúvida amigos tenho o seguinte:
->
-> aaaaaaa pedro01 bbbbbbbb ccccccc
-> ccccccc dd ddddddd hhhhhhh
->
-> aaaaaaa rodrigo bbbbbbbb ccccccc
-> ccccccc dd ddddddd hhhhhhh
->
-> aaaaaaa pedro01 bbbbbbbb ccccccc
-> ccccccc dd ddddddd hhhhhhh
->
-> eu preciso que sempre q ele encontrar
-> pedro que ele me mostre além do pedro a linha
-> abaixo dele, mas só se encontrar pedro
-> agradeço toda a ajuda.
+    > Uma dúvida amigos tenho o seguinte:
+    >
+    > aaaaaaa pedro01 bbbbbbbb ccccccc
+    > ccccccc dd ddddddd hhhhhhh
+    >
+    > aaaaaaa rodrigo bbbbbbbb ccccccc
+    > ccccccc dd ddddddd hhhhhhh
+    >
+    > aaaaaaa pedro01 bbbbbbbb ccccccc
+    > ccccccc dd ddddddd hhhhhhh
+    >
+    > eu preciso que sempre q ele encontrar
+    > pedro que ele me mostre além do pedro a linha
+    > abaixo dele, mas só se encontrar pedro
+    > agradeço toda a ajuda.
 
 
 
-grep 'pedro' -A1 texto
+    grep 'pedro' -A1 texto
 
-Filtra ocorrência de palavras em arquivos
+    Filtra ocorrência de palavras em arquivos
 
 
-   grep -rn --color "\<vim\>" ~/
+     grep -rn --color "\<vim\>" ~/
 
 ### Contar ocorrências repetidas
 
- Tenho um arquivo que tem a seguinte saida:
+ ``` markdown
+  Tenho um arquivo que tem a seguinte saida:
 
- 29 18 02 15 10 39
- 08 38 60 41 15 09
- 06 08 04 01 25 28
- 26 25 42 60 05 24
- 44 40 58 29 03 20
- 04 54 55 36 16 31
+  29 18 02 15 10 39
+  08 38 60 41 15 09
+  06 08 04 01 25 28
+  26 25 42 60 05 24
+  44 40 58 29 03 20
+  04 54 55 36 16 31
 
- Gostaria de saber se esta é uma boa saida para contar as dezenas que se
- repetem por coluna:
+  Gostaria de saber se esta é uma boa saida para contar as dezenas que se
+  repetem por coluna:
 
- Supondo que eu digitasse a dezena 29:
+  Supondo que eu digitasse a dezena 29:
 
- cat arq.txt | cut -d " " -f1|grep 29 | uniq -c
+  cat arq.txt | cut -d " " -f1|grep 29 | uniq -c
 
-Seria o mesmo que:
+ Seria o mesmo que:
 
-$ grep -co 29 arq.txt ??
+ $ grep -co 29 arq.txt ??
 
-$ grep -co 29 arq.txt
-2
+ $ grep -co 29 arq.txt
+ 2
 
+ ```
 
 ### contar ocorrências de um nome em um diretório
 
- grep -icr "sergio" .wiki | awk -F":" '{total=total + $2} END {print total}'
+     grep -icr "sergio" .wiki | awk -F":" '{total=total + $2} END {print total}'
 
 ### Mais exemplos
 
-cat -v -e -t dump                        # show non-printing characters too
- grep BOB tmpfile                        # search 'tmpfile' for 'BOB' anywhere in a line
- grep -i -w blkptr *                     # case insensitive search all files in the current directory for the word blkptr
- grep run[- ]time *.txt                  # find 'run time' or 'run-time' in all txt files
- grep smug files                         # search files for lines with 'smug'
- grep '^smug' files                      # 'smug' at the start of a line
- grep 'smug$' files                      # 'smug' at the end of a line
- grep '^smug$' files                     # lines containing only 'smug'
- grep '\^s' files                        # lines containing '^s', "\" escapes the ^
- grep '[Ss]mug' files                    # search for 'Smug' or 'smug'
- grep 'B[oO][bB]' files                  # search for BOB, Bob, BOb or BoB
- grep '^$' files                         # search for blank lines
- grep '[0-9][0-9]' file                  # search for pairs of numeric digits
- grep '^From: ' /var/spool/mail/$USER    # list your mail
- grep '[a-zA-Z]'                         # any line with at least one letter
- grep '[^a-zA-Z0-9]                      # anything not a letter or number
- grep '[0-9]\{3\}-[0-9]\{4\}'            # 999-9999, like phone numbers
- grep '^.$'                              # lines with exactly one character
- grep '"smug"'                           # 'smug' within double quotes
- grep '"*smug"*'                         # 'smug', with or without quotes
- grep '^\.'                              # any line that starts with a Period "."
- grep '^\.[a-z][a-z]'                    # line start with "." and 2 lc letters
+     cat -v -e -t dump                       # show non-printing characters too
+     grep BOB tmpfile                        # search 'tmpfile' for 'BOB' anywhere in a line
+     grep -i -w blkptr *                     # case insensitive search all files in the current directory for the word blkptr
+     grep run[- ]time *.txt                  # find 'run time' or 'run-time' in all txt files
+     grep smug files                         # search files for lines with 'smug'
+     grep '^smug' files                      # 'smug' at the start of a line
+     grep 'smug$' files                      # 'smug' at the end of a line
+     grep '^smug$' files                     # lines containing only 'smug'
+     grep '\^s' files                        # lines containing '^s', "\" escapes the ^
+     grep '[Ss]mug' files                    # search for 'Smug' or 'smug'
+     grep 'B[oO][bB]' files                  # search for BOB, Bob, BOb or BoB
+     grep '^$' files                         # search for blank lines
+     grep '[0-9][0-9]' file                  # search for pairs of numeric digits
+     grep '^From: ' /var/spool/mail/$USER    # list your mail
+     grep '[a-zA-Z]'                         # any line with at least one letter
+     grep '[^a-zA-Z0-9]                      # anything not a letter or number
+     grep '[0-9]\{3\}-[0-9]\{4\}'            # 999-9999, like phone numbers
+     grep '^.$'                              # lines with exactly one character
+     grep '"smug"'                           # 'smug' within double quotes
+     grep '"*smug"*'                         # 'smug', with or without quotes
+     grep '^\.'                              # any line that starts with a Period "."
+     grep '^\.[a-z][a-z]'                    # line start with "." and 2 lc letters

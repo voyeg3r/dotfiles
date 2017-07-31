@@ -27,6 +27,17 @@ Github:      https://github.com/voyeg3r
 + https://raw.githubusercontent.com/sorin-ionescu/prezto/28a20b48e652a01216a6c3dd76e6324d76c12def/modules/editor/init.zsh
 + https://coderwall.com/t/zsh/popular
 
+### zsh startup file
++ http://zsh.sourceforge.net/Intro/intro_3.html
+
+There are five startup files that zsh will read commands from:
+
+    $ZDOTDIR/.zshenv
+    $ZDOTDIR/.zprofile
+    $ZDOTDIR/.zshrc
+    $ZDOTDIR/.zlogin
+    $ZDOTDIR/.zlogout
+
 ### manuals
 
     man zsh          Zsh overview
@@ -45,6 +56,104 @@ Github:      https://github.com/voyeg3r
     info --index-search=age zsh         # get man info for zsh function age *N*
     zinfo(){info --index-search=$1 zsh} *N*
 
+
+What are the step to move all your dotfiles into XDG directories?
++ https://superuser.com/a/874924/45032
+
+The variable $XDG_CONFIG_HOME must be used to this task
+
+    echo $XDG_CONFIG_HOME
+    /home/sergio/.config
+
+ ``` markdown
+ One may edit /etc/zsh/zshenv to set `$XDG_CONFIG_HOME` directories and `$ZDOTDIR`. This require write privilegies on this files though.
+ ```
+
+    ``` sh
+    export XDG_CONFIG_HOME="${HOME}/.config"
+    export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+    ```
+
+Other config would be placed on it...
+
+``` sh
+# gnupg
+export GNUPGHOME=${XDG_CONFIG_HOME}/gnupg
+
+# ICEauthority
+export ICEAUTHORITY=${XDG_CACHE_HOME}/ICEauthority
+
+#  less
+export LESSHISTFILE="${XDG_CONFIG_HOME}/less/history"
+export LESSKEY="${XDG_CONFIG_HOME}/less/keys"
+
+
+
+# mplayer
+export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
+
+# subversion
+export SUBVERSION_HOME=$XDG_CONFIG_HOME/subversion
+
+
+# vim
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+export VIMDOTDIR="$XDG_CONFIG_HOME/vim"
+```
+
+### Adicionando um tema ao zsh quase puro
+
+There is a quick and easy way to set up a colored prompt in Zsh. Make sure that
+prompt theme system is set to autoload in .zshrc. This can be done by adding
+these lines to:
+
+``` zsh
+~/.zshrc
+
+autoload -Uz promptinit
+promptinit
+
+Available prompt themes are listed by running the command:
+
+# $ prompt -l
+
+For example, to use the walters theme, enter:
+
+$ prompt walters
+
+To preview all available themes, use this command:
+
+$ prompt -p
+```
+
+### complementação de histórico
+
+there is something in zsh called history-beginning-search-menu. if you put:
+
+    autoload -Uz history-beginning-search-menu
+    zle -N history-beginning-search-menu
+    bindkey '' history-beginning-search-menu
+
+in your .zshrc file. then for example:
+
+
+### Adicionando uma linha ao histórico do zsh sem rodar o comando
+
+    print -S "echo esta linha vai pro histórico"
+
+### What files run when you start a ZSH login shell?
++ https://kev.inburke.com/kevin/profiling-zsh-startup-time/
+
+In order, your machine will load/execute the following files when ZSH starts:
+
+    /etc/zshenv
+    ~/.zshenv
+    /etc/zprofile
+    ~/.zprofile
+    /etc/zshrc
+    ~/.zshrc
+    /etc/zlogin
+    ~/.zlogin
 
 ### zsh-lovers
 
@@ -371,7 +480,9 @@ make file and directory names lowercase
 
 #### this command
 
+    ``` sh
     ls -1 */**/*.sh
+    ```
 
 #### is equivalent to:
 
@@ -387,17 +498,23 @@ the 'm-1' asks modifications at less than one day
 
 #### show files modified in the last hour
 
+    ``` zsh
     ls *(.mh-1) | wc -l
 
     ls *.*(^mh3)   # all files not 3 hours  old
+    ```
 
 ####  find all files with size larger than 10 megabytes
 
+    ``` zsh
     ls **/*(.Lm+10)
+    ```
 
 #### find all files you accessed within the last month:
 
+    ``` zsh
     ls **/*(.aM-1)
+    ```
 
 #### list files not ending with 'o'
 
@@ -428,6 +545,7 @@ Nevertheless, you could also check for either
     changed at more than 3 weeks (mw+3)
     (Lm+5) —larger than five megabytes.
 
+    ``` zsh
     ls **/*(.) .......... regular files
     ls **/*(^.) ......... not regular files
     ls **/*(@) .......... simbolic links
@@ -442,6 +560,7 @@ Nevertheless, you could also check for either
     ls **/*(.DmM+12) .... regular files older thant one year
     ls **/*(L+10M) ...... file more than 10M
     ls **/*(*Lk-5) ...... executable files less than 5kb
+    ```
 
     ls *(.D) ........... D dotfiles '.' regular files
 
@@ -609,9 +728,51 @@ The above shortuc will put the most recent file name in command line
     zmv "programmable rename"
     autoload -U zmv
 
+    ``` zsh
     zmv -W '*.md' '*.txt'
+    ```
 
-### Remove extensio
+### Recursively changing file extension with zmv
++ http://www.drbunsen.org/batch-file-renaming/
++ https://github.com/johan/zsh/blob/master/Functions/Misc/zmv
+
+To actually perform the file renaming run the command without the -n flag
+
+    ``` zsh
+    zmv -n '(**/)(*).txt' '$1$2.rtf'
+
+    zmv -Q '(**/)(*).txt' '$1$2.rtf'
+
+    mv -- other/file001.txt other/file001.rtf
+    mv -- other/file002.txt other/file002.rtf
+    mv -- other/file003.txt other/file003.rtf
+    mv -- other/file004.txt other/file004.rtf
+    mv -- other/file005.txt other/file005.rtf
+    mv -- other/file006.txt other/file006.rtf
+    mv -- other/file007.txt other/file007.rtf
+    mv -- other/file008.txt other/file008.rtf
+    mv -- other/file009.txt other/file009.rtf
+    mv -- other/file010.txt other/file010.rtf
+    mv -- file001.txt file001.rtf
+    mv -- file002.txt file002.rtf
+    mv -- file003.txt file003.rtf
+    ```
+
+The -Q flag allows hidden files to be matched along with visible files. Adding
+the (**/) code will cause zmv to change the file extension on all .txt files in
+the current directory and any text files in any sub-directories (visible or
+hidden).
+
+    ``` zsh
+    zmv -w '**/*.txt' '$1$2.lis'
+    noglob zmv -W **/*.txt **/*.lis
+    ```
+
+These are the lazy version of the one above; with -w, zsh inserts the
+parentheses for you in the search pattern, and with -W it also inserts
+the numbered variables for you in the replacement pattern.
+
+### Remove extension
 
 ``` sh
 zmv -W '*.html' '*'
@@ -651,11 +812,20 @@ zmv '(**/)(*.mkv)' '$1${(U)2:r}.${(L)2:e}' # recursive traversal
 
 #### Replace spaces in filenames with underline
 
-    zmv '* *' '$f:gs/ /_'
-    zmv '*' '$f:s/hell/heaven/'
-
+    ``` zsh
+    zmv '(*)_(*)' '$1-$2'
+    zmv '(*_*)' '${1//_/-}'
     zmv '(* *)' '${1// /}'
     zmv -Q "(**/)(* *)(D)" "\$1\${2// /_}"
+
+Other stuff
+
+    zmv '(*)' '${(U)1}'
+    zmv '* *' '$f:gs/ /_'
+    zmv  '*' '${f// /}'
+    zmv '*' '$f:s/hell/heaven/'
+
+    ```
 
 #### Change the suffix from *.sh to *.pl
 

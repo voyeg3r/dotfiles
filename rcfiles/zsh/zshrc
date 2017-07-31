@@ -119,7 +119,31 @@ plugins+=(zsh-completions)
 plugins+=(python)
 export PYTHONDONTWRITEBYTECODE=1
 
-autoload -U compinit && compinit
+# https://gist.github.com/ctechols/ca1035271ad134841284
+# source: https://www.snip2code.com/Snippet/778271/Speed-up-zsh-compinit-by-only-checking-c
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-${HOME}}/$ZSH_COMPDUMP(#qN.mh+24) ]]; then
+	compinit -d $ZSH_COMPDUMP;
+else
+	compinit -C;
+fi;
+
+# -D ........... disables .zcompudump file
+# -d ........... used to set an alternative name to .zcompdump
+# -i ........... accept insecure files
+# -C ........... ignore checking at all
+
+# To speed up the running of compinit, it can be made to produce a dumped
+# configuration that will be read in on future invocations; this is the default,
+# but can be turned off by calling compinit with the option -D. The dumped file
+# is .zcompdump in the same directory as the startup files (i.e. $ZDOTDIR or
+# $HOME); alternatively, an explicit file name can be given by ‘compinit -d
+# dumpfile’. The next invocation of compinit will read the dumped file instead of
+# performing a full initialization.
+#
+#  and to make compinit silently ignore all insecure files
+#  and directories use the option -i  This  security  check
+#  is  skipped entirely when the -C option is given.
 
 setopt complete_in_word
 

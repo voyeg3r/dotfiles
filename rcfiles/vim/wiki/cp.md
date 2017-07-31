@@ -16,7 +16,11 @@ A opção -u faz update
 
 ### copiando estrutura de pastas (somente a extrutura)
 
+    ``` bash
     (cd /home/user/source/; find -type d -print0) | xargs -0 mkdir -p
+
+    rsync -a --include='*/' --exclude='*' ${source} ${destination}
+    ```
 
 ### copiando e entrando na pasta
 

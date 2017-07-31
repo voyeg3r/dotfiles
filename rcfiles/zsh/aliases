@@ -9,8 +9,9 @@
 
 # https://askubuntu.com/a/590030/3798
 alias python='/usr/bin/python3'
-
 alias aedit="$EDITOR $ZSH_CONFIG/aliases; source $ZSH_CONFIG/aliases"
+
+alias html2pdf='wkhtmltopdf'
 
 # source: https://www.reddit.com/r/linux/comments/3ly2zl/lpt_use_python_interpreter_as_an_advanced/
 alias calc='python3 -ic "from math import *; import cmath"'
@@ -44,12 +45,15 @@ alias ne='nvim ~/.config/nvim/init.vim'
 
 # zsh profile editing
 alias ze='vim ~/.zshrc'
+alias venv='vim ~/.zshenv'
 alias zr='source ~/.zshrc'
 alias ne='nvim ~/.config/init.vim'
 alias xterm='xterm -fn 7x13 -fa "Liberation Mono:size=14:antialias=false"'
+alias zdot='cd $ZDOTDIR'
 
 # pipe a download file to standard output on shell
 alias wgetn='wget -O - -o /dev/null'
+alias getsinglepage='wget -E -H -k -K -nd -N -p -P pagedir'
 
 alias lynx='lynx -dump -display_charset=utf-8'
 
@@ -61,6 +65,17 @@ alias 4shared='cadaver http://webdav.4shared.com/'
 alias chicago='mplayer http://relay.broadcastify.com:80/il_chicago_police2\?xan\=7C80215A2A84B01D154525F05BD80095'
 # Listen to Air Traffic Control, used to be scripts.
 alias miami='mplayer http://relay.broadcastify.com:80/540894049\?xan\=7C80215A2A84B01D154525F05BD80095'
+
+alias flagradio='mplayer http://ice9.securenetsystems.net/WZFG'
+alias thepoint='mplayer http://icy3.abacast.com/capitalcity-wqxlam-64'
+alias adicted='mplayer http://208.77.21.33:11730/;'
+alias smolthjazz='mplayer http://us3.internet-radio.com:8007/;stream'
+alias megaton='mplayer http://us2.internet-radio.com:8443/;stream'
+alias infowars='mplayer http://50.7.79.20/;'
+alias scifioldtime='mplayer http://198.178.123.2:8652/;stream/1'
+alias amazingtale='mplayer http://rosetta.shoutca.st:8462/;stream1'
+alias roswellufotalks='mplayer http://streaming.shoutcast.com/TheUFOChannel'
+alias cryptoradio='mplayer http://station.kryptonradio.com:8000/stream'
 
 # Miami International Airport (KMIA) Scanning Approach, Departure and Ground Control
 alias miami2='mplayer http://relay.broadcastify.com:80/970805198\?xan\=7C80215A2A84B01D154525F05BD80095'
@@ -146,7 +161,8 @@ alias utf2iso='iconv -f utf-8 -t iso-8859-1'
 alias fontreload='fc-cache -fv'
 alias timezsh='time zsh -ilc exit'
 
-alias copera='curl -A "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3053.3 Safari/537.36 OPR/46.0.2573.0 (Edition developer)"'
+alias operacurl='curl -A "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3053.3 Safari/537.36 OPR/46.0.2573.0 (Edition developer)"' # curl with opera user-agent
+alias ffcurl='curl -A Mozilla/5.0 (X11; Linux i686; rv:54.0) Gecko/20100101 Firefox/54.0' # curl with firefox user-agent
 
 ########### aliases #################
 # aliases para fasd
@@ -209,13 +225,13 @@ alias -g G='| grep -i'
 alias -g V='| gvim -'
 alias -g X='| xargs'
 alias -g N='*/**(.om[1])'
-alias -g ND='./**/*(/om[1])' # newest directory
+alias -g ND='./**/*(/om[1])' # newest directory --> ls -d ND
 alias -g NF='./**/*(.om[1])' # newest file
 alias -g MP3'./**/*.mp3(om[1])'
 alias -g latest='./**/*(.om[1])' # newest file | also Ctrl-x Ctrl-m
 alias -g NUL="> /dev/null 2>&1"
 alias -g DN="> /dev/null 2>&1"
-alias -g LC="| sed 's/./\L&/g'"
+alias -g LC="| sed 's/./\L&/g'" # lowercase string (piped)
 alias -g UL="| sed 's, ,_,g'"
 alias -g ULC="| sed 's/./\L&/g' | sed 's, ,_,g'"
 alias pnf='mpg123 ./**/*(.om[1])'
