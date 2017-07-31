@@ -126,6 +126,17 @@ To preview all available themes, use this command:
 $ prompt -p
 ```
 
+### complementação de histórico
+
+there is something in zsh called history-beginning-search-menu. if you put:
+
+    autoload -Uz history-beginning-search-menu
+    zle -N history-beginning-search-menu
+    bindkey '' history-beginning-search-menu
+
+in your .zshrc file. then for example:
+
+
 ### Adicionando uma linha ao histórico do zsh sem rodar o comando
 
     print -S "echo esta linha vai pro histórico"

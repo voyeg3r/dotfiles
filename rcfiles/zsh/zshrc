@@ -52,7 +52,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=${HOME}/.dotfiles/rcfiles/zsh/custom
+ZSH_CUSTOM=${DOTFILES}/rcfiles/zsh/custom
+
+for f in ${DOTFILES}/rcfiles/zsh/functions/*(.N); source $f
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -205,53 +207,30 @@ bindkey '\eb' push-line-or-edit
 # don't try to type ^G instead use Ctrl-v Ctrl-g
 bindkey -s '' ' | grep '
 
-# insert-history-line() {
-# LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
-# }
-# zle -N insert-history-line insert-history-line
-# # press alt-e para inserir o ultimo comando $(assim)
-# bindkey '^[e' insert-history-line
-
-# allows me to bring vim back atter pressing ctrl-z
-# by pressint it agaia
-# source http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-
-# fancy-ctrl-z () {
-# if [[ $#BUFFER -eq 0 ]]; then
-#     BUFFER="fg"
-#     zle accept-line
-# else
-#     zle push-input
-#     zle clear-screen
-# fi
-# }
-# zle -N fancy-ctrl-z
-# bindkey '^Z' fancy-ctrl-z
-
-# # getting git status
-# function _git-status {
-# zle kill-whole-line
-# zle -U "git status"
-# zle accept-line
-# }
-# zle -N _git-status
-# bindkey '\eg' _git-status
+# getting git status
+function _git-status {
+zle kill-whole-line
+zle -U "git status"
+zle accept-line
+}
+zle -N _git-status
+bindkey '\eg' _git-status
 
 # history search
 # see: http://stackoverflow.com/questions/14040351/filtering-zsh-history-by-command
-#function exists { which $1 &> /dev/null }
-
-# if exists percol; then
-#     function percol_select_history() {
-#         local tac
-#         exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
-#         BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
-#         CURSOR=$#BUFFER         # move cursor
-#         zle -R -c               # refresh
-#     }
+# function exists { which $1 &> /dev/null }
 #
-#     zle -N percol_select_history
-#     bindkey '^R' percol_select_history
+# if exists percol; then
+#      function percol_select_history() {
+#          local tac
+#          exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+#          BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+#          CURSOR=$#BUFFER         # move cursor
+#          zle -R -c               # refresh
+#      }
+#
+#      zle -N percol_select_history
+#      bindkey '^R' percol_select_history
 # fi
 
 # # define widget function
@@ -304,12 +283,6 @@ bindkey '^X ' magic-space            # control-space to bypass completion
 # should probably write meta-E?) insert the previous line
 # between $().
 
-# insert-history-line() {
-#     LBUFFER="$LBUFFER\$(${history[$((HISTNO-1))]})"
-# }
-# zle -N insert-history-line insert-history-line
-# bindkey '^[e' insert-history-line
-
 # quote pasted URLs
 # it seems kind of uncompatible with substring-search
 autoload -Uz url-quote-magic
@@ -332,5 +305,3 @@ autoload -Uz history-beginning-search-menu
 zle -N history-beginning-search-menu
 bindkey '' history-beginning-search-menu
 
-for f in ${DOTFILES}/rcfiles/zsh/functions/*(.N); source $f
-# group_lazy_load $HOME/.nvm/nvm.sh nvm node npm
