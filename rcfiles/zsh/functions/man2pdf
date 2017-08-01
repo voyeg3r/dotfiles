@@ -1,0 +1,2 @@
+
+man2pdf () { man -w $1 && man -t $1 | ps2pdf - $1.pdf; }

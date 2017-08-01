@@ -1,0 +1,6 @@
+
+youtube-mp3 () {
+# get mp3 from youtube
+command -v ffmpeg >/dev/null && youtube-dl --restrict-filenames --extract-audio --audio-format=mp3 --audio-quality 320k "${1}"
+[[ $? = 1 ]] && echo "instale o programa ffmpeg para poder converter para mp3"
+}

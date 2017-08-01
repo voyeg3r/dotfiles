@@ -1,0 +1,2 @@
+
+decToBin () { echo "ibase=10; obase=2; $1" | bc; }

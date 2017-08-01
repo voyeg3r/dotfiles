@@ -1,0 +1,2 @@
+
+today(){date +%d-%m-%Y ;}

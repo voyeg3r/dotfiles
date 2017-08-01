@@ -1,0 +1,6 @@
+
+make-github-submodule () {
+# source: http://stackoverflow.com/questions/35524958/push-local-git-repo-with-sub-repos-vim
+git config -f .gitmodules submodule.$1.path $1
+git config -f .gitmodules submodule.$1.url https://github.com/$2.git
+}

@@ -1,0 +1,9 @@
+
+dumpscifi () {
+# source: https://shkspr.mobi/blog/2011/11/watching-and-simultaneously-saving-video-in-mplayer/
+# mplayer "$url" -dumpstream -dumpfile scifi-`date +%Y-%b-%d--%H.%Mhs`.mp3
+station="scifi-old"
+url="http://198.178.123.2:8652/;stream/1"
+filename=${station}-$(date +%Y-%b-%d--%H.%Mhs).mp3
+wget -O - "$url" | tee -ai "$filename" | mpg123 -
+}

@@ -1,0 +1,7 @@
+
+dumpamazingtale (){
+station="amazing-tale"
+url="http://rosetta.shoutca.st:8462/;stream1"
+filename=${station}-$(date +%Y-%b-%d--%H.%Mhs).mp3
+wget -O - "$url" | tee -ai "$filename" | mpg123 -
+}

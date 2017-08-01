@@ -1,0 +1,2 @@
+
+upper (){ echo ${@:u} }  # this versio only works in zsh

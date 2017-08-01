@@ -1,0 +1,9 @@
+
+dumpwnyc () {
+# source: https://shkspr.mobi/blog/2011/11/watching-and-simultaneously-saving-video-in-mplayer/
+# mplayer "$url" -dumpstream -dumpfile wnyc-`date +%Y-%b-%d--%H.%Mhs`.mp3
+station="wnyc"
+url="http://fm939.wnyc.org/wnycfm-tunein.aac"
+filename=${station}-$(date +%Y-%b-%d--%H.%Mhs).mp3
+wget -O - "$url" | tee -ai "$filename" | mpg123 -
+}

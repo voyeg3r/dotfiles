@@ -1,4 +1,0 @@
-function zpass() {
-    LC_ALL=C tr -dc '0-9A-Za-z_@#%*,.:?!~' < /dev/urandom | head -c${1:-10}
-    echo
-}

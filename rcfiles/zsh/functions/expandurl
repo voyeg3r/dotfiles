@@ -1,0 +1,2 @@
+
+expandurl() { curl -sIL $1 | awk '/^Location/ || /^Localização/ {print $2}' ; }

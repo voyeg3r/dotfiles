@@ -1,0 +1,25 @@
+
+_getdomainnameonly(){
+    # Name: _getdomainnameonly
+    # Arg: Url/domain/ip
+    # Returns: Only domain name
+    # Purpose: Get domain name and remove protocol part, username:password and other parts from url
+    # get url
+    local h="$1"
+    # upper to lowercase
+    local f="${h:l}"
+    # remove protocol part of hostname
+    f="${f#http://}"
+    f="${f#https://}"
+    f="${f#ftp://}"
+    f="${f#scp://}"
+    f="${f#scp://}"
+    f="${f#sftp://}"
+    # Remove username and/or username:password part of hostname
+    f="${f#*:*@}"
+    f="${f#*@}"
+    # remove all /foo/xyz.html*
+    f=${f%%/*}
+    # show domain name only
+    echo "$f"
+}

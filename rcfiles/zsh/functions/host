@@ -1,0 +1,11 @@
+
+host(){
+    # Name: host() wrapper
+    # Arg: Domain/Url/IP
+    # Purpose: Dns lookups system /usr/bin/host
+    local t="$1"
+    local _host="/usr/bin/host"
+    local c=$(_getdomainnameonly "$t")
+    [ "$t" != "$c" ] && echo "Performing DNS lookups for \"$c\"..."
+    $_host $c
+}

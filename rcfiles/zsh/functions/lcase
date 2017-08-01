@@ -1,0 +1,2 @@
+
+lcase (){ local var=$(pbpaste); print ${var:l} }

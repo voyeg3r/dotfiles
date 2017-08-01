@@ -10,6 +10,9 @@
 # Also, you can set $ZDOTDIR in .zshenv to #specify an alternative
 # location for the rest of your zsh configuration.
 
+# avoid global loading environmente settings
+unsetopt GLOBAL_RCS
+
 EDITOR=vim
 # PAGER
 

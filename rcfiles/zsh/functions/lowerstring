@@ -1,0 +1,2 @@
+
+lowerstring() { echo "${*}" | sed 's/./\L&/g' ;}

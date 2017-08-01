@@ -1,0 +1,15 @@
+# Function to show full git log
+# this function allows you to show a full
+# or paged log Full git log
+
+
+fgitlog (){
+
+PRETTYFORMAT='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+
+if [ ! -z "$1" ] && [ "$1"=="--no-pager" ]; then
+    git --no-pager log --graph --pretty=format:"$PRETTYFORMAT" --abbrev-commit --date=relative
+else
+    git log --graph --pretty=format:"$PRETTYFORMAT" --abbrev-commit --date=relative
+fi
+}

@@ -1,6 +1,2 @@
-autoload -Uz zmv
 
-lower(){
-		zmv '(*)' '${(L)1}'
-		zmv '* *' '$f:gs/ /_'
-}
+lower (){ echo ${@:l} }  # this versio only works in zsh

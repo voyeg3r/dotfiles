@@ -1,0 +1,2 @@
+
+yt () mplayer -fs -quiet $(youtube-dl -g "$1")

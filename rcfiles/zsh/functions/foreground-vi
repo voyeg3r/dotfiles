@@ -1,0 +1,6 @@
+
+foreground-vi() {
+fg %vi
+}
+zle -N foreground-vi
+bindkey '^Z' foreground-vi
