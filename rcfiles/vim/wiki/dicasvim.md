@@ -37,6 +37,28 @@ by deleting the lines with manual edit commands), save the file, and quit vim,
     ^c ................ exit it
 
 
+
+### spliting funtions into separated files
+
+The selections starts with
+
+    na macro a eu busco linhas não vazias pois
+	eu tinha funções de uma liha
+
+	macro a --> /^[^ ]Vynpvt("by:sav! b:bd!j
+
+	Já na macro b eu tinha que casar funções completas
+
+        busca mais complexa --> /^[^ ][^{]*.*\_[^ ][^}]*
+
+	Descobri um jeito mais fácio no vim pra gravar a macro
+	que pega os blocos de código
+
+	/()\s\+{
+
+	isso corresponde ao começo da função, daí é só
+	dar um vip em modo normal
+
 ### Remove offending key from known_hosts file with one swift move
 
      vi +18d +wq ~/.ssh/known_hosts

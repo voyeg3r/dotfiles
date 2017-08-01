@@ -1,14 +1,45 @@
 # 10ms for key sequences
 KEYTIMEOUT=1
 
+
+# https://gist.github.com/ctechols/ca1035271ad134841284
+# source: https://www.snip2code.com/Snippet/778271/Speed-up-zsh-compinit-by-only-checking-c
+# ${ZSH_COMPDUMP}
+autoload -Uz compinit
+if [[ -n $ZSH_COMPDUMP(#qN.mh+24) ]]; then
+	compinit -i d $ZSH_COMPDUMP
+else
+	compinit -C
+fi
+
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="agnoster"
-ZSH_THEME="bira"
+#ZSH_THEME="bira"
 # ZSH_THEME="pure"
 #ZSH_THEME="kphoen"
+
+
+autoload -Uz promptinit
+promptinit
+prompt adam2
+
+
+# User configuration
+# export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
+export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:[bf]g"
+setopt HIST_IGNORE_DUPS
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+setopt NO_BEEP
 
 setopt COMPLETE_ALIASES # complete aliases before executing
 setopt NO_FLOW_CONTROL # deactvates XOFF
@@ -60,49 +91,22 @@ for f in ${DOTFILES}/rcfiles/zsh/functions/*(.N); source $f
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract systemd.plugin.zsh command-not-found history-substring-search)
+plugins=(git fasd extract command-not-found history-substring-search)
 plugins+=(zsh-autosuggestions zsh-autopair)
+
+source /home/sergio/.dotfiles/bin/fasd
+
+source $ZSH/oh-my-zsh.sh
 
 # testing completions
 # https://github.com/zsh-users/zsh-completions
 plugins+=(zsh-completions)
 
-# fpath+=($DOTFILES/rcfiles/zsh/custom/themes/pure $fpath )
 
 # trying to expand gudo at the begining
 bindkey '^i' expand-or-complete-prefix
 
 bindkey '^Xw' expand-word # expande variáveis
-
-
-# plugins+=(python)
-# export PYTHONDONTWRITEBYTECODE=1
-
-# https://gist.github.com/ctechols/ca1035271ad134841284
-# source: https://www.snip2code.com/Snippet/778271/Speed-up-zsh-compinit-by-only-checking-c
-autoload -Uz compinit
-if [[ -n ${ZDOTDIR:-${HOME}}/$ZSH_COMPDUMP(#qN.mh+24) ]]; then
-	compinit -d $ZSH_COMPDUMP;
-else
-	compinit -C;
-fi;
-
-# -D ........... disables .zcompudump file
-# -d ........... used to set an alternative name to .zcompdump
-# -i ........... accept insecure files
-# -C ........... ignore checking at all
-
-# To speed up the running of compinit, it can be made to produce a dumped
-# configuration that will be read in on future invocations; this is the default,
-# but can be turned off by calling compinit with the option -D. The dumped file
-# is .zcompdump in the same directory as the startup files (i.e. $ZDOTDIR or
-# $HOME); alternatively, an explicit file name can be given by ‘compinit -d
-# dumpfile’. The next invocation of compinit will read the dumped file instead of
-# performing a full initialization.
-#
-#  and to make compinit silently ignore all insecure files
-#  and directories use the option -i  This  security  check
-#  is  skipped entirely when the -C option is given.
 
 setopt complete_in_word
 
@@ -119,20 +123,6 @@ alias mmv='noglob zmv -W'
 autoload -Uz select-word-style
 select-word-style bash
 
-# User configuration
-# export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
-export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:[bf]g"
-setopt HIST_IGNORE_DUPS
-setopt SHARE_HISTORY
-setopt EXTENDED_HISTORY
-setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_REDUCE_BLANKS
-setopt HIST_VERIFY
-setopt NO_BEEP
-
-source $ZSH/oh-my-zsh.sh
 
 # If you end up using a directory as argument,
 # this will remove the trailing slash (usefull in ln)
