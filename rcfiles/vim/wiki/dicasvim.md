@@ -767,7 +767,7 @@ References: http://vim.wikia.com/wiki/Search_across_multiple_lines
 
     gwip .... formats paragraph and restores cursor position
 
-### How repeat last command in vim
+### How repeat last command in vim - repetir ultimo comando
 
     @:
 

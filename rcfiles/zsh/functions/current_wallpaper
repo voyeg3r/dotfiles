@@ -1,0 +1,7 @@
+
+current_wallpaper () {
+IMG=$(gsettings get org.gnome.desktop.background picture-uri | awk -F"['/]" "{print \$(NF-1)}")
+FOLDER=$(xdg-user-dir PICTURES)
+CURRENT_WALLPAPER="${FOLDER}/${IMG}"
+echo $CURRENT_WALLPAPER
+}

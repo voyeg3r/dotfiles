@@ -154,6 +154,7 @@
 [mktemp](mktemp.md)
 [mount](mount.md)
 [mplayer](mplayer.md)
+[[mpv](mpv.md)]
 [mv](mv.md)
 [mysql](mysql.md)
 [nano](nano.md)

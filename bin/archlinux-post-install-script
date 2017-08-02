@@ -613,6 +613,7 @@ sudo pacman -S --noconfirm rhythmbox
 sudo yaourt -S --noconfirm codecs
 #sudo pacman -S vlc qt4 ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
 sudo pacman -S vlc qt4 {,gst-{libav,plugins-{bad,base,good,ugly}}}
+yaourt mpv gnome-mpv
 
 sudo pacman -S gnome-subtitles
 sudo pacman -S gaupol
