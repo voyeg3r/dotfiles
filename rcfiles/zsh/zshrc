@@ -205,6 +205,16 @@ zle accept-line
 zle -N _git-status
 bindkey '\eg' _git-status
 
+# http://jcarreras.es/dotfiles/zsh.html?v1
+function up_directory() {
+  BUFFER="cd .."
+    zle accept-line
+}
+# Define a widget called "up_directory", mapped to our function above.
+zle -N up_directory
+# Bind it to ESC-u // Alt-u
+bindkey "^[u" up_directory
+
 # history search
 # see: http://stackoverflow.com/questions/14040351/filtering-zsh-history-by-command
 # function exists { which $1 &> /dev/null }

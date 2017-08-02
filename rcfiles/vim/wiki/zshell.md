@@ -54,7 +54,10 @@ There are five startup files that zsh will read commands from:
     man zshzftpsys   Zsh built-in FTP client
     man zshall       Meta-man page containing all of the above
     info --index-search=age zsh         # get man info for zsh function age *N*
+
+    ``` markdown
     zinfo(){info --index-search=$1 zsh} *N*
+    ```
 
 ### Fixing delete char on zsh
 
@@ -128,6 +131,17 @@ To preview all available themes, use this command:
 
 $ prompt -p
 ```
+
+### Better completion
+
+    zmodload zsh/complist
+    autoload -U compinit && compinit
+
+    zstyle ':completion:*' accept-exact '*(N)'
+    zstyle ':completion:*' use-cache on
+    zstyle ':completion::complete:*' cache-path .zcache
+    zstyle ':completion:*' cache-path ~/.zsh/cache
+    zstyle ':completion:*' group-name ''
 
 ### complementação de histórico
 
@@ -486,6 +500,27 @@ make file and directory names lowercase
     ``` sh
     ls -1 */**/*.sh
     ```
+
+
+    (.): regular files
+
+    (/): directories
+
+    (*): executables
+
+    (@): symbolic links
+
+    ®,(W),(X),(U): file permissions
+
+    (LX),(L+X),(L-X),(LmX): file size, with X
+    in bytes, + for larger than files, – for smaller than files, m can be
+    modifier for size (k for KiB, m for MiB) (mX),(m+X),(m-X): matches file
+    modified “more than X days ago”. A modifier can be used to express X in
+    hours (h), months (M), wweks (W)…
+
+    (u{owner}): a specific file owner
+    (f{permission string ala chmod}): a specific file permissions
+
 
 #### is equivalent to:
 
