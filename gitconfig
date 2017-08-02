@@ -34,7 +34,7 @@
 	last = log -1 HEAD
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [credential]
-	helper = cache --timeout=3600
+	helper = cache
 [merge]
 	tool = vimdiff
 [oh-my-zsh]
