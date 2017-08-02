@@ -56,6 +56,9 @@ There are five startup files that zsh will read commands from:
     info --index-search=age zsh         # get man info for zsh function age *N*
     zinfo(){info --index-search=$1 zsh} *N*
 
+### Fixing delete char on zsh
+
+    bindkey "\e[3~" delete-char
 
 What are the step to move all your dotfiles into XDG directories?
 + https://superuser.com/a/874924/45032

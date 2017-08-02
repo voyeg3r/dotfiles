@@ -5,6 +5,8 @@
 
     mpv --ytdl url
 
+    by default mpv cli user this option
+
 ### função ouvir o audio de um video do youtube
 
     function mm() {

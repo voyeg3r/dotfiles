@@ -62,7 +62,7 @@ alias vimessential='vim -u ~/.dotfiles/rcfiles/vim/essential.vim'
 alias compilalivro='make clean; make && make show'
 alias 4shared='cadaver http://webdav.4shared.com/'
 
-alias chicago='mplayer http://relay.broadcastify.com:80/il_chicago_police2\?xan\=7C80215A2A84B01D154525F05BD80095'
+alias chicago='mpv http://relay.broadcastify.com:80/il_chicago_police2\?xan\=7C80215A2A84B01D154525F05BD80095'
 # Listen to Air Traffic Control, used to be scripts.
 alias miami='mplayer http://relay.broadcastify.com:80/540894049\?xan\=7C80215A2A84B01D154525F05BD80095'
 
@@ -147,7 +147,7 @@ alias lush="mplayer -playlist http://somafm.com/lush130.pls" # Soma FM Lush iTun
 alias sonicuniverse="mplayer -playlist http://somafm.com/sonicuniverse.pls" # Soma FM Sonic Universe iTunes AAC 128K
 
 # liberty statue live cam
-alias libertystatue='vlc http://video3.earthcam.com/fecnetwork/libertyHD1.flv/chunklist_w1810184803.m3u8'
+alias libertystatue='mpv http://video3.earthcam.com/fecnetwork/libertyHD1.flv/chunklist_w1810184803.m3u8'
 
 alias cbanews='mplayer http://abclive.abcnews.com/i/abc_live2@136328/index_2500_av-b.m3u8'
 
