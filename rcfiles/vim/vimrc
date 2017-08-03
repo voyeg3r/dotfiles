@@ -122,6 +122,8 @@ omap af :normal Vaf<CR>
 set foldlevel=3
 set fdm=marker
 
+set paste
+
 " select text you just pasted
 " http://stackoverflow.com/questions/4312664/is-there-a-vim-command-to-select-pasted-text
 " http://vimcasts.org/episodes/bubbling-text/

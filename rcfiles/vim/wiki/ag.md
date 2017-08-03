@@ -15,6 +15,7 @@ trying to use .agignore file
 ### localizar links markdown sem extensão ".md"
 
 O uso da opção `-l` do ag faz ele exibier somente os nomes
+
     ``` ag
     ag -l '\[[^]]*\]\([^):.]*\)' .
     ```

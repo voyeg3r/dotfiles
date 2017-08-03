@@ -1702,6 +1702,24 @@ zO ................  open all folders
 zM ................  close all folders
 ```
 
+### I have a file which has contents like so:
++ https://stackoverflow.com/a/45477513/2571881
+
+    size is X1 Identifier is Y1
+    size is X1 Identifier is Y1
+    size is X1 Identifier is Y1
+
+I want to re-arrage the file so that I get
+
+    Identifier is Y1 size is X1
+    Identifier is Y1 size is X1
+    Identifier is Y1 size is X
+
+
+    %s,\v(.*) (I.*),\2 \1
+
+
+
 ### Colando o que foi selecionado com o mouse
 
 `Ctrl-r *` Or `"*p`
