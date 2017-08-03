@@ -57,7 +57,7 @@ There are five startup files that zsh will read commands from:
 
     ``` markdown
     zinfo(){info --index-search=$1 zsh} *N*
- ```
+    ```
 
 ### Testing commands existence
 
