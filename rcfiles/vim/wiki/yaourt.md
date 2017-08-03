@@ -23,7 +23,7 @@ http://www.linuxdescomplicado.com.br/2015/10/13-comandos-basicos-yaourt-para-voc
 
     pacote -Si yaourt
 
-6 – Remover um pacote
+6 – Remover um pacote (uninstall)
 
     yaourt -R pacote
 
