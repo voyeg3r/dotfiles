@@ -77,6 +77,8 @@ alias amazingtale='mplayer http://rosetta.shoutca.st:8462/;stream1'
 alias roswellufotalks='mplayer http://streaming.shoutcast.com/TheUFOChannel'
 alias cryptoradio='mplayer http://station.kryptonradio.com:8000/stream'
 
+alias gst='git status'
+
 # Miami International Airport (KMIA) Scanning Approach, Departure and Ground Control
 alias miami2='mplayer http://relay.broadcastify.com:80/970805198\?xan\=7C80215A2A84B01D154525F05BD80095'
 alias northLosAngelis='mplayer http://relay.broadcastify.com:80/g35bnmpf8wc2\?xan\=7C80215A2A84B01D154525F05BD80095'

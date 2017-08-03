@@ -15,14 +15,16 @@ unsetopt GLOBAL_RCS
 
 EDITOR=vim
 
-export XDG_DESKTOP_DIR="$HOME/Desktop"
-export XDG_DOWNLOAD_DIR="$HOME/downloads"
-export XDG_TEMPLATES_DIR="$HOME/docs/templates"
-export XDG_PUBLICSHARE_DIR="$HOME/docs/public"
-export XDG_DOCUMENTS_DIR="$HOME/docs"
-export XDG_MUSIC_DIR="$HOME/multimedia/music"
-export XDG_PICTURES_DIR="$HOME/multimedia/img"
-export XDG_VIDEOS_DIR="$HOME/multimedia/videos"
+export TERM="xterm-256color"
+
+# export XDG_DESKTOP_DIR="$HOME/Desktop"
+# export XDG_DOWNLOAD_DIR="$HOME/downloads"
+# export XDG_TEMPLATES_DIR="$HOME/docs/templates"
+# export XDG_PUBLICSHARE_DIR="$HOME/docs/public"
+# export XDG_DOCUMENTS_DIR="$HOME/docs"
+# export XDG_MUSIC_DIR="$HOME/multimedia/music"
+# export XDG_PICTURES_DIR="$HOME/multimedia/img"
+# export XDG_VIDEOS_DIR="$HOME/multimedia/videos"
 
 
 # PAGER

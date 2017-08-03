@@ -1,6 +1,9 @@
 # 10ms for key sequences
 KEYTIMEOUT=1
 
+source $ZSH/oh-my-zsh.sh
+
+ZSH_CUSTOM="${DOTFILES}/rcfiles/zsh/custom"
 
 # https://gist.github.com/ctechols/ca1035271ad134841284
 # source: https://www.snip2code.com/Snippet/778271/Speed-up-zsh-compinit-by-only-checking-c
@@ -20,12 +23,9 @@ fi
 #ZSH_THEME="bira"
 # ZSH_THEME="pure"
 #ZSH_THEME="kphoen"
+ZSH_THEME="bullet-train"
 
-
-autoload -Uz promptinit
-promptinit
-prompt adam2
-
+source ${DOTFILES}/rcfiles/zsh/custom/bullet-train.zsh-theme
 
 # User configuration
 # export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd.."
@@ -81,8 +81,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=${DOTFILES}/rcfiles/zsh/custom
 
 for f in ${DOTFILES}/rcfiles/zsh/functions/*(.N); source $f
 
@@ -93,9 +91,8 @@ for f in ${DOTFILES}/rcfiles/zsh/functions/*(.N); source $f
 plugins=(git fasd extract command-not-found history-substring-search)
 plugins+=(zsh-autosuggestions zsh-autopair)
 
-source /home/sergio/.dotfiles/bin/fasd
+source ${DOTFILES}/bin/fasd
 
-source $ZSH/oh-my-zsh.sh
 
 # testing completions
 # https://github.com/zsh-users/zsh-completions
@@ -177,7 +174,7 @@ zstyle ':completion:*:warnings' format 'Too bad there is nothing'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-source $DOTFILES/rcfiles/zsh/aliases
+source ${DOTFILES}/rcfiles/zsh/aliases
 
 # current_wallpaper=$(gsettings get org.gnome.desktop.background picture-uri | sed 's,file:///,/,g' )
 

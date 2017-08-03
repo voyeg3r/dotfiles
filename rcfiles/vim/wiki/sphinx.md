@@ -9,14 +9,11 @@ inteligente e bonita.
 
     pip install sphinx
 
-
 ### Inicializando a doc
 
      mkdir docs
 
-
      cd docs
-
 
      sphinx-quickstart
 
@@ -27,5 +24,3 @@ inteligente e bonita.
 ### EXIBINDO NO BROWSER
 
      python -m SimpleHTTPServer 9000
-
-
