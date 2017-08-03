@@ -57,7 +57,14 @@ There are five startup files that zsh will read commands from:
 
     ``` markdown
     zinfo(){info --index-search=$1 zsh} *N*
-    ```
+ ```
+
+### Testing commands existence
+
+	# not aliasing rm -i, but if safe-rm is available, use condom.
+	if (( ${+commands[safe-rm]} )); then
+	  alias rm='safe-rm'
+	fi
 
 ### Fixing delete char on zsh
 
