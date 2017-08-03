@@ -206,14 +206,14 @@ zle -N _git-status
 bindkey '\eg' _git-status
 
 # http://jcarreras.es/dotfiles/zsh.html?v1
-function up_directory() {
-  BUFFER="cd .."
-    zle accept-line
-}
-# Define a widget called "up_directory", mapped to our function above.
-zle -N up_directory
-# Bind it to ESC-u // Alt-u
-bindkey "^[u" up_directory
+# function up_directory() {
+#   BUFFER="cd .."
+#     zle accept-line
+# }
+# # Define a widget called "up_directory", mapped to our function above.
+# zle -N up_directory
+# # Bind it to ESC-u // Alt-u
+# bindkey "^[u" up_directory
 
 # history search
 # see: http://stackoverflow.com/questions/14040351/filtering-zsh-history-by-command
@@ -297,10 +297,3 @@ bindkey '^ ' autosuggest-accept
 bindkey '^X^A' fasd-complete
 bindkey '^X^F' fasd-complete-f
 bindkey '^X^D' fasd-complete-d
-
-# http://stackoverflow.com/a/13614816/2571881
-# very very useful
-autoload -Uz history-beginning-search-menu
-zle -N history-beginning-search-menu
-bindkey '' history-beginning-search-menu
-

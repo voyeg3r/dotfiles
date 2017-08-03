@@ -15,7 +15,7 @@ Podemos criar um arquivo com o cat assim:
 
     cat file | (read; read; cat)
 
-Se also how to perform this task with [tail](tail)
+Se also how to perform this task with [tail](tail.md)
 
 ### Here documents
 

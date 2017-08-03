@@ -13,7 +13,7 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
-See also: [Regex](Regex) page
+See also: [Regex](Regex.md) page
 
 ### Editing .viminfo file
 + https://stackoverflow.com/a/2833376/2571881
@@ -386,7 +386,7 @@ ao instalar o vimgolf como recomenda o site digite
 
     PATH=$PATH:/home/sergio/.gem/ruby/2.3.0/bin
 
-See also [vimbesttips](vimbesttips)
+See also [vimbesttips](vimbesttips.md)
 
 ### Start vim with no plugins
 source: Book practical vim

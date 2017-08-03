@@ -11,3 +11,10 @@ them
 In my case I've tried to use 'ag' as search tool for ctrlp
 plugin in vim and always it seems to find mp3 files and I am
 trying to use .agignore file
+
+### localizar links markdown sem extensão ".md"
+
+O uso da opção `-l` do ag faz ele exibier somente os nomes
+    ``` ag
+    ag -l '\[[^]]*\]\([^):.]*\)' .
+    ```

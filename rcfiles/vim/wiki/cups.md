@@ -4,7 +4,7 @@ o seguinte endereço:
 
     http://localhost:631/
 
-### Copiando configurações de impressoras usando o [rsync](rsync)
+### Copiando configurações de impressoras usando o [rsync](rsync.md)
 Já fiz certa vez essa proeza, só temos que mudar o ip
 da maquina e algumas besteiras mais, mas funciona e
 economiza tempo

@@ -57,7 +57,7 @@
 [cut](cut.md)
 [date](date.md)
 [dd](dd.md)
-[[detox](detox)]
+[[detox](detox.md)]
 [ddrescue](ddrescue.md)
 [df](df.md)
 [dhclient](dhclient.md)

@@ -5,10 +5,10 @@ autor: Sérgio Luiz Araújo Silva
 site: http://vivaotux.blogspot.com
 twitter: http://www.twitter.com/voyeg3r
 
-[Agradeco Senhor](Agradeco-Senhor)
+[Agradeco Senhor](Agradeco-Senhor.md)
 
 -------------------
-[Oracao do amanhecer](Oracao-do-amanhecer)
+[Oracao do amanhecer](Oracao-do-amanhecer.md)
 -------------------
 
 

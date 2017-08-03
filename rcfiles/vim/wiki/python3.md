@@ -30,7 +30,7 @@ Github:      https://github.com/voyeg3r
 + https://github.com/cobrateam
 + http://code.activestate.com/recipes/langs/python/
 + https://panda.ime.usp.br/algoritmos/static/algoritmos/index.html
-+ [30 python tricks you may not know about](30-python-tricks-you-may-not-know-about)
++ [30 python tricks you may not know about](30-python-tricks-you-may-not-know-about.md)
 + https://www.programiz.com/python-programming/list
 + [visualise your variables](http://pythontutor.com/)
 + https://docs.python.org/3.6/whatsnew/
@@ -780,7 +780,7 @@ def f(x):
 ### Manipulating strings
 + [Read more here](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
 + [pep-498-string-interpolation](https://www.python.org/dev/peps/pep-0498/)
-+ [pep 498 local help](pep-498-local-help)
++ [pep 498 local help](pep-498-local-help.md)
 
 ** some f-trings tips **
 
@@ -1133,7 +1133,7 @@ Embedding the REPL in any Python application is easy:
 + [natural sorting](https://pypi.python.org/pypi/natsort)
 + [clipboard manipulation](https://pypi.python.org/pypi/pyperclip)
 + [python3 libs](https://pypi.python.org/pypi?:action=browse&c=533&show=all)
-+ [BeautifulSoup](BeautifulSoup)
++ [BeautifulSoup](BeautifulSoup.md)
 + python-dateutils - deals with dates
 + os module - deals with any operating system
 + [memory cache] from functools import lru_cache
@@ -1142,7 +1142,7 @@ Embedding the REPL in any Python application is easy:
 + [open excel spreadsheets] openpyxl
 + os "shows os informations"
 + imp (reload) - reloads previous imported modules
-+ [python pandas](python-pandas) (data analisys) pip install pandas
++ [python pandas](python-pandas.md) (data analisys) pip install pandas
 + heapq
 
 3y g00 *pi 畱畹疪疑疃疩畲畽略畤疉疏疠疨疪疒疣畨疩疡畲疖畨疢疤疥疟畱畽疣疂疚畦疙畦疇疦畣疧

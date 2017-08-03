@@ -69,3 +69,8 @@ find /originalPath/ -iname \*.mp3 -print0 | xargs -0 -i cp ./{} /destinationPath
 
     ls *.jpg | xargs -n1 -i cp {} /external-hard-drive/directory
 
+### copy files without extension
+
+    ``` zsh
+    cp -- !(*.txt|*.c|*.py) /path/to/directory
+    ```

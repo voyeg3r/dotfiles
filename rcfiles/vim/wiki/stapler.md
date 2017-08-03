@@ -3,7 +3,7 @@
 A small utility making use of the pypdf library to provide a (somewhat) lighter
 alternative to pdftk
 
-Leia também sobre o [pdftk](pdftk)
+Leia também sobre o [pdftk](pdftk.md)
 
 # concatenate a and b into output.pdf
 stapler sel a.pdf b.pdf output.pdf

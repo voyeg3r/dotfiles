@@ -1,9 +1,9 @@
 # Arquivo: zshell tips and tricks
 
 + [autrageously-zsh-tips](http://reasoniamhere.com/2014/01/11/outrageously-useful-tips-to-master-your-z-shell/)
-+ [[autrageously zsh tips](autrageously-zsh-tips)]
++ [[autrageously zsh tips](autrageously-zsh-tips.md)]
 
-see also [zshtips](zshtips)
+see also [zshtips](zshtips.md)
 
 ``` markdown
 File:		 ZsHell.md

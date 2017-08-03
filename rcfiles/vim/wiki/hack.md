@@ -11,7 +11,7 @@ Twitter:	 @voyeg3r
 Github:      https://github.com/voyeg3r
 ```
 
-See more at [dicasgoogle](dicasgoogle)
+See more at [dicasgoogle](dicasgoogle.md)
 
 ### Senha do roteador Vivo
 
