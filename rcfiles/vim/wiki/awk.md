@@ -87,6 +87,20 @@ buscando alí uma variável que na verdade não existe.
     awk 'NF' filename
 
     awk 'NF > 0' filename
+    
+### delete hidden files and folders 
+
+	ls -la | awk '$NF ~ /^\.[^.]+/  {print $NF}' | xargs rm -rf
+
+	ls -la ............. long list (all files and folders)
+	$NF ................ last field (file or folder name)
+	~   ................ Regular Expression match
+	/^\.[^.]+/ ......... dot followed by not dot at least once +
+
+If the last field $NF match pattern show it and send 
+it to xargs which will perform the task.
+
+
 
 ### adding a new line after each second line
 
