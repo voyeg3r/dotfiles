@@ -40,6 +40,6 @@
 
 ### Showing only hidde files and folders (one per line)
 
-	ls -A1
+	ls -A | grep '^\.'
 
 
