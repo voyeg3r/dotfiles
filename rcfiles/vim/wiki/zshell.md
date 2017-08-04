@@ -159,17 +159,24 @@ $ prompt -p
 ### zrecompile 
 + https://github.com/Eriner/zim/issues/86
 A builtin module to speed up your zsh
+
+```zsh
+# Assume starting here with the default $fpath
+zsh_default_functions=~/.zsh-default-functions.zwc
+if ! zcompile -t $zsh_default_functions >&/dev/null
+then
+	# File is missing or out of date.  Rebuild it.
+	# Removes the file if any function cannot be compiled.
+	zcompile $zsh_default_functions $^fpath/*(N.:A)
+fi
+if [[ -f $zsh_default_functions ]]
+then
+	fpath=( $zsh_default_functions )
+	autoload -w $zsh_default_functions
+fi
 ```
-	autoload -Uz zrecompile
-	Function to determine the need of a zcompile. If the .zwc file
-  	# does not exist, or the base file is newer, we need to compile.
-  	# These jobs are asynchronous, and will not impact the interactive shell
-  	zcompare() {
-    	if [[ -s ${1} && ( ! -s ${1}.zwc || ${1} -nt ${1}.zwc) ]]; then
-      		zcompile ${1}
-    	fi
-  	}
-```
+
+
 ### Better completion
 
     zmodload zsh/complist
