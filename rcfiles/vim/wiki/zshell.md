@@ -280,6 +280,7 @@ In order, your machine will load/execute the following files when ZSH starts:
 for f (**/*.txt) {echo $f}
 
 # to negate some extensions you can do:
+setopt extended_glob
 ls functions/^*(-mp3|.zsh)
 ```
 
