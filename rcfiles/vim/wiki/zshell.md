@@ -65,6 +65,23 @@ There are five startup files that zsh will read commands from:
 	if (( ${+commands[safe-rm]} )); then
 	  alias rm='safe-rm'
 	fi
+	
+### improving zsh performance
++ https://www.zsh.org/mla/users/2015/msg00904.html
+	# Assume starting here with the default $fpath
+    	zsh_default_functions=~/.zsh-default-functions.zwc
+    	if ! zcompile -t $zsh_default_functions >&/dev/null
+    		then
+	        # File is missing or out of date.  Rebuild it.
+      	        # Removes the file if any function cannot be compiled.
+      		zcompile $zsh_default_functions $^fpath/*(N.:A)
+   	 fi
+    	if [[ -f $zsh_default_functions ]]
+   		 then
+     		 fpath=( $zsh_default_functions )
+      		autoload -w $zsh_default_functions
+   	 fi
+
 
 ### Fixing delete char on zsh
 
@@ -322,7 +339,7 @@ removing all directories except some:
 #### Check the Existence of a Command in Bash and Zsh
 [source](https://www.topbug.net/blog/2016/10/11/speed-test-check-the-existence-of-a-command-in-bash-and-zsh/)
 
-    the fastest way is this:
+    the fastest way is this (bolean resuld):
 
     (( $+commands[foobar] ))
 
@@ -685,6 +702,10 @@ one three
 #### print file name without extension
 
     echo $filename:r
+    
+    echo $filename:t  (basename)
+    echo $filename:h  (dirname)
+    echo $filename:r  (extension removed)
 
 #### Remove the suffix from each file (*.sh in this example)
 
