@@ -41,5 +41,11 @@
 ### Showing only hidde files and folders (one per line)
 
 	ls -A | grep '^\.'
+	
+	# ZSH way to solve ths problem?
+	
+	ls *(.D)
+	
+       .zlogin  .zlogin.swp  .zshenv
 
 
