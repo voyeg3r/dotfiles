@@ -639,6 +639,7 @@ Nevertheless, you could also check for either
     (Lm+5) —larger than five megabytes.
 
     ``` zsh
+    ls **/*(.D) ......... regular hidden files D --> dotfiles
     ls **/*(.) .......... regular files
     ls **/*(^.) ......... not regular files
     ls **/*(@) .......... simbolic links
