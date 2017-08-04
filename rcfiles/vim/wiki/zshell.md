@@ -158,10 +158,11 @@ $ prompt -p
 
 ### zrecompile 
 + https://github.com/Eriner/zim/issues/86
+
 A builtin module to speed up your zsh
+Assume starting here with the default $fpath
 
 ```zsh
-# Assume starting here with the default $fpath
 zsh_default_functions=~/.zsh-default-functions.zwc
 if ! zcompile -t $zsh_default_functions >&/dev/null
 then
