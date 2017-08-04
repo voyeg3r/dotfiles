@@ -38,5 +38,8 @@
 	'{print $NF}' ...... show the last field 
     ${i/./} ............ removes dot at link name
 
+### Showing only hidde files and folders (one per line)
+
+	ls -A1
 
 
