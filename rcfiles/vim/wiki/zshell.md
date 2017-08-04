@@ -68,8 +68,13 @@ There are five startup files that zsh will read commands from:
 	
 ### improving zsh performance
 + https://www.zsh.org/mla/users/2015/msg00904.html
-	# Assume starting here with the default $fpath
-    	zsh_default_functions=~/.zsh-default-functions.zwc
+
+```markdown
+	ssume starting here with the default $fpath
+	
+```
+```zsh
+    	zsh_default_functions=~/.zsh-default-functions.zwc
     	if ! zcompile -t $zsh_default_functions >&/dev/null
     		then
 	        # File is missing or out of date.  Rebuild it.
@@ -80,8 +85,8 @@ There are five startup files that zsh will read commands from:
    		 then
      		 fpath=( $zsh_default_functions )
       		autoload -w $zsh_default_functions
-   	 fi
-
+   	 fi
+```
 
 ### Fixing delete char on zsh
 
