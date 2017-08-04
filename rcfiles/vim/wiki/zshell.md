@@ -159,9 +159,9 @@ $ prompt -p
 ### zrecompile 
 + https://github.com/Eriner/zim/issues/86
 A builtin module to speed up your zsh
-
+```
 	autoload -Uz zrecompile
-	# Function to determine the need of a zcompile. If the .zwc file
+	Function to determine the need of a zcompile. If the .zwc file
   	# does not exist, or the base file is newer, we need to compile.
   	# These jobs are asynchronous, and will not impact the interactive shell
   	zcompare() {
@@ -169,7 +169,7 @@ A builtin module to speed up your zsh
       		zcompile ${1}
     	fi
   	}
-
+```
 ### Better completion
 
     zmodload zsh/complist
