@@ -234,6 +234,9 @@ In order, your machine will load/execute the following files when ZSH starts:
 .dotfiles/rcfiles/vim/bundle/
 
 for f (**/*.txt) {echo $f}
+
+# to negate some extensions you can do:
+ls functions/^*(-mp3|.zsh)
 ```
 
 #### Create an array of lines from a file
