@@ -1,8 +1,8 @@
-```txt
+---
 Filename: /home/sergio/.dotfiles/README.md
-Last Change: Mon, 12 Feb 2024 - 21:26:09
+Last Change: Fri, May 2024/05/31 - 13:32:21
 # vim:cole=0:nolist:nospell:ft=markdown:expandtab:tabstop=2:shiftwidth=2:
-```
+---
 
 ## Install this repo
 
