@@ -1,0 +1,4 @@
+current_wallpaper () {
+ [ -f ${ZDOTDIR}/lazy-load/current_wallpaper ] && . ${ZDOTDIR}/lazy-load/current_wallpaper
+ current_wallpaper "$@"
+}

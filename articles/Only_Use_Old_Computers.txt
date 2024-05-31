@@ -1,0 +1,182 @@
+Feed: Luke Smith's Webpage
+Title: Only Use Old Computers!
+Date: Thu, 10 Dec 2020 21:00:00 -0300
+Link: https://lukesmith.xyz/articles/only-use-old-computers/
+ 
+[image 1: If only ThiccPads were this THICC! (link #1)]The ideal ThiccPad 
+ 
+If there is a single point of advice I can offer novice computer users, it is 
+stop using modern computers.
+ 
+If you look at "technology YouTube," by which I mean the massive multi-million 
+subscriber channels, nearly all of it is devoted to constantly reviewing and 
+comparing every new computer, processor, graphics card and product. There's big 
+money in it because obviously all of these companies put money in it, but also 
+if you're a normal person, you automatically assume you need the "best" 
+technology.
+ 
+Do you need a modern computer?
+ 
+Absolutely not. More than 95% of people could be using a computer from 2008 or 
+before without any problems. Needing a recent machine is limited to people who:
+ 
+ 1. Do extreme, professional, processor-intensive video-rendering.
+ 2. Compile massive programs and operating systems with severe time constraints.
+ 3. Play recent triple AAA video-games on high settings.
+ 4. Use many massive Electron apps and other inexcusably bad software written by
+ soydevs and other people who shouldn't be writing software.
+ 
+The last two reasons aren't really real reasons at all because they are totally 
+unnecessary and avoidable things.
+ 
+But to the point, watching YouTube videos and using a word processor does not 
+require last month's new release.
+ 
+Every video I upload, I transcode for settings optimal for YouTube, meaning I 
+render each video I record. On my computer from a decade ago, that still takes 
+only a couple minutes. A fancy $5000 computer might be able to do it in less 
+than one, but it is honestly not worth the pain associated with modern 
+computers.
+ 
+How much should a computer cost a normal person?
+ 
+Either nothing or just around $200, I say. I use a ThinkPad X220 I got for $90 
+on eBay. Before that, I used another ThinkPad X220 I also got for $90. Like 
+anything else, if you are buying things on Amazon, you're doing it wrong.
+ 
+The Pain of Modern Computers
+ 
+Modern computers are more breakable
+ 
+As computing has become more and more popular, companies have started to realize
+that a consumer's first reaction on having their $5 wifi card die is immediately
+buy a whole new computer. This means two things: (1) they don't bother to make 
+computers easy to repair, in fact, they make it more difficult and (2) there is 
+absolutely no need to make computers durable at all. In fact, it's probably 
+better to let computers break so you'll get yet another sale.
+ 
+Apple is by far the most anti-social computing company because of this. I'll let
+the larger tech channels show you the specifics, but every Apple product is 
+brilliantly designed to make it difficult to fix very basic and otherwise 
+fixable problems. They have quite a racket licensing out the ability and tools 
+to companies that want to fix their terrible hardware. Apple even used pentalobe
+screws just so normal people couldn't open their computers up with a typical 
+screwdriver. Of course nowadays every other computer manufacturer imitates the 
+Apple style where apparent "sleekness" is supposed to be a signal of high 
+quality.
+ 
+Modern computers are increasingly monitoring devices and come with proprietary 
+junk.
+ 
+The Management Engine
+ 
+You might've heard that all Intel i3/i5/i7 processors (that is, after the Intel 
+Core 2 Duo) have an onboard alternate processor that is meant to function as 
+spyware. This is called the Intel Management Engine. It can view your memory and
+connect to the internet: basically all modern computers have this permanent back
+door. In older computers, say the ThinkPad X200, you can, with a little hardware
+action, remove the other processor and replace the proprietary BIOS with 
+Libreboot[2] or Coreboot[3], but that is not possible on more modern computers 
+(you can install Coreboot on a more modern machine, but not all of the 
+components of the Management Engine are removed).
+ 
+More recent computers, however are non-removable spyware by design and, yes, the
+NSA can monitor any machine with a Management Engine. There are actually even 
+rumors that one of the taps that the FBI under the Obama administration put on 
+Trump during his campaign was a Management Engine bug.
+ 
+Note that AMD (Ryzen) processors have what they call a "Platform Security 
+Processor" that is equivalent to the Intel Management Engine, so you're not 
+escaping the issue by using one of them.
+ 
+NVIDIA
+ 
+Again, unless you play modern videos alone all day, you literally have no reason
+to have a modern computer, especially one with an expensive graphics card. 
+NVIDIA is a great example because they make graphics cards and develop 
+proprietary drivers for them to make it harder and harder to use them on 
+machines that aren't running whatever the most recent spyware variant of Windows
+10 is. Linux works perfectly on all computers ancient and modern, but if you 
+plug some NVIDIA thing up to it, you might lose your screen or not be able to 
+boot. A lot of gaymers whine about their NVIDIA products "not working" on Linux 
+without realizing that is by design. NVIDIA and other companies and all CPU 
+designers go out of their way to keep their source code and standards private 
+which makes their products tangibly worse because it is harder for other parties
+to write drivers for them. Why? Because most of them have partnerships with 
+Microsoft.
+ 
+The Problem of Windows
+ 
+How many times have you heard a normie explain to you that their computer is 
+slow because it's "really old" and they bought it "way back in 2015?" It's an 
+absurd statement of course. Computers don't just get magically slow... ...unless
+they've been running Windows.
+ 
+In the future, once even Microsoft has switched over to a purely Unix-based 
+backend for their operating system, we're all going to have a good laugh about 
+how Microsoft Windows, literally the worst and least functioning operating 
+system ever devised, was the largest consumer market share for decades.
+ 
+I might go into how Windows is poorly designed in another page or video, but I 
+want to be clear that there is no such loss of speed on any Linux distribution, 
+which is what you should be using. I am one of the first to complain about the 
+feature bloat of the Linux kernel and Linux software, but compared to Windows, 
+it's no contest: Linux runs fast on old hardware. You'll know from some of my 
+videos, however, that I'm not big into "Linux Evangelism," mostly because it's 
+sort of strident and doesn't really work with a high success rate. Using Linux 
+is just something that normies have been immunized against (mostly because "It's
+what smart people do"), but I always find myself in a position where someone's 
+Window installation has permanently crashed and they're at the awkward decision 
+of having to buy a license to reinstall the dysfunctional and slow operating 
+system they've grown to hate.
+ 
+There is quite literally no problem that normal people have with computers that 
+is not immediately alleviated by installing Linux.
+ 
+Why do people use ThinkPads?
+ 
+As I said above, I use a X220 ThinkPad. Older ThinkPads are fairly popular among
+people who think and care about doing things effectively and economically on a 
+computer. Why is this?
+ 
+ThinkPads were always designed for enterprise environments, meaning the 
+financial incentives for the manufacturer are not always planned obsolesce, but 
+a long-standing reputation among large companies of having durable, fixable and 
+expandable machines.
+ 
+To replace a hard drive on the X200 requires unscrewing just a single screw. 
+Same to replace the memory. To replace a spoiled keyboard is no more than three 
+screws. Modern laptops, including the degraded modern ThinkPad have abandoned 
+this simplicity and opt for the Apple-Mac/cell phone design technique of making 
+batteries, memory and the rest functionally soldered and irremovable.
+ 
+How far can $500 go?
+ 
+Over the years, I’ve had many things break on my laptops, but since I’ve been 
+using ThinkPads, it is incredibly easy to keep a working computer even after 
+rough use. I estimate that I have never spent more than a combined total of $500
+on computers, which is usually a bare minimum for what someone can buy a 
+“modern” laptop for nowadays.
+ 
+When the keyboard on my ThinkPad breaks, I can just buy a replacement keyboard 
+for $30 or $40 and replace the old one much easier than any other model. That’s 
+the modularity of these computers.
+ 
+Even in the worst case scenario when something on the motherboard makes the 
+computer unbootable, I still get to keep my “broken” ThinkPad and repurpose the 
+memory, wifi card, keyboard and everything else. I still have some parts of 
+every laptop I’ve had just because they do come in a lot of use. The other 
+month, a friend’s wifi on his desktop went out and I could replace it with one 
+of my old ThinkPad modules.
+ 
+This is the kind of thing you lose with modern computers. This is purposeful on 
+the part of manufacturers, and it’s important not to pay them huge amounts of 
+money to incentivize this behavior. It’s very easy to live off of 10 year old 
+computers nowadays. The eBay-and-etc resale market is massive even thought many 
+of us have gotten wise to the value of these old computers.
+ 
+Links: 
+[1]: https://lukesmith.xyz/pix/dream_thinkpad_small.gif (image)
+[2]: https://libreboot.org/ (link)
+[3]: https://coreboot.org/ (link)
+

@@ -1,0 +1,7 @@
+# copy selection to primary selection to clipboard
+
+xcopy (){
+
+	xclip -selection clipboard
+
+}

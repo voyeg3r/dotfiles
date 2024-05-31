@@ -1,1 +1,0 @@
-# halt desliga a máquina

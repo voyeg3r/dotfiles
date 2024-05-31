@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# script: /home/sergio/.dotfiles/dwm/scripts/src-rofi
+# Last Change: Sun, 18 Sep 2022 14:51:31
+# Purpuse: install void-packages from source
+# Source: https://github.com/GabrielTWMlinux/Scripts
+
+VOID_PACKAGES="$HOME/build/void-packages"
+
+[ ! -d "$VOID_PACKAGES" ] && (
+    git clone https://github.com/void-linux/void-packages.git
+    cd void-packages
+    ./xbps-src binary-bootstrap
+    echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
+)
+
+pkg="$(ls "$VOID_PACKAGES/srcpkgs" | rofi -dmenu -i 20 -p "Src-Packages ")"
+DIR1="$VOID_PACKAGES"
+DIR2="$VOID_PACKAGES/srcpkgs"
+CHECK="$(xbps-query -s "$pkg" | wc -l)"
+
+if [ $pkg ]
+then
+    if [ "$CHECK" -eq "1" ]
+    then
+        notify-send "Programa Instalado!"
+        sleep 2
+        exit
+    else
+        cd "$DIR1" || exit
+        git pull
+
+        cd "$DIR2" || exit
+        if [[ -d "$pkg" ]]
+        then
+            cd "$DIR1" || exit
+            notify-send -t 60000 "Instalando $pkg"
+            ./xbps-src pkg "$pkg" && xi --repository hostdir/binpkgs "$pkg"
+        else
+            notify-send "Not found"
+            exit
+        fi
+    fi
+else
+    exit
+fi
+notify-send "$pkg instalado!"
+

@@ -1,0 +1,52 @@
+# /home/sergio/.dotfiles/ignore
+# file to be used by ag, fd and other finders
+# Last Change: Sun, 21 Aug 2022 11:28:46
+
+/docs/Anki
+*.adobe*
+*.ass
+*.avi
+.cache
+*.directory
+*.exe
+*.zwc
+*.fasd
+*.fonts
+*.fzf
+*.gif
+*.git
+.mozilla
+multimedia
+*.icons
+*.iso
+*.jar
+*.jpg
+*.mkv
+*.mp3
+*.mp4
+*.mplayer
+*.nfo
+*.part
+*.pdf
+*.png
+*.pyc
+*.so
+*.srt
+*.subversion
+*.swp
+*.tar.bz2
+*.thumbnails
+*.tldr
+*.torrent
+*.vch
+*.webm
+*.wma
+*.zip
+
+### Vim ###
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~

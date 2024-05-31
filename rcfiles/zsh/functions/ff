@@ -1,2 +1,0 @@
-
-ff () { find . -type f -iname '*'"$@"'*' ; }

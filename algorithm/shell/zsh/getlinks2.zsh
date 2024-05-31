@@ -1,0 +1,130 @@
+#!/usr/bin/env zsh
+#    Filename: getlinks2.zsh
+#     Created: sáb 30 mar 2019 11:05:26 -03
+# Last Change: mar 30 2019 11:29
+#     Purpose: get TBBT transcripts
+#      Author: Sergio Araujo
+#     Twitter: @voyeg3r
+#     Licence: GPL (see http://www.gnu.org/licenses/gpl.txt)
+
+site = "https://bigbangtrans.wordpress.com/"
+
+
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-21-the-plimpton-stimulation/ -O -UTF-8 > series-3-episode-21-the-plimpton-stimulation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-1-episode-1-pilot-episode/ -O -UTF-8 > series-1-episode-1-pilot-episode.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-1-episode-3-the-fuzzy-boots-corollary/ -O -UTF-8 > series-1-episode-3-the-fuzzy-boots-corollary.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-1-episode-5-the-hamburger-postulate/ -O -UTF-8 > series-1-episode-5-the-hamburger-postulate.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-1-episode-7-the-dumpling-paradox/ -O -UTF-8 > series-1-episode-7-the-dumpling-paradox.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-1-episode-9-the-cooper-hofstadter-polarization/ -O -UTF-8 > series-1-episode-9-the-cooper-hofstadter-polarization.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-1-episode-11-the-pancake-batter-anomaly/ -O -UTF-8 > series-1-episode-11-the-pancake-batter-anomaly.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-1-episode-13-the-bat-jar-conjecture/ -O -UTF-8 > series-1-episode-13-the-bat-jar-conjecture.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-1-episode-15-the-porkchop-indeterminacy/ -O -UTF-8 > series-1-episode-15-the-porkchop-indeterminacy.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-1-episode-17-the-tangerine-factor/ -O -UTF-8 > series-1-episode-17-the-tangerine-factor.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-2-episode-02-the-codpiece-topology/ -O -UTF-8 > series-2-episode-02-the-codpiece-topology.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-2-episode-04-the-griffin-equivalency/ -O -UTF-8 > series-2-episode-04-the-griffin-equivalency.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-2-episode-06-the-cooper-nowitzki-theorem-2/ -O -UTF-8 > series-2-episode-06-the-cooper-nowitzki-theorem-2.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-1-episode-08-the-lizard-spock-expansion/ -O -UTF-8 > series-1-episode-08-the-lizard-spock-expansion.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-2-episode-11-the-vartabedian-conundrum/ -O -UTF-8 > series-2-episode-11-the-vartabedian-conundrum.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-2-episode-12-the-killer-robot-instability/ -O -UTF-8 > series-2-episode-12-the-killer-robot-instability.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-2-episode-14-the-financial-permeability-2/ -O -UTF-8 > series-2-episode-14-the-financial-permeability-2.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-2-episode-16-the-cushion-saturation-3/ -O -UTF-8 > series-2-episode-16-the-cushion-saturation-3.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-2-episode-18-the-work-song-nanocluster/ -O -UTF-8 > series-2-episode-18-the-work-song-nanocluster.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-2-episode-20-the-hofstadter-isotope/ -O -UTF-8 > series-2-episode-20-the-hofstadter-isotope.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-2-episode-22-the-classified-materials-turbulence/ -O -UTF-8 > series-2-episode-22-the-classified-materials-turbulence.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-01-the-electric-can-opener-fluctuation/ -O -UTF-8 > series-3-episode-01-the-electric-can-opener-fluctuation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-03-the-gothowitz-deviation/ -O -UTF-8 > series-3-episode-03-the-gothowitz-deviation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-05-the-creepy-candy-coating-corollary/ -O -UTF-8 > series-3-episode-05-the-creepy-candy-coating-corollary.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-07-the-guitarist-amplification/ -O -UTF-8 > series-3-episode-07-the-guitarist-amplification.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-09-the-vengeance-formulation/ -O -UTF-8 > series-3-episode-09-the-vengeance-formulation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-11-the-maternal-congruence/ -O -UTF-8 > series-3-episode-11-the-maternal-congruence.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-13-the-bozeman-reaction/ -O -UTF-8 > series-3-episode-13-the-bozeman-reaction.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-15-the-large-hadron-collision/ -O -UTF-8 > series-3-episode-15-the-large-hadron-collision.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-17-the-precious-fragmentation/ -O -UTF-8 > series-3-episode-17-the-precious-fragmentation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-19-the-wheaton-recurrence/ -O -UTF-8 > series-3-episode-19-the-wheaton-recurrence.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-21-the-plimpton-stimulation/ -O -UTF-8 > series-3-episode-21-the-plimpton-stimulation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-3-episode-23-the-lunar-excitation/ -O -UTF-8 > series-3-episode-23-the-lunar-excitation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-02-the-cruciferous-vegetable-amplification/ -O -UTF-8 > series-4-episode-02-the-cruciferous-vegetable-amplification.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-04-the-hot-troll-deviation/ -O -UTF-8 > series-4-episode-04-the-hot-troll-deviation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-06-the-irish-pub-formulation/ -O -UTF-8 > series-4-episode-06-the-irish-pub-formulation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-08-the-21-second-excitation/ -O -UTF-8 > series-4-episode-08-the-21-second-excitation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-10-the-alien-parasite-hypothesis/ -O -UTF-8 > series-4-episode-10-the-alien-parasite-hypothesis.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-12-the-bus-pants-utilization/ -O -UTF-8 > series-4-episode-12-the-bus-pants-utilization.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-14-the-thespian-catalyst/ -O -UTF-8 > series-4-episode-14-the-thespian-catalyst.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-16-the-cohabitation-formulation/ -O -UTF-8 > series-4-episode-16-the-cohabitation-formulation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-18-the-prestidigitation-approximation/ -O -UTF-8 > series-4-episode-18-the-prestidigitation-approximation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-20-the-herb-garden-germination/ -O -UTF-8 > series-4-episode-20-the-herb-garden-germination.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-22-the-wildebeest-implementation/ -O -UTF-8 > series-4-episode-22-the-wildebeest-implementation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-4-episode-24-the-roommate-transmogrification/ -O -UTF-8 > series-4-episode-24-the-roommate-transmogrification.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-02-the-infestation-hypothesis/ -O -UTF-8 > series-5-episode-02-the-infestation-hypothesis.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-04-the-wiggly-finger-catalyst/ -O -UTF-8 > series-5-episode-04-the-wiggly-finger-catalyst.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-06-the-rhinitis-revelation/ -O -UTF-8 > series-5-episode-06-the-rhinitis-revelation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-08-the-isolation-permutation/ -O -UTF-8 > series-5-episode-08-the-isolation-permutation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-10-the-flaming-spittoon-acquisition/ -O -UTF-8 > series-5-episode-10-the-flaming-spittoon-acquisition.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-12-the-shiny-trinket-maneouvre/ -O -UTF-8 > series-5-episode-12-the-shiny-trinket-maneouvre.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-14-the-beta-test-initiation/ -O -UTF-8 > series-5-episode-14-the-beta-test-initiation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-16-the-vacation-solution/ -O -UTF-8 > series-5-episode-16-the-vacation-solution.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-18-the-werewolf-transformation/ -O -UTF-8 > series-5-episode-18-the-werewolf-transformation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-20-the-transporter-malfunction/ -O -UTF-8 > series-5-episode-20-the-transporter-malfunction.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-22-the-stag-convergence/ -O -UTF-8 > series-5-episode-22-the-stag-convergence.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-5-episode-24-the-countdown-reflection/ -O -UTF-8 > series-5-episode-24-the-countdown-reflection.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-02-the-decoupling-fluctuation/ -O -UTF-8 > series-6-episode-02-the-decoupling-fluctuation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-04-the-re-entry-minimization/ -O -UTF-8 > series-6-episode-04-the-re-entry-minimization.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-06-the-extract-obliteration/ -O -UTF-8 > series-6-episode-06-the-extract-obliteration.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-08-the-43-peculiarity/ -O -UTF-8 > series-6-episode-08-the-43-peculiarity.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-10-the-fish-guts-displacement/ -O -UTF-8 > series-6-episode-10-the-fish-guts-displacement.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-12-the-egg-salad-equivalency/ -O -UTF-8 > series-6-episode-12-the-egg-salad-equivalency.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-14-the-cooperkripke-inversion/ -O -UTF-8 > series-6-episode-14-the-cooperkripke-inversion.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-16-the-tangible-affection-proof/ -O -UTF-8 > series-6-episode-16-the-tangible-affection-proof.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-18-the-contractual-obligation-implementation/ -O -UTF-8 > series-6-episode-18-the-contractual-obligation-implementation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-20-the-tenure-turbulence/ -O -UTF-8 > series-6-episode-20-the-tenure-turbulence.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-6-episode-22-the-proton-resurgence/ -O -UTF-8 > series-6-episode-22-the-proton-resurgence.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-06-episode-24-the-bon-voyage-reaction/ -O -UTF-8 > series-06-episode-24-the-bon-voyage-reaction.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-02-the-deception-verification/ -O -UTF-8 > series-7-episode-02-the-deception-verification.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-04-the-raiders-minimization/ -O -UTF-8 > series-7-episode-04-the-raiders-minimization.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-06-the-romance-resonance/ -O -UTF-8 > series-7-episode-06-the-romance-resonance.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-08-the-itchy-brain-simulation/ -O -UTF-8 > series-7-episode-08-the-itchy-brain-simulation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-10-the-discovery-dissipation/ -O -UTF-8 > series-7-episode-10-the-discovery-dissipation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-12-the-hesitation-ramification/ -O -UTF-8 > series-7-episode-12-the-hesitation-ramification.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-14-the-convention-conundrum/ -O -UTF-8 > series-7-episode-14-the-convention-conundrum.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-16-the-table-polarisation/ -O -UTF-8 > series-7-episode-16-the-table-polarisation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-18-the-mommy-observation/ -O -UTF-8 > series-7-episode-18-the-mommy-observation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-20-the-relationship-diremption/ -O -UTF-8 > series-7-episode-20-the-relationship-diremption.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-22-the-proton-transmogrification/ -O -UTF-8 > series-7-episode-22-the-proton-transmogrification.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-7-episode-24-the-status-quo-combustion/ -O -UTF-8 > series-7-episode-24-the-status-quo-combustion.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-02-the-junior-professor-solution/ -O -UTF-8 > series-8-episode-02-the-junior-professor-solution.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-04-the-hook-up-reverbration/ -O -UTF-8 > series-8-episode-04-the-hook-up-reverbration.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-06-the-expedition-approximation/ -O -UTF-8 > series-8-episode-06-the-expedition-approximation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-08-the-prom-equivalency/ -O -UTF-8 > series-8-episode-08-the-prom-equivalency.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-10-the-champagne-reflection/ -O -UTF-8 > series-8-episode-10-the-champagne-reflection.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-12-the-space-probe-disintegration/ -O -UTF-8 > series-8-episode-12-the-space-probe-disintegration.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-14-the-troll-manifestation/ -O -UTF-8 > series-8-episode-14-the-troll-manifestation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-16-the-intimacy-acceleration/ -O -UTF-8 > series-8-episode-16-the-intimacy-acceleration.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-18-the-leftover-thermalization/ -O -UTF-8 > series-8-episode-18-the-leftover-thermalization.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-20-the-fortification-implementation/ -O -UTF-8 > series-8-episode-20-the-fortification-implementation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-22-the-graduation-transmission/ -O -UTF-8 > series-8-episode-22-the-graduation-transmission.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-8-episode-24-the-commitment-determination/ -O -UTF-8 > series-8-episode-24-the-commitment-determination.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-02-the-separation-oscillation/ -O -UTF-8 > series-9-episode-02-the-separation-oscillation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-04-the-2003-approximation/ -O -UTF-8 > series-9-episode-04-the-2003-approximation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-06-the-helium-insufficiency/ -O -UTF-8 > series-9-episode-06-the-helium-insufficiency.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-08-the-mystery-date-observation/ -O -UTF-8 > series-9-episode-08-the-mystery-date-observation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-10-the-earworm-reverberation/ -O -UTF-8 > series-9-episode-10-the-earworm-reverberation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-12-the-sales-call-sublimation/ -O -UTF-8 > series-9-episode-12-the-sales-call-sublimation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-14-the-meemaw-materialisation/ -O -UTF-8 > series-9-episode-14-the-meemaw-materialisation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-16-the-positive-negative-reaction/ -O -UTF-8 > series-9-episode-16-the-positive-negative-reaction.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-18-the-application-deterioration/ -O -UTF-8 > series-9-episode-18-the-application-deterioration.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-20-the-big-bear-precipitation/ -O -UTF-8 > series-9-episode-20-the-big-bear-precipitation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-22-the-fermentation-bifurcation/ -O -UTF-8 > series-9-episode-22-the-fermentation-bifurcation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-9-episode-24-the-convergence-convergence/ -O -UTF-8 > series-9-episode-24-the-convergence-convergence.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-02-the-military-miniturization/ -O -UTF-8 > series-10-episode-02-the-military-miniturization.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-04-the-cohabitation-experimentation/ -O -UTF-8 > series-10-episode-04-the-cohabitation-experimentation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-06-the-foetal-kick-catalyst/ -O -UTF-8 > series-10-episode-06-the-foetal-kick-catalyst.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-08-the-brain-bowl-incubation/ -O -UTF-8 > series-10-episode-08-the-brain-bowl-incubation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-10-the-property-division-collision/ -O -UTF-8 > series-10-episode-10-the-property-division-collision.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-12-the-holiday-summation/ -O -UTF-8 > series-10-episode-12-the-holiday-summation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-14-the-emotion-detection-automation/ -O -UTF-8 > series-10-episode-14-the-emotion-detection-automation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-16-the-allowance-evaporation/ -O -UTF-8 > series-10-episode-16-the-allowance-evaporation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-18-the-escape-hatch-identification/ -O -UTF-8 > series-10-episode-18-the-escape-hatch-identification.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-20-the-recollection-dissipation/ -O -UTF-8 > series-10-episode-20-the-recollection-dissipation.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-22-the-cognition-regeneration/ -O -UTF-8 > series-10-episode-22-the-cognition-regeneration.txt
+w3m -dump https://bigbangtrans.wordpress.com/series-10-episode-24-the-long-distance-dissonance/ -O -UTF-8 > series-10-episode-24-the-long-distance-dissonance.txt
+

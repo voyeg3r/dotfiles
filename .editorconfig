@@ -1,0 +1,12 @@
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.sh]
+indent_style = space
+indent_size = 2           # shfmt -i 2
+
+binary_next_line = true   # shfmt -bn
+space_redirects = true    # shfmt -sr
+switch_case_indent = true # shfmt -ci
+

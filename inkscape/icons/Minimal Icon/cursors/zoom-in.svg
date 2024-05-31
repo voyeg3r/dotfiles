@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="32"
+   inkscape:hotspot_x="10"
+   inkscape:hotspot_y="10"
+   style="fill:gray;stroke:black"
+   version="1.1"
+   id="svg32"
+   sodipodi:docname="zoom-in.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview34"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="true"
+     inkscape:zoom="17.469618"
+     inkscape:cx="14.539528"
+     inkscape:cy="17.487503"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg32" />
+  <defs
+     id="defs9">
+    <!-- Shadow -->
+    <filter
+       id="shadow"
+       x="-0.17333333"
+       y="-0.17333333"
+       width="1.4187253"
+       height="1.4187253">
+      <feOffset
+         result="offOut"
+         in="SourceAlpha"
+         dx="1"
+         dy="1"
+         id="feOffset2" />
+      <feGaussianBlur
+         result="blurOut"
+         stdDeviation="1"
+         id="feGaussianBlur4" />
+      <feBlend
+         in="SourceGraphic"
+         in2="blurOut"
+         mode="normal"
+         id="feBlend6" />
+    </filter>
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect913"
+       is_visible="false"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.34"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect900"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="false" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect898"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.57"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect865"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.57"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect854"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect964"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.57"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect962"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.1"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect952"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.67"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect950"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.46"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect948"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.69"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect841"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.7"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+  </defs>
+  <rect
+     id="rect2056"
+     width="8.999999"
+     height="3"
+     x="5.9999995"
+     y="9"
+     class="base"
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.48952" />
+  <rect
+     transform="rotate(90)"
+     y="-12"
+     x="5.9999995"
+     height="3"
+     width="9"
+     id="rect2058"
+     class="base"
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.48952;stroke-opacity:1" />
+  <circle
+     id="circle2030"
+     class="base"
+     style="fill:#ffffff;fill-rule:nonzero;stroke:#ffffff;stroke-width:3.4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+     cx="10.5"
+     cy="10.5"
+     r="8" />
+  <circle
+     id="path835-8"
+     class="base"
+     style="fill:none;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+     cx="10.5"
+     cy="10.5"
+     r="8" />
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <rect
+     id="rect10393"
+     width="7"
+     height="1"
+     x="7"
+     y="10"
+     class="base"
+     style="stroke:none;stroke-width:1.48952;fill:#000000;fill-opacity:1" />
+  <rect
+     transform="rotate(90)"
+     y="-11"
+     x="6.9999995"
+     height="1"
+     width="7"
+     id="rect10393-3"
+     class="base"
+     style="stroke:none;stroke-width:1.48952;stroke-opacity:1;fill:#000000;fill-opacity:1" />
+  <rect
+     id="rect2340"
+     height="7"
+     x="-0.99988496"
+     y="24.991516"
+     transform="matrix(0.70710338,-0.70711018,0.70710338,0.70711018,0,0)"
+     ry="1"
+     class="base"
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     rx="1"
+     width="2" />
+  <rect
+     id="rect843-9"
+     height="7"
+     x="-0.99988496"
+     y="24.991516"
+     transform="matrix(0.70710338,-0.70711018,0.70710338,0.70711018,0,0)"
+     ry="1"
+     class="base"
+     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     rx="1"
+     width="2" />
+</svg>

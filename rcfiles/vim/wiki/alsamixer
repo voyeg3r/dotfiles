@@ -1,8 +1,0 @@
-# Alsamixer
-+ http://blog.chapagain.com.np/ubuntu-linux-increase-decrease-volume-from-command-line-keyboard-shortcut/
-
-Cotrola aspectos do som no linux
-
-    amixer -q set 'Master' 10%+
-
-A opção -q inibe as mensagens de saida

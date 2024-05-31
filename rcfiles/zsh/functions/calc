@@ -1,2 +1,0 @@
-
-calc(){ echo "scale=2;$@" | bc;}

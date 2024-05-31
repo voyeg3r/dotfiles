@@ -1,0 +1,18 @@
+# bcrc -> command line calculator settings
+# vim:set et sw=4 ts=4 tw=78 ft=zsh:
+#
+#      Created: set 27 2020 15:32
+#  Last Change: set 27, 2020 - 15:45
+#
+#
+# In orde to create a symbolic link
+# ln -sfvn ~/.dotfiles/bcrc ~/.config/bcrc
+#
+# export environment variable to the system
+# [ -f ~/.config/bcrc ] && {
+#     export BC_ENV_ARGS="-l $HOME/.config/bcrc"
+# }
+
+scale=3
+
+

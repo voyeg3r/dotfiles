@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# File: /home/sergio/.dotfiles/bin/editwiki
+# Last Change: Fri, 04 Aug 2023 - 10:34:44
+# vim:set softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh ro:
+# tags: [vim, nvim, rofi, wiki]
+# in my case Ctrl + Alt + e
+
+chosen=$(ls -1 /home/sergio/.dotfiles/wiki | rofi -matching fuzzy  -dmenu -i "Edit wiki" )
+
+# [ ! "$chosen" ] || alacritty -e vim /home/sergio/.dotfiles/wiki/"$chosen"
+[ ! "$chosen" ] || st -c nvim -g 140x34 -e nvim /home/sergio/.dotfiles/wiki/"$chosen"
+

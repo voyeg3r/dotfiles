@@ -1,0 +1,33 @@
+#!/bin/bash
+# source: https://kevin-mandura.de/projects/dwm-scripts-en.html
+# Last Chage: Sep 22 2022 20:58
+
+# icons: full=
+
+# Remaining battery and charging state
+batt_state=$(cat /sys/class/power_supply/BAT0/status)
+batt_capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+
+if [ ! "$batt_state" = "Charging" ]; then
+    if [ "$batt_capacity" -lt 20 ]; then
+        batt_icon=""
+        #mpg123 -q ~/.dotfiles/dunst/notifications/r2d2_battery_low.mp3
+        # if [[ "$batt_state" == "Discharging" ]]; then
+        #     notify-send --urgency=critical --icon=battery-caution "Bateria baixa ${batt_capacity}%" "Descarregando"
+        # fi
+    elif [ "$batt_capacity" -lt 25 ]; then
+        batt_icon=""
+    elif [ "$batt_capacity" -lt 50 ]; then
+        batt_icon=""
+    elif [ "$batt_capacity" -lt 81 ]; then
+        batt_icon=""
+    elif [ "$batt_capacity" -gt 80 ]; then
+        batt_icon=""
+    fi
+fi
+
+[ "$batt_state" = "Charging" ] && batt_icon=""
+batt="${batt_icon} $(cat /sys/class/power_supply/BAT0/capacity)"
+batt="${batt}%"
+
+echo "$batt"

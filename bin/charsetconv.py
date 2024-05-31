@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #encoding: utf-8
 import os
 import sys
@@ -6,14 +6,14 @@ import glob
 
 args=sys.argv
 
-doc='''Usage: 
+doc='''Usage:
     %s path charset_in charset_out patterns
 Example:
     %s . iso-8859-1 utf-8 "*.txt" "*.html" "*.php"
 ''' % (sys.argv[0],sys.argv[0])
 
 if len(args)<5:
-    print doc
+    print(doc)
     sys.exit(1)
 
 args.pop(0)
@@ -43,11 +43,11 @@ for f in transfiles:
         fi.write(t)
         fi.close()
     except IOError:
-        print 'Converting file %i/%i' % (parsed,len(transfiles))
-        print 'Could not read file:\n  %s' % f
+        print( 'Converting file %i/%i' % (parsed,len(transfiles)))
+        print( 'Could not read file:\n  %s' % f)
         sys.exit(2)
     except UnicodeDecodeError:
-        print 'Converting file %i/%i' % (parsed,len(transfiles))
-        print 'Invalid charset (%s):\n  %s' % (charset_in,f)
+        print( 'Converting file %i/%i' % (parsed,len(transfiles)))
+        print( 'Invalid charset (%s):\n  %s' % (charset_in,f))
         sys.exit(3)
 

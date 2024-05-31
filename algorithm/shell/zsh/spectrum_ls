@@ -1,0 +1,6 @@
+# from commandlinefu.com
+function spectrum_ls(){
+for code in {000..255}; {
+    print -P -- "$code: %F{$code}Test%f"
+    }
+}

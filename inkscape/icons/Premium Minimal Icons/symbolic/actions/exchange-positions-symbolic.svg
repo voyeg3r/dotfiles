@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="exchange-positions-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata17975">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs17973" />
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="exchange-positions"
+     inkscape:window-maximized="1"
+     inkscape:window-y="32"
+     inkscape:window-x="-8"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     inkscape:cy="10.209761"
+     inkscape:cx="6.7372792"
+     inkscape:zoom="60.187501"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0">
+    <inkscape:grid
+       id="grid"
+       type="xygrid"
+       spacingx="0.66667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <g
+     inkscape:label="00360"
+     id="exchange-positions"
+     transform="scale(0.666667)">
+    <title
+       id="title40855">exchange-positions</title>
+    <rect
+       style="fill:#00aaff;fill-opacity:0.69999999;stroke-width:27.5811;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect1074"
+       width="11.000049"
+       height="15.000068"
+       x="6.0000272"
+       y="3.0000136" />
+    <rect
+       style="fill:#00aaff;fill-opacity:0.69999999;stroke-width:27.5811;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect829"
+       width="11.000049"
+       height="15.000068"
+       x="11.00005"
+       y="7.0000305" />
+    <g
+       id="g956"
+       transform="matrix(0.57067557,0.25985245,-0.25985245,0.57067557,15.969346,11.636636)"
+       style="stroke-width:2.37464;opacity:1">
+      <path
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#bfbfbf;fill-opacity:1;stroke:none;stroke-width:2.46238;marker:none;enable-background:accumulate"
+         d="m -18.712949,12.662242 6.502025,12.810209 1.959917,-6.737209 5.7186359,-4.044463 z"
+         id="path5445"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+# Last Change: Fri, 21 Oct 2022 18:11:37
+# vim:set softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+# tags: [radios, mpv, dmenu]
+
+alias mpv="mpv --user-agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64; WOW64; rv:41.0) Gecko/20100101 Firefox/103.0 (x64 de)'"
+
+# Check requirement programs
+for prog in dmenu mpv; do
+	[ ! "$(which "$prog")" ] && echo "Please install $prog!" && exit 1
+done
+
+# Creating config directory
+dir_home="${XDG_CONFIG_HOME:-$HOME/.config}/dradio"
+[ ! -d "$dir_home" ] && mkdir -p "$dir_home"
+
+# Create config file and put a sample in it
+[ ! -f "$dir_home/stations.txt" ] && cat > "$dir_home/stations.txt" << EOF
+# You can radio staions .pls/.m3u here
+#Station name		#URL
+Tekno1			http://212.83.149.66:8591/listen.pls?sid=1&t=.m3u
+Planet LoFi		http://198.245.60.88:8080/listen.pls?sid=1&t=.m3u
+Ambient Modern		http://163.172.169.217:80/listen.pls?sid=1&t=.m3u
+Kraftphunk		http://62.210.10.4:8096/listen.pls?sid=1&t=.m3u
+AutoDJ lofi		http://119.235.255.206:8158/listen.pls?sid=1&t=.m3u
+EOF
+
+# Other variables
+url_pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)"
+
+# Functions
+play(){
+  stop
+  nohup mpv --title="dradio" $1 --stop-playback-on-init-failure --no-video 2&>/dev/null &
+  case $2 in
+    "dmenu")
+    	[[ $? -eq 0 ]] && dunstify -r "19876" "dradio" "[ $choice ] station is playing" || dunstify -r "19876" "dradio" "Error in playing with mpv" ;;
+    "fzf")
+    	[[ $? -eq 0 ]] && dunstify -r "19876" "[ $choice ] station is playing." || dunstify -r "19876" "Error in playing with mpv." ;;
+    "url")
+    	[[ $? -eq 0 ]] && dunstify -r "19876" "Play URL: $1" || dunstify -r "19876" "Error in playing URL" ;;
+    *) exit 0;;
+  esac
+}
+
+stop(){
+  psid=$(pgrep -a mpv | awk '/--title=dradio/ {print $1}')
+  [ ! -z "$psid" ] && kill "$psid"
+}
+
+case $1 in
+  # Add new station
+  "-a"|"--add")
+    	read -e -p "Enter station name: " name
+    	read -e -p "Enter station URL: " url
+	echo -e "$name\t\t$url" >> $dir_home/stations.txt
+  ;;
+  # List stations from ~/.config/dradio/stations.txt in dmenu and play the selected one in mpv
+  "-d"|"--dmenu")
+	choice=$(grep -v '^#' "$dir_home/stations.txt" | awk -F '\t' '{print $1}' | dmenu -i -l 15 -p "Radio stations: ")
+	[ -z "$choice" ] && exit 1
+	station_url=$(grep "$choice" "$dir_home/stations.txt" | awk -F '\t' '{print $(NF)}')
+	play $station_url dmenu
+  ;;
+  # List stations from ~/.config/dradio/stations.txt in fzf and play the selected one in mpv
+  "-f"|"--fzf")
+  	choice=$(grep -v '^#' "$dir_home/stations.txt" | awk -F '\t' '{print $1}' | fzf)
+	[ -z "$choice" ] && exit 1
+	station_url=$(grep "$choice" "$dir_home/stations.txt" | awk -F '\t' '{print $(NF)}')
+	play $station_url fzf
+  ;;
+  # Show the list of stations in ~/.config/dradio/stations.txt
+  "-l"|"--list")
+  	grep -v '^#' $dir_home/stations.txt | less ;;
+  # Remove existing stations
+  "-r"|"--remove")
+  	station=$(cat $dir_home/stations.txt | fzf | awk -F '\t' '{print $1}')
+	[ -z "$station" ] && exit 1
+    	line=$(grep -n $station $dir_home/stations.txt | cut -d ':' -f 1)
+    	sed -i "${line}d" $dir_home/stations.txt &2> /dev/null
+  ;;
+  # Stop playing
+  "-s"|"--stop")
+  	stop ;;
+  # Get status
+  "-S"|"--status")
+    active=$(pgrep -a mpv | awk '/--title=dradio/ {print $4}')
+	# active=$(ps aux | grep "\-\-title=dradio" | awk '{print $13}')
+	[ -z "$active" ] && dunstify -r "19876" "There is no active starion." || dunstify -r "19876" "Now playing: $(grep $active $dir_home/stations.txt)" ;;
+  "-u"|"--url")
+	[[ $2 =~ $url_pattern ]] && play $2 url || dunstify -r "19876" "Invalid URL. Please see help" ;;
+  "-v"|"--version") echo "dradio V0.2" ;;
+  "-h"|"--help"|*)
+    	cat << EOF
+Usage: dradio [options]
+Options:
+  -l, --list		List of radio staions
+  -d, --delete		Show stations list in dmenu
+  -f, --fzf		Show stations list in fzf
+  -s, --stop		Stop mpv player
+  -S, --status		Show the now playing station info
+  -a, --add 		Add staion
+  -r, --remove		Remove station
+  -u, --url		Play input URL
+  -h, --help		Show help
+  -v, --version		Show version
+EOF
+  ;;
+esac

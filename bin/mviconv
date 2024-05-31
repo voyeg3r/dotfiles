@@ -1,6 +1,6 @@
 #!/bin/bash
 # Criado em:Dom 12/Ago/2007 hs 10:49
-# Last Change: Sex 19 Out 2007 09:47:33 BRT
+# Last Change: Sat, 15 Oct 2022 08:40:22
 # Instituicao:
 # Proposito do script: renomear / iconv recursivo
 # Autor: Sérgio Luiz Araújo Silva
@@ -11,8 +11,6 @@
 # Defina a codificação de origem e de destino
 de="iso-8859-1"
 para="utf-8"
-
-
 
 CONVERTER (){
 

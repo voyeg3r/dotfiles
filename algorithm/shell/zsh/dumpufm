@@ -1,0 +1,6 @@
+dumpufm() {
+    station='Universitária-fm'
+    filename=${station}-$(date +%Y-%b-%d--%H.%Mhs).mp3
+    url="http://200.129.35.230:8081/;?d="
+    wget -O - "$url" | tee -ai "$filename" | mpg123 -
+}

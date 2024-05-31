@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="draw-path-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <style
+     id="s0">
+   .success { fill: #009909; }
+   .warning { fill: #FF1990; }
+   .error   { fill: #00AAFF; }
+  </style>
+  <style
+     id="s2"> 
+     @import '../../highlights.css'; 
+  </style>
+  <metadata
+     id="metadata2927">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2925">
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect1307"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.5"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect1301"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.5"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect2216"
+       is_visible="true"
+       linecap_type="butt"
+       line_width="1.7"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="fill_between_many"
+       method="bsplinespiro"
+       linkedpaths="#path2586,0,1"
+       id="path-effect1303"
+       join="true"
+       close="true"
+       autoreverse="true" />
+    <inkscape:path-effect
+       effect="fill_between_many"
+       method="bsplinespiro"
+       linkedpaths="#path3121,0,1"
+       id="path-effect1309" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:snap-global="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="g850"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1013"
+     inkscape:window-width="1920"
+     inkscape:cy="8.376135"
+     inkscape:cx="7.8322301"
+     inkscape:zoom="22.98196"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true">
+    <inkscape:grid
+       id="grid"
+       type="xygrid"
+       spacingx="0.66666667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <g
+     id="g0"
+     inkscape:label="draw-path">
+    <g
+       id="g845"
+       transform="translate(-20)">
+      <rect
+         id="rect928-8"
+         width="16"
+         height="16"
+         x="3.8886832e-08"
+         y="1e-06"
+         class="error"
+         style="opacity:0.8;fill:#00aaff;fill-opacity:0;stroke-width:2.30939" />
+      <rect
+         id="rect928"
+         width="16"
+         height="16"
+         x="3.8886832e-08"
+         y="1e-06"
+         class="error"
+         style="opacity:0.8;fill:#00aaff;fill-opacity:0;stroke-width:2.30939" />
+      <path
+         d="M 2.666667,14.00007 H 3.333333 L 12,10.00005 12.666667,6.00003 14,4.66669 13.333333,2.66668 l -2,-0.66667 L 10,3.33335 6,4.66669 2,12.66673 V 13.3334 L 7.3333335,8.00004 8.0000005,6.6667 h 1.3333329 v 0 1.33334 L 8.0000005,8.66671 Z"
+         id="path836"
+         class="base"
+         sodipodi:nodetypes="cccccccccccccccccc" />
+    </g>
+    <g
+       id="g850"
+       transform="matrix(0,-0.73563218,0.73563218,0,-28.166668,24.166738)">
+      <path
+         d="m 15.070314,41.757815 12.5,5 1,6 1.5,1.5 -1,2 -2,1 -1.5,-1.5 -6,-1 -5,-12.5 v -0.5 z"
+         id="path1305"
+         style="opacity:0.1"
+         inkscape:original-d="M 0.17193807,54.26563"
+         inkscape:path-effect="#path-effect1303" />
+      <path
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.35937px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 27.291771,47.454173 -0.461252,-0.573059 1.039513,6.237079 1.669952,1.669952 -0.14049,-0.86574 -1,2 0.33541,-0.33541 -2,1 0.86574,0.14049 -1.669952,-1.669952 -6.237079,-1.039513 0.573059,0.461252 -5,-12.5 0.05364,0.278543 v -0.5 l -0.75,0.75 h 0.5 l -0.278543,-0.05364 z M 13.820314,41.007815 v 1.394437 l 5.210389,13.025973 6.416312,1.069385 -0.407031,-0.209465 1.88224,1.88224 2.707107,-1.353553 1.353553,-2.707107 -1.88224,-1.88224 0.209465,0.407031 -1.069385,-6.416312 -13.025973,-5.210389 z"
+         id="path2586"
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:path-effect="#path-effect1301"
+         inkscape:original-d="m 15.070314,41.757815 12.5,5 1,6 1.5,1.5 -1,2 -2,1 -1.5,-1.5 -6,-1 -5,-12.5 v -0.5 z"
+         inkscape:linked-fill="path1305" />
+      <path
+         inkscape:original-d="M 0.07031407,27.257815"
+         inkscape:path-effect="#path-effect1309"
+         d="m 14.570314,41.757815 7.355189,7.355094 2,0.5 v 1.5 h -1.5 l -0.5,-2 z"
+         id="path1311"
+         style="fill:#000000" />
+      <path
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.35937px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 21.542068,49.790133 2.201533,0.550383 -0.568098,-0.727607 v 1.5 l 0.75,-0.75 h -1.5 l 0.727607,0.568098 -0.550385,-2.201538 -7.502084,-7.501988 -1.060654,1.060668 z m -0.146892,-0.14689 -0.19728,-0.348432 0.642025,2.568098 h 2.835582 v -2.835582 l -2.568098,-0.642025 0.348425,0.197273 -7.355189,-7.355094 -1.060654,1.060668 z"
+         id="path3121"
+         sodipodi:nodetypes="ccccccc"
+         inkscape:path-effect="#path-effect1307"
+         inkscape:original-d="m 14.570314,41.757815 7.355189,7.355094 2,0.5 v 1.5 h -1.5 l -0.5,-2 z"
+         inkscape:linked-fill="path1311" />
+    </g>
+  </g>
+</svg>

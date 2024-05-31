@@ -1,0 +1,21 @@
+#!/bin/bash
+# File: /home/sergio/.dotfiles/bin/scratchtermtoggle
+# Last Change: Thu, 24 Nov 2022 - 16:30:32
+# vim:nolist softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+# source: https://www.reddit.com/r/bspwm/comments/85hr4c
+
+# if ! command -v xdo & /dev/null
+#     dunstify "instale o comando xdo"
+#     exit 1
+# fi
+
+id=$(xdo id -n scratchy);
+if [ -z "$id" ]; then
+    st -c scratchy -n scratchy -f 'Iosevka Mayukai Original:size=15:antialias=true:autohint=true'
+else
+    action='hide';
+    if [[ $(xprop -id "$id" | awk '/window state:/ {print $3}') == 'Withdrawn' ]]; then
+        action='show'
+    fi
+    xdo $action -n scratchy
+fi

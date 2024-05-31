@@ -1,0 +1,10 @@
+#!/bin/bash
+# Last Change: Fri, 20 May 2022 19:50
+# https://apple.stackexchange.com/a/171664/303151
+
+# music=$XDG_MUSIC_DIR
+
+for arg in "$@"; do
+  dir=$(cd -P "$(dirname "$arg")" && pwd)/ || continue
+  /bin/mpc add "${dir#"$HOME/music/"}$(basename "$arg")"
+done

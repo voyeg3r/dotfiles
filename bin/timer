@@ -1,0 +1,74 @@
+#!/usr/bin/env zsh
+# Reference: https://stackoverflow.com/a/29269811/2571881
+# Last Change: Sat, 04 Feb 2023 - 08:38:35
+# vim:set softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+
+# DEPENDENCIES: dunst
+#
+# NOTE: Some notification systems conflict with dunst, such as
+#       xfce4 notification system
+#
+#       you can just use "echo if you want occupy a terminal for the timer"
+#       or even use another "UI" package to manage your notifications
+
+trap 'stop_timer' INT
+
+timer_pid="$HOME/.local/timer_pid"
+echo $$ > $timer_pid
+
+stop_timer(){
+    if [ -f "/home/sergio/.local/timer_pid" ]; then
+        dunstctl close
+        kill $(< $timer_pid)
+        sleep 1
+        \rm -rf $timer_pid
+        exit 1
+    fi
+}
+
+[[ "$1" == "stop" ]] && stop_timer && exit 1
+
+alarm_sound="/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
+
+countdown=${1:-1}
+
+# countdown=$(awk -F: '{print ($1*60)+($2)}' <<<$countdown)
+
+if [[ "$countdown" =~ [0-9]+:[0-9]+:[0-9]+ ]]; then
+  # input in the format of hour minutes and seconds
+  hours=$(echo $countdown | cut -d: -f1)
+  minutes=$(echo $countdown | cut -d: -f2)
+  seconds=$(echo $countdown | cut -d: -f3)
+  countdown=$(( hours * 3600 + minutes * 60 + seconds ))
+elif [[ "$countdown" =~ [0-9]+:[0-9]+ ]]; then
+  # input in the format of minutes and seconds
+  minutes=$(echo $countdown | cut -d: -f1)
+  seconds=$(echo $countdown | cut -d: -f2)
+  countdown=$(( minutes * 60 + seconds ))
+else
+  # input in the format of just seconds
+  countdown=$countdown
+fi
+
+start_time=$(date +%s)
+
+elap_time=0
+
+while ((elap_time <= countdown)); do
+    elap_time=$(( $(date +%s) - start_time))
+    remaining=$((countdown - elap_time))
+    echo -ne "\r $(date -d"@$remaining" -u +%H:%M:%S)"
+    if [ $(($remaining % 30)) -eq 0 ]; then
+        dunstify -r "98435" "Remaining:" "$(date -d"@$remaining" -u +%H:%M:%S)"
+    fi
+done
+
+clear
+echo "time elapsed"
+dunstctl close
+dunstify --urgency=CRITICAL "Timer:" "Time elapsed"
+mpv --quiet --title="timer" $alarm_sound
+
+mpv_pid=$(ps aux | grep mpv | awk '/--title=timer/ {print $2}')
+kill -9 $mpv_pid
+

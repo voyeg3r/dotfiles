@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# ---------------------------------------------
+# vim:nolist softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+# Busca interativa nas páginas do manual.
+# Requer o programa `fzf':
+# https://github.com/junegunn/fzf
+# tags: [fzf, man]
+# ---------------------------------------------
+# man_open() {
+#     : "${1#*(}"
+#     man "${_%%)*} ${1%% *}"
+# }
+
+export SHELL=/bin/bash
+
+man_open(){
+    man $(awk -F'[(,]' '{print $1}' <<<$1)
+}
+export -f man_open
+
+fo=(
+    --reverse -e -i
+    --tiebreak=begin
+    --prompt='Manual: '
+    --preview-window=down:65%
+    --preview='p={}; man_open "$p"'
+)
+
+# page=$(apropos -r '.*' | fzf "${fo[@]}")
+page=$(man -k '.*' | fzf "${fo[@]}")
+
+[[ $page ]] && man_open "$page"
+

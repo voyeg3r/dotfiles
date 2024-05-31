@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="draw-ellipse-chord-symbolic.svg"
+   id="svg5"
+   version="1.1"
+   height="16"
+   width="16">
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9">
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect846"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.34"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg5"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="6.6204369"
+     inkscape:cx="13.827803"
+     inkscape:zoom="44.326025"
+     showgrid="true"
+     id="namedview7"
+     inkscape:window-height="1013"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff">
+    <inkscape:grid
+       type="xygrid"
+       id="grid847"
+       spacingx="0.66667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <path
+     style="fill:#000000;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-opacity:1;stop-color:#000000"
+     id="path835"
+     sodipodi:type="arc"
+     sodipodi:cx="8"
+     sodipodi:cy="8.0000019"
+     sodipodi:rx="6"
+     sodipodi:ry="6"
+     sodipodi:start="0"
+     sodipodi:end="4.2760567"
+     sodipodi:arc-type="chord"
+     sodipodi:open="true"
+     inkscape:path-effect="#path-effect846"
+     d="M 8.7724868,13.273726 C 6.15531,13.657086 3.6525404,12.062646 2.8939159,9.528663 2.1352913,6.9946804 3.3501658,4.2872508 5.7474448,3.1693813 L 5.1042999,3.1272274 13.640009,8.5650742 13.33,8.0000019 c 0,2.6451051 -1.940337,4.8903641 -4.5575132,5.2737241 z M 5.5246173,1.8061758 A 6.7715928,6.7715928 0 0 0 5.1811364,1.9549289 C 2.1807677,3.3540236 0.66073626,6.7415162 1.6102099,9.9129793 2.5596836,13.084442 5.6911088,15.07938 8.9666954,14.599578 12.242282,14.119775 14.67,11.310542 14.67,8.0000019 a 6.7715928,6.7715928 0 0 0 -0.01034,-0.3741652 z" />
+</svg>

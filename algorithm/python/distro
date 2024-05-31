@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+# # -*- coding: UTF-8 -*-"
+# ----------------------------------------------------------
+#         Created:  Seg 30/Jun/2014 hs 20:49
+#     Last Change:  2018 mai 18 07:54
+# This script aim:  get distro information
+#          Author:  Sergio Luiz Araujo Silva
+#            Site:  http://vivaotux.blogspot.com
+#         Twitter:  @voyeg3r
+# ----------------------------------------------------------
+
+import platform
+print(' '.join(platform.linux_distribution()))
+print('Based on:', ''.join(platform.dist()[:1]).title())

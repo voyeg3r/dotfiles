@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim: ai ts=4 sts=4 et sw=4
+#        File:  100-phrases
+#      Author:  Sergio Araujo
+#     Purpose:  get 1000 most common phrases in English
+# Last Change:  2018 mai 18 12:25
+#     Created:  sex 18 mai 2018 10:49:14 -03
+#       email:  <voyeg3r ✉ gmail.com>
+#      Github:  https://github.com/voyeg3r
+#     twitter:  @voyeg3r
+
+from bs4 import BeautifulSoup
+import requests
+import os
+#import subprocess
+
+for i in range(1,20):
+    name = f'folder-{i:02d}'
+    os.makedirs(name)
+    os.chdir(name)
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    url = 'http://www.englishspeak.com/pt/english-phrases?category_key=' + str(i)
+    r = requests.get(url, headers=headers)
+
+    html_content = r.text
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    with open("output.csv", "w") as file:
+        for tag in soup.select('td img'):
+            file.write(str(tag))
+            file.write("\n")
+
+    os.chdir('..')
+

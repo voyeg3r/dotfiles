@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+#    Filename: gettv
+#     Created: dom 30 dez 2018 14:24:08 -03
+# Last Change: jan 03 2019 15:47
+#     Purpose: get some tv links
+#      Author: Sergio Araujo
+#     Twitter: @voyeg3r
+#     Licence: GPL (see http://www.gnu.org/licenses/gpl.txt)
+#    Download: https://bitbucket.org/sergio/dotfaster/src/master/algorithm/shell/zsh/gettv
+#
+#     OBS: 1 - using rev to protect owr link a litle bit
+#          2 - don't forget enabling loop on vlc
+
+url=tsilyalpu3m-su/ld/moc.tsilvtpiyliad//:sptth
+url=$(echo $url | rev)
+
+# dia=$(date +%d)
+# mes=$(LC_ALL=en_US; date +%b | tr '[:upper:]' '[:lower:]')
+# ano=$(date +%Y)
+# fulldate="${dia}-${mes}-${ano}"
+
+# fulldate="$(date -d yesterday  +%Y-%m-%d)"
+fulldate="$(date +%Y-%m-%d)"
+extension=".m3u"
+
+vlc "${url}-${fulldate}${extension}"
+

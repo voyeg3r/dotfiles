@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+# File: /home/sergio/.local/bin/inkscape
+# Last Change: Mon, 10 Oct 2022 09:21:13
+# Purpuse: Give precedence to inkscape flatpack
+# Author: Sérgio Araújo
+
+# Para esse script funcionar ele tem que estar numa pasta
+# do path que seja lida antes de qualquer comando inkscape
+# tipo -> PATH="~/.local/bin:$PATH"
+#
+# seguindo o exemplo acima a sua pasta "~/.local/bin" será lida primeiro
+# e o teste abaixo vai abrir o flatpak caso esteja instalado
+#
+# Provavelmente a sua pasta ~/.local/bin já é lida primeiro,
+# pra saber rode esse comando:
+# tr ':' '\n' <<< $PATH
+
+result=$(flatpak list | grep -ic 'inkscape' 2>/dev/null)
+
+if [ "$result" -lt 1 ]; then
+    inkscape
+else
+    flatpak run org.inkscape.Inkscape
+fi

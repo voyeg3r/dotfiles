@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+#     Filename: convdate
+#      Created: Wed, 01 Sep 2021 - 21:56
+#  Last Change: Fri, 17 Sep 2021 - 15:02
+#          vim: ft=sh:fdm=syntax:nu:et:
+
+NEEDED_COMMANDS="xclip"
+missing_counter=0
+for needed_command in $NEEDED_COMMANDS; do
+    if ! hash "$needed_command" >/dev/null 2>&1; then
+        printf "Command not found in PATH: %s\n" "$needed_command" >&2
+        ((missing_counter++))
+    fi
+done
+
+if ((missing_counter > 0)); then
+    printf "Minimum %d commands are missing in PATH, aborting" "$missing_counter" >&2
+    exit 1
+fi
+
+if [ -z "$1" ]; then
+    echo
+    echo "    Usage: $(basename $0) dd/mm/YY"
+    echo "    Type a date as argument: "
+    echo
+    sleep 2
+    clear
+    exit 1
+fi
+
+timestamp=$(date +"%s" -d "$1")
+export LC_ALL="en_US.UTF-8"
+new_date=$(date +'%a, %b %d %Y' -d @${timestamp})
+
+echo $new_date | tee >(xclip -selection clipboard)
+

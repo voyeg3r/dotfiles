@@ -1,0 +1,153 @@
+# vim:foldlevel=0
+# vim:foldmethod=marker
+# source: vimmer-dotfiles/elinks/.elinks/elinks.conf at github
+
+## url rewrite rules {{{1
+
+# remove default rewriting rules.
+set protocol.rewrite.smart.g = "http://www.google.com/search?q=%s"
+set protocol.rewrite.smart.ddg = "https://duckduckgo.com/?q=%s"
+set protocol.rewrite.smart.l = "http://www.google.com/search?btnI&q=%s"
+set protocol.rewrite.smart.a = "http://web.archive.org/web/*/%s"
+set protocol.rewrite.smart.w = "http://ru.wikipedia.org/w/index.php?title=Special:Search&search=%s"
+
+# dumb rewrites
+set protocol.rewrite.dumb.ek = "http://elinks.or.cz/documentation/manpages/elinkskeys.5.html"
+set protocol.rewrite.dumb.sel = "http://www.w3.org/TR/selectors/#selectors"
+
+# }}}
+## image viewer setup {{{1
+set mime.extension.jpg="image/jpeg"
+set mime.extension.jpeg="image/jpeg"
+set mime.extension.png="image/png"
+set mime.extension.gif="image/gif"
+set mime.extension.bmp="image/bmp"
+
+set mime.handler.image_viewer.unix.ask = 1
+set mime.handler.image_viewer.unix-xwin.ask = 0
+
+set mime.handler.image_viewer.unix.block = 1
+set mime.handler.image_viewer.unix-xwin.block = 0
+
+set mime.handler.image_viewer.unix.program = "pim %"
+set mime.handler.image_viewer.unix-xwin.program = "pim %"
+
+set mime.type.image.jpg = "image_viewer"
+set mime.type.image.jpeg = "image_viewer"
+set mime.type.image.png = "image_viewer"
+set mime.type.image.gif = "image_viewer"
+set mime.type.image.bmp = "image_viewer"
+#}}}
+## key bindings {{{1
+
+# move bindings like in vim: hjkl.
+bind "main" "h" = "scroll-left"
+# history manager was on "h" so remap it
+bind "main" "z" = "history-manager"
+bind "main" "j" = "scroll-down"
+bind "main" "k" = "scroll-up"
+bind "main" "l" = "scroll-right"
+# allow easy moving to next link. Not really like in Vim, but similar.
+bind "main" "K" = "move-link-prev"
+bind "main" "J" = "move-link-next"
+# back
+bind "main" "H" = "history-move-back"
+# forward
+bind "main" "L" = "history-move-forward"
+
+# page up/down
+bind "main" "u"     = "move-page-up"
+bind "main" "d" = "move-page-down"
+
+# move to the start and end of the document similar to vim.
+bind "main" "g" = "move-document-start"
+bind "main" "G" = "move-document-end"
+
+# reload the page.
+bind "main" "r" = "reload"
+
+# open "Go to URL" dialog.
+bind "main" "o" = "goto-url"
+bind "main" "O" = "goto-url-current"
+
+# open a new tab in background.
+bind "main" "Ctrl-M" = "frame-maximize"
+
+# don't use "c" to close a tab
+bind "main" "c" = "none"
+
+# unbind Q (quit without warning)
+bind "main" "Q" = "none"
+
+bind "main" "Ctrl-o" = "link-external-command"
+bind "main" "Alt-o" = "link-external-command"
+bind "edit" "Ctrl-I" = "open-external"
+bind "edit" "Ctrl-T" = "none"
+bind "main" "Alt-d" = "link-download"
+bind "main" "x" = "tab-close"
+bind "main" "Alt-<" = "frame-prev"
+bind "main" "Alt->" = "frame-next"
+bind "main" "Shift-Tab" = "tab-prev"
+bind "main" "Tab" = "tab-next"
+bind "main" "Alt-l" = "link-follow"
+bind "main" "f" = "jump-to-link"
+bind "main" "R" = "redraw"
+# }}}
+## link sends {{{1
+
+# send link to video stream player
+set document.uri_passing.youtube = "wyoutube %c"
+
+# send link to video downloader
+set document.uri_passing.youtube-dl = "ytd %c > /dev/null &"
+
+# send link to clipboard
+set document.uri_passing.xclip = "echo -n %c | xclip -i"
+
+# open link in default X browser
+set document.uri_passing.qutebrowser = "defaultbrowser %c 2> /dev/null"
+# }}}
+## common settings {{{1
+
+set ui.language = "System"
+
+# can't get it to work :(
+set document.browse.forms.editor = "gvim -f"
+
+# 2 is accept all cookies
+set cookies.accept_policy = 2
+
+set cookies.max_age = 50
+set cookies.paranoid_security = 0
+set cookies.save = 1
+set cookies.resave = 1
+set config.saving_style_w = 1
+# }}}
+
+
+
+##############################
+# Automatically saved options
+#
+
+## document
+#  Document options.
+
+  ## document.history
+  #  History options.
+
+    ## document.history.global
+    #  Global history options.
+
+      ## document.history.global.enable [0|1]
+      #  Enable global history ("history of all pages visited").
+      set document.history.global.enable = 1
+
+
+    ## document.history.keep_unhistory [0|1]
+    #  Keep unhistory ("forward history").
+    set document.history.keep_unhistory = 1
+
+
+
+

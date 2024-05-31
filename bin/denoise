@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Last Change: Thu, 29 Sep 2022 09:15:57
+# purpose: Use ffmpeg to remove noise (sound)
+# sources:
+# https://superuser.com/a/1610778/45032
+# https://www.dicas-l.com.br/arquivo/criacao_de_arquivos_e_diretorios_temporarios_com_o_comando_mktemp.php
+#
+# tags: [sound, ffmpeg, audio, screencast]
+
+# https://meleu.sh/trap-err/
+set -euo pipefail
+
+trap 'echo "${BASH_SOURCE}:${LINENO}:${FUNCNAME:-}"' ERR
+
+trap remove_temp 2
+
+imput="$1"
+
+tempdir=$(mktemp -d)
+echo "criando $tempdir"
+
+# função para remover arquivos temporários
+remove_temp () {
+    \rm -rf "$tempdir"
+}
+
+output="denoised.mp4"
+
+if [ -f "$output" ]; then
+    read -r -p "Delete old denoised.mp4 file? [Y/n]" response
+    response=${response,,} # tolower
+    if [[ $response =~ ^(y| ) ]] || [[ -z $response ]]; then
+        \rm -f "$output"
+    fi
+fi
+
+ffmpeg -i "$imput" -af "afftdn=nf=-25" "$tempdir/file1.mp4"
+ffmpeg -i "$tempdir/file1.mp4" -af "afftdn=nf=-25" "$tempdir/file2.mp4"
+
+ffmpeg -i "$tempdir/file2.mp4" -af "highpass=f=200, lowpass=f=3000" "$tempdir/file3.mp4"
+ffmpeg -i "$tempdir/file3.mp4" -af "volume=4" "$output"
+

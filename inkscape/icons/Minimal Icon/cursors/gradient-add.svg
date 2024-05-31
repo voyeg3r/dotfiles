@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="32"
+   inkscape:hotspot_x="4"
+   inkscape:hotspot_y="6"
+   style="fill:gray;stroke:black"
+   version="1.1"
+   id="svg32"
+   sodipodi:docname="gradient-add.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview34"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:zoom="12.131679"
+     inkscape:cx="20.854491"
+     inkscape:cy="11.663678"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg32">
+    <inkscape:grid
+       type="xygrid"
+       id="grid882" />
+  </sodipodi:namedview>
+  <defs
+     id="defs9">
+    <!-- Shadow -->
+    <filter
+       id="shadow"
+       x="-0.22285714"
+       y="-0.2"
+       width="1.5028571"
+       height="1.4512821">
+      <feOffset
+         result="offOut"
+         in="SourceAlpha"
+         dx="1"
+         dy="1"
+         id="feOffset2" />
+      <feGaussianBlur
+         result="blurOut"
+         stdDeviation="1"
+         id="feGaussianBlur4" />
+      <feBlend
+         in="SourceGraphic"
+         in2="blurOut"
+         mode="normal"
+         id="feBlend6" />
+    </filter>
+  </defs>
+  <rect
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.4;stroke-linecap:round"
+     id="rect3797"
+     width="7"
+     height="7"
+     x="16"
+     y="16" />
+  <!-- Cross (centered on hotspot) -->
+  <!-- Gradient -->
+  <path
+     d="m 1.5,6.5 h 10 m -5,-5 v 10"
+     style="fill:none;stroke:#ffffff;stroke-width:3px;stroke-linecap:square"
+     id="path11-1"
+     sodipodi:nodetypes="cccc" />
+  <path
+     d="m 1.5,6.5 h 10 m -5,-5 v 10"
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:square"
+     id="path13-7"
+     sodipodi:nodetypes="cccc" />
+  <rect
+     x="24.5"
+     y="10.5"
+     width="4"
+     height="4"
+     style="fill:#808080;stroke:#ffffff;stroke-width:3px"
+     id="rect15-6"
+     ry="3"
+     rx="3" />
+  <rect
+     x="10.5"
+     y="24.5"
+     width="4"
+     height="4"
+     style="fill:#808080;stroke:#ffffff;stroke-width:3px"
+     id="rect17-4"
+     ry="3"
+     rx="3" />
+  <path
+     d="m 24,15 -9,9"
+     style="fill:#808080;stroke:#ffffff;stroke-width:3.4;stroke-miterlimit:4;stroke-dasharray:none"
+     id="path19-8"
+     sodipodi:nodetypes="cc" />
+  <rect
+     x="24.5"
+     y="10.5"
+     width="4"
+     height="4"
+     style="fill:#40a1ff;fill-opacity:1;stroke:#000000;stroke-width:1px"
+     id="rect21-3"
+     ry="3"
+     rx="3" />
+  <rect
+     x="10.5"
+     y="24.5"
+     width="4"
+     height="4"
+     style="fill:#ff4a47;fill-opacity:1;stroke:#000000;stroke-width:1px"
+     id="rect23-0"
+     ry="3"
+     rx="3" />
+  <path
+     d="M 25,14 14,25"
+     style="fill:#808080;stroke:#000000;stroke-width:1px"
+     id="path25-4"
+     sodipodi:nodetypes="cc" />
+  <rect
+     style="fill:#000000;stroke:none;stroke-width:3.4;stroke-linecap:round;fill-opacity:1"
+     id="rect1422"
+     width="5"
+     height="5"
+     x="17"
+     y="17" />
+</svg>

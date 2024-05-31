@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+#     Created: qui 13 dez 2018 07:38:26 -03
+# Last Change:  dez 13 2018 07:38
+#      Author:  Sergio Araujo
+#     Twitter:  @voyeg3r
+#     Licence:  GPL (see http://www.gnu.org/licenses/gpl.txt)
+# press Ctrl-j to jump placeholders
+
+# the youtube-dl option "-g" gets the url
+yt () mplayer -fs -quiet $(youtube-dl -g "$1")

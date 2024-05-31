@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="battery-full.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="31.125"
+     inkscape:cx="7.9839357"
+     inkscape:cy="8"
+     inkscape:window-width="1366"
+     inkscape:window-height="748"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g70"
+       style="fill:#ffffff">
+      <path
+         id="rect3789"
+         style="fill:#ffffff;fill-opacity:0.999937;stroke:none;stroke-width:54.9884;stop-color:#000000"
+         d="m 3.1687108,14.782107 c 0,0.56518 0.4549695,1.020149 1.0201492,1.020149 H 11.779 c 0.565191,0 1.020161,-0.454969 1.020161,-1.020149 V 2.0989221 c 0,-0.5651798 -0.45497,-1.0201493 -1.020161,-1.0201493 H 9.8224484 V 1.0781736 0.56279355 c 0,-0.20219964 -0.1627004,-0.3650493 -0.3648997,-0.3650493 H 6.5103115 c -0.2021886,0 -0.3648889,0.16284966 -0.3648889,0.3650493 V 1.0781736 1.0787714 H 4.18886 c -0.5651797,0 -1.0201492,0.4549695 -1.0201492,1.0201493 z M 4.7987353,13.974653 V 2.9063759 H 11.169136 V 13.974653 Z"
+         sodipodi:nodetypes="sssscsccssssccsssccccc"
+         inkscape:export-filename="/home/sergio/img/svg/rect3789.png"
+         inkscape:export-xdpi="300"
+         inkscape:export-ydpi="300" />
+      <path
+         id="rect4062"
+         style="fill:#ffffff;fill-opacity:0.999937;stroke-width:54.9884;stop-color:#000000"
+         d="m 5.6695253,12.920901 v -2.011483 h 4.6288207 v 2.011483 z"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         d="M 5.669525,9.536431 V 7.5249481 h 4.62882 V 9.536431 Z"
+         style="fill:#ffffff;fill-opacity:0.999937;stroke-width:107.997;stop-color:#000000"
+         id="path205" />
+      <path
+         d="M 5.669525,6.1519624 V 4.1404795 h 4.62882 v 2.0114829 z"
+         style="fill:#ffffff;fill-opacity:0.999937;stroke-width:107.997;stop-color:#000000"
+         id="path50" />
+    </g>
+  </g>
+</svg>

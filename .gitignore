@@ -1,4 +1,10 @@
-# arquivos python compilados
-*.pyc
-.zhistory
-.zcompdump
+# Files git will ignore during commits
+zsh/.zcompdump
+zsh/**/*.zwc
+termux/zsh/autoloaded/*.zwc
+termux/zsh/plugins/**
+#!/termux/zsh/plugins
+zsh/plugins/**
+newsboat/cache*
+newsboat/history*
+lazy-lock.json

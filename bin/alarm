@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# This script can be called via dmenu:
+# alarm 20:30:00
+
+# Get the current time and the alarm time from the command line arguments
+now=$(date +%s)
+alarm=$(date -d "$1" +%s)
+
+# Calculate the number of seconds until the alarm goes off
+seconds=$((alarm - now))
+
+# Wait for the specified number of seconds
+sleep $seconds
+
+# Display the alarm message
+alarm_sound="/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
+echo "Alarm at $(date)"
+
+dunstify --urgency=CRITICAL "Alarm:" "Time elapsed"
+mpv --quiet --title="timer" $alarm_sound

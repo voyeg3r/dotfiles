@@ -1,47 +1,28 @@
-#!/bin/bash
-# Script to se GNU/Linux date remotely
-# Author: Sergio Luiz Araujo Silva
-# Site: http://vivaotux.blogspot.com/
-# twitter: twitter.com/@voyeg3r
-# Created: 2011-10-07 08:38:00
-# Last Change: 2011-10-07 08:38:00
-#
-# Need be root, has lynx in system and network
-#
-# com algumas modificações coloque em /etc/network/if-up.d/acertahora.sh
+#!/usr/bin/env bash
+# vim:nolist softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+#     Filename: acertahora.sh
+#      Created: ago 22, 2021 - 22:00
+#  Last Change: Tue, 01 Nov 2022 14:37:38
+#          vim: ft=sh:fdm=syntax:nu:
+# This aims to: sync clock
+#        Autor: Sergio Araujo
+#         site: https://dev.to/voyeg3r
+#       github: @voyeg3r
+#       e-mail: <voyeg3r ✉ gmail.com>
+#      Licence: GPL (see http://www.gnu.org/licenses/gpl.txt)
+#    Reference: https://pt.stackoverflow.com/questions/130582
 
-clear
-echo
-echo " Progrma para acertar a hora do sistema"
+# doas hwclock --set --date="08/21/2021 20:15:00"
+# doas hwclock --hctosys
 
-# testa se está logado como root
-if [ "$(id -u)" != "0" ]; then
-	echo " Rode este programa como root"
-	sleep 2
-	exit 1
-fi
+# dependency 'doas'
 
-PROGRAM=`which lynx`
+site='https://www.horariodebrasilia.org/'
+dia=$(curl -s "$site" | grep -Poh '(?<=\<h3 id="dia-topo"\>).*(?=\</h3\>)')
+hora=$(curl -s "$site" | grep -Poh '(?<=\<p id="relogio"\>).*(?=\</p\>)')
 
-if [ -z "$PROGRAM" ]; then
-   clear
-   echo " Instale primeiro o programa lynx"
-   read -p " pressione uma tecla para sair"
-   exit
-fi
+# echo "$dia"
+# echo "$hora"
 
-# site utilizado para pegar a hora
-SERVER="http://pcdsh01.on.br/HoraLegalBrasileira.asp"
-
-# neste ponto a variável ainda está num formato inadequado
-VAR=`$PROGRAM -dump $SERVER | awk 'NR==7 {print $1,$2}'`
-
-# agora manipulo com o sed para colocar no formato adequado
-HORAREMOTA=`echo $VAR | sed -r 's,([0-9]+)[^0-9]([0-9]+)[^0-9]([0-9]{4})\s+(.*),\3-\2-\1 \4,g'`
-echo " Hora do servidor remoto: $HORAREMOTA"
-echo " Hora do servidor local `date`"
-
-# to set date by string put betwen quotation marks
-echo " `date -s "$HORAREMOTA"`"
-echo
+doas date +%T -s "$hora"
 

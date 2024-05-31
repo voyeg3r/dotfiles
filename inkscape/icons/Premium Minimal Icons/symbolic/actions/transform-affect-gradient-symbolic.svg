@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="transform-affect-gradient-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata2901">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2899">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect871"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1,0,1 @ F,0,0,1,0,0,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="1"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect873"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.67"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect877"
+       is_visible="false"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,1,0,1 @ F,0,0,1,0,0,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="1"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect879"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.67"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+  </defs>
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="transform-affect-gradient"
+     inkscape:window-maximized="1"
+     inkscape:window-y="32"
+     inkscape:window-x="-8"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     inkscape:cy="7.140625"
+     inkscape:cx="4.203125"
+     inkscape:zoom="32"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     inkscape:object-paths="true"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0">
+    <inkscape:grid
+       id="grid"
+       type="xygrid"
+       spacingx="0.66666667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <g
+     id="transform-affect-gradient"
+     inkscape:label="00159"
+     transform="matrix(1,0,0,0.999999,-408,-527.36152)">
+    <path
+       id="rect894"
+       style="opacity:0.8;fill:#00aaff;fill-opacity:1;stroke:none;stroke-width:0.65;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 3.3339844,3.3339844 V 12.666016 H 12.666016 V 3.3339844 Z M 4.6660156,4.6660156 H 11.333984 V 11.333984 H 4.6660156 Z"
+       transform="translate(408,527.36205)" />
+    <rect
+       style="opacity:0.7;fill:#000000;fill-opacity:0;stroke:none;stroke-width:0.65;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect984"
+       width="3.3333333"
+       height="6.6666527"
+       x="412.66666"
+       y="532.02881" />
+    <rect
+       style="fill:#000000;fill-opacity:0.2;stroke:none;stroke-width:0.65;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect1099"
+       width="3.3333485"
+       height="6.6666999"
+       x="412.66666"
+       y="532.02875" />
+    <rect
+       style="fill:#000000;fill-opacity:0.60000002;stroke:none;stroke-width:0.65;paint-order:stroke fill markers;stop-color:#000000"
+       id="rect1179"
+       width="3.3333485"
+       height="6.6666999"
+       x="416"
+       y="532.02875" />
+  </g>
+</svg>

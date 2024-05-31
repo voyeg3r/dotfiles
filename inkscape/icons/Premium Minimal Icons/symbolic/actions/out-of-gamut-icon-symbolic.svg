@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   width="249.50522"
+   height="249.50523"
+   id="svg2"
+   sodipodi:docname="out-of-gamut-icon-symbolic.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview6"
+     showgrid="true"
+     inkscape:zoom="2.6753297"
+     inkscape:cx="178.85646"
+     inkscape:cy="83.541105"
+     inkscape:window-x="-8"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     inkscape:pagecheckerboard="0"
+     inkscape:snap-page="true" />
+  <defs
+     id="defs4" />
+  <path
+     id="path881"
+     style="fill:#000000;fill-rule:evenodd;fill-opacity:1"
+     d="M 124.75195 8.4589844 C 60.576553 8.4589844 8.4570313 60.576553 8.4570312 124.75195 C 8.4570312 188.92735 60.576553 241.04688 124.75195 241.04688 C 188.92725 241.04688 241.04688 188.92735 241.04688 124.75195 C 241.04688 60.576553 188.92725 8.4589844 124.75195 8.4589844 z M 124.75195 17.318359 C 184.13845 17.318359 232.18555 65.365253 232.18555 124.75195 C 232.18555 184.13855 184.13845 232.18555 124.75195 232.18555 C 65.365253 232.18555 17.318359 184.13855 17.318359 124.75195 C 17.318359 65.365253 65.365253 17.318359 124.75195 17.318359 z M 124.75195 76.017578 C 97.889053 76.017578 76.017578 97.889153 76.017578 124.75195 C 76.017578 151.61465 97.889053 173.48633 124.75195 173.48633 C 151.61465 173.48633 173.48633 151.61465 173.48633 124.75195 C 173.48633 97.889153 151.61465 76.017578 124.75195 76.017578 z " />
+</svg>

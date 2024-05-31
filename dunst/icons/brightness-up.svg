@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32.0px"
+   height="32.0px"
+   viewBox="0 0 32.0 32.0"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="brightness-up.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview6755"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="11.313709"
+     inkscape:cx="22.052893"
+     inkscape:cy="39.686368"
+     inkscape:window-width="1366"
+     inkscape:window-height="748"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-global="true"
+     inkscape:snap-object-midpoints="true"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid6761" />
+    <sodipodi:guide
+       position="17,19"
+       orientation="1,0"
+       id="guide82" />
+    <sodipodi:guide
+       position="17,19"
+       orientation="0,-1"
+       id="guide84" />
+  </sodipodi:namedview>
+  <defs
+     id="defs6750" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:2.83002;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 16.912726,8.9825462 c 2.237974,0 4.04336,1.8065798 4.043362,4.0458028 10e-7,2.23923 -1.805386,4.045804 -4.043362,4.045804 -2.237977,0 -4.044584,-1.806574 -4.044583,-4.045804 2e-6,-2.239223 1.806608,-4.0458028 4.044583,-4.0458028 z"
+       id="path3801"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:2.83002;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 16.912726,8.1733868 c -2.675492,0 -4.853741,2.1785982 -4.853743,4.8549622 -2e-6,2.676365 2.178248,4.854963 4.853743,4.854963 2.675494,0 4.852524,-2.178598 4.852522,-4.854963 -2e-6,-2.676364 -2.177031,-4.8549622 -4.852522,-4.8549622 z"
+       id="path3485"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="M 16.913049,0.43448948 A 0.61893458,0.40460468 0 0 0 16.293218,0.83846293 V 6.3170791 a 0.61893458,0.40460468 0 0 0 0.619831,0.4039674 0.61893458,0.40460468 0 0 0 0.617964,-0.4039673 V 0.83846318 a 0.61893458,0.40460468 0 0 0 -0.617964,-0.4039737 z"
+       id="path3483"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="-9.4235529"
+       inkscape:transform-center-x="0.087308645" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.06779;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 0.32598383,28.988025 a 0.26896729,0.42222473 0 0 0 -0.2692627,0.422691 0.26896729,0.42222473 0 0 0 0.2692627,0.421027 H 31.749466 a 0.26896729,0.42222473 0 0 0 0.269262,-0.421027 0.26896729,0.42222473 0 0 0 -0.269262,-0.422691 z"
+       id="path3269"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <g
+       id="circle3271"
+       style="fill:#ffffff;stroke:none;stroke-width:2.12814"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="matrix(0.62487211,0,0,0.62487211,33.882153,-89.333516)">
+      <path
+         style="color:#000000;fill:#ffffff;stroke:none;stroke-width:2.1175;stroke-linecap:round;-inkscape-stroke:none"
+         d="m -7.2738526,190.0462 a 3.5668504,3.5683911 0 0 1 -3.5668504,3.56839 3.5668504,3.5683911 0 0 1 -3.56685,-3.56839 3.5668504,3.5683911 0 0 1 3.56685,-3.56839 3.5668504,3.5683911 0 0 1 3.5668504,3.56839 z"
+         id="path3631" />
+      <path
+         style="color:#000000;fill:#ffffff;stroke:none;stroke-width:2.12814;stroke-linecap:round;-inkscape-stroke:none"
+         d="m -10.839844,185.98047 c -2.2389,0 -4.064453,1.82689 -4.064453,4.0664 0,2.23952 1.825553,4.06446 4.064453,4.06446 2.2389005,0 4.0644534,-1.82494 4.0644534,-4.06446 0,-2.23951 -1.8255529,-4.0664 -4.0644534,-4.0664 z m 0,0.99414 c 1.7009303,0 3.0683596,1.37025 3.0683596,3.07226 0,1.70202 -1.3674293,3.07032 -3.0683596,3.07032 -1.70093,0 -3.070312,-1.3683 -3.070312,-3.07032 0,-1.70201 1.369382,-3.07226 3.070312,-3.07226 z"
+         id="path3633" />
+    </g>
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 23.208036,2.074938 a 0.61893458,0.40460468 30 0 0 -0.738775,0.039936 l -2.739309,4.7446205 a 0.61893458,0.40460468 30 0 0 0.334806,0.6597617 0.61893458,0.40460468 30 0 0 0.737157,-0.040864 L 23.541223,2.7337716 A 0.61893458,0.40460468 30 0 0 23.208036,2.074938 Z"
+       id="path556"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="-8.20469"
+       inkscape:transform-center-x="-4.6361648" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 27.839431,6.6431018 a 0.61893458,0.40460468 60 0 0 -0.659765,-0.334802 l -4.744622,2.7393073 a 0.61893458,0.40460468 60 0 0 -0.03993,0.7387734 0.61893458,0.40460468 60 0 0 0.658829,0.3331895 l 4.744621,-2.7393082 a 0.61893458,0.40460468 60 0 0 0.04087,-0.73716 z"
+       id="path558"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="-4.787387"
+       inkscape:transform-center-x="-8.1173831" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 29.566255,12.914945 a 0.40460468,0.61893458 0 0 0 -0.403972,-0.619829 l -5.478617,-1e-6 a 0.40460468,0.61893458 0 0 0 -0.403967,0.619831 0.40460468,0.61893458 0 0 0 0.403967,0.617965 h 5.478617 a 0.40460468,0.61893458 0 0 0 0.403975,-0.617964 z"
+       id="path560"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="-0.087307818"
+       inkscape:transform-center-x="-9.4235542" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 27.925807,19.209932 a 0.40460468,0.61893458 30 0 0 -0.03994,-0.738773 l -4.744621,-2.73931 a 0.40460468,0.61893458 30 0 0 -0.659761,0.334807 0.40460468,0.61893458 30 0 0 0.04086,0.737157 l 4.744622,2.739308 a 0.40460468,0.61893458 30 0 0 0.658835,-0.333185 z"
+       id="path562"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="4.6361665"
+       inkscape:transform-center-x="-8.2046867" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 23.357644,23.841328 a 0.40460468,0.61893458 60 0 0 0.334797,-0.659767 l -2.739307,-4.744622 a 0.40460468,0.61893458 60 0 0 -0.738774,-0.03993 0.40460468,0.61893458 60 0 0 -0.333192,0.658827 l 2.739309,4.744621 a 0.40460468,0.61893458 60 0 0 0.737161,0.04087 z"
+       id="path564"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="8.1173805"
+       inkscape:transform-center-x="-4.7873832" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 17.085801,25.568152 a 0.61893458,0.40460468 0 0 0 0.619826,-0.403976 l 1e-6,-5.478617 a 0.61893458,0.40460468 0 0 0 -0.619832,-0.403967 0.61893458,0.40460468 0 0 0 -0.617966,0.403965 v 5.478617 a 0.61893458,0.40460468 0 0 0 0.617966,0.403975 z"
+       id="path566"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="9.4235512"
+       inkscape:transform-center-x="-0.087304877" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 10.790813,23.927705 a 0.61893458,0.40460468 30 0 0 0.738773,-0.03994 l 2.73931,-4.744621 a 0.61893458,0.40460468 30 0 0 -0.334807,-0.659762 0.61893458,0.40460468 30 0 0 -0.737157,0.04086 l -2.739308,4.744622 a 0.61893458,0.40460468 30 0 0 0.333186,0.658835 z"
+       id="path568"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="8.2046876"
+       inkscape:transform-center-x="4.636166" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 6.159417,19.359542 a 0.61893458,0.40460468 60 0 0 0.6597662,0.334797 l 4.7446228,-2.739307 a 0.61893458,0.40460468 60 0 0 0.03993,-0.738775 0.61893458,0.40460468 60 0 0 -0.658827,-0.333192 l -4.7446217,2.739309 a 0.61893458,0.40460468 60 0 0 -0.04087,0.737161 z"
+       id="path570"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="4.787384"
+       inkscape:transform-center-x="8.1173805" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 4.4325918,13.087699 a 0.40460468,0.61893458 0 0 0 0.4039758,0.619825 l 5.4786174,2e-6 a 0.40460468,0.61893458 0 0 0 0.403968,-0.619833 0.40460468,0.61893458 0 0 0 -0.403965,-0.617966 H 4.8365706 a 0.40460468,0.61893458 0 0 0 -0.403975,0.617966 z"
+       id="path572"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="0.087305851"
+       inkscape:transform-center-x="9.4235516" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 10.641203,2.1613136 a 0.40460468,0.61893458 60 0 0 -0.334797,0.659766 l 2.739307,4.7446226 a 0.40460468,0.61893458 60 0 0 0.738775,0.03993 0.40460468,0.61893458 60 0 0 0.333192,-0.658827 L 11.378371,2.2021838 a 0.40460468,0.61893458 60 0 0 -0.737161,-0.04087 z"
+       id="path574"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="-8.1173808"
+       inkscape:transform-center-x="4.7873837" />
+    <path
+       style="color:#000000;fill:#ffffff;stroke:none;stroke-width:3.50023;stroke-linecap:round;-inkscape-stroke:none"
+       d="m 6.0730395,6.7927097 a 0.40460468,0.61893458 30 0 0 0.03994,0.7387726 L 10.857601,10.270792 A 0.40460468,0.61893458 30 0 0 11.517363,9.9359855 0.40460468,0.61893458 30 0 0 11.476503,9.1988286 L 6.7318808,6.4595204 a 0.40460468,0.61893458 30 0 0 -0.658835,0.333186 z"
+       id="path576"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/brightness-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       inkscape:transform-center-y="-4.6361664"
+       inkscape:transform-center-x="8.2046876" />
+  </g>
+</svg>

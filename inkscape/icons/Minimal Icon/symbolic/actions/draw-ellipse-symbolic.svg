@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="svg1"
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   sodipodi:docname="draw-ellipse-symbolic.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <style
+     id="s0">
+   .success { fill: #009909; }
+   .warning { fill: #FF1990; }
+   .error   { fill: #00AAFF; }
+  </style>
+  <style
+     id="s2"> 
+     @import '../../highlights.css'; 
+  </style>
+  <metadata
+     id="metadata1213">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1211">
+    <inkscape:path-effect
+       effect="offset"
+       id="path-effect839"
+       is_visible="true"
+       lpeversion="1"
+       linejoin_type="miter"
+       unit="px"
+       offset="0.05"
+       miter_limit="4"
+       attempt_force_join="true"
+       update_on_knot_move="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect992"
+       is_visible="true"
+       linecap_type="butt"
+       line_width="1.082096"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect950"
+       is_visible="true"
+       linecap_type="butt"
+       line_width="2.5"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect942"
+       is_visible="true"
+       linecap_type="butt"
+       line_width="2.5"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:showpageshadow="true"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     id="namedview"
+     showgrid="true"
+     inkscape:zoom="38.014061"
+     inkscape:cx="8.6415393"
+     inkscape:cy="8.2469485"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g0"
+     inkscape:document-rotation="0"
+     inkscape:snap-global="true"
+     inkscape:snap-object-midpoints="true"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-nodes="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid"
+       spacingx="0.66667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <g
+     inkscape:label="draw-ellipse"
+     id="g0">
+    <path
+       id="background"
+       d="M 0,0 H 16 V 16 H 0 Z"
+       style="opacity:0"
+       inkscape:connector-curvature="0" />
+    <circle
+       id="path843"
+       cx="8"
+       cy="8"
+       class="base"
+       r="5.5"
+       style="opacity:0.1" />
+    <path
+       id="path839"
+       d="M 1.2832031,8 C 1.2835836,11.709245 4.2907446,14.716416 8,14.716797 11.709246,14.716416 14.716416,11.709256 14.716797,8 14.716416,4.2907549 11.709059,1.2835832 7.9845093,1.2976338 4.2599596,1.3116843 1.2834718,4.3106223 1.2832031,8 Z M 7.9916846,2.7239094 C 10.91815,2.7164555 13.283545,5.0818381 13.283203,8 13.283545,10.91815 10.918162,13.283545 8,13.283203 5.0818498,13.283545 2.7164555,10.918163 2.7167969,8 2.7164201,5.0924038 5.0652193,2.7313633 7.9916846,2.7239094 Z"
+       sodipodi:nodetypes="cccccccccc" />
+  </g>
+</svg>

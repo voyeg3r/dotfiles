@@ -1,0 +1,8 @@
+# ~/.config/.fdignore
+
+chromium/
+GIMP/
+pulse/
+plowshare/
+pulse-backup/
+xfce4/

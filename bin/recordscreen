@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# File: /home/sergio/.dotfiles/bin/recordscreen
+# Last Change: Fri, 30 Sep 2022 20:03:14
+# vim:set softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+# tags: [ffmpeg, video, recordin, x11, awk, screenkey]
+# see also: https://raymii.org/s/snippets/Record_your_Linux_Desktop_with_ffmpeg_and_slop.html
+
+# enable the screenkey app so you can show people the keybindinds you are using
+# during your screen record
+
+# trap ctrl-c and call ctrl_c()
+# controla a execução do script para poder fecha-lo com ctrl+c
+trap ctrl_c INT
+function ctrl_c() {
+        #echo "** Trapped CTRL-C"
+        pkill screenkey
+        pkill $$
+}
+
+help () {
+    echo "Script para gravar sua tela"
+    echo "dependências: ffmpeg, screenkey"
+}
+
+if [ ! command -v screenkey &>/dev/null ]; then
+    help
+fi
+
+screenkey &
+
+SCREENCASTS_DIR="$XDG_VIDEOS_DIR/screencasts"
+
+SCREEN_SIZE=$(awk '/dimensions/ {print $2}' <(xdpyinfo))
+
+FILTER='-af lowpass=3000,highpass=200,afftdn=nf=-25'
+
+(
+ [[ -d "$SCREENCASTS_DIR" ]] || mkdir -p "$SCREENCASTS_DIR" && cd "$SCREENCASTS_DIR"
+ffmpeg -s "$SCREEN_SIZE" -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default output.mkv
+)

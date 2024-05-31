@@ -1,0 +1,224 @@
+! lnsfvn ~/.dotfiles/Xresources ~/.Xresources
+! last change: Tue, 20 Sep 2022 20:01:23
+
+!https://wiki.gentoo.org/wiki/Cursor_themes
+Xcursor.theme: whiteglass
+Xcursor.size: 16
+
+! !-- Xft settings -- !
+! ! *.alpha:        0.8
+! Xft.dpi:        96
+! Xft.antialias:  true
+! Xft.rgba:       rgb
+! Xft.hinting:    true
+! Xft.hintstyle:  hintfull
+
+Xft.antialias:	1
+Xft.hinting:	1
+Xft.autohint:	0
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
+
+! https://wiki.archlinux.org/title/rxvt-unicode#Xresources
+URxvt*transparent: true
+URxvt*shading: 30
+URxvt.font: xft:iosevka:size=14:antialias=true
+URxvt*scrollBar: false
+URxvt*cursorBlink: true
+URxvt.urlLauncher: firefox
+URxvt.perl-ext:           default,matcher
+URxvt.url-launcher:       sensible-browser
+URxvt.matcher.button:     1
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.pattern.2:  \\B(/\\S+?):(\\d+)(?=:|$)
+!URxvt.matcher.launcher.2: gvim +$2 $1
+
+! Normal cut & paste key conventions ( ctrl-shift c/v )
+XTerm*selectToClipboard: true
+XTerm*VT100.Translations: #override \
+      Shift Ctrl<Key>C: copy-selection(CLIPBOARD) \n\
+      Shift Ctrl<Key>V: insert-selection(CLIPBOARD) \n\
+      Shift Ctrl<Key>V: insert-selection(PRIMARY) \n\
+
+URxvt.keysym.C-M-c: builtin-string:
+URxvt.keysym.C-M-v: builtin-string:
+
+
+! https://github.com/gotbletu/shownotes/blob/master/xterm_xresources.md
+! xterm settigs
+! XTerm*faceName:  JetBrains Mono::pixelsize=15
+! XTerm*faceSize:  16
+XTerm*faceName:  Iosevka Term
+XTerm*faceSize: 15
+XTerm*Term: xterm-256color
+
+! pointer and cursor (blinking and color)
+XTerm*pointerColor: white
+XTerm*pointerColorBackground: black
+XTerm*cursorColor: white
+XTerm*cursorBlink: true
+! Only select text
+XTerm*highlightSelection: true
+! Remove trailing spaces
+XTerm*trimSelection: true
+! Use: Shift-Pageup / Shift-Pagedown to scroll or mousewheel
+! Lines of output that you can scroll back over
+XTerm*saveLines: 16384
+! Turn the scrollbar on, and put it on the right
+! XTerm.vt100.scrollBar: true
+! XTerm.vt100.scrollbar.width: 8
+! xterm*scrollBar: true
+! xterm*rightScrollBar: true
+
+! Do not scroll when there is new input e.g. tail -f /var/syslog
+XTerm*scrollTtyOutput: false
+
+!! Keybinding ========================================================
+! http://blog.rot13.org/2010/03/change-font-size-in-xterm-using-keyboard.html
+! - change fontsize on the fly (ctrl+plus = increase ; ctrl+minus = decrease, ctrl+0 = default)
+! - copy/paste hotkey (ctrl+shift+c = copy ; ctrl+shift+v = paste)
+! - open url (clickable links)
+!   1) double click to highlight the full url
+!   2) Shift + click it to open it
+XTerm.vt100.translations: #override \n\
+  Ctrl <Key> minus: smaller-vt-font() \n\
+  Ctrl <Key> plus: larger-vt-font() \n\
+  Ctrl <Key> 0: set-vt-font(d) \n\
+  Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+  Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+  Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
+  <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
+  <Btn2Up>: insert-selection(PRIMARY)
+
+! double-click to select whole URLs :D
+! https://scarygliders.net/2011/12/01/customize-xterm-the-original-and-best-terminal/
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+! !-------- Theme: Tango {{{
+! !------------------------------------------------------
+! !tango color scheme
+! ! source: https://github.com/lenage/dotfiles/blob/master/.Xresources
+st*color0: #1e1e1e
+st*color1: #cc0000
+st*color2: #4e9a06
+st*color3: #c4a000
+st*color4: #3465a4
+st*color5: #75507b
+st*color6: #0b939b
+st*color7: #d3d7cf
+st*color8: #555753
+st*color9: #ef2929
+st*color10: #8ae234
+st*color11: #fce94f
+st*color12: #729fcf
+st*color13: #ad7fa8
+st*color14: #00f5e9
+st*color15: #eeeeec
+
+!Background & foreground
+!XTerm*background: #002B36
+!WONTFIX: a pure black is better on OLED
+XTerm*background: #000000
+XTerm*foreground: #D2D2D2
+XTerm*borderColor: #343434
+
+!Colors: Solarized dark
+!-------------------------
+!black
+XTerm*color0: #222222
+XTerm*color8: #454545
+
+!red
+XTerm*color1: #9E5641
+XTerm*color9: #CC896D
+
+!green
+XTerm*color2: #6C7E55
+XTerm*color10: #C4DF90
+
+!yellow
+XTerm*color3: #CAAF2B
+XTerm*color11: #FFE080
+
+!blue
+XTerm*color4: #7FB8D8
+XTerm*color12: #B8DDEA
+
+!magenta
+XTerm*color5: #956D9D
+XTerm*color13: #C18FCB
+
+!cyan
+XTerm*color6: #4c8ea1
+XTerm*color14: #6bc1d0
+
+!white
+XTerm*color7: #808080
+XTerm*color15: #cdcdcd
+
+! st.font:			-*-fixed-*-*-*-*-10-*-*-*-*-*-*-1
+! alpha zero total transparency
+st.alpha: 0.80
+st.opacity: 180
+St.alpha: 0.80
+St.opacity: 180
+term2.alpha: 0.80
+term2.opacity: 180
+! st.alphaOffset: 0.3
+
+! dwm scratchpad
+scratchpad.alpha: 0.80
+scratchpad.opacity: 180
+
+st-256color.alpha: 0.80
+st-256color.opacity: 180
+St-256color.alpha: 0.80
+St-256color.opacity: 180
+
+!st.font:            JetBrainsMono Nerd Font Mono :pixelsize=15 , Material Design Icons :pixelsize =15
+!st.font:            JetBrains Mono:pixelsize=15
+!st.font:            iosevka-regular:size=15:antialias=true:autohint=true
+!st.font:            Consolas:style=Regular:size=15:antialias=true:autohint=true
+!st.fontalt0:        FuraCode Nerd Font:style=Regular:pixelsize=14
+! st.font:            IBM Plex Mono Light:size=14
+st.bold_font:		0
+! st.background:		#131415
+! st.foreground:		#A3BAD0
+!st.cursorColor:		#8d9b53
+st.cursorColor:		#ff5533
+st.cursorBlink:     1
+st.cursorUnderline: 1
+St.cursorBlink:     1
+St.cursorUnderline: 1
+st.termname:		st-256color
+st.shell:			/bin/zsh
+st.bellvolume:		100
+st.tabspaces:		4
+st.chscale:			1.0
+st.cwscale:			1.0
+st.atialias:        true
+st.blinktimeout:    300
+
+! st.color0:			#353540
+! st.color8:			#545466
+! st.color1:			#8c5760
+! st.color9:			#b26f7a
+! st.color2:			#7b8c58
+! st.color10:			#9db270
+! st.color3:			#8c6e43
+! st.color11:			#b28c55
+! st.color4:			#58698c
+! st.color12:			#7086b2
+! st.color5:			#7b5e7d
+! st.color13:			#9c77b2
+! st.color6:			#66808c
+! st.color14:			#82a2b2
+! st.color7:			#8c8b8b
+! st.color15:			#b8b8c8
+
+! cursor
+! Xcursor.theme: Yaru
+*.font:	Iosevka Mayukai Original:size=14:antialias=true:autohint=true;
+*.alpha: 0.9
+*.color0: #111

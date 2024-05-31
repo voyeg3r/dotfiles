@@ -1,0 +1,120 @@
+# You can radio staions .pls/.m3u here
+#Station name		#URL
+# Lofi Stations
+Tekno1			http://212.83.149.66:8591/listen.pls?sid=1&t=.m3u
+Planet LoFi		http://198.245.60.88:8080/listen.pls?sid=1&t=.m3u
+Ambient Modern		http://163.172.169.217:80/listen.pls?sid=1&t=.m3u
+Kraftphunk		http://62.210.10.4:8096/listen.pls?sid=1&t=.m3u
+AutoDJ lofi		http://119.235.255.206:8158/listen.pls?sid=1&t=.m3u
+# Class Rock Stations
+Classic Rock Florida 	http://us4.internet-radio.com:8258/listen.pls&t=.m3u
+danceradiouk		http://uk7.internet-radio.com:8226/live.m3u&t=.m3u
+Majestic Jukebox Radio	http://uk3.internet-radio.com:8405/live.m3u&t=.m3u
+Classic Rock Radio	http://us5.internet-radio.com:8267/listen.pls&t=.m3u
+TOP 80 radio		http://uk5.internet-radio.com:8011/listen.pls&t=.m3u
+# 80s 90s Radio Stations
+Magic Oldies Florida	http://uk4.internet-radio.com:8004/listen.pls&t=.m3u
+Classic Hits Global	http://us2.internet-radio.com:8075/listen.pls&t=.m3u
+The Cube Retro Radio	http://us3.internet-radio.com:8107/listen.pls&t=.m3u
+Real Dance Radio	http://uk6.internet-radio.com:8096/live.m3u&t=.m3u
+The Hit Man Radio	http://uk2.internet-radio.com:8121/listen.pls&t=.m3u
+PARTY VIBE MUSIC	http://uk6.internet-radio.com:8124/listen.pls&t=.m3u
+The Groove		http://uk7.internet-radio.com:8352/listen.pls&t=.m3u
+Joy Radio		http://uk5.internet-radio.com:8174/listen.pls&t=.m3u
+80ssoundtracks		http://uk5.internet-radio.com:8256/listen.pls&t=.m3u
+# Hip Hop Radio Stations
+Pigpen Radio		http://uk6.internet-radio.com:8213/listen.pls&t=.m3u
+Time 2 Dance Radio	http://uk6.internet-radio.com:8332/listen.pls&t=.m3u
+Power 95 Bermuda	http://us3.internet-radio.com:8026/live.m3u&t=.m3u
+Riddim1 Radio		http://us2.internet-radio.com:8183/listen.pls&t=.m3u
+# Instrumental Radio Stations
+Musical Venture Radio	http://us3.internet-radio.com:8614/listen.pls&t=.m3u
+DREAM MIX RADIO		http://us3.internet-radio.com:8226/live.m3u&t=.m3u
+GOLD INSTRUMENTAL	http://199.233.234.34:25373/listen.pls?sid=1&t=.m3u
+Music Lake		http://104.251.118.50:8626/listen.pls?sid=1&t=.m3u
+Seeburg 1000		http://74.82.59.197:8351/listen.pls?sid=1&t=.m3u
+Instrumental Radio	http://178.32.62.163:8599/listen.pls?sid=1&t=.m3u
+majoras			http://163.172.77.142:8006/listen.pls?sid=1&t=.m3u
+# Ambient Radio Stations
+Pink Noise Radio	http://uk1.internet-radio.com:8004/listen.pls&t=.m3u
+RADIO ESTILO LEBLON	http://us4.internet-radio.com:8193/listen.pls&t=.m3u
+Ambient Radio .org	http://uk2.internet-radio.com:31491/listen.pls&t=.m3u
+# Drum And Bass Radio Stations
+PARTY VIBE RADIO	http://www.partyviberadio.com:8004/listen.pls?sid=1&t=.m3u
+The Zone - Dublin	http://uk1.internet-radio.com:8355/listen.pls&t=.m3u
+Undergroundfm		http://uk1.internet-radio.com:8118/listen.pls&t=.m3u
+# Electronic Radio Stations
+MoveDaHouse		http://uk7.internet-radio.com:8000/listen.pls&t=.m3u
+Moon Mission Recordings http://uk5.internet-radio.com:8306/listen.pls&t=.m3u
+Esvive Radio		http://uk2.internet-radio.com:8277/listen.pls&t=.m3u
+# Dubstep Radio Stations
+PulseEDM		http://pulseedm.cdnstream1.com:8124/1373_128.m3u&t=.m3u
+Nebula			http://178.32.62.167:8507/listen.pls?sid=1&t=.m3u
+Sensimedia 		http://144.217.203.184:8229/listen.pls?sid=1&t=.m3u
+# Brazilian radio Stations
+Itatiaia		https://8903.brasilstream.com.br/stream
+Assuncao Cearense		https://www.radios.com.br/play/playlist/23116/listen-radio.m3u
+Universitaria Fm Fortaleza		http://200.129.35.230:8081/\;
+Band News		http://evpp.mm.uol.com.br:1935/band/bandnewsfm_for/chunklist_w1799096750.m3u8
+Ceara Rural		http://stm3.xcast.com.br:8560/stream
+Wnyc		https://am820.wnyc.org/wnycam-web
+98 BH		https://9554.brasilstream.com.br/stream
+80's Soundtracks		http://uk5.internet-radio.com:8256/listen.pls&t=.pls
+Assembleia FM Fortaleza		http://srv6.zoeweb.tv:1935/z405-live/stream/playlist.m3u8
+Tempo FM Fortaleza		http://r13.ciclano.io:8609/stream
+Beatles		http://uplink.duplexfx.com:8062
+Sleep Bot		http://sleepbot.com/ambience/cgi/listen.cgi/listen.pls
+Drone Zone		http://somafm.com/dronezone130.pls
+Lush		http://somafm.com/lush130.pls
+Sonic Universe		http://somafm.com/sonicuniverse.pls
+Bossa Brasil		https://centova5.transmissaodigital.com:20104/live
+Atlantico Sul Fortaleza		http://142.44.230.74:9026/live
+Scifi Old Times		https://onlineradiobox.com/json/us/scifioldtime/play
+So MPB		http://s27.maxcast.com.br:8103/live
+Choro		https://servidor33-3.brlogic.com:8020/live
+Inconfidencia MG		https://www.radios.com.br/play/playlist/139/listen-radio.m3u
+Blue e Bossa		https://usa10.fastcast4u.com/bluebossanova
+Romantic 80s		https://usa11.fastcast4u.com/proxy/radiomotel?mp=/stream3
+80 fm		https://centova.euroti.com.br:20001/1/stream.mp3
+Miami Beach		https://streaming.radiostreamlive.com/miamibeachradio_devices
+Abiding Radio		http://streams.abidingradio.org:7800/1
+Flashback Gold		https://stream.laut.fm/flashbackgold?ref=radiode
+Jazz Radio Blues		https://jazzblues.ice.infomaniak.ch/jazzblues-high
+Radio Swiss Classic		https://stream.srg-ssr.ch/m/rsc_de/mp3_128
+aparecida		https://aparecida.jmvstream.com/stream
+npr		https://npr-ice.streamguys1.com/live.mp3
+solopiano		http://pianosolo.streamguys.net/live
+jazzlounge		https://jazzlounge.ice.infomaniak.ch/jazzlounge-high.mp3
+soulblues		http://79.111.14.76:8000/soulblues
+bossa-brasil		https://radio2.vip-radios.fm:18009/stream-128kmp3-BossaNovaBrazil
+easy hits florida		http://airspectrum.cdnstream1.com:8114/1648_128
+Dire Straits		https://streaming.exclusive.radio/er/direstraits/icecast.audio
+Super Tramp		https://streaming.exclusive.radio/er/supertramp/icecast.audio
+U2		https://streaming.exclusive.radio/er/u2/icecast.audio
+Abba		https://streaming.exclusive.radio/er/abba/icecast.audio
+Phill Collins		https://streaming.exclusive.radio/er/philcollins/icecast.audio
+Queen		https://streaming.exclusive.radio/er/queen/icecast.audio
+Elton John		https://streaming.exclusive.radio/er/eltonjohn/icecast.audio
+Podio - Science		https://drive.uber.radio/uber/podioscienceandtechnology/icecast.audio
+Fox News		https://live.wostreaming.net/direct/foxnewsradio-foxnewsradioaac-imc?source=fnr.web
+Viva o Samba		https://servidor33-3.brlogic.com:8020/live?source=website
+BBC		http://stream.live.vc.bbcmedia.co.uk/bbc_world_service
+Paradise		http://stream-uk1.radioparadise.com/aac-320
+So Flashback		https://servidor40-5.brlogic.com:8122/live
+Your Classical		https://ycradio.stream.publicradio.org/ycradio.aac
+Mozart		https://stream.klassikradio.de/mozart/mp3-128/radiode/
+Barch		https://stream.klassikradio.de/purebach/mp3-128/radiode/
+Pet Shop Boys		https://streaming.exclusive.radio/er/petshopboys/icecast.audio
+Frederic Chopin		http://air-tunein.radioart.com/fChopin.mp3
+Eduard Grieg		https://stream.epic-piano.com/grieg
+Memories		https://www.radios.com.br/play/playlist/40735/listen-radio.m3u
+Flashback		https://cc6.streammaximum.com/proxy/radioflashbackfm//stream
+I love 80s		http://live1.livemus.com.br:27400/live
+Anos 80		http://104.247.221.130:9020/stream1
+Nova Brasil		https://19303.live.streamtheworld.com/NOVABRASIL_SPAAC_SC
+UNESP-FM		https://audio.tv.unesp.br/unespfm
+FURGFM		https://stream.furg.br/audio/FURGFM
+Cultura FM		https://radiocultura.jmvstream.com/stream
+Marillion		https://alwaysmusic.stream.laut.fm/alwaysmusic
+Gold Radio		https://centova.svdns.com.br:19373/stream
+Gold Web Radio		https://centova.svdns.com.br:19418/stream

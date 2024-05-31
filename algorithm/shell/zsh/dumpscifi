@@ -1,0 +1,7 @@
+
+
+dumpscifi (){
+  [ -f $ZDOTDIR/lazy-load/dumpscifi ] && . $ZDOTDIR/lazy-load/dumpscifi
+  dumpscifi "$@"
+
+}

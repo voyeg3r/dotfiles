@@ -1,0 +1,12 @@
+#!/bin/zsh
+#     Filename: dumpwnyc
+#  Last Change: Mon, 03 Oct 2022 16:44:06
+#        Autor: Sérgio Araújo
+#         site: https://dev/to/voyeg3r
+#      Licence: GPL (see http://www.gnu.org/licenses/gpl.txt)
+#         tags: [mpv, wget, radio, wnyc]
+
+station="wnyc"
+url="https://am820.wnyc.org/wnycam-web"
+filename="${station}-$(date +%d-%b-%Y-%H-%M).mp3"
+wget -O- "$url" | tee -ai "$filename" | mpv -

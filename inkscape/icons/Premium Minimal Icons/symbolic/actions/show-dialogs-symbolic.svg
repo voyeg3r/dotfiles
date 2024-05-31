@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="show-dialogs-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata1737">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1735" />
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="g17641"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1013"
+     inkscape:window-width="1920"
+     inkscape:cy="6.520247"
+     inkscape:cx="10.008124"
+     inkscape:zoom="38.41879"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0">
+    <inkscape:grid
+       id="grid"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <g
+     id="show-dialogs"
+     inkscape:label="00032"
+     transform="matrix(1.000184,0,0,0.999999,-55.013769,-707.3613)">
+    <path
+       transform="scale(-1,1)"
+       style="opacity:0;fill:none"
+       d="m -90.997063,707.36218 h 15.97647 v 16 h -15.97647 z"
+       id="rect11754"
+       inkscape:connector-curvature="0" />
+    <path
+       id="rect11760"
+       transform="translate(0,512.3622)"
+       d="m 75,195 v 16 h 15.09375 a 0.7182403,0.7182403 0 0 1 -0.3125,-0.1875 L 87.1875,208.375 c -0.63146,0.4213 -1.3783,0.6562 -2.1875,0.6562 -2.19923,0 -4,-1.8176 -4,-4.0312 0,-2.2136 1.80077,-4.0313 4,-4.0313 2.19923,0 4,1.8177 4,4.0313 0,0.87 -0.2788,1.6824 -0.75,2.3437 l 2.53125,2.4375 a 0.7182403,0.7182403 0 0 1 0.1875,0.3438 V 195 Z m 2.03125,1 H 89 v 2 H 77.03125 Z M 85,202.4375 c -1.41396,0 -2.53125,1.1393 -2.53125,2.5625 0,1.4232 1.11729,2.5625 2.53125,2.5625 1.41396,0 2.53125,-1.1393 2.53125,-2.5625 0,-1.4232 -1.11729,-2.5625 -2.53125,-2.5625 z m 5.96875,8.0937 A 0.7182403,0.7182403 0 0 1 90.4375,211 h 0.53125 z"
+       style="opacity:1"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     transform="matrix(0.9985297,0,0,1,-14.954417,-607.36218)"
+     id="g17641">
+    <path
+       inkscape:connector-curvature="0"
+       id="path10291-8-6"
+       d="m 16.979382,610.36218 h 12.017657 v 2.00001 H 16.979382 Z"
+       class="base"
+       sodipodi:nodetypes="ccccc"
+       style="opacity:0.5;fill:#616161;stroke-width:1.22564" />
+    <path
+       inkscape:connector-curvature="0"
+       id="rect10298-7-1"
+       d="m 15.977909,609.36218 1.001487,7e-5 v 12 l -1.001487,-7e-5 z"
+       style="fill:#4d4d4d;stroke-width:0.687699"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="rect10300-4-3"
+       d="m 15.977909,609.36218 h 14.020613 v 1 H 15.977909 Z"
+       style="fill:#4d4d4d;stroke-width:0.707631"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="rect10302-5-4"
+       d="m 28.997057,609.36217 h 1.001467 v 12.00001 h -1.001467 z"
+       style="fill:#4d4d4d;stroke-width:0.687692"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="rect10304-6-5"
+       d="m 16.979391,620.36218 h 13.019134 v 1.00007 H 16.979391 Z"
+       style="fill:#4d4d4d;stroke-width:0.707627"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       id="rect849"
+       width="12.017672"
+       height="0.99999738"
+       x="16.979382"
+       y="612.36218"
+       class="base"
+       style="fill:#616161;stroke-width:0.943531" />
+  </g>
+</svg>

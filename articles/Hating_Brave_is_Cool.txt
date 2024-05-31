@@ -1,0 +1,321 @@
+Feed: Luke Smith's Webpage
+Title: Hating Brave is Cool!
+Date: Thu, 10 Dec 2020 21:00:00 -0300
+Link: https://lukesmith.xyz/articles/hating-brave-is-cool/
+ 
+[image 1: le shill lion (link #1)] 
+ 
+I like and use the Brave Browser. It's a free and open source browser with 
+features like:
+ 
+ 1. Ad-blocking by default.
+ 2. Tracker-blocking by default.
+ 3. Anti-fingerprinting mechanisms to prevent you from being monitored.
+ 4. Built-in Tor windows.
+ 5. Run by a based Christian and not furry leftists.
+ 
+As far as I'm concerned, Brave is indisputably the best out-of-the-box 
+general-purpose browser out there. There are other okay browsers, and I'll 
+mention things about Brave I don't like, but Brave is especially good because it
+comes with all of these sensible features out of the box (you don't have to go 
+install an ad-blocker), so this makes it very good for installing it on your 
+grandma's computer. The anti-fingerprinting abilities are even unique among 
+power-user browsers.
+ 
+Despite that, there is a loud clique of anti-Brave agitators and Brave skeptics.
+Whenever I do a video on Brave, I can expect at least 20% dislikes and a torrent
+of comments from people with anime avatars calling me a "shill" for 
+“recommending” this browser.
+ 
+This, I suspect, is because Brave has an optional extra feature: Brave Rewards, 
+which is "too good to be true."
+ 
+Brave Rewards
+ 
+By default, Brave blocks all ads, but users can turn on "Brave Rewards" to 
+voluntarily view occasional ads and will receive a small amount of Basic 
+Attention Token (BAT), Brave's cryptocurrency. The ads don't mess up webpages by
+appearing in them, but appear in their computer's notification system.
+ 
+Brave's entire motivation is to replace traditional ads that fill up webpages 
+with these kind of ads that share revenue directly with the web page owners and 
+the people browsing the sites themselves. Ad companies disappear, the internet 
+debloats and users and actual sites get a direct cut.
+ 
+This ad feature is not just optional, but is disabled by default.
+ 
+The Archetypical Brainlet Brave Skeptic
+ 
+  “The fact that brave has exploded on the scene so quickly make me suspicious. 
+  There's money involved somewhere.” —Comment on a YouTube video of mine
+ 
+Yes. Because Brave users literally get money to browse with it. Duh.
+ 
+So there is no conspiracy theory about this. Brave just does everything right as
+a browser and they give you free money. In the Basic Attention Token system, 
+companies buy ads and the revenue is shared directly by the owners of sites and 
+the people who view the ads. This cuts out the middleman ad-companies from the 
+internet. It removes and disincentivizes bloat in webpages. This is a 
+drastically more effective and bloatfree way to monetize the internet than 
+old-school ads. Or, you can just keep the default functionality where there are 
+no ads.
+ 
+I literally have people post on my videos constantly about how Brave is a big 
+scheme and "you'll never see a cent of that money." Meanwhile, literally every 
+Brave user, including me, gets a monthly payout. You can even receive your 
+payout directly in US dollars if you want! Even if the Basic Attention Token 
+framework totally flops, it's not like you're putting any money into it. The 
+worst that can happen is you saying, "Oh no, all I have left is the browser with
+the best out-of-the-box functionality!"
+ 
+It reminds me of the joke of two economists walking down the street. One says, 
+"Hey look, there's a $100 bill on the sidewalk!" The other one replies, "That's 
+not possible, if there were, someone would've picked it up already."
+ 
+The anti-Brave crowd's argument is always some form of "it's too good to be 
+true." In reality, you don't realize how inefficient and wasteful the previous 
+way of internet ads was. Why pay an ad agency with employees to pay website 
+developers to put ads into the actual code of websites, contorting it all into a
+mess? The BAT system and Brave just cuts out the middle man and keeps webpages 
+clean by allowing ads to only be shown when wanted in the user's already 
+existing notification system. The goal of the BAT project is to universalize 
+Brave and perhaps similar browsers which block ads and trackers by default, thus
+cutting off the very lifeblood of that inefficient and anti-social system.
+ 
+If you still don't trust the BAT project or think it's gimmicky, great. By 
+default, the "Brave Rewards" system is off. Complaining about Brave because it 
+has an optional feature to make money is like complaining about another browser 
+because it has an add-on you don't plan on using.
+ 
+Tactical Ignorance
+ 
+  “I use to love brave. NOT anymore.. I'm sure that they are fingerprinting and 
+  using my browsing habits and even search queries and shows relevant ads. It is
+  not like they are showing some random pop up for ads. I get ads for NordVPN if
+  I search for best vpn 2020. I instantly get pop up for lenovo laptops as soon 
+  as I search for laptop. Obviously, with all the utm source and other tracking 
+  stuff. I am making around 15 BAT/month. I don't need those pennies. Back to 
+  Firefox with Ublock Origin and Privacy Badger.” —Comment on a YouTube video of
+  mine
+ 
+This guy is literally talking as if how Brave works is some kind of mystery, as 
+if its entire code base isn't openly auditable. No, Brave doesn't take or 
+"fingerprint" your browsing habits, instead, if you are enrolled in Brave 
+Rewards, you browser pulls the entire list of adds from the system, then locally
+decides on your own computer what ads to serve.
+ 
+On Brave's FAQ[2]:
+ 
+  “Only the browser, after HTTPS terminates and secure pages are decrypted, has 
+  all of your private data needed to analyze user intent. Our auditable open 
+  source browser code protects this intent data on the client device. Our server
+  side has no access to this data in the clear, nor does it have decryption 
+  keys. We do not run a MitM proxy or VPN service. We provide signals to the 
+  browser to help it make good decisions about what preferences and intent 
+  signals to expose to maximize user, publisher and advertiser value. Each ad 
+  request is anonymous, and exposes only a small subset of the user’s 
+  preferences and intent signals to prevent “fingerprinting” the user by a 
+  possibly unique set of tags.”
+ 
+Is Brave bad for privacy?
+ 
+A popularly linked Neocities site Spyware Watchdog[3] ranks Brave as having a 
+rank of "High" spyware. The information on the site is generally good, but a 
+little context-less: if you compare their Brave article to their articles on 
+other browsers[4], this bad ranking for Brave is utterly out of place.
+ 
+Many people who read things and lack basic critical thinking skills wanted me to
+either admit or refute this page. Again, the website's information is good, but 
+there is that same implicitly more skeptical standard held to Brave than other 
+browsers.
+ 
+As a point of comparison, take the browser Pale Moon. On their site, the Spyware
+Watchdog classifies Pale Moon as being "Top Tier" in privacy, while Brave is 
+"Low Tier."[5] But if you look at their own analysis[6], on nearly every point, 
+Brave is superior to Pale Moon.
+<b>Issue</>                       <b>Brave’s Flaws</>                                                                                                                                                                                      <b>Pale Moon’s Flaws</>                                                                                                                                             
+Trackers                    Brave blocks ads and trackers, but whitelists Facebook and Twitter to not break cross-site logins for normies. Users can still choose to block these sites in the settings menu.                   Pale Moon does not block any ads or trackers at all, so tough luck. Go find an extension that works well with it.                                             
+Forced incompatibility      None.                                                                                                                                                                                              Pale Moon ships with a blocklist of add-ons that the developers don't want you installing. This includes NoScript and Ad Nauseam.                             
+Auto-updates                Brave checks for updates on startup. (I'm not sure if this is the case on Linux too). There is no menu option to disable this but you can block connections to the update site in your hosts file. Pale Moon automatically checks for updates, add-on updates and changes to the add-on blocklist on start-up. In the about:config some of these can be disabled.
+Analytics on the Start Page Brave connects to a free/open source Piwik service to get the number of ads/trackers blocked for the startpage. This can be disabled on the start page.                                            Pale Moon connects to Google analytics on the start page. This can be disabled by changing the start page.                                                    
+Other bad connections       If ads are enabled, Brave makes connection to a site to get ads. It also checks a HTTPS ruleset on an Amazon server.                                                                               Pale Moon makes a OCSP request for every website you connect to to verify their SSL with a third party. This can be turned off in the options.                
+ 
+On pretty much all of these points, when Brave is lacking, Pale Moon is much 
+worse (that isn't to say that Pale Moon is a bad browser either). So it doesn't 
+really make sense to me why Brave, which also comes with additional privacy 
+features like fingerprint-blocking, should be classified as lower than Pale 
+Meme. That site also claims that Brave uses the Google search engine as default.
+If that was ever true, it isn't now, or at least not on any version of Brave 
+I've used. Brave asks the user on the first start up which search engine he 
+would like to use as default. Google is among the choices though.
+ 
+Note that in their articles they admit that Pale Moon has "auto-updates," but 
+complain that Brave has "shitty auto-updates." Okay. I wonder what the 
+difference is aside from personal emotion. In the last paragraph or so, they do 
+mention, if not skirt around all the actual features of Brave:
+ 
+  “and the fingerprinting protection I don't think is found in any other browser
+  (but I didn't confirm if it actually works).”
+ 
+It does (of course it's an arms-race). But this is an acknowledgment that Brave 
+is fighting on a level that no other browser is. While other honorable browsers 
+like Ice Cat are committed to free software, Brave is also committed to an 
+internet free from ads enmeshed in web pages and the people who simp for them.
+ 
+Brave for normies
+ 
+Aside from nit-picking different browsers, if you want to install a browser on a
+computer for a normie relative or friend, there is no debate that Brave is the 
+best. Again, Brave is built with ad and tracker blocking. Browsers like Pale 
+Moon or Firefox are bad browsers that can become okay browsers after you 
+manually disable their junk features and download a bunch of add-ons, but Brave 
+comes as it should be. Even Brave's token feature of viewing ads to get paid is 
+not on by default. As it ships, Brave is just a good browser.
+ 
+This is why I have Brave ship with LARBS[7]: it's a pain to hosts a repository 
+and edit browser settings via dotfiles, while I can just have Brave installed 
+and that gives a passable, ad-free experience for users.
+ 
+So if you want to make a normie's life easier, install Brave. They will be able 
+to do everything they could do on Chrome, but now they have decreased their 
+Google liability and no longer have to put up with ads.
+ 
+Grasping at Straws...
+ 
+Chromium based
+ 
+When you corner an anti-Brave aggitant, they usually mumble something about how 
+Brave is bad because it's "Chromium-based." I've never seen people use this 
+argument about, say, qutebrowser or other minor Chromium-based browsers, but I 
+think it's just become "that reason" for Brave. I honestly, really can't get 
+worked up against a free and open source software project just because it's been
+spearheaded by Google. The ability to fork it always remains if the code goes 
+south or if it does degenerate stuff.
+ 
+I think it's especially absurd to place your trust in Mozilla FurryFox and their
+team of stereotypical SJWs and soydevs as a functioning alternative. Remember 
+Mozilla spends its money developing fun add-ons like this[8] to "protect" people
+emotionally from scary "conspiracy theories" and "alt-right content" on YouTube.
+I consider Google just as insane and dangerous, but not necessarily so much more
+insane so that I for some reason trust the judgment of Mozilla developers over 
+Google ones.
+ 
+EDIT: Here's another one from Mozilla FurryFox: "We need more than 
+deplatforming"[9] Moreso than Google, Mozilla's openly stated goal is an 
+internet totally controlled by stereotypical dyed-hair SJWs with bad 
+physiognomy.
+ 
+What I mean by this is, sure, I'd like some browser with an independent engine. 
+Pale Moon does sort of has that. That's cool. But that is not enough to make a 
+difference for actual usage. Again, look at the list of benefits of Brave at the
+top of this article, all of those are hard to replicate or find in other 
+browsers. I could go into it elsewhere, but there are a million little reasons 
+why I don't use Pale Moon (but you might like it).
+ 
+Affiliate links
+ 
+Twitter users/Redditors went apoplectic several months ago when they realized 
+Brave had included affiliate links to some sites whose names are filled in in 
+the url bar. I have already written on this.[10] It's literally nothing. As I 
+say there, this is what affiliate links are for. I've never heard the same crowd
+through a fit that DuckDuckGo does exactly the same thing[11]. You could even 
+actually see the Brave affiliate links fill in, which is not the case when 
+clicking on a DuckDuckGo affiliate site link. Still took these guys months to 
+even notice... This is only something "controversial" to people who are trying 
+their damnedest to find something to not like about Brave.
+ 
+Actual good complaints about Brave and BAT
+ 
+Since most visceral anti-Brave agitators just have a kind of general ax to 
+grind, I want to take this time to voice my actually annoyances with Brave and 
+the BAT project. I consider all of these ultimata: I only use Brave with the 
+expectation that these issues will be fixed in the future.
+ 
+Get rid of Uphold!
+ 
+Actually, let me say that in <h1>...
+ 
+Get rid of Uphold!
+------------------
+ 
+So you can get BAT from viewing ads, and people with websites and YouTube 
+channels can receive donations, great. The annoying thing however is that you 
+can't just get payouts to a random Ethereum wallet, instead, you have to use the
+company Uphold. This is probably because of legal issues and because I'm sure 
+they have some financial arrangement, but the BAT project cannot be considered 
+to be a universal and private solution if users are funneled into some site that
+requires a real-world identity.
+ 
+Legally or technologically difficult to do otherwise? Maybe. But that is one of 
+the goals of cryptocurrencies anyway and it should be met. Build the technology 
+so that it's impossible to legally constrain. Most blockchain technology is 
+already like that.
+ 
+Users should just be able to give a public Ethereum/Token address and receive 
+BAT there. That should be it. If you want to offer a normie-friendly partner 
+service like Uphold, fine, but that should not be either the default or 
+required. Uphold, I should say, is definitely not normie-friendly anyway. Since 
+they did a redesign late September/early Ocotober, I admit I literally cannot 
+figure the site out and how to transfer my BAT out efficiently.
+ 
+I should say, in development Brave has had some suboptimal or non-private 
+features in the past before better solutions were devised. I mentioned the fact 
+that Brave pulls a non-personalized ad list, but that wasn't always the case to 
+my understanding: when Brave was starting out, the browser did request specific 
+ads, giving the central service some information about user browsing habits. So 
+that at least indicates that Brave is open to reevaluating methods that are 
+exploitable.
+ 
+BAT as a 💩coin
+ 
+Let me state it again though, if the BAT system requires Uphold for basic 
+functionality, it is not a serious long-term service. That's it. I only use and 
+recommend the BAT system under the expectation that this is a temporary 
+situation that they are actively seeking to remedy. If anti-Brave shills want to
+shill about something that actually matters, this should be it!
+ 
+Like most 💩coins, BAT is not decentralized in any meaningful sense. It’s KYCed 
+into oblivion and relies on a significant number of platforms in bottleneck 
+positions, including in particular the BAT Project itself. I wouldn’t say I even
+support the BAT Project itself for this reason, I just don’t mind using Brave 
+since you can dip your fingers into it without getting KYCed.
+ 
+Auto-updates and integrations
+ 
+I agree strongly with the argument from the Spyware Watchdog site above that 
+Brave should not make any unsolicited requests to sites, especially 
+auto-updates, and if it has a reason to, it should have some menu option to 
+disable it. Any connections a browser makes in the background for these purposes
+or for analytics should be disabled by default too.
+ 
+The Browser should be neutral and decentralized.
+ 
+Somewhat related to the above, if Brave is actually serious about becoming the 
+commonly used system not just for browsing, but for internet monetization, it 
+has to be as neutral and decentralized as possible. Brave has added a lot of 
+optional features for different services and other little annoyances. Obviously,
+you can immediately disable them, but if you want to have a personalizable and 
+universal browsing experience, Brave should be absolutely blank when you pull it
+up on a fresh install.
+ 
+General little features
+ 
+  * The ability to not keep track of history but to still keep cookies. All 
+  Chromium browsers lack this menu feature which exists in Firefox. I'm not sure
+  why this isn't an option because it has always seemed to me the most sensible 
+  way to browse. I don't want sites I've already seen filling in my url bar!
+ 
+ 
+Links: 
+[1]: https://lukesmith.xyz/pix/leshilllion.png (image)
+[2]: https://brave.com/faq/ (link)
+[3]: https://spyware.neocities.org/articles/brave.html (link)
+[4]: https://spyware.neocities.org/articles/index.html (link)
+[5]: https://spyware.neocities.org/articles/browsers.html (link)
+[6]: https://spyware.neocities.org/articles/palemoon.html (link)
+[7]: https://larbs.xyz/ (link)
+[8]: https://foundation.mozilla.org/en/campaigns/regrets-reporter/ (link)
+[9]: https://archive.is/hzS8G (link)
+[10]: https://lukesmith.xyz/blog/le-shill-lion (link)
+[11]: https://help.duckduckgo.com/duckduckgo-help-pages/company/advertising-and-affiliates/ (link)
+

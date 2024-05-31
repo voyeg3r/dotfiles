@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# File: /home/sergio/.dotfiles/bin/testahora
+# Last Change: Sat, 29 Oct 2022 12:47:11
+# vim:nolist softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+# tags: [date, hour, awk, bash, help, regex]
+
+# set -eu
+# set -o pipefail
+
+help() {
+    cat <<-EOF
+
+    Este script serve para testar se a hora
+    digitada pelo usuário é válida
+
+    USO: ${0##*/} 07:12:43
+
+    A hora deve ser digitada no formato acima
+    ou seja: hh:mm:ss
+
+    Ou você não digitou parâmetros ou sua hora digitada
+    não atende os requisitos. Hora digitada $hour
+
+EOF
+}
+
+declare -a hour
+
+hour=(${1:-$(</dev/stdin)})
+
+[ "${hour[0]}" == "-h" >/dev/null ] && help && exit 1
+
+[ "${#hour[@]}" -ne 1 ] && help
+
+[[ $hour =~ ^([01][0-9]|2[0-3])(:[0-5][0-9]){2}$ ]] && echo "hora válida" || echo "hora inválida" ; exit 1
+
+

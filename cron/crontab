@@ -1,0 +1,18 @@
+# crontab -e
+# vim:et:sw=4:ts=4:cms=#%s:
+# >/dev/null 2>&1   <- used to preven sending e-mail's
+# env | grep -i display  to get your DISPLAY variable
+# otherwhise feh will not be abble to change your background
+# source: https://superuser.com/a/1122245/45032
+DISPLAY=':0'
+SHELL=/bin/sh
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/home/sergio/.dotfiles/algorithm/shell/bash/
+XDG_PICTURES_DIR=/home/sergio/img
+WALLPAPER_DIR=$XDG_PICTURES_DIR/backgrounds/
+WAL=/home/sergio/.local/bin/wal
+MAILTO=""
+*/5    *    *    *    *  $WAL -qi $WALLPAPER_DIR
+# */5    *    *    *    *  feh -z --bg-fill /home/sergio/img/backgrounds/*
+# */5     *     *     *     *  wal -i "${XDG_PICTURES_DIR}/backgrounds/$(ls ${XDG_PICTURES_DIR}/backgrounds | shuf -n 1)"
+#*/30    *    *    *    *  mpg123 /home/sergio/music/drink-water.mp3
+

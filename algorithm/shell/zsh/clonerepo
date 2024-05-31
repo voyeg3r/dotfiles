@@ -1,0 +1,44 @@
+# clone a git repo by ists user/name
+clonerepo (){
+
+	reponame="$1"
+	repo=${reponame#*/}
+    repoowner=${reponame%/*}
+
+	#print "cloning ${reponame}..."
+	print "git submodule add https://github.com/${repoowner}/${repo} vim/bundle/${repo}"
+}
+
+# Todo: add options, arguments etc...
+#       test "$1" type
+
+# cd $ZDOTDIR
+# (
+# git clone https://github.com/hlissner/zsh-autopair.git zsh/plugins/zsh-autopair
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git zsh/plugins/zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-completions.git zsh/plugins/zsh-completions
+# git clone https://github.com/zsh-users/zsh-autosuggestions.git zsh/plugins/zsh-autosuggestions
+# ) &!
+
+# clonerepo junegunn/vim-plug
+# clonerepo skywind3000/quickmenu.vim
+# clonerepo jiangmiao/auto-pairs
+# clonerepo tpope/vim-markdown
+# clonerepo sjl/gundo.vim
+# clonerepo chrisbra/NrrwRgn
+# clonerepo scrooloose/nerdtree
+# clonerepo vim-airline/vim-airline
+# clonerepo vim-airline/vim-airline-themes
+# clonerepo eparreno/vim-l9
+# clonerepo SirVer/ultisnips
+# clonerepo honza/vim-snippets
+# clonerepo vimwiki/vimwiki
+# clonerepo vim-scripts/VisIncr
+# clonerepo vim-scripts/AutoComplPop
+# clonerepo kshenoy/vim-signature
+# clonerepo tomasr/molokai
+# clonerepo endel/vim-github-colorscheme
+# clonerepo jnurmine/Zenburn
+# clonerepo altercation/vim-colors-solarized
+# clonerepo juanedi/predawn.vim
+

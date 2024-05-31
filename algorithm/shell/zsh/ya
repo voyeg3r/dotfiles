@@ -1,0 +1,6 @@
+# dependencies: mpv yturl pbpaste
+# plays youtube without video (only audio)
+
+ya () {
+    mpv --no-video $(yturl $(pbpaste))
+}

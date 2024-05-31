@@ -1,0 +1,4 @@
+sequence hyphenated {
+   safe {filename "$HOME/.dotfiles/detox/mysafe.tbl";};
+   #wipeup {remove_trailing;};
+};

@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+#  -*- coding: utf-8 -*-
+#         vim: ai ts=4 sts=4 et sw=4
+#    Filename: pyrenamer
+#      Author: Sergio Araujo
+#     Purpose: substitute spaces by underscores
+# Last Change: mar 03, 2021 - 19:17
+#     Created: qui 25 fev 2021 16:48:30
+#       email: <voyeg3r ✉ gmail.com>
+#      Github: https://github.com/voyeg3r
+#     twitter: @voyeg3r
+#     webpage: https://dev.to/voyeg3r
+#      sources:
+#      https://justalittlebrain.wordpress.com/2008/10/19/replace-space-with-undescore-in-filename/
+#      https://stackoverflow.com/a/15260673/2571881
+#      https://stackoverflow.com/a/2633310/2571881
+
+import os
+import sys
+import unidecode
+
+if len(sys.argv) == 2:
+    files = os.listdir(sys.argv[1])
+else:
+    files= os.listdir('.')
+
+for filename in files:
+    # os.rename(f, unidecode.unidecode('_'.join(f.split()).lower()))
+    new_name = unidecode.unidecode(filename.replace(" ", "_").lower())
+    os.rename(filename, new_name)
+
+# vim: ai ts=4 sts=4 et sw=4 ft=python

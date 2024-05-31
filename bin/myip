@@ -1,13 +1,64 @@
-#!/bin/bash
-# Criado em:Qui 05/Jan/2006 hs 13:13
-# ultima modificação: Sex 30 Set 2011 11:06:00 BRST
-# Autor: Sérgio Luiz Araújo Silva
-# Retorna o seu ip
+#!/usr/bin/env python3
+#  -*- coding: utf-8 -*-
+#         vim: ai ts=4 sts=4 et sw=4
+#    Filename: myip
+#      Author: Sergio Araujo
+#     Purpose: show your internal and external ip
+# Last Change: abr 03, 2020 - 16:04
+#     Created: dom 16 set 2018 06:40:03 -03
+#       email: <voyeg3r ✉ gmail.com>
+#      Github: https://github.com/voyeg3r
+#     twitter: @voyeg3r
+#
+#     Sources: https://stackoverflow.com/a/49715732/2571881
+#
+#     TODO: show local ip when there is not internet
 
-INTERFACE=$(route | awk '/UG/ {print $8}')
-IFCONFIG=$(which ifconfig)
-MYIP=$($IFCONFIG $INTERFACE | awk '/inet/ {print $2}')
+import requests
+import socket
 
-echo
-[ -z $MYIP ] && echo ' offline' || echo $MYIP
-echo
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(("8.8.8.8", 80))
+#print(s.getsockname()[0])
+local_ip = (s.getsockname()[0])
+s.close()
+
+#local_ip = socket.gethostbyname(socket.gethostname())
+
+def internet(host="1.1.1.1", port=53, timeout=3):
+    """
+    Host: 8.8.8.8 (cloudfire dns)
+    OpenPort: 53/tcp
+    Service: domain (DNS/TCP)
+    """
+    try:
+        socket.setdefaulttimeout(timeout)
+        socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((host, port))
+        return True
+    except Exception as ex:
+        print(ex.message)
+        return False
+
+def detect_public_ip():
+    try:
+        # Use a get request for api.duckduckgo.com
+        raw = requests.get('https://api.duckduckgo.com/?q=ip&format=json')
+        # load the request as json, look for Answer.
+        # split on spaces, find the 5th index ( as it starts at 0 ), which is the IP address
+        answer = raw.json()["Answer"].split()[4]
+    # if there are any connection issues, error out
+    except Exception as e:
+        return 'Error: {0}'.format(e)
+    # otherwise, return answer
+    else:
+        return answer
+
+if internet() == True:
+    public_ip = detect_public_ip()
+    print("Public ip: ", public_ip)
+else:
+    print("Sem connecção externa")
+
+print("Local ip:  ", local_ip)
+
+

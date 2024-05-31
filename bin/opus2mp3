@@ -1,0 +1,19 @@
+#!/usr/bin/bash
+# convert .m4a to .mp3 recursively
+# Based on Glen Hewlett script:
+# https://nowhereman999.wordpress.com/2011/09/11/convert-all-files-recursively-from-one-format-to-another-ie-flac-to-mp3-using-linux/
+#####################################
+
+if [ -z $1 ];then echo Give target directory; exit 0;fi
+    find "$1" -depth -name '*' | while read file ; do
+    directory=$(dirname "$file")
+    oldfilename=$(basename "$file")
+    newfilename=$(basename "${file%.opus}")
+
+    if [ "$oldfilename" != "$newfilename" ]; then
+        ffmpeg -i "$directory/$oldfilename" -ab 320k "$directory/$newfilename.mp3" </dev/null
+        rm "$directory/$oldfilename"
+    fi
+done
+
+# tags: ffmpeg, mp3, opus

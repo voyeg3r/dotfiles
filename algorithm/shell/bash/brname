@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#     Filename: brname
+#      Created: fev 24, 2021 - 17:54
+#  Last Change: Sat, 30 Mar 2024 - 08:09:55
+#          vim: ft=sh:fdm=syntax:nu:
+#  Instituicao: Substitue spaces by underescores
+#        Autor: Sergio Araujo
+#         site: https://dev.to/voyeg3r
+#       github: @voyeg3r
+#       e-mail: <voyeg3r ✉ gmail.com>
+#      Licence: GPL (see http://www.gnu.org/licenses/gpl.txt)
+
+for f in *
+do
+  new="${f// /_}"
+  if [ "$new" != "$f" ]
+  then
+    if [ -e "$new" ]
+    then
+      echo not renaming \""$f"\" because \""$new"\" already exists
+    else
+      echo moving "$f" to "$new"
+      mv "$f" "$new"
+    fi
+  fi
+done

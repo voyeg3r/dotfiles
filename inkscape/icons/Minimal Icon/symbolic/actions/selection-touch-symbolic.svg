@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="selection-touch-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-height="1013"
+     inkscape:window-width="1920"
+     inkscape:current-layer="layercompo"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:cy="5.4295438"
+     inkscape:cx="22.693652"
+     inkscape:zoom="27.166187"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     inkscape:document-rotation="0"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0">
+    <inkscape:grid
+       id="grid"
+       type="xygrid"
+       spacingx="0.66667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata1906">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:title>LiveEffect Icons proposal</dc:title>
+        <dc:date>13 Jan 2019</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Ramón Miranda</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>see the license tab</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>icon ui</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:description>This is a contribution with Inkscape Project from
+Ramon Miranda www.ramonmiranda.com (design and SVG file)
+Jabiertxo (SVG stuff to integrate them in UI)</dc:description>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title />
+          </cc:Agent>
+        </dc:publisher>
+        <dc:identifier />
+        <dc:source />
+        <dc:relation />
+        <dc:language>-</dc:language>
+        <dc:coverage />
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>Ramon Miranda
+Jabier Arraiza</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="dashed-stroke"
+     id="layercompo"
+     inkscape:groupmode="layer">
+    <path
+       style="opacity:0.8;stroke-width:0.666667"
+       d="m 9.3333803,2.0000136 4.6666897,-3.5e-6 v 4.6666865 l -4.6666897,3.6e-6 z"
+       id="rect22038"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <g
+       id="g1049-4"
+       style="opacity:0.9"
+       transform="translate(2.5921486e-5,-3.029274e-5)">
+      <path
+         id="path943-3-1"
+         width="1.3333333"
+         height="0.66666996"
+         x="1.9999909"
+         y="4.6667204"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         d="m 1.9999909,4.6667204 h 1.3333333 v 0.66667 H 1.9999909 Z" />
+      <path
+         id="path949-3-5"
+         width="1.3333333"
+         height="0.66666996"
+         x="4.6666579"
+         y="4.6667204"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         d="m 4.6666579,4.6667204 h 1.3333333 v 0.66667 H 4.6666579 Z" />
+      <path
+         id="path951-5"
+         width="1.3333333"
+         height="0.66666996"
+         x="7.3333244"
+         y="4.6667209"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         d="M 7.3333244,4.6667209 H 8.6666577 V 5.3333908 H 7.3333244 Z" />
+      <path
+         id="path957-6"
+         width="1.3333333"
+         height="0.66666996"
+         x="2"
+         y="13.3334"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         d="m 2,13.3334 h 1.3333333 v 0.66667 H 2 Z" />
+      <path
+         id="path959-1"
+         width="1.3333333"
+         height="0.66666996"
+         x="4.666667"
+         y="13.3334"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         d="m 4.666667,13.3334 h 1.3333332 v 0.66667 H 4.666667 Z" />
+      <path
+         id="path961-7"
+         width="1.3333333"
+         height="0.66666996"
+         x="7.3333335"
+         y="13.333401"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         d="m 7.3333335,13.333401 h 1.3333332 v 0.66667 H 7.3333335 Z" />
+      <path
+         id="path963-0"
+         width="1.3333333"
+         height="0.66666996"
+         x="10"
+         y="13.3334"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         d="m 10,13.3334 h 1.333333 v 0.66667 H 10 Z" />
+      <path
+         id="path1009"
+         width="1.3333333"
+         height="0.66666996"
+         x="10.00008"
+         y="-11.333364"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         transform="rotate(90)"
+         d="m 10.00008,-11.333364 h 1.333333 v 0.66667 H 10.00008 Z" />
+      <path
+         id="path985-7"
+         width="1.3333333"
+         height="0.66666996"
+         x="7.3334002"
+         y="-11.333364"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         transform="rotate(90)"
+         d="m 7.3334002,-11.333364 h 1.3333333 v 0.666669 H 7.3334002 Z" />
+      <path
+         id="path987-4"
+         width="1.3333333"
+         height="0.66666996"
+         x="12.666747"
+         y="-11.333364"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         transform="rotate(90)"
+         d="m 12.666747,-11.333364 h 1.333333 v 0.66667 h -1.333333 z" />
+      <path
+         id="path991-3"
+         width="1.3333333"
+         height="0.66666996"
+         x="4.666707"
+         y="-2.6666408"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         transform="rotate(90)"
+         d="m 4.666707,-2.6666408 h 1.3333333 v 0.66667 H 4.666707 Z" />
+      <path
+         id="path993-3"
+         width="1.3333333"
+         height="0.66666996"
+         x="7.333374"
+         y="-2.6666398"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         transform="rotate(90)"
+         d="m 7.333374,-2.6666398 h 1.3333333 v 0.66667 H 7.333374 Z" />
+      <path
+         id="path995-8"
+         width="1.3333333"
+         height="0.66666996"
+         x="10.00004"
+         y="-2.6666408"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         transform="rotate(90)"
+         d="m 10.00004,-2.6666408 h 1.333333 v 0.66667 H 10.00004 Z" />
+      <path
+         id="path997-2"
+         width="1.3333333"
+         height="0.66666996"
+         x="12.666707"
+         y="-2.6666398"
+         ry="0"
+         sodipodi:type="rect"
+         class="base"
+         transform="rotate(90)"
+         d="m 12.666707,-2.6666398 h 1.333333 v 0.66667 h -1.333333 z" />
+    </g>
+  </g>
+</svg>

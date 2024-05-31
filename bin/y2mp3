@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+#  -*- coding: utf-8 -*-
+#         vim: ai ts=4 sts=4 et sw=4
+#        File: y2mp3
+#      Author: Sergio Araujo
+#   This aims: get youtube "mp3" audio
+# Last Change: 2018 jun 05 11:35
+#     Created: qui 26 abr 2018 16:59:47 -03
+#       email: <voyeg3r ✉ gmail.com>
+#      Github: https://github.com/voyeg3r
+#     twitter: @voyeg3r
+#   Reference: http://np1.github.io/pafy/
+
+# DEPENDENCIES
+# sudo pip install pafy
+# sudo pip install pydub
+
+from pydub import AudioSegment
+import pafy
+import sys
+import os
+
+if len(sys.argv) > 1:
+    url = sys.argv[1]
+else:
+    # video = pafy.new('video id or video url')
+    url = input("Type the youtube url or ID: ")
+
+video = pafy.new(url)
+fullname = video.title + ".webm"
+newname = video.title + ".mp3"
+bestaudio = video.getbestaudio()
+quality = str(video.getbestaudio()).split('@')[1]
+print("Downloading audio from ...", video.title)
+
+bestaudio.download()
+
+print("We are almost there...")
+print("Converting downloaded file to mp3...")
+sound = AudioSegment.from_file(fullname)
+sound.export(newname, format="mp3", bitrate=quality)
+
+os.remove(fullname)
+

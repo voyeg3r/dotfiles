@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg1"
+   width="16"
+   height="16"
+   viewBox="0 0 16 16"
+   sodipodi:docname="draw-ellipse-whole-symbolic.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata14592">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs14590">
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect863"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.34"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect859"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect857"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       split_items="false"
+       mirror_copies="false"
+       copies_to_360="true"
+       gap="0.05"
+       rotation_angle="121.7"
+       starting_angle="0.1"
+       num_copies="2"
+       method="normal"
+       lpeversion="1"
+       is_visible="true"
+       id="path-effect4624"
+       origin="8,10"
+       starting_point="12.15625,9.996309"
+       effect="copy_rotate" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect7712-0"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.8897638"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect846"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+  </defs>
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <sodipodi:namedview
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     id="namedview"
+     showgrid="true"
+     inkscape:zoom="32.653062"
+     inkscape:cx="17.771426"
+     inkscape:cy="4.0637761"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1"
+     inkscape:document-rotation="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid"
+       spacingx="0.66666667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <path
+     id="path855"
+     class="base"
+     inkscape:path-effect="#path-effect863"
+     sodipodi:type="arc"
+     sodipodi:cx="8"
+     sodipodi:cy="8.0000401"
+     sodipodi:rx="6"
+     sodipodi:ry="6.00003"
+     d="m 8,13.33007 c -2.9402963,0 -5.33,-2.389713 -5.33,-5.3300299 C 2.67,5.0597234 5.0597037,2.67001 8,2.67001 c 2.940296,0 5.33,2.3897134 5.33,5.3300301 C 13.33,10.940357 10.940296,13.33007 8,13.33007 Z M 8,1.33001 c -3.6871207,0 -6.67,2.9828965 -6.67,6.6700301 0,3.6871339 2.9828793,6.6700299 6.67,6.6700299 3.687121,0 6.67,-2.982896 6.67,-6.6700299 C 14.67,4.3129065 11.687121,1.33001 8,1.33001 Z" />
+</svg>

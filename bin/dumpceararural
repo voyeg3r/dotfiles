@@ -1,0 +1,80 @@
+#!/usr/bin/env zsh
+#     Filename: dumpceararural
+#          vim:set softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+#  Last Change: Tue, 03 Jan 2023 - 09:55:47
+#        Autor: Sérgio Araújo
+#         site: https://dev/to/voyeg3r
+#      Licence: GPL (see http://www.gnu.org/licenses/gpl.txt)
+#    Reference: https://github.com/LukeSmithxyz/voidrice/blob/master/.local/bin/dmenurecord
+#         tags: [zsh, mpv, tee, wget, radio, music, trap]
+
+# https://meleu.sh/trap-err/
+# https://stackoverflow.com/questions/8363519/
+# https://askubuntu.com/questions/1033866/
+# https://unix.stackexchange.com/a/335589/3157
+# set -euo pipefail
+# trap 'echo "${BASH_SOURCE}:${LINENO}:${FUNCNAME:-}"' ERR
+
+# Dependências: dunst, mpv, wget
+#
+# Usage:
+# $0:        Ask for recording via dmenu
+# $0 start:  Record the stream
+# $0 stop:   Stop recording
+
+trap 'killrecording' INT
+setopt nomultios
+
+#pidfile=$(mktemp -t dumpceararural.XXXXX)
+
+# station="ceararural"
+url="http://stm3.xcast.com.br:8560/stream"
+# filename="${station}-$(date +%d-%b-%Y-%H-%M).mp3"
+
+data=$(date +%d-%b-%Y-%H-%M)
+folder_month=$(date "+%d-%b-%Y")
+filename="NOS_OS_CHOROES_${data}.mp3"
+
+killrecording () {
+    dunstify -r "9865" "Parando gravação de áudio"
+     if  [ -f "/tmp/dump_pid" ]; then
+        pkill -P $(< "/tmp/dump_pid")
+        rm -f "/tmp/dump_pid"
+     else
+         dunstify -r "9865" "Não há PIDs listados para matar"
+         exit 1
+     fi
+    exit 0
+}
+
+askrecording () {
+    choice=$(printf "yes\nno" | dmenu -i -p "Record Ceará Rural?")
+    case "$choice" in
+        yes) record;;
+        no)  exit 0;;
+         *)  exit 0;;
+    esac
+}
+
+asktoend() { \
+	response=$(printf "No\nYes" | dmenu -i -p "Recording still active. End recording?") &&
+	[ "$response" = "Yes" ] &&  killrecording
+    exit 0
+	}
+
+record () {
+    (
+    recdir="$XDG_MUSIC_DIR/ceararural/${folder_month}"
+    [ -d "$recdir" ]  || mkdir -p "$recdir"
+    cd "$recdir"
+    dunstify -r "9865" "Iniciando gravação em $recdir"
+    ( wget -O- "$url" | tee -ai "$filename" | mpv --title="ceararural" - ) & echo $! > /tmp/dump_pid
+    )
+}
+
+case "$1" in
+    start) record;;
+    stop)  killrecording;;
+    *) ([ -f "/tmp/dump_pid" ] && asktoend && exit) || askrecording;;
+esac
+

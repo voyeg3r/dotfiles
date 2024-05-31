@@ -1,4 +1,0 @@
-
-setxkbmap br
-
-

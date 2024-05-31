@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# source: https://vi.stackexchange.com/a/38458/7339
+# Last Change: Wed, 08 Mar 2023 - 08:11:09
+# vim:ft=sh:
+# tags: [nvim, distro]
+
+# git clone git@bitbucket.org:sergio/mynvim.git ~/.nvim/config/nvim
+
+export MYCFG="${HOME}/.nvim"
+
+[[ ! -d $MYCFG/config/nvim ]] && mkdir -p $MYCFG/config/nvim
+
+export MYVIMRC="${MYCFG}/config/nvim/init.lua"
+export XDG_CONFIG_HOME="${MYCFG}/config"
+export XDG_DATA_HOME="${MYCFG}/data"
+export XDG_CACHE_HOME="${MYCFG}/data"
+export XDG_STATE_HOME="${MYCFG}/data"
+# this is for temporary files, so better to leave as is
+#export XDG_RUNTIME_DIR=...
+
+# clone packer if there is it does not exits
+[[ ! -d $XDG_DATA_HOME/nvim/site/pack/packer/start/packer.nvim ]] && (
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+     $XDG_DATA_HOME/nvim/site/pack/packer/start/packer.nvim
+
+    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+)
+
+nvim "$@"
+

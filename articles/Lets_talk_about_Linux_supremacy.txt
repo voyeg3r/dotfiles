@@ -1,0 +1,127 @@
+Feed: VKC.sh | Veronica Explains
+Title: Let’s talk about Linux supremacy!
+Author: Veronica
+Date: Thu, 07 Jul 2022 19:19:53 -0300
+Link: https://vkc.sh/lets-talk-about-linux-supremacy/
+ 
+Last week, I posted a video[1] in which I described why I think it’s very much 
+still worth it for aspiring power-users to “learn the terminal”. This was in 
+response to a fun little debate I had with an offline friend about 
+whether-or-not terminal based applications were “something to be overcome” in 
+computing.
+ 
+(Note: if you prefer to not watch videos on YouTube, you can also find the video
+on Tilvids[2], a wonderful Peertube instance I’m proud to be part of.)
+ 
+Anywho, as is typical for my videos, I got a lot of interesting comments. The 
+majority of the comments for this video were positive, or presented alternative 
+viewpoints which counter my argument. All those comments are great and helpful, 
+and I’m going to put those aside for now, and address a darker element in some 
+of the responses.
+ 
+In a small portion of the feedback I received from my video, I fear there was an
+undercurrent of “Linux supremacy”, a term which I will define like so:
+ 
+  Lin·ux su·prem·a·cy noun. 
+ 
+  The belief that users of Linux are intellectually or culturally superior to 
+  users of all other operating systems.
+  “Dictionary of Cultural Undercurrents in Online Societies”, ch. 17, p. 01-D, 
+  as outlined in this helpful video[3] (retrieved 2022-07-07)
+ 
+I’m not going to share the comments here, but I felt like now might be a good 
+time to talk frankly about this concept, why I don’t support it, and why I think
+it hurts the cause of software freedom.
+ 
+Wait, Veronica! I thought you loved Linux?
+ 
+I do.
+ 
+Genuinely, I think Linux is the best kernel out there so far. Linux’s 
+dominance[4] in driving the modern web is proof of the power behind the open 
+source/free software movement. My sincere hope is that Linux on the desktop 
+eventually takes over the market, because I think it’ll be better for all 
+consumers in the long run (even if it’s not there yet).
+ 
+Here’s the key thing: having a preference over a kernel or OS shouldn’t mean you
+dislike the users of the other products out there.
+ 
+To put it another way- it’s fine to have strongly-held preferences, but it’s 
+wrong to judge others based on theirs. To be dismissive of other human beings 
+because of their preferences in operating system… life is too damn short.
+ 
+Yelling at people doesn’t work very well
+ 
+Calling people “idiots” in the comments for liking Windows or Mac products- how 
+far has that gotten you?
+ 
+I work with Linux every day[5]^[shameless?], on the server and desktop. I’ve 
+helped hundreds of people – maybe more – make the switch to Linux.
+ 
+The most common criticism I get about the Linux community is that it’s “too 
+mean”. That honest questions are met with berating comments, or “RTFM”, or other
+rude remarks.
+ 
+Dudebros in the comments: you’re not helping.
+ 
+“It’s all in good fun”- whose fun? 
+ 
+When I push back on this, I often hear “I don’t literally think Windows/Mac 
+users are idiots” or “I was just saying it to be funny”. Why is that funny?
+ 
+I firmly believe our world is a harsh, cruel, and tragic place. It’s impossible 
+to deny the challenges of our day. So why add to it for someone? Even as a 
+“joke” – and I use that word very lightly here – why add to the nastiness of the
+era?
+ 
+One of the reasons I left Twitter[6] and most other social media behind is that 
+“Bombast-as-a-Service” didn’t suit me. Obnoxious, “edgy” “jokes” just push 
+people away from the things we want to see grow. Which leads nicely to the final
+conclusion:
+ 
+“Linux supremacists” don’t want Linux to thrive.
+ 
+It’s as simple as that. The people who berate and scorn non-Linux users just 
+want Linux to remain a niche for them and their so-called “elite” friends.
+ 
+I don’t want Linux and free software to just be some sort of “cool kids club”- I
+genuinely want everyone to feel like they can use it if they want. We should 
+work to make Linux more discoverable for everyone.
+ 
+I genuinely want Linux to thrive. That necessarily requires challenging my own 
+biases from time-to-time. You should try it.
+ 
+Wait… I thought you said “everyone should learn the terminal”? Hypocrite!!
+ 
+OK, come on. Actually listen to what I said. I made some points about why the 
+terminal might be worth learning (and celebrating), even if it isn’t strictly 
+necessary.
+ 
+I’m confident we can get to a general-purpose Linux-based system that requires 
+no terminal commands to be useful. I mean, Android and ChromeOS might already be
+there (from a certain point of view).
+ 
+Anyway, yeah- in addition to some folks saying non-Linux users were bad, other 
+folks were assuming my video said “literally everyone should use the terminal as
+much as possible”, which is not at all what I said.
+ 
+Then again, if I made woodworking videos and I put a video out there called 
+“yes, learn to use a hand plane”, I’m sure I’d probably get comments accusing me
+of ignoring the millions of people out there who “just don’t want to work with 
+wood”.
+ 
+Oh well. Sometimes you can’t win.
+ 
+The post Let’s talk about Linux supremacy![7] appeared first on VKC.sh | 
+Veronica Explains[8].
+ 
+Links: 
+[1]: https://youtu.be/PwoD3XxYLII (link)
+[2]: https://tilvids.com/w/pf3xgdfecpsPbVTs5nB22T (link)
+[3]: https://www.youtube.com/watch?v=dQw4w9WgXcQ (link)
+[4]: https://w3techs.com/technologies/overview/operating_system (link)
+[5]: https://vkc.sh/product/i-use-linux-every-day-relaxed-t-shirt/ (link)
+[6]: https://vkc.sh/another-lady-left-twitter/ (link)
+[7]: https://vkc.sh/lets-talk-about-linux-supremacy/ (link)
+[8]: https://vkc.sh/ (link)
+

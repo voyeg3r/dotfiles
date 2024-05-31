@@ -1,0 +1,56 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim: ai ts=4 sts=4 et sw=4
+#        File:  <+Filename Here+>
+#      Author:  Sergio Araujo
+#     Purpose:  play a random song
+# Last Change:  2018 mai 19 12:25
+#     Created:  sex 11 mai 2018 09:53:01 -03
+#       email:  <voyeg3r ✉ gmail.com>
+#      Github:  https://github.com/voyeg3r
+#     twitter:  @voyeg3r
+#   Rererence:  https://stackoverflow.com/a/41911914/2571881
+
+import sys
+import os
+import random
+import subprocess
+
+
+def cls():
+    if os.name == 'posix':
+        os.system('clear')
+    else:
+        os.system('cls')
+
+cls()
+
+def randplay():
+    cls()
+    n = 0
+    random.seed()
+    for root, dirs, files in os.walk('/home/sergio/music/podcasts/dictation'):
+        for name in files:
+            if name.endswith("mp3"):
+                n+=1
+                if random.uniform(0,n) < 1:
+                    rfile=os.path.join(root, name)
+    global file
+    file = rfile
+    print("your file is", file)
+    subprocess.Popen(['mpg123', '-q', file]).wait()
+
+while True:
+    cls()
+    print("Let's practice some dictation!")
+    print("Type Enter to continue, r to repeat and q or Ctrl-c to quit: ", end='')
+    result = input()
+    if result == 'r':
+        subprocess.Popen(['mpg123', '-q', file]).wait()
+        print("Playing again", file, end='')
+    elif result == 'q':
+        cls()
+        break
+    else:
+        randplay()
+

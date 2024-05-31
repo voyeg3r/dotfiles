@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="exchange-positions-zorder-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata19590">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs19588" />
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg1"
+     inkscape:window-maximized="1"
+     inkscape:window-y="32"
+     inkscape:window-x="-8"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     inkscape:cy="11.960938"
+     inkscape:cx="7.4453125"
+     inkscape:zoom="64"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:snap-page="true"
+     inkscape:snap-smooth-nodes="true">
+    <inkscape:grid
+       id="grid"
+       type="xygrid"
+       spacingx="0.66667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <rect
+     style="fill:#00aaff;fill-opacity:0.69999999;stroke-width:18.3874;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+     id="rect1074"
+     width="7.3333693"
+     height="10.000051"
+     x="-7.3333702"
+     y="-14.66674"
+     transform="matrix(0,-1,-1,0,0,0)" />
+  <rect
+     style="fill:#00aaff;fill-opacity:0.69999999;stroke-width:18.3874;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+     id="rect829"
+     width="7.3333693"
+     height="10.000051"
+     x="-10.00005"
+     y="-11.33339"
+     transform="matrix(0,-1,-1,0,0,0)" />
+  <path
+     id="path1333"
+     style="opacity:0.8;fill:#bfbfbf;fill-opacity:1;stroke-width:0.666667"
+     class="error"
+     d="M 7.9992185,11.998497 5.3332631,14.666016 H 8.0007813 10.666737 L 8.0007813,12.00006 v 1.878358 z" />
+</svg>

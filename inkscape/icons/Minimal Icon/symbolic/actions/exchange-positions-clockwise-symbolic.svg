@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="exchange-positions-clockwise-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1">
+  <metadata
+     id="metadata16424">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs16422">
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect883"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.99999996"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect881"
+       is_visible="false"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.97901702"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="dashed_stroke"
+       id="path-effect879"
+       is_visible="false"
+       lpeversion="1"
+       numberdashes="2"
+       holefactor="0.46"
+       splitsegments="false"
+       halfextreme="false"
+       unifysegment="true"
+       message="Add &lt;b&gt;&quot;Fill Between Many LPE&quot;&lt;/b&gt; to add fill." />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect874"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.1999996"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="dashed_stroke"
+       id="path-effect872"
+       is_visible="true"
+       lpeversion="1"
+       numberdashes="3"
+       holefactor="0.2"
+       splitsegments="true"
+       halfextreme="true"
+       unifysegment="true"
+       message="Add &lt;b&gt;&quot;Fill Between Many LPE&quot;&lt;/b&gt; to add fill." />
+  </defs>
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="exchange-positions-clockwise"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1013"
+     inkscape:window-width="1920"
+     inkscape:cy="8.6133878"
+     inkscape:cx="24.643835"
+     inkscape:zoom="30.09375"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true">
+    <inkscape:grid
+       id="grid"
+       type="xygrid"
+       spacingx="0.66666667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <g
+     inkscape:label="00362"
+     id="exchange-positions-clockwise"
+     transform="matrix(0.665804,0,0,0.666667,0.020707,0)">
+    <title
+       id="title40821">exchange-positions-clockwise</title>
+    <path
+       inkscape:connector-curvature="0"
+       d="m 14.988295,6.0000336 v 1 l 2.002605,9e-6 c 0.553,3e-6 1.001297,0.4477153 1.001297,1 v 1 h -2.002602 l 2.503664,3.0000134 2.502826,-3.0000134 h -2.002592 v -1 c 0,-1.1045694 -0.896592,-2 -2.002593,-2 z"
+       id="path40863-8"
+       style="stroke-width:1.00065"
+       sodipodi:nodetypes="ccsscccccssc" />
+    <rect
+       id="rect843"
+       width="8.0104027"
+       height="9.0000401"
+       x="14.988297"
+       y="13.00006"
+       ry="0.74999952"
+       style="opacity:0.9;fill:#00aaff;stroke-width:1.6046"
+       class="error" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect843"
+       id="use852"
+       transform="translate(-9.0117132,-11.000048)"
+       width="100%"
+       height="100%"
+       style="opacity:0.9" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path40863-8"
+       id="use864"
+       transform="rotate(180,14.487645,12.000061)"
+       width="100%"
+       height="100%" />
+    <path
+       class="error"
+       style="opacity:1"
+       inkscape:transform-center-y="0.16492759"
+       inkscape:transform-center-x="0.11767759"
+       inkscape:connector-curvature="0"
+       d="m 4.9753777,19.000085 -4.00518276,-4.000018 4.00518276,0 z"
+       id="path40825"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#00aaff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.30828;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path877"
+       inkscape:path-effect="#path-effect879;#path-effect883"
+       sodipodi:type="arc"
+       sodipodi:cx="5.4007511"
+       sodipodi:cy="19.448162"
+       sodipodi:rx="3.504034"
+       sodipodi:ry="3.4994981"
+       d="M 7.2623599,17.094047 C 8.2614472,17.88173 8.6550102,19.21658 8.2430942,20.418962 7.8311783,21.621345 6.7007887,22.436161 5.427639,22.44754 4.1544893,22.458919 3.00966,21.664426 2.5762605,20.46959 2.1428609,19.274754 2.5124432,17.933097 3.4972441,17.127692 L 2.8641669,16.353603 c -1.3154245,1.075801 -1.8071965,2.860121 -1.227974,4.456975 0.5792225,1.596854 2.1005806,2.652114 3.8003832,2.636922 1.6998026,-0.01519 3.2020261,-1.097485 3.7525435,-2.704445 0.5505174,-1.60696 0.026847,-3.382191 -1.3076335,-4.4343 z"
+       class="error"
+       sodipodi:start="5.3806483"
+       sodipodi:end="4.0262321"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc" />
+  </g>
+</svg>

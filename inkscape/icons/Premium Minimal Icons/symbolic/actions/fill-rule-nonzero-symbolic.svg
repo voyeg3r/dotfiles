@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="fill-rule-nonzero-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata5978">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs5976" />
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="fill-rule-nonzero"
+     inkscape:window-maximized="1"
+     inkscape:window-y="32"
+     inkscape:window-x="-8"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     inkscape:cy="7.9878419"
+     inkscape:cx="8.0121581"
+     inkscape:zoom="41.125"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true">
+    <inkscape:grid
+       id="grid"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <g
+     id="fill-rule-nonzero"
+     inkscape:label="00306"
+     transform="matrix(0.799994,0,0,0.8,-863.19382,-770.68976)">
+    <path
+       transform="translate(0,512.3622)"
+       style="opacity:0;fill:none"
+       d="m 1079,451 h 20 v 20 h -20 z"
+       id="rect20250"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path20248"
+       d="m 1089.0252,982.1122 c 9.0965,0 11.2744,-17.5 5.6174,-17.5 -5.7287,0 -14.7368,14.00271 -5.586,14.00271 9.0362,0 0.079,-14.00271 -5.6281,-14.00271 -5.7067,0 -3.6609,17.5 5.5967,17.5 z"
+       style="opacity:0.7;stroke-width:1"
+       inkscape:label="#fillrule_nonzero"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="snap-text-baseline-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1">
+  <style
+     id="s0">
+   .success { fill: #009909; }
+   .warning { fill: #FF1990; }
+   .error   { fill: #00AAFF; }
+  </style>
+  <style
+     id="s2"> 
+     @import '../../highlights.css'; 
+  </style>
+  <metadata
+     id="metadata942">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs940" />
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="snap-text-baseline"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1013"
+     inkscape:window-width="1920"
+     inkscape:cy="14.69724"
+     inkscape:cx="56.819007"
+     inkscape:zoom="11.2"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-text-baseline="true">
+    <inkscape:grid
+       id="grid"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <g
+     inkscape:label="00333"
+     id="snap-text-baseline">
+    <rect
+       id="rect848"
+       width="2"
+       height="2"
+       x="0"
+       y="0"
+       style="stroke-width:1.41421" />
+    <rect
+       id="use854"
+       width="2"
+       height="2"
+       x="14"
+       y="0"
+       style="stroke-width:1.41421" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect848"
+       id="use872"
+       width="100%"
+       height="100%"
+       transform="translate(0,14)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use854"
+       id="use878"
+       width="100%"
+       height="100%"
+       transform="translate(0,14)" />
+    <rect
+       id="rect898"
+       width="1"
+       height="3"
+       x="0"
+       y="4"
+       style="opacity:0.5" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect898"
+       id="use900"
+       width="100%"
+       height="100%"
+       transform="translate(0,5)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect898"
+       id="use902"
+       width="100%"
+       height="100%"
+       transform="translate(15)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use900"
+       id="use904"
+       transform="translate(15)"
+       width="100%"
+       height="100%" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect898"
+       id="use906"
+       width="100%"
+       height="100%"
+       transform="rotate(90,8,8)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use900"
+       id="use908"
+       width="100%"
+       height="100%"
+       transform="rotate(90,8,8)"
+       style="opacity:1" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use902"
+       id="use910"
+       width="100%"
+       height="100%"
+       transform="rotate(90,8,8)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#use904"
+       id="use912"
+       width="100%"
+       height="100%"
+       transform="rotate(90,8,8)" />
+    <rect
+       style="opacity:1;stroke-width:0.978057"
+       id="rect914"
+       width="4"
+       height="1.91319"
+       x="6"
+       y="9.0434046" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 5.3472975,13 8,5 10.645357,13 H 13 L 9.533502,3 H 6.4591484 L 3,13 Z"
+       id="path916" />
+  </g>
+</svg>

@@ -1,0 +1,108 @@
+# ------------------------------------------------------
+# File:        ~/.inputrc
+# Created:     Qui 13/Out/2011 hs 09:39
+# Last Change: Thu, 11 Aug 2022 12:38:43
+# Site:        http://vivaotux.blogspot.com
+# Twitter:     http://www.twitter.com/voyeg3r
+# Email:       <voyeg3r  gmail.com>
+# Download:    https://gist.github.com/1284081
+#
+#              key bindings for bash
+#
+#                  ( O O )
+# --------------oOO--(_)--OOo---------------------------
+#
+# References:
+# https://brettterpstra.com/2015/07/09/shell-tricks-inputrc-binding-fun/
+
+# download
+# wget -c https://bitbucket.org/sergio/dotfaster/raw/master/inputrc -O ~/.inputrc
+
+#-------------------------------------------------------
+# Use `bind -v` to see current settings
+#-------------------------------------------------------
+
+# definir no ~/ .bashrc o local do inputrc
+# INPUTRC=~/.inputrc
+
+# Referências
+# https://bugs.launchpad.net/ubuntu/+source/base-files/+bug/103986
+# http://superuser.com/questions/222390/making-bash-tab-completion-more-like-cmd-exe
+# http://brettterpstra.com/2011/09/25/quick-tip-some-inputrc-fun/
+
+# pesquisar sobre as opções 'shopt' do bash
+# pesquisar as opções 'cmdhist' 'nocaseglob' 'nocasematch'
+# By default, C-x C-r is bound to re-read-init-file.
+
+# start-kbd-macro - C-x (
+# Begin saving the characters typed into the current keyboard macro.
+# end-kbd-macro - C-x )
+# Stop saving the characters typed into the current keyboard macro and store the definition.
+# call-last-kbd-macro - C-x e
+
+# source: https://coderwall.com/p/u8-q7q/pimp-your-bash-with-menu-completion
+# TAB: menu-complete
+
+# Adding this to your /etc/inputrc or ~/.inputrc will result in a character
+# # being appended to any file-names returned by completion, in much the same
+# # way as ls -F works.
+set visible-stats on
+set blink-matching-paren on
+set bell-style visible
+
+set convert-meta off
+set input-meta on
+set output-meta on
+set show-mode-in-prompt on
+set enable-bracketed-paste on
+
+# https://unix.stackexchange.com/questions/112406/how-do-i-switch-to-vi-editing-mode-in-readline
+set vi-ins-mode-string (ins)\1\e[5 q\2
+set vi-cmd-mode-string (cmd)\1\e[1 q\2
+## to change to vi mode:   set -o vi | set -o emacs
+
+# Be more intelligent when autocompleting by also looking at the text after
+# the cursor. For example, when the current line is "cd ~/src/mozil", and
+# the cursor is on the "z", pressing Tab will not autocomplete it to "cd
+# ~/src/mozillail", but to "cd ~/src/mozilla". (This is supported by the
+# Readline used by Bash 4.)
+set skip-completed-text on
+
+$if Bash
+    # Search history back and forward using page-up and page-down
+    "\e[5~": history-search-backward
+    "\e[6~": history-search-forward
+    # Cycle through ambiguous completions instead of list (option bellow)
+    "\C-i": menu-complete
+    # Binding Shift-Tab to go backward is a little tricker:
+    "\e[Z": "\e-1\C-i"
+    # control-x-p to edit path
+	"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"
+	# prepare to type a quoted word -- insert open and close double quotes
+	# and move to just after the open quote
+	"\C-x\"": "\"\"\C-b"
+	"\C-x'": "''\C-b"
+	# insert option macro (if you forgot option in previous cmd type Alt-o)
+	"\eo": "\C-p\C-a\ef "
+	# show help for a commad with alt-h
+	"\eh": "\C-a\eb\ed\C-y\e#man \C-y\C-m\C-p\C-p\C-a\C-d\C-e"
+    # Completion
+    set match-hidden-files off
+    set completion-query-items 350
+    set completion-ignore-case on
+    set show-all-if-ambiguous on
+    set show-all-if-unmodified  on
+	set page-completions off
+	set visible-stats on
+	set completion-map-case on
+    # do history expansion when space entered
+    #Space: magic-space
+$endif
+$include /etc/inputrc
+
+$if exists("&wildignorecase")
+    set wildignorecase
+$endif
+
+# put in your ~/.bashrc
+# complete -d cd mkdir rmdir

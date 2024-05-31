@@ -1,0 +1,848 @@
+#!/usr/bin/env bash
+# =================================================
+#          Created: Dom 29/Dez/2013 hs 07:08
+#      Last Change: jun 15 2018 12:30
+# This script aims: arch linux post install script
+#           Author: Sérgio Luiz Araújo Silva
+#             Site: http://vivaotux.blogspot.com
+#          Twitter: @voyeg3r
+# =================================================
+
+# References:
++ https://gist.github.com/Xifax/1517721
++ https://hawkradius.wordpress.com/arch-linux-tips/
++ https://novelist.xyz/tech/things-to-do-after-installing-arch-linux/
+
+# testa se está logado como root
+#if [ "$(id -u)" != "0" ]; then
+#	echo "  Need be root"
+#	sleep 2
+#	exit  1
+#fi
+
+# how enable transparency in gnome-terminal
+#https://xyzhou.com/blogs/easy-transparent-terminal-solution-install-devilspie2-with-gnome3-on-arch-linux
+
+# userstyles to google
+# http://userstyles.org/styles/81403/gt-deepdark-for-google
+
+# mailpile
+# https://aur.archlinux.org/packages/mailpile-git/?setlang=pt_BR
+
+# xkill: https://www.archlinux.org/packages/extra/i686/xorg-xkill/
+
+# better font rendering
+# https://aur.archlinux.org/packages/fontconfig-infinality/
+
+# chenge workspace easyly on gnome shell
+# https://extensions.gnome.org/extension/701/top-panel-workspace-scroll/
+
+# update manager and pacman database extraction utility
+sudo pacman -S expac
+yaourt -S pamac-aur
+yaourt pacui
+
+# encript tool
+sudo pacman -S seahorse{,-nautilus}
+
+# convert filename encode
+sudo pacman -S convmv
+# See also
+# for f in `ls *`;do  mv $f ${f//[^A-Za-z0-9._-]/_}; done
+
+# powerful calculator and mesurement converter
+sudo pacman -S extra/qalculate-gtk
+
+# live-usb creator
+yaourt etcher
+
+# Because PacUI is contained within one file, it is easy to download and start
+# it without prior installation. Please remember to install PacUI’s
+# dependencies first for proper operation. Marking the “pacui” file as
+# executable is essential, too:
+# wget https://raw.githubusercontent.com/excalibur1234/pacui/master/pacui
+# chmod +x pacui
+# bash pacui
+
+# hd temperature
+#sudo hddtemp /dev/sda
+sudo pacman -S hddtemp
+
+# audiobooks reader
+yaourt cozy-audiobooks
+
+# Gerenciador de janelas i3
+sudo pacman -S i3 dmenu
+
+# auryo - soundcloud client
+yaourt auryo
+
+# preview files
+sudo pacman -S sushi
+
+# A free cross-platform English thesaurus based on WordNet
+yaourt artha
+
+# npm is the default package manager for Node.js.
+sudo pacman -S npm
+
+# podcast client (see also hammond)
+yaourt vocal
+
+# Flatpack support
+# flatpak --user remote-add flathub --if-not-exists https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo pacman -S flatpak flatpak-builder
+
+# net tools
+sudo pacman -S ethtool net-tools
+
+# compress or expand executable files
+sudo pacman -S upx
+
+# mesa digitalizadora no archlinux - tablet
+yaourt xournal
+
+# gnome scanner frontend
+sudo pacman -S simple-scan
+
+# set abnt2 keyboard
+# https://www.vivaolinux.com.br/dica/Teclado-ABNT2-definitivo-no-Archlinux
+set-x11-keymap br abnt2
+sudo setxkbmap -model abnt2 -layout br -variant abnt2
+
+# fast and powerful spreesheet
+sudo pacman -S gnumeric
+
+# this package provides pdftotext
+sudo pacman -S poppler
+
+# remove mp3 tags and show them
+# remove tags: eyeD3 --remove-all *.mp3
+# show information: eyeD3 file.mp3
+yaourt eyed3
+
+# network performance
+sudo cp /etc/sysct.conf{,-backup}
+sudo wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf -O /etc/sysctl.d/99-sysctl.conf
+
+# nvim with python support
+sudo pip install neovim
+pip3 install --user --upgrade neovim
+sudo pip install nfasd
+sudo pip install nfasd
+
+# A simple, vim-like file manager
+sudo pacman -S community/ranger
+
+# used to download youtube audios
+sudo pip install pafy
+
+# Used in [n]vim to format html code
+sudo pacman -S tidy
+
+# paragraph formater (useful for vim)
+# https://aur.archlinux.org/packages/par/
+# sudo pacman -U par-1.52-2-i686.pkg.tar.xz
+wget -c https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=par -O PKGBUILD && makepkg -sri PKGBUILD
+
+# setando o muse para ser destacado com o ctrl ou não
+gsettings set org.gnome.settings-daemon.peripherals.mouse locate-pointer false
+
+# ferramentas de rede importantes
+sudo pacman -S net-tools
+
+# paste with middle mouse
+sudo pacman -S libinput
+# vim ~/.config/gtk-3.0/settings.ini with these contents:
+#
+# [Settings]
+# gtk-enable-primary-paste=true
+
+# Pretty, minimal and fast ZSH prompt
+# https://github.com/sindresorhus/pure
+yaourt zsh-pure-prompt
+
+installcups (){
+sudo pacman -S cups cups-pdf
+sudo systemctl enable org.cups.cupsd.service
+sudo systemctl start org.cups.cupsd.service
+} && installcups
+
+yaourt html2pdf
+sudo pip install pdfkit
+# import pdfkit
+# pdfkit.from_url('http://google.com', 'out.pdf')
+
+sudo pip install flake8
+# sudo pip install weasyprint
+#
+# python
+# >>> pdf = weasyprint.HTML('http://www.google.com').write_pdf()
+# >>> len(pdf)
+# 92059
+# >>> file('google.pdf', 'w').write(pdf)
+
+# github url shortner
+gem install git.io
+
+# if youre using archanyware and forgot
+sudo pacman -S transmission-cli transmission-gtk
+
+# jupyter python interpreter on your browser
+#
+# Start the notebook server from the command line:
+# jupyter notebook
+# You should see the notebook open in your browser.
+sudo pip3 install jupyter
+sudo pip install feedparser
+sudo pip install numpy
+sudo pip install scrapy
+
+# baixador do soundcloud
+sudo pip install soundscrape
+
+# unidecode (to remove accents in python programs)
+sudo pip install unidecode
+
+# to be able to import turtle in python
+sudo pacman -S community/python-pmw
+
+# apricity update fix
+sudo pacman -S --force ttf-dejavu
+sudo pacman -Syu
+
+# a better rm solution (allows restoring)
+# https://github.com/andreafrancia/trash-cli
+sudo pacman -S trash-cli
+
+# instaling yaourt
+# Befor installing yaourt
+# Reference: https://goo.gl/uMh5BM
+# git clone https://aur.archlinux.org/package-query-git.git
+# makepkg "in that folder"
+# sudo pacman -S yajl
+#  pacman -U package-query.....tar.xz
+#
+# https://revryl.com/2013/07/11/yaourt-installation-arch-linux/
+# sudo vim /etc/pacman.conf.
+# add this repo:
+#
+#    [archlinuxfr]
+#    SigLevel = Never
+#    Server = http://repo.archlinux.fr/$arch
+#
+#     sudo pacman -Sy yaourt
+
+# Ultimate executable compressor.
+yaourt upx
+
+# GUI manager for systemd services, using GTK+3
+yaourt systemd-manager
+
+# gmail desktop client
+yaourt wmail
+
+# android tools
+yaourt -S android-tools
+
+# a great calendar for gnome
+yaourt -S california
+
+# command not found support
+yaourt -Ss command-not-found
+
+# leitor de rss
+# yaourt -S feedreader-git
+yaourt -S feedreader
+
+# in order to use the plugin command-not-found you must have
+# read this also: https://wiki.archlinux.org/index.php/Pkgfile
+sudo pacman -S pkgfile && sudo pkgfile -u
+
+# you will have a better rename with regex support
+sudo pacman -S perl-rename
+
+# two lightweigh terminal
+sudo pacman -S sakura tilix
+sudo pacman -S xfce4-terminal
+# ~/.config/Terminal/terminalrc
+
+# needed packages to install ghome-terminal-fedora
+# sudo pacman -S automake
+# sudo pacman -S pkg-config
+
+# tradutor via linha de comando
+# https://aur.archlinux.org/packages/translate-shell/
+yaourt -Syua translate-shell
+
+# To load all configuration files manually, execute
+
+# systemctl improvements
+sudo wget -c https://raw.githubusercontent.com/voyeg3r/dotfiles/master/bin/sysctrl.conf -O /etc/sysctl.d/99-sysctl.conf
+
+sudo ln -sfvn /etc/sysctl.d/99-sysctl.conf /etc/sysctl.conf
+sudo sysctl --system
+
+# stopping bluetooth service
+sudo systemctl stop bluetooth
+
+# You can think of Bleachbit as the CCleaner for Linux – but more
+# powerful. It will not only recover disk space by deleting
+# temporary or otherwise unnecessary files, but will also improve
+# Firefox performance and securely destroy unnecessary files to
+# prevent recovery.
+yaourt -S bleachbit
+
+firefoxdefault (){
+    xdg-mime default firefox.desktop x-scheme-handler/http
+    xdg-mime default firefox.desktop x-scheme-handler/https
+} && firefoxdefault
+
+# converter legendas sub para srt
+yaourt -S sub2srt
+
+# soundconverte
+# https://askubuntu.com/a/231791/3798
+sudo pacman -S soundconverter
+
+# cairo-dock desktop launcher
+yaourt -S cairo-dock cairo-dock-plug-ins
+
+# um bom leitor de feeds equanto o gnome-news não roda direito
+yaourt -S feedreader
+yaourt -S gnome-news-git
+
+# accessing gooogle drive
+yaourt -S gvfs gvfs-goa gvfs-google
+
+# flash atualizado - updated flash for linux
+yaourt -s freshplayerplugin-git
+# ln -sfvn /usr/lib/mozilla/plugins/libfreshwrapper-flashplayer.so ~/.mozilla/plugins/libflashplayer.so
+
+# tool to manipulate mkv files
+yaourt -S mkvtoolnix-cli
+
+# gnome with transparency support
+yaourt -S gnome-terminal-fedora
+
+sudo pacman -S archlinux-wallpaper
+
+# wallpaper changer for linux
+yaourt variety
+
+# customize wallpapers
+# https://github.com/iabem97/komorebi
+yaourt komorebi
+
+# messenger do facebook
+yaourt -S messengerfordesktop
+
+# awesome theme
+yaourt -S zukitwo-themes
+yaourt flatplat-blue-theme
+
+yaourt -Syu zsh-completions zsh-autosuggestions zsh-theme-powerlevel9k
+sudo pacman -S fzy
+
+# check your shell script syntax
+sudo pacman -S shellcheck
+
+yaourt -S dos2unix
+
+# Command-line downloader and uploader for Rapidshare, Mediafire and other
+# file sharing websites.
+# site: https://github.com/mcrapet/plowshare
+yaourt -S plowshare
+plowmod --install
+plowlist https://www.mediafire.com/folder/5s35ib7577f0y/wallpapers > links.txt
+plowdown -m links.txt
+
+# mediafire fuse
+# https://github.com/MediaFire/mediafire-fuse
+git clone git@github.com:MediaFire/mediafire-fuse.git
+yaourt megatools
+
+# command line fuzzy finder
+yaourt -S fzf
+
+# hostsblock
+# A script and cronjob that downloads, sorts, and installs multiple ad- and # malware-blocking hosts files
+# https://aur.archlinux.org/packages/ho/hostsblock/hostsblock.tar.gz
+
+# python package installer
+sudo pacman -S python-pip
+
+# python lib to deal system's clipboard
+yaourt -S python-pyperclip
+
+# source: https://www.youtube.com/watch?v=l1lDiCzkjlk
+sudo pacman -S community/aircrack-ng
+
+# chat client
+# WeeChat is a fast, light and extensible chat client. It runs on many platforms
+# like Linux, Unix, BSD, GNU Hurd, Mac OS X and Windows (Bash/Ubuntu and Cygwin).
+sudo pacman -S weechat
+
+# programa para legendas
+sudo pip install subliminal
+
+# how download suttitles using subliminal:
+# subliminal -l en -- The.Big.Bang.Theory.S05E18.HDTV.x264-LOL.mp4
+
+# watch tv on your linux
+yaourt -S xbmc
+
+# clonar as fontes powerline
+# para instalar rode o script install contido na pasta
+git clone git@github.com:powerline/fonts.git
+sudo pacman -S ttf-dejavu ttf-liberation noto-fonts
+
+# necessary for some i3 stuff
+yaourt ttf-font-awesome
+
+installibm_plex(){
+    # https://blog.programster.org/install-IBM-plex-font
+    # https://ibm.github.io/type/
+    # ibm-plex font
+    NEEDED_COMMANDS="unzip"
+    missing_counter=0
+    for needed_command in $NEEDED_COMMANDS; do
+        if ! hash "$needed_command" >/dev/null 2>&1; then
+            printf "Command not found in PATH: %s\n" "$needed_command" >&2
+            ((missing_counter++))
+        fi
+    done
+    if ((missing_counter > 0)); then
+        printf "Minimum %d commands are missing in PATH, aborting" "$missing_counter" >&2
+        exit 1
+    fi
+    wget "https://github.com/IBM/type/archive/master.zip"
+    unzip master.zip
+    rm master.zip
+    cd type-master
+    sudo mkdir -p /usr/share/fonts/truetype/ibm-plex
+    sudo mkdir -p /usr/share/fonts/opentype/ibm-plex
+    sudo cp /tmp/type-master/fonts/*/desktop/pc/*.ttf /usr/share/fonts/truetype/ibm-plex/.
+    sudo cp /tmp/type-master/fonts/*/desktop/mac/*.otf /usr/share/fonts/opentype/ibm-plex/.
+    sudo fc-cache -fv
+} && installibm_plex
+
+# ttf-iosevka
+yaourt ttf-iosevka
+
+# https://fonts.google.com/specimen/Open+Sans
+yaourt ttf-opensans
+
+# watch online tv | don't forget to install hola firefox addon
+yaourt -S aur/zattoo
+
+# neovim
+yaourt -S aur/neovim-git aur/atom-editor-git
+yaourt -S aspell-pt aspell-en
+
+yaourt -S atom-editor
+
+# quod libet audio player
+# http://quodlibet.readthedocs.io/en/latest/downloads.html
+sudo pacman -S quodlibet
+
+# to understand what the bellow command does see this:
+# http://stackoverflow.com/questions/14040351/filtering-zsh-history-by-command
+#https://github.com/mooz/percol#zsh-history-search
+sudo pip install percol
+
+# ramlog
+yaourt -S ramlog
+
+# radio player
+# https://www.xatworld.com/radio-search/
+yaourt -S great-little-radio-player
+sudo pacman -S cmus
+
+# mount folder/filesystem through SSH
+# sshfs name@server:/path/to/folder /path/to/mount/point
+sudo pacman -S sshfs openssh
+
+# check wich process is using your mount point
+# lsof | grep '/dev/sdb1'
+sudo pacman -S lsof
+
+# Atualizar o sistema
+sudo pacman -Syu
+
+# necessário para algumas compliações do yaourt
+sudo pacman -S base-devel
+
+pacman -Syu pydoc
+
+# pesquisar por pacotes: pacman -Ss <nome>
+
+# how install lsb_release
+# wget -c https://www.archlinux.org/packages/community/any/lsb-release/download/ && pacman -U $_
+
+# how install yaourt
+# https://aur.archlinux.org/packages/yaourt/
+
+# another good package mananger is pacaur
+
+# using aur.sh
+# source: http://aur.sh/
+#
+# install aur package
+# bash <(curl aur.sh) -si [package ...]
+#
+# updating aur packages
+# sudo pacman -Qqm | xargs bash <(curl aur.sh) -si --needed
+
+# read about dnsmasq
+# https://wiki.archlinux.org/index.php/Dnsmasq
+
+# wallpaper changer
+# https://aur.archlinux.org/packages/variety/
+
+# developing packages
+yaourt -Syua --devel
+
+yaourt -S aur/firefox-nightly
+
+# cml redd.it client
+yaourt rtv
+
+yaourt -S opera-developer
+
+yaourt -S community/html2text
+
+# chat, video sms like appear.in
+yaourt -S aur/tox-git
+
+# capture audio stream playlist
+yaourt -S extra/streamripper
+
+# music player
+yaourt -S aur/lollypop
+
+# change wallpaper
+sudo pacman -S community/variety
+
+# troubleshooting tool for sysadmins
+yaourt -S sysdig
+
+# remote admin your machine
+sudo pacman -S openssh rsync nmap lshw
+
+# silver searcher ag
+sudo pacman -S the_silver_searcher ripgrep
+
+# download manager
+yaourt -S aur/jdownloader
+
+# mega file storage
+#yaourt -S megasync
+#yaourt -S aur/nautilus-megasync
+# https://github.com/meganz/megacmd
+yaourt megacmd
+
+# patch for terminal transparency
+# https://aur.archlinux.org/packages/gnome-terminal-transparent
+
+# skype alternative
+yaourt -S aur/tox-git
+
+# software manangement
+yaourt -S community/gnome-packagekit
+
+# limitar velocidade do pacman
+# http://www.taringa.net/posts/linux/15314299/Limitar-velocidad-de-Pacman-en-ArchLinux.html
+yaourt -S trickle
+# sudo trickle -d 50 pacman -Syuw --noconfirm
+
+# screen zooming in
+yaourt gnome-shell-mousewheel-zoom
+
+# A nice way to view information about use of system resources.
+yaourt gnome-usage
+
+# cmd line image viwever
+yaourt -S extra/feh
+
+# subtitles searcher and downloader
+yaourt aur/periscope nautilus-periscope
+
+installxfceterminal(){
+#light terminal with transparency support
+yaourt -S extra/xfce4-terminal
+sed -i.backup '/MiscMenubarDefault/s/TRUE$/FALSE/g' ~/.config/xfce4/terminal/terminalrc
+} && installxfceterminal
+
+# how configure nautilus-open-terminal with xfce4-terminal
+# http://askubuntu.com/questions/76712/setting-nautilus-open-terminal-to-launch-terminator-rather-than-gnome-terminal
+
+# better performance
+yaourt -S aur/zramswap
+
+# media server similar to xbmpc
+yaourt -S plexmediaserver
+#It may be necessary to run through the Plex basic setup wizard before launching Plex via its systemd unit:
+# /opt/plexmediaserver/start_pms
+#Once completed, you can start Plex at boot with systemd:
+# systemctl enable plexmediaserver
+#To start Plex (after the basic setup):
+# systemctl start plexmediaserver
+#To begin configuring Plex, browse to http://localhost:32400/manage.
+
+# a beautiful player
+yaourt -S aur/spotify
+
+# firefox and chrome profile cleaner
+yaourt -S profile-cleaner
+
+# alternative to firefox
+yaourt -S icecat
+
+installpopcorntime(){
+wget -c https://aur.archlinux.org/packages/po/popcorntime-bin/popcorntime-bin.tar.gz
+tar zxvf popcorntime-bin.tar.gz && cd popcorntime-bin
+makepkg -si
+} && installpopcorntime
+
+# anki
+yaourt -S  mplayer aur/python-pyaudio lame sox aur/audio-recorder
+sudo pacman -S community/sox
+
+# watch movies throug torrents
+yaourt -S aur/popcorntime-git
+
+# kernel optimization to desktop
+yaourt -S ulatencyd
+
+# program needed to kill bluetooth
+# https://wiki.archlinux.org/index.php/Power_saving
+yaourt -S rfkill
+
+# edit --> /etc/udev/rules.d/bt.rules
+#
+#   ## DISABLE BLUETOOTH
+#   SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{state}="0"
+
+# \LaTeX\
+yaourt -S texlive-core texlive-langcjk texlive-latexextra texlive-pictures haskell-pandoc xelatex
+
+# testing this version
+sudo pacman -S texlive-latexextra
+
+# record your tty
+# asciinema -rec filename -c command
+# to insert command at stackExchange
+#[![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
+sudo pacman -S asciinema
+
+# googler google in text mode
+sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/jarun/googler/v2.9/googler && sudo chmod +x /usr/local/bin/googler
+
+# A terminal-to-gif recorder minus the headaches
+# https://github.com/chjj/ttystudio
+yaourt ttystudio
+
+# https://github.com/pettarin/asciicast2gif
+yaourt gifsicle
+yaourt phantomjs
+
+yaourt -S haskell-pandoc
+sudo pacman -S pandoc
+
+# dns cache
+sudo pacman -S dnsmasq
+
+yaourt -S community/txt2tags
+
+# to install haskell-pandoc you must add this repo
+# [haskell-core]
+# Server = http://xsounds.org/~haskell/core/$arch
+
+admintools () {
+local programs
+programs=( gparted nmap arp-scan unetbootin polkit-gnome curl \
+rsync git ssh python-setuptools terminator aria2 zsh tmux detox )
+
+for program in ${programs[@]}; do
+#read -n 1 -s -p "Press any key to continue"
+if ! [ "$(command -v ${program})" ]; then
+read -r -p "Install ${program}? [Y/n] " response
+response=${response,,} # tolower
+if [[ $response =~ ^(yes|y| ) ]] || [ -z $response ]; then
+yaourt ${program}
+fi
+fi
+done
+} && admintools
+
+# terminal with transparence and more responsive
+# phanteon-terminal could be changed using dconf
+# https://gist.github.com/davidgomes/5162998
+yaourt -S roxterm pantheon-terminal
+gsettings set org.pantheon.terminal.settings natural-copy-paste false
+
+# making zsh my default shell
+sudo chsh -s $(which zsh) $(whoami)
+echo "export $(export | grep '^PATH=')" > ~/.zshenv
+
+gdiskdump () {
+wget -c https://aur.archlinux.org/packages/gd/gdiskdump/gdiskdump.tar.gz
+tar zxvf gdiskdump.tar.gz && cd gdiskdump
+makepkg -si
+} && gdiskdump
+
+configzsh () {
+# video explanation: http://www.youtube.com/watch?v=1S3MUVIAieE
+# https://github.com/robbyrussell/oh-my-zsh
+# after install you need to do new login
+# themes here: https://github.com/robbyrussell/oh-my-zsh/wiki/themes
+pacman -Syu zsh zsh-lovers git
+yaourt -S zsh-completions
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.zshrc ~/.zshrc.orig
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+sudo chsh -s $(which zsh) $(whoami)
+} && configzsh
+
+# aditional zsh completion
+yaourt zsh-completions-git
+
+# execute the following script on bash
+configyaourt(){
+cat <<-EOF > ~/.yaourtrc
+# Yaourt Configuration File
+# Created: `date`
+# Last Change: `date`
+
+# If set to 1, always use the default choice without confirmation.
+NOCONFIRM=1
+
+#If set to 0, don’t propose to edit files (from AUR or from ABS).
+EDITFILES=0
+
+#If 0, disable colors
+USECOLOR=1
+EOF
+} && configyaourt
+
+basesystem () {
+sudo pacman -Syu dbus acpi acpid
+} && basesystem
+
+compactadores () {
+sudo pacman -Sy zip unzip unrar p7zip
+} && compactadores
+
+# adding pandoc
+# https://bbs.archlinux.org/viewtopic.php?id=127998
+pacman -Sy cabal-install
+cabal update
+yaourt -S ghc
+cabal install pandoc
+
+graphictools () {
+sudo pacman -S adobe-source-code-pro-fonts
+sudo pacman -Syu inkscape extra/python2-lxml gimp imagemagick xclip xsel
+sudo yaourt -S --noconfirm gloobus-sushi-bzr
+sudo yaourt -S --noconfirm cairo-ubuntu fontconfig-ubuntu freetype2-ubuntu
+sudo yaourt --noconfirm -S ttf-ubuntu-font-family
+sudo yaourt -S adobe-source-code-pro-fonts
+} && graphictools
+
+sudo pacman -S conky conky-manager
+
+# piper is an alternative for sed awk and other text manipulation tools
+sudo pip install piper
+
+sudo pip install beautifulsoup4
+
+# play sound with python
+sudo pip install pyglet
+yaourt avbin
+
+installgimpplugins () {
+yaourt -Sy gimp-plugin-registry
+yaourt -Sy gimp-plugin-resynthesizer-git
+yaourt -Sy gimp-plugin-separate+
+yaourt -Sy gimp-plugin-beautify
+yaourt -Sy gimp-plugin-lqr
+} && installgimpplugins
+
+# gcp is a file copy tool, freely inspired from cp, but with a few
+# high-level functionnality.
+yaourt -S aur/python2-gcp
+
+# convert any media format
+yaourt -S ffmulticonverter
+
+# numix circle icon theme
+yaourt -S numix-circle-icon-theme-git numix-gtk-theme
+
+# suru icon theme
+yaourt suru
+
+# pop icon theme
+# https://github.com/pop-os/icon-theme
+
+# a better android support
+# adicionei meu usuário aos grupos uucp e usb
+yaourt aur/jmtpfs gvfs-mtp
+
+# https://github.com/Xaviju/inkscape-open-symbols
+yaourt -S inkscape-open-symbols-git
+
+yaourt -S gnome-clocks
+
+# corebird is a twitter client
+# simplescreenrecorder: https://aur.archlinux.org/packages/simplescreenrecorder/
+# gnome-shell-mousewell: https://github.com/tobiasquinn/gnome-shell-mousewheel-zoom
+# python powerline: https://aur.archlinux.org/packages/python-powerline-git/
+# http://gonzalorau.com.ar/descarga-musica-de-grooveshark-con-groove-dl/
+# audio-recorder
+# https://aur.archlinux.org/packages/au/audio-recorder/audio-recorder.tar.gz
+# gcap is a tool to download youtube subtitles
+yaourt -S groove-dl-git
+# tools to edit subtitles
+yaourt -S subtitleeditor python-pysrt
+yaourt -S font-manager
+sudo yaourt -S corebird-git
+sudo yaourt -S youtube-dl
+sudo pacman -Syu
+sudo pacman -Syu sox
+
+# normalize audio files
+yaourt gnormalize
+
+sudo pacman -Syu xorg-utils pavucontrol
+gnome-{documents,music,maps,photos,tweak-tool,extra} dconf-editor
+sudo pacman -S --noconfirm audacity
+yaourt -S community/noise-player
+sudo pacman -S --noconfirm gedit-plugins pulseaudio-gnome telepathy deja-dup
+sudo pacman -S --noconfirm rhythmbox
+sudo yaourt -S --noconfirm codecs
+#sudo pacman -S vlc qt4 ffmpegthumbnailer gstreamer0.10-{{bad,good,ugly,base}{,-plugins},ffmpeg}
+sudo pacman -S vlc qt4 {,gst-{libav,plugins-{bad,base,good,ugly}}}
+yaourt mpv gnome-mpv qmmp
+
+sudo pacman -S gnome-subtitles
+sudo pacman -S gaupol
+
+# screenshot tool: Powerful yet simple to use screenshot software
+# http://www.omgubuntu.co.uk/2018/01/flameshot-linux-screenshot-tool-annotation
+yaourt flameshot
+
+sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-pluginscman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins
+rm -rf ~/.thumbnails/fail
+yaourt -S extra/sound-juicer
+# sucessor do ffmpeg
+# https://aur.archlinux.org/packages/libav-git/
+
+# Python Soundcloud Music Downloader
+# https://github.com/flyingrub/scdl
+# GET YOUR AUTH TOKEN HERE: https://flyingrub.github.io/scdl/
+git clone https://github.com/flyingrub/scdl.git && cd scdl
+sudo python3 setup.py install
+
+# gui for youtube-dl
+# https://aur.archlinux.org/packages/youtube-dl-gui-git/

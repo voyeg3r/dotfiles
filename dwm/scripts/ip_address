@@ -1,0 +1,9 @@
+#!/bin/bash
+# Filename: /home/sergio/.dotfiles/dwm/scripts/ip_address
+# Last Change: Mon, 12 Sep 2022 14:09:21
+
+ping -c1 www.google.com  &> /dev/null && ico="" || ico="bad"
+
+address=$(ip addr | grep -Po '(?<=inet)\s(?!127)[^/]+')
+
+echo " $ico $address "

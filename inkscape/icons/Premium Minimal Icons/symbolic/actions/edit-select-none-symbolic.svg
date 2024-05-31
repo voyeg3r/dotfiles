@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="edit-select-none-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1">
+  <metadata
+     id="metadata13494">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs13492">
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect885"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="square"
+       line_width="0.67"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+  </defs>
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:current-layer="svg1"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-9"
+     inkscape:window-x="-9"
+     inkscape:window-height="1013"
+     inkscape:window-width="1920"
+     inkscape:cy="4.0065412"
+     inkscape:cx="21.71325"
+     inkscape:zoom="21.71377"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10">
+    <inkscape:grid
+       id="grid"
+       type="xygrid"
+       spacingx="0.66667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <g
+     id="g1049-4"
+     style="opacity:0.7">
+    <g
+       id="g1019-6">
+      <path
+         id="path943-3"
+         width="1.3333333"
+         height="0.66666996"
+         x="1.9999999"
+         y="2.00001"
+         ry="0"
+         sodipodi:type="rect"
+         d="M 1.9999999,2.00001 H 3.3333331 V 2.66668 H 1.9999999 Z"
+         class="base" />
+      <path
+         id="path949-3"
+         width="1.3333333"
+         height="0.66666996"
+         x="4.666667"
+         y="2.00001"
+         ry="0"
+         sodipodi:type="rect"
+         d="M 4.666667,2.00001 H 6.0000002 V 2.66668 H 4.666667 Z"
+         class="base" />
+      <path
+         id="path951-5"
+         width="1.3333333"
+         height="0.66666996"
+         x="7.3333335"
+         y="2.0000103"
+         ry="0"
+         sodipodi:type="rect"
+         d="M 7.3333335,2.0000103 H 8.6666667 V 2.6666802 H 7.3333335 Z"
+         class="base" />
+      <path
+         id="path953-3"
+         width="1.3333333"
+         height="0.66666996"
+         x="10"
+         y="2.00001"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 10,2.00001 h 1.333333 V 2.66668 H 10 Z"
+         class="base" />
+      <path
+         id="path955-7"
+         width="1.3333333"
+         height="0.66666996"
+         x="12.666667"
+         y="2.0000103"
+         ry="0"
+         sodipodi:type="rect"
+         d="M 12.666667,2.0000103 H 14 v 0.6666699 h -1.333333 z"
+         class="base" />
+      <path
+         id="path957-6"
+         width="1.3333333"
+         height="0.66666996"
+         x="2"
+         y="13.3334"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 2,13.3334 h 1.3333333 v 0.66667 H 2 Z"
+         class="base" />
+      <path
+         id="path959-1"
+         width="1.3333333"
+         height="0.66666996"
+         x="4.666667"
+         y="13.3334"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 4.666667,13.3334 h 1.3333332 v 0.66667 H 4.666667 Z"
+         class="base" />
+      <path
+         id="path961-7"
+         width="1.3333333"
+         height="0.66666996"
+         x="7.3333335"
+         y="13.333401"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 7.3333335,13.333401 h 1.3333332 v 0.66667 H 7.3333335 Z"
+         class="base" />
+      <path
+         id="path963-0"
+         width="1.3333333"
+         height="0.66666996"
+         x="10"
+         y="13.3334"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 10,13.3334 h 1.333333 v 0.66667 H 10 Z"
+         class="base" />
+      <path
+         id="path965-6"
+         width="1.3333333"
+         height="0.66666996"
+         x="12.666667"
+         y="13.333401"
+         ry="0"
+         sodipodi:type="rect"
+         d="M 12.666667,13.333401 H 14 v 0.66667 h -1.333333 z"
+         class="base" />
+      <path
+         id="path979-0"
+         width="1.3333333"
+         height="0.66666996"
+         x="2.0000401"
+         y="-14.000031"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 2.0000401,-14.000031 h 1.3333332 v 0.666669 H 2.0000401 Z"
+         class="base"
+         transform="rotate(90)" />
+      <path
+         id="path981-7"
+         width="1.3333333"
+         height="0.66666996"
+         x="4.666707"
+         y="-14.000031"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 4.666707,-14.000031 h 1.3333333 v 0.666669 H 4.666707 Z"
+         class="base"
+         transform="rotate(90)" />
+      <path
+         id="path983-6"
+         width="1.3333333"
+         height="0.66666996"
+         x="7.333374"
+         y="-14.000031"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 7.333374,-14.000031 h 1.3333333 v 0.666669 H 7.333374 Z"
+         class="base"
+         transform="rotate(90)" />
+      <path
+         id="path985-7"
+         width="1.3333333"
+         height="0.66666996"
+         x="10.00004"
+         y="-14.000031"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 10.00004,-14.000031 h 1.333333 v 0.666669 H 10.00004 Z"
+         class="base"
+         transform="rotate(90)" />
+      <path
+         id="path987-4"
+         width="1.3333333"
+         height="0.66666996"
+         x="12.666707"
+         y="-14.000031"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 12.666707,-14.000031 h 1.333333 v 0.666669 h -1.333333 z"
+         class="base"
+         transform="rotate(90)" />
+      <path
+         id="path989-1"
+         width="1.3333333"
+         height="0.66666996"
+         x="2.0000403"
+         y="-2.6666408"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 2.0000403,-2.6666408 h 1.3333332 v 0.66667 H 2.0000403 Z"
+         class="base"
+         transform="rotate(90)" />
+      <path
+         id="path991-3"
+         width="1.3333333"
+         height="0.66666996"
+         x="4.666707"
+         y="-2.6666408"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 4.666707,-2.6666408 h 1.3333333 v 0.66667 H 4.666707 Z"
+         class="base"
+         transform="rotate(90)" />
+      <path
+         id="path993-3"
+         width="1.3333333"
+         height="0.66666996"
+         x="7.333374"
+         y="-2.6666398"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 7.333374,-2.6666398 h 1.3333333 v 0.66667 H 7.333374 Z"
+         class="base"
+         transform="rotate(90)" />
+      <path
+         id="path995-8"
+         width="1.3333333"
+         height="0.66666996"
+         x="10.00004"
+         y="-2.6666408"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 10.00004,-2.6666408 h 1.333333 v 0.66667 H 10.00004 Z"
+         class="base"
+         transform="rotate(90)" />
+      <path
+         id="path997-2"
+         width="1.3333333"
+         height="0.66666996"
+         x="12.666707"
+         y="-2.6666398"
+         ry="0"
+         sodipodi:type="rect"
+         d="m 12.666707,-2.6666398 h 1.333333 v 0.66667 h -1.333333 z"
+         class="base"
+         transform="rotate(90)" />
+    </g>
+  </g>
+</svg>

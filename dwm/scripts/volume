@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+
+# This is for alsa
+# vol="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
+
+# Get volume pulseaudio
+# vol=$(pactl list sinks | awk '/Base Volume/   {print $5}')
+
+# https://unix.stackexchange.com/a/336199/3157
+# https://unix.stackexchange.com/questions/132230
+# https://bbs.archlinux.org/viewtopic.php?id=275813
+
+state=$(pamixer --get-mute)
+vol=$(pamixer --get-volume)
+
+icomute=''
+
+if [[ "$state" == "false" ]]; then
+    if [ "$vol" -gt "70" ]; then
+            icon="" # Is a speaker on high volume
+    elif [ "$vol" -gt "30" ]; then
+            icon="" # Is a speaker on mid volume
+    else
+            icon="" # Is a speaker on low volume
+    fi
+echo "$icon $vol%"
+fi
+

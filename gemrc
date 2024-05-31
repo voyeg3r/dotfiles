@@ -1,0 +1,5 @@
+# file ~/.gemrc
+# This file sets some ruby environment options
+:gemdir:
+    - ~/.gem/ruby
+install: --user-install

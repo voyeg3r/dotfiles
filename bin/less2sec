@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# Bash script to decrease [defaut 02] sec
+# Last Change: Wed, 26 Oct 2022 19:21:30
+# tags: [vim, date, seconds, printf]
+# vim:set softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+
+# Note: I had to remove the clear command because it
+# puts some trash on my final output I use on vim
+# https://unix.stackexchange.com/a/564986/3157
+
+# use this script on vim:
+#                  script        time         seconds
+# :%s/.*/\=system('less2sec ' . submatch(0) . ' 10')
+
+
+help(){
+        cat <<-EOF
+                  HELP
+        -------------------------------
+        Subtract seconds from HH:MM:SS"
+        -------------------------------
+        ${0##*/} [-h] [hora] [segundos]
+
+        echo 07:00:12 04 | ${0##*/}
+
+EOF
+}
+
+declare -a my_input
+
+my_input=(${@:-$(</dev/stdin)})
+
+[[ ${my_input[0]} == -h ]] && help && exit 1
+
+param=${my_input[1]:-02}
+
+if [[ -z ${my_input[0]} ]]; then
+    echo "Forneça uma hora como parâmetro"
+    exit 1
+fi
+
+hora=$(date -d "${my_input[0]}" +%H:%M:%S 2>/dev/null) || {
+    echo "*** Erro: \"${my_input[0]}\" é uma hora inválida!"
+    exit 1
+}
+
+# [[ $hora =~ ^([01][0-9]|2[0-3])(:[0-5][0-9]){2}$ ]] || echo "hora inválida" ; exit 1
+
+hora=$(date  -u -d"$hora +0000 -$param sec" '+%H:%M:%S')
+printf "%s" "$hora"
+

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="document-save-as-symbolic.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs16">
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect853"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.33"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect849"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.33"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect847"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0.4,0,1 @ F,0,0,1,0,0.4,0,1 @ F,0,0,1,0,0.4,0,1 @ F,0,0,1,0,0.4,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="0.4"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect896"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.33"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect894"
+       is_visible="true"
+       lpeversion="1"
+       satellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0.4,0,1 @ F,0,0,1,0,0.4,0,1 @ F,0,0,1,0,0.4,0,1 @ F,0,0,1,0,0.4,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="0.4"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect892"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="round"
+       line_width="0.66897445"
+       linejoin_type="round"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="offset"
+       id="path-effect890"
+       is_visible="true"
+       lpeversion="1"
+       linejoin_type="round"
+       unit="px"
+       offset="0.3333"
+       miter_limit="4"
+       attempt_force_join="true"
+       update_on_knot_move="true" />
+    <inkscape:path-effect
+       effect="offset"
+       id="path-effect886"
+       is_visible="true"
+       lpeversion="1"
+       linejoin_type="miter"
+       unit="px"
+       offset="0.3333"
+       miter_limit="1"
+       attempt_force_join="true"
+       update_on_knot_move="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect861"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="1.33"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect857"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="butt"
+       line_width="0.67"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect854"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="round"
+       line_width="0.66897445"
+       linejoin_type="round"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="offset"
+       id="path-effect852"
+       is_visible="true"
+       lpeversion="1"
+       linejoin_type="round"
+       unit="px"
+       offset="0.3333"
+       miter_limit="4"
+       attempt_force_join="true"
+       update_on_knot_move="true" />
+    <inkscape:path-effect
+       effect="offset"
+       id="path-effect840"
+       is_visible="false"
+       lpeversion="1"
+       linejoin_type="round"
+       unit="px"
+       offset="0.3333"
+       miter_limit="4"
+       attempt_force_join="true"
+       update_on_knot_move="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect843"
+       is_visible="false"
+       lpeversion="1"
+       linecap_type="round"
+       line_width="0.66897445"
+       linejoin_type="round"
+       miter_limit="100"
+       attempt_force_join="true" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:zoom="16.849554"
+     inkscape:cx="13.739236"
+     inkscape:cy="1.0979519"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12">
+    <inkscape:grid
+       type="xygrid"
+       id="grid833"
+       spacingx="1"
+       spacingy="1" />
+  </sodipodi:namedview>
+  <path
+     d="M 4,7 V 8 L 8.5,12.00002 13,8 12.999844,7 H 12 L 8.5,10.00001 5,7 Z"
+     style="line-height:normal;-inkscape-font-specification:'Bitstream Vera Sans';text-indent:0;text-align:start;text-decoration-line:none;text-transform:none;fill:#2e3436;stroke-width:0.966086;marker:none"
+     color="#000000"
+     font-weight="400"
+     font-family="'Bitstream Vera Sans'"
+     overflow="visible"
+     id="path2"
+     sodipodi:nodetypes="ccccccccc" />
+  <path
+     d="m 8,3 v 7 H 9 V 3 Z"
+     style="line-height:normal;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;text-transform:none;text-orientation:mixed;shape-padding:0;isolation:auto;mix-blend-mode:normal;fill:#2e3436;stroke-width:0.707107"
+     color="#000000"
+     font-weight="400"
+     font-family="sans-serif"
+     overflow="visible"
+     id="path4" />
+  <path
+     d="m 4,13 v 1 h 9 v -1 z"
+     style="fill:#2e3436;stroke-width:0.645497;marker:none"
+     color="#000000"
+     overflow="visible"
+     fill-rule="evenodd"
+     id="path6"
+     sodipodi:nodetypes="ccccc" />
+  <style
+     id="s0">
+.success { fill:#009909; }
+.warning { fill:#FF1990; }
+.error { fill:#00AAFF; }
+</style>
+  <style
+     id="s2">
+@import '../../highlights.css';
+</style>
+</svg>

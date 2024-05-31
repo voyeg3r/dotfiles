@@ -1,6 +1,6 @@
 #!/bin/bash
 # Criado em:Dom 12/Ago/2007 hs 10:49
-# Last Change: Sáb 07 Nov 2015 09:02:48 BRT
+# Last Change: dez 02 2019 10:51
 # Instituicao:
 #
 #Analfabeta & Nilo
@@ -8,6 +8,21 @@
 #Conversao de ogg2mp3
 #
 #######################################
+
+NEEDED_COMMANDS="perl-rename"
+missing_counter=0
+for needed_command in $NEEDED_COMMANDS; do
+    if ! hash "$needed_command" >/dev/null 2>&1; then
+        printf "Command not found in PATH: %s\n" "$needed_command" >&2
+        ((missing_counter++))
+    fi
+done
+if ((missing_counter > 0)); then
+    printf "Minimum %d commands are missing in PATH, aborting" "$missing_counter" >&2
+    exit 1
+fi
+
+alias rename="perl-rename"
 
 #Removendo Espacos
 rename 'y/\ /_/' `ls *.ogg`

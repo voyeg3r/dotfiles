@@ -1,0 +1,30 @@
+#!/bin/sh
+# source: https://codeberg.org/explosion-mental/scripts/src/branch/main/qndl
+
+# change "tsp" to "ts" on VoidLinux
+[ -z "$1" ] && exit
+dldir=$HOME/Downloads
+handler(){	# little handler function for download only (maybe add urls intead of formats?)
+case "$1" in
+*youtube.com/watch*|*youtube.com/playlist*|*youtu.be*)
+	ts -nf youtube-dl "$1" --add-metadata -ic --exec "mv {} $HOME/Downloads"	;;
+*mkv|*webm|*mp4|*hooktube.com*|*bitchute.com*|*videos.lukesmith.xyz*)
+	ts -nf curl -sL "$1" > "$dldir/$(basename "$1" | sed "s/.*\///;s/%20/ /g")"	;;
+*png|*jpg|*jpe|*jpeg|*JPG|*gif|*.webp)
+	ts -nf curl -sL "$1" > "$dldir/$(basename "$1" | sed "s/.*\///;s/%20/ /g")"	;;
+*pdf|*cbz|*cbr)
+	ts -nf curl -sL "$1" > "$dldir/$(basename "$1" | sed "s/.*\///;s/%20/ /g")"	;;
+*mp3|*flac|*opus|*mp3?source*)
+	ts -nf curl -LO "$1" > "$dldir/$(basename "$1" | sed "s/.*\///;s/%20/ /g")"	;;
+	*)
+	ts -nf curl -LO "$1" > "$dldir/$(basename "$1" | sed "s/.*\///;s/%20/ /g")"	;;
+esac
+}
+[ -n "$2" ] && case "$2" in
+		audio)
+	notify-send "⏳ Downloading audio..." "<i><u>'$(basename "$1")'</i></u>..."
+	ts -nf youtube-dl "$1" --add-metadata -icxf bestaudio/best --exec "mv {} $HOME/Downloads"	;;
+		esac
+[ -z "$2" ] && notify-send "⏳ Downloading..." "<i><u>'$(basename "$1")'</i></u>..." && handler "$1" >/dev/null 2>&1
+notify-send "Qndl" "👍 Download Finished⌛, Enjoy! 🍵\n<i><u>'$(basename "$1")'</i></u>"
+

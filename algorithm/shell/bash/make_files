@@ -1,0 +1,65 @@
+#!/bin/bash
+# file: make_files
+# Criado em:Seg 02/Jan/2006 hs 21:16
+# ultima modificação: Qui 05 Jan 2006 09:56:14 BRST
+# Script para criação de arquivos em série
+# Autor: Sergio Luiz Araujo Silva
+# http://vivaotux.blogspot.com
+
+# criação da data por extenso do tipo
+# seguna 2 de janeiro de 2006
+# trechos precedidos com "#" não são interpretados pelo bash
+
+dia_semana=`date +%A`
+dia_mes=`date +%d`
+mes=`date +%B`
+ano=`date +%Y`
+hora=`date +%T`
+dia_hoje=`echo "$dia_semana $dia_mes de $mes de $ano"`
+
+# insira arquí o texto que vai ser colocado em cada arquivo
+# se for usar aspas "  proteja com contra barra "\"
+cat <<EOF
+    Este deve ser usado para estudos diversos, experimente
+    usar o SED para fazer modificações em todos os arquivos de uma só
+    vez, visite a página do Aurélio http://aurelio.net vá na seção
+    sobre o sed http://aurelio.net/sed/. Não deixe também de visitar
+    o manual sobre Expressões regulares http://guia-er.sourceforge.net/guia-er.html
+    visite o site do Thobias ele é o mantenedor das funções zz criadas pelo Aurélio
+    a página do Thobias é: http://www.thobias.org/ e as funções zz você
+    encontra em: "http://funcoeszz.net/"
+    e é claro visite meu blog: "http://vivaotux.blogspot.com"
+
+        outro bom site é Sed por exemplos:
+        "http://geocities.yahoo.com.br/cesarakg/sed-1.html"
+        "http://geocities.yahoo.com.br/cesarakg/sed-2.html"
+        "http://geocities.yahoo.com.br/cesarakg/sed-3.html"
+        omo o próprio nome diz, estes links dão acesso a uma página com
+        dezenas de exemplos práticos sobre a utilização do SED
+
+    Para exibir cada um dos arquivos gerados com numeração faça:
+    cat -n arquivo[1-10].txt, onde [1-10] é qualquer um dos 10
+    arquivos gerados pro este script."
+EOF
+
+# Coloque aquí o seu nome
+    autor="Sergio Luiz Araujo Silva"
+
+# coloque aquí a extensão dos arquivos
+    extensao=".txt"
+
+# o laço propriamente de criação dos arquivos
+for ((i=1;i<=10;i++)); do
+cat <<EOF > arquivo${i}${extensao}
+    file: file-${i}${extensao}
+	# header
+	=====================================================
+	Created: $dia_hoje horas $hora
+	Author: $autor
+    You can use this file for any purpuse, one good idea
+    is to use with a vim macro or a sed/awk script in order
+    to test or improve your skills
+	=====================================================
+EOF
+done
+

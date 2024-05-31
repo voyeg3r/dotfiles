@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# cupd=$(checkupdates | wc -l)
+
+# how many packages to update on voidlinux
+# cupd=$(xbps-install -nuM | wc -l ; xbps-install -nuM | awk '{print $1}')
+cupd=$(xbps-install -nuM | wc -l)
+echo "$cupd updates "

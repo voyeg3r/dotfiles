@@ -1,0 +1,115 @@
+Feed: Luke Smith's Webpage
+Title: YouTube Channel Deletion
+Date: Thu, 25 Mar 2021 21:00:00 -0300
+Link: https://lukesmith.xyz/updates/deletion/
+ 
+Google is prepping to delete my YouTube channel. As of today (March 26, 2021), I
+now cannot post for another two weeks. YouTube "strikes" which are functionally 
+unappealable (automatically rejected) last for 3 months. If they give thee 
+concurrent strikes, you channel is permanently deleted.
+ 
+If YouTube Jannies delete my YouTube channel, remember that 100% of my videos 
+are still easily viewable, including new videos I will make. You have no excuse 
+to whine if all you know how to do is consoooming product on YouTube's walled 
+garden:
+ 
+  * Follow me on Odysee: https://odysee.com/@Luke:7[1]
+  * Follow me on PeerTube: https://videos.lukesmith.xyz[2]
+  * Follow me on RSS: https://lukesmith.xyz/rss.xml[3]
+ 
+I can and have already done livestreams on PeerTube[2]. Expect those as well. 
+LBRY/Odysee will probably have livestreams too soon.
+ 
+"When you're banned from YouTube will you keep making videos?"
+ 
+Yes, at Odysee[1] and PeerTube[2]. I will also probably actually bring back Not 
+Related![4] for real this time because the first reason I made a podcast was to 
+communicate with people using less bandwidth.
+ 
+I suppose my only regret is not shilling RSS, webrings and other classical 
+internet technology to free us from social media companies.
+ 
+The "importance" of YouTube
+ 
+YouTube ad revenue by itself is a nice thing to have, but it is not a huge loss 
+if I lose it (less than minimum wagies make). Very few megachannels actually 
+make decent money on it and frankly, it's a kind of bloodmoney if you ask me.
+ 
+The only concern for me is that YouTube is still the vehicle by which people 
+find out about me and use other stuff I offer and that can mean other sources of
+income for me.
+ 
+While I try to push people into a decentralized internet, use RSS feeds, 
+superior platforms like Odysee and PeerTube, and encourage them to have websites
+and the like, most people still passively use YouTube recommendations and 
+curation.
+ 
+How you can help.
+ 
+Encourage YouTube followers to follow me in proper places.
+ 
+If you have friends who watch my YouTube channel or know of people on other 
+sites who do, make sure they:
+ 
+  * Follow me on RSS: https://lukesmith.xyz/rss.xml[3]
+  * Follow me on PeerTube: https://videos.lukesmith.xyz[2]
+  * Follow me on Odysee: https://odysee.com/@Luke:7[1]
+ 
+Google is not going to be accidentally recommending new people to me after they 
+ban me. That's your job.
+ 
+Donate
+ 
+You can donate to me even without having extra money by using my affiliate 
+links[5].
+ 
+If you do have spare money:
+ 
+  * Donate money[6] to me. You can easily make a monthly pledge for stability's 
+  sake.
+  * Donate Bitcoin (QR[7]): bc1qyvkzw7hrtp9ecxd2pa3w7p5dfg09tv6jfrs0df
+  * Donate Monero QR[8]): 48jewbtxe4jU3MnzJFjTs3gVFWh2nRrAMWdUuUd7Ubo375LL4SjLTn
+  MRKBrXburvEh38QSNLrJy3EateykVCypnm6gcT9bh
+  * You can donate BAT on this site, or LBC on Odysee/LBRY.
+ 
+"What are they giving you strikes for?"
+ 
+To be clear, before this year, I never received any strikes, but now I've 
+received a warning and two strikes all for old videos.
+ 
+I will emphasize that this is merely the sign of either: (1) coordinated 
+third-party mass-reports or (2) YouTube specifically and arbitrarily adopting 
+new standards in a bid to remove the channel.
+ 
+The strikes are for the following very innocent videos:
+ 
+  * For a video I put up in either 2016 or 2017 where I made an ffmpeg slideshow
+  with a bunch of Pepe memes set to music. Deleted for "inciting violence." I 
+  can't find the original video of this, I might've deleted it.
+  * For a video I did sometime in 2020 when I in passing made jokes about 
+  low-quality Indian tech channels that used to dominate YouTube. Deleted for 
+  "inciting violence." Here[9] is the video so you can see how innocuous (also 
+  true) it was.
+  * For a video I made maybe in 2018 or 2019 on youtube-dl. Here[10] is the 
+  video. The absurdity is that I recommend people to use this tool to back up my
+  YouTube channel (and all of my videos are in licensed permissively via 
+  Creative Commons). I guess it's a crime to distribute my own videos on a video
+  distribution platform!
+ 
+This is the arbitrariness of Google today. If my channel survives the storm of 
+these strikes (which I severely doubt) expect me to be using PeerTube[2] and 
+Odysee[1] as primary platforms. From now on, my YouTube exists to lead people to
+more healthy places.
+ 
+Links: 
+[1]: https://odysee.com/@Luke:7 (link)
+[2]: https://videos.lukesmith.xyz/ (link)
+[3]: https://lukesmith.xyz/rss.xml (link)
+[4]: https://notrelated.xyz/ (link)
+[5]: https://lukesmith.xyz/links (link)
+[6]: https://lukesmith.xyz/donate (link)
+[7]: https://lukesmith.xyz/pix/qr_btc.png (link)
+[8]: https://lukesmith.xyz/pix/qr_xmr.png (link)
+[9]: https://odysee.com/@Luke:7/thanks-luke-for-vanquishing-pajeettube:f (link)
+[10]: https://odysee.com/@Luke:7/downloading-videos-music-and-more-with:5 (link)
+

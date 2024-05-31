@@ -1,7 +1,0 @@
-#!/bin/bash
-
-IFS=" "
-read -a string <<< "$@"
-for element in "${string[@]}"; do
-	echo "$element"
-done

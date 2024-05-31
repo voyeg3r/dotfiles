@@ -1,0 +1,10 @@
+# ln -sfvn ~/.dotfiles/fd ~/.config/fd
+# Last Change: Fri, 27 May 2022 17:38
+
+chromium/
+.chromium/
+polybar.old/
+plowshare/
+polybar-backup/
+.polybar-backup/
+nvim-backup2/

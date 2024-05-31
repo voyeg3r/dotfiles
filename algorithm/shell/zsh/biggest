@@ -1,0 +1,4 @@
+# zsh function
+# put it at: ~/.dotfiles/zsh/functions.d
+
+biggest (){ du -k * | sort -nr | cut -f2 | head -20 | xargs -d "\n" du -sh; }

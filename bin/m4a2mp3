@@ -1,34 +1,20 @@
-#!/bin/sh
-# name of this script: m4a2mp3.sh
-# m4a to mp3
-#Read more: http://linuxpoison.blogspot.com.br/2008/02/script-to-convert-m4a-to-mp3.html#ixzz2iwbFvTdp
+#!/usr/bin/bash
+# convert .m4a to .mp3 recursively
+# Based on Glen Hewlett script:
+# https://nowhereman999.wordpress.com/2011/09/11/convert-all-files-recursively-from-one-format-to-another-ie-flac-to-mp3-using-linux/
+#####################################
 
-# A new reference:
-# http://www.bashoneliners.com/oneliners/oneliner/111/
+if [ -z $1 ];then echo Give target directory; exit 0;fi
+    find "$1" -depth -name '*' | while read file ; do
+    directory=$(dirname "$file")
+    oldfilename=$(basename "$file")
+    #newfilename=$(basename "${file%.[Ff][Ll][Aa][Cc]}")
+    newfilename=$(basename "${file%.[Mm]4[Aa]}")
 
-# if the dependences are not met the script opens the installer
-#command -v faad || sudo apt-get install -y faad
-
-#for i in *.m4a; do
-#  faad "$i"
-#  x=`echo "$i"|sed -e 's/.m4a/.wav/'`
-#  y=`echo "$i"|sed -e 's/.m4a/.mp3/'`
-#  lame -h -b 192 "$x" "$y"
-#  rm "$x"
-#done
-
-# filename="$1"
-# extension="${filename##*.}"
-# filename="${filename%.*}"
-
-#for f in `ls *.m4a`; do
-#    ffmpeg -i "$f" -codec:v copy -codec:a libmp3lame -q:a 2 "${f%.m4a}.mp3"
-#    rm -f "$f"
-#done
-
-
-for f in `ls *.m4a`; do
-    faad -o tmp.wav "$f" && lame -b 192 tmp.wav "${f%.m4a}.mp3"
+    if [ "$oldfilename" != "$newfilename" ]; then
+        ffmpeg -i "$directory/$oldfilename" -ab 320k "$directory/$newfilename.mp3" </dev/null
+        rm "$directory/$oldfilename"
+    fi
 done
 
-
+# tags: ffmpeg, mp3

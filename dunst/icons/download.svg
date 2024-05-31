@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="download.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="7.78125"
+     inkscape:cx="10.730924"
+     inkscape:cy="20.819277"
+     inkscape:window-width="1366"
+     inkscape:window-height="748"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1153"
+       style="stroke-width:0.585327;stop-color:#000000;fill:#ffffff"
+       d="M 24.107438,32 H 7.8925626 c -1.27028,0 -2.292925,-1.022645 -2.292925,-2.292925 0,-1.27028 1.022645,-2.292924 2.292925,-2.292924 H 24.107438 c 1.27028,0 2.292924,1.022644 2.292924,2.292924 C 26.400362,30.977355 25.377718,32 24.107438,32 Z M 16,-0.04492187 c -1.27028,0 -2.292969,1.02268873 -2.292969,2.29296877 V 18.6875 L 9.0527344,14.03125 c -0.8982244,-0.898223 -2.345918,-0.898225 -3.2441406,0 -0.8982232,0.898221 -0.8982252,2.343963 0,3.242188 l 8.5703122,8.570312 c 0.898225,0.898223 2.343966,0.898223 3.242188,0 l 8.570312,-8.570312 c 0.898223,-0.898226 0.898224,-2.343966 0,-3.242188 -0.898224,-0.898224 -2.345917,-0.898224 -3.24414,0 L 18.292969,18.6875 V 2.2480469 C 18.292969,0.97776686 17.27028,-0.04492187 16,-0.04492187 Z" />
+  </g>
+</svg>

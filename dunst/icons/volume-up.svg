@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32.0px"
+   height="32.0px"
+   viewBox="0 0 32.0 32.0"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="volume-up.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview6024"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="8.40625"
+     inkscape:cx="23.078067"
+     inkscape:cy="25.219331"
+     inkscape:window-width="1011"
+     inkscape:window-height="734"
+     inkscape:window-x="347"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-global="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid6030" />
+  </sodipodi:namedview>
+  <defs
+     id="defs6019" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ffffff;stroke:none;stroke-width:0.803096"
+       d="m 25.89721,4.2575727 a 1.279655,1.279655 0 0 0 -0.880413,0.4281803 1.279655,1.279655 0 0 0 0.108726,1.8070206 c 2.570113,2.2785891 4.03257,5.5522894 4.015278,8.9869904 -0.01728,3.434697 -1.512802,6.693018 -4.105729,8.945613 a 1.279655,1.279655 0 0 0 -0.12701,1.805094 1.279655,1.279655 0 0 0 1.805095,0.127011 c 3.147955,-2.734772 4.96611,-6.695297 4.987107,-10.865209 0.02099,-4.169916 -1.757155,-8.148911 -4.877415,-10.9152467 A 1.279655,1.279655 0 0 0 25.897208,4.2575727 Z"
+       id="path2108"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/volume-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <g
+       id="g2129"
+       style="fill:#ffffff;stroke-width:2.12814"
+       inkscape:export-filename="/home/sergio/.config/dunst/icons/volume-down.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"
+       transform="matrix(0.49264866,0,0,0.49264866,-21.633476,-67.662984)">
+      <path
+         style="fill:#ffffff;stroke-width:1.63016"
+         d="m 83.891996,160.27265 a 2.5975001,2.5975001 0 0 0 -1.78711,0.87109 2.5975001,2.5975001 0 0 0 0.220703,3.66602 c 1.090372,0.96669 1.708509,2.35337 1.701172,3.81054 -0.0073,1.45717 -0.640184,2.83535 -1.740234,3.79102 a 2.5975001,2.5975001 0 0 0 -0.257813,3.66406 2.5975001,2.5975001 0 0 0 3.664063,0.25781 c 2.226673,-1.93441 3.514446,-4.73795 3.529297,-7.6875 0.01485,-2.94954 -1.244091,-5.76592 -3.451172,-7.72265 a 2.5975001,2.5975001 0 0 0 -1.878906,-0.65039 z"
+         id="path2112" />
+      <path
+         style="fill:#ffffff;stroke-width:1.63016"
+         d="m 90.134183,153.17108 a 2.5975001,2.5975001 0 0 0 -1.787109,0.86914 2.5975001,2.5975001 0 0 0 0.220703,3.66602 c 3.128777,2.77389 4.907771,6.75816 4.886719,10.93945 -0.02105,4.1813 -1.841497,8.14643 -4.998047,10.88867 a 2.5975001,2.5975001 0 0 0 -0.25586,3.66602 2.5975001,2.5975001 0 0 0 3.664063,0.25586 c 4.28317,-3.72099 6.75659,-9.10953 6.78516,-14.7832 0.0286,-5.67367 -2.39124,-11.08959 -6.636723,-14.85352 a 2.5975001,2.5975001 0 0 0 -1.878906,-0.64844 z"
+         id="path2110" />
+      <path
+         style="fill:#ffffff;stroke-width:1.63016"
+         d="m 72.876964,146.07819 c -1.03017,0 -1.92485,0.55571 -2.4045,1.38441 l -12.42973,11.32283 h -7.04402 c -3.54855,0 -6.40581,2.85674 -6.40581,6.40529 v 6.5381 c 0,3.54855 2.85726,6.4053 6.40581,6.4053 h 6.61407 l 12.75478,11.20551 c 0.44544,0.93696 1.39927,1.58182 2.5094,1.58182 h 0.8475 c 1.5389,0 2.77812,-1.2387 2.77812,-2.77761 V 148.8558 c 0,-1.53891 -1.23922,-2.77761 -2.77812,-2.77761 z"
+         id="path1724" />
+    </g>
+  </g>
+</svg>

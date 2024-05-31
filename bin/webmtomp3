@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# vim: ai ts=4 sts=4 et sw=4
+#        File:  webmtomp3
+#      Author:  Sergio Araujo
+#     Purpose:  Convert webm to mp3
+# Last Change:  sáb 12 mai 2018 11:53:02 -03
+#     Created:  sáb 12 mai 2018 11:53:02 -03
+#       email:  <voyeg3r ✉ gmail.com>
+#      Github:  https://github.com/voyeg3r
+#     twitter:  @voyeg3r
+
+from pydub import AudioSegment
+import glob, os, pydub
+
+print("Just wait a few seconds...")
+
+os.chdir("./")
+for file in glob.glob("*.webm"):
+    newname = os.path.splitext(file)[0]
+    extension = ".mp3"
+    print("Converting:", file, "to mp3")
+    fullname = newname + extension
+    sound = AudioSegment.from_file(file)
+    sound.export(fullname, format="mp3", bitrate="128k")
+

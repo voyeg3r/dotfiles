@@ -1,4 +1,0 @@
-
-# usermod -G admin usuario
-
- 

@@ -1,0 +1,23 @@
+#!/bin/bash
+#     Filename: autostart
+#      Created: 2019-05-25 18:47
+#  Last Change: Tue, 01 Nov 2022 14:38:39
+#          vim: ft=sh:fdm=syntax:nu:
+# This aims to: activate tap to click on system startup
+#      Licence: GPL (see http://www.gnu.org/licenses/gpl.txt)
+#       source: https://superuser.com/a/472399/45032
+# vim:nolist softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+
+# create a shortcut at:
+# /home/sergio/.config/autostart/autostart.desktop
+# with the folowing
+#
+# [Desktop Entry]
+# Type=Application
+# Terminal=true
+# Name=fix-tap-to-click
+# Icon=/home/sergio/img/icons/terminal.svg
+# Exec=/home/sergio/.dotfiles/bin/autostart
+
+synclient TapButton1=1 TapButton2=3 TapButton3=2
+

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="32"
+   inkscape:hotspot_x="6"
+   inkscape:hotspot_y="6"
+   style="fill:gray;stroke:black"
+   version="1.1"
+   id="svg37"
+   sodipodi:docname="dropper-pick-fill.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview39"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="true"
+     inkscape:zoom="8.4247772"
+     inkscape:cx="10.089288"
+     inkscape:cy="14.777839"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg37"
+     inkscape:snap-global="true"
+     inkscape:snap-smooth-nodes="true" />
+  <defs
+     id="defs14">
+    <!-- Shadow -->
+    <filter
+       id="shadow"
+       x="-0.21577385"
+       y="-0.21577385"
+       width="1.4867922"
+       height="1.4867922">
+      <feOffset
+         result="offOut"
+         in="SourceAlpha"
+         dx="1"
+         dy="1"
+         id="feOffset2" />
+      <feGaussianBlur
+         result="blurOut"
+         stdDeviation="1"
+         id="feGaussianBlur4" />
+      <feBlend
+         in="SourceGraphic"
+         in2="blurOut"
+         mode="normal"
+         id="feBlend6" />
+    </filter>
+    <!-- Gradient -->
+    <linearGradient
+       id="gradient"
+       gradientUnits="userSpaceOnUse"
+       x1="10.5"
+       y1="6.5"
+       x2="6.5"
+       y2="10.5"
+       gradientTransform="translate(-40)">
+      <stop
+         offset="0"
+         style="stop-color:white"
+         id="stop9" />
+      <stop
+         offset="1"
+         style="stop-color:black"
+         id="stop11" />
+    </linearGradient>
+    <inkscape:path-effect
+       attempt_force_join="true"
+       miter_limit="100"
+       linejoin_type="extrp_arc"
+       line_width="1"
+       linecap_type="butt"
+       is_visible="true"
+       id="path-effect841"
+       effect="join_type"
+       lpeversion="0" />
+  </defs>
+  <!-- Cross (centered on hotspot) -->
+  <!-- Dropper  -->
+  <!-- Fill -->
+  <rect
+     x="19.5"
+     y="1.5"
+     width="10"
+     height="10"
+     style="stroke:#ffffff;stroke-width:1px"
+     id="rect33" />
+  <rect
+     x="20.5"
+     y="2.5"
+     width="8"
+     height="8"
+     style="stroke:#000000;stroke-width:1px"
+     id="rect35" />
+  <path
+     inkscape:connector-curvature="0"
+     id="path839"
+     d="m 11,14 c 0.5,-0.5 3,0 3.5,0.5 l 7.500019,7.500103 -3.000015,3 L 11.5,17.5 C 11,17 10.5,14.5 11,14 Z"
+     inkscape:label="bottom"
+     style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+     sodipodi:nodetypes="sccccs" />
+  <g
+     id="g2858"
+     style="fill:#808080;stroke:#000000">
+    <path
+       d="m 1.5,6.5 h 10 m -5,-5 v 10"
+       style="fill:none;stroke:#ffffff;stroke-width:3px;stroke-linecap:square"
+       id="path16-0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       d="m 1.5,6.5 h 10 m -5,-5 v 10"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:square"
+       id="path18-2"
+       sodipodi:nodetypes="cccc" />
+  </g>
+  <path
+     inkscape:connector-curvature="0"
+     id="path837"
+     d="M 20.999985,27 24,30 c 1.000005,1 2.00001,1 3.000015,0 1.000005,-1.000001 0.931552,-2.068451 0,-3 L 24,24 26.5,21.5 24.500019,19.500104 h -1.000005 l -6.999995,7.000001 v 1 0 L 18.5,29.5 Z"
+     inkscape:label="top"
+     sodipodi:nodetypes="cczcccccccccc"
+     style="fill:#e5e5e5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1" />
+</svg>

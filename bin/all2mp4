@@ -1,0 +1,9 @@
+#!/bin/bash
+#Shell Script which converts all videos in a folder to MP4
+
+
+for file in *.*; do
+        if [ "${file: -4}" != ".mp4" ];  then
+            ffmpeg -i "$file" "${file%.*}".mp4
+        fi
+done

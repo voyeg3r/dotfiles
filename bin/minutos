@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#     Filename: minutos.sh
+#      Created: fev 21, 2020 - 13:43
+#  Last Change: Mon, 19 Feb 2024 - 07:52:47
+#          vim: ft=sh:fdm=syntax:nu:
+#  Instituicao: none
+# This aims to: run a randomic phrase from Minutos de Sabedoria
+#        Autor: Sergio Araujo
+#         site: https://dev.to/voyeg3r
+#       github: @voyeg3r
+#       e-mail: <voyeg3r ✉ gmail.com>
+#      Licence: GPL (see http://www.gnu.org/licenses/gpl.txt)
+# Reference: https://askubuntu.com/a/1440536
+
+clear
+
+# Coloque aqui o caminho para o arquivos minutos.md
+# file=~/.dotfiles/minutos.md
+
+phrase=$(/usr/bin/shuf -i 2-289 -n 1)
+file="$HOME/.dotfiles/wiki/minutos.md"
+
+echo
+echo -e "\tMinutos de Sabedoria"
+echo
+echo -e "\tLição número: $((phrase - 1))"
+
+awk -v var="$phrase" 'BEGIN { FS=""; RS="# Lição.[0-9][0-9]*"} NR==var' "$file" | paste /dev/null -

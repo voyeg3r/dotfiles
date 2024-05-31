@@ -1,0 +1,279 @@
+Feed: Luke Smith's Webpage
+Title: Why I Use the GPL and Not Cuck Licenses
+Date: Thu, 10 Dec 2020 21:00:00 -0300
+Link: https://lukesmith.xyz/articles/why-i-use-the-gpl-and-not-cuck-licenses/
+ 
+Every piece of software I write I license under the GNU Public License Version 
+3[1] (GPLv3) unless I have forked it from something else.
+ 
+The GPLv3 is the premiere copyleft license, meaning that it not only allows 
+users to run, modify and distribute their own versions of what I write, but it 
+also requires that no one in that chain of development restrict and close-source
+that software: it and software deriving from it must forever remain open, usable
+and sharable. Richard Stallman, one of the minds behind the GPL has described it
+as a "hack" of the copyright system because it uses the legal infrastructure of 
+copyright to ensure software is free rather than restricted.
+ 
+But occasionally I get asked why I don't use so-called permissive licenses like 
+BSD or MIT. These are free software licenses, but they do not require that 
+forked versions of the code be free and open source software. In other words, 
+you can take something written with a BSD or MIT license, put it in the next 
+version of Windows and no one will ever know. If you did that with GPL code, 
+you'd be in for big legal trouble if found out.
+ 
+I and others have recently taken to calling these permissive licenses Cuck 
+Licenses.
+ 
+Why "Cuck Licenses?"
+ 
+Why be mean and bully BSD and MIT licenses calling them "Cuck Licenses?"
+ 
+Quite simply, using them is precisely analogous to being cuckolded. When you 
+really look at it, the similarity is uncanny.
+ 
+I understand GPL free software and its ethical vision for software. I also 
+understand that desire for people and businesses to not release their source 
+code for commercial and monetary benefits. What I don't understand is 
+simultaneously releasing free code with no requirement that it remain free. It 
+can now be used against you and others—if you had moral qualms about that, you 
+could've at least made money off of it yourself.
+ 
+Using a Cuck License especially for "ethical reasons" or "because I like open 
+source software" is beyond absurd. You're simply writing code and effectively 
+abandoning the privileges of intellectual property while allowing any large 
+corporation to come and close-source and monetize your software and sell it back
+to you without any other obligations. You have also abandoned your ability to 
+ever complain about IBM, Microsoft, Apple or any other tech giant because you 
+are literally writing their proprietary software. These companies even sometimes
+take very simple code from minor projects and use it to save a buck and a little
+effort.
+[image 1: 'Noooo! You can't use my heckin' code that I legally gave you the 
+right to use!' (link #2)][2]When you license with a permissive license, you 
+don't have a say anymore. 
+ 
+At the end of the day, using a Cuck License is little different from either 
+releasing software in the public domain or just not licensing it (in some 
+jurisdictions, at least). It has the pretense of a license, but for no real 
+function. I suppose depending on which you use, you at least get your name on 
+the license, but I hardly think that that's how internet fame and glory is 
+actually distributed anyway. As far as I'm concerned using a Cuck License is 
+worse for user freedom than just releasing it in the public domain. This is 
+because at least public domain software can be taken and later additions can be 
+protected by the GPL. The legal case for doing that with a Cuck License is not 
+so clear.
+ 
+No whiners!
+ 
+The funniest thing is when Cuck Licensers complain that people are abiding by 
+their licenses. They will complain that people took their code and made money 
+off of it. They will complain when they don't get some social credit they feel 
+like they deserve when their code is used in a project. They will complain if 
+people fork their project and it becomes more popular than the original. They 
+will complain when some tech giant takes their code and makes spyware out of it.
+ 
+If they were serious about stopping any of this, they easily could've by 
+licensing their project as anything other than a code giveaway. If you want 
+praise for some contribution, put it in the license. If you don't want your 
+software used for proprietary software, use the GPLv3.
+ 
+A Cuck Licenser gets what he deserves (and we all pay the price).
+ 
+One of the funniest and saddest horror stories of Cuck Licenses I can think of 
+is Andrew Tanenbaum, who released MINIX, an operating system, under a BSD 
+license. Intel silently took this software (thanks to its license) and 
+unbeknownst to him, used it for their Intel Management Engine, making it the OS 
+of the spyware microprocessor/backdoor now running in all Intel CPUs. We all 
+have a permanent NSA backdoor because of the Intel Management Engine—all made 
+possibly by Cuck License cuckery.
+ 
+Only many, many years later was this even revealed to Tanenbaum.[3] Read that 
+blog post of his as he slowly externalizes his mixed feelings, tinged with 
+guilt. After all, on the "bright" side, he says:
+ 
+  "I guess that makes MINIX the most widely used computer operating system in 
+  the world, even more than Windows, Linux, or MacOS."
+ 
+Wow, what a proud achievement. But regardless, Tanenbaum already feels some 
+regret about the fact that his permissive license allowed Intel to withhold 
+this:
+ 
+  "This was a complete surprise. I don't mind, of course, and was not expecting 
+  any kind of payment since that is not required. There isn't even any 
+  suggestion in the license that it would be appreciated.
+ 
+ 
+  "The only thing that would have been nice is that after the project had been 
+  finished and the chip deployed, that someone from Intel would have told me, 
+  just as a courtesy, that MINIX was now probably the most widely used operating
+  system in the world on x86 computers. That certainly wasn't required in any 
+  way, but I think it would have been polite to give me a heads up, that's all."
+ 
+[image 2: A glow-in-the-dark CIA gamer (link #4)] 
+ 
+You can feel the regret. With Cuck Licenses, you get the worst of two worlds: 
+You get no credit for your work, nor money for licensing fees like other 
+proprietary software and your software will be used to violate your and other 
+users' privacy when it is used in closed-source environments. Oh, no... copes 
+incoming:
+ 
+  "Many people (including me) don't like the idea of an all-powerful management 
+  engine in there at all (since it is a possible security hole and a dangerous 
+  idea in the first place), but that is Intel's business decision and a separate
+  issue from the code it runs. A company as big as Intel could obviously write 
+  its own OS if it had to." emphasis added
+ 
+If Tanenbaum had released MINIX under the GPL, we wouldn't be at the mercy of 
+Intel's business decision. They would've had to release the source code for the 
+microprocessor, keeping user privacy ensured and irradicating the permanent 
+spyware liability all computers have nowadays.
+ 
+If they wouldn't want to do that, they'd have to just write an operating system 
+themselves. Tanenbaum is right, they obviously could've taken the time and money
+to write an OS themselves if they had to, but they didn't have to, because a BSD
+license cuck wrote it for them. Thanks a lot, sucker! Now our computers are 
+being monitored at a lower start-up cost and we have you to thank. It would've 
+been a lot more respectable to not use a permissive license and instead license 
+it proprietarily if he has no moral issues with proprietary software: he 
+could've at least gotten Intel to pay him to use his operating system. Heck, if 
+he had used the GPL and if they took it anyway, he could become an 
+insta-millionaire by suing them right now.
+ 
+The moral of the story is perhaps lost on Tanenbaum, who finishes up his blog 
+post with:
+ 
+  "If nothing else, this bit of news reaffirms my view that the Berkeley license
+  provides the maximum amount of freedom to potential users."
+ 
+"Maximum amount of freedom to potential users" is somehow mass-surveilance of 
+every computer user thanks to the BSD license. Thanks for your contribution to 
+"freedom."
+ 
+The Freedom that Cuck Licenses "preserve"
+ 
+"Freedom" is an incoherent buzzword if you don't define it. There are some 
+people who might argue that the fact that they can't kill and steal freely is a 
+violation of their "freedom." That's very true in some sense.
+ 
+In the same way, the GPL (unlike Cuck Licenses) "violates" the freedom of all 
+people to close-source code and hide it from the public and (in effect) do 
+annoying or privacy-violating things with it.
+ 
+The goal of the Free Software Movement, defended by copyleft licenses like the 
+GPL is for all software writers and users to live in an environment of publicly 
+auditable, editable and exchangable code. The goals of the Open Source movement 
+have a similar goal, albeit often guided by practical considerations.
+[image 3: Cuck-licensers write proprietary software for free. (link #5)]He does 
+it for free. 
+ 
+Cuck Licenses, however, undermine those goals. They will say that they maximize 
+freedom by placing no requirement on those who distribute When you release any 
+code under a Cuck License, you are simply writing free commercial code for 
+corporations that will inevitably use it against you. You might as well just 
+actually get a job with them so you can get paid for what you do instead of just
+getting cucked. When you release code under the GPL, you write free software 
+that benefits other people who write free software.
+ 
+The Free Software Foundation and the GPL people have correctly realized that 
+just being "permissive" with licenses is unworkable in the current environment. 
+The legal infrastructure incentivizes and defends proprietary software and gives
+it a systematic financial advantage. The GPL is a viral antidote to that. 
+Obviously if all software were free and no laws protected "intellectual 
+property" in publicly obtainable software, everything would be "permissively 
+licensed." We don't live in that world. The GPL and other "copyleft" licenses 
+are ways of undermining and disincentivizing and making impossible the 
+close-sourcing of software. Not using the GPL and using a cuck license is just 
+the same as writing proprietary because you literally are because all of your 
+software can be snatched up and proprietarily licensed.
+ 
+“B...buut the GPL isn't enforceable!”
+ 
+I've heard some people pass around the idea that somehow the GPL is 
+unenforceable. After all, if you have close source software, how can anyone 
+really tell what's going on? In some cases, that might be true if you have 
+perfect op-sec. That wouldn't be the case for the Intel Management Engine above,
+and that wouldn't be the case for Windows XP, whose source code recently leaked.
+ 
+I have known people in industry writing proprietary software and worrying about 
+the GPL is real. The "virus" of GPL taking over everything and making it free is
+something people have to take heed of. I'm sure there is some level of 
+GPL-violation going on in some places at least, just because lifting simple 
+routines or copy-and-pasting some things from GPL with significant enough 
+changes could go unseen even if leaked, but integrating larger GPL programs 
+would be nearly an impossibility.
+ 
+At the end of the day, though, what does it matter? What is a totally unenforced
+GPL? It's just a Cuck License—Isn't that what license cucks want? So why should 
+they care? At their very best, BSD and MIT licenses are only what GPL might be 
+at its very worst.
+ 
+The GPL is a permanent liability for any company that crosses it. Some companies
+might be so bold to lift GPL code and hide it, but there is always a risk and a 
+worry that prevents its general violation.
+ 
+Addendum
+ 
+Are copyleft licenses always best even for freedom?
+ 
+No!
+ 
+Here's a question I got about this article that I'll reproduce here because it 
+touches on something good.
+ 
+  [personal details omitted for anonymity]
+ 
+  However, I read your article, and I can see your point. I have an idea for an
+  Operating System and due to your arguments, I would definitely license that
+  under the GPL, as well as any new programs I write. I might even change most or
+  all of my current programs to GPL, with the exception of that bc, which needs
+  to remain BSD since it is default in FreeBSD now.
+ 
+  That said, I have a library I am working on, and my experience is that
+  libraries under the GPL do not get used, unless a commercial license is offered
+  as well, and often, not even then. You can see this with glibc, which has a
+  special linking exception and the fact that the LGPL is fairly popular for
+  libraries.
+ 
+  First question: what is your opinion on the linking exception and the LGPL? Are
+  they Cuck Licenses? I mean, they do require that the library and any
+  modifications be put under the LGPL, which means that the library remains libre
+  software. However, they can also be put into proprietary code, which is the
+  entire reason you call MIT and BSD licenses Cuck Licenses.
+ 
+  Basically, it seems as though you are correct when it comes to licensing
+  programs themselves. But it gets murkier when talking about libraries.
+ 
+  [other personal details omitted]
+ 
+This was my response to this email explaining this finer point.
+ 
+  Yeah. There are sometimes times when it is tactically better to license
+  things under a permissive license if for institutional reasons:
+  mass-adoption is required and companies and such might be unnerved by
+  the GPL. Libraries might often be like that. So it's not necessarily a
+  purity-spiralling point.
+ 
+  RMS actually advised that ogg/vorbis should use a cuck license to
+  maximize adoption (it originally used the LGPL, but switched to BSD):
+ 
+  https://lwn.net/2001/0301/a/rms-ov-license.php3
+ 
+  It's thanks to this that it has now become a usable and wide-spread
+  format, used now on nearly every proprietary web service because of its
+  small-size, good fidelity and general superiority.
+ 
+  So yeah, if you're writing a standalone program, I'd use the GPL, but I
+  would choose licenses ultimately in terms of which would maximize the
+  possibilities for users of using free-software. In some circumstances,
+  that means using a cuck license. Same is true of the LGPL. I think
+  GNU/FSF recommend LGPL only to be used when it is competing with a
+  proprietary library, and if that's usually what you are writing, you
+  might end up writing a lot in the LGPL.
+ 
+ 
+Links: 
+[1]: https://www.gnu.org/licenses/quick-guide-gplv3.html (link)
+[2]: https://lukesmith.xyz/pix/timnolet.png (link)
+[3]: https://www.cs.vu.nl/~ast/intel/ (link)
+[4]: https://lukesmith.xyz/pix/cia.png (image)
+[5]: https://lukesmith.xyz/pix/janny.jpg (image)
+

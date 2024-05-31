@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# File: mp3TOogg
+# Last Change: Wed, 26 Oct 2022 22:03:04
+# vim:set softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+# tags: [mp3, ogg, convert]
+# source: https://www.perturb.org/display/687_Convert_MP3_to_OGG_in_linux.html
+
+# also see soundconverter
+
+help(){
+    cat <<-EOF
+
+    Esse script convert mp3 para ogg
+    USO: ${0##*/} file.mp3
+
+EOF
+}
+
+file=${1:-help}
+
+mpg321 ${file} -w - | oggenc -o ${file%.*}.ogg -
+

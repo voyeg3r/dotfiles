@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="distribute-vertical-center-symbolic.svg"
+   viewBox="0 0 16 16"
+   height="16"
+   width="16"
+   id="svg1"
+   version="1.1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <style
+     id="s0">
+   .success { fill: #009909; }
+   .warning { fill: #FF1990; }
+   .error   { fill: #00AAFF; }
+  </style>
+  <style
+     id="s2"> 
+     @import '../../highlights.css'; 
+  </style>
+  <metadata
+     id="metadata1054">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1052" />
+  <sodipodi:namedview
+     inkscape:snap-global="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="distribute-vertical-center"
+     inkscape:window-maximized="1"
+     inkscape:window-y="32"
+     inkscape:window-x="-8"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     inkscape:cy="7.4357427"
+     inkscape:cx="7.0645356"
+     inkscape:zoom="43.102621"
+     showgrid="true"
+     id="namedview"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0">
+    <inkscape:grid
+       id="grid"
+       type="xygrid"
+       spacingx="0.66667"
+       spacingy="0.66667" />
+  </sodipodi:namedview>
+  <g
+     id="distribute-vertical-center"
+     inkscape:label="00284"
+     transform="matrix(0.666667,0,0,0.666667,-721.334,-497.57467)">
+    <use
+       height="1250"
+       width="1250"
+       transform="matrix(0,1,0.5416243,0,698.3349,-285.638)"
+       id="use18859"
+       y="0"
+       x="0"
+       xlink:href="#path5265" />
+    <g
+       id="g1030"
+       transform="matrix(0,-1,0.999979,0,373.65398,1852.3621)">
+      <path
+         id="rect872"
+         style="opacity:0.8;fill:#000000;fill-opacity:1;stroke-width:0.759732"
+         class="base"
+         d="M 4.6660156,1.3339844 V 4 H 3.3339844 v 8.666016 h 1.3320312 v 2 h 0.6679688 v -2 H 6.6660156 V 4 H 5.3339844 V 1.3339844 Z"
+         transform="matrix(1.4999993,0,0,1.5000308,1082.0005,708.36135)" />
+      <path
+         id="rect874"
+         style="opacity:0.8;fill:#000000;fill-opacity:1;stroke-width:0.717133"
+         class="base"
+         d="M 10.666016,1.3339844 V 4.6660156 H 9.3339844 v 6.6679684 h 1.3320316 v 3.332032 h 0.667968 v -3.332032 h 1.332032 V 4.6660156 H 11.333984 V 1.3339844 Z"
+         transform="matrix(1.4999993,0,0,1.5000308,1082.0005,708.36135)" />
+    </g>
+  </g>
+</svg>

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Qua 15/Jan/2014 hs 19:42
-#      LAST CHANGE: Seg Abr 20, 2015  10:08
+#      LAST CHANGE: fev 12, 2020 - 09:11
 # THIS SCRIPT AIMS: convert mp4 to mp3
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -14,16 +14,28 @@
 # avconv ou ffmpeg: conversores de formato
 # nome do arquivo a ser convertido
 
-# testando se há avconv ou ffmpeg instalados
-prog=$( command -v avconv || command -v ffmpeg)
-
-
-# se o programa não estive instalado exibir essa mensagem
-if [[ "$prog" = "" ]] ; then
-		echo "instale o ffmpeg ou avconv..."
-		sleep 2
-		exit 1
+NEEDED_COMMANDS="ffmpeg"
+missing_counter=0
+for needed_command in $NEEDED_COMMANDS; do
+    if ! hash "$needed_command" >/dev/null 2>&1; then
+        printf "Command not found in PATH: %s\n" "$needed_command" >&2
+        ((missing_counter++))
+    fi
+done
+if ((missing_counter > 0)); then
+    printf "Minimum %d commands are missing in PATH, aborting" "$missing_counter" >&2
+    exit 1
 fi
+
+# testando se há avconv ou ffmpeg instalados
+# prog=$( command -v avconv || command -v ffmpeg)
+
+# # se o programa não estive instalado exibir essa mensagem
+# if [[ "$prog" = "" ]] ; then
+# 		echo "instale o ffmpeg ou avconv..."
+# 		sleep 2
+# 		exit 1
+# fi
 
 # testando se o parâmetro necessário foi fornecido
 if [[ "$1" = "" ]]; then
@@ -43,13 +55,17 @@ newname="${1%.mp4}.mp3"
 echo "convertendo $oldname para $newname" ...
 sleep 2
 
-if [[ "$prog" =~ ".*ffmpeg.*" ]]; then
-    #usando ffmpeg
-    "$prog" -i "$oldname" -vn -ab 128k -ar 44100 -y "$newname"
-else
-    # usando avconv
-    "$prog" -acodec libmp3lame  -i "$oldname"  "$newname"
-fi
+#if [[ "$prog" =~ ".*ffmpeg" ]]; then
+#    #usando ffmpeg
+#    "$prog" -i "$oldname" -vn -ab 128k -ar 44100 -y "$newname"
+#else
+#    # usando avconv
+#    # "$prog" -acodec libmp3lame  -i "$oldname"  "$newname"
+#    echo "usando o avconv"
+#fi
+
+
+ffmpeg -i "$oldname" -vn -ab 128k -ar 44100 -y "$newname"
 
 # avconv -acodec libmp3lame0 -i test.flv test.mp3
 # ffmpeg -i input.webm -acodec libmp3lame -aq 4 output.mp3

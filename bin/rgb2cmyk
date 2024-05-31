@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Last Change: Mon, 10 Oct 2022 22:57:13
+# Convert pdf RGB to CMYK pdf
+# Reference: https://gitlab.com/inkscape/inbox/-/issues/6518
+
+command -v gs >/dev/null || echo "ghostscript not installed; exit 1"
+
+usage(){
+   cat <<-EOF
+   USAGE: ${0##*/} file.pdf
+
+   This script is used to convert pdf files that
+   where created in RGB color space to CMYK
+   and it needs the ghostscript installed
+
+   It will create file-cmyk.pdf
+EOF
+}
+
+[ "$1" ] || { usage ; exit 1 ; }
+
+filename="${1%.*}"
+
+if [ "${1,,}" == "-h" ]; then
+    usage
+    exit 1;
+fi
+
+gs -o ${filename}-cmyk.pdf -sDEVICE=pdfwrite \
+    -sProcessColorModel=DeviceCMYK \
+    -sColorConversionStrategy=CMYK \
+    -sColorConversionStrategyForImages=CMYK \
+    -dOverrideICC=true "$1"

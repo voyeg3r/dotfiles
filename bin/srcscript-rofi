@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+# Filename: srcscript-rofi
+# Last Change: Sat, 27 Aug 2022 21:48:36
+# source: https://www.youtube.com/watch?v=Qj3E59wSPWQ
+# https://github.com/GabrielTWMlinux/Scripts/blob/main/Rofi/srcscript-rofi
+# Automatizando o VOID-PACKAGES com SCRIPT
+
+VOID_PACKAGES="$HOME/build/void-packages"
+SRCPKGS="${VOID_PACKAGES}/srcpkgs"
+
+# Using a subshell will bring us back where we was before
+# running the script
+(
+cd $(dirname $"VOID_PACKAGES")
+if [ ! -d $"VOID_PACKAGES" ] ; then
+    git clone https://github.com/void-linux/void-packages.git
+fi
+
+pkg="$(ls "$SRCPKGS" | rofi -dmenu -i 20 -p "Src-Packages ")"
+
+CHECK="$(xbps-query -s "$pkg" | wc -l)"
+
+if [ $pkg ]
+then
+    if [ "$CHECK" -eq "1" ]
+    then
+        notify-send "Programa Instalado!"
+        sleep 2
+        exit
+    else
+        cd "$VOID_PACKAGES" || exit
+        git pull
+
+        cd "$SRCPKGS" || exit
+        if [[ -d "$pkg" ]]
+        then
+            cd "$VOID_PACKAGES" || exit
+            notify-send -t 60000 "Instalando $pkg"
+            ./xbps-src pkg "$pkg" && xi --repository hostdir/binpkgs "$pkg"
+        else
+            notify-send "Not found"
+            exit
+        fi
+    fi
+else
+    exit
+fi
+notify-send "$pkg instalado!"
+
+)
+
+# vim:set expandtab tabstop=4 shiftwidth=4 smarttab ft=sh:

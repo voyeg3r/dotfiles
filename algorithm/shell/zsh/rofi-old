@@ -1,0 +1,31 @@
+#!/usr/bin/env zsh
+# File: /home/sergio/.dotfiles/zsh/autoloaded/old
+# Last Change: Thu, 20 Oct 2022 17:26:41
+# List vim oldfiles throught fzf
+#
+# The line below will make your Ctrl + o open the function below
+# bindkey -s '^[^O' 'old^M'
+export LC_ALL=en_US.UTF-8
+trap rmtemp EXIT INT
+
+TMPDIR=$(mktemp -d)
+
+# já que uso um aliás para o rm o meu script tem que escapar o mesmo
+rmtemp(){
+    [[ -f "$TMPDIR" ]] && \rm -rf "$TMPDIR"
+}
+
+nvim -c 'set shadafile=""'  -c "redir >> $TMPDIR/oldfiles | silent oldfiles | redir end | q"
+
+local fname
+
+FILES=()
+for i in $(awk '!/man:/ {print $2}' "$TMPDIR/oldfiles"); do
+    [[ -f $i ]] && FILES+=($i)
+done
+
+fname=$(printf "%s\n" "${FILES[@]}" | awk '!a[$0]++' | rofi -dmenu -p "Old files") || return
+
+nvim "$fname"
+
+

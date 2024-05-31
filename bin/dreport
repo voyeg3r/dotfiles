@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Este script tem como objetivo imprimir nome, latitude, longitude
+# e data de fotos colhidas por drones
+# instale o programa exiftool
+
+# testa se o exiftool está instalado
+if ! hash exiftool >/dev/null 2>&1; then
+  echo "Instale o programa exiftool"
+  exit 1
+fi
+
+# variavel que guarda a data
+data=$(date "+%d-%m-%Y_%H:%M:%S")
+
+filename=report-${data}.csv
+
+# cria um arquivo com dia mes ano hora minuto e segundo
+touch "$filename"
+
+echo "file-name, date, altitude, longitude, latitude " >> "$filename"
+
+# o script procura imagens JPG em maiúsculo
+for i in `ls *.JPG`; do
+  name=$(exiftool "$i" | awk -F: '/File Name/ {print $2}')
+  date=$(exiftool "$i" | awk -F: '/File Modification Date/ {$1="";print $0}')
+  alt=$(exiftool "$i" | awk -F: '/GPS Altitude/ {print $2}' | sed -n '2p')
+  long=$(exiftool "$i" | awk -F: '/GPS Longitude/ {print $2}' | sed -n '2p')
+  lat=$(exiftool "$i" | awk -F: '/GPS Latitude/ {print $2}' | sed -n '2p')
+
+  echo "$name, $date, $alt, $long, $lat" >> "$filename"
+
+done
+

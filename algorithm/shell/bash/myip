@@ -1,0 +1,32 @@
+#!/bin/bash
+# Criado em: qui 02 nov 2017 13:09:06 -03
+# Last Change: Thu, 18 Apr 2024 - 11:59:24
+# Autor: Sérgio Luiz Araújo Silva
+# Retorna o seu ip
+
+# INTERFACE=$(route | awk '/UG/ {print $8}')
+# IFCONFIG=$(which ifconfig)
+# MYIP=$($IFCONFIG $INTERFACE | awk '/inet / {print $2}')
+
+NEEDED_COMMANDS="xclip"
+missing_counter=0
+for needed_command in $NEEDED_COMMANDS; do
+    if ! hash "$needed_command" >/dev/null 2>&1; then
+        printf "Command not found in PATH: %s\n" "$needed_command" >&2
+        ((missing_counter++))
+    fi
+done
+if ((missing_counter > 0)); then
+    printf "Minimum %d commands are missing in PATH, aborting" "$missing_counter" >&2
+    exit 1
+fi
+
+MYIP=$(hostname --ip-address)
+
+echo
+[[ -z $MYIP ]] && echo ' offline' || echo $MYIP
+echo
+
+xclip -selection clipboard <(echo $MYIP)
+echo "valor copiado para a área de transferencia"
+

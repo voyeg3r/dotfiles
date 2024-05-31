@@ -1,0 +1,6 @@
+
+fpath () {
+
+	echo "${fpath// /\n}"
+
+ }

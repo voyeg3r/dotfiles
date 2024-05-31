@@ -1,9 +1,0 @@
-#!/bin/bash
-# Criado em:Qui 04/Out/2007 hs 08:16
-# Last Change: Qui 04 Out 2007 08:25:04 BRT
-# Instituicao:
-# Proposito do script: buscar fones na pasta pessoal
-# Autor: Sérgio Luiz Araújo Silva
-
-  grep -ir "$1" ~/   2>> /dev/null
-

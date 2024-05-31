@@ -1,0 +1,6 @@
+# dunst (notification system)
+
+dunst is a lightweight replacement for the notification-daemons provided by most desktop environments. 
+
+	[ -d ~/.config/dunst ] || mkdir -p ~/.config/dunst 
+	ln -sf ~/.dotfiles/dunst ~/.config/dusnt

@@ -1,0 +1,2 @@
+# tags: [string, lower, lowercase, text]
+lcase (){ local var=$(pbpaste); print ${var:l} }

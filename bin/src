@@ -1,0 +1,9 @@
+# File: /home/sergio/.dotfiles/bin/src
+# Last Change: Wed, 12 Jan 2022 13:46
+
+## optimize zsh
+src (){
+    unfunction $0
+    source ~/.dotfiles/zsh/lazy-load/src
+    src "$@"
+}

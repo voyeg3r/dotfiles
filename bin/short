@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# Last Change: Tue, 02 Jan 2024 - 09:51:48
+# tags: [bit.ly, bit-ly, url, urlshortner]
+# vim:set softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+# Original author: Santhosh Veer
+# Author:  Sérgio Araújo
+# site: https://dev.to/voyeg3r
+# Reference: https://bit.ly/3D4f61n
+
+
+# REQUIREMENTS:
+#   curl, jq, openssl
+#
+# Description:
+#   Simple Shell script to Shorten your Long URL via Bitly API V4.
+
+NEEDED_COMMANDS="curl jq openssl"
+missing_counter=0
+for needed_command in $NEEDED_COMMANDS; do
+    if ! hash "$needed_command" >/dev/null 2>&1; then
+        printf "Command not found in PATH: %s\n" "$needed_command" >&2
+        ((missing_counter++))
+    fi
+done
+if ((missing_counter > 0)); then
+    printf "Minimum %d commands are missing in PATH, aborting" "$missing_counter" >&2
+    exit 1
+fi
+
+# Bitly Generic access token
+PRIVATE_KEY="$HOME/.openssl/sergio_private.pem"
+TOKEN_FILE="$HOME/.dotfiles/bit-ly/bit.ly-token.enc"
+
+if [[ ! -f "$TOKEN_FILE" ]]; then
+    echo "You must have a bit-ly token set"
+    echo "Please fix your script!"
+    exit 1
+fi
+
+ACCESSTOKEN=$(openssl pkeyutl -decrypt -inkey "$PRIVATE_KEY" -in "$TOKEN_FILE")
+
+if [[ -z "$ACCESSTOKEN" ]]; then
+    echo "You access token is empty, please fix it"
+    exit 1
+fi
+
+API=https://api-ssl.bitly.com/v4/shorten
+
+# If no URL you will see this Alert message
+if [[ ! ${1} ]]; then
+  echo -e "Error: URL Missing"
+  exit 1
+fi
+
+echo "[+] URL Shortening Started..."
+
+# If no URL you will see this Alert message
+#if [[ ! $longurl ]]; then
+#  echo -e "Error URL Missing"
+#  exit 1
+#fi
+
+curl -s \
+    -H Authorization:\ "$ACCESSTOKEN" \
+    -H Content-Type: -d '{"long_url": "'"${1}"\"} $API \
+    | jq -j .link | tee >(xclip -i -selection clipboard)
+

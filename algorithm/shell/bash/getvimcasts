@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# get vim videoclasses
+
+
+links=`echo /soediv/gro.stsacmiv.aidem//:ptth | rev`
+
+for i in `echo {1..76}`; do
+    echo "${links}${i}/"
+    episodio=`lynx -dump "${links}${i}/" | awk '/m4v/ && !/\[/ {print $2}'`
+    aria2c -c "$episodio"
+done
+
+

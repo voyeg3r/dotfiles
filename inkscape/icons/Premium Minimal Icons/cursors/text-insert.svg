@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="32"
+   height="32"
+   inkscape:hotspot_x="5"
+   inkscape:hotspot_y="12"
+   style="fill:gray;stroke:black"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="text-insert.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview18"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="17.469619"
+     inkscape:cx="8.3573662"
+     inkscape:cy="13.766757"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="cursor" />
+  <defs
+     id="defs9">
+    <!-- Shadow -->
+  </defs>
+  <!-- 'I'  -->
+  <g
+     id="cursor"
+     style="filter:url(#shadow)">
+    <!-- Outline -->
+    <path
+       d="m 2.5,21.5 h 2 l 1,-1 1,1 h 2 m -3,-18 v 17 m -3,-18 h 2 l 1,1 1,-1 h 2"
+       style="fill:none;stroke:#ffffff;stroke-width:3px;stroke-linecap:round"
+       id="path11"
+       sodipodi:nodetypes="cccccccccccc" />
+    <!-- Bar -->
+    <path
+       d="m 2.5,21.5 h 2 l 1,-1 1,1 h 2 m -3,-18 v 17 m -3,-18 h 2 l 1,1 1,-1 h 2"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:round"
+       id="path13"
+       sodipodi:nodetypes="cccccccccccc" />
+  </g>
+</svg>

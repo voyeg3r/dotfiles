@@ -1,0 +1,36 @@
+#!/bin/env bash
+# Bash script to decrease [defaut 02] sec
+# Last Change: Tue, 25 Oct 2022 20:00:54
+# tags: [vim, date, seconds, printf]
+# vim:set softtabstop=4 shiftwidth=4 tabstop=4 expandtab ft=sh:
+
+# Note: I had to remove the clear command because it
+# puts some trash on my final output I use on vim
+# https://unix.stackexchange.com/a/564986/3157
+
+# use this script on vim:
+#                  script        time         seconds
+# :%s/.*/\=system('less2sec ' . submatch(0) . ' 10')
+
+help(){
+        cat <<-EOF
+                  HELP
+        -------------------------------
+        Subtract seconds from HH:MM:SS"
+        -------------------------------
+        ${0##*/} [-h] [hora] [segundos]
+
+EOF
+}
+
+[ "$1" == "-h" ] && help && exit 1
+
+# If the user do not provide options we show an example
+[ "$1" ] && hora="$1"  || hora="11:17:00"
+[ "$2" ] && param="$2" || param="02"
+
+hora=$(date  -u -d"$hora +0000 -$param sec" '+%H:%M:%S')
+
+# here we are using "printf" to avoid  the new line character
+printf "%s" "$hora"
+

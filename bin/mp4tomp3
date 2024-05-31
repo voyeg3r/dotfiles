@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =================================================
 #          CREATED: Qua 15/Jan/2014 hs 19:42
-#      LAST CHANGE: Sat Jan 17, 2015  11:50AM
+#      LAST CHANGE: Sat, 30 Mar 2024 - 08:05:21
 # THIS SCRIPT AIMS: convert mp4 to mp3
 #           AUTHOR: Sérgio Luiz Araújo Silva
 #             SITE: http://vivaotux.blogspot.com
@@ -15,23 +15,23 @@
 # nome do arquivo a ser convertido
 
 # testando se há avconv ou ffmpeg instalados
-prog=$( command -v avconv || command -v ffmpeg)
+prog=$( command -v avconv || command -v ffmpeg )
 
 # se o programa não estive instalado exibir essa mensagem
 if [[ "$prog" = "" ]] ; then
-		echo "instale o ffmpeg ou avconv..."
-		sleep 2
-		exit 1
+    echo "instale o ffmpeg ou avconv..."
+    sleep 2
+    exit 1
 fi
 
 # testando se o parâmetro necessário foi fornecido
 if [[ "$1" = "" ]]; then
-		echo
-		echo "Você tem que fornecer o nome de um arquivo mp4"
-		echo "HELP: $0  arquivo.mp4"
-		sleep 3
-		echo
-		exit 1
+    echo
+    echo "Você tem que fornecer o nome de um arquivo mp4"
+    echo "HELP: $0  arquivo.mp4"
+    sleep 3
+    echo
+    exit 1
 fi
 
 # nome antigo e novo nome para o arquivo a ser convertido
@@ -44,9 +44,9 @@ sleep 2
 
 if [[ "$prog" =~ ".*ffmpeg.*" ]]; then
     #usando ffmpeg
-		"$prog" -i "$oldname" -vn -ab 192k -acodec libmp3lame -ac 2 "$nelname"
+    "$prog" -i "$oldname" -vn -ab 192k -acodec libmp3lame -ac 2 "$nelname"
 else
     # usando avconv
-		"$prog" -i "$oldname" -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 "$nelname"
+    "$prog" -i "$oldname" -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 "$nelname"
 fi
 

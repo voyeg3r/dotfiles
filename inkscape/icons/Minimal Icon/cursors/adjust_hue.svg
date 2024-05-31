@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="32" height="32"
+     inkscape:hotspot_x="16"
+     inkscape:hotspot_y="16"
+     style="fill:gray;stroke:black">
+
+  <defs>
+    <!-- Shadow -->
+    <filter id="shadow" x="-0.5" y="-0.5" width="2" height="2">
+      <feOffset result="offOut" in="SourceAlpha" dx="1" dy="1" />
+      <feGaussianBlur result="blurOut" stdDeviation="1" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+
+    <g id="objects">
+
+      <!-- Slash -->
+      <path d="m 3.5,28.5 16,-16"/>
+
+      <!-- Plus -->
+      <path d="m 4,15.5 h 5 m -2.5,-2.5 v 5"/>
+
+      <!-- Minus -->
+      <path d="m 14,25.5 h 5"/>
+
+      <!-- Letter -->
+      <path d="m 23.5,6.5 h 5 m 0,-4 v 8 m -5,-8 v 8"/>
+
+    </g>
+  </defs>
+
+  <g style="filter:url(#shadow);stroke-linecap:square">
+    <use xlink:href="#objects" style="fill:none;stroke:white;stroke-width:3px"/>
+    <use xlink:href="#objects" style="fill:none;stroke:black;stroke-width:1px"/>
+  </g>
+</svg>

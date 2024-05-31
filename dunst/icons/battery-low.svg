@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32.0px"
+   height="32.0px"
+   viewBox="0 0 32.0 32.0"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="battery-low.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4304"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="10.606602"
+     inkscape:cx="18.479057"
+     inkscape:cy="14.61354"
+     inkscape:window-width="1011"
+     inkscape:window-height="734"
+     inkscape:window-x="347"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     inkscape:snap-global="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4310" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4299" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect3789"
+       style="fill:#ffffff;fill-opacity:0.999937;stroke:none;stroke-width:54.9885;stop-color:#000000"
+       d="m 6.655789,29.161053 c 0,1.096763 0.8828935,1.979656 1.979656,1.979656 h 14.729087 c 1.096785,0 1.979678,-0.882893 1.979678,-1.979656 V 4.5486314 c 0,-1.0967626 -0.882893,-1.9796561 -1.979678,-1.9796561 H 19.567735 V 2.5678126 1.567689 c 0,-0.3923796 -0.315729,-0.70839837 -0.708108,-0.70839837 H 13.14035 c -0.392358,0 -0.708087,0.31601877 -0.708087,0.70839837 v 1.0001236 0.00116 H 8.635445 c -1.0967625,0 -1.979656,0.8828935 -1.979656,1.9796561 z M 9.8189418,27.594145 V 6.1155403 H 22.181057 V 27.594145 Z"
+       sodipodi:nodetypes="sssscsccssssccsssccccc"
+       inkscape:export-filename="/home/sergio/img/svg/rect3789.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#ffffff;fill-opacity:0.999937;stroke:none;stroke-width:54.9885;stop-color:#000000"
+       id="rect4062"
+       width="3.9033935"
+       height="8.9824839"
+       x="-25.54928"
+       y="11.508758"
+       transform="rotate(-90)"
+       inkscape:export-filename="/home/sergio/img/svg/rect3789.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+  </g>
+</svg>

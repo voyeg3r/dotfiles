@@ -1,0 +1,6 @@
+cleantranscript() {
+# primary selection without numbers to clipboard
+
+  xclip -i selection primary -o | sed -r '/^[0-9]+/d' | awk '{printf "%s ",$0}' | xclip -selection clipboard
+
+}

@@ -1,0 +1,37 @@
+/*
+/home/sergio/.mozilla/firefox/<random>.Sergio/chrome/userChrome.css
+Last Change: Sat, 07 May 2022 20:10
+
+How To:
+1. Find your firefox profile folder : https://support.mozilla.org/en-US/kb/profiles-where-firefox-stores-user-data
+    about:suport
+2. create a "chrome" folder if it doesn't exist
+3. Paste content of this gist in a "userChrome.css" file
+4. Go to about:config and set toolkit.legacyUserProfileCustomizations.stylesheets to true
+5. Restart Firefox
+
+Don't hesitate to say if there are bugs, I only tested this for my workflow : I don't use tabs
+at all but I want to see the bar if I open a tab by mistake (otherwise I sometimes lose a tab)
+
+sources:
++ https://bit.ly/3mElDGk
++ https://medium.com/@Aenon/firefox-hide-native-tabs-and-titlebar-f0b00bdbb88b
++ https://github.com/piroor/treestyletab/issues/1525
++ https://www.reddit.com/r/FirefoxCSS/comments/73g6un/merge_navigation_and_tabs/
+
+*/
+
+/* hides the native tabs */
+/* #TabsToolbar { */
+/*   visibility: collapse; */
+/* } */
+
+#titlebar {
+  visibility: collapse;
+}
+
+/* #sidebar-header { */
+/*   visibility: collapse !important; */
+/* } */
+
+

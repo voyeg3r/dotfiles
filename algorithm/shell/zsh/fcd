@@ -1,0 +1,4 @@
+# tags: [find, df, busca]
+fcd(){
+  cd "$(find -type d | fzy)"
+}

@@ -1,0 +1,105 @@
+dwm - dynamic window manager
+============================
+dwm is an extremely fast, small, and dynamic window manager for X.
+
+Requirements
+------------
+In order to build dwm you need the Xlib header files.
+
+Installation
+------------
+Edit config.mk to match your local setup (dwm is installed into
+the /usr/local namespace by default).
+
+Afterwards enter the following command to build and install dwm (if
+necessary as root):
+
+    make clean install
+
+Running dwm
+-----------
+Add the following line to your .xinitrc to start dwm using startx:
+
+    exec dwm
+
+In order to connect dwm to a specific display, make sure that
+the DISPLAY environment variable is set correctly, e.g.:
+
+    DISPLAY=foo.bar:1 exec dwm
+
+(This will start dwm on display :1 of the host foo.bar.)
+
+In order to display status info in the bar, you can do something
+like this in your .xinitrc:
+
+    while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
+    do
+    	sleep 1
+    done &
+    exec dwm
+
+Configuration
+-------------
+The configuration of dwm is done by creating a custom config.h
+and (re)compiling the source code.
+
+patches
+-------
+
+    dwm-alwayscenter-20200625-f04cac6.diff
+    dwm-attachbottom-6.2.diff
+    dwm-focusonnetactive-6.2.diff
+    dwm-autostart-20210120-cb3f58a.diff
+    dwm-cfacts-20200913-61bb8b2.diff
+    dwm-pertag-20200914-61bb8b2.diff
+    dwm-rotatestack-20161021-ab9571b.diff
+    dwm-scratchpad-6.2.diff
+    dwm-switchtotag-6.2.diff
+    dwm-uselessgap-20211119-58414bee958f2.diff
+    dwm-viewontag-20210312-61bb8b2.diff
+    dwm-gridmode-5.8.2.diff
+
+## shortcuts:
+
+    Ctrl + Alt + p .................. view (jump active tags)
+    MODKEY + TAB .................... jump between the two last opened tags
+    MODKEY + F11  ................... down volume
+    MODKEY + F12  ................... up volume
+    MODKEY + Shift + F12  ........... mute volume
+    MODKEY + Shift + Return ......... make current window master (zoom)
+    Ctrl + Alt + i .................. images menu
+    Ctrl + Alt + d .................. dradio menu
+    Ctrl + Alt + l .................. lock screen
+    Ctrl + Alt + Esc ................ xkill
+    Modkey + Shift + i .............. inkscape
+    Ctrl + Alt + r .................. rofi launch menu
+    Ctrl + Alt + b .................. change background
+    MODKEY + x ...................... power-menu
+    MODKEY + Alt + p ................ powermenu.sh
+    MODKEY + Alt + b ................ battery info
+    MODKEY + p ...................... dmenu
+    Ctrl + MODKEY + m ............... pulsemixer
+    Ctrl + MODKEY + a ............... alsamixer
+    MODKEY + s ...................... slock (lock screen)
+    MODKEY + Return ................. terminal
+    MODKEY + F7 ..................... terminal2
+    MODKEY + Shift + t .............. htop
+    MODKEY + r ...................... ranger
+    MODKEY + Alt + r ................ lauch menu
+    Ctrl + Alt + r .................. lauch menu (option 2)
+    MODKEY + w ...................... browser
+    MODKEY + n ...................... nemo
+    MODKEY + Shift + n .............. newsboat
+    MODKEY + Shift + u .............. scratchpad
+    MODKEY + Shift + j .............. rotate stack
+    MODKEY + Shift + k .............. rotate stack
+    MODKEY + Alt + k ................ kill command using dmenu
+    Ctrl + Alt + t .................. telegram
+    MODKEY + F2 ..................... dmenurecord
+    MODKEY + F3 ..................... dmenurecord kill
+    MODKEY + F4 ..................... toggle screenkey
+    MODKEY + q ...................... kill client
+    MODKEY + Shift + Space .......... toggle floating
+    MODKEY + u ...................... focusurgent
+
+

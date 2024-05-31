@@ -1,0 +1,15 @@
+# File: /home/sergio/.dotfiles/zsh/autoloaded/gsend
+# Last Change: Wed, 11 Oct 2023 - 04:54:42
+# put it on: ~/.dotfiles/zsh/autoloaded
+# tags: [git]
+
+gsend() {
+    unset -f gsend
+
+    git commit -am "$1"
+    git pull --quiet
+    git push
+
+gsend "$@"
+}
+

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg1"
+   width="16"
+   height="16.0164"
+   version="1.1"
+   sodipodi:docname="node_insert_min_y-symbolic.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <style
+     id="s0">
+   .success { fill: #009909; }
+   .warning { fill: #FF1990; }
+   .error   { fill: #00AAFF; }
+  </style>
+  <style
+     id="s2"> 
+     @import '../../highlights.css'; 
+  </style>
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     id="base"
+     showgrid="true"
+     inkscape:zoom="14.7349"
+     inkscape:cx="32.827351"
+     inkscape:cy="1.0044192"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1"
+     inkscape:document-rotation="0">
+    <inkscape:grid
+       id="GridFromPre046Settings"
+       type="xygrid"
+       originx="0pt"
+       originy="0pt"
+       spacingx="1"
+       spacingy="1"
+       color="#3f3fff"
+       empcolor="#3f3fff"
+       opacity="0.15"
+       empopacity="0.38"
+       empspacing="5" />
+  </sodipodi:namedview>
+  <defs
+     id="defs3" />
+  <g
+     id="g851"
+     transform="matrix(1,0,0,-1,0,17.00007)">
+    <path
+       d="M 2,14 H 13.000066 V 13.00006 H 2 Z"
+       id="path10583"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       class="base"
+       style="opacity:0.7;fill:#4d4d4d;stroke-width:0.999993" />
+    <path
+       class="error"
+       style="opacity:1;fill:#00aaff;stroke-width:0.999997"
+       d="m 6,12 h 3.000054 v 3.00007 H 6 Z"
+       id="rect10585"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path10587"
+       d="M 7.000048,2.00004 8,2 7.99999,4.99996 11,5 V 6 L 7.99999,5.99996 8,9 7.000048,9.00004 V 6 H 4 V 5 h 3.000048 z"
+       style="opacity:1;fill:#4d4d4d;stroke-width:0.999993"
+       sodipodi:nodetypes="ccccccccccccc"
+       class="base" />
+  </g>
+</svg>

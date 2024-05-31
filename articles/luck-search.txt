@@ -1,0 +1,22 @@
+Feed: Luke Smith's Webpage
+Title: My searx instance has changed domains
+Date: Fri, 30 Apr 2021 21:00:00 -0300
+Link: https://lukesmith.xyz/updates/my-searx-instance-has-changed-domains/
+ 
+For those that use my SearX instance (which was formerly searx.lukesmith.xyz), I
+have now relocated it to searx.cedars.xyz[1], so if you use it as a default 
+search engine, remember to change its url.
+ 
+For those who don't know what SearX is, it's a metasearch engine that polls 
+whatever search engines you want and aggregates the results. It is free software
+that can be installed by anyone on any server.
+ 
+Read more about it on their website[2], or find another instance to use[3], or 
+install it on your own server[4].
+ 
+Links: 
+[1]: https://searx.cedars.xyz/ (link)
+[2]: https://searx.me/ (link)
+[3]: https://searx.space/ (link)
+[4]: https://searx.github.io/searx/ (link)
+
